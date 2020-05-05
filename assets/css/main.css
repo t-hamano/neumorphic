@@ -246,6 +246,10 @@ select {
 	appearance: none;
 }
 
+select option {
+	color: #333;
+}
+
 .select {
 	position: relative;
 }

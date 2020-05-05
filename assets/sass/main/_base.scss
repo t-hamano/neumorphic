@@ -218,6 +218,10 @@ select {
 	outline: 0;
 	cursor: pointer;
 	appearance: none;
+
+	option {
+		color: #333;
+	}
 }
 
 .select {
