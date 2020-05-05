@@ -14,7 +14,7 @@
 	position: relative;
 }
 
-.editor-post-title__block::after {
+.editor-post-title__block::before {
 	position: absolute;
 	left: 0;
 	width: 100%;
@@ -107,8 +107,8 @@
 	padding-bottom: 0.2em;
 }
 
-.wp-block[data-type="core/heading"] h1::after,
-.wp-block[data-type="core/heading"] h2::after {
+.wp-block[data-type="core/heading"] h1::before,
+.wp-block[data-type="core/heading"] h2::before {
 	position: absolute;
 	left: 0;
 	width: 100%;

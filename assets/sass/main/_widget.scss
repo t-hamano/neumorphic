@@ -41,25 +41,39 @@
 		margin: 0;
 		padding: 0;
 		list-style: none;
+	}
 
-		a {
-			color: inherit;
+	a {
+		color: inherit;
+	}
+
+	> ul > li {
+		position: relative;
+		padding-left: 1.5em;
+
+		&::before {
+			position: absolute;
+			left: 0;
+			font-weight: 900;
+			font-family: "Font Awesome 5 Free";
+			content: "\f07b";
+		}
+	}
+
+	.children {
+		margin: 0 0 0.5em;
+		padding: 0;
+
+		> li {
+			position: relative;
+			padding-left: 1em;
 
 			&::before {
-				display: inline-block;
-				margin-right: 0.5em;
+				position: absolute;
+				left: 0;
 				font-weight: 900;
 				font-family: "Font Awesome 5 Free";
-				content: "\f07b";
-			}
-		}
-
-		.children {
-			margin: 0 0 0.5em;
-			padding: 0 0 0 1.5em;
-
-			a::before {
-				transform: scale(0.6) translateY(-1px);
+				transform: scale(0.6) translateY(2px);
 				content: "\f054";
 			}
 		}
@@ -87,18 +101,34 @@
 }
 
 /*------------------------------------------
+## Custom HTML
+------------------------------------------*/
+
+.widget_custom_html .textwidget * {
+	margin: 0;
+	padding: 0;
+}
+
+/*------------------------------------------
 ## Tag Cloud
 ------------------------------------------*/
 
-.widget_tag_cloud a {
+.widget_tag_cloud {
 
-	@include nm-button;
-	display: inline-block;
-	margin: 0 0.1em 0.8em;
-	padding: 0.3em 1em;
-	color: var(--color-accent);
-	font-size: 0.9em !important;
-	border-radius: 1000px;
+	.tagcloud {
+		margin: 0 -0.3em;
+
+		a {
+
+			@include nm-button;
+			display: inline-block;
+			margin: 0 0.3em 1em;
+			padding: 0.3em 1em;
+			color: var(--color-accent);
+			font-size: 0.9em !important;
+			border-radius: 1000px;
+		}
+	}
 }
 
 /*------------------------------------------
@@ -145,22 +175,16 @@
 				border-radius: $base_border_radius;
 			}
 		}
+	}
 
-		tfoot td {
-			padding-top: 0.5em;
+	.wp-calendar-nav {
+		display: flex;
+		justify-content: space-between;
+		padding-top: 0.5em;
 
-			&#next {
-				text-align: right;
-			}
-
-			&#prev,
-			&#next {
-
-				a {
-					padding: 0.5em;
-					color: var(--color-accent);
-				}
-			}
+		a {
+			padding: 0.5em;
+			color: var(--color-accent);
 		}
 	}
 }
@@ -174,15 +198,23 @@
 	padding: 0;
 	list-style: none;
 
-	a {
-		color: inherit;
+	li {
+		position: relative;
+		padding-left: 1.5em;
+
 
 		&::before {
-			display: inline-block;
+			position: absolute;
+			left: 0;
 			margin-right: 0.5em;
 			font-weight: 900;
 			font-family: "Font Awesome 5 Free";
 			content: "\f075";
+		}
+
+		a {
+			color: inherit;
+			font-weight: bold;
 		}
 	}
 }
@@ -191,21 +223,25 @@
 ## Nav Menu
 ------------------------------------------*/
 
-.widget_nav_menu .menu {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+.widget_nav_menu {
 
-	> li > .sub-menu {
-		margin-bottom: 0.5em;
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
 	}
 
 	a {
 		color: inherit;
+	}
+
+	.menu > li {
+		position: relative;
+		padding-left: 1.5em;
 
 		&::before {
-			display: inline-block;
-			margin-right: 0.5em;
+			position: absolute;
+			left: 0;
 			font-weight: 900;
 			font-family: "Font Awesome 5 Free";
 			content: "\f15b";
@@ -213,13 +249,20 @@
 	}
 
 	.sub-menu {
-		margin: 0;
-		padding: 0 0 0 1.5em;
-		list-style: none;
+		margin-bottom: 0.5em;
 
-		a::before {
-			transform: scale(0.6) translateY(-1px);
-			content: "\f054";
+		li {
+			position: relative;
+			padding-left: 1em;
+
+			&::before {
+				position: absolute;
+				left: 0;
+				font-weight: 900;
+				font-family: "Font Awesome 5 Free";
+				transform: scale(0.6) translateY(2px);
+				content: "\f054";
+			}
 		}
 	}
 }
@@ -311,6 +354,12 @@
 
 		li {
 
+			&::after {
+				display: table;
+				clear: both;
+				content: "";
+			}
+
 			&:not(:last-child) {
 
 				@include nm-border;
@@ -351,6 +400,15 @@
 			cite {
 				float: right;
 				font-size: 0.8em;
+
+				&::before {
+					display: inline-block;
+					margin-right: 0.5em;
+					font-weight: 900;
+					font-family: "Font Awesome 5 Free";
+					font-style: normal;
+					content: "\f4ff";
+				}
 			}
 		}
 	}
@@ -365,34 +423,47 @@
 	padding: 0;
 	list-style: none;
 
-	a {
-		color: inherit;
+	li {
+		position: relative;
+		padding-left: 1.5em;
 
 		&::before {
-			display: inline-block;
-			margin-right: 0.5em;
+			position: absolute;
+			left: 0;
 			font-weight: 900;
 			font-family: "Font Awesome 5 Free";
 			content: "\f05a";
 		}
 	}
+
+	a {
+		position: relative;
+		color: inherit;
+	}
 }
 
 /*------------------------------------------
-## Page
+## Page,
 ------------------------------------------*/
 
-.widget_pages ul {
-	margin: 0;
-	padding: 0;
-	list-style: none;
+.widget_pages {
+
+	ul {
+		padding: 0;
+		list-style: none;
+	}
 
 	a {
 		color: inherit;
+	}
+
+	> ul > li {
+		position: relative;
+		padding-left: 1.5em;
 
 		&::before {
-			display: inline-block;
-			margin-right: 0.5em;
+			position: absolute;
+			left: 0;
 			font-weight: 900;
 			font-family: "Font Awesome 5 Free";
 			content: "\f15b";
@@ -401,11 +472,20 @@
 
 	.children {
 		margin: 0 0 0.5em;
-		padding: 0 0 0 1.5em;
+		padding: 0;
 
-		a::before {
-			transform: scale(0.6) translateY(-1px);
-			content: "\f054";
+		> li {
+			position: relative;
+			padding-left: 1em;
+
+			&::before {
+				position: absolute;
+				left: 0;
+				font-weight: 900;
+				font-family: "Font Awesome 5 Free";
+				transform: scale(0.6) translateY(2px);
+				content: "\f054";
+			}
 		}
 	}
 }
@@ -429,13 +509,15 @@
 		}
 
 		a {
+			position: relative;
 			display: inline-block;
+			padding-left: 1.5em;
 			color: inherit;
 			font-weight: bold;
 
 			&::before {
-				display: inline-block;
-				margin-right: 0.5em;
+				position: absolute;
+				left: 0;
 				font-weight: 900;
 				font-family: "Font Awesome 5 Free";
 				content: "\f303";
@@ -460,7 +542,7 @@
 ## Text
 ------------------------------------------*/
 
-.widget_text {
+.widget_text:not(.widget_custom_html) .textwidget {
 
 	> * {
 		margin: 0 0 2em;

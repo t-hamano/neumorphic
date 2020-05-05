@@ -17,7 +17,7 @@ function cleanFiles( cb ) {
 
 // Sass
 function sass() {
-	return gulp.src( './assets/scss/**/*.scss' )
+	return gulp.src( './assets/sass/**/*.scss' )
 	.pipe( plumber( {
 		errorHandler: notify.onError( 'Error: <%= error.message %>' )
 	} ) )
@@ -68,5 +68,5 @@ exports.deploy = gulp.series( copyFiles, zip, cleanFiles );
 //Default Task
 exports.default = function () {
 	sass();
-	gulp.watch( './assets/scss/**/*.scss', sass );
+	gulp.watch( './assets/sass/**/*.scss', sass );
 };
