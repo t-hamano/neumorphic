@@ -1,26 +1,27 @@
-// Gulp
-var gulp = require( 'gulp' );
-// Compile Sass files
-var sass = require( 'gulp-sass' );
-// Prevent pipe breaking caused by errors
-var plumber = require( 'gulp-plumber' );
-// Error notification
-var notify = require( 'gulp-notify' );
-// Add vendor prefixes
-var postcss = require( 'gulp-postcss' );
-var autoprefixer = require( 'autoprefixer' );
-// Format CSS coding style
-var csscomb = require( 'gulp-csscomb' );
-// Merge media queries
-var mmq = require( 'gulp-merge-media-queries' );
+const gulp = require( 'gulp' );
+const gulpZip = require( 'gulp-zip' );
+const gulpChmod = require( 'gulp-chmod' );
+const del = require( 'del' );
+const gulpSass = require( 'gulp-sass' );
+const plumber = require( 'gulp-plumber' );
+const notify = require( 'gulp-notify' );
+const postcss = require( 'gulp-postcss' );
+const autoprefixer = require( 'autoprefixer' );
+const csscomb = require( 'gulp-csscomb' );
+const mmq = require( 'gulp-merge-media-queries' );
 
-// Compile Sass files
-gulp.task( 'sass', done => {
-	gulp.src( './assets/scss/**/*.scss' )
+// Delete a folder after archiving
+function cleanFiles( cb ) {
+	return del( './neomorphic', cb );
+}
+
+// Sass
+function sass() {
+	return gulp.src( './assets/scss/**/*.scss' )
 	.pipe( plumber( {
 		errorHandler: notify.onError( 'Error: <%= error.message %>' )
 	} ) )
-	.pipe( sass( {
+	.pipe( gulpSass( {
 		outputStyle: 'expanded'
 	} ) )
 	.pipe( postcss( [
@@ -31,13 +32,41 @@ gulp.task( 'sass', done => {
 	.pipe( mmq() )
 	.pipe( csscomb() )
 	.pipe( gulp.dest( './assets/css/' ) )
-	done();
-});
+};
 
-// File watcher
-gulp.task( 'watch', () => {
-	gulp.watch( './assets/scss/**/*.scss', gulp.task( 'sass' ) );
-})
+// Copy files that need to deploy
+function copyFiles() {
+	return gulp.src(
+		[
+			'**',
+			'!.gitignore',
+			'!node_modules',
+			'!node_modules/**',
+			'!release',
+			'!release/**',
+			'!gulpfile.js',
+			'!package.json',
+			'!package-lock.json',
+			'!phpcs.ruleset.xml'
+		],
+		{ base: './' }
+	)
+	.pipe( gulp.dest( './neomorphic' ) );
+}
+
+// Archive
+function zip() {
+	return gulp.src( 'neomorphic/**', { base: '.' })
+	.pipe( gulpChmod( 0o755, 0o755 ) )
+	.pipe( gulpZip( 'neomorphic.zip' ) )
+		.pipe( gulp.dest( 'release' ) );
+}
+
+// Deploy
+exports.deploy = gulp.series( copyFiles, zip, cleanFiles );
 
 //Default Task
-gulp.task( 'default', gulp.task( 'watch' ) );
+exports.default = function () {
+	sass();
+	gulp.watch( './assets/scss/**/*.scss', sass );
+};
