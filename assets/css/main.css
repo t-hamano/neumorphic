@@ -332,7 +332,7 @@ button:focus {
 	padding-bottom: 1em;
 }
 
-.c-entry__header::after {
+.c-entry__header::before {
 	position: absolute;
 	left: 0;
 	width: 100%;
@@ -500,7 +500,7 @@ button:focus {
 	font-size: 1.4em;
 }
 
-.c-comment__title::after {
+.c-comment__title::before {
 	position: absolute;
 	left: 0;
 	width: 100%;
@@ -523,7 +523,7 @@ button:focus {
 	padding-bottom: 1em;
 }
 
-.c-comment__list > li:not(:last-child)::after {
+.c-comment__list > li:not(:last-child)::before {
 	position: absolute;
 	left: 0;
 	width: 100%;
@@ -1179,7 +1179,7 @@ button:focus {
 	text-align: center;
 }
 
-.widget__title::after {
+.widget__title::before {
 	position: absolute;
 	left: 0;
 	width: 100%;
@@ -1201,29 +1201,45 @@ button:focus {
 	list-style: none;
 }
 
-.widget_categories ul a,
-.widget_archive ul a {
+.widget_categories a,
+.widget_archive a {
 	color: inherit;
 }
 
-.widget_categories ul a::before,
-.widget_archive ul a::before {
-	display: inline-block;
-	margin-right: 0.5em;
+.widget_categories > ul > li,
+.widget_archive > ul > li {
+	position: relative;
+	padding-left: 1.5em;
+}
+
+.widget_categories > ul > li::before,
+.widget_archive > ul > li::before {
+	position: absolute;
+	left: 0;
 	font-weight: 900;
 	font-family: "Font Awesome 5 Free";
 	content: "\f07b";
 }
 
-.widget_categories ul .children,
-.widget_archive ul .children {
+.widget_categories .children,
+.widget_archive .children {
 	margin: 0 0 0.5em;
-	padding: 0 0 0 1.5em;
+	padding: 0;
 }
 
-.widget_categories ul .children a::before,
-.widget_archive ul .children a::before {
-	transform: scale(0.6) translateY(-1px);
+.widget_categories .children > li,
+.widget_archive .children > li {
+	position: relative;
+	padding-left: 1em;
+}
+
+.widget_categories .children > li::before,
+.widget_archive .children > li::before {
+	position: absolute;
+	left: 0;
+	font-weight: 900;
+	font-family: "Font Awesome 5 Free";
+	transform: scale(0.6) translateY(2px);
 	content: "\f054";
 }
 
@@ -1259,33 +1275,46 @@ button:focus {
 }
 
 /*------------------------------------------
+## Custom HTML
+------------------------------------------*/
+
+.widget_custom_html .textwidget * {
+	margin: 0;
+	padding: 0;
+}
+
+/*------------------------------------------
 ## Tag Cloud
 ------------------------------------------*/
 
-.widget_tag_cloud a {
+.widget_tag_cloud .tagcloud {
+	margin: 0 -0.3em;
+}
+
+.widget_tag_cloud .tagcloud a {
 	text-decoration: none;
 	background: transparent;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
 	transition: all 0.2s ease-in-out;
 	display: inline-block;
-	margin: 0 0.1em 0.8em;
+	margin: 0 0.3em 1em;
 	padding: 0.3em 1em;
 	color: var(--color-accent);
 	font-size: 0.9em !important;
 	border-radius: 1000px;
 }
 
-.widget_tag_cloud a:hover {
+.widget_tag_cloud .tagcloud a:hover {
 	text-decoration: none;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
 }
 
-.widget_tag_cloud a:hover a {
+.widget_tag_cloud .tagcloud a:hover a {
 	text-decoration: none;
 }
 
-.widget_tag_cloud a:active {
+.widget_tag_cloud .tagcloud a:active {
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 }
 
@@ -1345,16 +1374,13 @@ button:focus {
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 }
 
-.widget_calendar table tfoot td {
+.widget_calendar .wp-calendar-nav {
+	display: flex;
+	justify-content: space-between;
 	padding-top: 0.5em;
 }
 
-.widget_calendar table tfoot td#next {
-	text-align: right;
-}
-
-.widget_calendar table tfoot td#prev a,
-.widget_calendar table tfoot td#next a {
+.widget_calendar .wp-calendar-nav a {
 	padding: 0.5em;
 	color: var(--color-accent);
 }
@@ -1369,52 +1395,67 @@ button:focus {
 	list-style: none;
 }
 
-.widget_recent_comments #recentcomments a {
-	color: inherit;
+.widget_recent_comments #recentcomments li {
+	position: relative;
+	padding-left: 1.5em;
 }
 
-.widget_recent_comments #recentcomments a::before {
-	display: inline-block;
+.widget_recent_comments #recentcomments li::before {
+	position: absolute;
+	left: 0;
 	margin-right: 0.5em;
 	font-weight: 900;
 	font-family: "Font Awesome 5 Free";
 	content: "\f075";
 }
 
+.widget_recent_comments #recentcomments li a {
+	color: inherit;
+	font-weight: bold;
+}
+
 /*------------------------------------------
 ## Nav Menu
 ------------------------------------------*/
 
-.widget_nav_menu .menu {
+.widget_nav_menu ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 
-.widget_nav_menu .menu > li > .sub-menu {
-	margin-bottom: 0.5em;
-}
-
-.widget_nav_menu .menu a {
+.widget_nav_menu a {
 	color: inherit;
 }
 
-.widget_nav_menu .menu a::before {
-	display: inline-block;
-	margin-right: 0.5em;
+.widget_nav_menu .menu > li {
+	position: relative;
+	padding-left: 1.5em;
+}
+
+.widget_nav_menu .menu > li::before {
+	position: absolute;
+	left: 0;
 	font-weight: 900;
 	font-family: "Font Awesome 5 Free";
 	content: "\f15b";
 }
 
-.widget_nav_menu .menu .sub-menu {
-	margin: 0;
-	padding: 0 0 0 1.5em;
-	list-style: none;
+.widget_nav_menu .sub-menu {
+	margin-bottom: 0.5em;
 }
 
-.widget_nav_menu .menu .sub-menu a::before {
-	transform: scale(0.6) translateY(-1px);
+.widget_nav_menu .sub-menu li {
+	position: relative;
+	padding-left: 1em;
+}
+
+.widget_nav_menu .sub-menu li::before {
+	position: absolute;
+	left: 0;
+	font-weight: 900;
+	font-family: "Font Awesome 5 Free";
+	transform: scale(0.6) translateY(2px);
 	content: "\f054";
 }
 
@@ -1505,13 +1546,19 @@ button:focus {
 	list-style: none;
 }
 
+.widget_rss ul li::after {
+	display: table;
+	clear: both;
+	content: "";
+}
+
 .widget_rss ul li:not(:last-child) {
 	position: relative;
 	margin-bottom: 1em;
 	padding-bottom: 1em;
 }
 
-.widget_rss ul li:not(:last-child)::after {
+.widget_rss ul li:not(:last-child)::before {
 	position: absolute;
 	left: 0;
 	width: 100%;
@@ -1557,6 +1604,15 @@ button:focus {
 	font-size: 0.8em;
 }
 
+.widget_rss ul li cite::before {
+	display: inline-block;
+	margin-right: 0.5em;
+	font-weight: 900;
+	font-family: "Font Awesome 5 Free";
+	font-style: normal;
+	content: "\f4ff";
+}
+
 /*------------------------------------------
 ## Meta
 ------------------------------------------*/
@@ -1567,47 +1623,66 @@ button:focus {
 	list-style: none;
 }
 
-.widget_meta ul a {
-	color: inherit;
+.widget_meta ul li {
+	position: relative;
+	padding-left: 1.5em;
 }
 
-.widget_meta ul a::before {
-	display: inline-block;
-	margin-right: 0.5em;
+.widget_meta ul li::before {
+	position: absolute;
+	left: 0;
 	font-weight: 900;
 	font-family: "Font Awesome 5 Free";
 	content: "\f05a";
 }
 
+.widget_meta ul a {
+	position: relative;
+	color: inherit;
+}
+
 /*------------------------------------------
-## Page
+## Page,
 ------------------------------------------*/
 
 .widget_pages ul {
-	margin: 0;
 	padding: 0;
 	list-style: none;
 }
 
-.widget_pages ul a {
+.widget_pages a {
 	color: inherit;
 }
 
-.widget_pages ul a::before {
-	display: inline-block;
-	margin-right: 0.5em;
+.widget_pages > ul > li {
+	position: relative;
+	padding-left: 1.5em;
+}
+
+.widget_pages > ul > li::before {
+	position: absolute;
+	left: 0;
 	font-weight: 900;
 	font-family: "Font Awesome 5 Free";
 	content: "\f15b";
 }
 
-.widget_pages ul .children {
+.widget_pages .children {
 	margin: 0 0 0.5em;
-	padding: 0 0 0 1.5em;
+	padding: 0;
 }
 
-.widget_pages ul .children a::before {
-	transform: scale(0.6) translateY(-1px);
+.widget_pages .children > li {
+	position: relative;
+	padding-left: 1em;
+}
+
+.widget_pages .children > li::before {
+	position: absolute;
+	left: 0;
+	font-weight: 900;
+	font-family: "Font Awesome 5 Free";
+	transform: scale(0.6) translateY(2px);
 	content: "\f054";
 }
 
@@ -1627,7 +1702,7 @@ button:focus {
 	padding-bottom: 1em;
 }
 
-.widget_recent_entries ul li:not(:last-child)::after {
+.widget_recent_entries ul li:not(:last-child)::before {
 	position: absolute;
 	left: 0;
 	width: 100%;
@@ -1639,14 +1714,16 @@ button:focus {
 }
 
 .widget_recent_entries ul li a {
+	position: relative;
 	display: inline-block;
+	padding-left: 1.5em;
 	color: inherit;
 	font-weight: bold;
 }
 
 .widget_recent_entries ul li a::before {
-	display: inline-block;
-	margin-right: 0.5em;
+	position: absolute;
+	left: 0;
 	font-weight: 900;
 	font-family: "Font Awesome 5 Free";
 	content: "\f303";
@@ -1668,49 +1745,49 @@ button:focus {
 ## Text
 ------------------------------------------*/
 
-.widget_text > * {
+.widget_text:not(.widget_custom_html) .textwidget > * {
 	margin: 0 0 2em;
 }
 
-.widget_text > :last-child {
+.widget_text:not(.widget_custom_html) .textwidget > :last-child {
 	margin-bottom: 0 !important;
 }
 
-.widget_text ul {
+.widget_text:not(.widget_custom_html) .textwidget ul {
 	margin-left: 0;
 	padding-left: 1.5em;
 	list-style: outside disc;
 }
 
-.widget_text ol {
+.widget_text:not(.widget_custom_html) .textwidget ol {
 	margin-left: 0;
 	padding-left: 1.5em;
 	list-style: outside decimal;
 }
 
-.widget_text .alignleft {
+.widget_text:not(.widget_custom_html) .textwidget .alignleft {
 	float: left;
 	margin: 0 16px 0 0;
 }
 
-.widget_text .alignright {
+.widget_text:not(.widget_custom_html) .textwidget .alignright {
 	float: right;
 	margin: 0 0 0 16px;
 }
 
-.widget_text .aligncenter {
+.widget_text:not(.widget_custom_html) .textwidget .aligncenter {
 	display: block;
 	margin: 0 auto;
 }
 
-.widget_text img {
+.widget_text:not(.widget_custom_html) .textwidget img {
 	background: transparent;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	transition: all 0.2s ease-in-out;
 	border-radius: 5px;
 }
 
-.widget_text figcaption {
+.widget_text:not(.widget_custom_html) .textwidget figcaption {
 	margin-top: 0.5em;
 	margin-bottom: 0;
 	color: inherit;
@@ -1790,8 +1867,8 @@ button:focus {
 	padding-bottom: 0.2em;
 }
 
-.entry-content > h1::after,
-.entry-content > h2::after {
+.entry-content > h1::before,
+.entry-content > h2::before {
 	position: absolute;
 	left: 0;
 	width: 100%;

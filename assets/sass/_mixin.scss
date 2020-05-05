@@ -52,7 +52,7 @@
 @mixin nm-border( $position:bottom ) {
 	position: relative;
 
-	&::after {
+	&::before {
 		position: absolute;
 		left: 0;
 		width: 100%;
