@@ -23,16 +23,28 @@
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 }
 
+@mixin nm-hover() {
+	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+}
+
 @mixin nm-link() {
+	display: inline-block;
+	color: inherit;
 	text-decoration: none;
 	background: transparent;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
 	transition: all $base_transition_duration ease-in-out;
 
+	&:focus {
+		outline: none;
+		box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+	}
+
 	&:hover {
+
+		@include nm-hover;
 		text-decoration: none;
-		box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
 
 		a {
 			text-decoration: none;
@@ -43,10 +55,21 @@
 @mixin nm-button() {
 
 	@include nm-link;
+	font-weight: bold;
+	text-align: center;
 
 	&:active {
 		box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	}
+}
+
+@mixin nm-button-editor() {
+	display: inline-block;
+	color: inherit;
+	font-weight: bold;
+	text-decoration: none;
+	background: transparent;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 }
 
 @mixin nm-border( $position:bottom ) {
@@ -57,7 +80,7 @@
 		left: 0;
 		width: 100%;
 		height: 3px;
-		border-radius: $base_border_radius;
+		border-radius: 1000px;
 		box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 		content: "";
 

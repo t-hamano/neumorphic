@@ -105,6 +105,7 @@
 		margin-top: 2em;
 		margin-bottom: 1em;
 		font-weight: bold;
+		line-height: 1.4;
 
 		@include nm-text;
 	}
@@ -164,26 +165,35 @@
 
 .wp-block[data-type="core/list"] {
 
-	ul,
-	ol {
+	> ul,
+	> ol {
 		margin-left: 0;
 		padding-left: 1.5em;
 
 		li {
 			margin: 0.5em 0;
-			padding-left: 0;
 		}
 
-		&.is-style-checkbox li::before {
-			top: 0 !important;
-			left: -1.5em !important;
-			height: auto !important;
-			font-weight: 900;
-			font-family: "Font Awesome 5 Free";
-			background-color: transparent !important;
-			transform: none !important;
-			content: "\f058" !important;
-			mask-image: none !important;
+		ul {
+			margin-left: 0;
+			padding: 0;
+			list-style: none;
+
+			li {
+				position: relative;
+				padding-left: 1em;
+
+				&::before {
+					position: absolute;
+					left: 0;
+					content: "-";
+				}
+			}
+		}
+
+		ol {
+			margin-left: 0;
+			padding-left: 1.5em;
 		}
 	}
 }
@@ -227,6 +237,25 @@
 /*----------------------
 ### File
 ----------------------*/
+.wp-block-file {
+
+	.wp-block-file__textlink {
+		margin-bottom: 0.5em;
+		color: var(--color-text-link);
+	}
+
+	.wp-block-file__button-richtext-wrapper {
+		margin-bottom: 0.5em;
+	}
+
+	.wp-block-file__button {
+
+		@include nm-button-editor();
+		color: inherit;
+		font-size: 0.8em;
+		border-radius: 1000px;
+	}
+}
 
 /*----------------------
 ### Video

@@ -21,12 +21,26 @@
 		float: left;
 		margin-right: 2em;
 		margin-bottom: 1em;
+
+		@include mq(md-max) {
+			float: none;
+			margin-right: auto;
+			margin-bottom: 2em;
+			margin-left: auto;
+		}
 	}
 
 	.alignright {
 		float: right;
 		margin-bottom: 1em;
 		margin-left: 2em;
+
+		@include mq(md-max) {
+			float: none;
+			margin-right: auto;
+			margin-bottom: 2em;
+			margin-left: auto;
+		}
 	}
 
 	.alignwide {
@@ -60,6 +74,7 @@
 		margin-top: 1.5em;
 		margin-bottom: 1em;
 		font-weight: bold;
+		line-height: 1.4;
 
 		@include nm-text;
 	}
@@ -116,6 +131,27 @@
 
 		li {
 			margin: 0.5em 0;
+		}
+
+		ul {
+			margin-left: 0;
+			padding: 0;
+			list-style: none;
+
+			li {
+				position: relative;
+				padding-left: 1em;
+
+				&::before {
+					position: absolute;
+					left: 0;
+					content: "-";
+				}
+			}
+		}
+
+		ol {
+			padding-left: 1.5em;
 		}
 	}
 
@@ -212,16 +248,30 @@
 
 .wp-block-audio {
 
+	@include mq(md-max) {
+
+		&.alignleft,
+		&.alignright {
+			text-align: center;
+		}
+	}
+
 	audio {
 
 		@include nm-reverse;
-		display: block;
+		width: auto;
 		padding: 5px;
+		vertical-align: top;
 		border-radius: 1000px;
 
 		&:focus {
 			outline: none;
 		}
+
+	}
+
+	&.aligncenter audio {
+		margin: 0 auto;
 	}
 
 	figcaption {
@@ -241,6 +291,29 @@
 /*----------------------
 ### File
 ----------------------*/
+
+.wp-block-file {
+
+	a {
+		display: inline-block;
+		margin-bottom: 0.5em;
+	}
+
+	a.wp-block-file__button {
+		font-size: 0.8em;
+		border-radius: 1000px;
+
+		@include nm-button();
+
+		&:active,
+		&:focus,
+		&:hover,
+		&:visited {
+			color: inherit;
+			opacity: 1;
+		}
+	}
+}
 
 /*----------------------
 ### Video
@@ -632,28 +705,6 @@
 /*------------------------------------------
 ## Block Styles
 ------------------------------------------*/
-
-/*----------------------
-### List
-----------------------*/
-
-.is-style-checkbox li {
-	padding-left: 0;
-
-	&::before {
-		top: 0;
-		left: -1.5em;
-		display: inline-block;
-		height: auto;
-		margin-right: 0.5em;
-		font-weight: 900;
-		font-family: "Font Awesome 5 Free";
-		background-color: transparent;
-		transform: none;
-		content: "\f058";
-		mask-image: none;
-	}
-}
 
 /*------------------------------------------
 ## Block Properties

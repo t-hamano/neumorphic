@@ -142,6 +142,8 @@ table {
 }
 
 .widget_media_gallery .gallery-icon a {
+	display: inline-block;
+	color: inherit;
 	text-decoration: none;
 	background: transparent;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
@@ -153,9 +155,14 @@ table {
 	border-radius: 5px;
 }
 
+.widget_media_gallery .gallery-icon a:focus {
+	outline: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 .widget_media_gallery .gallery-icon a:hover {
-	text-decoration: none;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+	text-decoration: none;
 }
 
 .widget_media_gallery .gallery-icon a:hover a {
@@ -341,7 +348,7 @@ button:focus {
 	left: 0;
 	width: 100%;
 	height: 3px;
-	border-radius: 10px;
+	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
 	bottom: -1.5px;
@@ -360,20 +367,29 @@ button:focus {
 }
 
 .c-entry__edit-link {
+	display: inline-block;
+	color: inherit;
 	text-decoration: none;
 	background: transparent;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
 	transition: all 0.2s ease-in-out;
+	font-weight: bold;
+	text-align: center;
 	display: inline-block;
 	margin-top: 3em;
 	padding: 0.7em 1.4em;
 	border-radius: 1000px;
 }
 
+.c-entry__edit-link:focus {
+	outline: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 .c-entry__edit-link:hover {
-	text-decoration: none;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+	text-decoration: none;
 }
 
 .c-entry__edit-link:hover a {
@@ -393,6 +409,8 @@ button:focus {
 }
 
 .c-entries__item > a {
+	display: inline-block;
+	color: inherit;
 	text-decoration: none;
 	background: transparent;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
@@ -406,9 +424,14 @@ button:focus {
 	border-radius: 10px;
 }
 
+.c-entries__item > a:focus {
+	outline: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 .c-entries__item > a:hover {
-	text-decoration: none;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+	text-decoration: none;
 }
 
 .c-entries__item > a:hover a {
@@ -509,7 +532,7 @@ button:focus {
 	left: 0;
 	width: 100%;
 	height: 3px;
-	border-radius: 10px;
+	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
 	bottom: -1.5px;
@@ -532,7 +555,7 @@ button:focus {
 	left: 0;
 	width: 100%;
 	height: 3px;
-	border-radius: 10px;
+	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
 	bottom: -1.5px;
@@ -603,18 +626,27 @@ button:focus {
 }
 
 .c-comment__form .form-submit [type="submit"] {
+	display: inline-block;
+	color: inherit;
 	text-decoration: none;
 	background: transparent;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
 	transition: all 0.2s ease-in-out;
+	font-weight: bold;
+	text-align: center;
 	width: auto;
 	border-radius: 1000px;
 }
 
+.c-comment__form .form-submit [type="submit"]:focus {
+	outline: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 .c-comment__form .form-submit [type="submit"]:hover {
-	text-decoration: none;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+	text-decoration: none;
 }
 
 .c-comment__form .form-submit [type="submit"]:hover a {
@@ -664,11 +696,15 @@ button:focus {
 }
 
 .c-sns__item a {
+	display: inline-block;
+	color: inherit;
 	text-decoration: none;
 	background: transparent;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
 	transition: all 0.2s ease-in-out;
+	font-weight: bold;
+	text-align: center;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -678,9 +714,14 @@ button:focus {
 	border-radius: 10px;
 }
 
+.c-sns__item a:focus {
+	outline: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 .c-sns__item a:hover {
-	text-decoration: none;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+	text-decoration: none;
 }
 
 .c-sns__item a:hover a {
@@ -756,19 +797,30 @@ button:focus {
 .c-pagination__item--link,
 .c-pagination__item--prev,
 .c-pagination__item--next {
+	display: inline-block;
+	color: inherit;
 	text-decoration: none;
 	background: transparent;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
 	transition: all 0.2s ease-in-out;
+	font-weight: bold;
+	text-align: center;
 	color: var(--color-accent);
+}
+
+.c-pagination__item--link:focus,
+.c-pagination__item--prev:focus,
+.c-pagination__item--next:focus {
+	outline: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 }
 
 .c-pagination__item--link:hover,
 .c-pagination__item--prev:hover,
 .c-pagination__item--next:hover {
-	text-decoration: none;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+	text-decoration: none;
 }
 
 .c-pagination__item--link:hover a,
@@ -1188,7 +1240,7 @@ button:focus {
 	left: 0;
 	width: 100%;
 	height: 3px;
-	border-radius: 10px;
+	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
 	bottom: -1.5px;
@@ -1296,11 +1348,15 @@ button:focus {
 }
 
 .widget_tag_cloud .tagcloud a {
+	display: inline-block;
+	color: inherit;
 	text-decoration: none;
 	background: transparent;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
 	transition: all 0.2s ease-in-out;
+	font-weight: bold;
+	text-align: center;
 	display: inline-block;
 	margin: 0 0.3em 1em;
 	padding: 0.3em 1em;
@@ -1309,9 +1365,14 @@ button:focus {
 	border-radius: 1000px;
 }
 
+.widget_tag_cloud .tagcloud a:focus {
+	outline: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 .widget_tag_cloud .tagcloud a:hover {
-	text-decoration: none;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+	text-decoration: none;
 }
 
 .widget_tag_cloud .tagcloud a:hover a {
@@ -1354,20 +1415,29 @@ button:focus {
 }
 
 .widget_calendar table tbody td a {
+	display: inline-block;
+	color: inherit;
 	text-decoration: none;
 	background: transparent;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
 	transition: all 0.2s ease-in-out;
+	font-weight: bold;
+	text-align: center;
 	display: block;
 	color: var(--color-accent);
 	font-weight: bold;
 	border-radius: 10px;
 }
 
+.widget_calendar table tbody td a:focus {
+	outline: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 .widget_calendar table tbody td a:hover {
-	text-decoration: none;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+	text-decoration: none;
 }
 
 .widget_calendar table tbody td a:hover a {
@@ -1480,6 +1550,8 @@ button:focus {
 }
 
 .widget_media_image a {
+	display: inline-block;
+	color: inherit;
 	text-decoration: none;
 	background: transparent;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
@@ -1491,9 +1563,14 @@ button:focus {
 	border-radius: 5px;
 }
 
+.widget_media_image a:focus {
+	outline: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 .widget_media_image a:hover {
-	text-decoration: none;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+	text-decoration: none;
 }
 
 .widget_media_image a:hover a {
@@ -1567,7 +1644,7 @@ button:focus {
 	left: 0;
 	width: 100%;
 	height: 3px;
-	border-radius: 10px;
+	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
 	bottom: -1.5px;
@@ -1711,7 +1788,7 @@ button:focus {
 	left: 0;
 	width: 100%;
 	height: 3px;
-	border-radius: 10px;
+	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
 	bottom: -1.5px;
@@ -1863,6 +1940,7 @@ button:focus {
 	margin-top: 1.5em;
 	margin-bottom: 1em;
 	font-weight: bold;
+	line-height: 1.4;
 	text-shadow: 1px 1px 0 var(--color-text-border-color);
 }
 
@@ -1878,7 +1956,7 @@ button:focus {
 	left: 0;
 	width: 100%;
 	height: 3px;
-	border-radius: 10px;
+	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
 	bottom: -1.5px;
@@ -1929,6 +2007,31 @@ button:focus {
 .entry-content > ul li,
 .entry-content > ol li {
 	margin: 0.5em 0;
+}
+
+.entry-content > ul ul,
+.entry-content > ol ul {
+	margin-left: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.entry-content > ul ul li,
+.entry-content > ol ul li {
+	position: relative;
+	padding-left: 1em;
+}
+
+.entry-content > ul ul li::before,
+.entry-content > ol ul li::before {
+	position: absolute;
+	left: 0;
+	content: "-";
+}
+
+.entry-content > ul ol,
+.entry-content > ol ol {
+	padding-left: 1.5em;
 }
 
 .entry-content pre {
@@ -2020,13 +2123,18 @@ button:focus {
 
 .wp-block-audio audio {
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
-	display: block;
+	width: auto;
 	padding: 5px;
+	vertical-align: top;
 	border-radius: 1000px;
 }
 
 .wp-block-audio audio:focus {
 	outline: none;
+}
+
+.wp-block-audio.aligncenter audio {
+	margin: 0 auto;
 }
 
 .wp-block-audio figcaption {
@@ -2045,6 +2153,51 @@ button:focus {
 /*----------------------
 ### File
 ----------------------*/
+
+.wp-block-file a {
+	display: inline-block;
+	margin-bottom: 0.5em;
+}
+
+.wp-block-file a.wp-block-file__button {
+	font-size: 0.8em;
+	border-radius: 1000px;
+	display: inline-block;
+	color: inherit;
+	text-decoration: none;
+	background: transparent;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+	font-weight: bold;
+	text-align: center;
+}
+
+.wp-block-file a.wp-block-file__button:focus {
+	outline: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
+.wp-block-file a.wp-block-file__button:hover {
+	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+	text-decoration: none;
+}
+
+.wp-block-file a.wp-block-file__button:hover a {
+	text-decoration: none;
+}
+
+.wp-block-file a.wp-block-file__button:active {
+	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
+}
+
+.wp-block-file a.wp-block-file__button:active,
+.wp-block-file a.wp-block-file__button:focus,
+.wp-block-file a.wp-block-file__button:hover,
+.wp-block-file a.wp-block-file__button:visited {
+	color: inherit;
+	opacity: 1;
+}
 
 /*----------------------
 ### Video
@@ -2146,19 +2299,28 @@ button:focus {
 }
 
 .wp-block-button__link {
+	display: inline-block;
+	color: inherit;
 	text-decoration: none;
 	background: transparent;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
 	transition: all 0.2s ease-in-out;
+	font-weight: bold;
+	text-align: center;
 	padding: 0.7em 1.4em;
 	font-size: inherit;
 	border-radius: 0;
 }
 
+.wp-block-button__link:focus {
+	outline: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 .wp-block-button__link:hover {
-	text-decoration: none;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+	text-decoration: none;
 }
 
 .wp-block-button__link:hover a {
@@ -2347,11 +2509,15 @@ button:focus {
 ----------------------*/
 
 .wp-block-tag-cloud a {
+	display: inline-block;
+	color: inherit;
 	text-decoration: none;
 	background: transparent;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
 	transition: all 0.2s ease-in-out;
+	font-weight: bold;
+	text-align: center;
 	display: inline-block;
 	margin: 0 0.2em 1em;
 	padding: 0.3em 1em;
@@ -2360,9 +2526,14 @@ button:focus {
 	border-radius: 1000px;
 }
 
+.wp-block-tag-cloud a:focus {
+	outline: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 .wp-block-tag-cloud a:hover {
-	text-decoration: none;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+	text-decoration: none;
 }
 
 .wp-block-tag-cloud a:hover a {
@@ -2452,29 +2623,6 @@ button:focus {
 /*------------------------------------------
 ## Block Styles
 ------------------------------------------*/
-
-/*----------------------
-### List
-----------------------*/
-
-.is-style-checkbox li {
-	padding-left: 0;
-}
-
-.is-style-checkbox li::before {
-	top: 0;
-	left: -1.5em;
-	display: inline-block;
-	height: auto;
-	margin-right: 0.5em;
-	font-weight: 900;
-	font-family: "Font Awesome 5 Free";
-	background-color: transparent;
-	transform: none;
-	content: "\f058";
-	-webkit-mask-image: none;
-	mask-image: none;
-}
 
 /*------------------------------------------
 ## Block Properties
@@ -2721,5 +2869,24 @@ button:focus {
 
 	.gnav {
 		display: none;
+	}
+
+	.entry-content .alignleft {
+		float: none;
+		margin-right: auto;
+		margin-bottom: 2em;
+		margin-left: auto;
+	}
+
+	.entry-content .alignright {
+		float: none;
+		margin-right: auto;
+		margin-bottom: 2em;
+		margin-left: auto;
+	}
+
+	.wp-block-audio.alignleft,
+	.wp-block-audio.alignright {
+		text-align: center;
 	}
 }
