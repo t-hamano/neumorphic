@@ -246,6 +246,10 @@ select {
 	appearance: none;
 }
 
+select option {
+	color: #333;
+}
+
 .select {
 	position: relative;
 }
@@ -328,7 +332,7 @@ button:focus {
 .c-entry__header {
 	position: relative;
 	position: relative;
-	margin-bottom: 3em;
+	margin-bottom: 4em;
 	padding-bottom: 1em;
 }
 
@@ -1856,9 +1860,10 @@ button:focus {
 .entry-content > h4,
 .entry-content > h5,
 .entry-content > h6 {
-	text-shadow: 1px 1px 0 var(--color-text-border-color);
 	margin-top: 1.5em;
 	margin-bottom: 1em;
+	font-weight: bold;
+	text-shadow: 1px 1px 0 var(--color-text-border-color);
 }
 
 .entry-content > h1,
@@ -1907,8 +1912,12 @@ button:focus {
 	float: left;
 	margin: 0 0.1em 0 0;
 	padding: 0;
-	font-size: 5em;
+	font-size: 4em;
 	line-height: 1;
+}
+
+.entry-content p.has-background {
+	padding: 15px 20px;
 }
 
 .entry-content > ul,
@@ -2479,32 +2488,60 @@ button:focus {
 	color: var(--color-bg) !important;
 }
 
+.has-dark-color {
+	color: var(--color-nm-dark) !important;
+}
+
+.has-light-color {
+	color: var(--color-nm-light) !important;
+}
+
 .has-main-text-color {
 	color: var(--color-text-main) !important;
+}
+
+.has-accent-color {
+	color: var(--color-accent) !important;
 }
 
 .has-link-text-color {
 	color: var(--color-text-link) !important;
 }
 
-.has-darker-color {
-	color: var(--color-nm-dark) !important;
+.has-white-color {
+	color: #fff !important;
 }
+
+/*----------------------
+### Background color
+----------------------*/
 
 .has-bg-background-color {
 	background: var(--color-bg);
+}
+
+.has-dark-background-color {
+	background: var(--color-nm-dark);
+}
+
+.has-light-background-color {
+	background: var(--color-nm-light);
 }
 
 .has-main-text-background-color {
 	background: var(--color-text-main);
 }
 
+.has-accent-background-color {
+	background: var(--color-accent);
+}
+
 .has-link-text-background-color {
 	background: var(--color-text-link);
 }
 
-.has-darker-background-color {
-	background: var(--color-nm-dark);
+.has-white-background-color {
+	background: #fff;
 }
 
 /*----------------------
