@@ -72,41 +72,74 @@ function neomorphic_setup() {
 	$dark_color  = neomorphic_generate_new_color( $color_bg, -0.15 );
 	$light_color = neomorphic_generate_new_color( $color_bg, 0.1 );
 
-	// Generate block editor color palette.
-	$editor_color_palette = array(
+	// Change block editor color palette.
+	add_theme_support(
+		'editor-color-palette',
 		array(
-			'name'  => __( 'Background Color', 'neomorphic' ),
-			'slug'  => 'bg',
-			'color' => $color_bg,
-		),
-		array(
-			'name'  => __( 'Dark color', 'neomorphic' ),
-			'slug'  => 'darke',
-			'color' => $dark_color,
-		),
-		array(
-			'name'  => __( 'Light color', 'neomorphic' ),
-			'slug'  => 'light',
-			'color' => $light_color,
-		),
-		array(
-			'name'  => __( 'Main text color', 'neomorphic' ),
-			'slug'  => 'main-text',
-			'color' => $color_text_main,
-		),
-		array(
-			'name'  => __( 'Accent color', 'neomorphic' ),
-			'slug'  => 'accent',
-			'color' => $color_accent,
-		),
-		array(
-			'name'  => __( 'Link text color', 'neomorphic' ),
-			'slug'  => 'link-text',
-			'color' => $color_text_link,
-		),
+			array(
+				'name'  => __( 'Background Color', 'neomorphic' ),
+				'slug'  => 'bg',
+				'color' => $color_bg,
+			),
+			array(
+				'name'  => __( 'Dark color', 'neomorphic' ),
+				'slug'  => 'dark',
+				'color' => $dark_color,
+			),
+			array(
+				'name'  => __( 'Light color', 'neomorphic' ),
+				'slug'  => 'light',
+				'color' => $light_color,
+			),
+			array(
+				'name'  => __( 'Main text color', 'neomorphic' ),
+				'slug'  => 'main-text',
+				'color' => $color_text_main,
+			),
+			array(
+				'name'  => __( 'Accent color', 'neomorphic' ),
+				'slug'  => 'accent',
+				'color' => $color_accent,
+			),
+			array(
+				'name'  => __( 'Link text color', 'neomorphic' ),
+				'slug'  => 'link-text',
+				'color' => $color_text_link,
+			),
+			array(
+				'name'  => __( 'White', 'neomorphic' ),
+				'slug'  => 'white',
+				'color' => '#fff',
+			),
+		)
 	);
 
-	add_theme_support( 'editor-color-palette', $editor_color_palette );
+	// Change block editor font size preset.
+	add_theme_support(
+		'editor-font-sizes',
+		array(
+			array(
+				'name' => __( 'Small', 'neomorphic' ),
+				'size' => 13,
+				'slug' => 'small',
+			),
+			array(
+				'name' => __( 'Medium', 'neomorphic' ),
+				'size' => 19,
+				'slug' => 'medium',
+			),
+			array(
+				'name' => __( 'Large', 'neomorphic' ),
+				'size' => 26,
+				'slug' => 'large',
+			),
+			array(
+				'name' => __( 'Huge', 'neomorphic' ),
+				'size' => 32,
+				'slug' => 'huge',
+			),
+		)
+	);
 }
 
 add_action( 'after_setup_theme', 'neomorphic_setup' );

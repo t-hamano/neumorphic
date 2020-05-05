@@ -77,11 +77,15 @@
 
 .wp-block[data-type="core/paragraph"] p {
 
+	&.has-background {
+		padding: 15px 20px;
+	}
+
 	&.has-drop-cap:not(:focus)::first-letter {
 		float: left;
 		margin: 0 0.1em 0 0;
 		padding: 0;
-		font-size: 5em;
+		font-size: 4em;
 		line-height: 1;
 	}
 }
@@ -98,10 +102,11 @@
 	h4,
 	h5,
 	h6 {
-
-		@include nm-text;
 		margin-top: 2em;
 		margin-bottom: 1em;
+		font-weight: bold;
+
+		@include nm-text;
 	}
 
 	h1,
@@ -512,23 +517,3 @@
 /*------------------------------------------
 ## Block Styles
 ------------------------------------------*/
-
-/*----------------------
-### Font Size
-----------------------*/
-
-.has-small-font-size {
-	font-size: 0.8em;
-}
-
-.has-medium-font-size {
-	font-size: 1.2em;
-}
-
-.has-large-font-size {
-	font-size: 1.6em;
-}
-
-.has-huge-font-size {
-	font-size: 2em;
-}

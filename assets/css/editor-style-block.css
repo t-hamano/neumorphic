@@ -78,11 +78,15 @@
 ### Paragraph
 ----------------------*/
 
+.wp-block[data-type="core/paragraph"] p.has-background {
+	padding: 15px 20px;
+}
+
 .wp-block[data-type="core/paragraph"] p.has-drop-cap:not(:focus)::first-letter {
 	float: left;
 	margin: 0 0.1em 0 0;
 	padding: 0;
-	font-size: 5em;
+	font-size: 4em;
 	line-height: 1;
 }
 
@@ -96,9 +100,10 @@
 .wp-block[data-type="core/heading"] h4,
 .wp-block[data-type="core/heading"] h5,
 .wp-block[data-type="core/heading"] h6 {
-	text-shadow: 1px 1px 0 var(--color-text-border-color);
 	margin-top: 2em;
 	margin-bottom: 1em;
+	font-weight: bold;
+	text-shadow: 1px 1px 0 var(--color-text-border-color);
 }
 
 .wp-block[data-type="core/heading"] h1,
@@ -533,23 +538,3 @@
 /*------------------------------------------
 ## Block Styles
 ------------------------------------------*/
-
-/*----------------------
-### Font Size
-----------------------*/
-
-.has-small-font-size {
-	font-size: 0.8em;
-}
-
-.has-medium-font-size {
-	font-size: 1.2em;
-}
-
-.has-large-font-size {
-	font-size: 1.6em;
-}
-
-.has-huge-font-size {
-	font-size: 2em;
-}
