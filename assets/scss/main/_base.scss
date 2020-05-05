@@ -1,0 +1,270 @@
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+
+/*------------------------------------------
+## Basic tags
+------------------------------------------*/
+
+* {
+	box-sizing: border-box;
+	appearance: none;
+	text-size-adjust: 100%;
+}
+
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	color: var(--color-text-main);
+	font-size: $base_font_size_sp;
+	font-family: $base_font_falily;
+	line-height: $base_line_height;
+	letter-spacing: $base_letter_spacing;
+	word-break: break-word;
+	overflow-wrap: break-word;
+	background: var(--color-bg);
+
+	@include mq(lg-min) {
+		font-size: $base_font_size_pc;
+	}
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	font-size: 0;
+	line-height: 0;
+	vertical-align: bottom;
+	border: none;
+}
+
+a {
+	color: var(--color-text-link);
+	text-decoration: none;
+
+	@include mq(lg-min) {
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*------------------------------------------
+## Common classes
+------------------------------------------*/
+
+.screen-reader-text {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	word-wrap: normal !important;
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+}
+
+.container {
+	position: relative;
+	max-width: $container_width;
+	margin: 0 auto;
+	padding: 0 $container_padding;
+}
+
+.clearfix::after {
+	display: table;
+	clear: both;
+	content: "";
+}
+
+/*------------------------------------------
+## Vanilla Galleries
+------------------------------------------*/
+
+.widget_media_gallery {
+
+	.gallery {
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		margin: 0;
+
+		@for $i from 2 through 9 {
+
+			&.gallery-columns-#{$i} .gallery-item {
+				width: #{percentage(1 / $i)};
+			}
+		}
+	}
+
+	.gallery-item {
+		margin: 0 0 10px;
+		padding: 0 5px;
+	}
+
+	.gallery-icon {
+
+		img {
+
+			@include nm;
+			width: 100%;
+			border-radius: $base_border_radius / 2;
+		}
+
+		a {
+
+			@include nm-link;
+			position: relative;
+			display: block;
+			overflow: hidden;
+			border-radius: $base_border_radius / 2;
+
+			&::before {
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 1;
+				width: 100%;
+				height: 100%;
+				background: rgba(0, 0, 0, 0.3);
+				opacity: 0;
+				transition: opacity $base_transition_duration ease-in-out;
+				content: "";
+			}
+
+			@include mq(lg-min) {
+
+				&:hover::before {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	.gallery-caption {
+		margin-top: 0.5em;
+		color: inherit;
+		font-size: 0.8em;
+		text-align: center;
+		opacity: $text_color_thin;
+	}
+}
+
+/*------------------------------------------
+## Form parts
+------------------------------------------*/
+
+[type="text"],
+[type="tel"],
+[type="email"],
+[type="url"],
+[type="number"],
+[type="password"],
+[type="search"],
+[type="submit"] {
+	display: block;
+	width: 100%;
+	min-width: 0;
+	max-width: 100%;
+	height: auto;
+	padding: 0.7em 1.4em;
+	color: inherit;
+	font-size: inherit;
+	font-family: inherit;
+	background: transparent;
+	border: none;
+	outline: 0;
+	appearance: none;
+}
+
+[type="submit"] {
+	cursor: pointer;
+}
+
+[type="search"] {
+	appearance: searchfield;
+
+	&::-webkit-search-cancel-button {
+		appearance: searchfield-cancel-button;
+	}
+}
+
+select {
+	display: block;
+	width: 100%;
+	min-width: 0;
+	max-width: 100%;
+	height: auto;
+	padding: 0.7em 40px 0.7em 1.4em;
+	color: inherit;
+	font-size: inherit;
+	font-family: inherit;
+	background: transparent;
+	border: none;
+	outline: 0;
+	cursor: pointer;
+	appearance: none;
+}
+
+.select {
+	position: relative;
+
+	&::after {
+		position: absolute;
+		top: 50%;
+		right: 20px;
+		font-weight: 900;
+		font-family: "Font Awesome 5 Free";
+		transform: translateY(-50%);
+		content: "\f078";
+	}
+}
+
+textarea {
+	display: block;
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	padding: 0.7em 40px 0.7em 1.4em;
+	color: inherit;
+	font-size: inherit;
+	font-family: inherit;
+	background: transparent;
+	border: none;
+	outline: 0;
+	appearance: none;
+}
+
+button {
+	color: inherit;
+	font-weight: normal;
+	font-size: inherit;
+	font-family: inherit;
+	letter-spacing: inherit;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+
+	&:focus {
+		outline: none;
+	}
+}
+
+::placeholder {
+	color: inherit;
+	opacity: $base_placeholder_opacity;
+}

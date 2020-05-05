@@ -1,0 +1,22 @@
+//Default property value
+$base_font_falily: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Hiragino Sans", "Noto Sans CJK JP", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Sans Emoji";
+$base_font_size_sp: 14px;
+$base_font_size_pc: 16px;
+$base_line_height: 1.7;
+$base_letter_spacing: 0.04em;
+$base_transition_duration: 0.2s;
+$base_border_radius: 10px;
+$base_hover_opacity: 0.7;
+$base_placeholder_opacity: 0.7;
+
+$text_color_thin: 0.9;
+$container_width: 1400px;
+$container_padding: 5vw;
+
+// Media Query
+$breakpoints: (
+	"sm-max": "screen and (max-width: 559px)",
+	"md-max": "screen and (max-width: 959px)",
+	"md-min": "screen and (min-width: 560px)",
+	"lg-min": "screen and (min-width: 960px)",
+) !default;

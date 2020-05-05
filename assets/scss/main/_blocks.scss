@@ -1,0 +1,711 @@
+/*--------------------------------------------------------------
+# Front-end block styles
+--------------------------------------------------------------*/
+
+/*------------------------------------------
+## Common/Tag Style
+------------------------------------------*/
+
+.entry-content {
+
+	> * {
+		max-width: 100%;
+		margin: 0 0 2em;
+	}
+
+	> :last-child {
+		margin-bottom: 0 !important;
+	}
+
+	.alignleft {
+		float: left;
+		margin-right: 2em;
+		margin-bottom: 1em;
+	}
+
+	.alignright {
+		float: right;
+		margin-bottom: 1em;
+		margin-left: 2em;
+	}
+
+	.alignwide {
+		position: relative;
+		right: -47.5vw;
+		width: auto;
+		max-width: none;
+		max-width: $container_width + 100;
+		margin-right: calc(50% - 47.5vw);
+		margin-left: calc(50% - 47.5vw);
+		transform: translateX(-50%);
+	}
+
+	.alignfull {
+		position: relative;
+		right: 50%;
+		left: 50%;
+		width: 100vw;
+		max-width: 100vw;
+		margin-right: -50vw;
+		margin-left: -50vw;
+	}
+
+	/* Heading */
+	> h1,
+	> h2,
+	> h3,
+	> h4,
+	> h5,
+	> h6 {
+
+		@include nm-text;
+		margin-top: 1.5em;
+		margin-bottom: 1em;
+	}
+
+	> h1,
+	> h2 {
+
+		@include nm-border;
+		padding-bottom: 0.2em;
+	}
+
+	> h1 {
+		font-size: 2em;
+	}
+
+	> h2 {
+		font-size: 1.8em;
+	}
+
+	> h3 {
+		font-size: 1.6em;
+	}
+
+	> h4 {
+		font-size: 1.4em;
+	}
+
+	> h5 {
+		font-size: 1.2em;
+	}
+
+	> h6 {
+		font-size: 1em;
+	}
+
+	/* Paragraph */
+	p.has-drop-cap::first-letter {
+		float: left;
+		margin: 0 0.1em 0 0;
+		padding: 0;
+		font-size: 5em;
+		line-height: 1;
+	}
+
+	/* List */
+	> ul,
+	> ol {
+		margin-left: 0;
+		padding-left: 1.5em;
+
+		li {
+			margin: 0.5em 0;
+		}
+	}
+
+	/* Preformatted Text */
+	pre {
+		white-space: pre-wrap;
+	}
+}
+
+/*----------------------
+### Image
+----------------------*/
+
+.wp-block-image {
+
+	&:last-child::after {
+		display: table;
+		clear: both;
+		content: "";
+	}
+
+	.alignleft {
+		margin: 0 2em 0 0;
+	}
+
+	.alignright {
+		margin: 0 0 0 2em;
+	}
+
+	> figure {
+
+		@include nm;
+		padding: 5px;
+		border-radius: $base_border-radius;
+	}
+
+	figcaption {
+		margin-top: 0.5em;
+		margin-bottom: 0;
+		color: inherit;
+		font-size: 0.8em;
+		text-align: center;
+		opacity: $text_color_thin;
+	}
+}
+
+/*----------------------
+### Gallery
+----------------------*/
+
+/*----------------------
+### Quote
+----------------------*/
+
+.wp-block-quote {
+	position: relative;
+	padding: 20px 50px;
+	border-radius: $base_border_radius;
+
+	&::before,
+	&::after {
+		position: absolute;
+		font-weight: 900;
+		font-size: 20px;
+		font-family: "Font Awesome 5 Free";
+	}
+
+	&::before {
+		top: 10px;
+		left: 15px;
+		content: "\f10d";
+	}
+
+	&::after {
+		right: 15px;
+		bottom: 10px;
+		content: "\f10e";
+	}
+
+	p {
+		margin: 0 0 1em;
+	}
+
+	cite {
+		display: block;
+		font-size: 0.8em;
+		text-align: right;
+	}
+}
+
+/*----------------------
+### Audio
+----------------------*/
+
+.wp-block-audio {
+
+	audio {
+
+		@include nm-reverse;
+		display: block;
+		padding: 5px;
+		border-radius: 1000px;
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	figcaption {
+		margin-top: 1em;
+		margin-bottom: 0;
+		color: inherit;
+		font-size: 0.8em;
+		text-align: center;
+		opacity: $text_color_thin;
+	}
+}
+
+/*----------------------
+### Cover
+----------------------*/
+
+/*----------------------
+### File
+----------------------*/
+
+/*----------------------
+### Video
+----------------------*/
+
+.wp-block-video,
+.wp-block-embed {
+
+	figcaption {
+		margin-top: 1em;
+		margin-bottom: 0;
+		color: inherit;
+		font-size: 0.8em;
+		text-align: center;
+		opacity: $text_color_thin;
+	}
+}
+
+/*------------------------------------------
+## Formatting Block
+------------------------------------------*/
+
+/*----------------------
+### Code
+----------------------*/
+
+/*----------------------
+### Freeform
+----------------------*/
+
+/*----------------------
+### HTML
+----------------------*/
+
+/*----------------------
+### Preformatted
+----------------------*/
+
+/*----------------------
+### Pullquote
+----------------------*/
+
+.wp-block-pullquote {
+	position: relative;
+	padding: 20px 50px;
+	border-radius: $base_border_radius;
+
+	&::before,
+	&::after {
+		position: absolute;
+		font-weight: 900;
+		font-size: 20px;
+		font-family: "Font Awesome 5 Free";
+	}
+
+	&::before {
+		top: 10px;
+		left: 15px;
+		content: "\f10d";
+	}
+
+	&::after {
+		right: 15px;
+		bottom: 10px;
+		content: "\f10e";
+	}
+
+	p {
+		margin: 0;
+	}
+
+	cite {
+		display: block;
+		margin-top: 1em;
+		font-size: 0.8em;
+		text-align: center;
+	}
+}
+
+/*----------------------
+### Table
+----------------------*/
+
+/*----------------------
+### Verse
+----------------------*/
+
+/*------------------------------------------
+## Column Block
+------------------------------------------*/
+
+/*----------------------
+### Columns
+----------------------*/
+
+/*----------------------
+### Button
+----------------------*/
+
+.wp-block-button {
+	color: inherit;
+
+	&__link {
+
+		@include nm-button;
+		padding: 0.7em 1.4em;
+		font-size: inherit;
+		border-radius: 0;
+	}
+}
+
+/*----------------------
+### Group
+----------------------*/
+
+/*----------------------
+### Media-Text
+----------------------*/
+
+/*----------------------
+### More
+----------------------*/
+
+/*----------------------
+### Nextpage
+----------------------*/
+
+/*----------------------
+### Separator
+----------------------*/
+
+
+/*----------------------
+### Spacer
+----------------------*/
+
+/*------------------------------------------
+## Widget Block
+------------------------------------------*/
+
+/*----------------------
+### Shortcode
+----------------------*/
+
+/*----------------------
+### Archives
+----------------------*/
+
+/*----------------------
+### Calendar
+----------------------*/
+
+/*----------------------
+### Categories
+----------------------*/
+
+/*----------------------
+### Latest-Comments
+----------------------*/
+
+/*----------------------
+### Latest-Posts
+----------------------*/
+
+/*----------------------
+### RSS
+----------------------*/
+
+.wp-block-rss {
+	padding-left: 0 !important;
+	list-style: none;
+
+	> li {
+
+		@include nm;
+		padding: 1.5em 1em;
+		border-radius: $base_border_radius;
+	}
+
+	&.is-grid {
+		max-width: none;
+		margin-right: -8px;
+		margin-left: -8px;
+
+		> li {
+			margin: 0 8px 16px;
+		}
+	}
+
+	&:not(.is-grid) > li {
+		margin: 1em 0;
+	}
+
+	&__item-title a {
+		display: inline-block;
+
+		&::before {
+			display: inline-block;
+			margin-right: 0.5em;
+			font-weight: 900;
+			font-family: "Font Awesome 5 Free";
+			content: "\f09e";
+		}
+	}
+
+	&__item-publish-date {
+		display: block;
+		color: inherit;
+		font-size: 0.8em;
+
+		&::before {
+			margin-right: 0.2em;
+			font-weight: 400;
+			font-family: "Font Awesome 5 Free";
+			content: "\f017";
+		}
+	}
+
+	&__item-excerpt {
+		font-size: 0.9em;
+	}
+}
+
+/*----------------------
+### Search
+----------------------*/
+
+.wp-block-search {
+	position: relative;
+	display: block;
+
+	&__label {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		padding: 0;
+		overflow: hidden;
+		word-wrap: normal !important;
+		border: 0;
+		clip: rect(1px, 1px, 1px, 1px);
+		-webkit-clip-path: inset(50%);
+		clip-path: inset(50%);
+	}
+
+	&__input {
+
+		@include nm-input;
+		padding-right: 3em;
+		border-radius: 1000px;
+	}
+
+	&__button {
+		position: absolute;
+		top: 50%;
+		right: 0.5em;
+		width: 2em;
+		height: 2em;
+		padding: 0;
+		color: var(--color-accent);
+		transform: translateY(-50%);
+		visibility: hidden;
+		transition: opacity $base_transition_duration ease-in-out;
+
+		&::before {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			font-weight: 900;
+			font-family: "Font Awesome 5 Free";
+			transform: translate(-50%, -50%);
+			visibility: visible;
+			content: "\f002";
+		}
+
+		@include mq(lg-min) {
+
+			&:hover {
+				opacity: $base_hover_opacity;
+			}
+		}
+	}
+}
+
+/*----------------------
+### Tag-cloud
+----------------------*/
+
+.wp-block-tag-cloud a {
+
+	@include nm-button;
+	display: inline-block;
+	margin: 0 0.2em 1em;
+	padding: 0.3em 1em;
+	color: var(--color-accent);
+	font-size: 1em !important;
+	border-radius: 1000px;
+
+	.tag-link-count {
+		color: var(--color-text-main);
+		opacity: $text_color_thin;
+	}
+}
+
+/*------------------------------------------
+## Embed Block
+------------------------------------------*/
+
+.wp-block-embed {
+	text-align: center;
+
+	.wp-block-embed__wrapper {
+
+		> iframe {
+			display: block;
+			max-width: 100%;
+			margin-right: auto !important;
+			margin-left: auto !important;
+		}
+	}
+}
+
+// /*----------------------
+// ### Twitter
+// ----------------------*/
+
+.wp-block-embed-twitter .twitter-tweet {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+/*----------------------
+### Spotify
+----------------------*/
+
+.wp-block-embed-spotify .wp-block-embed__wrapper {
+
+	&::before {
+		content: none !important;
+	}
+
+	iframe {
+		position: static !important;
+		display: block;
+		height: 300px !important;
+	}
+}
+
+/*----------------------
+### Reddit, Crowdsignal
+----------------------*/
+
+.wp-block-embed-reddit iframe,
+.wp-block-embed-crowdsignal iframe {
+	background: #fff;
+}
+
+/*----------------------
+### Issuu
+----------------------*/
+
+.wp-block-embed-issuu .issuuembed {
+	margin: 0 auto;
+}
+
+/*----------------------
+### Mixcloud
+----------------------*/
+
+.wp-block-embed-mixcloud .wp-block-embed__wrapper {
+
+	&::before {
+		content: none !important;
+	}
+
+	iframe {
+		position: static !important;
+	}
+}
+
+/*----------------------
+### ReverbNation
+----------------------*/
+
+.wp-block-embed-reverbnation .wp-block-embed__wrapper::before {
+	padding-top: 55% !important;
+}
+
+/*------------------------------------------
+## Block Styles
+------------------------------------------*/
+
+/*----------------------
+### List
+----------------------*/
+
+.is-style-checkbox li {
+	padding-left: 0;
+
+	&::before {
+		top: 0;
+		left: -1.5em;
+		display: inline-block;
+		height: auto;
+		margin-right: 0.5em;
+		font-weight: 900;
+		font-family: "Font Awesome 5 Free";
+		background-color: transparent;
+		transform: none;
+		content: "\f058";
+		mask-image: none;
+	}
+}
+
+/*------------------------------------------
+## Block Properties
+------------------------------------------*/
+
+/*----------------------
+### Color
+----------------------*/
+
+.has-bg-color {
+	color: var(--color-bg) !important;
+}
+
+.has-main-text-color {
+	color: var(--color-text-main) !important;
+}
+
+.has-link-text-color {
+	color: var(--color-text-link) !important;
+}
+
+.has-darker-color {
+	color: var(--color-nm-dark) !important;
+}
+
+.has-bg-background-color {
+	background: var(--color-bg);
+}
+
+.has-main-text-background-color {
+	background: var(--color-text-main);
+}
+
+.has-link-text-background-color {
+	background: var(--color-text-link);
+}
+
+.has-darker-background-color {
+	background: var(--color-nm-dark);
+}
+
+/*----------------------
+### Font Size
+----------------------*/
+
+.has-small-font-size {
+	font-size: 0.8em;
+}
+
+.has-medium-font-size {
+	font-size: 1.2em;
+}
+
+.has-large-font-size {
+	font-size: 1.6em;
+}
+
+.has-huge-font-size {
+	font-size: 2em;
+}

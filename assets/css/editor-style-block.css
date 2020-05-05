@@ -1,0 +1,555 @@
+/*--------------------------------------------------------------
+# Block editor styles
+--------------------------------------------------------------*/
+
+/*------------------------------------------
+## Basic Style
+------------------------------------------*/
+
+.editor-styles-wrapper {
+	background: var(--color-bg);
+}
+
+.editor-post-title__block {
+	position: relative;
+}
+
+.editor-post-title__block::after {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	border-radius: 10px;
+	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
+	content: "";
+	bottom: -1.5px;
+}
+
+.editor-post-title__block::after {
+	bottom: 12px;
+	left: 14px;
+	width: calc(100% - 28px);
+	height: 3px;
+}
+
+.editor-post-title__block .editor-post-title__input {
+	text-shadow: 1px 1px 0 var(--color-text-border-color);
+	color: var(--color-text-main);
+	font-size: 2.2em;
+	font-family: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Hiragino Sans", "Noto Sans CJK JP", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Sans Emoji";
+	line-height: 1.4;
+	letter-spacing: 0.04em;
+}
+
+.editor-post-title__block .editor-post-title__input:focus {
+	color: inherit;
+}
+
+.wp-block {
+	max-width: 800px;
+	color: var(--color-text-main);
+	font-size: 16px;
+	font-family: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Hiragino Sans", "Noto Sans CJK JP", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Sans Emoji";
+	line-height: 1.7;
+	letter-spacing: 0.04em;
+	word-break: break-word;
+}
+
+.wp-block [data-block] {
+	margin-top: 56px;
+	margin-bottom: 56px;
+}
+
+.wp-block[data-align="left"] [data-block],
+.wp-block[data-align="right"] [data-block] {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.wp-block a {
+	color: var(--color-text-link);
+}
+
+/*------------------------------------------
+## Common Block
+------------------------------------------*/
+
+/*----------------------
+### Paragraph
+----------------------*/
+
+.wp-block[data-type="core/paragraph"] p.has-drop-cap:not(:focus)::first-letter {
+	float: left;
+	margin: 0 0.1em 0 0;
+	padding: 0;
+	font-size: 5em;
+	line-height: 1;
+}
+
+/*----------------------
+### Heading
+----------------------*/
+
+.wp-block[data-type="core/heading"] h1,
+.wp-block[data-type="core/heading"] h2,
+.wp-block[data-type="core/heading"] h3,
+.wp-block[data-type="core/heading"] h4,
+.wp-block[data-type="core/heading"] h5,
+.wp-block[data-type="core/heading"] h6 {
+	text-shadow: 1px 1px 0 var(--color-text-border-color);
+	margin-top: 2em;
+	margin-bottom: 1em;
+}
+
+.wp-block[data-type="core/heading"] h1,
+.wp-block[data-type="core/heading"] h2 {
+	position: relative;
+	padding-bottom: 0.2em;
+}
+
+.wp-block[data-type="core/heading"] h1::after,
+.wp-block[data-type="core/heading"] h2::after {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	border-radius: 10px;
+	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
+	content: "";
+	bottom: -1.5px;
+}
+
+.wp-block[data-type="core/heading"] h1 {
+	font-size: 2em;
+}
+
+.wp-block[data-type="core/heading"] h2 {
+	font-size: 1.8em;
+}
+
+.wp-block[data-type="core/heading"] h3 {
+	font-size: 1.6em;
+}
+
+.wp-block[data-type="core/heading"] h4 {
+	font-size: 1.4em;
+}
+
+.wp-block[data-type="core/heading"] h5 {
+	font-size: 1.2em;
+}
+
+.wp-block[data-type="core/heading"] h6 {
+	font-size: 1em;
+}
+
+/*----------------------
+### Image
+----------------------*/
+
+/*----------------------
+### Gallery
+----------------------*/
+
+/*----------------------
+### List
+----------------------*/
+
+.wp-block[data-type="core/list"] ul,
+.wp-block[data-type="core/list"] ol {
+	margin-left: 0;
+	padding-left: 1.5em;
+}
+
+.wp-block[data-type="core/list"] ul li,
+.wp-block[data-type="core/list"] ol li {
+	margin: 0.5em 0;
+	padding-left: 0;
+}
+
+.wp-block[data-type="core/list"] ul.is-style-checkbox li::before,
+.wp-block[data-type="core/list"] ol.is-style-checkbox li::before {
+	top: 0 !important;
+	left: -1.5em !important;
+	height: auto !important;
+	font-weight: 900;
+	font-family: "Font Awesome 5 Free";
+	background-color: transparent !important;
+	transform: none !important;
+	content: "\f058" !important;
+	-webkit-mask-image: none !important;
+	mask-image: none !important;
+}
+
+/*----------------------
+### Quote
+----------------------*/
+
+/*----------------------
+### Audio
+----------------------*/
+
+.wp-block-audio audio {
+	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
+	display: block;
+	padding: 5px;
+	border-radius: 1000px;
+}
+
+.wp-block-audio figcaption {
+	margin-top: 1em;
+	margin-bottom: 0;
+	color: inherit;
+	font-size: 0.8em;
+	text-align: center;
+	opacity: 0.9;
+}
+
+/*----------------------
+### Cover
+----------------------*/
+
+/*----------------------
+### File
+----------------------*/
+
+/*----------------------
+### Video
+----------------------*/
+
+/*------------------------------------------
+## Formatting Block
+------------------------------------------*/
+
+/*----------------------
+### Code
+----------------------*/
+
+/*----------------------
+### Freeform
+----------------------*/
+
+/*----------------------
+### HTML
+----------------------*/
+
+/*----------------------
+### Preformatted
+----------------------*/
+
+/*----------------------
+### Pullquote
+----------------------*/
+
+/*----------------------
+### Table
+----------------------*/
+
+/*----------------------
+### Verse
+----------------------*/
+
+/*------------------------------------------
+## Column Block
+------------------------------------------*/
+
+/*----------------------
+### Columns
+----------------------*/
+
+/*----------------------
+### Button
+----------------------*/
+
+.wp-block-button {
+	color: inherit;
+}
+
+.wp-block-button__link {
+	padding: 0.7em 1.4em;
+	font-size: inherit;
+	background-color: transparent;
+	border-radius: 0;
+}
+
+.wp-block-button .block-editor-rich-text__editable {
+	background: transparent;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+	transition: all 0.2s ease-in-out;
+}
+
+.wp-block-button .block-editor-rich-text__editable:focus {
+	outline: none;
+	background: transparent;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+	transition: all 0.2s ease-in-out;
+}
+
+.wp-block-button :not(.has-text-color):not(.is-style-outline) [data-rich-text-placeholder]::after {
+	color: inherit;
+	opacity: 0.7;
+}
+
+/*----------------------
+### Group
+----------------------*/
+
+/*----------------------
+### Media-Text
+----------------------*/
+
+/*----------------------
+### More
+----------------------*/
+
+/*----------------------
+### Nextpage
+----------------------*/
+
+/*----------------------
+### Separator
+----------------------*/
+
+/*----------------------
+### Spacer
+----------------------*/
+
+/*------------------------------------------
+## Widget Block
+------------------------------------------*/
+
+/*----------------------
+### Shortcode
+----------------------*/
+
+/*----------------------
+### Archives
+----------------------*/
+
+/*----------------------
+### Calendar
+----------------------*/
+
+/*----------------------
+### Categories
+----------------------*/
+
+/*----------------------
+### Latest-Comments
+----------------------*/
+
+/*----------------------
+### Latest-Posts
+----------------------*/
+
+/*----------------------
+### RSS
+----------------------*/
+
+.block-editor .wp-block-rss {
+	padding-left: 0;
+	list-style-type: none;
+}
+
+.block-editor .wp-block-rss > li {
+	background: transparent;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+	transition: all 0.2s ease-in-out;
+	padding: 1.5em 1em;
+	border-radius: 10px;
+}
+
+.block-editor .wp-block-rss.is-grid {
+	max-width: none;
+	margin-right: -8px;
+	margin-left: -8px;
+}
+
+.block-editor .wp-block-rss.is-grid > li {
+	margin: 0 8px 16px;
+}
+
+.block-editor .wp-block-rss:not(.is-grid) > li {
+	margin: 1em 0;
+}
+
+.block-editor .wp-block-rss__item-title a {
+	display: inline-block;
+	text-decoration: none;
+}
+
+.block-editor .wp-block-rss__item-title a::before {
+	display: inline-block;
+	margin-right: 0.5em;
+	font-weight: 900;
+	font-family: "Font Awesome 5 Free";
+	content: "\f09e";
+}
+
+.block-editor .wp-block-rss__item-publish-date {
+	display: block;
+	color: inherit;
+	font-size: 0.8em;
+}
+
+.block-editor .wp-block-rss__item-publish-date::before {
+	margin-right: 0.2em;
+	font-weight: 400;
+	font-family: "Font Awesome 5 Free";
+	content: "\f017";
+}
+
+.block-editor .wp-block-rss__item-excerpt {
+	font-size: 0.9em;
+}
+
+/*----------------------
+### Search
+----------------------*/
+
+.wp-block-search .wp-block-search__label {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	padding: 0;
+	overflow: hidden;
+	word-wrap: normal !important;
+	border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+}
+
+.wp-block-search .wp-block-search__input {
+	background: transparent;
+	border: none;
+	outline: none;
+	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
+	transition: all 0.2s ease-in-out;
+	padding: 0.7em 3em 0.7em 1.4em;
+	color: inherit;
+	font-size: inherit;
+	font-family: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Hiragino Sans", "Noto Sans CJK JP", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Sans Emoji";
+	border-radius: 1000px;
+}
+
+.wp-block-search .wp-block-search__input:focus {
+	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
+}
+
+.wp-block-search .wp-block-search__input::-webkit-input-placeholder {
+	color: inherit;
+	opacity: 0.7;
+}
+
+.wp-block-search .wp-block-search__input::-moz-placeholder {
+	color: inherit;
+	opacity: 0.7;
+}
+
+.wp-block-search .wp-block-search__input:-ms-input-placeholder {
+	color: inherit;
+	opacity: 0.7;
+}
+
+.wp-block-search .wp-block-search__input::-ms-input-placeholder {
+	color: inherit;
+	opacity: 0.7;
+}
+
+.wp-block-search .wp-block-search__input::placeholder {
+	color: inherit;
+	opacity: 0.7;
+}
+
+.wp-block-search .wp-block-search__button {
+	position: absolute;
+	top: 50%;
+	right: 0.5em;
+	width: 2em;
+	height: 2em;
+	margin: 0;
+	padding: 0;
+	color: var(--color-accent);
+	font-size: inherit;
+	transform: translateY(-50%);
+	visibility: hidden;
+	transition: opacity 0.2s ease-in-out;
+}
+
+.wp-block-search .wp-block-search__button::before {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	font-weight: 900;
+	font-family: "Font Awesome 5 Free";
+	transform: translate(-50%, -50%);
+	visibility: visible;
+	content: "\f002";
+}
+
+/*----------------------
+### Tag-cloud
+----------------------*/
+
+.wp-block-tag-cloud a {
+	text-decoration: none;
+	background: transparent;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+	display: inline-block;
+	margin: 0 0.2em 1em;
+	padding: 0.3em 1em;
+	color: var(--color-accent);
+	font-size: 1em !important;
+	border-radius: 1000px;
+	pointer-events: none;
+}
+
+.wp-block-tag-cloud a:hover {
+	text-decoration: none;
+	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+}
+
+.wp-block-tag-cloud a:hover a {
+	text-decoration: none;
+}
+
+.wp-block-tag-cloud a:active {
+	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
+}
+
+.wp-block-tag-cloud a .tag-link-count {
+	color: var(--color-text-main);
+	opacity: 0.9;
+}
+
+/*------------------------------------------
+## Embed Block
+------------------------------------------*/
+
+/*------------------------------------------
+## Block Styles
+------------------------------------------*/
+
+/*----------------------
+### Font Size
+----------------------*/
+
+.has-small-font-size {
+	font-size: 0.8em;
+}
+
+.has-medium-font-size {
+	font-size: 1.2em;
+}
+
+.has-large-font-size {
+	font-size: 1.6em;
+}
+
+.has-huge-font-size {
+	font-size: 2em;
+}

@@ -1,0 +1,514 @@
+/*--------------------------------------------------------------
+# Widget
+--------------------------------------------------------------*/
+
+/*------------------------------------------
+## Common
+------------------------------------------*/
+
+.widget {
+
+	@include nm();
+	padding: 1.5em 1em;
+	border-radius: $base_border_radius;
+
+	+ .widget {
+		margin-top: 2em;
+	}
+
+	&__title {
+
+		@include nm-border;
+		@include nm-text;
+		margin: 0 0 1em;
+		padding-bottom: 0.5em;
+		color: var(--color-accent);
+		font-weight: bold;
+		font-size: 1.2em;
+		line-height: 1.4;
+		text-align: center;
+	}
+}
+
+/*------------------------------------------
+## Categories, Archive
+------------------------------------------*/
+
+.widget_categories,
+.widget_archive {
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		a {
+			color: inherit;
+
+			&::before {
+				display: inline-block;
+				margin-right: 0.5em;
+				font-weight: 900;
+				font-family: "Font Awesome 5 Free";
+				content: "\f07b";
+			}
+		}
+
+		.children {
+			margin: 0 0 0.5em;
+			padding: 0 0 0 1.5em;
+
+			a::before {
+				transform: scale(0.6) translateY(-1px);
+				content: "\f054";
+			}
+		}
+	}
+
+	form {
+		position: relative;
+
+		&::after {
+			position: absolute;
+			top: 50%;
+			right: 20px;
+			font-weight: 900;
+			font-family: "Font Awesome 5 Free";
+			transform: translateY(-50%);
+			content: "\f078";
+		}
+	}
+
+	select {
+
+		@include nm-input;
+		border-radius: 1000px;
+	}
+}
+
+/*------------------------------------------
+## Tag Cloud
+------------------------------------------*/
+
+.widget_tag_cloud a {
+
+	@include nm-button;
+	display: inline-block;
+	margin: 0 0.1em 0.8em;
+	padding: 0.3em 1em;
+	color: var(--color-accent);
+	font-size: 0.9em !important;
+	border-radius: 1000px;
+}
+
+/*------------------------------------------
+## Calendar
+------------------------------------------*/
+
+.widget_calendar {
+
+	.calendar_wrap {
+		max-width: 350px;
+		margin: 0 auto;
+
+		@include mq(lg-min) {
+			max-width: 100%;
+		}
+	}
+
+	table {
+		width: 100%;
+		table-layout: fixed;
+
+		caption {
+			margin-bottom: 1em;
+			font-weight: bold;
+		}
+
+		thead th {
+			font-weight: bold;
+			text-align: center;
+		}
+
+		tbody td {
+			padding: 0;
+			padding: 0.3em;
+			line-height: 2.4;
+			text-align: center;
+
+			a {
+
+				@include nm-button;
+				display: block;
+				color: var(--color-accent);
+				font-weight: bold;
+				border-radius: $base_border_radius;
+			}
+		}
+
+		tfoot td {
+			padding-top: 0.5em;
+
+			&#next {
+				text-align: right;
+			}
+
+			&#prev,
+			&#next {
+
+				a {
+					padding: 0.5em;
+					color: var(--color-accent);
+				}
+			}
+		}
+	}
+}
+
+/*------------------------------------------
+## Recent Comments
+------------------------------------------*/
+
+.widget_recent_comments #recentcomments {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	a {
+		color: inherit;
+
+		&::before {
+			display: inline-block;
+			margin-right: 0.5em;
+			font-weight: 900;
+			font-family: "Font Awesome 5 Free";
+			content: "\f075";
+		}
+	}
+}
+
+/*------------------------------------------
+## Nav Menu
+------------------------------------------*/
+
+.widget_nav_menu .menu {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	> li > .sub-menu {
+		margin-bottom: 0.5em;
+	}
+
+	a {
+		color: inherit;
+
+		&::before {
+			display: inline-block;
+			margin-right: 0.5em;
+			font-weight: 900;
+			font-family: "Font Awesome 5 Free";
+			content: "\f15b";
+		}
+	}
+
+	.sub-menu {
+		margin: 0;
+		padding: 0 0 0 1.5em;
+		list-style: none;
+
+		a::before {
+			transform: scale(0.6) translateY(-1px);
+			content: "\f054";
+		}
+	}
+}
+
+/*------------------------------------------
+## Image
+------------------------------------------*/
+
+.widget_media_image {
+	text-align: center;
+
+	img {
+
+		@include nm;
+		width: 100%;
+		border-radius: $base_border_radius / 2;
+	}
+
+	a {
+
+		@include nm-link;
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+		border-radius: $base_border_radius / 2;
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.3);
+			opacity: 0;
+			transition: opacity $base_transition_duration ease-in-out;
+			content: "";
+		}
+
+		> img {
+			padding: 0;
+			border-radius: 0;
+			box-shadow: none;
+		}
+
+		@include mq(lg-min) {
+
+			&:hover {
+
+				&::before {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	figure {
+		margin: 0 auto;
+	}
+
+	figcaption {
+		margin-top: 0.5em;
+		margin-bottom: 0;
+		color: inherit;
+		font-size: 0.8em;
+		text-align: center;
+		opacity: $text_color_thin;
+	}
+}
+
+/*------------------------------------------
+## RSS
+------------------------------------------*/
+
+.widget_rss {
+
+	.widget__title .rsswidget {
+		color: var(--color-accent);
+
+		&:first-child {
+			display: none;
+		}
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+
+			&:not(:last-child) {
+
+				@include nm-border;
+				margin-bottom: 1em;
+				padding-bottom: 1em;
+			}
+
+			.rsswidget {
+				display: inline-block;
+				color: inherit;
+				font-weight: bold;
+
+				&::before {
+					display: inline-block;
+					margin-right: 0.5em;
+					font-weight: 900;
+					font-family: "Font Awesome 5 Free";
+					content: "\f09e";
+				}
+			}
+
+			.rss-date {
+				display: block;
+				font-size: 0.8em;
+
+				&::before {
+					margin-right: 0.2em;
+					font-weight: 400;
+					font-family: "Font Awesome 5 Free";
+					content: "\f017";
+				}
+			}
+
+			.rssSummary {
+				font-size: 0.9em;
+			}
+
+			cite {
+				float: right;
+				font-size: 0.8em;
+			}
+		}
+	}
+}
+
+/*------------------------------------------
+## Meta
+------------------------------------------*/
+
+.widget_meta ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	a {
+		color: inherit;
+
+		&::before {
+			display: inline-block;
+			margin-right: 0.5em;
+			font-weight: 900;
+			font-family: "Font Awesome 5 Free";
+			content: "\f05a";
+		}
+	}
+}
+
+/*------------------------------------------
+## Page
+------------------------------------------*/
+
+.widget_pages ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	a {
+		color: inherit;
+
+		&::before {
+			display: inline-block;
+			margin-right: 0.5em;
+			font-weight: 900;
+			font-family: "Font Awesome 5 Free";
+			content: "\f15b";
+		}
+	}
+
+	.children {
+		margin: 0 0 0.5em;
+		padding: 0 0 0 1.5em;
+
+		a::before {
+			transform: scale(0.6) translateY(-1px);
+			content: "\f054";
+		}
+	}
+}
+
+/*------------------------------------------
+## Recent Entries
+------------------------------------------*/
+
+.widget_recent_entries ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	li {
+
+		&:not(:last-child) {
+
+			@include nm-border;
+			margin-bottom: 1em;
+			padding-bottom: 1em;
+		}
+
+		a {
+			display: inline-block;
+			color: inherit;
+			font-weight: bold;
+
+			&::before {
+				display: inline-block;
+				margin-right: 0.5em;
+				font-weight: 900;
+				font-family: "Font Awesome 5 Free";
+				content: "\f303";
+			}
+		}
+
+		.post-date {
+			display: block;
+			font-size: 0.8em;
+
+			&::before {
+				margin-right: 0.2em;
+				font-weight: 400;
+				font-family: "Font Awesome 5 Free";
+				content: "\f017";
+			}
+		}
+	}
+}
+
+/*------------------------------------------
+## Text
+------------------------------------------*/
+
+.widget_text {
+
+	> * {
+		margin: 0 0 2em;
+	}
+
+	> :last-child {
+		margin-bottom: 0 !important;
+	}
+
+	ul {
+		margin-left: 0;
+		padding-left: 1.5em;
+		list-style: outside disc;
+	}
+
+	ol {
+		margin-left: 0;
+		padding-left: 1.5em;
+		list-style: outside decimal;
+	}
+
+	.alignleft {
+		float: left;
+		margin: 0 $base_font_size_pc 0 0;
+	}
+
+	.alignright {
+		float: right;
+		margin: 0 0 0 $base_font_size_pc;
+	}
+
+	.aligncenter {
+		display: block;
+		margin: 0 auto;
+	}
+
+	img {
+
+		@include nm;
+		border-radius: $base_border_radius / 2;
+	}
+
+	figcaption {
+		margin-top: 0.5em;
+		margin-bottom: 0;
+		color: inherit;
+		font-size: 0.8em;
+		text-align: center;
+		opacity: $text_color_thin;
+	}
+}

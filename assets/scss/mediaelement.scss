@@ -1,0 +1,29 @@
+/*--------------------------------------------------------------
+# WordPress media player styles
+--------------------------------------------------------------*/
+
+@import "variable";
+@import "mixin";
+
+.mejs-container.mejs-audio {
+
+	@include nm();
+	border-radius: 1000px;
+
+	.mejs-mediaelement {
+		top: 3px;
+		left: 3px;
+		width: calc(100% - 5px);
+		height: calc(100% - 5px);
+		background: var(--color-nm-dark);
+		border-radius: 1000px;
+	}
+
+	.mejs-controls {
+		background: transparent;
+
+		.mejs-time-rail .mejs-time-current {
+			background: var(--color-accent);
+		}
+	}
+}

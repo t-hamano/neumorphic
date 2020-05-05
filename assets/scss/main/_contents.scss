@@ -1,0 +1,48 @@
+/*--------------------------------------------------------------
+# Contents
+--------------------------------------------------------------*/
+
+.contents {
+	padding: 10px 0;
+	overflow: hidden;
+
+	@include mq(lg-min) {
+		margin-bottom: 4em;
+	}
+
+	&__inner {
+
+		@include mq(lg-min) {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.main {
+			display: block;
+			width: 100%;
+			margin: 0 auto;
+
+			@include mq(lg-min) {
+				max-width: 1200px;
+			}
+		}
+	}
+
+	&--sidebar-right,
+	&--sidebar-left {
+
+		.main {
+
+			@include mq(lg-min) {
+				width: calc(70% - 70px);
+			}
+		}
+	}
+
+	&--sidebar-left .contents__inner {
+
+		@include mq(lg-min) {
+			flex-flow: row-reverse;
+		}
+	}
+}

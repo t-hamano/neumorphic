@@ -1,0 +1,403 @@
+/*--------------------------------------------------------------
+# Component
+--------------------------------------------------------------*/
+
+/*------------------------------------------
+## Entry area
+------------------------------------------*/
+
+.c-entry {
+
+	&__header {
+
+		@include nm-border;
+		position: relative;
+		margin-bottom: 3em;
+		padding-bottom: 1em;
+	}
+
+	&__title {
+
+		@include nm-text;
+		margin: 0;
+		font-weight: bold;
+		font-size: 1.8em;
+		line-height: 1.4;
+
+		@include mq(lg-min) {
+			font-size: 2.2em;
+		}
+	}
+
+	&__edit {
+		text-align: center;
+	}
+
+	&__edit-link {
+
+		@include nm-button;
+		display: inline-block;
+		margin-top: 3em;
+		padding: 0.7em 1.4em;
+		border-radius: 1000px;
+	}
+}
+
+/*------------------------------------------
+## Archive post area
+------------------------------------------*/
+
+.c-entries {
+
+	@include mq(md-min) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	@include mq(lg-min) {
+		display: block;
+	}
+
+	&__item {
+
+		@include mq(md-min) {
+			width: calc(50% - #{$container_padding / 2});
+		}
+
+		@include mq(lg-min) {
+			width: 100%;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 1.5em;
+		}
+
+		> a {
+
+			@include nm-link;
+			display: block;
+			height: 100%;
+			padding: 1em;
+			color: inherit;
+			text-decoration: none;
+			border-radius: $base_border_radius;
+		}
+	}
+
+	&__thumbnail {
+
+		@include nm;
+		position: relative;
+		margin: 0 0 1em;
+		overflow: hidden;
+		border-radius: $base_border_radius / 2;
+
+		@include mq(lg-min) {
+			float: left;
+			width: 30%;
+			margin: 0 1em 0 0;
+		}
+
+		&::before {
+			display: block;
+			padding-top: 62%;
+			content: "";
+		}
+
+		&::after {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.3);
+			opacity: 0;
+			transition: opacity $base_transition_duration ease-in-out;
+			content: "";
+		}
+
+		img {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			font-family: "object-fit: cover;";
+		}
+
+		&--noimage {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: var(--color-nm-dark);
+
+			i {
+				font-size: 18vw;
+				transition: transform $base_transition_duration ease-in-out;
+
+				@include mq(md-min) {
+					font-size: 3em;
+				}
+			}
+		}
+	}
+
+	&__body {
+		overflow: hidden;
+	}
+
+	&__header {
+		margin: -0.3em 0 0.5em;
+	}
+
+	&__title {
+		margin: 0;
+		font-weight: bold;
+		font-size: 1.2em;
+		line-height: 1.4;
+	}
+}
+
+/*------------------------------------------
+## Comment area
+------------------------------------------*/
+
+.c-comment {
+
+	@include nm;
+	margin-top: 3em;
+	padding: 1.5em 2em;
+	border-radius: 10px;
+
+	&__title {
+
+		@include nm-border;
+		@include nm-text;
+		position: relative;
+		margin: 0 0 1em;
+		padding-bottom: 0.5em;
+		font-size: 1.4em;
+	}
+
+	&__list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		> li {
+
+			&:not(:last-child) {
+
+				@include nm-border;
+				margin-bottom: 1em;
+				padding-bottom: 1em;
+			}
+		}
+
+		.children {
+			margin: 0;
+			padding: 0 0 0 2em;
+			list-style: none;
+		}
+
+		.comment-meta {
+			margin-bottom: 1em;
+		}
+
+		.comment-metadata {
+			font-size: 0.8em;
+
+			.edit-link {
+				margin-left: 1em;
+			}
+		}
+
+		.comment-content > p {
+			margin: 0;
+		}
+
+		.reply {
+			margin-top: 0.5em;
+		}
+	}
+
+	&__nav {
+
+		&--top {
+			margin-bottom: 1em;
+		}
+
+		&--bottom {
+			margin-top: 1em;
+		}
+	}
+
+	&__form {
+		margin: 0 0 1em;
+
+		.comment-form-comment {
+			margin: 0 0 1em;
+
+			label {
+				display: block;
+				margin-bottom: 0.5em;
+			}
+
+			textarea {
+
+				@include nm-input;
+				border-radius: $base_border_radius;
+			}
+		}
+
+		.form-submit {
+			margin: 0;
+
+			[type="submit"] {
+
+				@include nm-button;
+				width: auto;
+				border-radius: 1000px;
+			}
+		}
+	}
+}
+
+/*------------------------------------------
+## Meta info
+------------------------------------------*/
+
+.c-meta {
+	margin-top: 0.5em;
+
+	&__list {
+		display: flex;
+		margin: 0;
+		padding: 0;
+		font-size: 0.8em;
+		list-style-type: none;
+	}
+
+	&__item:not(:last-child) {
+		margin-right: 1em;
+	}
+}
+
+/*------------------------------------------
+## SNS button
+------------------------------------------*/
+
+.c-sns {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+	font-size: 1.3em;
+	list-style: none;
+
+	&__item {
+		margin: 0 0.3em 0.6em;
+
+		a {
+
+			@include nm-button;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 2em;
+			height: 2em;
+			color: var(--color-accent);
+			border-radius: $base_border_radius;
+
+			.fa-line {
+				font-size: 1.2em;
+			}
+		}
+	}
+}
+
+/*------------------------------------------
+## Search form
+------------------------------------------*/
+
+.c-search-form {
+
+	&__inner {
+		position: relative;
+	}
+
+	&__input {
+
+		@include nm-input;
+		padding-right: 3em;
+		border-radius: 1000px;
+	}
+
+	&__btn {
+		position: absolute;
+		top: 50%;
+		right: 0.5em;
+		width: 2em;
+		height: 2em;
+		padding: 0;
+		color: var(--color-accent);
+		transform: translateY(-50%);
+		transition: opacity $base_transition_duration ease-in-out;
+
+		@include mq(lg-min) {
+
+			&:hover {
+				opacity: $base_hover_opacity;
+			}
+		}
+	}
+}
+
+/*------------------------------------------
+## Pagination
+------------------------------------------*/
+
+.c-pagination {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 4em;
+
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 2.5em;
+		height: 2.5em;
+		margin: 0 0.3em 0.6em;
+		color: var(--color-accent);
+		font-weight: bold;
+		text-decoration: none;
+		border-radius: 50%;
+
+		&--link,
+		&--prev,
+		&--next {
+
+			@include nm-button;
+			color: var(--color-accent);
+		}
+
+		&--current {
+
+			@include nm-light;
+			color: inherit;
+		}
+
+		@include mq(lg-min) {
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+}
