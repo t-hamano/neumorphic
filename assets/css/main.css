@@ -54,6 +54,14 @@ table {
 	border-spacing: 0;
 }
 
+figure {
+	margin: 0;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
 /*------------------------------------------
 ## Common classes
 ------------------------------------------*/
@@ -1886,7 +1894,7 @@ button:focus {
 ------------------------------------------*/
 
 .entry-content {
-	/* Heading */ /* Paragraph */ /* List */ /* Preformatted Text */
+	/* Heading */ /* Paragraph */ /* List */
 }
 
 .entry-content > * {
@@ -1900,14 +1908,19 @@ button:focus {
 
 .entry-content .alignleft {
 	float: left;
-	margin-right: 2em;
-	margin-bottom: 1em;
+	margin-right: 1.5em;
+	margin-bottom: 0.5em;
 }
 
 .entry-content .alignright {
 	float: right;
-	margin-bottom: 1em;
-	margin-left: 2em;
+	margin-bottom: 0.5em;
+	margin-left: 1.5em;
+}
+
+.entry-content .aligncenter {
+	display: block;
+	margin: 0 auto 2em;
 }
 
 .entry-content .alignwide {
@@ -1998,6 +2011,10 @@ button:focus {
 	padding: 15px 20px;
 }
 
+.entry-content p > img {
+	margin: 0 5px;
+}
+
 .entry-content > ul,
 .entry-content > ol {
 	margin-left: 0;
@@ -2034,8 +2051,11 @@ button:focus {
 	padding-left: 1.5em;
 }
 
-.entry-content pre {
-	white-space: pre-wrap;
+.entry-content code {
+	padding: 0.1em 0.3em;
+	color: var(--color-text-main);
+	background: var(--color-nm-dark);
+	border-radius: 4px;
 }
 
 /*----------------------
@@ -2121,6 +2141,10 @@ button:focus {
 ### Audio
 ----------------------*/
 
+.wp-block-audio.aligncenter {
+	text-align: center;
+}
+
 .wp-block-audio audio {
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	width: auto;
@@ -2134,7 +2158,7 @@ button:focus {
 }
 
 .wp-block-audio.aligncenter audio {
-	margin: 0 auto;
+	text-align: center;
 }
 
 .wp-block-audio figcaption {
@@ -2142,7 +2166,6 @@ button:focus {
 	margin-bottom: 0;
 	color: inherit;
 	font-size: 0.8em;
-	text-align: center;
 	opacity: 0.9;
 }
 
@@ -2203,13 +2226,23 @@ button:focus {
 ### Video
 ----------------------*/
 
+.wp-block-video video,
+.wp-block-embed video {
+	display: block;
+}
+
+.wp-block-video.aligncenter video,
+.wp-block-embed.aligncenter video {
+	margin-right: auto;
+	margin-left: auto;
+}
+
 .wp-block-video figcaption,
 .wp-block-embed figcaption {
 	margin-top: 1em;
 	margin-bottom: 0;
 	color: inherit;
 	font-size: 0.8em;
-	text-align: center;
 	opacity: 0.9;
 }
 
@@ -2629,35 +2662,39 @@ button:focus {
 ------------------------------------------*/
 
 /*----------------------
+### Inline color
+----------------------*/
+
+/*----------------------
 ### Color
 ----------------------*/
 
 .has-bg-color {
-	color: var(--color-bg) !important;
+	color: var(--color-bg);
 }
 
 .has-dark-color {
-	color: var(--color-nm-dark) !important;
+	color: var(--color-nm-dark);
 }
 
 .has-light-color {
-	color: var(--color-nm-light) !important;
+	color: var(--color-nm-light);
 }
 
 .has-main-text-color {
-	color: var(--color-text-main) !important;
+	color: var(--color-text-main);
 }
 
 .has-accent-color {
-	color: var(--color-accent) !important;
+	color: var(--color-accent);
 }
 
 .has-link-text-color {
-	color: var(--color-text-link) !important;
+	color: var(--color-text-link);
 }
 
 .has-white-color {
-	color: #fff !important;
+	color: #fff;
 }
 
 /*----------------------
@@ -2888,5 +2925,13 @@ button:focus {
 	.wp-block-audio.alignleft,
 	.wp-block-audio.alignright {
 		text-align: center;
+	}
+
+	.wp-block-video.alignleft video,
+	.wp-block-video.alignright video,
+	.wp-block-embed.alignleft video,
+	.wp-block-embed.alignright video {
+		margin-right: auto;
+		margin-left: auto;
 	}
 }

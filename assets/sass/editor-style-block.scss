@@ -64,6 +64,14 @@
 
 	a {
 		color: var(--color-text-link);
+		text-decoration: none;
+	}
+
+	code {
+		padding: 0.1em 0.3em;
+		color: var(--color-text-main);
+		background: var(--color-nm-dark);
+		border-radius: 4px;
 	}
 }
 
@@ -215,7 +223,8 @@
 	audio {
 
 		@include nm-reverse;
-		display: block;
+		display: inline-block;
+		width: auto;
 		padding: 5px;
 		border-radius: 1000px;
 	}
@@ -225,7 +234,7 @@
 		margin-bottom: 0;
 		color: inherit;
 		font-size: 0.8em;
-		text-align: center;
+		text-align: left;
 		opacity: $text_color_thin;
 	}
 }
@@ -546,3 +555,35 @@
 /*------------------------------------------
 ## Block Styles
 ------------------------------------------*/
+
+/*----------------------
+### Color
+----------------------*/
+
+.has-bg-color {
+	color: var(--color-bg);
+}
+
+.has-dark-color {
+	color: var(--color-nm-dark);
+}
+
+.has-light-color {
+	color: var(--color-nm-light);
+}
+
+.has-main-text-color {
+	color: var(--color-text-main);
+}
+
+.has-accent-color {
+	color: var(--color-accent);
+}
+
+.has-link-text-color {
+	color: var(--color-text-link);
+}
+
+.has-white-color {
+	color: #fff;
+}
