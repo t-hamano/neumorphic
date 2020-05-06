@@ -79,8 +79,5 @@ $( function() {
 
 		return false;
 	});
-
-	// Wrap selectbox in widget to append style.
-	$( '.widget_archive select' ).wrap( '<div class="select"></div>' );
 });
 }( jQuery ) );

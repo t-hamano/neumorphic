@@ -47,6 +47,7 @@
 	.aligncenter {
 		display: block;
 		margin: 0 auto 2em;
+		text-align: center;
 	}
 
 	.alignwide {
@@ -273,10 +274,6 @@
 
 .wp-block-audio {
 
-	&.aligncenter {
-		text-align: center;
-	}
-
 	@include mq(md-max) {
 
 		&.alignleft,
@@ -297,10 +294,6 @@
 			outline: none;
 		}
 
-	}
-
-	&.aligncenter audio {
-		text-align: center;
 	}
 
 	figcaption {
@@ -510,13 +503,95 @@
 ### Archives
 ----------------------*/
 
+.wp-block-archives {
+
+	&.wp-block-archives-dropdown select {
+
+		@include nm-input;
+		display: inline-block;
+		width: auto;
+		border-radius: 1000px;
+	}
+}
+
 /*----------------------
 ### Calendar
 ----------------------*/
 
+.wp-block-calendar {
+
+	@include nm();
+	max-width: 350px;
+	padding: 1em;
+
+	.wp-calendar-table {
+		width: 100%;
+		table-layout: fixed;
+
+		caption {
+			margin-bottom: 1em;
+			font-weight: bold;
+		}
+
+		thead th {
+			font-weight: bold;
+			text-align: center;
+			background: transparent;
+			border: none;
+		}
+
+		tbody td {
+			padding: 0;
+			padding: 0.3em;
+			line-height: 2.4;
+			text-align: center;
+			border: none;
+
+			a {
+
+				@include nm-button;
+				display: block;
+				color: var(--color-accent);
+				font-weight: bold;
+				border-radius: $base_border_radius;
+			}
+		}
+	}
+
+	.wp-calendar-nav {
+		display: flex;
+		justify-content: space-between;
+		padding-top: 0.5em;
+
+		a {
+			padding: 0.5em;
+			color: var(--color-accent);
+			text-decoration: none;
+
+			@include mq(lg-min) {
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
+
 /*----------------------
 ### Categories
 ----------------------*/
+
+.wp-block-categories-dropdown {
+
+	select {
+
+		@include nm-input;
+		display: inline-block;
+		width: auto;
+		border-radius: 1000px;
+	}
+}
 
 /*----------------------
 ### Latest-Comments
@@ -592,6 +667,7 @@
 .wp-block-search {
 	position: relative;
 	display: block;
+	max-width: 400px;
 
 	&__label {
 		position: absolute;
@@ -607,9 +683,10 @@
 		clip-path: inset(50%);
 	}
 
-	&__input {
+	.wp-block-search__input {
 
 		@include nm-input;
+		max-width: 100%;
 		padding-right: 3em;
 		border-radius: 1000px;
 	}
@@ -650,19 +727,61 @@
 ### Tag-cloud
 ----------------------*/
 
-.wp-block-tag-cloud a {
+.wp-block-tag-cloud {
 
-	@include nm-button;
-	display: inline-block;
-	margin: 0 0.2em 1em;
-	padding: 0.3em 1em;
-	color: var(--color-accent);
-	font-size: 1em !important;
-	border-radius: 1000px;
+	a {
 
-	.tag-link-count {
-		color: var(--color-text-main);
-		opacity: $text_color_thin;
+		@include nm-button;
+		display: inline-block;
+		margin: 0 0.2em 1em;
+		padding: 0.3em 1em;
+		color: var(--color-accent);
+		font-size: 1em !important;
+		border-radius: 1000px;
+
+		.tag-link-count {
+			color: var(--color-text-main);
+			opacity: $text_color_thin;
+		}
+	}
+}
+
+/*----------------------
+### Social links
+----------------------*/
+
+.wp-block-social-links {
+	flex-wrap: wrap;
+	padding: 0 !important;
+
+	li {
+		margin: 0 0.5em 0.5em 0 !important;
+	}
+
+	&.is-style-nm {
+		font-size: 1.3em;
+
+		.wp-social-link {
+			width: auto;
+			height: auto;
+
+			&:hover {
+				transform: none;
+			}
+
+			a {
+
+				@include nm-button;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 2em;
+				height: 2em;
+				padding: 0;
+				color: var(--color-accent);
+				border-radius: $base_border_radius;
+			}
+		}
 	}
 }
 

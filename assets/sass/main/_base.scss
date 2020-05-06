@@ -221,28 +221,17 @@ select {
 	color: inherit;
 	font-size: inherit;
 	font-family: inherit;
-	background: transparent;
-	border: none;
+	background-image: url(../images/chevron-down-solid.svg);
+	background-repeat: no-repeat;
+	background-position: right 20px center;
+	background-size: 1em;
 	outline: 0;
 	cursor: pointer;
 	appearance: none;
 
 	option {
 		color: #333;
-	}
-}
-
-.select {
-	position: relative;
-
-	&::after {
-		position: absolute;
-		top: 50%;
-		right: 20px;
-		font-weight: 900;
-		font-family: "Font Awesome 5 Free";
-		transform: translateY(-50%);
-		content: "\f078";
+		background: #fff;
 	}
 }
 
