@@ -54,6 +54,14 @@ table {
 	border-spacing: 0;
 }
 
+figure {
+	margin: 0;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
 /*------------------------------------------
 ## Common classes
 ------------------------------------------*/
@@ -134,7 +142,7 @@ table {
 }
 
 .widget_media_gallery .gallery-icon img {
-	background: transparent;
+	background: var(--color-bg);
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	transition: all 0.2s ease-in-out;
 	width: 100%;
@@ -142,7 +150,10 @@ table {
 }
 
 .widget_media_gallery .gallery-icon a {
+	display: inline-block;
+	color: inherit;
 	text-decoration: none;
+	background: var(--color-bg);
 	background: transparent;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
@@ -153,9 +164,15 @@ table {
 	border-radius: 5px;
 }
 
+.widget_media_gallery .gallery-icon a:focus {
+	outline: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 .widget_media_gallery .gallery-icon a:hover {
-	text-decoration: none;
+	background: var(--color-bg);
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+	text-decoration: none;
 }
 
 .widget_media_gallery .gallery-icon a:hover a {
@@ -180,7 +197,7 @@ table {
 	color: inherit;
 	font-size: 0.8em;
 	text-align: center;
-	opacity: 0.9;
+	opacity: 0.8;
 }
 
 /*------------------------------------------
@@ -341,7 +358,7 @@ button:focus {
 	left: 0;
 	width: 100%;
 	height: 3px;
-	border-radius: 10px;
+	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
 	bottom: -1.5px;
@@ -360,20 +377,32 @@ button:focus {
 }
 
 .c-entry__edit-link {
+	display: inline-block;
+	color: inherit;
 	text-decoration: none;
+	background: var(--color-bg);
 	background: transparent;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
 	transition: all 0.2s ease-in-out;
+	font-weight: bold;
+	text-align: center;
 	display: inline-block;
 	margin-top: 3em;
 	padding: 0.7em 1.4em;
+	color: var(--color-text-link);
 	border-radius: 1000px;
 }
 
+.c-entry__edit-link:focus {
+	outline: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 .c-entry__edit-link:hover {
-	text-decoration: none;
+	background: var(--color-bg);
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+	text-decoration: none;
 }
 
 .c-entry__edit-link:hover a {
@@ -393,7 +422,10 @@ button:focus {
 }
 
 .c-entries__item > a {
+	display: inline-block;
+	color: inherit;
 	text-decoration: none;
+	background: var(--color-bg);
 	background: transparent;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
@@ -406,9 +438,15 @@ button:focus {
 	border-radius: 10px;
 }
 
+.c-entries__item > a:focus {
+	outline: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 .c-entries__item > a:hover {
-	text-decoration: none;
+	background: var(--color-bg);
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+	text-decoration: none;
 }
 
 .c-entries__item > a:hover a {
@@ -416,7 +454,7 @@ button:focus {
 }
 
 .c-entries__thumbnail {
-	background: transparent;
+	background: var(--color-bg);
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	transition: all 0.2s ease-in-out;
 	position: relative;
@@ -487,7 +525,7 @@ button:focus {
 ------------------------------------------*/
 
 .c-comment {
-	background: transparent;
+	background: var(--color-bg);
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	transition: all 0.2s ease-in-out;
 	margin-top: 3em;
@@ -509,7 +547,7 @@ button:focus {
 	left: 0;
 	width: 100%;
 	height: 3px;
-	border-radius: 10px;
+	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
 	bottom: -1.5px;
@@ -532,7 +570,7 @@ button:focus {
 	left: 0;
 	width: 100%;
 	height: 3px;
-	border-radius: 10px;
+	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
 	bottom: -1.5px;
@@ -586,7 +624,7 @@ button:focus {
 }
 
 .c-comment__form .comment-form-comment textarea {
-	background: transparent;
+	background: var(--color-bg);
 	border: none;
 	outline: none;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
@@ -603,18 +641,29 @@ button:focus {
 }
 
 .c-comment__form .form-submit [type="submit"] {
+	display: inline-block;
+	color: inherit;
 	text-decoration: none;
+	background: var(--color-bg);
 	background: transparent;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
 	transition: all 0.2s ease-in-out;
+	font-weight: bold;
+	text-align: center;
 	width: auto;
 	border-radius: 1000px;
 }
 
+.c-comment__form .form-submit [type="submit"]:focus {
+	outline: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 .c-comment__form .form-submit [type="submit"]:hover {
-	text-decoration: none;
+	background: var(--color-bg);
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+	text-decoration: none;
 }
 
 .c-comment__form .form-submit [type="submit"]:hover a {
@@ -664,11 +713,16 @@ button:focus {
 }
 
 .c-sns__item a {
+	display: inline-block;
+	color: inherit;
 	text-decoration: none;
+	background: var(--color-bg);
 	background: transparent;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
 	transition: all 0.2s ease-in-out;
+	font-weight: bold;
+	text-align: center;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -678,9 +732,15 @@ button:focus {
 	border-radius: 10px;
 }
 
+.c-sns__item a:focus {
+	outline: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 .c-sns__item a:hover {
-	text-decoration: none;
+	background: var(--color-bg);
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+	text-decoration: none;
 }
 
 .c-sns__item a:hover a {
@@ -704,7 +764,7 @@ button:focus {
 }
 
 .c-search-form__input {
-	background: transparent;
+	background: var(--color-bg);
 	border: none;
 	outline: none;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
@@ -756,19 +816,32 @@ button:focus {
 .c-pagination__item--link,
 .c-pagination__item--prev,
 .c-pagination__item--next {
+	display: inline-block;
+	color: inherit;
 	text-decoration: none;
+	background: var(--color-bg);
 	background: transparent;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
 	transition: all 0.2s ease-in-out;
+	font-weight: bold;
+	text-align: center;
 	color: var(--color-accent);
+}
+
+.c-pagination__item--link:focus,
+.c-pagination__item--prev:focus,
+.c-pagination__item--next:focus {
+	outline: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 }
 
 .c-pagination__item--link:hover,
 .c-pagination__item--prev:hover,
 .c-pagination__item--next:hover {
-	text-decoration: none;
+	background: var(--color-bg);
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+	text-decoration: none;
 }
 
 .c-pagination__item--link:hover a,
@@ -784,7 +857,7 @@ button:focus {
 }
 
 .c-pagination__item--current {
-	background: transparent;
+	background: var(--color-bg);
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
 	transition: all 0.2s ease-in-out;
 	color: inherit;
@@ -1160,7 +1233,7 @@ button:focus {
 ------------------------------------------*/
 
 .widget {
-	background: transparent;
+	background: var(--color-bg);
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	transition: all 0.2s ease-in-out;
 	padding: 1.5em 1em;
@@ -1188,7 +1261,7 @@ button:focus {
 	left: 0;
 	width: 100%;
 	height: 3px;
-	border-radius: 10px;
+	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
 	bottom: -1.5px;
@@ -1265,7 +1338,7 @@ button:focus {
 
 .widget_categories select,
 .widget_archive select {
-	background: transparent;
+	background: var(--color-bg);
 	border: none;
 	outline: none;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
@@ -1296,11 +1369,16 @@ button:focus {
 }
 
 .widget_tag_cloud .tagcloud a {
+	display: inline-block;
+	color: inherit;
 	text-decoration: none;
+	background: var(--color-bg);
 	background: transparent;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
 	transition: all 0.2s ease-in-out;
+	font-weight: bold;
+	text-align: center;
 	display: inline-block;
 	margin: 0 0.3em 1em;
 	padding: 0.3em 1em;
@@ -1309,9 +1387,15 @@ button:focus {
 	border-radius: 1000px;
 }
 
+.widget_tag_cloud .tagcloud a:focus {
+	outline: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 .widget_tag_cloud .tagcloud a:hover {
-	text-decoration: none;
+	background: var(--color-bg);
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+	text-decoration: none;
 }
 
 .widget_tag_cloud .tagcloud a:hover a {
@@ -1354,20 +1438,31 @@ button:focus {
 }
 
 .widget_calendar table tbody td a {
+	display: inline-block;
+	color: inherit;
 	text-decoration: none;
+	background: var(--color-bg);
 	background: transparent;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
 	transition: all 0.2s ease-in-out;
+	font-weight: bold;
+	text-align: center;
 	display: block;
 	color: var(--color-accent);
 	font-weight: bold;
 	border-radius: 10px;
 }
 
+.widget_calendar table tbody td a:focus {
+	outline: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 .widget_calendar table tbody td a:hover {
-	text-decoration: none;
+	background: var(--color-bg);
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+	text-decoration: none;
 }
 
 .widget_calendar table tbody td a:hover a {
@@ -1472,7 +1567,7 @@ button:focus {
 }
 
 .widget_media_image img {
-	background: transparent;
+	background: var(--color-bg);
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	transition: all 0.2s ease-in-out;
 	width: 100%;
@@ -1480,7 +1575,10 @@ button:focus {
 }
 
 .widget_media_image a {
+	display: inline-block;
+	color: inherit;
 	text-decoration: none;
+	background: var(--color-bg);
 	background: transparent;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
@@ -1491,9 +1589,15 @@ button:focus {
 	border-radius: 5px;
 }
 
+.widget_media_image a:focus {
+	outline: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 .widget_media_image a:hover {
-	text-decoration: none;
+	background: var(--color-bg);
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+	text-decoration: none;
 }
 
 .widget_media_image a:hover a {
@@ -1529,7 +1633,7 @@ button:focus {
 	color: inherit;
 	font-size: 0.8em;
 	text-align: center;
-	opacity: 0.9;
+	opacity: 0.8;
 }
 
 /*------------------------------------------
@@ -1567,7 +1671,7 @@ button:focus {
 	left: 0;
 	width: 100%;
 	height: 3px;
-	border-radius: 10px;
+	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
 	bottom: -1.5px;
@@ -1711,7 +1815,7 @@ button:focus {
 	left: 0;
 	width: 100%;
 	height: 3px;
-	border-radius: 10px;
+	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
 	bottom: -1.5px;
@@ -1785,7 +1889,7 @@ button:focus {
 }
 
 .widget_text:not(.widget_custom_html) .textwidget img {
-	background: transparent;
+	background: var(--color-bg);
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	transition: all 0.2s ease-in-out;
 	border-radius: 5px;
@@ -1797,7 +1901,7 @@ button:focus {
 	color: inherit;
 	font-size: 0.8em;
 	text-align: center;
-	opacity: 0.9;
+	opacity: 0.8;
 }
 
 /*--------------------------------------------------------------
@@ -1809,7 +1913,7 @@ button:focus {
 ------------------------------------------*/
 
 .entry-content {
-	/* Heading */ /* Paragraph */ /* List */ /* Preformatted Text */
+	/* Heading */ /* Paragraph */ /* List */
 }
 
 .entry-content > * {
@@ -1823,14 +1927,19 @@ button:focus {
 
 .entry-content .alignleft {
 	float: left;
-	margin-right: 2em;
-	margin-bottom: 1em;
+	margin-right: 1.5em;
+	margin-bottom: 0.5em;
 }
 
 .entry-content .alignright {
 	float: right;
-	margin-bottom: 1em;
-	margin-left: 2em;
+	margin-bottom: 0.5em;
+	margin-left: 1.5em;
+}
+
+.entry-content .aligncenter {
+	display: block;
+	margin: 0 auto 2em;
 }
 
 .entry-content .alignwide {
@@ -1863,6 +1972,7 @@ button:focus {
 	margin-top: 1.5em;
 	margin-bottom: 1em;
 	font-weight: bold;
+	line-height: 1.4;
 	text-shadow: 1px 1px 0 var(--color-text-border-color);
 }
 
@@ -1878,7 +1988,7 @@ button:focus {
 	left: 0;
 	width: 100%;
 	height: 3px;
-	border-radius: 10px;
+	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
 	bottom: -1.5px;
@@ -1920,6 +2030,10 @@ button:focus {
 	padding: 15px 20px;
 }
 
+.entry-content p > img {
+	margin: 0 5px;
+}
+
 .entry-content > ul,
 .entry-content > ol {
 	margin-left: 0;
@@ -1931,8 +2045,36 @@ button:focus {
 	margin: 0.5em 0;
 }
 
-.entry-content pre {
-	white-space: pre-wrap;
+.entry-content > ul ul,
+.entry-content > ol ul {
+	margin-left: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.entry-content > ul ul li,
+.entry-content > ol ul li {
+	position: relative;
+	padding-left: 1em;
+}
+
+.entry-content > ul ul li::before,
+.entry-content > ol ul li::before {
+	position: absolute;
+	left: 0;
+	content: "-";
+}
+
+.entry-content > ul ol,
+.entry-content > ol ol {
+	padding-left: 1.5em;
+}
+
+.entry-content code {
+	padding: 0.1em 0.3em;
+	color: var(--color-text-main);
+	background: var(--color-nm-dark);
+	border-radius: 4px;
 }
 
 /*----------------------
@@ -1954,7 +2096,7 @@ button:focus {
 }
 
 .wp-block-image > figure {
-	background: transparent;
+	background: var(--color-bg);
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	transition: all 0.2s ease-in-out;
 	padding: 5px;
@@ -1967,7 +2109,7 @@ button:focus {
 	color: inherit;
 	font-size: 0.8em;
 	text-align: center;
-	opacity: 0.9;
+	opacity: 0.8;
 }
 
 /*----------------------
@@ -1979,29 +2121,22 @@ button:focus {
 ----------------------*/
 
 .wp-block-quote {
+	background: var(--color-bg);
+	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	position: relative;
-	padding: 20px 50px;
+	padding: 2em 2em 2em 3.5em;
 	border-radius: 10px;
 }
 
-.wp-block-quote::before,
-.wp-block-quote::after {
-	position: absolute;
-	font-weight: 900;
-	font-size: 20px;
-	font-family: "Font Awesome 5 Free";
-}
-
 .wp-block-quote::before {
-	top: 10px;
-	left: 15px;
+	text-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+	position: absolute;
+	top: 0.5em;
+	left: 0.7em;
+	font-weight: 900;
+	font-size: 1.6em;
+	font-family: "Font Awesome 5 Free";
 	content: "\f10d";
-}
-
-.wp-block-quote::after {
-	right: 15px;
-	bottom: 10px;
-	content: "\f10e";
 }
 
 .wp-block-quote p {
@@ -2011,17 +2146,38 @@ button:focus {
 .wp-block-quote cite {
 	display: block;
 	font-size: 0.8em;
-	text-align: right;
+	opacity: 0.8;
+}
+
+.wp-block-quote.is-style-large {
+	margin-bottom: 2em;
+	padding: 2em 2em 2em 5em;
+}
+
+.wp-block-quote.is-style-large::before {
+	font-size: 2.4em;
+}
+
+.wp-block-quote.is-style-large p {
+	font-size: 1.4em;
+	font-style: normal;
+	line-height: inherit;
 }
 
 /*----------------------
 ### Audio
 ----------------------*/
 
+.wp-block-audio.aligncenter {
+	text-align: center;
+}
+
 .wp-block-audio audio {
+	background: var(--color-bg);
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
-	display: block;
+	width: auto;
 	padding: 5px;
+	vertical-align: top;
 	border-radius: 1000px;
 }
 
@@ -2029,13 +2185,16 @@ button:focus {
 	outline: none;
 }
 
+.wp-block-audio.aligncenter audio {
+	text-align: center;
+}
+
 .wp-block-audio figcaption {
 	margin-top: 1em;
 	margin-bottom: 0;
 	color: inherit;
 	font-size: 0.8em;
-	text-align: center;
-	opacity: 0.9;
+	opacity: 0.8;
 }
 
 /*----------------------
@@ -2046,9 +2205,67 @@ button:focus {
 ### File
 ----------------------*/
 
+.wp-block-file a {
+	display: inline-block;
+	margin-bottom: 0.5em;
+}
+
+.wp-block-file a.wp-block-file__button {
+	font-size: 0.8em;
+	border-radius: 1000px;
+	display: inline-block;
+	color: inherit;
+	text-decoration: none;
+	background: var(--color-bg);
+	background: transparent;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+	font-weight: bold;
+	text-align: center;
+}
+
+.wp-block-file a.wp-block-file__button:focus {
+	outline: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
+.wp-block-file a.wp-block-file__button:hover {
+	background: var(--color-bg);
+	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+	text-decoration: none;
+}
+
+.wp-block-file a.wp-block-file__button:hover a {
+	text-decoration: none;
+}
+
+.wp-block-file a.wp-block-file__button:active {
+	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
+}
+
+.wp-block-file a.wp-block-file__button:active,
+.wp-block-file a.wp-block-file__button:focus,
+.wp-block-file a.wp-block-file__button:hover,
+.wp-block-file a.wp-block-file__button:visited {
+	color: inherit;
+	opacity: 1;
+}
+
 /*----------------------
 ### Video
 ----------------------*/
+
+.wp-block-video video,
+.wp-block-embed video {
+	display: block;
+}
+
+.wp-block-video.aligncenter video,
+.wp-block-embed.aligncenter video {
+	margin-right: auto;
+	margin-left: auto;
+}
 
 .wp-block-video figcaption,
 .wp-block-embed figcaption {
@@ -2056,8 +2273,7 @@ button:focus {
 	margin-bottom: 0;
 	color: inherit;
 	font-size: 0.8em;
-	text-align: center;
-	opacity: 0.9;
+	opacity: 0.8;
 }
 
 /*------------------------------------------
@@ -2146,19 +2362,30 @@ button:focus {
 }
 
 .wp-block-button__link {
+	display: inline-block;
+	color: inherit;
 	text-decoration: none;
+	background: var(--color-bg);
 	background: transparent;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
 	transition: all 0.2s ease-in-out;
+	font-weight: bold;
+	text-align: center;
 	padding: 0.7em 1.4em;
 	font-size: inherit;
 	border-radius: 0;
 }
 
+.wp-block-button__link:focus {
+	outline: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 .wp-block-button__link:hover {
-	text-decoration: none;
+	background: var(--color-bg);
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+	text-decoration: none;
 }
 
 .wp-block-button__link:hover a {
@@ -2231,7 +2458,7 @@ button:focus {
 }
 
 .wp-block-rss > li {
-	background: transparent;
+	background: var(--color-bg);
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	transition: all 0.2s ease-in-out;
 	padding: 1.5em 1em;
@@ -2305,7 +2532,7 @@ button:focus {
 }
 
 .wp-block-search__input {
-	background: transparent;
+	background: var(--color-bg);
 	border: none;
 	outline: none;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
@@ -2347,11 +2574,16 @@ button:focus {
 ----------------------*/
 
 .wp-block-tag-cloud a {
+	display: inline-block;
+	color: inherit;
 	text-decoration: none;
+	background: var(--color-bg);
 	background: transparent;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
 	transition: all 0.2s ease-in-out;
+	font-weight: bold;
+	text-align: center;
 	display: inline-block;
 	margin: 0 0.2em 1em;
 	padding: 0.3em 1em;
@@ -2360,9 +2592,15 @@ button:focus {
 	border-radius: 1000px;
 }
 
+.wp-block-tag-cloud a:focus {
+	outline: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 .wp-block-tag-cloud a:hover {
-	text-decoration: none;
+	background: var(--color-bg);
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+	text-decoration: none;
 }
 
 .wp-block-tag-cloud a:hover a {
@@ -2375,7 +2613,7 @@ button:focus {
 
 .wp-block-tag-cloud a .tag-link-count {
 	color: var(--color-text-main);
-	opacity: 0.9;
+	opacity: 0.8;
 }
 
 /*------------------------------------------
@@ -2453,63 +2691,44 @@ button:focus {
 ## Block Styles
 ------------------------------------------*/
 
-/*----------------------
-### List
-----------------------*/
-
-.is-style-checkbox li {
-	padding-left: 0;
-}
-
-.is-style-checkbox li::before {
-	top: 0;
-	left: -1.5em;
-	display: inline-block;
-	height: auto;
-	margin-right: 0.5em;
-	font-weight: 900;
-	font-family: "Font Awesome 5 Free";
-	background-color: transparent;
-	transform: none;
-	content: "\f058";
-	-webkit-mask-image: none;
-	mask-image: none;
-}
-
 /*------------------------------------------
 ## Block Properties
 ------------------------------------------*/
+
+/*----------------------
+### Inline color
+----------------------*/
 
 /*----------------------
 ### Color
 ----------------------*/
 
 .has-bg-color {
-	color: var(--color-bg) !important;
+	color: var(--color-bg);
 }
 
 .has-dark-color {
-	color: var(--color-nm-dark) !important;
+	color: var(--color-nm-dark);
 }
 
 .has-light-color {
-	color: var(--color-nm-light) !important;
+	color: var(--color-nm-light);
 }
 
 .has-main-text-color {
-	color: var(--color-text-main) !important;
+	color: var(--color-text-main);
 }
 
 .has-accent-color {
-	color: var(--color-accent) !important;
+	color: var(--color-accent);
 }
 
 .has-link-text-color {
-	color: var(--color-text-link) !important;
+	color: var(--color-text-link);
 }
 
 .has-white-color {
-	color: #fff !important;
+	color: #fff;
 }
 
 /*----------------------
@@ -2721,5 +2940,32 @@ button:focus {
 
 	.gnav {
 		display: none;
+	}
+
+	.entry-content .alignleft {
+		float: none;
+		margin-right: auto;
+		margin-bottom: 2em;
+		margin-left: auto;
+	}
+
+	.entry-content .alignright {
+		float: none;
+		margin-right: auto;
+		margin-bottom: 2em;
+		margin-left: auto;
+	}
+
+	.wp-block-audio.alignleft,
+	.wp-block-audio.alignright {
+		text-align: center;
+	}
+
+	.wp-block-video.alignleft video,
+	.wp-block-video.alignright video,
+	.wp-block-embed.alignleft video,
+	.wp-block-embed.alignright video {
+		margin-right: auto;
+		margin-left: auto;
 	}
 }

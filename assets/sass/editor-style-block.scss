@@ -26,7 +26,7 @@
 
 	.editor-post-title__input {
 
-		@include nm-text;
+		@include nm-text-border;
 		color: var(--color-text-main);
 		font-size: 2.2em;
 		font-family: $base_font_falily;
@@ -64,6 +64,14 @@
 
 	a {
 		color: var(--color-text-link);
+		text-decoration: none;
+	}
+
+	code {
+		padding: 0.1em 0.3em;
+		color: var(--color-text-main);
+		background: var(--color-nm-dark);
+		border-radius: 4px;
 	}
 }
 
@@ -105,8 +113,9 @@
 		margin-top: 2em;
 		margin-bottom: 1em;
 		font-weight: bold;
+		line-height: 1.4;
 
-		@include nm-text;
+		@include nm-text-border;
 	}
 
 	h1,
@@ -164,26 +173,35 @@
 
 .wp-block[data-type="core/list"] {
 
-	ul,
-	ol {
+	> ul,
+	> ol {
 		margin-left: 0;
 		padding-left: 1.5em;
 
 		li {
 			margin: 0.5em 0;
-			padding-left: 0;
 		}
 
-		&.is-style-checkbox li::before {
-			top: 0 !important;
-			left: -1.5em !important;
-			height: auto !important;
-			font-weight: 900;
-			font-family: "Font Awesome 5 Free";
-			background-color: transparent !important;
-			transform: none !important;
-			content: "\f058" !important;
-			mask-image: none !important;
+		ul {
+			margin-left: 0;
+			padding: 0;
+			list-style: none;
+
+			li {
+				position: relative;
+				padding-left: 1em;
+
+				&::before {
+					position: absolute;
+					left: 0;
+					content: "-";
+				}
+			}
+		}
+
+		ol {
+			margin-left: 0;
+			padding-left: 1.5em;
 		}
 	}
 }
@@ -192,9 +210,55 @@
 ### Quote
 ----------------------*/
 
-// .wp-block-quote{
+.wp-block-quote,
+.wp-block-quote.has-text-align-center,
+.wp-block-quote.has-text-align-right {
+	position: relative;
+	padding: 2em 2em 2em 3.5em;
+	border: none;
+	border-radius: $base_border_radius;
 
-// }
+	@include nm-reverse();
+
+	&::before {
+
+		@include nm-text();
+		position: absolute;
+		top: 0.5em;
+		left: 0.7em;
+		font-weight: 900;
+		font-size: 1.6em;
+		font-family: "Font Awesome 5 Free";
+		content: "\f10d";
+	}
+
+	p {
+		margin: 0 0 1em;
+	}
+
+	&__citation {
+		display: block;
+		color: inherit;
+		font-size: 0.8em;
+		font-style: italic;
+		opacity: $text_color_thin;
+	}
+
+	&.is-style-large {
+		margin-bottom: 0;
+		padding: 2em 2em 2em 5em;
+
+		&::before {
+			font-size: 2.4em;
+		}
+
+		p {
+			font-size: 1.4em;
+			font-style: normal;
+			line-height: inherit;
+		}
+	}
+}
 
 /*----------------------
 ### Audio
@@ -205,7 +269,8 @@
 	audio {
 
 		@include nm-reverse;
-		display: block;
+		display: inline-block;
+		width: auto;
 		padding: 5px;
 		border-radius: 1000px;
 	}
@@ -215,7 +280,7 @@
 		margin-bottom: 0;
 		color: inherit;
 		font-size: 0.8em;
-		text-align: center;
+		text-align: left;
 		opacity: $text_color_thin;
 	}
 }
@@ -227,6 +292,25 @@
 /*----------------------
 ### File
 ----------------------*/
+.wp-block-file {
+
+	.wp-block-file__textlink {
+		margin-bottom: 0.5em;
+		color: var(--color-text-link);
+	}
+
+	.wp-block-file__button-richtext-wrapper {
+		margin-bottom: 0.5em;
+	}
+
+	.wp-block-file__button {
+
+		@include nm-button-editor();
+		color: inherit;
+		font-size: 0.8em;
+		border-radius: 1000px;
+	}
+}
 
 /*----------------------
 ### Video
@@ -517,3 +601,35 @@
 /*------------------------------------------
 ## Block Styles
 ------------------------------------------*/
+
+/*----------------------
+### Color
+----------------------*/
+
+.has-bg-color {
+	color: var(--color-bg);
+}
+
+.has-dark-color {
+	color: var(--color-nm-dark);
+}
+
+.has-light-color {
+	color: var(--color-nm-light);
+}
+
+.has-main-text-color {
+	color: var(--color-text-main);
+}
+
+.has-accent-color {
+	color: var(--color-accent);
+}
+
+.has-link-text-color {
+	color: var(--color-text-link);
+}
+
+.has-white-color {
+	color: #fff;
+}

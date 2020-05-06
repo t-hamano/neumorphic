@@ -69,27 +69,27 @@ function neomorphic_setup() {
 	$color_text_border_color = esc_html( get_theme_mod( 'color_text_border_color', NEOMORPHIC_COLOR_SKIN['default']['text_border_color'] ) );
 
 	// Generate new colors based on the neomorphic design.
-	$dark_color  = neomorphic_generate_new_color( $color_bg, -0.15 );
-	$light_color = neomorphic_generate_new_color( $color_bg, 0.1 );
+	$color_dark  = neomorphic_generate_new_color( $color_bg, -0.15 );
+	$color_light = neomorphic_generate_new_color( $color_bg, 0.1 );
 
-	// Change block editor color palette.
+	// Change block editor color palettes.
 	add_theme_support(
 		'editor-color-palette',
 		array(
 			array(
-				'name'  => __( 'Background Color', 'neomorphic' ),
+				'name'  => __( 'Background color', 'neomorphic' ),
 				'slug'  => 'bg',
 				'color' => $color_bg,
 			),
 			array(
 				'name'  => __( 'Dark color', 'neomorphic' ),
 				'slug'  => 'dark',
-				'color' => $dark_color,
+				'color' => $color_dark,
 			),
 			array(
 				'name'  => __( 'Light color', 'neomorphic' ),
 				'slug'  => 'light',
-				'color' => $light_color,
+				'color' => $color_light,
 			),
 			array(
 				'name'  => __( 'Main text color', 'neomorphic' ),
@@ -114,7 +114,64 @@ function neomorphic_setup() {
 		)
 	);
 
-	// Change block editor font size preset.
+	// Change block editor gradient presets.
+	add_theme_support(
+		'editor-gradient-presets',
+		array(
+			array(
+				'name'     => __( 'Dark and light color', 'neomorphic' ),
+				'gradient' => 'linear-gradient(135deg,' . $color_dark . ', ' . $color_light . ')',
+				'slug'     => 'dark-light',
+			),
+			array(
+				'name'     => __( 'Dark and main text color', 'neomorphic' ),
+				'gradient' => 'linear-gradient(135deg,' . $color_dark . ', ' . $color_text_main . ')',
+				'slug'     => 'dark-text-main',
+			),
+			array(
+				'name'     => __( 'Dark and accent color', 'neomorphic' ),
+				'gradient' => 'linear-gradient(135deg,' . $color_dark . ', ' . $color_accent . ')',
+				'slug'     => 'dark-accent',
+			),
+			array(
+				'name'     => __( 'Dark and link text color', 'neomorphic' ),
+				'gradient' => 'linear-gradient(135deg,' . $color_dark . ', ' . $color_text_link . ')',
+				'slug'     => 'dark-link-text',
+			),
+			array(
+				'name'     => __( 'Light and main text color', 'neomorphic' ),
+				'gradient' => 'linear-gradient(135deg,' . $color_light . ', ' . $color_text_main . ')',
+				'slug'     => 'light-main-text',
+			),
+			array(
+				'name'     => __( 'Light and accent color', 'neomorphic' ),
+				'gradient' => 'linear-gradient(135deg,' . $color_light . ', ' . $color_accent . ')',
+				'slug'     => 'light-accent',
+			),
+			array(
+				'name'     => __( 'Light and link text color', 'neomorphic' ),
+				'gradient' => 'linear-gradient(135deg,' . $color_light . ', ' . $color_text_link . ')',
+				'slug'     => 'light-link-text',
+			),
+			array(
+				'name'     => __( 'Main text and accent color', 'neomorphic' ),
+				'gradient' => 'linear-gradient(135deg,' . $color_text_main . ', ' . $color_accent . ')',
+				'slug'     => 'main-text-accent',
+			),
+			array(
+				'name'     => __( 'Main text and link text color', 'neomorphic' ),
+				'gradient' => 'linear-gradient(135deg,' . $color_text_main . ', ' . $color_text_link . ')',
+				'slug'     => 'main-text-link-text',
+			),
+			array(
+				'name'     => __( 'Accent and link text color', 'neomorphic' ),
+				'gradient' => 'linear-gradient(135deg,' . $color_accent . ', ' . $color_text_link . ')',
+				'slug'     => 'accent-link-text',
+			),
+		)
+	);
+
+	// Change block editor font size presets.
 	add_theme_support(
 		'editor-font-sizes',
 		array(

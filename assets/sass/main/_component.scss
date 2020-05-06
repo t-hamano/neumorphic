@@ -18,7 +18,7 @@
 
 	&__title {
 
-		@include nm-text;
+		@include nm-text-border;
 		margin: 0;
 		font-weight: bold;
 		font-size: 1.8em;
@@ -39,6 +39,7 @@
 		display: inline-block;
 		margin-top: 3em;
 		padding: 0.7em 1.4em;
+		color: var(--color-text-link);
 		border-radius: 1000px;
 	}
 }
@@ -175,7 +176,7 @@
 	&__title {
 
 		@include nm-border;
-		@include nm-text;
+		@include nm-text-border;
 		position: relative;
 		margin: 0 0 1em;
 		padding-bottom: 0.5em;

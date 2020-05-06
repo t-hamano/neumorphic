@@ -17,16 +17,36 @@
 		margin-bottom: 0 !important;
 	}
 
+	// Alignment
 	.alignleft {
 		float: left;
-		margin-right: 2em;
-		margin-bottom: 1em;
+		margin-right: 1.5em;
+		margin-bottom: 0.5em;
+
+		@include mq(md-max) {
+			float: none;
+			margin-right: auto;
+			margin-bottom: 2em;
+			margin-left: auto;
+		}
 	}
 
 	.alignright {
 		float: right;
-		margin-bottom: 1em;
-		margin-left: 2em;
+		margin-bottom: 0.5em;
+		margin-left: 1.5em;
+
+		@include mq(md-max) {
+			float: none;
+			margin-right: auto;
+			margin-bottom: 2em;
+			margin-left: auto;
+		}
+	}
+
+	.aligncenter {
+		display: block;
+		margin: 0 auto 2em;
 	}
 
 	.alignwide {
@@ -60,8 +80,9 @@
 		margin-top: 1.5em;
 		margin-bottom: 1em;
 		font-weight: bold;
+		line-height: 1.4;
 
-		@include nm-text;
+		@include nm-text-border;
 	}
 
 	> h1,
@@ -96,16 +117,23 @@
 	}
 
 	/* Paragraph */
-	p.has-drop-cap::first-letter {
-		float: left;
-		margin: 0 0.1em 0 0;
-		padding: 0;
-		font-size: 4em;
-		line-height: 1;
-	}
+	p {
 
-	p.has-background {
-		padding: 15px 20px;
+		&.has-drop-cap::first-letter {
+			float: left;
+			margin: 0 0.1em 0 0;
+			padding: 0;
+			font-size: 4em;
+			line-height: 1;
+		}
+
+		&.has-background {
+			padding: 15px 20px;
+		}
+
+		> img {
+			margin: 0 5px;
+		}
 	}
 
 	/* List */
@@ -117,11 +145,35 @@
 		li {
 			margin: 0.5em 0;
 		}
+
+		ul {
+			margin-left: 0;
+			padding: 0;
+			list-style: none;
+
+			li {
+				position: relative;
+				padding-left: 1em;
+
+				&::before {
+					position: absolute;
+					left: 0;
+					content: "-";
+				}
+			}
+		}
+
+		ol {
+			padding-left: 1.5em;
+		}
 	}
 
-	/* Preformatted Text */
-	pre {
-		white-space: pre-wrap;
+	// Code
+	code {
+		padding: 0.1em 0.3em;
+		color: var(--color-text-main);
+		background: var(--color-nm-dark);
+		border-radius: 4px;
 	}
 }
 
@@ -171,28 +223,22 @@
 ----------------------*/
 
 .wp-block-quote {
+
+	@include nm-reverse();
 	position: relative;
-	padding: 20px 50px;
+	padding: 2em 2em 2em 3.5em;
 	border-radius: $base_border_radius;
 
-	&::before,
-	&::after {
-		position: absolute;
-		font-weight: 900;
-		font-size: 20px;
-		font-family: "Font Awesome 5 Free";
-	}
-
 	&::before {
-		top: 10px;
-		left: 15px;
-		content: "\f10d";
-	}
 
-	&::after {
-		right: 15px;
-		bottom: 10px;
-		content: "\f10e";
+		@include nm-text();
+		position: absolute;
+		top: 0.5em;
+		left: 0.7em;
+		font-weight: 900;
+		font-size: 1.6em;
+		font-family: "Font Awesome 5 Free";
+		content: "\f10d";
 	}
 
 	p {
@@ -202,7 +248,22 @@
 	cite {
 		display: block;
 		font-size: 0.8em;
-		text-align: right;
+		opacity: $text_color_thin;
+	}
+
+	&.is-style-large {
+		margin-bottom: 2em;
+		padding: 2em 2em 2em 5em;
+
+		&::before {
+			font-size: 2.4em;
+		}
+
+		p {
+			font-size: 1.4em;
+			font-style: normal;
+			line-height: inherit;
+		}
 	}
 }
 
@@ -212,16 +273,34 @@
 
 .wp-block-audio {
 
+	&.aligncenter {
+		text-align: center;
+	}
+
+	@include mq(md-max) {
+
+		&.alignleft,
+		&.alignright {
+			text-align: center;
+		}
+	}
+
 	audio {
 
 		@include nm-reverse;
-		display: block;
+		width: auto;
 		padding: 5px;
+		vertical-align: top;
 		border-radius: 1000px;
 
 		&:focus {
 			outline: none;
 		}
+
+	}
+
+	&.aligncenter audio {
+		text-align: center;
 	}
 
 	figcaption {
@@ -229,7 +308,6 @@
 		margin-bottom: 0;
 		color: inherit;
 		font-size: 0.8em;
-		text-align: center;
 		opacity: $text_color_thin;
 	}
 }
@@ -242,6 +320,29 @@
 ### File
 ----------------------*/
 
+.wp-block-file {
+
+	a {
+		display: inline-block;
+		margin-bottom: 0.5em;
+	}
+
+	a.wp-block-file__button {
+		font-size: 0.8em;
+		border-radius: 1000px;
+
+		@include nm-button();
+
+		&:active,
+		&:focus,
+		&:hover,
+		&:visited {
+			color: inherit;
+			opacity: 1;
+		}
+	}
+}
+
 /*----------------------
 ### Video
 ----------------------*/
@@ -249,12 +350,32 @@
 .wp-block-video,
 .wp-block-embed {
 
+	video {
+		display: block;
+	}
+
+	&.aligncenter video {
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	@include mq(md-max) {
+
+		&.alignleft,
+		&.alignright {
+
+			video {
+				margin-right: auto;
+				margin-left: auto;
+			}
+		}
+	}
+
 	figcaption {
 		margin-top: 1em;
 		margin-bottom: 0;
 		color: inherit;
 		font-size: 0.8em;
-		text-align: center;
 		opacity: $text_color_thin;
 	}
 }
@@ -633,62 +754,44 @@
 ## Block Styles
 ------------------------------------------*/
 
-/*----------------------
-### List
-----------------------*/
-
-.is-style-checkbox li {
-	padding-left: 0;
-
-	&::before {
-		top: 0;
-		left: -1.5em;
-		display: inline-block;
-		height: auto;
-		margin-right: 0.5em;
-		font-weight: 900;
-		font-family: "Font Awesome 5 Free";
-		background-color: transparent;
-		transform: none;
-		content: "\f058";
-		mask-image: none;
-	}
-}
-
 /*------------------------------------------
 ## Block Properties
 ------------------------------------------*/
+
+/*----------------------
+### Inline color
+----------------------*/
 
 /*----------------------
 ### Color
 ----------------------*/
 
 .has-bg-color {
-	color: var(--color-bg) !important;
+	color: var(--color-bg);
 }
 
 .has-dark-color {
-	color: var(--color-nm-dark) !important;
+	color: var(--color-nm-dark);
 }
 
 .has-light-color {
-	color: var(--color-nm-light) !important;
+	color: var(--color-nm-light);
 }
 
 .has-main-text-color {
-	color: var(--color-text-main) !important;
+	color: var(--color-text-main);
 }
 
 .has-accent-color {
-	color: var(--color-accent) !important;
+	color: var(--color-accent);
 }
 
 .has-link-text-color {
-	color: var(--color-text-link) !important;
+	color: var(--color-text-link);
 }
 
 .has-white-color {
-	color: #fff !important;
+	color: #fff;
 }
 
 /*----------------------
