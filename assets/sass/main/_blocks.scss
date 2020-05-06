@@ -82,7 +82,7 @@
 		font-weight: bold;
 		line-height: 1.4;
 
-		@include nm-text;
+		@include nm-text-border;
 	}
 
 	> h1,
@@ -223,28 +223,22 @@
 ----------------------*/
 
 .wp-block-quote {
+
+	@include nm-reverse();
 	position: relative;
-	padding: 20px 50px;
+	padding: 2em 2em 2em 3.5em;
 	border-radius: $base_border_radius;
 
-	&::before,
-	&::after {
-		position: absolute;
-		font-weight: 900;
-		font-size: 20px;
-		font-family: "Font Awesome 5 Free";
-	}
-
 	&::before {
-		top: 10px;
-		left: 15px;
-		content: "\f10d";
-	}
 
-	&::after {
-		right: 15px;
-		bottom: 10px;
-		content: "\f10e";
+		@include nm-text();
+		position: absolute;
+		top: 0.5em;
+		left: 0.7em;
+		font-weight: 900;
+		font-size: 1.6em;
+		font-family: "Font Awesome 5 Free";
+		content: "\f10d";
 	}
 
 	p {
@@ -254,7 +248,22 @@
 	cite {
 		display: block;
 		font-size: 0.8em;
-		text-align: right;
+		opacity: $text_color_thin;
+	}
+
+	&.is-style-large {
+		margin-bottom: 2em;
+		padding: 2em 2em 2em 5em;
+
+		&::before {
+			font-size: 2.4em;
+		}
+
+		p {
+			font-size: 1.4em;
+			font-style: normal;
+			line-height: inherit;
+		}
 	}
 }
 
