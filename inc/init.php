@@ -209,7 +209,7 @@ function neomorphic_scripts() {
 	wp_enqueue_style( 'neomorphic-style-fontawesome', get_theme_file_uri() . '/assets/packages/font-awesome/css/all.min.css', array(), $theme_version );
 
 	// Main style
-	wp_enqueue_style( 'neomorphic-style-front-main', get_theme_file_uri() . '/assets/css/main.css', array(), filemtime( get_template_directory() . '/assets/css/main.css' ) );
+	wp_enqueue_style( 'neomorphic-style-front-main', get_theme_file_uri() . '/assets/css/main.min.css', array(), filemtime( get_template_directory() . '/assets/css/main.min.css' ) );
 
 	// Customizer output inline CSS
 	wp_add_inline_style( 'neomorphic-style-front-main', neomorphic_generate_css() );
@@ -230,7 +230,7 @@ function neomorphic_block_editor_styles() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 
 	// Main style
-	wp_enqueue_style( 'neomorphic-style-block-editor', get_theme_file_uri() . '/assets/css/editor-style-block.css', array(), $theme_version );
+	wp_enqueue_style( 'neomorphic-style-block-editor', get_theme_file_uri() . '/assets/css/editor-style-block.min.css', array(), $theme_version );
 
 	// Customizer output inline CSS
 	wp_add_inline_style( 'neomorphic-style-block-editor', neomorphic_generate_css() );
@@ -250,7 +250,7 @@ function neomorphic_footer_scripts() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 
 	if ( wp_style_is( 'wp-mediaelement', 'enqueued' ) ) {
-		wp_enqueue_style( 'neomorphic-style-mediaelement', get_theme_file_uri() . '/assets/css/mediaelement.css', array( 'wp-mediaelement' ), $theme_version );
+		wp_enqueue_style( 'neomorphic-style-mediaelement', get_theme_file_uri() . '/assets/css/mediaelement.min.css', array( 'wp-mediaelement' ), $theme_version );
 	}
 }
 

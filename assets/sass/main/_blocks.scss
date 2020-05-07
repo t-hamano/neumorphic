@@ -173,6 +173,8 @@
 	code {
 		padding: 0.1em 0.3em;
 		color: var(--color-text-main);
+		font-size: 0.9em;
+		font-family: $base_code_font_family;
 		background: var(--color-nm-dark);
 		border-radius: 4px;
 	}
@@ -186,7 +188,7 @@
 
 	&:last-child {
 
-		@include clearfix();
+		@include clearfix;
 	}
 
 	.alignleft {
@@ -323,7 +325,7 @@
 		font-size: 0.8em;
 		border-radius: 1000px;
 
-		@include nm-button();
+		@include nm-button;
 
 		&:active,
 		&:focus,
@@ -380,16 +382,20 @@
 ### Code
 ----------------------*/
 
+.wp-block-code {
+
+	@include nm-reverse;
+	padding: 2em;
+	border-radius: $base_border_radius;
+
+	code {
+		display: block;
+		background: transparent;
+	}
+}
+
 /*----------------------
 ### Freeform
-----------------------*/
-
-/*----------------------
-### HTML
-----------------------*/
-
-/*----------------------
-### Preformatted
 ----------------------*/
 
 /*----------------------
@@ -397,39 +403,48 @@
 ----------------------*/
 
 .wp-block-pullquote {
+
+	@include nm-reverse();
 	position: relative;
-	padding: 20px 50px;
+	padding: 2em;
+	text-align: inherit;
 	border-radius: $base_border_radius;
 
-	&::before,
-	&::after {
-		position: absolute;
-		font-weight: 900;
-		font-size: 20px;
-		font-family: "Font Awesome 5 Free";
-	}
-
-	&::before {
-		top: 10px;
-		left: 15px;
-		content: "\f10d";
-	}
-
-	&::after {
-		right: 15px;
-		bottom: 10px;
-		content: "\f10e";
-	}
-
-	p {
+	blockquote {
 		margin: 0;
+		padding: 2em 0;
+		border-top: 3px solid var(--color-accent);
+		border-bottom: 3px solid var(--color-accent);
+
+		p {
+			margin: 0 0 1em;
+			font-size: inherit;
+		}
+
+		cite {
+			display: block;
+			font-size: 0.8em;
+			opacity: $text_color_thin;
+		}
 	}
 
-	cite {
-		display: block;
-		margin-top: 1em;
-		font-size: 0.8em;
-		text-align: center;
+
+	&.is-style-solid-color {
+
+		blockquote {
+			max-width: 100%;
+			border: none;
+
+			p {
+				margin-bottom: 1em;
+				font-size: 1.4em;
+			}
+
+			cite {
+				font-size: 1em;
+				font-style: italic;
+			}
+		}
 	}
 }
 
@@ -440,6 +455,15 @@
 /*----------------------
 ### Verse
 ----------------------*/
+
+.wp-block-verse {
+
+	@include nm-reverse();
+	position: relative;
+	padding: 2em;
+	font-family: inherit;
+	border-radius: $base_border_radius;
+}
 
 /*------------------------------------------
 ## Column Block
@@ -474,10 +498,6 @@
 ----------------------*/
 
 /*----------------------
-### More
-----------------------*/
-
-/*----------------------
 ### Nextpage
 ----------------------*/
 
@@ -485,10 +505,27 @@
 ### Separator
 ----------------------*/
 
+.wp-block-separator {
 
-/*----------------------
-### Spacer
-----------------------*/
+	&:not(.is-style-dots) {
+
+		@include nm-border;
+		height: 3px;
+		margin-right: auto;
+		margin-left: auto;
+		border: none;
+
+		&:not(.is-style-wide) {
+			max-width: 50%;
+		}
+	}
+
+	&.is-style-dots::before {
+		font-size: 24px;
+		font-family: inherit;
+		line-height: 0;
+	}
+}
 
 /*------------------------------------------
 ## Widget Block
@@ -519,7 +556,7 @@
 
 .wp-block-calendar {
 
-	@include nm();
+	@include nm;
 	max-width: 350px;
 	padding: 1em;
 
@@ -659,7 +696,7 @@
 
 	> li {
 
-		@include nm();
+		@include nm;
 		@include clearfix();
 		padding: 1.5em 1em;
 		border-radius: $base_border_radius;
@@ -1084,31 +1121,31 @@
 ----------------------*/
 
 .has-bg-background-color {
-	background: var(--color-bg);
+	background-color: var(--color-bg);
 }
 
 .has-dark-background-color {
-	background: var(--color-nm-dark);
+	background-color: var(--color-nm-dark);
 }
 
 .has-light-background-color {
-	background: var(--color-nm-light);
+	background-color: var(--color-nm-light);
 }
 
 .has-main-text-background-color {
-	background: var(--color-text-main);
+	background-color: var(--color-text-main);
 }
 
 .has-accent-background-color {
-	background: var(--color-accent);
+	background-color: var(--color-accent);
 }
 
 .has-link-text-background-color {
-	background: var(--color-text-link);
+	background-color: var(--color-text-link);
 }
 
 .has-white-background-color {
-	background: #fff;
+	background-color: #fff;
 }
 
 /*----------------------

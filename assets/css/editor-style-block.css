@@ -16,13 +16,13 @@
 
 .editor-post-title__block::before {
 	position: absolute;
+	bottom: 0;
 	left: 0;
 	width: 100%;
 	height: 3px;
 	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
-	bottom: -1.5px;
 }
 
 .editor-post-title__block::after {
@@ -74,6 +74,7 @@
 .wp-block code {
 	padding: 0.1em 0.3em;
 	color: var(--color-text-main);
+	font-family: consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", monaco, "Courier New", courier, monospace;
 	background: var(--color-nm-dark);
 	border-radius: 4px;
 }
@@ -124,13 +125,13 @@
 [data-type="core/heading"] h1::before,
 [data-type="core/heading"] h2::before {
 	position: absolute;
+	bottom: 0;
 	left: 0;
 	width: 100%;
 	height: 3px;
 	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
-	bottom: -1.5px;
 }
 
 [data-type="core/heading"] h1 {
@@ -388,8 +389,26 @@
 ### Code
 ----------------------*/
 
-[data-type="core/code"] {
-	font-size: inherit;
+[data-type="core/code"] .wp-block-code {
+	text-decoration: none !important;
+	background-color: var(--color-bg) !important;
+	border: none !important;
+	outline: none !important;
+	transition: all 0.2s ease-in-out;
+	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
+	padding: 2em;
+	border-radius: 8px;
+}
+
+[data-type="core/code"] .wp-block-code:focus,
+[data-type="core/code"] .wp-block-code:hover,
+[data-type="core/code"] .wp-block-code:active {
+	text-decoration: none;
+	outline: none;
+}
+
+[data-type="core/code"] .wp-block-code .block-editor-plain-text {
+	background: transparent;
 }
 
 /*----------------------
@@ -404,16 +423,9 @@
 ### HTML
 ----------------------*/
 
-[data-type="core/html"] {
-	font-size: inherit;
-}
-
-/*----------------------
-### Preformatted
-----------------------*/
-
-[data-type="core/preformatted"] {
-	font-size: inherit;
+[data-type="core/html"] .wp-block-html .block-editor-plain-text {
+	font-size: 0.9em;
+	font-family: consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", monaco, "Courier New", courier, monospace;
 }
 
 /*----------------------
@@ -436,8 +448,23 @@
 ### Verse
 ----------------------*/
 
-[data-type="core/verse"] {
-	font-size: inherit;
+[data-type="core/verse"] .wp-block-verse {
+	text-decoration: none !important;
+	background-color: var(--color-bg) !important;
+	border: none !important;
+	outline: none !important;
+	transition: all 0.2s ease-in-out;
+	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
+	position: relative;
+	padding: 2em;
+	border-radius: 8px;
+}
+
+[data-type="core/verse"] .wp-block-verse:focus,
+[data-type="core/verse"] .wp-block-verse:hover,
+[data-type="core/verse"] .wp-block-verse:active {
+	text-decoration: none;
+	outline: none;
 }
 
 /*------------------------------------------
@@ -529,32 +556,93 @@
 ### More
 ----------------------*/
 
-[data-type="core/more"] {
-	font-size: inherit;
+[data-type="core/more"] .wp-block-more::before {
+	border-top: 3px var(--color-accent) solid;
+}
+
+[data-type="core/more"] .wp-block-more input[type="text"] {
+	color: var(--color-accent);
+	font-family: inherit;
+	background: var(--color-nm-light);
 }
 
 /*----------------------
 ### Nextpage
 ----------------------*/
 
-[data-type="core/nextpage"] {
-	font-size: inherit;
+[data-type="core/nextpage"] .wp-block-nextpage::before {
+	border-top: 3px var(--color-accent) solid;
+}
+
+[data-type="core/nextpage"] .wp-block-nextpage > span {
+	min-height: 30px;
+	color: var(--color-accent);
+	font-family: inherit;
+	line-height: normal;
+	background: var(--color-nm-light);
 }
 
 /*----------------------
 ### Separator
 ----------------------*/
 
-[data-type="core/separator"] {
-	font-size: inherit;
+[data-type="core/separator"] .wp-block-separator {
+	height: 3px;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 10px 0;
+	border: none;
+	border-radius: 1000px;
+	transform: translateY(-6px);
+	cursor: pointer;
+}
+
+[data-type="core/separator"] .wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+	max-width: 50%;
+}
+
+[data-type="core/separator"] .wp-block-separator:not(.is-style-dots):not(.has-background) {
+	position: relative;
+}
+
+[data-type="core/separator"] .wp-block-separator:not(.is-style-dots):not(.has-background)::before {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	border-radius: 1000px;
+	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
+	content: "";
+}
+
+[data-type="core/separator"] .wp-block-separator.has-background:not(.is-style-dots) {
+	position: relative;
+	background-color: transparent !important;
+}
+
+[data-type="core/separator"] .wp-block-separator.has-background:not(.is-style-dots)::before {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 2px;
+	background: currentColor;
+	content: "";
+}
+
+[data-type="core/separator"] .wp-block-separator.is-style-dots::before {
+	font-size: 24px;
+	font-family: inherit;
+	line-height: 0;
 }
 
 /*----------------------
 ### Spacer
 ----------------------*/
 
-[data-type="core/spacer"] {
-	font-size: inherit;
+[data-type="core/spacer"] .block-library-spacer__resize-container {
+	background: var(--color-nm-light);
 }
 
 /*------------------------------------------
@@ -816,13 +904,13 @@
 
 [data-type="core/latest-comments"] .wp-block-latest-comments__comment:not(:last-child)::before {
 	position: absolute;
+	bottom: 0;
 	left: 0;
 	width: 100%;
 	height: 3px;
 	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
-	bottom: -1.5px;
 }
 
 [data-type="core/latest-comments"] .wp-block-latest-comments .avatar,
@@ -994,13 +1082,13 @@
 
 [data-type="core/rss"] .wp-block-rss:not(.is-grid) > li:not(:last-child)::before {
 	position: absolute;
+	bottom: 0;
 	left: 0;
 	width: 100%;
 	height: 3px;
 	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
-	bottom: -1.5px;
 }
 
 [data-type="core/rss"] .wp-block-rss.is-grid {

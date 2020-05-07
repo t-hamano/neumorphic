@@ -312,13 +312,13 @@ button:focus {
 
 .c-entry__header::before {
 	position: absolute;
+	bottom: 0;
 	left: 0;
 	width: 100%;
 	height: 3px;
 	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
-	bottom: -1.5px;
 }
 
 .c-entry__title {
@@ -543,13 +543,13 @@ button:focus {
 
 .c-comment__title::before {
 	position: absolute;
+	bottom: 0;
 	left: 0;
 	width: 100%;
 	height: 3px;
 	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
-	bottom: -1.5px;
 }
 
 .c-comment__list {
@@ -566,13 +566,13 @@ button:focus {
 
 .c-comment__list > li:not(:last-child)::before {
 	position: absolute;
+	bottom: 0;
 	left: 0;
 	width: 100%;
 	height: 3px;
 	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
-	bottom: -1.5px;
 }
 
 .c-comment__list .children {
@@ -849,7 +849,8 @@ button:focus {
 	margin-top: 4em;
 }
 
-.c-pagination__item {
+.c-pagination__item,
+.c-pagination .post-page-numbers {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -864,7 +865,12 @@ button:focus {
 
 .c-pagination__item--link,
 .c-pagination__item--prev,
-.c-pagination__item--next {
+.c-pagination__item--next,
+.c-pagination__item:not(.current),
+.c-pagination .post-page-numbers--link,
+.c-pagination .post-page-numbers--prev,
+.c-pagination .post-page-numbers--next,
+.c-pagination .post-page-numbers:not(.current) {
 	text-decoration: none !important;
 	background-color: var(--color-bg) !important;
 	border: none !important;
@@ -887,20 +893,45 @@ button:focus {
 .c-pagination__item--prev:active,
 .c-pagination__item--next:focus,
 .c-pagination__item--next:hover,
-.c-pagination__item--next:active {
+.c-pagination__item--next:active,
+.c-pagination__item:not(.current):focus,
+.c-pagination__item:not(.current):hover,
+.c-pagination__item:not(.current):active,
+.c-pagination .post-page-numbers--link:focus,
+.c-pagination .post-page-numbers--link:hover,
+.c-pagination .post-page-numbers--link:active,
+.c-pagination .post-page-numbers--prev:focus,
+.c-pagination .post-page-numbers--prev:hover,
+.c-pagination .post-page-numbers--prev:active,
+.c-pagination .post-page-numbers--next:focus,
+.c-pagination .post-page-numbers--next:hover,
+.c-pagination .post-page-numbers--next:active,
+.c-pagination .post-page-numbers:not(.current):focus,
+.c-pagination .post-page-numbers:not(.current):hover,
+.c-pagination .post-page-numbers:not(.current):active {
 	text-decoration: none;
 	outline: none;
 }
 
 .c-pagination__item--link:focus,
 .c-pagination__item--prev:focus,
-.c-pagination__item--next:focus {
+.c-pagination__item--next:focus,
+.c-pagination__item:not(.current):focus,
+.c-pagination .post-page-numbers--link:focus,
+.c-pagination .post-page-numbers--prev:focus,
+.c-pagination .post-page-numbers--next:focus,
+.c-pagination .post-page-numbers:not(.current):focus {
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 }
 
 .c-pagination__item--link:hover,
 .c-pagination__item--prev:hover,
-.c-pagination__item--next:hover {
+.c-pagination__item--next:hover,
+.c-pagination__item:not(.current):hover,
+.c-pagination .post-page-numbers--link:hover,
+.c-pagination .post-page-numbers--prev:hover,
+.c-pagination .post-page-numbers--next:hover,
+.c-pagination .post-page-numbers:not(.current):hover {
 	text-decoration: none !important;
 	background-color: var(--color-bg) !important;
 	border: none !important;
@@ -917,24 +948,52 @@ button:focus {
 .c-pagination__item--prev:hover:active,
 .c-pagination__item--next:hover:focus,
 .c-pagination__item--next:hover:hover,
-.c-pagination__item--next:hover:active {
+.c-pagination__item--next:hover:active,
+.c-pagination__item:not(.current):hover:focus,
+.c-pagination__item:not(.current):hover:hover,
+.c-pagination__item:not(.current):hover:active,
+.c-pagination .post-page-numbers--link:hover:focus,
+.c-pagination .post-page-numbers--link:hover:hover,
+.c-pagination .post-page-numbers--link:hover:active,
+.c-pagination .post-page-numbers--prev:hover:focus,
+.c-pagination .post-page-numbers--prev:hover:hover,
+.c-pagination .post-page-numbers--prev:hover:active,
+.c-pagination .post-page-numbers--next:hover:focus,
+.c-pagination .post-page-numbers--next:hover:hover,
+.c-pagination .post-page-numbers--next:hover:active,
+.c-pagination .post-page-numbers:not(.current):hover:focus,
+.c-pagination .post-page-numbers:not(.current):hover:hover,
+.c-pagination .post-page-numbers:not(.current):hover:active {
 	text-decoration: none;
 	outline: none;
 }
 
 .c-pagination__item--link:hover a,
 .c-pagination__item--prev:hover a,
-.c-pagination__item--next:hover a {
+.c-pagination__item--next:hover a,
+.c-pagination__item:not(.current):hover a,
+.c-pagination .post-page-numbers--link:hover a,
+.c-pagination .post-page-numbers--prev:hover a,
+.c-pagination .post-page-numbers--next:hover a,
+.c-pagination .post-page-numbers:not(.current):hover a {
 	text-decoration: none;
 }
 
 .c-pagination__item--link:active,
 .c-pagination__item--prev:active,
-.c-pagination__item--next:active {
+.c-pagination__item--next:active,
+.c-pagination__item:not(.current):active,
+.c-pagination .post-page-numbers--link:active,
+.c-pagination .post-page-numbers--prev:active,
+.c-pagination .post-page-numbers--next:active,
+.c-pagination .post-page-numbers:not(.current):active {
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 }
 
-.c-pagination__item--current {
+.c-pagination__item--current,
+.c-pagination__item.current,
+.c-pagination .post-page-numbers--current,
+.c-pagination .post-page-numbers.current {
 	text-decoration: none !important;
 	background-color: var(--color-bg) !important;
 	border: none !important;
@@ -946,7 +1005,16 @@ button:focus {
 
 .c-pagination__item--current:focus,
 .c-pagination__item--current:hover,
-.c-pagination__item--current:active {
+.c-pagination__item--current:active,
+.c-pagination__item.current:focus,
+.c-pagination__item.current:hover,
+.c-pagination__item.current:active,
+.c-pagination .post-page-numbers--current:focus,
+.c-pagination .post-page-numbers--current:hover,
+.c-pagination .post-page-numbers--current:active,
+.c-pagination .post-page-numbers.current:focus,
+.c-pagination .post-page-numbers.current:hover,
+.c-pagination .post-page-numbers.current:active {
 	text-decoration: none;
 	outline: none;
 }
@@ -1356,13 +1424,13 @@ button:focus {
 
 .widget__title::before {
 	position: absolute;
+	bottom: 0;
 	left: 0;
 	width: 100%;
 	height: 3px;
 	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
-	bottom: -1.5px;
 }
 
 /*------------------------------------------
@@ -1773,13 +1841,13 @@ button:focus {
 
 .widget_rss ul li:not(:last-child)::before {
 	position: absolute;
+	bottom: 0;
 	left: 0;
 	width: 100%;
 	height: 3px;
 	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
-	bottom: -1.5px;
 }
 
 .widget_rss ul li .rsswidget {
@@ -1917,13 +1985,13 @@ button:focus {
 
 .widget_recent_entries ul li:not(:last-child)::before {
 	position: absolute;
+	bottom: 0;
 	left: 0;
 	width: 100%;
 	height: 3px;
 	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
-	bottom: -1.5px;
 }
 
 .widget_recent_entries ul li a {
@@ -2102,13 +2170,13 @@ button:focus {
 .entry-content > h1::before,
 .entry-content > h2::before {
 	position: absolute;
+	bottom: 0;
 	left: 0;
 	width: 100%;
 	height: 3px;
 	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
-	bottom: -1.5px;
 }
 
 .entry-content > h1 {
@@ -2190,6 +2258,8 @@ button:focus {
 .entry-content code {
 	padding: 0.1em 0.3em;
 	color: var(--color-text-main);
+	font-size: 0.9em;
+	font-family: consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", monaco, "Courier New", courier, monospace;
 	background: var(--color-nm-dark);
 	border-radius: 4px;
 }
@@ -2442,16 +2512,31 @@ button:focus {
 ### Code
 ----------------------*/
 
+.wp-block-code {
+	text-decoration: none !important;
+	background-color: var(--color-bg) !important;
+	border: none !important;
+	outline: none !important;
+	transition: all 0.2s ease-in-out;
+	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
+	padding: 2em;
+	border-radius: 8px;
+}
+
+.wp-block-code:focus,
+.wp-block-code:hover,
+.wp-block-code:active {
+	text-decoration: none;
+	outline: none;
+}
+
+.wp-block-code code {
+	display: block;
+	background: transparent;
+}
+
 /*----------------------
 ### Freeform
-----------------------*/
-
-/*----------------------
-### HTML
-----------------------*/
-
-/*----------------------
-### Preformatted
 ----------------------*/
 
 /*----------------------
@@ -2459,40 +2544,56 @@ button:focus {
 ----------------------*/
 
 .wp-block-pullquote {
+	text-decoration: none !important;
+	background-color: var(--color-bg) !important;
+	border: none !important;
+	outline: none !important;
+	transition: all 0.2s ease-in-out;
+	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	position: relative;
-	padding: 20px 50px;
+	padding: 2em;
+	text-align: inherit;
 	border-radius: 8px;
 }
 
-.wp-block-pullquote::before,
-.wp-block-pullquote::after {
-	position: absolute;
-	font-weight: 900;
-	font-size: 20px;
-	font-family: "Font Awesome 5 Free";
+.wp-block-pullquote:focus,
+.wp-block-pullquote:hover,
+.wp-block-pullquote:active {
+	text-decoration: none;
+	outline: none;
 }
 
-.wp-block-pullquote::before {
-	top: 10px;
-	left: 15px;
-	content: "\f10d";
-}
-
-.wp-block-pullquote::after {
-	right: 15px;
-	bottom: 10px;
-	content: "\f10e";
-}
-
-.wp-block-pullquote p {
+.wp-block-pullquote blockquote {
 	margin: 0;
+	padding: 2em 0;
+	border-top: 3px solid var(--color-accent);
+	border-bottom: 3px solid var(--color-accent);
 }
 
-.wp-block-pullquote cite {
+.wp-block-pullquote blockquote p {
+	margin: 0 0 1em;
+	font-size: inherit;
+}
+
+.wp-block-pullquote blockquote cite {
 	display: block;
-	margin-top: 1em;
 	font-size: 0.8em;
-	text-align: center;
+	opacity: 0.8;
+}
+
+.wp-block-pullquote.is-style-solid-color blockquote {
+	max-width: 100%;
+	border: none;
+}
+
+.wp-block-pullquote.is-style-solid-color blockquote p {
+	margin-bottom: 1em;
+	font-size: 1.4em;
+}
+
+.wp-block-pullquote.is-style-solid-color blockquote cite {
+	font-size: 1em;
+	font-style: italic;
 }
 
 /*----------------------
@@ -2502,6 +2603,26 @@ button:focus {
 /*----------------------
 ### Verse
 ----------------------*/
+
+.wp-block-verse {
+	text-decoration: none !important;
+	background-color: var(--color-bg) !important;
+	border: none !important;
+	outline: none !important;
+	transition: all 0.2s ease-in-out;
+	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
+	position: relative;
+	padding: 2em;
+	font-family: inherit;
+	border-radius: 8px;
+}
+
+.wp-block-verse:focus,
+.wp-block-verse:hover,
+.wp-block-verse:active {
+	text-decoration: none;
+	outline: none;
+}
 
 /*------------------------------------------
 ## Column Block
@@ -2580,10 +2701,6 @@ button:focus {
 ----------------------*/
 
 /*----------------------
-### More
-----------------------*/
-
-/*----------------------
 ### Nextpage
 ----------------------*/
 
@@ -2591,9 +2708,34 @@ button:focus {
 ### Separator
 ----------------------*/
 
-/*----------------------
-### Spacer
-----------------------*/
+.wp-block-separator:not(.is-style-dots) {
+	position: relative;
+	height: 3px;
+	margin-right: auto;
+	margin-left: auto;
+	border: none;
+}
+
+.wp-block-separator:not(.is-style-dots)::before {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	border-radius: 1000px;
+	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
+	content: "";
+}
+
+.wp-block-separator:not(.is-style-dots):not(.is-style-wide) {
+	max-width: 50%;
+}
+
+.wp-block-separator.is-style-dots::before {
+	font-size: 24px;
+	font-family: inherit;
+	line-height: 0;
+}
 
 /*------------------------------------------
 ## Widget Block
@@ -2805,13 +2947,13 @@ button:focus {
 
 .wp-block-latest-comments__comment:not(:last-child)::before {
 	position: absolute;
+	bottom: 0;
 	left: 0;
 	width: 100%;
 	height: 3px;
 	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
-	bottom: -1.5px;
 }
 
 .wp-block-latest-comments .avatar,
@@ -2987,13 +3129,13 @@ button:focus {
 
 .wp-block-rss:not(.is-grid) > li:not(:last-child)::before {
 	position: absolute;
+	bottom: 0;
 	left: 0;
 	width: 100%;
 	height: 3px;
 	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
-	bottom: -1.5px;
 }
 
 .wp-block-rss.is-grid {
@@ -3390,31 +3532,31 @@ button:focus {
 ----------------------*/
 
 .has-bg-background-color {
-	background: var(--color-bg);
+	background-color: var(--color-bg);
 }
 
 .has-dark-background-color {
-	background: var(--color-nm-dark);
+	background-color: var(--color-nm-dark);
 }
 
 .has-light-background-color {
-	background: var(--color-nm-light);
+	background-color: var(--color-nm-light);
 }
 
 .has-main-text-background-color {
-	background: var(--color-text-main);
+	background-color: var(--color-text-main);
 }
 
 .has-accent-background-color {
-	background: var(--color-accent);
+	background-color: var(--color-accent);
 }
 
 .has-link-text-background-color {
-	background: var(--color-text-link);
+	background-color: var(--color-text-link);
 }
 
 .has-white-background-color {
-	background: #fff;
+	background-color: #fff;
 }
 
 /*----------------------
@@ -3507,7 +3649,8 @@ button:focus {
 		opacity: 0.7;
 	}
 
-	.c-pagination__item:hover {
+	.c-pagination__item:hover,
+	.c-pagination .post-page-numbers:hover {
 		text-decoration: none;
 	}
 

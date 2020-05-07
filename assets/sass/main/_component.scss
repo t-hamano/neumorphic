@@ -355,7 +355,8 @@
 	justify-content: center;
 	margin-top: 4em;
 
-	&__item {
+	&__item,
+	.post-page-numbers {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -369,13 +370,15 @@
 
 		&--link,
 		&--prev,
-		&--next {
+		&--next,
+		&:not(.current) {
 
 			@include nm-button;
 			color: var(--color-accent);
 		}
 
-		&--current {
+		&--current,
+		&.current {
 
 			@include nm-light;
 			color: inherit;
