@@ -209,7 +209,7 @@ function neomorphic_scripts() {
 	wp_enqueue_style( 'neomorphic-style-fontawesome', get_theme_file_uri() . '/assets/packages/font-awesome/css/all.min.css', array(), $theme_version );
 
 	// Main style
-	wp_enqueue_style( 'neomorphic-style-front-main', get_theme_file_uri() . '/assets/css/main.css', array(), $theme_version );
+	wp_enqueue_style( 'neomorphic-style-front-main', get_theme_file_uri() . '/assets/css/main.css', array(), filemtime( get_template_directory() . '/assets/css/main.css' ) );
 
 	// Customizer output inline CSS
 	wp_add_inline_style( 'neomorphic-style-front-main', neomorphic_generate_css() );

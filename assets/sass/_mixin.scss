@@ -6,48 +6,66 @@
 	}
 }
 
+// Clearfix
+@mixin clearfix() {
+
+	&::after {
+		display: table;
+		clear: both;
+		content: "";
+	}
+}
+
 // Neomorphic styles
-@mixin nm() {
-	background: var(--color-bg);
-	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+@mixin nm-common() {
+	text-decoration: none !important;
+	background-color: var(--color-bg) !important;
+	border: none !important;
+	outline: none !important;
 	transition: all $base_transition_duration ease-in-out;
+
+	&:focus,
+	&:hover,
+	&:active {
+		text-decoration: none;
+		outline: none;
+	}
+}
+
+@mixin nm() {
+
+	@include nm-common();
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 }
 
 @mixin nm-light() {
-	background: var(--color-bg);
+
+	@include nm-common();
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
-	transition: all $base_transition_duration ease-in-out;
 }
 
 @mixin nm-reverse() {
-	background: var(--color-bg);
+
+	@include nm-common();
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 }
 
-@mixin nm-hover() {
-	background: var(--color-bg);
-	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
-}
-
 @mixin nm-link() {
-	display: inline-block;
+
+	@include nm-common();
+
 	color: inherit;
 	text-decoration: none;
-	background: var(--color-bg);
-	background: transparent;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
-	transition: all $base_transition_duration ease-in-out;
 
 	&:focus {
-		outline: none;
 		box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	}
 
 	&:hover {
 
-		@include nm-hover;
-		text-decoration: none;
+		@include nm-light;
 
 		a {
 			text-decoration: none;
@@ -67,11 +85,11 @@
 }
 
 @mixin nm-button-editor() {
+
+	@include nm-common();
 	display: inline-block;
 	color: inherit;
 	font-weight: bold;
-	text-decoration: none;
-	background: var(--color-bg);
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 }
 
@@ -96,14 +114,25 @@
 }
 
 @mixin nm-input() {
-	background: var(--color-bg);
-	border: none;
-	outline: none;
-	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
-	transition: all $base_transition_duration ease-in-out;
+
+	@include nm-common();
+	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light) !important;
 
 	&:focus {
-		box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
+		box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light) !important;
+	}
+}
+
+@mixin nm-input-editor() {
+
+	@include nm-common();
+	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
+
+	&:focus,
+	&:active,
+	&:disabled {
+		color: inherit;
+		box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light) !important;
 	}
 }
 
@@ -113,4 +142,37 @@
 
 @mixin nm-text-border() {
 	text-shadow: 1px 1px 0 var(--color-text-border-color);
+}
+
+@mixin nm-image() {
+
+	@include nm-reverse;
+	padding: 5px;
+	border-radius: $base_border_radius;
+}
+
+@mixin nm-image-link() {
+
+	@include mq(lg-min) {
+
+		&:hover::before {
+			opacity: 1;
+		}
+		position: relative;
+		display: block;
+
+		&::before {
+			position: absolute;
+			top: 5px;
+			left: 5px;
+			z-index: 1;
+			width: calc(100% - 10px);
+			height: calc(100% - 10px);
+			background: rgba(0, 0, 0, 0.3);
+			border-radius: $base_border_radius / 2;
+			opacity: 0;
+			transition: opacity $base_transition_duration ease-in-out;
+			content: "";
+		}
+	}
 }

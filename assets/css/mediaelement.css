@@ -3,10 +3,21 @@
 --------------------------------------------------------------*/
 
 .mejs-container.mejs-audio {
-	background: var(--color-bg);
+	text-decoration: none !important;
+	background-color: var(--color-bg) !important;
+	border: none !important;
+	outline: none !important;
+	transition: all 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	background: transparent;
 	border-radius: 1000px;
+}
+
+.mejs-container.mejs-audio:focus,
+.mejs-container.mejs-audio:hover,
+.mejs-container.mejs-audio:active {
+	text-decoration: none;
+	outline: none;
 }
 
 .mejs-container.mejs-audio .mejs-mediaelement {
@@ -27,11 +38,22 @@
 }
 
 .mejs-container.mejs-video {
-	background: var(--color-bg);
+	text-decoration: none !important;
+	background-color: var(--color-bg) !important;
+	border: none !important;
+	outline: none !important;
+	transition: all 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	overflow: hidden;
 	background: transparent;
-	border-radius: 10px;
+	border-radius: 8px;
+}
+
+.mejs-container.mejs-video:focus,
+.mejs-container.mejs-video:hover,
+.mejs-container.mejs-video:active {
+	text-decoration: none;
+	outline: none;
 }
 
 .mejs-container.mejs-video .mejs-mediaelement {
