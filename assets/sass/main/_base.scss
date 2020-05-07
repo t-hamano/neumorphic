@@ -128,38 +128,13 @@ pre {
 
 		img {
 
-			@include nm;
+			@include nm-image;
 			width: 100%;
-			border-radius: $base_border_radius / 2;
 		}
 
 		a {
 
-			@include nm-link;
-			position: relative;
-			display: block;
-			overflow: hidden;
-			border-radius: $base_border_radius / 2;
-
-			&::before {
-				position: absolute;
-				top: 0;
-				left: 0;
-				z-index: 1;
-				width: 100%;
-				height: 100%;
-				background: rgba(0, 0, 0, 0.3);
-				opacity: 0;
-				transition: opacity $base_transition_duration ease-in-out;
-				content: "";
-			}
-
-			@include mq(lg-min) {
-
-				&:hover::before {
-					opacity: 1;
-				}
-			}
+			@include nm-image-link;
 		}
 	}
 

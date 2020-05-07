@@ -138,8 +138,8 @@
 	}
 
 	/* List */
-	> ul,
-	> ol {
+	> ul:not([class]),
+	> ol:not([class]) {
 		margin-left: 0;
 		padding-left: 1.5em;
 
@@ -184,10 +184,9 @@
 
 .wp-block-image {
 
-	&:last-child::after {
-		display: table;
-		clear: both;
-		content: "";
+	&:last-child {
+
+		@include clearfix();
 	}
 
 	.alignleft {
@@ -597,23 +596,87 @@
 ### Latest-Comments
 ----------------------*/
 
+.wp-block-latest-comments {
+
+	@include nm;
+	padding: 1.5em 1em;
+	border-radius: $base_border_radius;
+
+	&__comment {
+		position: relative;
+		margin-bottom: 0;
+		line-height: inherit;
+
+		&:not(:last-child) {
+
+			@include nm-border;
+			margin-bottom: 1em;
+			padding-bottom: 1em;
+		}
+	}
+
+	.avatar,
+	&__comment-avatar {
+
+		@include nm;
+		position: absolute;
+		top: -9px;
+		margin: 0;
+	}
+
+	&__comment-date {
+		display: block;
+		margin-top: 0.3em;
+		color: inherit;
+		font-size: 0.8em;
+
+		&::before {
+			margin-right: 0.2em;
+			font-weight: 400;
+			font-family: "Font Awesome 5 Free";
+			content: "\f017";
+		}
+	}
+
+	&__comment-excerpt {
+
+		p {
+			margin: 0.2em 0 0;
+			line-height: inherit;
+		}
+	}
+}
+
 /*----------------------
 ### Latest-Posts
 ----------------------*/
 
-/*----------------------
-### RSS
-----------------------*/
+.wp-block-latest-posts {
 
-.wp-block-rss {
-	padding-left: 0 !important;
-	list-style: none;
+	&.wp-block-latest-posts__list {
+		padding: 0;
+	}
 
 	> li {
 
-		@include nm;
+		@include nm();
+		@include clearfix();
 		padding: 1.5em 1em;
 		border-radius: $base_border_radius;
+
+		> a {
+			margin: 0;
+			font-weight: bold;
+			font-size: 1.2em;
+			line-height: 1.4;
+		}
+	}
+
+	&:not(.is-grid) {
+
+		li:not(:last-child) {
+			margin-bottom: 1.5em;
+		}
 	}
 
 	&.is-grid {
@@ -621,13 +684,106 @@
 		margin-right: -8px;
 		margin-left: -8px;
 
+		&.alignleft {
+			margin-right: 1.5em;
+		}
+
+		&.alignright {
+			margin-left: 1.5em;
+		}
+
+		@include mq(md-max) {
+
+			&.alignleft,
+			&.alignright {
+				margin-right: auto;
+				margin-left: auto;
+			}
+		}
+
 		> li {
 			margin: 0 8px 16px;
+			padding: 1em;
 		}
 	}
 
-	&:not(.is-grid) > li {
-		margin: 1em 0;
+	&__featured-image img {
+
+		@include nm-image;
+	}
+
+	&__post-date {
+		display: block;
+		color: inherit;
+		font-size: 0.8em;
+
+		&::before {
+			margin-right: 0.2em;
+			font-weight: 400;
+			font-family: "Font Awesome 5 Free";
+			content: "\f017";
+		}
+	}
+}
+
+/*----------------------
+### RSS
+----------------------*/
+
+.wp-block-rss {
+	list-style: none;
+
+	&:not(.is-grid) {
+
+		@include nm;
+		padding: 1em;
+		border-radius: $base_border_radius;
+
+		> li {
+			margin: 0;
+
+			&:not(:last-child) {
+
+				@include nm-border;
+				margin-bottom: 1em;
+				padding-bottom: 1em;
+			}
+		}
+	}
+
+	&.is-grid {
+		max-width: none;
+		margin-right: -8px;
+		margin-left: -8px;
+
+		&.alignleft {
+			margin-right: 1.5em;
+		}
+
+		&.alignright {
+			margin-left: 1.5em;
+		}
+
+		@include mq(md-max) {
+
+			&.alignleft,
+			&.alignright {
+				margin-right: auto;
+				margin-left: auto;
+			}
+		}
+
+		&.aligncenter {
+			display: flex;
+		}
+
+		> li {
+
+			@include nm;
+			margin: 0 8px 16px;
+			padding: 1em;
+			border-radius: $base_border_radius;
+		}
 	}
 
 	&__item-title a {
@@ -640,6 +796,12 @@
 			font-family: "Font Awesome 5 Free";
 			content: "\f09e";
 		}
+	}
+
+	&__item-author {
+		color: inherit;
+		font-size: 0.8em;
+		font-style: italic;
 	}
 
 	&__item-publish-date {
@@ -752,10 +914,14 @@
 
 .wp-block-social-links {
 	flex-wrap: wrap;
-	padding: 0 !important;
+	padding: 0;
+
+	&.aligncenter {
+		display: flex !important;
+	}
 
 	li {
-		margin: 0 0.5em 0.5em 0 !important;
+		margin: 0 0.5em 0.5em 0;
 	}
 
 	&.is-style-nm {
@@ -797,8 +963,8 @@
 		> iframe {
 			display: block;
 			max-width: 100%;
-			margin-right: auto !important;
-			margin-left: auto !important;
+			// margin-right: auto !important;
+			// margin-left: auto !important;
 		}
 	}
 }
@@ -819,13 +985,13 @@
 .wp-block-embed-spotify .wp-block-embed__wrapper {
 
 	&::before {
-		content: none !important;
+		// content: none !important;
 	}
 
 	iframe {
-		position: static !important;
+		// position: static !important;
 		display: block;
-		height: 300px !important;
+		// height: 300px !important;
 	}
 }
 
@@ -853,11 +1019,11 @@
 .wp-block-embed-mixcloud .wp-block-embed__wrapper {
 
 	&::before {
-		content: none !important;
+		// content: none !important;
 	}
 
 	iframe {
-		position: static !important;
+		// position: static !important;
 	}
 }
 
@@ -866,7 +1032,7 @@
 ----------------------*/
 
 .wp-block-embed-reverbnation .wp-block-embed__wrapper::before {
-	padding-top: 55% !important;
+	// padding-top: 55% !important;
 }
 
 /*------------------------------------------

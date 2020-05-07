@@ -46,7 +46,7 @@
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	overflow: hidden;
 	background: transparent;
-	border-radius: 10px;
+	border-radius: 8px;
 }
 
 .mejs-container.mejs-video:focus,
