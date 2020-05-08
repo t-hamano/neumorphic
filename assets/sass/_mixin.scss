@@ -19,10 +19,13 @@
 // Neomorphic styles
 @mixin nm-common() {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all $base_transition_duration ease-in-out;
+
+	&:not(.has-background) {
+		background-color: var(--color-bg) !important;
+	}
 
 	&:focus,
 	&:hover,

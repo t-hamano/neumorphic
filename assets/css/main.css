@@ -143,14 +143,17 @@ pre {
 
 .widget_media_gallery .gallery-icon img {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	padding: 5px;
 	border-radius: 8px;
 	width: 100%;
+}
+
+.widget_media_gallery .gallery-icon img:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .widget_media_gallery .gallery-icon img:focus,
@@ -335,8 +338,7 @@ button:focus {
 
 .c-entry__edit-link {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	color: inherit;
@@ -352,6 +354,10 @@ button:focus {
 	border-radius: 1000px;
 }
 
+.c-entry__edit-link:not(.has-background) {
+	background-color: var(--color-bg) !important;
+}
+
 .c-entry__edit-link:focus,
 .c-entry__edit-link:hover,
 .c-entry__edit-link:active {
@@ -365,11 +371,14 @@ button:focus {
 
 .c-entry__edit-link:hover {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+}
+
+.c-entry__edit-link:hover:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .c-entry__edit-link:hover:focus,
@@ -397,8 +406,7 @@ button:focus {
 
 .c-entries__item > a {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	color: inherit;
@@ -411,6 +419,10 @@ button:focus {
 	color: inherit;
 	text-decoration: none;
 	border-radius: 8px;
+}
+
+.c-entries__item > a:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .c-entries__item > a:focus,
@@ -426,11 +438,14 @@ button:focus {
 
 .c-entries__item > a:hover {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+}
+
+.c-entries__item > a:hover:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .c-entries__item > a:hover:focus,
@@ -458,8 +473,7 @@ button:focus {
 
 .c-entries__thumbnail img {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
@@ -473,6 +487,10 @@ button:focus {
 	-o-object-fit: cover;
 	object-fit: cover;
 	font-family: "object-fit: cover;";
+}
+
+.c-entries__thumbnail img:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .c-entries__thumbnail img:focus,
@@ -515,14 +533,17 @@ button:focus {
 
 .c-comment {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	margin-top: 3em;
 	padding: 1.5em 2em;
 	border-radius: 10px;
+}
+
+.c-comment:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .c-comment:focus,
@@ -624,12 +645,15 @@ button:focus {
 
 .c-comment__form .comment-form-comment textarea {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light) !important;
 	border-radius: 8px;
+}
+
+.c-comment__form .comment-form-comment textarea:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .c-comment__form .comment-form-comment textarea:focus,
@@ -649,8 +673,7 @@ button:focus {
 
 .c-comment__form .form-submit [type="submit"] {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	color: inherit;
@@ -661,6 +684,10 @@ button:focus {
 	text-align: center;
 	width: auto;
 	border-radius: 1000px;
+}
+
+.c-comment__form .form-submit [type="submit"]:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .c-comment__form .form-submit [type="submit"]:focus,
@@ -676,11 +703,14 @@ button:focus {
 
 .c-comment__form .form-submit [type="submit"]:hover {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+}
+
+.c-comment__form .form-submit [type="submit"]:hover:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .c-comment__form .form-submit [type="submit"]:hover:focus,
@@ -738,8 +768,7 @@ button:focus {
 
 .c-sns__item a {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	color: inherit;
@@ -757,6 +786,10 @@ button:focus {
 	border-radius: 8px;
 }
 
+.c-sns__item a:not(.has-background) {
+	background-color: var(--color-bg) !important;
+}
+
 .c-sns__item a:focus,
 .c-sns__item a:hover,
 .c-sns__item a:active {
@@ -770,11 +803,14 @@ button:focus {
 
 .c-sns__item a:hover {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+}
+
+.c-sns__item a:hover:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .c-sns__item a:hover:focus,
@@ -806,13 +842,16 @@ button:focus {
 
 .c-search-form__input {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light) !important;
 	padding-right: 3em;
 	border-radius: 1000px;
+}
+
+.c-search-form__input:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .c-search-form__input:focus,
@@ -872,8 +911,7 @@ button:focus {
 .c-pagination .post-page-numbers--next,
 .c-pagination .post-page-numbers:not(.current) {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	color: inherit;
@@ -883,6 +921,17 @@ button:focus {
 	font-weight: bold;
 	text-align: center;
 	color: var(--color-accent);
+}
+
+.c-pagination__item--link:not(.has-background),
+.c-pagination__item--prev:not(.has-background),
+.c-pagination__item--next:not(.has-background),
+.c-pagination__item:not(.current):not(.has-background),
+.c-pagination .post-page-numbers--link:not(.has-background),
+.c-pagination .post-page-numbers--prev:not(.has-background),
+.c-pagination .post-page-numbers--next:not(.has-background),
+.c-pagination .post-page-numbers:not(.current):not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .c-pagination__item--link:focus,
@@ -933,11 +982,21 @@ button:focus {
 .c-pagination .post-page-numbers--next:hover,
 .c-pagination .post-page-numbers:not(.current):hover {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+}
+
+.c-pagination__item--link:hover:not(.has-background),
+.c-pagination__item--prev:hover:not(.has-background),
+.c-pagination__item--next:hover:not(.has-background),
+.c-pagination__item:not(.current):hover:not(.has-background),
+.c-pagination .post-page-numbers--link:hover:not(.has-background),
+.c-pagination .post-page-numbers--prev:hover:not(.has-background),
+.c-pagination .post-page-numbers--next:hover:not(.has-background),
+.c-pagination .post-page-numbers:not(.current):hover:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .c-pagination__item--link:hover:focus,
@@ -995,12 +1054,18 @@ button:focus {
 .c-pagination .post-page-numbers--current,
 .c-pagination .post-page-numbers.current {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
 	color: inherit;
+}
+
+.c-pagination__item--current:not(.has-background),
+.c-pagination__item.current:not(.has-background),
+.c-pagination .post-page-numbers--current:not(.has-background),
+.c-pagination .post-page-numbers.current:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .c-pagination__item--current:focus,
@@ -1390,13 +1455,16 @@ button:focus {
 
 .widget {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	padding: 1.5em 1em;
 	border-radius: 8px;
+}
+
+.widget:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .widget:focus,
@@ -1505,12 +1573,16 @@ button:focus {
 .widget_categories select,
 .widget_archive select {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light) !important;
 	border-radius: 1000px;
+}
+
+.widget_categories select:not(.has-background),
+.widget_archive select:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .widget_categories select:focus,
@@ -1547,8 +1619,7 @@ button:focus {
 
 .widget_tag_cloud .tagcloud a {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	color: inherit;
@@ -1565,6 +1636,10 @@ button:focus {
 	border-radius: 1000px;
 }
 
+.widget_tag_cloud .tagcloud a:not(.has-background) {
+	background-color: var(--color-bg) !important;
+}
+
 .widget_tag_cloud .tagcloud a:focus,
 .widget_tag_cloud .tagcloud a:hover,
 .widget_tag_cloud .tagcloud a:active {
@@ -1578,11 +1653,14 @@ button:focus {
 
 .widget_tag_cloud .tagcloud a:hover {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+}
+
+.widget_tag_cloud .tagcloud a:hover:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .widget_tag_cloud .tagcloud a:hover:focus,
@@ -1633,8 +1711,7 @@ button:focus {
 
 .widget_calendar table tbody td a {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	color: inherit;
@@ -1647,6 +1724,10 @@ button:focus {
 	color: var(--color-accent);
 	font-weight: bold;
 	border-radius: 8px;
+}
+
+.widget_calendar table tbody td a:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .widget_calendar table tbody td a:focus,
@@ -1662,11 +1743,14 @@ button:focus {
 
 .widget_calendar table tbody td a:hover {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+}
+
+.widget_calendar table tbody td a:hover:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .widget_calendar table tbody td a:hover:focus,
@@ -1779,14 +1863,17 @@ button:focus {
 
 .widget_media_image img {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	padding: 5px;
 	border-radius: 8px;
 	width: 100%;
+}
+
+.widget_media_image img:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .widget_media_image img:focus,
@@ -2063,13 +2150,16 @@ button:focus {
 
 .widget_text:not(.widget_custom_html) .textwidget img {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	padding: 5px;
 	border-radius: 8px;
+}
+
+.widget_text:not(.widget_custom_html) .textwidget img:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .widget_text:not(.widget_custom_html) .textwidget img:focus,
@@ -2284,13 +2374,16 @@ button:focus {
 
 .wp-block-image > figure {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	padding: 5px;
 	border-radius: 8px;
+}
+
+.wp-block-image > figure:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .wp-block-image > figure:focus,
@@ -2319,14 +2412,17 @@ button:focus {
 
 .wp-block-quote {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	position: relative;
 	padding: 2em 2em 2em 3.5em;
 	border-radius: 8px;
+}
+
+.wp-block-quote:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .wp-block-quote:focus,
@@ -2378,8 +2474,7 @@ button:focus {
 
 .wp-block-audio audio {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
@@ -2387,6 +2482,10 @@ button:focus {
 	padding: 5px;
 	vertical-align: top;
 	border-radius: 1000px;
+}
+
+.wp-block-audio audio:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .wp-block-audio audio:focus,
@@ -2425,8 +2524,7 @@ button:focus {
 	font-size: 0.8em;
 	border-radius: 1000px;
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	color: inherit;
@@ -2435,6 +2533,10 @@ button:focus {
 	cursor: pointer;
 	font-weight: bold;
 	text-align: center;
+}
+
+.wp-block-file a.wp-block-file__button:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .wp-block-file a.wp-block-file__button:focus,
@@ -2450,11 +2552,14 @@ button:focus {
 
 .wp-block-file a.wp-block-file__button:hover {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+}
+
+.wp-block-file a.wp-block-file__button:hover:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .wp-block-file a.wp-block-file__button:hover:focus,
@@ -2514,13 +2619,16 @@ button:focus {
 
 .wp-block-code {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	padding: 2em;
 	border-radius: 8px;
+}
+
+.wp-block-code:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .wp-block-code:focus,
@@ -2544,30 +2652,17 @@ button:focus {
 ----------------------*/
 
 .wp-block-pullquote {
-	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
-	outline: none !important;
-	transition: all 0.2s ease-in-out;
-	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	position: relative;
-	padding: 2em;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 0;
 	text-align: inherit;
-	border-radius: 8px;
-}
-
-.wp-block-pullquote:focus,
-.wp-block-pullquote:hover,
-.wp-block-pullquote:active {
-	text-decoration: none;
-	outline: none;
 }
 
 .wp-block-pullquote blockquote {
+	position: relative;
+	z-index: 1;
 	margin: 0;
-	padding: 2em 0;
-	border-top: 3px solid var(--color-accent);
-	border-bottom: 3px solid var(--color-accent);
 }
 
 .wp-block-pullquote blockquote p {
@@ -2581,9 +2676,85 @@ button:focus {
 	opacity: 0.8;
 }
 
+.wp-block-pullquote:not(.is-style-solid-color) {
+	text-decoration: none !important;
+	border: none;
+	outline: none !important;
+	transition: all 0.2s ease-in-out;
+	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
+	padding: 2em;
+	border-color: var(--color-text-main);
+	border-radius: 8px;
+}
+
+.wp-block-pullquote:not(.is-style-solid-color):not(.has-background) {
+	background-color: var(--color-bg) !important;
+}
+
+.wp-block-pullquote:not(.is-style-solid-color):focus,
+.wp-block-pullquote:not(.is-style-solid-color):hover,
+.wp-block-pullquote:not(.is-style-solid-color):active {
+	text-decoration: none;
+	outline: none;
+}
+
+.wp-block-pullquote:not(.is-style-solid-color)::before {
+	top: -2em;
+	right: -2em;
+	bottom: -2em;
+	left: -2em;
+	padding: 2em;
+}
+
+.wp-block-pullquote:not(.is-style-solid-color) blockquote {
+	padding: 1em 0;
+	border-color: inherit !important;
+	border-top: 3px solid;
+	border-bottom: 3px solid;
+}
+
+.wp-block-pullquote.is-style-solid-color {
+	width: calc(100% - 20px);
+	margin-top: calc(2em + 10px);
+	margin-bottom: calc(2em + 10px);
+	border-radius: 4px;
+}
+
+.wp-block-pullquote.is-style-solid-color.alignleft,
+.wp-block-pullquote.is-style-solid-color.alignright {
+	margin-top: 10px;
+}
+
+.wp-block-pullquote.is-style-solid-color::before {
+	text-decoration: none !important;
+	border: none;
+	outline: none !important;
+	transition: all 0.2s ease-in-out;
+	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	bottom: -10px;
+	left: -10px;
+	padding: 2em;
+	border-radius: 8px;
+	content: "";
+}
+
+.wp-block-pullquote.is-style-solid-color::before:not(.has-background) {
+	background-color: var(--color-bg) !important;
+}
+
+.wp-block-pullquote.is-style-solid-color::before:focus,
+.wp-block-pullquote.is-style-solid-color::before:hover,
+.wp-block-pullquote.is-style-solid-color::before:active {
+	text-decoration: none;
+	outline: none;
+}
+
 .wp-block-pullquote.is-style-solid-color blockquote {
 	max-width: 100%;
-	border: none;
+	padding: calc(2em - 10px);
 }
 
 .wp-block-pullquote.is-style-solid-color blockquote p {
@@ -2600,14 +2771,76 @@ button:focus {
 ### Table
 ----------------------*/
 
+.wp-block-table {
+	overflow-x: initial;
+}
+
+.wp-block-table table {
+	text-decoration: none !important;
+	border: none;
+	outline: none !important;
+	transition: all 0.2s ease-in-out;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+	width: auto;
+	margin-bottom: 0.5em;
+	border-radius: 8px;
+}
+
+.wp-block-table table:not(.has-background) {
+	background-color: var(--color-bg) !important;
+}
+
+.wp-block-table table:focus,
+.wp-block-table table:hover,
+.wp-block-table table:active {
+	text-decoration: none;
+	outline: none;
+}
+
+.wp-block-table th,
+.wp-block-table td {
+	padding: 1em;
+	text-align: left;
+	border-right: 1px solid var(--color-nm-dark);
+	border-bottom: 1px solid var(--color-nm-dark);
+}
+
+.wp-block-table th:last-child,
+.wp-block-table td:last-child {
+	border-right: none;
+}
+
+.wp-block-table thead th {
+	border-bottom-width: 3px;
+}
+
+.wp-block-table tbody tr:last-child td {
+	border-bottom: none;
+}
+
+.wp-block-table tfoot td {
+	border-top: 3px solid var(--color-nm-dark);
+	border-bottom: none;
+}
+
+.wp-block-table figcaption {
+	margin-top: 1em;
+	font-size: 0.9em;
+	text-align: center;
+}
+
+.wp-block-table.aligncenter table {
+	margin-right: auto;
+	margin-left: auto;
+}
+
 /*----------------------
 ### Verse
 ----------------------*/
 
 .wp-block-verse {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
@@ -2615,6 +2848,10 @@ button:focus {
 	padding: 2em;
 	font-family: inherit;
 	border-radius: 8px;
+}
+
+.wp-block-verse:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .wp-block-verse:focus,
@@ -2642,8 +2879,7 @@ button:focus {
 
 .wp-block-button__link {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	color: inherit;
@@ -2655,6 +2891,10 @@ button:focus {
 	padding: 0.7em 1.4em;
 	font-size: inherit;
 	border-radius: 0;
+}
+
+.wp-block-button__link:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .wp-block-button__link:focus,
@@ -2670,11 +2910,14 @@ button:focus {
 
 .wp-block-button__link:hover {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+}
+
+.wp-block-button__link:hover:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .wp-block-button__link:hover:focus,
@@ -2751,14 +2994,17 @@ button:focus {
 
 .wp-block-archives.wp-block-archives-dropdown select {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light) !important;
 	display: inline-block;
 	width: auto;
 	border-radius: 1000px;
+}
+
+.wp-block-archives.wp-block-archives-dropdown select:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .wp-block-archives.wp-block-archives-dropdown select:focus,
@@ -2778,13 +3024,17 @@ button:focus {
 
 .wp-block-calendar {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	max-width: 350px;
 	padding: 1em;
+	border-radius: 8px;
+}
+
+.wp-block-calendar:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .wp-block-calendar:focus,
@@ -2821,8 +3071,7 @@ button:focus {
 
 .wp-block-calendar .wp-calendar-table tbody td a {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	color: inherit;
@@ -2835,6 +3084,10 @@ button:focus {
 	color: var(--color-accent);
 	font-weight: bold;
 	border-radius: 8px;
+}
+
+.wp-block-calendar .wp-calendar-table tbody td a:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .wp-block-calendar .wp-calendar-table tbody td a:focus,
@@ -2850,11 +3103,14 @@ button:focus {
 
 .wp-block-calendar .wp-calendar-table tbody td a:hover {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+}
+
+.wp-block-calendar .wp-calendar-table tbody td a:hover:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .wp-block-calendar .wp-calendar-table tbody td a:hover:focus,
@@ -2890,14 +3146,17 @@ button:focus {
 
 .wp-block-categories-dropdown select {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light) !important;
 	display: inline-block;
 	width: auto;
 	border-radius: 1000px;
+}
+
+.wp-block-categories-dropdown select:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .wp-block-categories-dropdown select:focus,
@@ -2917,13 +3176,16 @@ button:focus {
 
 .wp-block-latest-comments {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	padding: 1.5em 1em;
 	border-radius: 8px;
+}
+
+.wp-block-latest-comments:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .wp-block-latest-comments:focus,
@@ -2959,14 +3221,18 @@ button:focus {
 .wp-block-latest-comments .avatar,
 .wp-block-latest-comments__comment-avatar {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	position: absolute;
 	top: -9px;
 	margin: 0;
+}
+
+.wp-block-latest-comments .avatar:not(.has-background),
+.wp-block-latest-comments__comment-avatar:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .wp-block-latest-comments .avatar:focus,
@@ -3008,13 +3274,16 @@ button:focus {
 
 .wp-block-latest-posts > li {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	padding: 1.5em 1em;
 	border-radius: 8px;
+}
+
+.wp-block-latest-posts > li:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .wp-block-latest-posts > li:focus,
@@ -3062,13 +3331,16 @@ button:focus {
 
 .wp-block-latest-posts__featured-image img {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	padding: 5px;
 	border-radius: 8px;
+}
+
+.wp-block-latest-posts__featured-image img:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .wp-block-latest-posts__featured-image img:focus,
@@ -3101,13 +3373,16 @@ button:focus {
 
 .wp-block-rss:not(.is-grid) {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	padding: 1em;
 	border-radius: 8px;
+}
+
+.wp-block-rss:not(.is-grid):not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .wp-block-rss:not(.is-grid):focus,
@@ -3158,14 +3433,17 @@ button:focus {
 
 .wp-block-rss.is-grid > li {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	margin: 0 8px 16px;
 	padding: 1em;
 	border-radius: 8px;
+}
+
+.wp-block-rss.is-grid > li:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .wp-block-rss.is-grid > li:focus,
@@ -3236,14 +3514,17 @@ button:focus {
 
 .wp-block-search .wp-block-search__input {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light) !important;
 	max-width: 100%;
 	padding-right: 3em;
 	border-radius: 1000px;
+}
+
+.wp-block-search .wp-block-search__input:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .wp-block-search .wp-block-search__input:focus,
@@ -3287,8 +3568,7 @@ button:focus {
 
 .wp-block-tag-cloud a {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	color: inherit;
@@ -3305,6 +3585,10 @@ button:focus {
 	border-radius: 1000px;
 }
 
+.wp-block-tag-cloud a:not(.has-background) {
+	background-color: var(--color-bg) !important;
+}
+
 .wp-block-tag-cloud a:focus,
 .wp-block-tag-cloud a:hover,
 .wp-block-tag-cloud a:active {
@@ -3318,11 +3602,14 @@ button:focus {
 
 .wp-block-tag-cloud a:hover {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+}
+
+.wp-block-tag-cloud a:hover:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .wp-block-tag-cloud a:hover:focus,
@@ -3377,8 +3664,7 @@ button:focus {
 
 .wp-block-social-links.is-style-nm .wp-social-link a {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	color: inherit;
@@ -3397,6 +3683,10 @@ button:focus {
 	border-radius: 8px;
 }
 
+.wp-block-social-links.is-style-nm .wp-social-link a:not(.has-background) {
+	background-color: var(--color-bg) !important;
+}
+
 .wp-block-social-links.is-style-nm .wp-social-link a:focus,
 .wp-block-social-links.is-style-nm .wp-social-link a:hover,
 .wp-block-social-links.is-style-nm .wp-social-link a:active {
@@ -3410,11 +3700,14 @@ button:focus {
 
 .wp-block-social-links.is-style-nm .wp-social-link a:hover {
 	text-decoration: none !important;
-	background-color: var(--color-bg) !important;
-	border: none !important;
+	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+}
+
+.wp-block-social-links.is-style-nm .wp-social-link a:hover:not(.has-background) {
+	background-color: var(--color-bg) !important;
 }
 
 .wp-block-social-links.is-style-nm .wp-social-link a:hover:focus,

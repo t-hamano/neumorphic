@@ -384,7 +384,98 @@
 ----------------------*/
 
 [data-type="core/pullquote"] {
-	font-size: inherit;
+
+	.wp-block-pullquote {
+		position: relative;
+		margin-right: auto;
+		margin-left: auto;
+		padding: 0;
+		text-align: inherit;
+
+		blockquote {
+			position: relative;
+			z-index: 1;
+			margin: 0;
+
+			p {
+				margin: 0 0 1em;
+				font-size: inherit;
+			}
+
+			.wp-block-pullquote__citation {
+				display: block;
+				font-size: 0.8em;
+				font-style: italic;
+				opacity: $text_color_thin;
+			}
+		}
+
+		&:not(.is-style-solid-color) {
+
+			@include nm-reverse();
+			padding: 2em;
+			border-color: var(--color-text-main);
+			border-radius: $base_border_radius;
+
+			&::before {
+				top: -2em;
+				right: -2em;
+				bottom: -2em;
+				left: -2em;
+				padding: 2em;
+			}
+
+			blockquote {
+				padding: 1em 0;
+				border-color: inherit !important;
+				border-top: 3px solid;
+				border-bottom: 3px solid;
+			}
+		}
+
+		&.is-style-solid-color {
+			width: calc(100% - 20px);
+			margin-top: calc(2em + 10px);
+			margin-bottom: calc(2em + 10px);
+			border-radius: $base_border_radius / 2;
+
+			&::before {
+
+				@include nm-reverse();
+				position: absolute;
+				top: -10px;
+				right: -10px;
+				bottom: -10px;
+				left: -10px;
+				padding: 2em;
+				border-radius: $base_border_radius;
+				content: "";
+			}
+
+			blockquote {
+				max-width: 100%;
+				padding: calc(2em - 10px);
+
+				p {
+					margin-bottom: 1em;
+					font-size: 1.4em;
+				}
+
+				.wp-block-pullquote__citation {
+					font-size: 1em;
+					font-style: italic;
+				}
+			}
+		}
+	}
+
+	&[data-align="left"],
+	&[data-align="right"] {
+
+		.wp-block-pullquote.is-style-solid-color {
+			margin-top: 20px;
+		}
+	}
 }
 
 /*----------------------
@@ -392,7 +483,51 @@
 ----------------------*/
 
 [data-type="core/table"] {
-	font-size: inherit;
+
+	.wp-block-table {
+		overflow-x: initial;
+
+		table {
+
+			@include nm;
+			width: auto;
+			margin-bottom: 0.5em;
+			border-radius: $base_border_radius;
+
+		}
+
+		th,
+		td {
+			padding: 1em;
+			border: none;
+			border-right: 1px solid var(--color-nm-dark);
+			border-bottom: 1px solid var(--color-nm-dark);
+
+			&:last-child {
+				border-right: none;
+			}
+		}
+
+		thead th {
+			text-align: left;
+			border-bottom-width: 3px;
+		}
+
+		tbody tr:last-child td {
+			border-bottom: none;
+		}
+
+		tfoot td {
+			border-top: 3px solid var(--color-nm-dark);
+			border-bottom: none;
+		}
+
+		figcaption {
+			margin-top: 1em;
+			color: inherit;
+			font-size: 0.9em;
+		}
+	}
 }
 
 /*----------------------
@@ -635,6 +770,7 @@
 		@include nm;
 		max-width: 350px;
 		padding: 1em;
+		border-radius: $base_border_radius;
 
 		&.aligncenter {
 			margin-right: auto;
