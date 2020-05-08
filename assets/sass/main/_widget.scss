@@ -8,7 +8,7 @@
 
 .widget {
 
-	@include nm();
+	@include nm;
 	padding: 1.5em 1em;
 	border-radius: $base_border_radius;
 
@@ -320,7 +320,7 @@
 
 		li {
 
-			@include clearfix();
+			@include clearfix;
 
 			&:not(:last-child) {
 

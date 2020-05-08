@@ -1,8 +1,10 @@
 const gulp = require( 'gulp' );
-const gulpZip = require( 'gulp-zip' );
-const gulpChmod = require( 'gulp-chmod' );
+const zip = require( 'gulp-zip' );
+const chmod = require( 'gulp-chmod' );
+const rename = require( 'gulp-rename' );
+const cleanCss = require( 'gulp-clean-css' );
 const del = require( 'del' );
-const gulpSass = require( 'gulp-sass' );
+const sass = require( 'gulp-sass' );
 const plumber = require( 'gulp-plumber' );
 const notify = require( 'gulp-notify' );
 const postcss = require( 'gulp-postcss' );
@@ -16,12 +18,12 @@ function cleanFiles( cb ) {
 }
 
 // Sass
-function sass() {
+function compileSass() {
 	return gulp.src( './assets/sass/**/*.scss' )
 	.pipe( plumber( {
 		errorHandler: notify.onError( 'Error: <%= error.message %>' )
 	} ) )
-	.pipe( gulpSass( {
+	.pipe( sass( {
 		outputStyle: 'expanded'
 	} ) )
 	.pipe( postcss( [
@@ -31,6 +33,11 @@ function sass() {
 	] ) )
 	.pipe( mmq() )
 	.pipe( csscomb() )
+	.pipe( gulp.dest( './assets/css/' ) )
+	.pipe( cleanCss() )
+	.pipe( rename({
+		suffix: '.min'
+	}) )
 	.pipe( gulp.dest( './assets/css/' ) )
 };
 
@@ -55,18 +62,18 @@ function copyFiles() {
 }
 
 // Archive
-function zip() {
+function makeZip() {
 	return gulp.src( 'neomorphic/**', { base: '.' })
-	.pipe( gulpChmod( 0o755, 0o755 ) )
-	.pipe( gulpZip( 'neomorphic.zip' ) )
+	.pipe( chmod( 0o755, 0o755 ) )
+	.pipe( zip( 'neomorphic.zip' ) )
 		.pipe( gulp.dest( 'release' ) );
 }
 
 // Deploy
-exports.deploy = gulp.series( copyFiles, zip, cleanFiles );
+exports.deploy = gulp.series( copyFiles, makeZip, cleanFiles );
 
 //Default Task
 exports.default = function () {
-	sass();
-	gulp.watch( './assets/sass/**/*.scss', sass );
+	compileSass();
+	gulp.watch( './assets/sass/**/*.scss', compileSass );
 };

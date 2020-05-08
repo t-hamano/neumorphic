@@ -72,12 +72,12 @@
 	}
 
 	/* Heading */
-	> h1,
-	> h2,
-	> h3,
-	> h4,
-	> h5,
-	> h6 {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
 		margin-top: 1.5em;
 		margin-bottom: 1em;
 		font-weight: bold;
@@ -86,39 +86,40 @@
 		@include nm-text-border;
 	}
 
-	> h1,
-	> h2 {
+	h1,
+	h2 {
 
 		@include nm-border;
 		padding-bottom: 0.2em;
 	}
 
-	> h1 {
+	h1 {
 		font-size: 2em;
 	}
 
-	> h2 {
+	h2 {
 		font-size: 1.8em;
 	}
 
-	> h3 {
+	h3 {
 		font-size: 1.6em;
 	}
 
-	> h4 {
+	h4 {
 		font-size: 1.4em;
 	}
 
-	> h5 {
+	h5 {
 		font-size: 1.2em;
 	}
 
-	> h6 {
+	h6 {
 		font-size: 1em;
 	}
 
 	/* Paragraph */
 	p {
+		margin: 0 0 2em;
 
 		&.has-drop-cap::first-letter {
 			float: left;
@@ -138,8 +139,8 @@
 	}
 
 	/* List */
-	> ul:not([class]),
-	> ol:not([class]) {
+	ul:not([class]),
+	ol:not([class]) {
 		margin-left: 0;
 		padding-left: 1.5em;
 
@@ -173,6 +174,8 @@
 	code {
 		padding: 0.1em 0.3em;
 		color: var(--color-text-main);
+		font-size: 0.9em;
+		font-family: $base_code_font_family;
 		background: var(--color-nm-dark);
 		border-radius: 4px;
 	}
@@ -186,7 +189,7 @@
 
 	&:last-child {
 
-		@include clearfix();
+		@include clearfix;
 	}
 
 	.alignleft {
@@ -323,7 +326,7 @@
 		font-size: 0.8em;
 		border-radius: 1000px;
 
-		@include nm-button();
+		@include nm-button;
 
 		&:active,
 		&:focus,
@@ -380,16 +383,20 @@
 ### Code
 ----------------------*/
 
+.wp-block-code {
+
+	@include nm-reverse;
+	padding: 2em;
+	border-radius: $base_border_radius;
+
+	code {
+		display: block;
+		background: transparent;
+	}
+}
+
 /*----------------------
 ### Freeform
-----------------------*/
-
-/*----------------------
-### HTML
-----------------------*/
-
-/*----------------------
-### Preformatted
 ----------------------*/
 
 /*----------------------
@@ -398,38 +405,89 @@
 
 .wp-block-pullquote {
 	position: relative;
-	padding: 20px 50px;
-	border-radius: $base_border_radius;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 0;
+	text-align: inherit;
 
-	&::before,
-	&::after {
-		position: absolute;
-		font-weight: 900;
-		font-size: 20px;
-		font-family: "Font Awesome 5 Free";
-	}
-
-	&::before {
-		top: 10px;
-		left: 15px;
-		content: "\f10d";
-	}
-
-	&::after {
-		right: 15px;
-		bottom: 10px;
-		content: "\f10e";
-	}
-
-	p {
+	blockquote {
+		position: relative;
+		z-index: 1;
 		margin: 0;
+
+		p {
+			margin: 0 0 1em;
+			font-size: inherit;
+		}
+
+		cite {
+			display: block;
+			font-size: 0.8em;
+			opacity: $text_color_thin;
+		}
 	}
 
-	cite {
-		display: block;
-		margin-top: 1em;
-		font-size: 0.8em;
-		text-align: center;
+	&:not(.is-style-solid-color) {
+
+		@include nm-reverse();
+		padding: 2em;
+		border-color: var(--color-text-main);
+		border-radius: $base_border_radius;
+
+		&::before {
+			top: -2em;
+			right: -2em;
+			bottom: -2em;
+			left: -2em;
+			padding: 2em;
+		}
+
+		blockquote {
+			padding: 1em 0;
+			border-color: inherit !important;
+			border-top: 3px solid;
+			border-bottom: 3px solid;
+		}
+	}
+
+	&.is-style-solid-color {
+		width: calc(100% - 20px);
+		margin-top: calc(2em + 10px);
+		margin-bottom: calc(2em + 10px);
+		border-radius: $base_border_radius / 2;
+
+		&.alignleft,
+		&.alignright {
+			margin-top: 10px;
+		}
+
+		&::before {
+
+			@include nm-reverse();
+			position: absolute;
+			top: -10px;
+			right: -10px;
+			bottom: -10px;
+			left: -10px;
+			padding: 2em;
+			border-radius: $base_border_radius;
+			content: "";
+		}
+
+		blockquote {
+			max-width: 100%;
+			padding: calc(2em - 10px);
+
+			p {
+				margin-bottom: 1em;
+				font-size: 1.4em;
+			}
+
+			cite {
+				font-size: 1em;
+				font-style: italic;
+			}
+		}
 	}
 }
 
@@ -437,9 +495,67 @@
 ### Table
 ----------------------*/
 
+.wp-block-table {
+	overflow-x: initial;
+
+	table {
+
+		@include nm;
+		width: auto;
+		margin-bottom: 0.5em;
+		border-radius: $base_border_radius;
+
+	}
+
+	th,
+	td {
+		padding: 1em;
+		text-align: left;
+		border-right: 1px solid var(--color-nm-dark);
+		border-bottom: 1px solid var(--color-nm-dark);
+
+		&:last-child {
+			border-right: none;
+		}
+	}
+
+	thead th {
+		border-bottom-width: 3px;
+	}
+
+	tbody tr:last-child td {
+		border-bottom: none;
+	}
+
+	tfoot td {
+		border-top: 3px solid var(--color-nm-dark);
+		border-bottom: none;
+	}
+
+	figcaption {
+		margin-top: 1em;
+		font-size: 0.9em;
+		text-align: center;
+	}
+
+	&.aligncenter table {
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
 /*----------------------
 ### Verse
 ----------------------*/
+
+.wp-block-verse {
+
+	@include nm-reverse();
+	position: relative;
+	padding: 2em;
+	font-family: inherit;
+	border-radius: $base_border_radius;
+}
 
 /*------------------------------------------
 ## Column Block
@@ -449,19 +565,87 @@
 ### Columns
 ----------------------*/
 
+.wp-block-columns {
+
+	&.has-background,
+	&.is-style-nm {
+		padding: 1.5em 1em;
+		border-radius: $base_border_radius;
+	}
+
+	&.is-style-nm {
+
+		@include nm;
+	}
+
+	> .wp-block-column {
+
+		> *:first-child {
+			margin-top: 0 !important;
+		}
+
+		> *:last-child {
+			margin-bottom: 0 !important;
+		}
+
+		@media screen and (max-width: 599px) {
+
+			&:not(:last-child) {
+				margin-bottom: 2em;
+			}
+		}
+	}
+}
+
 /*----------------------
 ### Button
 ----------------------*/
 
-.wp-block-button {
-	color: inherit;
+.wp-block-buttons {
+	margin-bottom: 1em;
 
-	&__link {
+	.wp-block-button {
+		margin-right: 20px;
+		margin-bottom: 20px;
+		color: inherit;
 
-		@include nm-button;
-		padding: 0.7em 1.4em;
-		font-size: inherit;
-		border-radius: 0;
+		&__link {
+			position: relative;
+			padding: 0.5em 1.5em;
+			font-weight: bold;
+			font-size: 1.1em;
+			border-radius: 1000px;
+
+			&:not(.has-background) {
+				background-color: transparent;
+			}
+
+			&::before {
+
+				@include nm;
+				position: absolute;
+				top: -3px;
+				right: -3px;
+				bottom: -3px;
+				left: -3px;
+				border-radius: inherit;
+				content: "";
+			}
+
+			&:hover {
+				text-decoration: none;
+
+				&::before {
+
+					@include nm-light;
+				}
+			}
+
+			&:active::before {
+
+				@include nm-active;
+			}
+		}
 	}
 }
 
@@ -469,26 +653,123 @@
 ### Group
 ----------------------*/
 
+.wp-block-group {
+
+	&.has-background,
+	&.is-style-nm {
+		padding: 1.5em 1em;
+		border-radius: $base_border_radius;
+	}
+
+	&.is-style-nm {
+
+		@include nm;
+	}
+
+	&__inner-container {
+
+		> *:first-child {
+			margin-top: 0 !important;
+		}
+
+		> *:last-child {
+			margin-bottom: 0 !important;
+		}
+	}
+}
+
 /*----------------------
 ### Media-Text
 ----------------------*/
 
-/*----------------------
-### More
-----------------------*/
+.wp-block-media-text {
 
-/*----------------------
-### Nextpage
-----------------------*/
+	.wp-block-media-text__media {
+		text-align: center;
+	}
+
+	.wp-block-media-text__content {
+		padding: 0 0 0 2em;
+
+		> *:last-child {
+			margin-bottom: 0 !important;
+		}
+	}
+
+	> figure > img,
+	> figure > video {
+
+		@include nm-image;
+		max-width: 100%;
+	}
+
+	&.has-media-on-the-right .wp-block-media-text__content {
+		padding: 0 2em 0 0;
+	}
+
+	&.has-background,
+	&.is-style-nm {
+		padding: 1.5em 1em;
+		border-radius: $base_border_radius;
+	}
+
+	&.is-style-nm {
+
+		@include nm;
+	}
+
+	@media screen and (max-width: 959px) {
+
+		&.is-stacked-on-mobile {
+
+			> .wp-block-media-text__media {
+				margin-bottom: 2em;
+
+				> img,
+				> video {
+					width: auto;
+				}
+			}
+
+			&.has-media-on-the-right {
+
+				.wp-block-media-text__content {
+					grid-row: 2;
+				}
+
+				.wp-block-media-text__media {
+					grid-row: 1;
+				}
+			}
+		}
+	}
+}
 
 /*----------------------
 ### Separator
 ----------------------*/
 
+.wp-block-separator {
 
-/*----------------------
-### Spacer
-----------------------*/
+	&:not(.is-style-dots) {
+
+		@include nm-border;
+		height: 3px;
+		margin-right: auto;
+		margin-left: auto;
+		border: none;
+
+		&:not(.is-style-wide) {
+			max-width: 50%;
+		}
+	}
+
+	&.is-style-dots::before {
+		font-size: 24px;
+		font-family: inherit;
+		line-height: 0;
+	}
+}
 
 /*------------------------------------------
 ## Widget Block
@@ -519,9 +800,10 @@
 
 .wp-block-calendar {
 
-	@include nm();
+	@include nm;
 	max-width: 350px;
-	padding: 1em;
+	padding: 1.5em 1em;
+	border-radius: $base_border_radius;
 
 	.wp-calendar-table {
 		width: 100%;
@@ -659,7 +941,7 @@
 
 	> li {
 
-		@include nm();
+		@include nm;
 		@include clearfix();
 		padding: 1.5em 1em;
 		border-radius: $base_border_radius;
@@ -736,7 +1018,7 @@
 	&:not(.is-grid) {
 
 		@include nm;
-		padding: 1em;
+		padding: 1.5em 1em;
 		border-radius: $base_border_radius;
 
 		> li {
@@ -1052,31 +1334,31 @@
 ----------------------*/
 
 .has-bg-color {
-	color: var(--color-bg);
+	color: var(--color-bg) !important;
 }
 
 .has-dark-color {
-	color: var(--color-nm-dark);
+	color: var(--color-nm-dark) !important;
 }
 
 .has-light-color {
-	color: var(--color-nm-light);
+	color: var(--color-nm-light) !important;
 }
 
 .has-main-text-color {
-	color: var(--color-text-main);
+	color: var(--color-text-main) !important;
 }
 
 .has-accent-color {
-	color: var(--color-accent);
+	color: var(--color-accent) !important;
 }
 
 .has-link-text-color {
-	color: var(--color-text-link);
+	color: var(--color-text-link) !important;
 }
 
 .has-white-color {
-	color: #fff;
+	color: #fff !important;
 }
 
 /*----------------------
@@ -1084,31 +1366,75 @@
 ----------------------*/
 
 .has-bg-background-color {
-	background: var(--color-bg);
+	background-color: var(--color-bg) !important;
 }
 
 .has-dark-background-color {
-	background: var(--color-nm-dark);
+	background-color: var(--color-nm-dark) !important;
 }
 
 .has-light-background-color {
-	background: var(--color-nm-light);
+	background-color: var(--color-nm-light) !important;
 }
 
 .has-main-text-background-color {
-	background: var(--color-text-main);
+	background-color: var(--color-text-main) !important;
 }
 
 .has-accent-background-color {
-	background: var(--color-accent);
+	background-color: var(--color-accent) !important;
 }
 
 .has-link-text-background-color {
-	background: var(--color-text-link);
+	background-color: var(--color-text-link) !important;
 }
 
 .has-white-background-color {
-	background: #fff;
+	background-color: #fff !important;
+}
+
+/*----------------------
+### Gradient color
+----------------------*/
+
+.has-dark-light-gradient-background {
+	background: linear-gradient(135deg, var(--color-nm-dark), var(--color-nm-light)) !important;
+}
+
+.has-dark-text-main-gradient-background {
+	background: linear-gradient(135deg, var(--color-nm-dark), var(--color-text-main)) !important;
+}
+
+.has-dark-accent-gradient-background {
+	background: linear-gradient(135deg, var(--color-nm-dark), var(--color-accent)) !important;
+}
+
+.has-dark-link-text-gradient-background {
+	background: linear-gradient(135deg, var(--color-nm-dark), var(--color-text-link)) !important;
+}
+
+.has-light-main-text-gradient-background {
+	background: linear-gradient(135deg, var(--color-nm-light), var(--color-text-main)) !important;
+}
+
+.has-light-accent-gradient-background {
+	background: linear-gradient(135deg, var(--color-nm-light), var(--color-accent)) !important;
+}
+
+.has-light-link-text-gradient-background {
+	background: linear-gradient(135deg, var(--color-nm-light), var(--color-text-link)) !important;
+}
+
+.has-main-text-accent-gradient-background {
+	background: linear-gradient(135deg, var(--color-text-main), var(--color-accent)) !important;
+}
+
+.has-main-text-link-text-gradient-background {
+	background: linear-gradient(135deg, var(--color-text-main), var(--color-text-link)) !important;
+}
+
+.has-accent-link-text-gradient-background {
+	background: linear-gradient(135deg, var(--color-accent), var(--color-text-link)) !important;
 }
 
 /*----------------------
