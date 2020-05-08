@@ -243,6 +243,16 @@ function neomorphic_block_editor_styles() {
 
 add_action( 'enqueue_block_editor_assets', 'neomorphic_block_editor_styles' );
 
+
+/**
+ * Register and enqueue classic editor styles.
+ */
+function neomorphic_classic_editor_style() {
+	add_editor_style( '/assets/css/editor-style-classic.min.css' );
+}
+add_action( 'admin_init', 'neomorphic_classic_editor_style' );
+
+
 /**
  * Enqueue WordPress media player styles.
  */

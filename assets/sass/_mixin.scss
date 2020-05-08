@@ -47,6 +47,12 @@
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
 }
 
+@mixin nm-active() {
+
+	@include nm-common;
+	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
+}
+
 @mixin nm-reverse() {
 
 	@include nm-common;
@@ -56,7 +62,6 @@
 @mixin nm-link() {
 
 	@include nm-common;
-
 	color: inherit;
 	text-decoration: none;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
@@ -67,8 +72,7 @@
 	}
 
 	&:hover {
-
-		@include nm-light;
+		box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
 
 		a {
 			text-decoration: none;
@@ -78,9 +82,17 @@
 
 @mixin nm-button() {
 
-	@include nm-link;
+	@include nm-common;
+	color: inherit;
 	font-weight: bold;
 	text-align: center;
+	text-decoration: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+	cursor: pointer;
+
+	&:hover {
+		box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+	}
 
 	&:active {
 		box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);

@@ -342,11 +342,11 @@ button:focus {
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	color: inherit;
+	font-weight: bold;
+	text-align: center;
 	text-decoration: none;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
-	font-weight: bold;
-	text-align: center;
 	display: inline-block;
 	margin-top: 3em;
 	padding: 0.7em 1.4em;
@@ -365,31 +365,8 @@ button:focus {
 	outline: none;
 }
 
-.c-entry__edit-link:focus {
-	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
-}
-
 .c-entry__edit-link:hover {
-	text-decoration: none !important;
-	border: none;
-	outline: none !important;
-	transition: all 0.2s ease-in-out;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
-}
-
-.c-entry__edit-link:hover:not(.has-background) {
-	background-color: var(--color-bg) !important;
-}
-
-.c-entry__edit-link:hover:focus,
-.c-entry__edit-link:hover:hover,
-.c-entry__edit-link:hover:active {
-	text-decoration: none;
-	outline: none;
-}
-
-.c-entry__edit-link:hover a {
-	text-decoration: none;
 }
 
 .c-entry__edit-link:active {
@@ -437,22 +414,7 @@ button:focus {
 }
 
 .c-entries__item > a:hover {
-	text-decoration: none !important;
-	border: none;
-	outline: none !important;
-	transition: all 0.2s ease-in-out;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
-}
-
-.c-entries__item > a:hover:not(.has-background) {
-	background-color: var(--color-bg) !important;
-}
-
-.c-entries__item > a:hover:focus,
-.c-entries__item > a:hover:hover,
-.c-entries__item > a:hover:active {
-	text-decoration: none;
-	outline: none;
 }
 
 .c-entries__item > a:hover a {
@@ -677,11 +639,11 @@ button:focus {
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	color: inherit;
+	font-weight: bold;
+	text-align: center;
 	text-decoration: none;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
-	font-weight: bold;
-	text-align: center;
 	width: auto;
 	border-radius: 1000px;
 }
@@ -697,31 +659,8 @@ button:focus {
 	outline: none;
 }
 
-.c-comment__form .form-submit [type="submit"]:focus {
-	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
-}
-
 .c-comment__form .form-submit [type="submit"]:hover {
-	text-decoration: none !important;
-	border: none;
-	outline: none !important;
-	transition: all 0.2s ease-in-out;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
-}
-
-.c-comment__form .form-submit [type="submit"]:hover:not(.has-background) {
-	background-color: var(--color-bg) !important;
-}
-
-.c-comment__form .form-submit [type="submit"]:hover:focus,
-.c-comment__form .form-submit [type="submit"]:hover:hover,
-.c-comment__form .form-submit [type="submit"]:hover:active {
-	text-decoration: none;
-	outline: none;
-}
-
-.c-comment__form .form-submit [type="submit"]:hover a {
-	text-decoration: none;
 }
 
 .c-comment__form .form-submit [type="submit"]:active {
@@ -772,11 +711,11 @@ button:focus {
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	color: inherit;
+	font-weight: bold;
+	text-align: center;
 	text-decoration: none;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
-	font-weight: bold;
-	text-align: center;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -797,31 +736,8 @@ button:focus {
 	outline: none;
 }
 
-.c-sns__item a:focus {
-	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
-}
-
 .c-sns__item a:hover {
-	text-decoration: none !important;
-	border: none;
-	outline: none !important;
-	transition: all 0.2s ease-in-out;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
-}
-
-.c-sns__item a:hover:not(.has-background) {
-	background-color: var(--color-bg) !important;
-}
-
-.c-sns__item a:hover:focus,
-.c-sns__item a:hover:hover,
-.c-sns__item a:hover:active {
-	text-decoration: none;
-	outline: none;
-}
-
-.c-sns__item a:hover a {
-	text-decoration: none;
 }
 
 .c-sns__item a:active {
@@ -915,11 +831,11 @@ button:focus {
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	color: inherit;
+	font-weight: bold;
+	text-align: center;
 	text-decoration: none;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
-	font-weight: bold;
-	text-align: center;
 	color: var(--color-accent);
 }
 
@@ -962,17 +878,6 @@ button:focus {
 	outline: none;
 }
 
-.c-pagination__item--link:focus,
-.c-pagination__item--prev:focus,
-.c-pagination__item--next:focus,
-.c-pagination__item:not(.current):focus,
-.c-pagination .post-page-numbers--link:focus,
-.c-pagination .post-page-numbers--prev:focus,
-.c-pagination .post-page-numbers--next:focus,
-.c-pagination .post-page-numbers:not(.current):focus {
-	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
-}
-
 .c-pagination__item--link:hover,
 .c-pagination__item--prev:hover,
 .c-pagination__item--next:hover,
@@ -981,61 +886,7 @@ button:focus {
 .c-pagination .post-page-numbers--prev:hover,
 .c-pagination .post-page-numbers--next:hover,
 .c-pagination .post-page-numbers:not(.current):hover {
-	text-decoration: none !important;
-	border: none;
-	outline: none !important;
-	transition: all 0.2s ease-in-out;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
-}
-
-.c-pagination__item--link:hover:not(.has-background),
-.c-pagination__item--prev:hover:not(.has-background),
-.c-pagination__item--next:hover:not(.has-background),
-.c-pagination__item:not(.current):hover:not(.has-background),
-.c-pagination .post-page-numbers--link:hover:not(.has-background),
-.c-pagination .post-page-numbers--prev:hover:not(.has-background),
-.c-pagination .post-page-numbers--next:hover:not(.has-background),
-.c-pagination .post-page-numbers:not(.current):hover:not(.has-background) {
-	background-color: var(--color-bg) !important;
-}
-
-.c-pagination__item--link:hover:focus,
-.c-pagination__item--link:hover:hover,
-.c-pagination__item--link:hover:active,
-.c-pagination__item--prev:hover:focus,
-.c-pagination__item--prev:hover:hover,
-.c-pagination__item--prev:hover:active,
-.c-pagination__item--next:hover:focus,
-.c-pagination__item--next:hover:hover,
-.c-pagination__item--next:hover:active,
-.c-pagination__item:not(.current):hover:focus,
-.c-pagination__item:not(.current):hover:hover,
-.c-pagination__item:not(.current):hover:active,
-.c-pagination .post-page-numbers--link:hover:focus,
-.c-pagination .post-page-numbers--link:hover:hover,
-.c-pagination .post-page-numbers--link:hover:active,
-.c-pagination .post-page-numbers--prev:hover:focus,
-.c-pagination .post-page-numbers--prev:hover:hover,
-.c-pagination .post-page-numbers--prev:hover:active,
-.c-pagination .post-page-numbers--next:hover:focus,
-.c-pagination .post-page-numbers--next:hover:hover,
-.c-pagination .post-page-numbers--next:hover:active,
-.c-pagination .post-page-numbers:not(.current):hover:focus,
-.c-pagination .post-page-numbers:not(.current):hover:hover,
-.c-pagination .post-page-numbers:not(.current):hover:active {
-	text-decoration: none;
-	outline: none;
-}
-
-.c-pagination__item--link:hover a,
-.c-pagination__item--prev:hover a,
-.c-pagination__item--next:hover a,
-.c-pagination__item:not(.current):hover a,
-.c-pagination .post-page-numbers--link:hover a,
-.c-pagination .post-page-numbers--prev:hover a,
-.c-pagination .post-page-numbers--next:hover a,
-.c-pagination .post-page-numbers:not(.current):hover a {
-	text-decoration: none;
 }
 
 .c-pagination__item--link:active,
@@ -1623,11 +1474,11 @@ button:focus {
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	color: inherit;
+	font-weight: bold;
+	text-align: center;
 	text-decoration: none;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
-	font-weight: bold;
-	text-align: center;
 	display: inline-block;
 	margin: 0 0.3em 1em;
 	padding: 0.3em 1em;
@@ -1647,31 +1498,8 @@ button:focus {
 	outline: none;
 }
 
-.widget_tag_cloud .tagcloud a:focus {
-	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
-}
-
 .widget_tag_cloud .tagcloud a:hover {
-	text-decoration: none !important;
-	border: none;
-	outline: none !important;
-	transition: all 0.2s ease-in-out;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
-}
-
-.widget_tag_cloud .tagcloud a:hover:not(.has-background) {
-	background-color: var(--color-bg) !important;
-}
-
-.widget_tag_cloud .tagcloud a:hover:focus,
-.widget_tag_cloud .tagcloud a:hover:hover,
-.widget_tag_cloud .tagcloud a:hover:active {
-	text-decoration: none;
-	outline: none;
-}
-
-.widget_tag_cloud .tagcloud a:hover a {
-	text-decoration: none;
 }
 
 .widget_tag_cloud .tagcloud a:active {
@@ -1715,11 +1543,11 @@ button:focus {
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	color: inherit;
+	font-weight: bold;
+	text-align: center;
 	text-decoration: none;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
-	font-weight: bold;
-	text-align: center;
 	display: block;
 	color: var(--color-accent);
 	font-weight: bold;
@@ -1737,31 +1565,8 @@ button:focus {
 	outline: none;
 }
 
-.widget_calendar table tbody td a:focus {
-	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
-}
-
 .widget_calendar table tbody td a:hover {
-	text-decoration: none !important;
-	border: none;
-	outline: none !important;
-	transition: all 0.2s ease-in-out;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
-}
-
-.widget_calendar table tbody td a:hover:not(.has-background) {
-	background-color: var(--color-bg) !important;
-}
-
-.widget_calendar table tbody td a:hover:focus,
-.widget_calendar table tbody td a:hover:hover,
-.widget_calendar table tbody td a:hover:active {
-	text-decoration: none;
-	outline: none;
-}
-
-.widget_calendar table tbody td a:hover a {
-	text-decoration: none;
 }
 
 .widget_calendar table tbody td a:active {
@@ -2238,12 +2043,12 @@ button:focus {
 	margin-left: -50vw;
 }
 
-.entry-content > h1,
-.entry-content > h2,
-.entry-content > h3,
-.entry-content > h4,
-.entry-content > h5,
-.entry-content > h6 {
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 {
 	margin-top: 1.5em;
 	margin-bottom: 1em;
 	font-weight: bold;
@@ -2251,14 +2056,14 @@ button:focus {
 	text-shadow: 1px 1px 0 var(--color-text-border-color);
 }
 
-.entry-content > h1,
-.entry-content > h2 {
+.entry-content h1,
+.entry-content h2 {
 	position: relative;
 	padding-bottom: 0.2em;
 }
 
-.entry-content > h1::before,
-.entry-content > h2::before {
+.entry-content h1::before,
+.entry-content h2::before {
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -2269,28 +2074,32 @@ button:focus {
 	content: "";
 }
 
-.entry-content > h1 {
+.entry-content h1 {
 	font-size: 2em;
 }
 
-.entry-content > h2 {
+.entry-content h2 {
 	font-size: 1.8em;
 }
 
-.entry-content > h3 {
+.entry-content h3 {
 	font-size: 1.6em;
 }
 
-.entry-content > h4 {
+.entry-content h4 {
 	font-size: 1.4em;
 }
 
-.entry-content > h5 {
+.entry-content h5 {
 	font-size: 1.2em;
 }
 
-.entry-content > h6 {
+.entry-content h6 {
 	font-size: 1em;
+}
+
+.entry-content p {
+	margin: 0 0 2em;
 }
 
 .entry-content p.has-drop-cap::first-letter {
@@ -2309,39 +2118,39 @@ button:focus {
 	margin: 0 5px;
 }
 
-.entry-content > ul:not([class]),
-.entry-content > ol:not([class]) {
+.entry-content ul:not([class]),
+.entry-content ol:not([class]) {
 	margin-left: 0;
 	padding-left: 1.5em;
 }
 
-.entry-content > ul:not([class]) li,
-.entry-content > ol:not([class]) li {
+.entry-content ul:not([class]) li,
+.entry-content ol:not([class]) li {
 	margin: 0.5em 0;
 }
 
-.entry-content > ul:not([class]) ul,
-.entry-content > ol:not([class]) ul {
+.entry-content ul:not([class]) ul,
+.entry-content ol:not([class]) ul {
 	margin-left: 0;
 	padding: 0;
 	list-style: none;
 }
 
-.entry-content > ul:not([class]) ul li,
-.entry-content > ol:not([class]) ul li {
+.entry-content ul:not([class]) ul li,
+.entry-content ol:not([class]) ul li {
 	position: relative;
 	padding-left: 1em;
 }
 
-.entry-content > ul:not([class]) ul li::before,
-.entry-content > ol:not([class]) ul li::before {
+.entry-content ul:not([class]) ul li::before,
+.entry-content ol:not([class]) ul li::before {
 	position: absolute;
 	left: 0;
 	content: "-";
 }
 
-.entry-content > ul:not([class]) ol,
-.entry-content > ol:not([class]) ol {
+.entry-content ul:not([class]) ol,
+.entry-content ol:not([class]) ol {
 	padding-left: 1.5em;
 }
 
@@ -2528,11 +2337,11 @@ button:focus {
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	color: inherit;
+	font-weight: bold;
+	text-align: center;
 	text-decoration: none;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
-	font-weight: bold;
-	text-align: center;
 }
 
 .wp-block-file a.wp-block-file__button:not(.has-background) {
@@ -2546,31 +2355,8 @@ button:focus {
 	outline: none;
 }
 
-.wp-block-file a.wp-block-file__button:focus {
-	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
-}
-
 .wp-block-file a.wp-block-file__button:hover {
-	text-decoration: none !important;
-	border: none;
-	outline: none !important;
-	transition: all 0.2s ease-in-out;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
-}
-
-.wp-block-file a.wp-block-file__button:hover:not(.has-background) {
-	background-color: var(--color-bg) !important;
-}
-
-.wp-block-file a.wp-block-file__button:hover:focus,
-.wp-block-file a.wp-block-file__button:hover:hover,
-.wp-block-file a.wp-block-file__button:hover:active {
-	text-decoration: none;
-	outline: none;
-}
-
-.wp-block-file a.wp-block-file__button:hover a {
-	text-decoration: none;
 }
 
 .wp-block-file a.wp-block-file__button:active {
@@ -2869,46 +2655,96 @@ button:focus {
 ### Columns
 ----------------------*/
 
-/*----------------------
-### Button
-----------------------*/
-
-.wp-block-button {
-	color: inherit;
+.wp-block-columns.has-background,
+.wp-block-columns.is-style-nm {
+	padding: 1.5em 1em;
+	border-radius: 8px;
 }
 
-.wp-block-button__link {
+.wp-block-columns.is-style-nm {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
-	color: inherit;
-	text-decoration: none;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
-	cursor: pointer;
-	font-weight: bold;
-	text-align: center;
-	padding: 0.7em 1.4em;
-	font-size: inherit;
-	border-radius: 0;
 }
 
-.wp-block-button__link:not(.has-background) {
+.wp-block-columns.is-style-nm:not(.has-background) {
 	background-color: var(--color-bg) !important;
 }
 
-.wp-block-button__link:focus,
-.wp-block-button__link:hover,
-.wp-block-button__link:active {
+.wp-block-columns.is-style-nm:focus,
+.wp-block-columns.is-style-nm:hover,
+.wp-block-columns.is-style-nm:active {
 	text-decoration: none;
 	outline: none;
 }
 
-.wp-block-button__link:focus {
-	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+.wp-block-columns > .wp-block-column > *:first-child {
+	margin-top: 0 !important;
 }
 
-.wp-block-button__link:hover {
+.wp-block-columns > .wp-block-column > *:last-child {
+	margin-bottom: 0 !important;
+}
+
+/*----------------------
+### Button
+----------------------*/
+
+.wp-block-buttons {
+	margin-bottom: 1em;
+}
+
+.wp-block-buttons .wp-block-button {
+	margin-right: 20px;
+	margin-bottom: 20px;
+	color: inherit;
+}
+
+.wp-block-buttons .wp-block-button__link {
+	position: relative;
+	padding: 0.5em 1.5em;
+	font-weight: bold;
+	font-size: 1.1em;
+	border-radius: 1000px;
+}
+
+.wp-block-buttons .wp-block-button__link:not(.has-background) {
+	background-color: transparent;
+}
+
+.wp-block-buttons .wp-block-button__link::before {
+	text-decoration: none !important;
+	border: none;
+	outline: none !important;
+	transition: all 0.2s ease-in-out;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+	position: absolute;
+	top: -3px;
+	right: -3px;
+	bottom: -3px;
+	left: -3px;
+	border-radius: inherit;
+	content: "";
+}
+
+.wp-block-buttons .wp-block-button__link::before:not(.has-background) {
+	background-color: var(--color-bg) !important;
+}
+
+.wp-block-buttons .wp-block-button__link::before:focus,
+.wp-block-buttons .wp-block-button__link::before:hover,
+.wp-block-buttons .wp-block-button__link::before:active {
+	text-decoration: none;
+	outline: none;
+}
+
+.wp-block-buttons .wp-block-button__link:hover {
+	text-decoration: none;
+}
+
+.wp-block-buttons .wp-block-button__link:hover::before {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
@@ -2916,36 +2752,144 @@ button:focus {
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
 }
 
-.wp-block-button__link:hover:not(.has-background) {
+.wp-block-buttons .wp-block-button__link:hover::before:not(.has-background) {
 	background-color: var(--color-bg) !important;
 }
 
-.wp-block-button__link:hover:focus,
-.wp-block-button__link:hover:hover,
-.wp-block-button__link:hover:active {
+.wp-block-buttons .wp-block-button__link:hover::before:focus,
+.wp-block-buttons .wp-block-button__link:hover::before:hover,
+.wp-block-buttons .wp-block-button__link:hover::before:active {
 	text-decoration: none;
 	outline: none;
 }
 
-.wp-block-button__link:hover a {
-	text-decoration: none;
+.wp-block-buttons .wp-block-button__link:active::before {
+	text-decoration: none !important;
+	border: none;
+	outline: none !important;
+	transition: all 0.2s ease-in-out;
+	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 }
 
-.wp-block-button__link:active {
-	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
+.wp-block-buttons .wp-block-button__link:active::before:not(.has-background) {
+	background-color: var(--color-bg) !important;
+}
+
+.wp-block-buttons .wp-block-button__link:active::before:focus,
+.wp-block-buttons .wp-block-button__link:active::before:hover,
+.wp-block-buttons .wp-block-button__link:active::before:active {
+	text-decoration: none;
+	outline: none;
 }
 
 /*----------------------
 ### Group
 ----------------------*/
 
+.wp-block-group.has-background,
+.wp-block-group.is-style-nm {
+	padding: 1.5em 1em;
+	border-radius: 8px;
+}
+
+.wp-block-group.is-style-nm {
+	text-decoration: none !important;
+	border: none;
+	outline: none !important;
+	transition: all 0.2s ease-in-out;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
+.wp-block-group.is-style-nm:not(.has-background) {
+	background-color: var(--color-bg) !important;
+}
+
+.wp-block-group.is-style-nm:focus,
+.wp-block-group.is-style-nm:hover,
+.wp-block-group.is-style-nm:active {
+	text-decoration: none;
+	outline: none;
+}
+
+.wp-block-group__inner-container > *:first-child {
+	margin-top: 0 !important;
+}
+
+.wp-block-group__inner-container > *:last-child {
+	margin-bottom: 0 !important;
+}
+
 /*----------------------
 ### Media-Text
 ----------------------*/
 
-/*----------------------
-### Nextpage
-----------------------*/
+.wp-block-media-text .wp-block-media-text__media {
+	text-align: center;
+}
+
+.wp-block-media-text .wp-block-media-text__content {
+	padding: 0 0 0 2em;
+}
+
+.wp-block-media-text .wp-block-media-text__content > *:last-child {
+	margin-bottom: 0 !important;
+}
+
+.wp-block-media-text > figure > img,
+.wp-block-media-text > figure > video {
+	text-decoration: none !important;
+	border: none;
+	outline: none !important;
+	transition: all 0.2s ease-in-out;
+	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
+	padding: 5px;
+	border-radius: 8px;
+	max-width: 100%;
+}
+
+.wp-block-media-text > figure > img:not(.has-background),
+.wp-block-media-text > figure > video:not(.has-background) {
+	background-color: var(--color-bg) !important;
+}
+
+.wp-block-media-text > figure > img:focus,
+.wp-block-media-text > figure > img:hover,
+.wp-block-media-text > figure > img:active,
+.wp-block-media-text > figure > video:focus,
+.wp-block-media-text > figure > video:hover,
+.wp-block-media-text > figure > video:active {
+	text-decoration: none;
+	outline: none;
+}
+
+.wp-block-media-text.has-media-on-the-right .wp-block-media-text__content {
+	padding: 0 2em 0 0;
+}
+
+.wp-block-media-text.has-background,
+.wp-block-media-text.is-style-nm {
+	padding: 1.5em 1em;
+	border-radius: 8px;
+}
+
+.wp-block-media-text.is-style-nm {
+	text-decoration: none !important;
+	border: none;
+	outline: none !important;
+	transition: all 0.2s ease-in-out;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
+.wp-block-media-text.is-style-nm:not(.has-background) {
+	background-color: var(--color-bg) !important;
+}
+
+.wp-block-media-text.is-style-nm:focus,
+.wp-block-media-text.is-style-nm:hover,
+.wp-block-media-text.is-style-nm:active {
+	text-decoration: none;
+	outline: none;
+}
 
 /*----------------------
 ### Separator
@@ -3029,7 +2973,7 @@ button:focus {
 	transition: all 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	max-width: 350px;
-	padding: 1em;
+	padding: 1.5em 1em;
 	border-radius: 8px;
 }
 
@@ -3075,11 +3019,11 @@ button:focus {
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	color: inherit;
+	font-weight: bold;
+	text-align: center;
 	text-decoration: none;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
-	font-weight: bold;
-	text-align: center;
 	display: block;
 	color: var(--color-accent);
 	font-weight: bold;
@@ -3097,31 +3041,8 @@ button:focus {
 	outline: none;
 }
 
-.wp-block-calendar .wp-calendar-table tbody td a:focus {
-	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
-}
-
 .wp-block-calendar .wp-calendar-table tbody td a:hover {
-	text-decoration: none !important;
-	border: none;
-	outline: none !important;
-	transition: all 0.2s ease-in-out;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
-}
-
-.wp-block-calendar .wp-calendar-table tbody td a:hover:not(.has-background) {
-	background-color: var(--color-bg) !important;
-}
-
-.wp-block-calendar .wp-calendar-table tbody td a:hover:focus,
-.wp-block-calendar .wp-calendar-table tbody td a:hover:hover,
-.wp-block-calendar .wp-calendar-table tbody td a:hover:active {
-	text-decoration: none;
-	outline: none;
-}
-
-.wp-block-calendar .wp-calendar-table tbody td a:hover a {
-	text-decoration: none;
 }
 
 .wp-block-calendar .wp-calendar-table tbody td a:active {
@@ -3377,7 +3298,7 @@ button:focus {
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
-	padding: 1em;
+	padding: 1.5em 1em;
 	border-radius: 8px;
 }
 
@@ -3572,11 +3493,11 @@ button:focus {
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	color: inherit;
+	font-weight: bold;
+	text-align: center;
 	text-decoration: none;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
-	font-weight: bold;
-	text-align: center;
 	display: inline-block;
 	margin: 0 0.2em 1em;
 	padding: 0.3em 1em;
@@ -3596,31 +3517,8 @@ button:focus {
 	outline: none;
 }
 
-.wp-block-tag-cloud a:focus {
-	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
-}
-
 .wp-block-tag-cloud a:hover {
-	text-decoration: none !important;
-	border: none;
-	outline: none !important;
-	transition: all 0.2s ease-in-out;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
-}
-
-.wp-block-tag-cloud a:hover:not(.has-background) {
-	background-color: var(--color-bg) !important;
-}
-
-.wp-block-tag-cloud a:hover:focus,
-.wp-block-tag-cloud a:hover:hover,
-.wp-block-tag-cloud a:hover:active {
-	text-decoration: none;
-	outline: none;
-}
-
-.wp-block-tag-cloud a:hover a {
-	text-decoration: none;
 }
 
 .wp-block-tag-cloud a:active {
@@ -3668,11 +3566,11 @@ button:focus {
 	outline: none !important;
 	transition: all 0.2s ease-in-out;
 	color: inherit;
+	font-weight: bold;
+	text-align: center;
 	text-decoration: none;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
-	font-weight: bold;
-	text-align: center;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -3694,31 +3592,8 @@ button:focus {
 	outline: none;
 }
 
-.wp-block-social-links.is-style-nm .wp-social-link a:focus {
-	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
-}
-
 .wp-block-social-links.is-style-nm .wp-social-link a:hover {
-	text-decoration: none !important;
-	border: none;
-	outline: none !important;
-	transition: all 0.2s ease-in-out;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
-}
-
-.wp-block-social-links.is-style-nm .wp-social-link a:hover:not(.has-background) {
-	background-color: var(--color-bg) !important;
-}
-
-.wp-block-social-links.is-style-nm .wp-social-link a:hover:focus,
-.wp-block-social-links.is-style-nm .wp-social-link a:hover:hover,
-.wp-block-social-links.is-style-nm .wp-social-link a:hover:active {
-	text-decoration: none;
-	outline: none;
-}
-
-.wp-block-social-links.is-style-nm .wp-social-link a:hover a {
-	text-decoration: none;
 }
 
 .wp-block-social-links.is-style-nm .wp-social-link a:active {
@@ -3793,31 +3668,31 @@ button:focus {
 ----------------------*/
 
 .has-bg-color {
-	color: var(--color-bg);
+	color: var(--color-bg) !important;
 }
 
 .has-dark-color {
-	color: var(--color-nm-dark);
+	color: var(--color-nm-dark) !important;
 }
 
 .has-light-color {
-	color: var(--color-nm-light);
+	color: var(--color-nm-light) !important;
 }
 
 .has-main-text-color {
-	color: var(--color-text-main);
+	color: var(--color-text-main) !important;
 }
 
 .has-accent-color {
-	color: var(--color-accent);
+	color: var(--color-accent) !important;
 }
 
 .has-link-text-color {
-	color: var(--color-text-link);
+	color: var(--color-text-link) !important;
 }
 
 .has-white-color {
-	color: #fff;
+	color: #fff !important;
 }
 
 /*----------------------
@@ -3825,31 +3700,75 @@ button:focus {
 ----------------------*/
 
 .has-bg-background-color {
-	background-color: var(--color-bg);
+	background-color: var(--color-bg) !important;
 }
 
 .has-dark-background-color {
-	background-color: var(--color-nm-dark);
+	background-color: var(--color-nm-dark) !important;
 }
 
 .has-light-background-color {
-	background-color: var(--color-nm-light);
+	background-color: var(--color-nm-light) !important;
 }
 
 .has-main-text-background-color {
-	background-color: var(--color-text-main);
+	background-color: var(--color-text-main) !important;
 }
 
 .has-accent-background-color {
-	background-color: var(--color-accent);
+	background-color: var(--color-accent) !important;
 }
 
 .has-link-text-background-color {
-	background-color: var(--color-text-link);
+	background-color: var(--color-text-link) !important;
 }
 
 .has-white-background-color {
-	background-color: #fff;
+	background-color: #fff !important;
+}
+
+/*----------------------
+### Gradient color
+----------------------*/
+
+.has-dark-light-gradient-background {
+	background: linear-gradient(135deg, var(--color-nm-dark), var(--color-nm-light)) !important;
+}
+
+.has-dark-text-main-gradient-background {
+	background: linear-gradient(135deg, var(--color-nm-dark), var(--color-text-main)) !important;
+}
+
+.has-dark-accent-gradient-background {
+	background: linear-gradient(135deg, var(--color-nm-dark), var(--color-accent)) !important;
+}
+
+.has-dark-link-text-gradient-background {
+	background: linear-gradient(135deg, var(--color-nm-dark), var(--color-text-link)) !important;
+}
+
+.has-light-main-text-gradient-background {
+	background: linear-gradient(135deg, var(--color-nm-light), var(--color-text-main)) !important;
+}
+
+.has-light-accent-gradient-background {
+	background: linear-gradient(135deg, var(--color-nm-light), var(--color-accent)) !important;
+}
+
+.has-light-link-text-gradient-background {
+	background: linear-gradient(135deg, var(--color-nm-light), var(--color-text-link)) !important;
+}
+
+.has-main-text-accent-gradient-background {
+	background: linear-gradient(135deg, var(--color-text-main), var(--color-accent)) !important;
+}
+
+.has-main-text-link-text-gradient-background {
+	background: linear-gradient(135deg, var(--color-text-main), var(--color-text-link)) !important;
+}
+
+.has-accent-link-text-gradient-background {
+	background: linear-gradient(135deg, var(--color-accent), var(--color-text-link)) !important;
 }
 
 /*----------------------
@@ -4101,6 +4020,25 @@ button:focus {
 		margin-left: auto;
 	}
 
+	.wp-block-media-text.is-stacked-on-mobile > .wp-block-media-text__media {
+		margin-bottom: 2em;
+	}
+
+	.wp-block-media-text.is-stacked-on-mobile > .wp-block-media-text__media > img,
+	.wp-block-media-text.is-stacked-on-mobile > .wp-block-media-text__media > video {
+		width: auto;
+	}
+
+	.wp-block-media-text.is-stacked-on-mobile.has-media-on-the-right .wp-block-media-text__content {
+		-ms-grid-row: 2;
+		grid-row: 2;
+	}
+
+	.wp-block-media-text.is-stacked-on-mobile.has-media-on-the-right .wp-block-media-text__media {
+		-ms-grid-row: 1;
+		grid-row: 1;
+	}
+
 	.wp-block-latest-posts.is-grid.alignleft,
 	.wp-block-latest-posts.is-grid.alignright {
 		margin-right: auto;
@@ -4111,5 +4049,11 @@ button:focus {
 	.wp-block-rss.is-grid.alignright {
 		margin-right: auto;
 		margin-left: auto;
+	}
+}
+
+@media screen and (max-width: 599px) {
+	.wp-block-columns > .wp-block-column:not(:last-child) {
+		margin-bottom: 2em;
 	}
 }
