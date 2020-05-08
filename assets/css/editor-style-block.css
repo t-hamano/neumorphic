@@ -41,6 +41,16 @@
 	color: inherit;
 }
 
+.block-editor-block-list__layout .block-editor-block-list__block[data-align="left"] > .is-block-content {
+	margin-right: 1.5em;
+	margin-bottom: 1em;
+}
+
+.block-editor-block-list__layout .block-editor-block-list__block[data-align="right"] > .is-block-content {
+	margin-bottom: 1em;
+	margin-left: 1.5em;
+}
+
 .editor-styles-wrapper {
 	background: var(--color-bg);
 }
@@ -199,8 +209,44 @@
 ### Image
 ----------------------*/
 
-[data-type="core/image"] {
-	font-size: inherit;
+[data-type="core/image"] .wp-block-image img {
+	text-decoration: none !important;
+	border: none;
+	outline: none !important;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
+	padding: 5px;
+	border-radius: 8px;
+}
+
+[data-type="core/image"] .wp-block-image img:not(.has-background) {
+	background-color: var(--color-bg) !important;
+}
+
+[data-type="core/image"] .wp-block-image img:focus,
+[data-type="core/image"] .wp-block-image img:hover,
+[data-type="core/image"] .wp-block-image img:active {
+	text-decoration: none;
+	outline: none;
+}
+
+[data-type="core/image"] .wp-block-image figcaption {
+	display: block;
+	margin-top: 0.5em;
+	margin-bottom: 0;
+	color: inherit;
+	font-size: 0.8em;
+	text-align: inherit;
+	opacity: 0.8;
+}
+
+[data-type="core/image"] .wp-block-image.is-style-rounded img {
+	border-radius: 50%;
+}
+
+[data-type="core/image"][data-align="left"] figcaption,
+[data-type="core/image"][data-align="right"] figcaption {
+	text-align: center;
 }
 
 /*----------------------
@@ -225,7 +271,7 @@
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 }
 
@@ -302,15 +348,20 @@
 ### Audio
 ----------------------*/
 
+[data-type="core/audio"] .wp-block-audio {
+	margin: 0;
+}
+
 [data-type="core/audio"] .wp-block-audio audio {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	display: inline-block;
 	width: auto;
 	padding: 5px;
+	vertical-align: top;
 	border-radius: 1000px;
 }
 
@@ -359,7 +410,7 @@
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	display: inline-block;
 	color: inherit;
 	font-weight: bold;
@@ -400,7 +451,7 @@
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	padding: 2em;
 	border-radius: 8px;
@@ -472,7 +523,7 @@
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	padding: 2em;
 	border-color: var(--color-text-main);
@@ -516,7 +567,7 @@
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	position: absolute;
 	top: -10px;
@@ -571,7 +622,7 @@
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	width: auto;
 	margin-bottom: 0.5em;
@@ -630,7 +681,7 @@
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	position: relative;
 	padding: 2em;
@@ -691,7 +742,7 @@
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	position: absolute;
 	top: -3px;
@@ -727,7 +778,7 @@
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 }
 
@@ -763,7 +814,7 @@
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	padding: 5px;
 	border-radius: 8px;
@@ -811,7 +862,7 @@
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 }
 
@@ -947,7 +998,7 @@
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	padding: 0.7em 40px 0.7em 1.4em;
 	font-size: inherit;
@@ -1003,7 +1054,7 @@
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	max-width: 350px;
 	padding: 1.5em 1em;
@@ -1055,7 +1106,7 @@
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	display: block;
 	color: var(--color-accent);
@@ -1094,7 +1145,7 @@
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	min-width: 0;
 	max-width: 100%;
@@ -1164,7 +1215,7 @@
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	margin: 0;
 	padding: 1.5em 1em;
@@ -1210,7 +1261,7 @@
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	position: absolute;
 	top: -9px;
@@ -1267,7 +1318,7 @@
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	padding: 1.5em 1em;
 	border-radius: 8px;
@@ -1315,7 +1366,7 @@
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	padding: 5px;
 	border-radius: 8px;
@@ -1357,7 +1408,7 @@
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	margin-left: 0;
 	padding: 1.5em 1em;
@@ -1406,7 +1457,7 @@
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	margin: 0 8px 16px;
 	padding: 1em;
@@ -1487,7 +1538,7 @@
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	width: 100%;
 	max-width: 100%;
@@ -1581,7 +1632,7 @@
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	color: inherit;
 	font-weight: bold;
 	text-align: center;
@@ -1637,7 +1688,7 @@
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	color: inherit;
 	font-weight: bold;
 	text-align: center;

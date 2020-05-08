@@ -145,7 +145,7 @@ pre {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	padding: 5px;
 	border-radius: 8px;
@@ -328,7 +328,7 @@ button:focus {
 	text-shadow: 1px 1px 0 var(--color-text-border-color);
 	margin: 0;
 	font-weight: bold;
-	font-size: 1.8em;
+	font-size: 2em;
 	line-height: 1.4;
 }
 
@@ -340,7 +340,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	color: inherit;
 	font-weight: bold;
 	text-align: center;
@@ -385,7 +385,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	color: inherit;
 	text-decoration: none;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
@@ -437,7 +437,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	padding: 5px;
 	border-radius: 8px;
@@ -497,7 +497,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	margin-top: 3em;
 	padding: 1.5em 2em;
@@ -609,7 +609,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light) !important;
 	border-radius: 8px;
 }
@@ -637,7 +637,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	color: inherit;
 	font-weight: bold;
 	text-align: center;
@@ -709,7 +709,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	color: inherit;
 	font-weight: bold;
 	text-align: center;
@@ -760,7 +760,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light) !important;
 	padding-right: 3em;
 	border-radius: 1000px;
@@ -829,7 +829,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	color: inherit;
 	font-weight: bold;
 	text-align: center;
@@ -907,7 +907,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
 	color: inherit;
 }
@@ -1308,7 +1308,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	padding: 1.5em 1em;
 	border-radius: 8px;
@@ -1426,7 +1426,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light) !important;
 	border-radius: 1000px;
 }
@@ -1472,7 +1472,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	color: inherit;
 	font-weight: bold;
 	text-align: center;
@@ -1541,7 +1541,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	color: inherit;
 	font-weight: bold;
 	text-align: center;
@@ -1670,7 +1670,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	padding: 5px;
 	border-radius: 8px;
@@ -1957,7 +1957,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	padding: 5px;
 	border-radius: 8px;
@@ -2167,37 +2167,23 @@ button:focus {
 ### Image
 ----------------------*/
 
-.wp-block-image:last-child::after {
-	display: table;
-	clear: both;
-	content: "";
-}
-
-.wp-block-image .alignleft {
-	margin: 0 2em 0 0;
-}
-
-.wp-block-image .alignright {
-	margin: 0 0 0 2em;
-}
-
-.wp-block-image > figure {
+.wp-block-image img {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
-	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	padding: 5px;
 	border-radius: 8px;
 }
 
-.wp-block-image > figure:not(.has-background) {
+.wp-block-image img:not(.has-background) {
 	background-color: var(--color-bg) !important;
 }
 
-.wp-block-image > figure:focus,
-.wp-block-image > figure:hover,
-.wp-block-image > figure:active {
+.wp-block-image img:focus,
+.wp-block-image img:hover,
+.wp-block-image img:active {
 	text-decoration: none;
 	outline: none;
 }
@@ -2205,10 +2191,20 @@ button:focus {
 .wp-block-image figcaption {
 	margin-top: 0.5em;
 	margin-bottom: 0;
-	color: inherit;
 	font-size: 0.8em;
-	text-align: center;
 	opacity: 0.8;
+}
+
+.wp-block-image .aligncenter > figcaption,
+.wp-block-image .alignleft > figcaption,
+.wp-block-image .alignright > figcaption,
+.wp-block-image .is-resized > figcaption {
+	display: block;
+	text-align: center;
+}
+
+.wp-block-image.is-style-rounded img {
+	border-radius: 50%;
 }
 
 /*----------------------
@@ -2223,7 +2219,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	position: relative;
 	padding: 2em 2em 2em 3.5em;
@@ -2285,7 +2281,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	width: auto;
 	padding: 5px;
@@ -2335,7 +2331,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	color: inherit;
 	font-weight: bold;
 	text-align: center;
@@ -2407,7 +2403,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	padding: 2em;
 	border-radius: 8px;
@@ -2466,7 +2462,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	padding: 2em;
 	border-color: var(--color-text-main);
@@ -2515,7 +2511,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	position: absolute;
 	top: -10px;
@@ -2565,7 +2561,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	width: auto;
 	margin-bottom: 0.5em;
@@ -2628,7 +2624,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	position: relative;
 	padding: 2em;
@@ -2665,7 +2661,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 }
 
@@ -2718,7 +2714,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	position: absolute;
 	top: -3px;
@@ -2748,7 +2744,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
 }
 
@@ -2767,7 +2763,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 }
 
@@ -2796,7 +2792,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 }
 
@@ -2840,7 +2836,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	padding: 5px;
 	border-radius: 8px;
@@ -2876,7 +2872,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 }
 
@@ -2940,7 +2936,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light) !important;
 	display: inline-block;
 	width: auto;
@@ -2970,7 +2966,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	max-width: 350px;
 	padding: 1.5em 1em;
@@ -3017,7 +3013,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	color: inherit;
 	font-weight: bold;
 	text-align: center;
@@ -3069,7 +3065,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light) !important;
 	display: inline-block;
 	width: auto;
@@ -3099,7 +3095,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	padding: 1.5em 1em;
 	border-radius: 8px;
@@ -3144,7 +3140,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	position: absolute;
 	top: -9px;
@@ -3197,7 +3193,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	padding: 1.5em 1em;
 	border-radius: 8px;
@@ -3254,7 +3250,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	padding: 5px;
 	border-radius: 8px;
@@ -3296,7 +3292,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	padding: 1.5em 1em;
 	border-radius: 8px;
@@ -3356,7 +3352,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	margin: 0 8px 16px;
 	padding: 1em;
@@ -3437,7 +3433,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light) !important;
 	max-width: 100%;
 	padding-right: 3em;
@@ -3491,7 +3487,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	color: inherit;
 	font-weight: bold;
 	text-align: center;
@@ -3564,7 +3560,7 @@ button:focus {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	color: inherit;
 	font-weight: bold;
 	text-align: center;
@@ -4005,6 +4001,13 @@ button:focus {
 		margin-right: auto;
 		margin-bottom: 2em;
 		margin-left: auto;
+	}
+
+	.wp-block-image .aligncenter > figcaption,
+	.wp-block-image .alignleft > figcaption,
+	.wp-block-image .alignright > figcaption,
+	.wp-block-image .is-resized > figcaption {
+		text-align: center;
 	}
 
 	.wp-block-audio.alignleft,

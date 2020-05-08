@@ -21,7 +21,7 @@
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all $base_transition_duration ease-in-out;
+	transition: box-shadow $base_transition_duration ease-in-out, opacity $base_transition_duration ease-in-out;
 
 	&:not(.has-background) {
 		background-color: var(--color-bg) !important;

@@ -6,7 +6,7 @@
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	background: transparent;
 	border-radius: 1000px;
@@ -44,7 +44,7 @@
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
-	transition: all 0.2s ease-in-out;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	overflow: hidden;
 	background: transparent;

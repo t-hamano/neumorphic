@@ -187,33 +187,35 @@
 
 .wp-block-image {
 
-	&:last-child {
+	img {
 
-		@include clearfix;
-	}
-
-	.alignleft {
-		margin: 0 2em 0 0;
-	}
-
-	.alignright {
-		margin: 0 0 0 2em;
-	}
-
-	> figure {
-
-		@include nm;
-		padding: 5px;
-		border-radius: $base_border-radius;
+		@include nm-image;
 	}
 
 	figcaption {
 		margin-top: 0.5em;
 		margin-bottom: 0;
-		color: inherit;
 		font-size: 0.8em;
-		text-align: center;
 		opacity: $text_color_thin;
+	}
+
+	.aligncenter,
+	.alignleft,
+	.alignright,
+	.is-resized {
+
+		> figcaption {
+			display: block;
+			text-align: center;
+
+			@include mq(md-max) {
+				text-align: center;
+			}
+		}
+	}
+
+	&.is-style-rounded img {
+		border-radius: 50%;
 	}
 }
 
