@@ -141,7 +141,7 @@
 	/* List */
 	ul:not([class]),
 	ol:not([class]) {
-		margin-left: 0;
+		margin: 0 0 2em;
 		padding-left: 1.5em;
 
 		li {
@@ -186,6 +186,7 @@
 ----------------------*/
 
 .wp-block-image {
+	margin-bottom: 2em;
 
 	img {
 
@@ -224,6 +225,7 @@
 ----------------------*/
 
 .wp-block-gallery {
+	margin-bottom: 2em;
 
 	.blocks-gallery-grid {
 		width: 100%;
@@ -254,9 +256,25 @@
 		}
 	}
 
+	> figcaption {
+		display: block;
+		width: 100%;
+		color: inherit;
+		font-size: 0.8em;
+		text-align: center;
+		opacity: $text_color_thin;
+	}
+
 	&.is-style-nm {
 
 		@include nm;
+		padding: 1em;
+		border-radius: $base_border_radius;
+	}
+
+	&.is-style-nm-reverse {
+
+		@include nm-reverse;
 		padding: 1em;
 		border-radius: $base_border_radius;
 	}
@@ -270,7 +288,9 @@
 
 	@include nm-reverse();
 	position: relative;
+	margin-bottom: 2em;
 	padding: 2em 2em 2em 3.5em;
+	color: var(--color-text-main);
 	border-radius: $base_border_radius;
 
 	&::before {
@@ -316,6 +336,7 @@
 ----------------------*/
 
 .wp-block-audio {
+	margin-bottom: 2em;
 
 	@include mq(md-max) {
 
@@ -352,11 +373,70 @@
 ### Cover
 ----------------------*/
 
+.wp-block-cover {
+	min-height: 300px;
+	margin-bottom: 2em;
+	padding: 2em 3em;
+
+	&.is-style-nm {
+
+		@include nm;
+		border-radius: $base_border_radius;
+	}
+
+	&.is-style-nm-reverse {
+
+		@include nm-reverse;
+		border-radius: $base_border_radius;
+	}
+
+	.wp-block-cover__inner-container {
+		width: 100%;
+
+		> *:first-child {
+			margin-top: 0;
+		}
+
+		> *:last-child {
+			margin-bottom: 0;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			text-shadow: none;
+		}
+
+		h1,
+		h2 {
+			padding-bottom: 0;
+
+			&::before {
+				content: none;
+			}
+		}
+	}
+
+	&.aligncenter,
+	&.alignleft,
+	&.alignright {
+		max-width: 300px;
+
+		@include mq(md-max) {
+			max-width: 100%;
+		}
+	}
+}
+
 /*----------------------
 ### File
 ----------------------*/
 
 .wp-block-file {
+	margin-bottom: 2em;
 
 	a {
 		display: inline-block;
@@ -385,6 +465,7 @@
 
 .wp-block-video,
 .wp-block-embed {
+	margin-bottom: 2em;
 
 	video {
 		display: block;
@@ -427,6 +508,7 @@
 .wp-block-code {
 
 	@include nm-reverse;
+	margin-bottom: 2em;
 	padding: 2em;
 	border-radius: $base_border_radius;
 
@@ -447,8 +529,10 @@
 .wp-block-pullquote {
 	position: relative;
 	margin-right: auto;
+	margin-bottom: 2em;
 	margin-left: auto;
 	padding: 0;
+	color: var(--color-text-main);
 	text-align: inherit;
 
 	blockquote {
@@ -537,6 +621,7 @@
 ----------------------*/
 
 .wp-block-table {
+	margin-bottom: 2em;
 	overflow-x: initial;
 
 	table {
@@ -606,6 +691,7 @@
 
 	@include nm-reverse();
 	position: relative;
+	margin-bottom: 2em;
 	padding: 2em;
 	font-family: inherit;
 	border-radius: $base_border_radius;
@@ -620,6 +706,7 @@
 ----------------------*/
 
 .wp-block-columns {
+	margin-bottom: 2em;
 
 	&.has-background {
 		padding: 1.5em 1em;
@@ -628,6 +715,14 @@
 	&.is-style-nm {
 
 		@include nm;
+		padding: 1.5em 1em;
+		border-radius: $base_border_radius;
+	}
+
+	&.is-style-nm-reverse {
+
+		@include nm-reverse;
+		padding: 1.5em 1em;
 		border-radius: $base_border_radius;
 	}
 
@@ -707,6 +802,7 @@
 ----------------------*/
 
 .wp-block-group {
+	margin-bottom: 2em;
 
 	&.has-background {
 		padding: 1.5em 1em;
@@ -715,6 +811,13 @@
 	&.is-style-nm {
 
 		@include nm;
+		padding: 1.5em 1em;
+		border-radius: $base_border_radius;
+	}
+
+	&.is-style-nm-reverse {
+
+		@include nm-reverse;
 		padding: 1.5em 1em;
 		border-radius: $base_border_radius;
 	}
@@ -736,6 +839,7 @@
 ----------------------*/
 
 .wp-block-media-text {
+	margin-bottom: 2em;
 
 	.wp-block-media-text__media {
 		text-align: center;
@@ -767,6 +871,13 @@
 	&.is-style-nm {
 
 		@include nm;
+		padding: 1.5em 1em;
+		border-radius: $base_border_radius;
+	}
+
+	&.is-style-nm-reverse {
+
+		@include nm-reverse;
 		padding: 1.5em 1em;
 		border-radius: $base_border_radius;
 	}
@@ -803,6 +914,7 @@
 ----------------------*/
 
 .wp-block-separator {
+	margin-bottom: 2em;
 
 	&:not(.is-style-dots) {
 
@@ -829,14 +941,11 @@
 ------------------------------------------*/
 
 /*----------------------
-### Shortcode
-----------------------*/
-
-/*----------------------
 ### Archives
 ----------------------*/
 
 .wp-block-archives {
+	margin-bottom: 2em;
 
 	&.wp-block-archives-dropdown select {
 
@@ -855,6 +964,7 @@
 
 	@include nm;
 	max-width: 350px;
+	margin-bottom: 2em;
 	padding: 1.5em 1em;
 	border-radius: $base_border_radius;
 
@@ -917,6 +1027,7 @@
 ----------------------*/
 
 .wp-block-categories-dropdown {
+	margin-bottom: 2em;
 
 	select {
 
@@ -934,6 +1045,7 @@
 .wp-block-latest-comments {
 
 	@include nm;
+	margin-bottom: 2em;
 	padding: 1.5em 1em;
 	border-radius: $base_border_radius;
 
@@ -987,6 +1099,7 @@
 ----------------------*/
 
 .wp-block-latest-posts {
+	margin-bottom: 2em;
 
 	&.wp-block-latest-posts__list {
 		padding: 0;
@@ -1066,6 +1179,7 @@
 ----------------------*/
 
 .wp-block-rss {
+	margin-bottom: 2em;
 	list-style: none;
 
 	&:not(.is-grid) {
@@ -1165,6 +1279,7 @@
 	position: relative;
 	display: block;
 	max-width: 400px;
+	margin-bottom: 2em;
 
 	&__label {
 		position: absolute;
@@ -1225,6 +1340,7 @@
 ----------------------*/
 
 .wp-block-tag-cloud {
+	margin-bottom: 2em;
 
 	a {
 
@@ -1248,7 +1364,9 @@
 ----------------------*/
 
 .wp-block-social-links {
+
 	flex-wrap: wrap;
+	margin-bottom: 2em;
 	padding: 0;
 
 	&.aligncenter {
@@ -1291,6 +1409,7 @@
 ------------------------------------------*/
 
 .wp-block-embed {
+	margin-bottom: 2em;
 	text-align: center;
 
 	.wp-block-embed__wrapper {
@@ -1304,9 +1423,9 @@
 	}
 }
 
-// /*----------------------
-// ### Twitter
-// ----------------------*/
+/*----------------------
+### Twitter
+----------------------*/
 
 .wp-block-embed-twitter .twitter-tweet {
 	margin-right: auto;
@@ -1373,14 +1492,6 @@
 /*------------------------------------------
 ## Block Styles
 ------------------------------------------*/
-
-/*------------------------------------------
-## Block Properties
-------------------------------------------*/
-
-/*----------------------
-### Inline color
-----------------------*/
 
 /*----------------------
 ### Color

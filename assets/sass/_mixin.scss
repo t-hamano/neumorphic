@@ -23,7 +23,7 @@
 	outline: none !important;
 	transition: box-shadow $base_transition_duration ease-in-out, opacity $base_transition_duration ease-in-out;
 
-	&:not(.has-background) {
+	&:not(.has-background):not(.has-background-dim) {
 		background-color: var(--color-bg) !important;
 	}
 

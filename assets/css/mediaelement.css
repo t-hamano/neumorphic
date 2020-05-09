@@ -12,7 +12,7 @@
 	border-radius: 1000px;
 }
 
-.mejs-container.mejs-audio:not(.has-background) {
+.mejs-container.mejs-audio:not(.has-background):not(.has-background-dim) {
 	background-color: var(--color-bg) !important;
 }
 
@@ -51,7 +51,7 @@
 	border-radius: 8px;
 }
 
-.mejs-container.mejs-video:not(.has-background) {
+.mejs-container.mejs-video:not(.has-background):not(.has-background-dim) {
 	background-color: var(--color-bg) !important;
 }
 
