@@ -77,7 +77,7 @@ blockquote {
 ------------------------------------------*/
 
 .screen-reader-text {
-	position: absolute;
+	position: absolute !important;
 	width: 1px;
 	height: 1px;
 	margin: -1px;
@@ -107,28 +107,25 @@ blockquote {
 ## Vanilla Galleries
 ------------------------------------------*/
 
-.widget_media_gallery {
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	margin: 0;
 
-	.gallery {
-		display: flex;
-		flex-wrap: wrap;
-		width: 100%;
-		margin: 0;
+	@for $i from 2 through 9 {
 
-		@for $i from 2 through 9 {
-
-			&.gallery-columns-#{$i} .gallery-item {
-				width: #{percentage(1 / $i)};
-			}
+		&.gallery-columns-#{$i} .gallery-item {
+			width: #{percentage(1 / $i)};
 		}
 	}
 
-	.gallery-item {
+	&-item {
 		margin: 0 0 10px;
 		padding: 0 5px;
 	}
 
-	.gallery-icon {
+	&-icon {
 
 		img {
 
@@ -142,7 +139,7 @@ blockquote {
 		}
 	}
 
-	.gallery-caption {
+	&-caption {
 		margin-top: 0.5em;
 		color: inherit;
 		font-size: 0.8em;

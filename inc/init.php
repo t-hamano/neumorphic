@@ -245,10 +245,24 @@ add_action( 'enqueue_block_editor_assets', 'neomorphic_block_editor_styles' );
  * Register and enqueue classic editor styles.
  */
 function neomorphic_classic_editor_style() {
+	$theme_version = wp_get_theme()->get( 'Version' );
+
+	// Main style
 	add_editor_style( '/assets/css/editor-style-classic.min.css' );
+
 }
 add_action( 'admin_init', 'neomorphic_classic_editor_style' );
 
+
+/**
+ * Add inline style to classic editor.
+ */
+function neomorphic_classic_editor_inline_style( $settings ) {
+	$settings['content_style'] = neomorphic_generate_css();
+	return $settings;
+}
+
+add_filter( 'tiny_mce_before_init', 'neomorphic_classic_editor_inline_style' );
 
 /**
  * Enqueue WordPress media player styles.

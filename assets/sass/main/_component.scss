@@ -30,6 +30,7 @@
 	}
 
 	&__edit {
+		margin-top: 3em;
 		text-align: center;
 	}
 
@@ -37,10 +38,60 @@
 
 		@include nm-button;
 		display: inline-block;
-		margin-top: 3em;
 		padding: 0.7em 1.4em;
 		color: var(--color-text-link);
 		border-radius: 1000px;
+	}
+
+	.navigation .nav-links {
+
+		@include clearfix;
+		margin-top: 4em;
+
+		.nav-previous,
+		.nav-next {
+			position: relative;
+			max-width: 40%;
+			overflow: hidden;
+			color: var(--color-text-link);
+			white-space: nowrap;
+			text-overflow: ellipsis;
+
+			@include mq(md-max) {
+				max-width: 100%;
+				margin: 0.2em 0;
+			}
+
+			&::before {
+				position: absolute;
+				font-weight: 900;
+				font-family: "Font Awesome 5 Free";
+			}
+		}
+
+		.nav-previous {
+			float: left;
+			padding-left: 1.5em;
+
+			&::before {
+				left: 0;
+				content: "\f100";
+			}
+		}
+
+		.nav-next {
+			float: right;
+			padding-right: 1.5em;
+
+			&::before {
+				right: 0;
+				content: "\f101";
+			}
+		}
+	}
+
+	.c-tag {
+		margin-top: 4em;
 	}
 }
 
@@ -268,8 +319,61 @@
 		list-style-type: none;
 	}
 
-	&__item:not(:last-child) {
-		margin-right: 1em;
+	&__item {
+
+		&:not(:last-child) {
+			margin-right: 1em;
+		}
+
+		&--published,
+		&--modified {
+			white-space: nowrap;
+		}
+
+		&--categories {
+			position: relative;
+			padding-left: 1.5em;
+
+			&::before {
+				position: absolute;
+				left: 0;
+				font-weight: 900;
+				font-family: "Font Awesome 5 Free";
+				content: "\f07b";
+			}
+
+			a {
+				color: inherit;
+			}
+		}
+	}
+}
+
+/*------------------------------------------
+## Tags
+------------------------------------------*/
+
+.c-tag {
+	position: relative;
+	padding-left: 1.5em;
+
+	&::before {
+		position: absolute;
+		left: 0;
+		font-weight: 900;
+		font-family: "Font Awesome 5 Free";
+		content: "\f02c";
+	}
+
+	a {
+
+		@include nm-button;
+		display: inline-block;
+		margin: 0 0.2em 1em;
+		padding: 0.3em 1em;
+		color: var(--color-accent);
+		font-size: 0.8em;
+		border-radius: 1000px;
 	}
 }
 

@@ -1,7 +1,253 @@
 /*--------------------------------------------------------------
-## Classic editor styles
+# Classic editor styles
 --------------------------------------------------------------*/
 
 @import "variable";
 @import "mixin";
 
+body#tinymce.wp-editor.content {
+
+	color: var(--color-text-main);
+	font-size: $base_font_size_pc;
+	font-family: $base_font_falily;
+	line-height: $base_line_height;
+	letter-spacing: $base_letter_spacing;
+	word-break: break-word;
+	background: var(--color-bg);
+
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+	}
+
+	a {
+		color: var(--color-text-link);
+		text-decoration: none;
+	}
+
+	> * {
+		max-width: 100%;
+		margin: 0 0 2em;
+	}
+
+	> :first-child {
+		margin-top: 0 !important;
+	}
+
+	> :last-child {
+		margin-bottom: 0 !important;
+	}
+
+	// Vanilla Galleries
+	.gallery {
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		margin: 0;
+
+		@for $i from 2 through 9 {
+
+			&.gallery-columns-#{$i} .gallery-item {
+				width: #{percentage(1 / $i)};
+			}
+		}
+
+		&-item {
+			margin: 0 0 10px;
+			padding: 0 5px;
+		}
+
+		&-icon {
+
+			img {
+
+				@include nm-image;
+				width: 100%;
+			}
+
+			a {
+
+				@include nm-image-link;
+			}
+		}
+
+		&-caption {
+			margin-top: 0.5em;
+			color: inherit;
+			font-size: 0.8em;
+			text-align: center;
+			opacity: $text_color_thin;
+		}
+	}
+
+	// Text Alignment
+	.has-text-align-left {
+		text-align: left;
+	}
+
+	.has-text-align-right {
+		text-align: right;
+	}
+
+	.has-text-align-center {
+		text-align: center;
+	}
+
+	// Alignment
+	.alignleft {
+		float: left;
+		margin-right: 1.5em;
+		margin-bottom: 0.5em;
+	}
+
+	.align-right {
+		float: right;
+		margin-bottom: 0.5em;
+		margin-left: 1.5em;
+	}
+
+	.align-center {
+		display: block;
+		margin: 0 auto 2em;
+		text-align: center;
+	}
+
+
+	/* Heading */
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-top: 1.5em;
+		margin-bottom: 1em;
+		font-weight: bold;
+		line-height: 1.4;
+
+		@include nm-text-border;
+	}
+
+	h1,
+	h2 {
+
+		@include nm-border;
+		padding-bottom: 0.2em;
+	}
+
+	h1 {
+		font-size: 2em;
+	}
+
+	h2 {
+		font-size: 1.8em;
+	}
+
+	h3 {
+		font-size: 1.6em;
+	}
+
+	h4 {
+		font-size: 1.4em;
+	}
+
+	h5 {
+		font-size: 1.2em;
+	}
+
+	h6 {
+		font-size: 1em;
+	}
+
+	/* List */
+	ul,
+	ol {
+		margin: 0 0 2em;
+		padding-left: 1.5em;
+
+		li {
+			margin: 0.5em 0;
+		}
+
+		ul {
+			margin-left: 0;
+			padding: 0;
+			list-style: none;
+
+			li {
+				position: relative;
+				padding-left: 1em;
+
+				&::before {
+					position: absolute;
+					left: 0;
+					content: "-";
+				}
+			}
+		}
+
+		ol {
+			padding-left: 1.5em;
+		}
+	}
+
+	// Code
+	code {
+		padding: 0.1em 0.3em;
+		color: var(--color-text-main);
+		font-size: 0.9em;
+		font-family: $base_code_font_family;
+		background: var(--color-nm-dark);
+		border-radius: 4px;
+	}
+
+	// Quote
+	> blockquote {
+		position: relative;
+		padding: 2em 2em 2em 3.5em;
+		color: var(--color-text-main);
+		border: none;
+		border-radius: $base_border_radius;
+
+		@include nm-reverse;
+
+		&::before {
+
+			@include nm-text();
+			position: absolute;
+			top: 0.5em;
+			left: 0.7em;
+			font-weight: 900;
+			font-size: 1.6em;
+			font-family: "Font Awesome 5 Free";
+			content: "\f10d";
+		}
+
+		p {
+			margin: 0 0 1em;
+		}
+
+		cite {
+			display: block;
+			color: inherit;
+			font-size: 0.8em;
+			font-style: italic;
+			opacity: $text_color_thin;
+		}
+	}
+
+
+	// Image
+	img {
+
+		@include nm-image;
+	}
+
+	figcaption {
+		margin-top: 0.5em;
+		margin-bottom: 0;
+		font-size: 0.8em;
+		opacity: $text_color_thin;
+	}
+}
