@@ -1,9 +1,6 @@
 ( function( $ ) {
 $( function() {
 
-	// Polyfill object-fit/object-position on <img>
-	objectFitImages();
-
 	// Drawer menu
 	var drawer = $( '#drawer' );
 

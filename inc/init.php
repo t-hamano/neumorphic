@@ -214,9 +214,6 @@ function neomorphic_scripts() {
 	// Customizer output inline CSS
 	wp_add_inline_style( 'neomorphic-style-front-main', neomorphic_generate_css() );
 
-	// Polyfill object-fit/object-position on <img>
-	wp_enqueue_script( 'neomorphic-script-ofi', get_theme_file_uri() . '/assets/js/ofi.min.js', array( 'jquery' ), $theme_version, false );
-
 	// Main Script
 	wp_enqueue_script( 'neomorphic-script-main', get_theme_file_uri() . '/assets/js/main.js', array( 'jquery' ), $theme_version, false );
 }
