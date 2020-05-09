@@ -84,6 +84,18 @@
 		margin-left: -50vw;
 	}
 
+	// Link
+	a {
+		text-decoration: underline;
+
+		@include mq(lg-min) {
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
 	/* Heading */
 	h1,
 	h2,

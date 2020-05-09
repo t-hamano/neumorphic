@@ -20,7 +20,6 @@ body#tinymce.wp-editor.content *::after {
 
 body#tinymce.wp-editor.content a {
 	color: var(--color-text-link);
-	text-decoration: none;
 }
 
 body#tinymce.wp-editor.content > * {

@@ -2177,6 +2177,10 @@ button:focus {
 	margin-left: -50vw;
 }
 
+.entry-content a {
+	text-decoration: underline;
+}
+
 .entry-content h1,
 .entry-content h2,
 .entry-content h3,
@@ -4494,6 +4498,10 @@ button:focus {
 		opacity: 0;
 		transition: opacity 0.2s ease-in-out;
 		content: "";
+	}
+
+	.entry-content a:hover {
+		text-decoration: none;
 	}
 
 	.wp-block-calendar .wp-calendar-nav a:hover {
