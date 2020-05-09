@@ -65,8 +65,8 @@
 		}
 
 		[data-block] {
-			margin-top: 56px;
-			margin-bottom: 56px;
+			margin-top: 48px;
+			margin-bottom: 48px;
 		}
 
 		&[data-align="left"],
@@ -78,7 +78,7 @@
 			}
 		}
 
-		a {
+		&:not(.editor-post-title__block) a {
 			color: var(--color-text-link);
 			text-decoration: none;
 		}
@@ -101,8 +101,7 @@
 		h4,
 		h5,
 		h6 {
-			margin-top: 2em;
-			margin-bottom: 1em;
+			margin: 0;
 			font-weight: bold;
 			line-height: 1.4;
 
@@ -148,7 +147,7 @@
 			margin: 0;
 
 			&.has-background {
-				padding: 15px 20px;
+				padding: 1.5em 1em;
 			}
 
 			&.has-drop-cap:not(:focus)::first-letter {
@@ -244,7 +243,41 @@
 ----------------------*/
 
 [data-type="core/gallery"] {
-	font-size: inherit;
+
+	.wp-block-gallery {
+
+		.blocks-gallery-image,
+		.blocks-gallery-item {
+
+			figure {
+				justify-content: center;
+			}
+
+			figcaption {
+				bottom: 5px;
+				left: 5px;
+				width: calc(100% - 10px);
+				max-height: calc(100% - 10px);
+				padding: 0.5em;
+				font-size: 0.8em;
+				background: rgba(0, 0, 0, 0.6);
+				border-radius: 0 0 $base_border_radius $base_border_radius;
+			}
+
+			img {
+
+				@include nm-image;
+				width: 100%;
+			}
+		}
+
+		&.is-style-nm {
+
+			@include nm;
+			padding: 1em;
+			border-radius: $base_border_radius;
+		}
+	}
 }
 
 /*----------------------
@@ -593,8 +626,25 @@
 ### Columns
 ----------------------*/
 
-[data-type="core/column"] {
-	font-size: inherit;
+[data-type="core/columns"] {
+
+	.wp-block-columns {
+
+		&.has-background {
+			padding: 0 1em;
+		}
+
+		&.is-style-nm {
+
+			@include nm;
+			padding: 0 1em;
+			border-radius: $base_border_radius;
+		}
+
+		.wp-block:last-child {
+			margin-bottom: 0;
+		}
+	}
 }
 
 /*----------------------
@@ -644,15 +694,16 @@
 
 	.wp-block-group {
 
-		&.has-background,
-		&.is-style-nm {
+		&.has-background {
 			padding: 1.5em 1em;
-			border-radius: $base_border_radius;
+
 		}
 
 		&.is-style-nm {
 
 			@include nm;
+			padding: 1.5em 1em;
+			border-radius: $base_border_radius;
 		}
 
 		.wp-block:first-child {
@@ -703,15 +754,15 @@
 			padding: 0 2em 0 0;
 		}
 
-		&.has-background,
-		&.is-style-nm {
+		&.has-background {
 			padding: 1.5em 1em;
-			border-radius: $base_border_radius;
 		}
 
 		&.is-style-nm {
 
 			@include nm;
+			padding: 1.5em 1em;
+			border-radius: $base_border_radius;
 		}
 
 		@media screen and (max-width: 959px) {

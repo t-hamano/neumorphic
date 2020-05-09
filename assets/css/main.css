@@ -448,7 +448,6 @@ button:focus {
 	height: 100%;
 	-o-object-fit: cover;
 	object-fit: cover;
-	font-family: "object-fit: cover;";
 }
 
 .c-entries__thumbnail img:not(.has-background) {
@@ -821,11 +820,9 @@ button:focus {
 .c-pagination__item--link,
 .c-pagination__item--prev,
 .c-pagination__item--next,
-.c-pagination__item:not(.current),
 .c-pagination .post-page-numbers--link,
 .c-pagination .post-page-numbers--prev,
-.c-pagination .post-page-numbers--next,
-.c-pagination .post-page-numbers:not(.current) {
+.c-pagination .post-page-numbers--next {
 	text-decoration: none !important;
 	border: none;
 	outline: none !important;
@@ -842,11 +839,9 @@ button:focus {
 .c-pagination__item--link:not(.has-background),
 .c-pagination__item--prev:not(.has-background),
 .c-pagination__item--next:not(.has-background),
-.c-pagination__item:not(.current):not(.has-background),
 .c-pagination .post-page-numbers--link:not(.has-background),
 .c-pagination .post-page-numbers--prev:not(.has-background),
-.c-pagination .post-page-numbers--next:not(.has-background),
-.c-pagination .post-page-numbers:not(.current):not(.has-background) {
+.c-pagination .post-page-numbers--next:not(.has-background) {
 	background-color: var(--color-bg) !important;
 }
 
@@ -859,9 +854,6 @@ button:focus {
 .c-pagination__item--next:focus,
 .c-pagination__item--next:hover,
 .c-pagination__item--next:active,
-.c-pagination__item:not(.current):focus,
-.c-pagination__item:not(.current):hover,
-.c-pagination__item:not(.current):active,
 .c-pagination .post-page-numbers--link:focus,
 .c-pagination .post-page-numbers--link:hover,
 .c-pagination .post-page-numbers--link:active,
@@ -870,10 +862,7 @@ button:focus {
 .c-pagination .post-page-numbers--prev:active,
 .c-pagination .post-page-numbers--next:focus,
 .c-pagination .post-page-numbers--next:hover,
-.c-pagination .post-page-numbers--next:active,
-.c-pagination .post-page-numbers:not(.current):focus,
-.c-pagination .post-page-numbers:not(.current):hover,
-.c-pagination .post-page-numbers:not(.current):active {
+.c-pagination .post-page-numbers--next:active {
 	text-decoration: none;
 	outline: none;
 }
@@ -881,22 +870,18 @@ button:focus {
 .c-pagination__item--link:hover,
 .c-pagination__item--prev:hover,
 .c-pagination__item--next:hover,
-.c-pagination__item:not(.current):hover,
 .c-pagination .post-page-numbers--link:hover,
 .c-pagination .post-page-numbers--prev:hover,
-.c-pagination .post-page-numbers--next:hover,
-.c-pagination .post-page-numbers:not(.current):hover {
+.c-pagination .post-page-numbers--next:hover {
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
 }
 
 .c-pagination__item--link:active,
 .c-pagination__item--prev:active,
 .c-pagination__item--next:active,
-.c-pagination__item:not(.current):active,
 .c-pagination .post-page-numbers--link:active,
 .c-pagination .post-page-numbers--prev:active,
-.c-pagination .post-page-numbers--next:active,
-.c-pagination .post-page-numbers:not(.current):active {
+.c-pagination .post-page-numbers--next:active {
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 }
 
@@ -2111,7 +2096,7 @@ button:focus {
 }
 
 .entry-content p.has-background {
-	padding: 15px 20px;
+	padding: 1.5em 1em;
 }
 
 .entry-content p > img {
@@ -2210,6 +2195,75 @@ button:focus {
 /*----------------------
 ### Gallery
 ----------------------*/
+
+.wp-block-gallery .blocks-gallery-grid {
+	width: 100%;
+}
+
+.wp-block-gallery .blocks-gallery-image figure,
+.wp-block-gallery .blocks-gallery-item figure {
+	justify-content: center;
+}
+
+.wp-block-gallery .blocks-gallery-image figcaption,
+.wp-block-gallery .blocks-gallery-item figcaption {
+	bottom: 5px;
+	left: 5px;
+	width: calc(100% - 10px);
+	max-height: calc(100% - 10px);
+	padding: 0.5em;
+	font-size: 0.8em;
+	background: rgba(0, 0, 0, 0.6);
+	border-radius: 0 0 8px 8px;
+}
+
+.wp-block-gallery .blocks-gallery-image img,
+.wp-block-gallery .blocks-gallery-item img {
+	text-decoration: none !important;
+	border: none;
+	outline: none !important;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
+	padding: 5px;
+	border-radius: 8px;
+	width: 100%;
+}
+
+.wp-block-gallery .blocks-gallery-image img:not(.has-background),
+.wp-block-gallery .blocks-gallery-item img:not(.has-background) {
+	background-color: var(--color-bg) !important;
+}
+
+.wp-block-gallery .blocks-gallery-image img:focus,
+.wp-block-gallery .blocks-gallery-image img:hover,
+.wp-block-gallery .blocks-gallery-image img:active,
+.wp-block-gallery .blocks-gallery-item img:focus,
+.wp-block-gallery .blocks-gallery-item img:hover,
+.wp-block-gallery .blocks-gallery-item img:active {
+	text-decoration: none;
+	outline: none;
+}
+
+.wp-block-gallery.is-style-nm {
+	text-decoration: none !important;
+	border: none;
+	outline: none !important;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+	padding: 1em;
+	border-radius: 8px;
+}
+
+.wp-block-gallery.is-style-nm:not(.has-background) {
+	background-color: var(--color-bg) !important;
+}
+
+.wp-block-gallery.is-style-nm:focus,
+.wp-block-gallery.is-style-nm:hover,
+.wp-block-gallery.is-style-nm:active {
+	text-decoration: none;
+	outline: none;
+}
 
 /*----------------------
 ### Quote
@@ -2616,6 +2670,19 @@ button:focus {
 	margin-left: auto;
 }
 
+.wp-block-table.is-style-stripes {
+	border-bottom: none;
+}
+
+.wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+	background-color: var(--color-nm-light);
+}
+
+.wp-block-table.is-style-stripes th,
+.wp-block-table.is-style-stripes td {
+	border-color: var(--color-nm-dark);
+}
+
 /*----------------------
 ### Verse
 ----------------------*/
@@ -2651,10 +2718,8 @@ button:focus {
 ### Columns
 ----------------------*/
 
-.wp-block-columns.has-background,
-.wp-block-columns.is-style-nm {
+.wp-block-columns.has-background {
 	padding: 1.5em 1em;
-	border-radius: 8px;
 }
 
 .wp-block-columns.is-style-nm {
@@ -2663,6 +2728,7 @@ button:focus {
 	outline: none !important;
 	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+	border-radius: 8px;
 }
 
 .wp-block-columns.is-style-nm:not(.has-background) {
@@ -2782,10 +2848,8 @@ button:focus {
 ### Group
 ----------------------*/
 
-.wp-block-group.has-background,
-.wp-block-group.is-style-nm {
+.wp-block-group.has-background {
 	padding: 1.5em 1em;
-	border-radius: 8px;
 }
 
 .wp-block-group.is-style-nm {
@@ -2794,6 +2858,8 @@ button:focus {
 	outline: none !important;
 	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+	padding: 1.5em 1em;
+	border-radius: 8px;
 }
 
 .wp-block-group.is-style-nm:not(.has-background) {
@@ -2862,10 +2928,8 @@ button:focus {
 	padding: 0 2em 0 0;
 }
 
-.wp-block-media-text.has-background,
-.wp-block-media-text.is-style-nm {
+.wp-block-media-text.has-background {
 	padding: 1.5em 1em;
-	border-radius: 8px;
 }
 
 .wp-block-media-text.is-style-nm {
@@ -2874,6 +2938,8 @@ button:focus {
 	outline: none !important;
 	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+	padding: 1.5em 1em;
+	border-radius: 8px;
 }
 
 .wp-block-media-text.is-style-nm:not(.has-background) {
