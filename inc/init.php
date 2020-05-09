@@ -318,7 +318,8 @@ function neomorphic_get_the_archive_title( $title ) {
 	} elseif ( is_day() ) {
 		$title = get_the_date( _x( 'F j, Y', 'daily archives date format', 'neomorphic' ) );
 	} elseif ( is_tax() ) {
-		$title = single_term_title( '', false );
+		$title  = '<i class="fas fa-folder" aria-hidden="true"></i>';
+		$title .= single_term_title( '', false );
 	} elseif ( is_post_type_archive() ) {
 		$title = post_type_archive_title( '', false );
 	} else {

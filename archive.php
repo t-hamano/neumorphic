@@ -13,15 +13,13 @@ get_header(); ?>
 			<h1 class="c-entry__title"><?php the_archive_title(); ?></h1>
 		</header>
 
-		<div class="c-entry__body">
-			<div class="c-entries">
-				<?php
-				while ( have_posts() ) {
-					the_post();
-					get_template_part( 'parts/content-archive' );
-				}
-				?>
-			</div>
+		<div class="c-entries">
+			<?php
+			while ( have_posts() ) {
+				the_post();
+				get_template_part( 'parts/content-archive' );
+			}
+			?>
 		</div>
 
 		<?php get_template_part( 'parts/pagination' ); ?>
