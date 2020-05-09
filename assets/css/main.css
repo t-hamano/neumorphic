@@ -336,6 +336,11 @@ button:focus {
 	line-height: 1.4;
 }
 
+.c-entry__title i {
+	margin-right: 0.5em;
+	font-size: 0.7em;
+}
+
 .c-entry__edit {
 	margin-top: 3em;
 	text-align: center;

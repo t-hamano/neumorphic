@@ -306,9 +306,11 @@ add_action( 'widgets_init', 'neomorphic_widgets_init' );
  */
 function neomorphic_get_the_archive_title( $title ) {
 	if ( is_category() ) {
-		$title = single_cat_title( '', false );
+		$title  = '<i class="fas fa-folder" aria-hidden="true"></i>';
+		$title .= single_cat_title( '', false );
 	} elseif ( is_tag() ) {
-		$title = single_tag_title( '', false );
+		$title  = '<i class="fas fa-tag" aria-hidden="true"></i>';
+		$title .= single_tag_title( '', false );
 	} elseif ( is_year() ) {
 		$title = get_the_date( _x( 'Y', 'yearly archives date format', 'neomorphic' ) );
 	} elseif ( is_month() ) {
