@@ -244,7 +244,7 @@
 
 	.wp-caption {
 
-		a {
+		> a {
 
 			@include nm-image-link;
 		}

@@ -38,7 +38,6 @@ body {
 img {
 	max-width: 100%;
 	height: auto;
-	font-size: 0;
 	line-height: 0;
 	vertical-align: bottom;
 	border: none;
@@ -4653,16 +4652,16 @@ button:focus {
 		text-decoration: none;
 	}
 
-	.entry-content .wp-caption a {
+	.entry-content .wp-caption > a {
 		position: relative;
 		display: inline-block;
 	}
 
-	.entry-content .wp-caption a:hover::before {
+	.entry-content .wp-caption > a:hover::before {
 		opacity: 1;
 	}
 
-	.entry-content .wp-caption a::before {
+	.entry-content .wp-caption > a::before {
 		position: absolute;
 		top: 5px;
 		left: 5px;
