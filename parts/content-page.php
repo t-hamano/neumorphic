@@ -12,6 +12,12 @@
 		<h1 class="c-entry__title"><?php the_title_attribute(); ?></h1>
 	</header>
 
+	<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
+		<figure class="c-entry__thumbnail">
+			<?php the_post_thumbnail(); ?>
+		</figure>
+	<?php endif; ?>
+
 	<div class="entry-content">
 
 		<?php

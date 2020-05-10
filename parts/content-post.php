@@ -30,8 +30,15 @@
 		</div>
 	</header>
 
+	<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
+		<figure class="c-entry__thumbnail">
+			<?php the_post_thumbnail(); ?>
+		</figure>
+	<?php endif; ?>
+
 	<div class="entry-content">
-	<?php
+
+		<?php
 		the_content();
 
 		wp_link_pages(

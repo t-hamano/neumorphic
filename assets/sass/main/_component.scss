@@ -34,6 +34,16 @@
 		}
 	}
 
+	&__thumbnail {
+		margin-bottom: 4em;
+		text-align: center;
+
+		img {
+
+			@include nm-image;
+		}
+	}
+
 	&__edit {
 		margin-top: 3em;
 		text-align: center;

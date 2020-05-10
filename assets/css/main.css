@@ -446,6 +446,35 @@ button:focus {
 	font-size: 0.7em;
 }
 
+.c-entry__thumbnail {
+	margin-bottom: 4em;
+	text-align: center;
+}
+
+.c-entry__thumbnail img {
+	text-decoration: none;
+	border: none;
+	outline: none;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
+	padding: 5px;
+	border-radius: 8px;
+}
+
+.c-entry__thumbnail img:not(.has-background):not(.has-background-dim) {
+	background-color: var(--color-bg);
+}
+
+.c-entry__thumbnail img:focus,
+.c-entry__thumbnail img:hover,
+.c-entry__thumbnail img:active {
+	text-decoration: none;
+	outline: none;
+}
+
 .c-entry__edit {
 	margin-top: 3em;
 	text-align: center;
