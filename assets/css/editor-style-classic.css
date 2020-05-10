@@ -242,7 +242,34 @@ body#tinymce.wp-editor.content code {
 	border-radius: 4px;
 }
 
-body#tinymce.wp-editor.content > blockquote {
+body#tinymce.wp-editor.content q {
+	text-decoration: none;
+	border: none;
+	outline: none;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
+	position: relative;
+	padding: 0.3em 0.5em;
+	color: var(--color-text-main);
+	border: none;
+	border-radius: 4px;
+}
+
+body#tinymce.wp-editor.content q:not(.has-background):not(.has-background-dim) {
+	background-color: var(--color-bg);
+}
+
+body#tinymce.wp-editor.content q:focus,
+body#tinymce.wp-editor.content q:hover,
+body#tinymce.wp-editor.content q:active {
+	text-decoration: none;
+	outline: none;
+}
+
+body#tinymce.wp-editor.content blockquote {
 	position: relative;
 	padding: 2em 2em 2em 3.5em;
 	color: var(--color-text-main);
@@ -258,18 +285,18 @@ body#tinymce.wp-editor.content > blockquote {
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 }
 
-body#tinymce.wp-editor.content > blockquote:not(.has-background):not(.has-background-dim) {
+body#tinymce.wp-editor.content blockquote:not(.has-background):not(.has-background-dim) {
 	background-color: var(--color-bg);
 }
 
-body#tinymce.wp-editor.content > blockquote:focus,
-body#tinymce.wp-editor.content > blockquote:hover,
-body#tinymce.wp-editor.content > blockquote:active {
+body#tinymce.wp-editor.content blockquote:focus,
+body#tinymce.wp-editor.content blockquote:hover,
+body#tinymce.wp-editor.content blockquote:active {
 	text-decoration: none;
 	outline: none;
 }
 
-body#tinymce.wp-editor.content > blockquote::before {
+body#tinymce.wp-editor.content blockquote::before {
 	text-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	position: absolute;
 	top: 0.5em;
@@ -280,11 +307,11 @@ body#tinymce.wp-editor.content > blockquote::before {
 	content: "\f10d";
 }
 
-body#tinymce.wp-editor.content > blockquote p {
+body#tinymce.wp-editor.content blockquote p {
 	margin: 0 0 1em;
 }
 
-body#tinymce.wp-editor.content > blockquote cite {
+body#tinymce.wp-editor.content blockquote cite {
 	display: block;
 	color: inherit;
 	font-size: 0.8em;
@@ -321,6 +348,99 @@ body#tinymce.wp-editor.content figcaption {
 	margin-bottom: 0;
 	font-size: 0.8em;
 	opacity: 0.8;
+}
+
+body#tinymce.wp-editor.content table {
+	text-decoration: none;
+	border: none;
+	outline: none;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+	width: auto;
+	margin-bottom: 0.5em;
+	border-radius: 8px;
+}
+
+body#tinymce.wp-editor.content table:not(.has-background):not(.has-background-dim) {
+	background-color: var(--color-bg);
+}
+
+body#tinymce.wp-editor.content table:focus,
+body#tinymce.wp-editor.content table:hover,
+body#tinymce.wp-editor.content table:active {
+	text-decoration: none;
+	outline: none;
+}
+
+body#tinymce.wp-editor.content table th,
+body#tinymce.wp-editor.content table td {
+	padding: 1em;
+	text-align: left;
+	border-right: 1px solid var(--color-nm-dark);
+	border-bottom: 1px solid var(--color-nm-dark);
+}
+
+body#tinymce.wp-editor.content table th:last-child,
+body#tinymce.wp-editor.content table td:last-child {
+	border-right: none;
+}
+
+body#tinymce.wp-editor.content table thead th {
+	border-bottom-width: 3px;
+}
+
+body#tinymce.wp-editor.content table tbody tr:last-child th,
+body#tinymce.wp-editor.content table tbody tr:last-child td {
+	border-bottom: none;
+}
+
+body#tinymce.wp-editor.content table tfoot td {
+	border-top: 3px solid var(--color-nm-dark);
+	border-bottom: none;
+}
+
+body#tinymce.wp-editor.content table figcaption {
+	margin-top: 1em;
+	font-size: 0.9em;
+	text-align: center;
+}
+
+body#tinymce.wp-editor.content dl dt {
+	font-weight: bold;
+}
+
+body#tinymce.wp-editor.content dl dd {
+	margin: 0;
+}
+
+body#tinymce.wp-editor.content dl dd:not(:last-of-type) {
+	margin-bottom: 1em;
+}
+
+body#tinymce.wp-editor.content hr {
+	position: relative;
+	width: 50%;
+	height: 3px;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 10px 0;
+	border: none;
+	border-radius: 1000px;
+	transform: translateY(-6px);
+}
+
+body#tinymce.wp-editor.content hr::before {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	border-radius: 1000px;
+	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
+	content: "";
 }
 
 @media screen and (min-width: 960px) {

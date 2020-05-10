@@ -201,8 +201,19 @@ body#tinymce.wp-editor.content {
 		border-radius: 4px;
 	}
 
+	// Inline quotes
+	q {
+
+		@include nm-reverse;
+		position: relative;
+		padding: 0.3em 0.5em;
+		color: var(--color-text-main);
+		border: none;
+		border-radius: $base_border_radius / 2;
+	}
+
 	// Quote
-	> blockquote {
+	blockquote {
 		position: relative;
 		padding: 2em 2em 2em 3.5em;
 		color: var(--color-text-main);
@@ -248,5 +259,79 @@ body#tinymce.wp-editor.content {
 		margin-bottom: 0;
 		font-size: 0.8em;
 		opacity: $text_color_thin;
+	}
+
+	// Table
+	table {
+
+		@include nm;
+		width: auto;
+		margin-bottom: 0.5em;
+		border-radius: $base_border_radius;
+
+		th,
+		td {
+			padding: 1em;
+			text-align: left;
+			border-right: 1px solid var(--color-nm-dark);
+			border-bottom: 1px solid var(--color-nm-dark);
+
+			&:last-child {
+				border-right: none;
+			}
+		}
+
+		thead th {
+			border-bottom-width: 3px;
+		}
+
+		tbody tr:last-child {
+
+			th,
+			td {
+				border-bottom: none;
+			}
+		}
+
+		tfoot td {
+			border-top: 3px solid var(--color-nm-dark);
+			border-bottom: none;
+		}
+
+		figcaption {
+			margin-top: 1em;
+			font-size: 0.9em;
+			text-align: center;
+		}
+	}
+
+	// Definition Lists
+	dl {
+
+		dt {
+			font-weight: bold;
+		}
+
+		dd {
+			margin: 0;
+
+			&:not(:last-of-type) {
+				margin-bottom: 1em;
+			}
+		}
+	}
+
+	// Horizontal Rule
+	hr {
+
+		@include nm-border;
+		width: 50%;
+		height: 3px;
+		margin-right: auto;
+		margin-left: auto;
+		padding: 10px 0;
+		border: none;
+		border-radius: 1000px;
+		transform: translateY(-6px);
 	}
 }

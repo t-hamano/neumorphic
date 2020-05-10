@@ -2393,12 +2393,7 @@ button:focus {
 	border-radius: 4px;
 }
 
-.entry-content > blockquote {
-	position: relative;
-	padding: 2em 2em 2em 3.5em;
-	color: var(--color-text-main);
-	border: none;
-	border-radius: 8px;
+.entry-content q {
 	text-decoration: none;
 	border: none;
 	outline: none;
@@ -2407,6 +2402,38 @@ button:focus {
 	-moz-appearance: none;
 	appearance: none;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
+	position: relative;
+	padding: 0.3em 0.5em;
+	color: var(--color-text-main);
+	border: none;
+	border-radius: 4px;
+}
+
+.entry-content q:not(.has-background):not(.has-background-dim) {
+	background-color: var(--color-bg);
+}
+
+.entry-content q:focus,
+.entry-content q:hover,
+.entry-content q:active {
+	text-decoration: none;
+	outline: none;
+}
+
+.entry-content > blockquote {
+	text-decoration: none;
+	border: none;
+	outline: none;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
+	position: relative;
+	padding: 2em 2em 2em 3.5em;
+	color: var(--color-text-main);
+	border: none;
+	border-radius: 8px;
 }
 
 .entry-content > blockquote:not(.has-background):not(.has-background-dim) {
@@ -2472,6 +2499,99 @@ button:focus {
 	margin-bottom: 0;
 	font-size: 0.8em;
 	opacity: 0.8;
+}
+
+.entry-content table {
+	text-decoration: none;
+	border: none;
+	outline: none;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+	width: auto;
+	margin-bottom: 0.5em;
+	border-radius: 8px;
+}
+
+.entry-content table:not(.has-background):not(.has-background-dim) {
+	background-color: var(--color-bg);
+}
+
+.entry-content table:focus,
+.entry-content table:hover,
+.entry-content table:active {
+	text-decoration: none;
+	outline: none;
+}
+
+.entry-content table th,
+.entry-content table td {
+	padding: 1em;
+	text-align: left;
+	border-right: 1px solid var(--color-nm-dark);
+	border-bottom: 1px solid var(--color-nm-dark);
+}
+
+.entry-content table th:last-child,
+.entry-content table td:last-child {
+	border-right: none;
+}
+
+.entry-content table thead th {
+	border-bottom-width: 3px;
+}
+
+.entry-content table tbody tr:last-child th,
+.entry-content table tbody tr:last-child td {
+	border-bottom: none;
+}
+
+.entry-content table tfoot td {
+	border-top: 3px solid var(--color-nm-dark);
+	border-bottom: none;
+}
+
+.entry-content table figcaption {
+	margin-top: 1em;
+	font-size: 0.9em;
+	text-align: center;
+}
+
+.entry-content dl dt {
+	font-weight: bold;
+}
+
+.entry-content dl dd {
+	margin: 0;
+}
+
+.entry-content dl dd:not(:last-of-type) {
+	margin-bottom: 1em;
+}
+
+.entry-content hr:not(.is-style-dots) {
+	position: relative;
+	width: 50%;
+	height: 3px;
+	margin-right: auto;
+	margin-left: auto;
+	padding: 10px 0;
+	border: none;
+	border-radius: 1000px;
+	transform: translateY(-6px);
+}
+
+.entry-content hr:not(.is-style-dots)::before {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	border-radius: 1000px;
+	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
+	content: "";
 }
 
 /*----------------------
@@ -3066,63 +3186,6 @@ button:focus {
 	overflow-x: initial;
 }
 
-.wp-block-table table {
-	text-decoration: none;
-	border: none;
-	outline: none;
-	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
-	width: auto;
-	margin-bottom: 0.5em;
-	border-radius: 8px;
-}
-
-.wp-block-table table:not(.has-background):not(.has-background-dim) {
-	background-color: var(--color-bg);
-}
-
-.wp-block-table table:focus,
-.wp-block-table table:hover,
-.wp-block-table table:active {
-	text-decoration: none;
-	outline: none;
-}
-
-.wp-block-table th,
-.wp-block-table td {
-	padding: 1em;
-	text-align: left;
-	border-right: 1px solid var(--color-nm-dark);
-	border-bottom: 1px solid var(--color-nm-dark);
-}
-
-.wp-block-table th:last-child,
-.wp-block-table td:last-child {
-	border-right: none;
-}
-
-.wp-block-table thead th {
-	border-bottom-width: 3px;
-}
-
-.wp-block-table tbody tr:last-child td {
-	border-bottom: none;
-}
-
-.wp-block-table tfoot td {
-	border-top: 3px solid var(--color-nm-dark);
-	border-bottom: none;
-}
-
-.wp-block-table figcaption {
-	margin-top: 1em;
-	font-size: 0.9em;
-	text-align: center;
-}
-
 .wp-block-table.aligncenter table {
 	margin-right: auto;
 	margin-left: auto;
@@ -3134,11 +3197,6 @@ button:focus {
 
 .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
 	background-color: var(--color-nm-light);
-}
-
-.wp-block-table.is-style-stripes th,
-.wp-block-table.is-style-stripes td {
-	border-color: var(--color-nm-dark);
 }
 
 /*----------------------
@@ -3520,37 +3578,33 @@ button:focus {
 ### Separator
 ----------------------*/
 
-.wp-block-separator {
-	margin-bottom: 2em;
+.wp-block-separator.is-style-wide {
+	width: 100% !important;
 }
 
-.wp-block-separator:not(.is-style-dots) {
+.wp-block-separator.has-background:not(.is-style-dots) {
 	position: relative;
-	height: 3px;
-	margin-right: auto;
-	margin-left: auto;
-	border: none;
+	background-color: transparent !important;
 }
 
-.wp-block-separator:not(.is-style-dots)::before {
+.wp-block-separator.has-background:not(.is-style-dots)::before {
 	position: absolute;
+	right: 0;
 	bottom: 0;
 	left: 0;
-	width: 100%;
-	height: 3px;
-	border-radius: 1000px;
-	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
+	height: 2px;
+	background: currentColor;
 	content: "";
 }
 
-.wp-block-separator:not(.is-style-dots):not(.is-style-wide) {
-	max-width: 50%;
-}
-
 .wp-block-separator.is-style-dots::before {
+	padding-left: 2em;
+	color: currentColor;
 	font-size: 24px;
 	font-family: inherit;
 	line-height: 0;
+	letter-spacing: 2em;
+	content: "\00b7 \00b7 \00b7";
 }
 
 /*------------------------------------------
@@ -4398,6 +4452,26 @@ button:focus {
 
 .has-white-background-color {
 	background-color: #fff !important;
+}
+
+/*----------------------
+### Background color (Table)
+----------------------*/
+
+.has-subtle-light-gray-background-color {
+	background-color: #f3f4f5;
+}
+
+.has-subtle-pale-green-background-color {
+	background-color: #e9fbe5;
+}
+
+.has-subtle-pale-blue-background-color {
+	background-color: #e7f5fe;
+}
+
+.has-subtle-plae-pink-background-color {
+	background-color: #fcf0ef;
 }
 
 /*----------------------
