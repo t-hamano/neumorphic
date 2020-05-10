@@ -427,10 +427,8 @@
 	}
 
 	&__input {
-
-		@include nm-input;
+		width: 100%;
 		padding-right: 3em;
-		border-radius: 1000px;
 	}
 
 	&__btn {

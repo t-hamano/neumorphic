@@ -80,10 +80,13 @@ body#tinymce.wp-editor.content .gallery-item {
 }
 
 body#tinymce.wp-editor.content .gallery-icon img {
-	text-decoration: none !important;
+	text-decoration: none;
 	border: none;
-	outline: none !important;
+	outline: none;
 	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	padding: 5px;
 	border-radius: 8px;
@@ -91,7 +94,7 @@ body#tinymce.wp-editor.content .gallery-icon img {
 }
 
 body#tinymce.wp-editor.content .gallery-icon img:not(.has-background):not(.has-background-dim) {
-	background-color: var(--color-bg) !important;
+	background-color: var(--color-bg);
 }
 
 body#tinymce.wp-editor.content .gallery-icon img:focus,
@@ -245,15 +248,18 @@ body#tinymce.wp-editor.content > blockquote {
 	color: var(--color-text-main);
 	border: none;
 	border-radius: 8px;
-	text-decoration: none !important;
+	text-decoration: none;
 	border: none;
-	outline: none !important;
+	outline: none;
 	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 }
 
 body#tinymce.wp-editor.content > blockquote:not(.has-background):not(.has-background-dim) {
-	background-color: var(--color-bg) !important;
+	background-color: var(--color-bg);
 }
 
 body#tinymce.wp-editor.content > blockquote:focus,
@@ -287,17 +293,20 @@ body#tinymce.wp-editor.content > blockquote cite {
 }
 
 body#tinymce.wp-editor.content img {
-	text-decoration: none !important;
+	text-decoration: none;
 	border: none;
-	outline: none !important;
+	outline: none;
 	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	padding: 5px;
 	border-radius: 8px;
 }
 
 body#tinymce.wp-editor.content img:not(.has-background):not(.has-background-dim) {
-	background-color: var(--color-bg) !important;
+	background-color: var(--color-bg);
 }
 
 body#tinymce.wp-editor.content img:focus,

@@ -158,25 +158,45 @@ blockquote {
 [type="url"],
 [type="number"],
 [type="password"],
-[type="search"],
-[type="submit"] {
+[type="search"] {
+
+	@include nm-input;
 	display: block;
-	width: 100%;
 	min-width: 0;
 	max-width: 100%;
 	height: auto;
 	padding: 0.7em 1.4em;
-	color: inherit;
-	font-size: inherit;
-	font-family: inherit;
-	background: transparent;
-	border: none;
-	outline: 0;
-	appearance: none;
+	border-radius: 1000px;
 }
 
 [type="submit"] {
+
+	@include nm-button;
+	display: block;
+	min-width: 0;
+	max-width: 100%;
+	height: auto;
+	padding: 0.7em 1.4em;
+	border-radius: 1000px;
 	cursor: pointer;
+}
+
+select {
+
+	@include nm-input;
+	display: block;
+	min-width: 0;
+	max-width: 100%;
+	height: auto;
+	padding: 0.7em 40px 0.7em 1.4em;
+	background: url(../images/chevron-down-solid.svg) no-repeat right 20px center/1em;
+	border-radius: 1000px;
+	cursor: pointer;
+
+	option {
+		color: #333;
+		background: #fff;
+	}
 }
 
 [type="search"] {
@@ -184,30 +204,6 @@ blockquote {
 
 	&::-webkit-search-cancel-button {
 		appearance: searchfield-cancel-button;
-	}
-}
-
-select {
-	display: block;
-	width: 100%;
-	min-width: 0;
-	max-width: 100%;
-	height: auto;
-	padding: 0.7em 40px 0.7em 1.4em;
-	color: inherit;
-	font-size: inherit;
-	font-family: inherit;
-	background-image: url(../images/chevron-down-solid.svg);
-	background-repeat: no-repeat;
-	background-position: right 20px center;
-	background-size: 1em;
-	outline: 0;
-	cursor: pointer;
-	appearance: none;
-
-	option {
-		color: #333;
-		background: #fff;
 	}
 }
 
