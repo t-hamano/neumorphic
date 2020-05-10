@@ -18,7 +18,7 @@
 		</figure>
 	<?php endif; ?>
 
-	<div class="entry-content">
+	<div class="entry-content clearfix">
 
 		<?php
 		the_content();
