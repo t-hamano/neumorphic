@@ -317,7 +317,7 @@ body#tinymce.wp-editor.content figcaption {
 @media screen and (min-width: 960px) {
 	body#tinymce.wp-editor.content .gallery-icon a {
 		position: relative;
-		display: block;
+		display: inline-block;
 	}
 
 	body#tinymce.wp-editor.content .gallery-icon a:hover::before {

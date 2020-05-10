@@ -157,10 +157,6 @@
 		&.has-background {
 			padding: 1.5em 1em;
 		}
-
-		> img {
-			margin: 0 5px;
-		}
 	}
 
 	/* List */
@@ -241,11 +237,16 @@
 	}
 
 	// Image
-	> figure {
+	img[class*="wp-image-"] {
 
-		img {
+		@include nm-image;
+	}
 
-			@include nm-image;
+	.wp-caption {
+
+		a {
+
+			@include nm-image-link;
 		}
 
 		figcaption {
@@ -264,9 +265,9 @@
 .wp-block-image {
 	margin-bottom: 2em;
 
-	img {
+	> a {
 
-		@include nm-image;
+		@include nm-image-link;
 	}
 
 	figcaption {
@@ -326,8 +327,6 @@
 		}
 
 		img {
-
-			@include nm-image;
 			width: 100%;
 		}
 	}
@@ -929,7 +928,6 @@
 		}
 	}
 
-	> figure > img,
 	> figure > video {
 
 		@include nm-image;
@@ -1229,11 +1227,6 @@
 			margin: 0 8px 16px;
 			padding: 1em;
 		}
-	}
-
-	&__featured-image img {
-
-		@include nm-image;
 	}
 
 	&__post-date {
