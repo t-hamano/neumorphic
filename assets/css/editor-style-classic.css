@@ -104,6 +104,10 @@ body#tinymce.wp-editor.content .gallery-icon img:active {
 	outline: none;
 }
 
+body#tinymce.wp-editor.content .gallery-icon a {
+	display: inline-block;
+}
+
 body#tinymce.wp-editor.content .gallery-caption {
 	margin-top: 0.5em;
 	color: inherit;
@@ -446,11 +450,6 @@ body#tinymce.wp-editor.content hr::before {
 @media screen and (min-width: 960px) {
 	body#tinymce.wp-editor.content .gallery-icon a {
 		position: relative;
-		display: inline-block;
-	}
-
-	body#tinymce.wp-editor.content .gallery-icon a:hover::before {
-		opacity: 1;
 	}
 
 	body#tinymce.wp-editor.content .gallery-icon a::before {
@@ -465,5 +464,9 @@ body#tinymce.wp-editor.content hr::before {
 		opacity: 0;
 		transition: opacity 0.2s ease-in-out;
 		content: "";
+	}
+
+	body#tinymce.wp-editor.content .gallery-icon a:hover::before {
+		opacity: 1;
 	}
 }

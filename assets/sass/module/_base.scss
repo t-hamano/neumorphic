@@ -135,6 +135,7 @@ blockquote {
 		a {
 
 			@include nm-image-link;
+			display: block;
 		}
 	}
 

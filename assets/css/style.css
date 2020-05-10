@@ -169,6 +169,11 @@ blockquote {
 	outline: none;
 }
 
+.gallery-icon a {
+	display: inline-block;
+	display: block;
+}
+
 .gallery-caption {
 	margin-top: 0.5em;
 	color: inherit;
@@ -1903,6 +1908,10 @@ button:focus {
 	outline: none;
 }
 
+.widget_media_image a {
+	display: inline-block;
+}
+
 .widget_media_image figure {
 	margin: 0 auto;
 }
@@ -2494,6 +2503,10 @@ button:focus {
 	outline: none;
 }
 
+.entry-content .wp-caption > a {
+	display: inline-block;
+}
+
 .entry-content .wp-caption figcaption {
 	margin-top: 0.5em;
 	margin-bottom: 0;
@@ -2600,6 +2613,10 @@ button:focus {
 
 .wp-block-image {
 	margin-bottom: 2em;
+}
+
+.wp-block-image > a {
+	display: inline-block;
 }
 
 .wp-block-image figcaption {
@@ -4565,11 +4582,6 @@ button:focus {
 
 	.gallery-icon a {
 		position: relative;
-		display: inline-block;
-	}
-
-	.gallery-icon a:hover::before {
-		opacity: 1;
 	}
 
 	.gallery-icon a::before {
@@ -4584,6 +4596,10 @@ button:focus {
 		opacity: 0;
 		transition: opacity 0.2s ease-in-out;
 		content: "";
+	}
+
+	.gallery-icon a:hover::before {
+		opacity: 1;
 	}
 
 	.c-entry__title {
@@ -4701,11 +4717,6 @@ button:focus {
 
 	.widget_media_image a {
 		position: relative;
-		display: inline-block;
-	}
-
-	.widget_media_image a:hover::before {
-		opacity: 1;
 	}
 
 	.widget_media_image a::before {
@@ -4722,17 +4733,16 @@ button:focus {
 		content: "";
 	}
 
+	.widget_media_image a:hover::before {
+		opacity: 1;
+	}
+
 	.entry-content a:hover {
 		text-decoration: none;
 	}
 
 	.entry-content .wp-caption > a {
 		position: relative;
-		display: inline-block;
-	}
-
-	.entry-content .wp-caption > a:hover::before {
-		opacity: 1;
 	}
 
 	.entry-content .wp-caption > a::before {
@@ -4749,13 +4759,12 @@ button:focus {
 		content: "";
 	}
 
-	.wp-block-image > a {
-		position: relative;
-		display: inline-block;
+	.entry-content .wp-caption > a:hover::before {
+		opacity: 1;
 	}
 
-	.wp-block-image > a:hover::before {
-		opacity: 1;
+	.wp-block-image > a {
+		position: relative;
 	}
 
 	.wp-block-image > a::before {
@@ -4770,6 +4779,10 @@ button:focus {
 		opacity: 0;
 		transition: opacity 0.2s ease-in-out;
 		content: "";
+	}
+
+	.wp-block-image > a:hover::before {
+		opacity: 1;
 	}
 
 	.wp-block-calendar .wp-calendar-nav a:hover {
