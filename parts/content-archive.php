@@ -25,7 +25,7 @@
 
 		<div class="c-entries__body">
 			<header class="c-entries__header">
-				<h2 class="c-entries__title"><?php the_title(); ?></h2>
+				<h2 class="c-entries__title"><?php the_title_attribute(); ?></h2>
 				<div class="c-meta">
 					<ul class="c-meta__list">
 						<li class="c-meta__item c-meta__item--published">

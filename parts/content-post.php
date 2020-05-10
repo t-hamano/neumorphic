@@ -9,7 +9,7 @@
 
 <article <?php post_class( 'c-entry' ); ?>>
 	<header class="c-entry__header">
-		<h1 class="c-entry__title"><?php the_title(); ?></h1>
+		<h1 class="c-entry__title"><?php the_title_attribute(); ?></h1>
 		<div class="c-meta">
 			<ul class="c-meta__list">
 				<li class="c-meta__item c-meta__item--published">
