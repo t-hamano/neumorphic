@@ -1060,7 +1060,7 @@ button:focus {
 	margin-top: 4em;
 }
 
-.c-pagination__item,
+.c-pagination .page-numbers,
 .c-pagination .post-page-numbers {
 	display: flex;
 	align-items: center;
@@ -1070,16 +1070,10 @@ button:focus {
 	margin: 0 0.3em 0.6em;
 	color: var(--color-accent);
 	font-weight: bold;
-	text-decoration: none;
-	border-radius: 50%;
 }
 
-.c-pagination__item--link,
-.c-pagination__item--prev,
-.c-pagination__item--next,
-.c-pagination .post-page-numbers--link,
-.c-pagination .post-page-numbers--prev,
-.c-pagination .post-page-numbers--next {
+.c-pagination .page-numbers:not(.dots),
+.c-pagination .post-page-numbers:not(.dots) {
 	text-decoration: none;
 	border: none;
 	outline: none;
@@ -1096,60 +1090,36 @@ button:focus {
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
 	color: var(--color-accent);
+	text-decoration: none;
+	border-radius: 50%;
 }
 
-.c-pagination__item--link:not(.has-background):not(.has-background-dim),
-.c-pagination__item--prev:not(.has-background):not(.has-background-dim),
-.c-pagination__item--next:not(.has-background):not(.has-background-dim),
-.c-pagination .post-page-numbers--link:not(.has-background):not(.has-background-dim),
-.c-pagination .post-page-numbers--prev:not(.has-background):not(.has-background-dim),
-.c-pagination .post-page-numbers--next:not(.has-background):not(.has-background-dim) {
+.c-pagination .page-numbers:not(.dots):not(.has-background):not(.has-background-dim),
+.c-pagination .post-page-numbers:not(.dots):not(.has-background):not(.has-background-dim) {
 	background-color: var(--color-bg);
 }
 
-.c-pagination__item--link:focus,
-.c-pagination__item--link:hover,
-.c-pagination__item--link:active,
-.c-pagination__item--prev:focus,
-.c-pagination__item--prev:hover,
-.c-pagination__item--prev:active,
-.c-pagination__item--next:focus,
-.c-pagination__item--next:hover,
-.c-pagination__item--next:active,
-.c-pagination .post-page-numbers--link:focus,
-.c-pagination .post-page-numbers--link:hover,
-.c-pagination .post-page-numbers--link:active,
-.c-pagination .post-page-numbers--prev:focus,
-.c-pagination .post-page-numbers--prev:hover,
-.c-pagination .post-page-numbers--prev:active,
-.c-pagination .post-page-numbers--next:focus,
-.c-pagination .post-page-numbers--next:hover,
-.c-pagination .post-page-numbers--next:active {
+.c-pagination .page-numbers:not(.dots):focus,
+.c-pagination .page-numbers:not(.dots):hover,
+.c-pagination .page-numbers:not(.dots):active,
+.c-pagination .post-page-numbers:not(.dots):focus,
+.c-pagination .post-page-numbers:not(.dots):hover,
+.c-pagination .post-page-numbers:not(.dots):active {
 	text-decoration: none;
 	outline: none;
 }
 
-.c-pagination__item--link:hover,
-.c-pagination__item--prev:hover,
-.c-pagination__item--next:hover,
-.c-pagination .post-page-numbers--link:hover,
-.c-pagination .post-page-numbers--prev:hover,
-.c-pagination .post-page-numbers--next:hover {
+.c-pagination .page-numbers:not(.dots):hover,
+.c-pagination .post-page-numbers:not(.dots):hover {
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
 }
 
-.c-pagination__item--link:active,
-.c-pagination__item--prev:active,
-.c-pagination__item--next:active,
-.c-pagination .post-page-numbers--link:active,
-.c-pagination .post-page-numbers--prev:active,
-.c-pagination .post-page-numbers--next:active {
+.c-pagination .page-numbers:not(.dots):active,
+.c-pagination .post-page-numbers:not(.dots):active {
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 }
 
-.c-pagination__item--current,
-.c-pagination__item.current,
-.c-pagination .post-page-numbers--current,
+.c-pagination .page-numbers.current,
 .c-pagination .post-page-numbers.current {
 	text-decoration: none;
 	border: none;
@@ -1162,22 +1132,14 @@ button:focus {
 	color: inherit;
 }
 
-.c-pagination__item--current:not(.has-background):not(.has-background-dim),
-.c-pagination__item.current:not(.has-background):not(.has-background-dim),
-.c-pagination .post-page-numbers--current:not(.has-background):not(.has-background-dim),
+.c-pagination .page-numbers.current:not(.has-background):not(.has-background-dim),
 .c-pagination .post-page-numbers.current:not(.has-background):not(.has-background-dim) {
 	background-color: var(--color-bg);
 }
 
-.c-pagination__item--current:focus,
-.c-pagination__item--current:hover,
-.c-pagination__item--current:active,
-.c-pagination__item.current:focus,
-.c-pagination__item.current:hover,
-.c-pagination__item.current:active,
-.c-pagination .post-page-numbers--current:focus,
-.c-pagination .post-page-numbers--current:hover,
-.c-pagination .post-page-numbers--current:active,
+.c-pagination .page-numbers.current:focus,
+.c-pagination .page-numbers.current:hover,
+.c-pagination .page-numbers.current:active,
 .c-pagination .post-page-numbers.current:focus,
 .c-pagination .post-page-numbers.current:hover,
 .c-pagination .post-page-numbers.current:active {
@@ -4544,7 +4506,7 @@ button:focus {
 		opacity: 0.7;
 	}
 
-	.c-pagination__item:hover,
+	.c-pagination .page-numbers:hover,
 	.c-pagination .post-page-numbers:hover {
 		text-decoration: none;
 	}

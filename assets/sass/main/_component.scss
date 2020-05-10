@@ -461,8 +461,9 @@
 	justify-content: center;
 	margin-top: 4em;
 
-	&__item,
+	.page-numbers,
 	.post-page-numbers {
+
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -471,18 +472,15 @@
 		margin: 0 0.3em 0.6em;
 		color: var(--color-accent);
 		font-weight: bold;
-		text-decoration: none;
-		border-radius: 50%;
 
-		&--link,
-		&--prev,
-		&--next {
+		&:not(.dots) {
 
 			@include nm-button;
 			color: var(--color-accent);
+			text-decoration: none;
+			border-radius: 50%;
 		}
 
-		&--current,
 		&.current {
 
 			@include nm-light;

@@ -25,30 +25,10 @@ $pages = paginate_links(
 		'before_page_number' => '<span class="screen-reader-text">' . __( 'Page Number', 'neomorphic' ) . '</span>',
 	)
 );
+?>
 
-if ( is_array( $pages ) ) :
-	$pages_html = implode( '', $pages );
-
-	$search = array(
-		'class="page-numbers"',
-		'class="page-numbers current"',
-		'class="page-numbers dots"',
-		'class="prev page-numbers"',
-		'class="next page-numbers"',
-	);
-
-	$replace = array(
-		'class="c-pagination__item c-pagination__item--link"',
-		'class="c-pagination__item c-pagination__item--current"',
-		'class="c-pagination__item c-pagination__item--ellipsis"',
-		'class="c-pagination__item c-pagination__item--prev"',
-		'class="c-pagination__item c-pagination__item--next"',
-	);
-
-	$pages_html = str_replace( $search, $replace, $pages_html );
-	?>
-
+<?php if ( is_array( $pages ) ) : ?>
 	<div class="c-pagination">
-		<?php echo $pages_html; ?>
+		<?php echo implode( '', $pages ); ?>
 	</div>
 <?php endif; ?>

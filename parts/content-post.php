@@ -31,7 +31,17 @@
 	</header>
 
 	<div class="entry-content">
-		<?php the_content(); ?>
+	<?php
+		the_content();
+
+		wp_link_pages(
+			array(
+				'before'         => '<div class="c-pagination">',
+				'after'          => '</div>',
+				'next_or_number' => 'number',
+			)
+		);
+		?>
 	</div>
 
 	<?php
