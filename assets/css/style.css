@@ -787,6 +787,22 @@ button:focus {
 }
 
 /*------------------------------------------
+## Attachment file area
+------------------------------------------*/
+
+.c-attachment__image {
+	text-align: center;
+}
+
+.c-attachment figcaption {
+	margin: 2em 0 0;
+}
+
+.c-attachment figcaption p {
+	margin: 0;
+}
+
+/*------------------------------------------
 ## Comment area
 ------------------------------------------*/
 
@@ -1780,7 +1796,7 @@ button:focus {
 
 .drawer .c-search-form__input {
 	top: 0;
-	background: #fff;
+	background-color: #fff !important;
 }
 
 /*--------------------------------------------------------------

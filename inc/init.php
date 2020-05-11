@@ -394,7 +394,7 @@ function neomorphic_contents_class() {
 		$class = ' contents--sidebar-left';
 	} elseif ( is_page_template( 'template/sidebar-right.php' ) ) {
 		$class = ' contents--sidebar-right';
-	} elseif ( is_page_template( 'template/sidebar-none.php' ) ) {
+	} elseif ( is_page_template( 'template/sidebar-none.php' ) || is_attachment() ) {
 		$class = '';
 	} else {
 		// Use customizer settings if the page template is not used.
