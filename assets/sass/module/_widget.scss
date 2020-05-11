@@ -303,8 +303,17 @@
 		list-style: none;
 
 		li {
+			position: relative;
+			padding-left: 1.5em;
 
-			@include clearfix;
+			&::after {
+				position: absolute;
+				top: 0;
+				left: 0;
+				font-weight: 900;
+				font-family: "Font Awesome 5 Free";
+				content: "\f09e";
+			}
 
 			&:not(:last-child) {
 
@@ -314,17 +323,8 @@
 			}
 
 			.rsswidget {
-				display: inline-block;
 				color: inherit;
 				font-weight: bold;
-
-				&::before {
-					display: inline-block;
-					margin-right: 0.5em;
-					font-weight: 900;
-					font-family: "Font Awesome 5 Free";
-					content: "\f09e";
-				}
 			}
 
 			.rss-date {
@@ -344,8 +344,9 @@
 			}
 
 			cite {
-				float: right;
+				display: block;
 				font-size: 0.8em;
+				text-align: right;
 
 				&::before {
 					display: inline-block;
@@ -446,6 +447,8 @@
 	list-style: none;
 
 	li {
+		position: relative;
+		padding-left: 1.5em;
 
 		&:not(:last-child) {
 
@@ -454,20 +457,20 @@
 			padding-bottom: 1em;
 		}
 
+		&::after {
+			position: absolute;
+			top: 0;
+			left: 0;
+			font-weight: 900;
+			font-family: "Font Awesome 5 Free";
+			content: "\f303";
+		}
+
 		a {
-			position: relative;
-			display: inline-block;
-			padding-left: 1.5em;
 			color: inherit;
 			font-weight: bold;
 
-			&::before {
-				position: absolute;
-				left: 0;
-				font-weight: 900;
-				font-family: "Font Awesome 5 Free";
-				content: "\f303";
-			}
+
 		}
 
 		.post-date {

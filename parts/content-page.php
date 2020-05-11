@@ -19,22 +19,19 @@
 	<?php endif; ?>
 
 	<div class="entry-content clearfix">
-
-		<?php
-		the_content();
-
-		wp_link_pages(
-			array(
-				'before'         => '<div class="c-pagination">',
-				'after'          => '</div>',
-				'next_or_number' => 'number',
-			)
-		);
-		?>
-
+		<?php the_content(); ?>
 	</div>
 
 	<?php
+
+	wp_link_pages(
+		array(
+			'before'         => '<div class="c-pagination">',
+			'after'          => '</div>',
+			'next_or_number' => 'number',
+		)
+	);
+
 	edit_post_link(
 		__( 'Edit This Post', 'neomorphic' ),
 		'<div class="c-entry__edit">',
@@ -43,7 +40,7 @@
 		'c-entry__edit-link',
 	);
 
-	if ( comments_open() || get_comments_number() ) {
+	if ( ! is_front_page() && ( comments_open() || get_comments_number() ) ) {
 		comments_template();
 	}
 	?>

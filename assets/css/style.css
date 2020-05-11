@@ -317,7 +317,7 @@ select {
 	min-width: 0;
 	max-width: 100%;
 	height: auto;
-	padding: 0.7em 40px 0.7em 1.4em;
+	padding: 0.7em 3em 0.7em 1.4em;
 	background: url(../images/chevron-down-solid.svg) no-repeat right 20px center/1em;
 	border-radius: 1000px;
 	cursor: pointer;
@@ -336,6 +336,10 @@ select:active {
 
 select:focus {
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
+}
+
+select::-ms-expand {
+	display: none;
 }
 
 select option {
@@ -442,7 +446,8 @@ textarea {
 	width: 100%;
 	max-width: 100%;
 	height: auto;
-	padding: 0.7em 40px 0.7em 1.4em;
+	padding: 1em;
+	overflow: auto;
 	color: inherit;
 	font-size: inherit;
 	font-family: inherit;
@@ -514,7 +519,7 @@ button:focus {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 3px;
+	height: 4px;
 	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
@@ -824,7 +829,7 @@ button:focus {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 3px;
+	height: 4px;
 	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
@@ -846,7 +851,7 @@ button:focus {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 3px;
+	height: 4px;
 	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
@@ -1005,7 +1010,7 @@ button:focus {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 3px;
+	height: 4px;
 	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
@@ -1065,6 +1070,7 @@ button:focus {
 }
 
 .c-comment__form .comment-reply-title {
+	text-shadow: 1px 1px 0 var(--color-text-border-color);
 	margin: 0 0 1em;
 	font-size: 1.4em;
 }
@@ -1625,7 +1631,7 @@ button:focus {
 
 .fixed-nav__list {
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-around;
 	height: 100%;
 	margin: 0;
 	padding: 0;
@@ -1877,7 +1883,7 @@ button:focus {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 3px;
+	height: 4px;
 	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
@@ -2226,10 +2232,18 @@ button:focus {
 	list-style: none;
 }
 
+.widget_rss ul li {
+	position: relative;
+	padding-left: 1.5em;
+}
+
 .widget_rss ul li::after {
-	display: table;
-	clear: both;
-	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-weight: 900;
+	font-family: "Font Awesome 5 Free";
+	content: "\f09e";
 }
 
 .widget_rss ul li:not(:last-child) {
@@ -2243,24 +2257,15 @@ button:focus {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 3px;
+	height: 4px;
 	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
 }
 
 .widget_rss ul li .rsswidget {
-	display: inline-block;
 	color: inherit;
 	font-weight: bold;
-}
-
-.widget_rss ul li .rsswidget::before {
-	display: inline-block;
-	margin-right: 0.5em;
-	font-weight: 900;
-	font-family: "Font Awesome 5 Free";
-	content: "\f09e";
 }
 
 .widget_rss ul li .rss-date {
@@ -2280,8 +2285,9 @@ button:focus {
 }
 
 .widget_rss ul li cite {
-	float: right;
+	display: block;
 	font-size: 0.8em;
+	text-align: right;
 }
 
 .widget_rss ul li cite::before {
@@ -2376,6 +2382,11 @@ button:focus {
 	list-style: none;
 }
 
+.widget_recent_entries ul li {
+	position: relative;
+	padding-left: 1.5em;
+}
+
 .widget_recent_entries ul li:not(:last-child) {
 	position: relative;
 	margin-bottom: 1em;
@@ -2387,26 +2398,24 @@ button:focus {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 3px;
+	height: 4px;
 	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
 }
 
-.widget_recent_entries ul li a {
-	position: relative;
-	display: inline-block;
-	padding-left: 1.5em;
-	color: inherit;
-	font-weight: bold;
-}
-
-.widget_recent_entries ul li a::before {
+.widget_recent_entries ul li::after {
 	position: absolute;
+	top: 0;
 	left: 0;
 	font-weight: 900;
 	font-family: "Font Awesome 5 Free";
 	content: "\f303";
+}
+
+.widget_recent_entries ul li a {
+	color: inherit;
+	font-weight: bold;
 }
 
 .widget_recent_entries ul li .post-date {
@@ -2594,7 +2603,7 @@ button:focus {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 3px;
+	height: 4px;
 	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
@@ -2641,38 +2650,50 @@ button:focus {
 }
 
 .entry-content ul:not([class]),
-.entry-content ol:not([class]) {
+.entry-content ol:not([class]),
+.entry-content ul.rich-text,
+.entry-content ol.rich-text {
 	margin: 0 0 2em;
 	padding-left: 1.5em;
 }
 
 .entry-content ul:not([class]) li,
-.entry-content ol:not([class]) li {
+.entry-content ol:not([class]) li,
+.entry-content ul.rich-text li,
+.entry-content ol.rich-text li {
 	margin: 0.5em 0;
 }
 
 .entry-content ul:not([class]) ul,
-.entry-content ol:not([class]) ul {
+.entry-content ol:not([class]) ul,
+.entry-content ul.rich-text ul,
+.entry-content ol.rich-text ul {
 	margin-left: 0;
 	padding: 0;
 	list-style: none;
 }
 
 .entry-content ul:not([class]) ul li,
-.entry-content ol:not([class]) ul li {
+.entry-content ol:not([class]) ul li,
+.entry-content ul.rich-text ul li,
+.entry-content ol.rich-text ul li {
 	position: relative;
 	padding-left: 1em;
 }
 
 .entry-content ul:not([class]) ul li::before,
-.entry-content ol:not([class]) ul li::before {
+.entry-content ol:not([class]) ul li::before,
+.entry-content ul.rich-text ul li::before,
+.entry-content ol.rich-text ul li::before {
 	position: absolute;
 	left: 0;
 	content: "-";
 }
 
 .entry-content ul:not([class]) ol,
-.entry-content ol:not([class]) ol {
+.entry-content ol:not([class]) ol,
+.entry-content ul.rich-text ol,
+.entry-content ol.rich-text ol {
 	padding-left: 1.5em;
 }
 
@@ -2712,7 +2733,7 @@ button:focus {
 	outline: none;
 }
 
-.entry-content > blockquote {
+.entry-content blockquote {
 	text-decoration: none;
 	border: none;
 	outline: none;
@@ -2722,39 +2743,39 @@ button:focus {
 	appearance: none;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	position: relative;
-	padding: 2em 2em 2em 3.5em;
+	padding: 2em 2em 2em 55px;
 	color: var(--color-text-main);
 	border: none;
 	border-radius: 8px;
 }
 
-.entry-content > blockquote:not(.has-background):not(.has-background-dim) {
+.entry-content blockquote:not(.has-background):not(.has-background-dim) {
 	background-color: var(--color-bg);
 }
 
-.entry-content > blockquote:focus,
-.entry-content > blockquote:hover,
-.entry-content > blockquote:active {
+.entry-content blockquote:focus,
+.entry-content blockquote:hover,
+.entry-content blockquote:active {
 	text-decoration: none;
 	outline: none;
 }
 
-.entry-content > blockquote::before {
+.entry-content blockquote::before {
 	text-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	position: absolute;
 	top: 0.5em;
 	left: 0.7em;
 	font-weight: 900;
-	font-size: 1.6em;
+	font-size: 26px;
 	font-family: "Font Awesome 5 Free";
 	content: "\f10d";
 }
 
-.entry-content > blockquote p {
+.entry-content blockquote p {
 	margin: 0 0 1em;
 }
 
-.entry-content > blockquote cite {
+.entry-content blockquote cite {
 	display: block;
 	color: inherit;
 	font-size: 0.8em;
@@ -2762,7 +2783,8 @@ button:focus {
 	opacity: 0.8;
 }
 
-.entry-content img[class*="wp-image-"] {
+.entry-content img[class*="wp-image-"],
+.entry-content img.wp-post-image {
 	text-decoration: none;
 	border: none;
 	outline: none;
@@ -2775,13 +2797,17 @@ button:focus {
 	border-radius: 8px;
 }
 
-.entry-content img[class*="wp-image-"]:not(.has-background):not(.has-background-dim) {
+.entry-content img[class*="wp-image-"]:not(.has-background):not(.has-background-dim),
+.entry-content img.wp-post-image:not(.has-background):not(.has-background-dim) {
 	background-color: var(--color-bg);
 }
 
 .entry-content img[class*="wp-image-"]:focus,
 .entry-content img[class*="wp-image-"]:hover,
-.entry-content img[class*="wp-image-"]:active {
+.entry-content img[class*="wp-image-"]:active,
+.entry-content img.wp-post-image:focus,
+.entry-content img.wp-post-image:hover,
+.entry-content img.wp-post-image:active {
 	text-decoration: none;
 	outline: none;
 }
@@ -2884,10 +2910,14 @@ button:focus {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 3px;
+	height: 4px;
 	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
+}
+
+.entry-content pre {
+	font-family: inherit;
 }
 
 /*----------------------
@@ -2935,6 +2965,8 @@ button:focus {
 
 .wp-block-gallery .blocks-gallery-image figure,
 .wp-block-gallery .blocks-gallery-item figure {
+	display: flex;
+	align-items: flex-end;
 	justify-content: center;
 }
 
@@ -3066,11 +3098,11 @@ button:focus {
 
 .wp-block-quote.is-style-large {
 	margin-bottom: 2em;
-	padding: 2em 2em 2em 5em;
+	padding: 2em 2em 2em 80px;
 }
 
 .wp-block-quote.is-style-large::before {
-	font-size: 2.4em;
+	font-size: 38px;
 }
 
 .wp-block-quote.is-style-large p {
@@ -3232,8 +3264,6 @@ button:focus {
 }
 
 .wp-block-file a.wp-block-file__button {
-	font-size: 0.8em;
-	border-radius: 1000px;
 	text-decoration: none;
 	border: none;
 	outline: none;
@@ -3249,6 +3279,9 @@ button:focus {
 	text-decoration: none;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
+	color: var(--color-accent);
+	font-size: 0.8em;
+	border-radius: 1000px;
 }
 
 .wp-block-file a.wp-block-file__button:not(.has-background):not(.has-background-dim) {
@@ -3274,7 +3307,7 @@ button:focus {
 .wp-block-file a.wp-block-file__button:focus,
 .wp-block-file a.wp-block-file__button:hover,
 .wp-block-file a.wp-block-file__button:visited {
-	color: inherit;
+	color: var(--color-accent);
 	opacity: 1;
 }
 
@@ -3289,7 +3322,32 @@ button:focus {
 
 .wp-block-video video,
 .wp-block-embed video {
+	text-decoration: none;
+	border: none;
+	outline: none;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
+	padding: 5px;
+	border-radius: 8px;
 	display: block;
+}
+
+.wp-block-video video:not(.has-background):not(.has-background-dim),
+.wp-block-embed video:not(.has-background):not(.has-background-dim) {
+	background-color: var(--color-bg);
+}
+
+.wp-block-video video:focus,
+.wp-block-video video:hover,
+.wp-block-video video:active,
+.wp-block-embed video:focus,
+.wp-block-embed video:hover,
+.wp-block-embed video:active {
+	text-decoration: none;
+	outline: none;
 }
 
 .wp-block-video.aligncenter video,
@@ -3354,7 +3412,6 @@ button:focus {
 ----------------------*/
 
 .wp-block-pullquote {
-	position: relative;
 	margin-right: auto;
 	margin-bottom: 2em;
 	margin-left: auto;
@@ -3364,9 +3421,13 @@ button:focus {
 }
 
 .wp-block-pullquote blockquote {
-	position: relative;
-	z-index: 1;
 	margin: 0;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+.wp-block-pullquote blockquote::before {
+	content: none;
 }
 
 .wp-block-pullquote blockquote p {
@@ -3405,14 +3466,6 @@ button:focus {
 	outline: none;
 }
 
-.wp-block-pullquote:not(.is-style-solid-color)::before {
-	top: -2em;
-	right: -2em;
-	bottom: -2em;
-	left: -2em;
-	padding: 2em;
-}
-
 .wp-block-pullquote:not(.is-style-solid-color) blockquote {
 	padding: 1em 0;
 	border-color: inherit !important;
@@ -3420,51 +3473,13 @@ button:focus {
 	border-bottom: 3px solid;
 }
 
-.wp-block-pullquote.is-style-solid-color {
-	width: calc(100% - 20px);
-	margin-top: calc(2em + 10px);
-	margin-bottom: calc(2em + 10px);
-	border-radius: 4px;
-}
-
 .wp-block-pullquote.is-style-solid-color.alignleft,
 .wp-block-pullquote.is-style-solid-color.alignright {
 	margin-top: 10px;
 }
 
-.wp-block-pullquote.is-style-solid-color::before {
-	text-decoration: none;
-	border: none;
-	outline: none;
-	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
-	position: absolute;
-	top: -10px;
-	right: -10px;
-	bottom: -10px;
-	left: -10px;
-	padding: 2em;
-	border-radius: 8px;
-	content: "";
-}
-
-.wp-block-pullquote.is-style-solid-color::before:not(.has-background):not(.has-background-dim) {
-	background-color: var(--color-bg);
-}
-
-.wp-block-pullquote.is-style-solid-color::before:focus,
-.wp-block-pullquote.is-style-solid-color::before:hover,
-.wp-block-pullquote.is-style-solid-color::before:active {
-	text-decoration: none;
-	outline: none;
-}
-
 .wp-block-pullquote.is-style-solid-color blockquote {
 	max-width: 100%;
-	padding: calc(2em - 10px);
 }
 
 .wp-block-pullquote.is-style-solid-color blockquote p {
@@ -3475,6 +3490,14 @@ button:focus {
 .wp-block-pullquote.is-style-solid-color blockquote cite {
 	font-size: 1em;
 	font-style: italic;
+}
+
+.wp-block-pullquote.is-style-solid-color.has-background blockquote {
+	background-color: transparent;
+}
+
+.wp-block-pullquote.is-style-solid-color:not(.has-background) blockquote {
+	padding: 0;
 }
 
 /*----------------------
@@ -3621,6 +3644,7 @@ button:focus {
 	padding: 0.5em 1.5em;
 	font-weight: bold;
 	font-size: 1.1em;
+	text-decoration: none;
 	border-radius: 1000px;
 }
 
@@ -3892,7 +3916,7 @@ button:focus {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	height: 2px;
+	height: 3px;
 	background: currentColor;
 	content: "";
 }
@@ -3900,7 +3924,7 @@ button:focus {
 .wp-block-separator.is-style-dots::before {
 	padding-left: 2em;
 	color: currentColor;
-	font-size: 24px;
+	font-size: 30px;
 	font-family: inherit;
 	line-height: 0;
 	letter-spacing: 2em;
@@ -3917,6 +3941,10 @@ button:focus {
 
 .wp-block-archives {
 	margin-bottom: 2em;
+}
+
+.wp-block-archives:not(.wp-block-archives-dropdown) {
+	padding-left: 1.5em;
 }
 
 .wp-block-archives.wp-block-archives-dropdown select {
@@ -3984,6 +4012,7 @@ button:focus {
 .wp-block-calendar .wp-calendar-table {
 	width: 100%;
 	table-layout: fixed;
+	box-shadow: none;
 }
 
 .wp-block-calendar .wp-calendar-table caption {
@@ -4063,11 +4092,15 @@ button:focus {
 ### Categories
 ----------------------*/
 
-.wp-block-categories-dropdown {
+.wp-block-categories.wp-block-categories-list {
+	padding-left: 1.5em;
+}
+
+.wp-block-categories.wp-block-categories-dropdown {
 	margin-bottom: 2em;
 }
 
-.wp-block-categories-dropdown select {
+.wp-block-categories.wp-block-categories-dropdown select {
 	text-decoration: none;
 	border: none;
 	outline: none;
@@ -4084,18 +4117,18 @@ button:focus {
 	border-radius: 1000px;
 }
 
-.wp-block-categories-dropdown select:not(.has-background):not(.has-background-dim) {
+.wp-block-categories.wp-block-categories-dropdown select:not(.has-background):not(.has-background-dim) {
 	background-color: var(--color-bg);
 }
 
-.wp-block-categories-dropdown select:focus,
-.wp-block-categories-dropdown select:hover,
-.wp-block-categories-dropdown select:active {
+.wp-block-categories.wp-block-categories-dropdown select:focus,
+.wp-block-categories.wp-block-categories-dropdown select:hover,
+.wp-block-categories.wp-block-categories-dropdown select:active {
 	text-decoration: none;
 	outline: none;
 }
 
-.wp-block-categories-dropdown select:focus {
+.wp-block-categories.wp-block-categories-dropdown select:focus {
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 }
 
@@ -4146,7 +4179,7 @@ button:focus {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 3px;
+	height: 4px;
 	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
@@ -4339,7 +4372,7 @@ button:focus {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 3px;
+	height: 4px;
 	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
@@ -4386,10 +4419,6 @@ button:focus {
 .wp-block-rss.is-grid > li:active {
 	text-decoration: none;
 	outline: none;
-}
-
-.wp-block-rss__item-title a {
-	display: inline-block;
 }
 
 .wp-block-rss__item-title a::before {
@@ -4478,6 +4507,10 @@ button:focus {
 
 .wp-block-search .wp-block-search__input:focus {
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
+}
+
+.wp-block-search__input {
+	width: 100%;
 }
 
 .wp-block-search__button {
@@ -4842,6 +4875,14 @@ button:focus {
 
 .has-huge-font-size {
 	font-size: 2em;
+}
+
+@media all and (-ms-high-contrast: none) {
+	.entry-content *::-ms-backdrop,
+	.entry-content table {
+		border-collapse: separate;
+		transform: scale(0.98);
+	}
 }
 
 @media screen and (min-width: 560px) {

@@ -1,5 +1,10 @@
+
+
 ( function( $ ) {
-$( function() {
+	$( function() {
+
+	// CSS custom properties support for legacy and modern browsers
+	cssVars();
 
 	// Drawer menu
 	var drawer = $( '#drawer' );

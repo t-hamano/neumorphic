@@ -161,7 +161,9 @@
 
 	/* List */
 	ul:not([class]),
-	ol:not([class]) {
+	ol:not([class]),
+	ul.rich-text,
+	ol.rich-text {
 		margin: 0 0 2em;
 		padding-left: 1.5em;
 
@@ -213,11 +215,11 @@
 	}
 
 	// Quote
-	> blockquote {
+	blockquote {
 
 		@include nm-reverse;
 		position: relative;
-		padding: 2em 2em 2em 3.5em;
+		padding: 2em 2em 2em 55px;
 		color: var(--color-text-main);
 		border: none;
 		border-radius: $base_border_radius;
@@ -229,7 +231,7 @@
 			top: 0.5em;
 			left: 0.7em;
 			font-weight: 900;
-			font-size: 1.6em;
+			font-size: 26px;
 			font-family: "Font Awesome 5 Free";
 			content: "\f10d";
 		}
@@ -248,9 +250,13 @@
 	}
 
 	// Image
-	img[class*="wp-image-"] {
+	img {
 
-		@include nm-image;
+		&[class*="wp-image-"],
+		&.wp-post-image {
+
+			@include nm-image;
+		}
 	}
 
 	.wp-caption {
@@ -312,6 +318,16 @@
 		}
 	}
 
+	// IE11 hack
+	@media all and (-ms-high-contrast: none) {
+
+		*::-ms-backdrop,
+		table {
+			border-collapse: separate;
+			transform: scale(0.98);
+		}
+	}
+
 	// Definition Lists
 	dl {
 
@@ -340,6 +356,11 @@
 		border: none;
 		border-radius: 1000px;
 		transform: translateY(-6px);
+	}
+
+	// Preformatted text
+	pre {
+		font-family: inherit;
 	}
 }
 
@@ -397,6 +418,8 @@
 	.blocks-gallery-item {
 
 		figure {
+			display: flex;
+			align-items: flex-end;
 			justify-content: center;
 		}
 
@@ -477,10 +500,10 @@
 
 	&.is-style-large {
 		margin-bottom: 2em;
-		padding: 2em 2em 2em 5em;
+		padding: 2em 2em 2em 80px;
 
 		&::before {
-			font-size: 2.4em;
+			font-size: 38px;
 		}
 
 		p {
@@ -604,16 +627,17 @@
 	}
 
 	a.wp-block-file__button {
-		font-size: 0.8em;
-		border-radius: 1000px;
 
 		@include nm-button;
+		color: var(--color-accent);
+		font-size: 0.8em;
+		border-radius: 1000px;
 
 		&:active,
 		&:focus,
 		&:hover,
 		&:visited {
-			color: inherit;
+			color: var(--color-accent);
 			opacity: 1;
 		}
 	}
@@ -628,6 +652,8 @@
 	margin-bottom: 2em;
 
 	video {
+
+		@include nm-image;
 		display: block;
 	}
 
@@ -687,7 +713,6 @@
 ----------------------*/
 
 .wp-block-pullquote {
-	position: relative;
 	margin-right: auto;
 	margin-bottom: 2em;
 	margin-left: auto;
@@ -696,9 +721,13 @@
 	text-align: inherit;
 
 	blockquote {
-		position: relative;
-		z-index: 1;
 		margin: 0;
+		border-radius: 0;
+		box-shadow: none;
+
+		&::before {
+			content: none;
+		}
 
 		p {
 			margin: 0 0 1em;
@@ -719,14 +748,6 @@
 		border-color: var(--color-text-main);
 		border-radius: $base_border_radius;
 
-		&::before {
-			top: -2em;
-			right: -2em;
-			bottom: -2em;
-			left: -2em;
-			padding: 2em;
-		}
-
 		blockquote {
 			padding: 1em 0;
 			border-color: inherit !important;
@@ -736,32 +757,14 @@
 	}
 
 	&.is-style-solid-color {
-		width: calc(100% - 20px);
-		margin-top: calc(2em + 10px);
-		margin-bottom: calc(2em + 10px);
-		border-radius: $base_border_radius / 2;
 
 		&.alignleft,
 		&.alignright {
 			margin-top: 10px;
 		}
 
-		&::before {
-
-			@include nm-reverse();
-			position: absolute;
-			top: -10px;
-			right: -10px;
-			bottom: -10px;
-			left: -10px;
-			padding: 2em;
-			border-radius: $base_border_radius;
-			content: "";
-		}
-
 		blockquote {
 			max-width: 100%;
-			padding: calc(2em - 10px);
 
 			p {
 				margin-bottom: 1em;
@@ -772,6 +775,14 @@
 				font-size: 1em;
 				font-style: italic;
 			}
+		}
+
+		&.has-background blockquote {
+			background-color: transparent;
+		}
+
+		&:not(.has-background) blockquote {
+			padding: 0;
 		}
 	}
 }
@@ -877,6 +888,7 @@
 			padding: 0.5em 1.5em;
 			font-weight: bold;
 			font-size: 1.1em;
+			text-decoration: none;
 			border-radius: 1000px;
 
 			&:not(.has-background) {
@@ -1041,7 +1053,7 @@
 			right: 0;
 			bottom: 0;
 			left: 0;
-			height: 2px;
+			height: 3px;
 			background: currentColor;
 			content: "";
 		}
@@ -1052,7 +1064,7 @@
 		&::before {
 			padding-left: 2em;
 			color: currentColor;
-			font-size: 24px;
+			font-size: 30px;
 			font-family: inherit;
 			line-height: 0;
 			letter-spacing: 2em;
@@ -1071,6 +1083,10 @@
 
 .wp-block-archives {
 	margin-bottom: 2em;
+
+	&:not(.wp-block-archives-dropdown) {
+		padding-left: 1.5em;
+	}
 
 	&.wp-block-archives-dropdown select {
 
@@ -1096,6 +1112,7 @@
 	.wp-calendar-table {
 		width: 100%;
 		table-layout: fixed;
+		box-shadow: none;
 
 		caption {
 			margin-bottom: 1em;
@@ -1151,15 +1168,22 @@
 ### Categories
 ----------------------*/
 
-.wp-block-categories-dropdown {
-	margin-bottom: 2em;
+.wp-block-categories {
 
-	select {
+	&.wp-block-categories-list {
+		padding-left: 1.5em;
+	}
 
-		@include nm-input;
-		display: inline-block;
-		width: auto;
-		border-radius: 1000px;
+	&.wp-block-categories-dropdown {
+		margin-bottom: 2em;
+
+		select {
+
+			@include nm-input;
+			display: inline-block;
+			width: auto;
+			border-radius: 1000px;
+		}
 	}
 }
 
@@ -1361,16 +1385,12 @@
 		}
 	}
 
-	&__item-title a {
+	&__item-title a::before {
 		display: inline-block;
-
-		&::before {
-			display: inline-block;
-			margin-right: 0.5em;
-			font-weight: 900;
-			font-family: "Font Awesome 5 Free";
-			content: "\f09e";
-		}
+		margin-right: 0.5em;
+		font-weight: 900;
+		font-family: "Font Awesome 5 Free";
+		content: "\f09e";
 	}
 
 	&__item-author {
@@ -1427,6 +1447,10 @@
 		max-width: 100%;
 		padding-right: 3em;
 		border-radius: 1000px;
+	}
+
+	&__input {
+		width: 100%;
 	}
 
 	&__button {

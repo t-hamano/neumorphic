@@ -171,7 +171,7 @@ body#tinymce.wp-editor.content h2::before {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 3px;
+	height: 4px;
 	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
@@ -441,10 +441,14 @@ body#tinymce.wp-editor.content hr::before {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 3px;
+	height: 4px;
 	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
+}
+
+body#tinymce.wp-editor.content pre {
+	font-family: inherit;
 }
 
 @media screen and (min-width: 960px) {

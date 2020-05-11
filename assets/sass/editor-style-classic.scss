@@ -333,4 +333,9 @@ body#tinymce.wp-editor.content {
 		border-radius: 1000px;
 		transform: translateY(-6px);
 	}
+
+	// Preformatted text
+	pre {
+		font-family: inherit;
+	}
 }

@@ -476,7 +476,7 @@
 		.wp-block-file__button {
 
 			@include nm-button-editor();
-			color: inherit;
+			color: var(--color-accent);
 			font-size: 0.8em;
 			border-radius: 1000px;
 		}
@@ -488,12 +488,39 @@
 ----------------------*/
 
 [data-type="core/video"] {
-	font-size: inherit;
+
+	.wp-block-video,
+	.wp-block-embed {
+
+		video {
+
+			@include nm-image;
+			display: block;
+		}
+
+		figcaption {
+			margin-top: 1em;
+			color: inherit;
+			font-size: 0.9em;
+			text-align: initial;
+		}
+	}
 }
 
 /*------------------------------------------
 ## Formatting Block
 ------------------------------------------*/
+
+/*----------------------
+### Preformatted text
+----------------------*/
+
+[data-type="core/preformatted"] {
+
+	.wp-block-preformatted {
+		font-family: inherit;
+	}
+}
 
 /*----------------------
 ### Code
@@ -543,7 +570,6 @@
 [data-type="core/pullquote"] {
 
 	.wp-block-pullquote {
-		position: relative;
 		margin-right: auto;
 		margin-left: auto;
 		padding: 0;
@@ -551,9 +577,13 @@
 		text-align: inherit;
 
 		blockquote {
-			position: relative;
-			z-index: 1;
 			margin: 0;
+			border-radius: 0;
+			box-shadow: none;
+
+			&::before {
+				content: none;
+			}
 
 			p {
 				margin: 0 0 1em;
@@ -575,14 +605,6 @@
 			border-color: var(--color-text-main);
 			border-radius: $base_border_radius;
 
-			&::before {
-				top: -2em;
-				right: -2em;
-				bottom: -2em;
-				left: -2em;
-				padding: 2em;
-			}
-
 			blockquote {
 				padding: 1em 0;
 				border-color: inherit !important;
@@ -592,27 +614,9 @@
 		}
 
 		&.is-style-solid-color {
-			width: calc(100% - 20px);
-			margin-top: calc(2em + 10px);
-			margin-bottom: calc(2em + 10px);
-			border-radius: $base_border_radius / 2;
-
-			&::before {
-
-				@include nm-reverse();
-				position: absolute;
-				top: -10px;
-				right: -10px;
-				bottom: -10px;
-				left: -10px;
-				padding: 2em;
-				border-radius: $base_border_radius;
-				content: "";
-			}
 
 			blockquote {
 				max-width: 100%;
-				padding: calc(2em - 10px);
 
 				p {
 					margin-bottom: 1em;
@@ -623,6 +627,14 @@
 					font-size: 1em;
 					font-style: italic;
 				}
+			}
+
+			&.has-background blockquote {
+				background-color: transparent;
+			}
+
+			&:not(.has-background) blockquote {
+				padding: 0;
 			}
 		}
 	}
@@ -966,14 +978,14 @@
 				right: 0;
 				bottom: 0;
 				left: 0;
-				height: 2px;
+				height: 3px;
 				background: currentColor;
 				content: "";
 			}
 		}
 
 		&.is-style-dots::before {
-			font-size: 24px;
+			font-size: 30px;
 			font-family: inherit;
 			line-height: 0;
 		}
@@ -1025,7 +1037,7 @@
 		&:disabled {
 
 			@include nm-input-editor;
-			padding: 0.7em 40px 0.7em 1.4em;
+			padding: 0.7em 3em 0.7em 1.4em;
 			font-size: inherit;
 			font-family: $base_font_falily;
 			line-height: inherit;
@@ -1119,7 +1131,7 @@
 		min-width: 0;
 		max-width: 100%;
 		height: auto;
-		padding: 0.7em 40px 0.7em 1.4em;
+		padding: 0.7em 3em 0.7em 1.4em;
 		color: inherit;
 		font-size: inherit;
 		font-family: $base_font_falily;
@@ -1261,6 +1273,11 @@
 				margin: 0 8px 16px;
 				padding: 1em;
 			}
+		}
+
+		&__featured-image img {
+
+			@include nm-image;
 		}
 
 		&__post-date {

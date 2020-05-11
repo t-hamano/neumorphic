@@ -218,6 +218,8 @@ function neomorphic_scripts() {
 
 	// Main Script
 	wp_enqueue_script( 'neomorphic-script-main', get_theme_file_uri() . '/assets/js/main.js', array( 'jquery' ), $theme_version, false );
+
+	wp_enqueue_script( 'neomorphic-script-ponyfill', 'https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2', array(), $theme_version );
 }
 
 add_action( 'wp_enqueue_scripts', 'neomorphic_scripts' );
