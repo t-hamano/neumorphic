@@ -40,13 +40,6 @@ function neomorphic_generate_css() {
 				"--color-text-border-color: {$color_text_border_color}",
 			),
 		),
-		// IE11 Polyfill (Only background-color)
-		array(
-			'selector' => 'body',
-			'style'    => array(
-				"background-color : {$color_bg}",
-			),
-		),
 	);
 
 	$output = '';
