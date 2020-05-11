@@ -25,12 +25,39 @@
 
 		<div class="c-entries__body">
 			<header class="c-entries__header">
-				<h2 class="c-entries__title"><?php the_title(); ?></h2>
-				<?php get_template_part( 'parts/entry-meta' ); ?>
+				<h2 class="c-entries__title"><?php the_title_attribute(); ?></h2>
+				<div class="c-meta">
+					<ul class="c-meta__list">
+						<li class="c-meta__item c-meta__item--published">
+							<time datetime="<?php the_time( 'c' ); ?>">
+								<i class="far fa-clock" title="<?php esc_html_e( 'Post date', 'neomorphic' ); ?>"></i>
+								<?php the_time( get_option( 'date_format' ) ); ?>
+							</time>
+						</li>
+
+						<?php
+						// Store category name from the category objects.
+						$categories     = get_the_category();
+						$category_names = array();
+						if ( $categories ) {
+							foreach ( $categories as $category ) {
+								$category_names[] = $category->cat_name;
+							}
+						}
+
+						if ( $category_names ) :
+							?>
+							<li class="c-meta__item c-meta__item--categories">
+								<?php echo esc_html( implode( ' / ', $category_names ) ); ?>
+							</li>
+						<?php endif; ?>
+
+					</ul>
+				</div>
 			</header>
 
 			<div class="c-entries__excerpt">
-				<?php the_excerpt(); ?>
+				<?php echo get_the_excerpt(); ?>
 			</div>
 		</div>
 	</a>

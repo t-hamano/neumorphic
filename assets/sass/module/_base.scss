@@ -37,7 +37,6 @@ body {
 img {
 	max-width: 100%;
 	height: auto;
-	font-size: 0;
 	line-height: 0;
 	vertical-align: bottom;
 	border: none;
@@ -77,7 +76,7 @@ blockquote {
 ------------------------------------------*/
 
 .screen-reader-text {
-	position: absolute;
+	position: absolute !important;
 	width: 1px;
 	height: 1px;
 	margin: -1px;
@@ -107,28 +106,25 @@ blockquote {
 ## Vanilla Galleries
 ------------------------------------------*/
 
-.widget_media_gallery {
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	margin: 0;
 
-	.gallery {
-		display: flex;
-		flex-wrap: wrap;
-		width: 100%;
-		margin: 0;
+	@for $i from 2 through 9 {
 
-		@for $i from 2 through 9 {
-
-			&.gallery-columns-#{$i} .gallery-item {
-				width: #{percentage(1 / $i)};
-			}
+		&.gallery-columns-#{$i} .gallery-item {
+			width: #{percentage(1 / $i)};
 		}
 	}
 
-	.gallery-item {
+	&-item {
 		margin: 0 0 10px;
 		padding: 0 5px;
 	}
 
-	.gallery-icon {
+	&-icon {
 
 		img {
 
@@ -139,10 +135,11 @@ blockquote {
 		a {
 
 			@include nm-image-link;
+			display: block;
 		}
 	}
 
-	.gallery-caption {
+	&-caption {
 		margin-top: 0.5em;
 		color: inherit;
 		font-size: 0.8em;
@@ -161,25 +158,45 @@ blockquote {
 [type="url"],
 [type="number"],
 [type="password"],
-[type="search"],
-[type="submit"] {
+[type="search"] {
+
+	@include nm-input;
 	display: block;
-	width: 100%;
 	min-width: 0;
 	max-width: 100%;
 	height: auto;
 	padding: 0.7em 1.4em;
-	color: inherit;
-	font-size: inherit;
-	font-family: inherit;
-	background: transparent;
-	border: none;
-	outline: 0;
-	appearance: none;
+	border-radius: 1000px;
 }
 
 [type="submit"] {
+
+	@include nm-button;
+	display: block;
+	min-width: 0;
+	max-width: 100%;
+	height: auto;
+	padding: 0.7em 1.4em;
+	border-radius: 1000px;
 	cursor: pointer;
+}
+
+select {
+
+	@include nm-input;
+	display: block;
+	min-width: 0;
+	max-width: 100%;
+	height: auto;
+	padding: 0.7em 40px 0.7em 1.4em;
+	background: url(../images/chevron-down-solid.svg) no-repeat right 20px center/1em;
+	border-radius: 1000px;
+	cursor: pointer;
+
+	option {
+		color: #333;
+		background: #fff;
+	}
 }
 
 [type="search"] {
@@ -190,27 +207,60 @@ blockquote {
 	}
 }
 
-select {
+.checkbox,
+.comment-form-cookies-consent {
+	position: relative;
 	display: block;
 	width: 100%;
-	min-width: 0;
-	max-width: 100%;
-	height: auto;
-	padding: 0.7em 40px 0.7em 1.4em;
-	color: inherit;
-	font-size: inherit;
-	font-family: inherit;
-	background-image: url(../images/chevron-down-solid.svg);
-	background-repeat: no-repeat;
-	background-position: right 20px center;
-	background-size: 1em;
-	outline: 0;
-	cursor: pointer;
-	appearance: none;
+	margin: 15px auto;
 
-	option {
-		color: #333;
-		background: #fff;
+	label {
+		position: relative;
+		display: block;
+		min-height: 30px;
+		padding-left: 35px;
+		cursor: pointer;
+
+		&::before {
+
+			@include nm-reverse;
+			position: absolute;
+			top: 2px;
+			left: 0;
+			width: 22px;
+			height: 22px;
+			border-radius: 3px;
+			transition: transform 0.28s ease;
+			content: "";
+		}
+
+		&::after {
+			position: absolute;
+			top: 4px;
+			left: 2px;
+			display: block;
+			width: 19px;
+			height: 19px;
+			color: var(--color-nm-light);
+			font-weight: 900;
+			font-size: 12px;
+			font-family: "Font Awesome 5 Free";
+			text-align: center;
+			background-color: var(--color-accent);
+			border-radius: 3px;
+			transform: scale(0);
+			transition: transform ease 0.25s;
+			content: "\f00c";
+			will-change: transform;
+		}
+	}
+
+	input[type="checkbox"] {
+		display: none;
+
+		&:checked ~ label::after {
+			transform: scale(1);
+		}
 	}
 }
 

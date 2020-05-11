@@ -18,13 +18,14 @@
 
 // Neomorphic styles
 @mixin nm-common() {
-	text-decoration: none !important;
+	text-decoration: none;
 	border: none;
-	outline: none !important;
+	outline: none;
 	transition: box-shadow $base_transition_duration ease-in-out, opacity $base_transition_duration ease-in-out;
+	appearance: none;
 
 	&:not(.has-background):not(.has-background-dim) {
-		background-color: var(--color-bg) !important;
+		background-color: var(--color-bg);
 	}
 
 	&:focus,
@@ -38,25 +39,25 @@
 @mixin nm() {
 
 	@include nm-common;
-	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+	box-shadow: $nm_shadow;
 }
 
 @mixin nm-light() {
 
 	@include nm-common;
-	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+	box-shadow: $nm_shadow_light;
 }
 
 @mixin nm-active() {
 
 	@include nm-common;
-	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
+	box-shadow: $nm_shadow_acitve;
 }
 
 @mixin nm-reverse() {
 
 	@include nm-common;
-	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
+	box-shadow: $nm_shadow_reverse;
 }
 
 @mixin nm-link() {
@@ -64,15 +65,15 @@
 	@include nm-common;
 	color: inherit;
 	text-decoration: none;
-	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+	box-shadow: $nm_shadow;
 	cursor: pointer;
 
 	&:focus {
-		box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+		box-shadow: $nm_shadow;
 	}
 
 	&:hover {
-		box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+		box-shadow: $nm_shadow_light;
 
 		a {
 			text-decoration: none;
@@ -85,17 +86,19 @@
 	@include nm-common;
 	color: inherit;
 	font-weight: bold;
+	font-size: inherit;
+	font-family: inherit;
 	text-align: center;
 	text-decoration: none;
-	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+	box-shadow: $nm_shadow;
 	cursor: pointer;
 
 	&:hover {
-		box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+		box-shadow: $nm_shadow_light;
 	}
 
 	&:active {
-		box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
+		box-shadow: $nm_shadow_acitve;
 	}
 }
 
@@ -105,7 +108,7 @@
 	display: inline-block;
 	color: inherit;
 	font-weight: bold;
-	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+	box-shadow: $nm_shadow;
 }
 
 @mixin nm-border( $position:bottom ) {
@@ -118,7 +121,7 @@
 		width: 100%;
 		height: 3px;
 		border-radius: 1000px;
-		box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
+		box-shadow: $nm_shadow_acitve;
 		content: "";
 	}
 }
@@ -126,32 +129,38 @@
 @mixin nm-input() {
 
 	@include nm-common;
-	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light) !important;
+	color: inherit;
+	font-size: inherit;
+	font-family: inherit;
+	box-shadow: $nm_shadow_reverse;
 
 	&:focus {
-		box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light) !important;
+		box-shadow: $nm_shadow_acitve;
 	}
 }
 
 @mixin nm-input-editor() {
 
 	@include nm-common;
-	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
+	color: inherit;
+	font-size: inherit;
+	font-family: inherit;
+	box-shadow: $nm_shadow_reverse;
 
 	&:focus,
 	&:active,
 	&:disabled {
 		color: inherit;
-		box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light) !important;
+		box-shadow: $nm_shadow_reverse;
 	}
 }
 
 @mixin nm-text() {
-	text-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+	text-shadow: $nm_shadow;
 }
 
 @mixin nm-text-border() {
-	text-shadow: 1px 1px 0 var(--color-text-border-color);
+	text-shadow: $nm_shadow_text;
 }
 
 @mixin nm-image() {
@@ -162,14 +171,10 @@
 }
 
 @mixin nm-image-link() {
+	display: inline-block;
 
 	@include mq(lg-min) {
-
-		&:hover::before {
-			opacity: 1;
-		}
 		position: relative;
-		display: block;
 
 		&::before {
 			position: absolute;
@@ -183,6 +188,10 @@
 			opacity: 0;
 			transition: opacity $base_transition_duration ease-in-out;
 			content: "";
+		}
+
+		&:hover::before {
+			opacity: 1;
 		}
 	}
 }

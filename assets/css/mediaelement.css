@@ -3,17 +3,20 @@
 --------------------------------------------------------------*/
 
 .mejs-container.mejs-audio {
-	text-decoration: none !important;
+	text-decoration: none;
 	border: none;
-	outline: none !important;
+	outline: none;
 	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	background: transparent;
 	border-radius: 1000px;
 }
 
 .mejs-container.mejs-audio:not(.has-background):not(.has-background-dim) {
-	background-color: var(--color-bg) !important;
+	background-color: var(--color-bg);
 }
 
 .mejs-container.mejs-audio:focus,
@@ -41,10 +44,13 @@
 }
 
 .mejs-container.mejs-video {
-	text-decoration: none !important;
+	text-decoration: none;
 	border: none;
-	outline: none !important;
+	outline: none;
 	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	overflow: hidden;
 	background: transparent;
@@ -52,7 +58,7 @@
 }
 
 .mejs-container.mejs-video:not(.has-background):not(.has-background-dim) {
-	background-color: var(--color-bg) !important;
+	background-color: var(--color-bg);
 }
 
 .mejs-container.mejs-video:focus,

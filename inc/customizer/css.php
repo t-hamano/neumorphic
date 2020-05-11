@@ -42,7 +42,7 @@ function neomorphic_generate_css() {
 
 	$styles['style'] = implode( '; ', $styles['style'] );
 
-	$output .= sprintf(
+	$output = sprintf(
 		'%s { %s; }',
 		$styles['selector'],
 		$styles['style'],

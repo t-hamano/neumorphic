@@ -21,3 +21,11 @@ $breakpoints: (
 	"md-min": "screen and (min-width: 560px)",
 	"lg-min": "screen and (min-width: 960px)",
 ) !default;
+
+// Neomorphic styles box shadow value
+$nm_shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+$nm_shadow_light: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+$nm_shadow_acitve: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
+$nm_shadow_reverse: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
+$nm_shadow_text: 1px 1px 0 var(--color-text-border-color);
+

@@ -17,6 +17,19 @@
 		margin-bottom: 0 !important;
 	}
 
+	// Text Alignment
+	.has-text-align-left {
+		text-align: left;
+	}
+
+	.has-text-align-right {
+		text-align: right;
+	}
+
+	.has-text-align-center {
+		text-align: center;
+	}
+
 	// Alignment
 	.alignleft {
 		float: left;
@@ -69,6 +82,18 @@
 		max-width: 100vw;
 		margin-right: -50vw;
 		margin-left: -50vw;
+	}
+
+	// Link
+	a {
+		text-decoration: underline;
+
+		@include mq(lg-min) {
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
 	}
 
 	/* Heading */
@@ -132,10 +157,6 @@
 		&.has-background {
 			padding: 1.5em 1em;
 		}
-
-		> img {
-			margin: 0 5px;
-		}
 	}
 
 	/* List */
@@ -179,6 +200,147 @@
 		background: var(--color-nm-dark);
 		border-radius: 4px;
 	}
+
+	// Inline quotes
+	q {
+
+		@include nm-reverse;
+		position: relative;
+		padding: 0.3em 0.5em;
+		color: var(--color-text-main);
+		border: none;
+		border-radius: $base_border_radius / 2;
+	}
+
+	// Quote
+	> blockquote {
+
+		@include nm-reverse;
+		position: relative;
+		padding: 2em 2em 2em 3.5em;
+		color: var(--color-text-main);
+		border: none;
+		border-radius: $base_border_radius;
+
+		&::before {
+
+			@include nm-text();
+			position: absolute;
+			top: 0.5em;
+			left: 0.7em;
+			font-weight: 900;
+			font-size: 1.6em;
+			font-family: "Font Awesome 5 Free";
+			content: "\f10d";
+		}
+
+		p {
+			margin: 0 0 1em;
+		}
+
+		cite {
+			display: block;
+			color: inherit;
+			font-size: 0.8em;
+			font-style: italic;
+			opacity: $text_color_thin;
+		}
+	}
+
+	// Image
+	img[class*="wp-image-"] {
+
+		@include nm-image;
+	}
+
+	.wp-caption {
+
+		> a {
+
+			@include nm-image-link;
+		}
+
+		figcaption {
+			margin-top: 0.5em;
+			margin-bottom: 0;
+			font-size: 0.8em;
+			opacity: $text_color_thin;
+		}
+	}
+
+	// Table
+	table {
+
+		@include nm;
+		width: auto;
+		margin-bottom: 0.5em;
+		border-radius: $base_border_radius;
+
+		th,
+		td {
+			padding: 1em;
+			text-align: left;
+			border-right: 1px solid var(--color-nm-dark);
+			border-bottom: 1px solid var(--color-nm-dark);
+
+			&:last-child {
+				border-right: none;
+			}
+		}
+
+		thead th {
+			border-bottom-width: 3px;
+		}
+
+		tbody tr:last-child {
+
+			th,
+			td {
+				border-bottom: none;
+			}
+		}
+
+		tfoot td {
+			border-top: 3px solid var(--color-nm-dark);
+			border-bottom: none;
+		}
+
+		figcaption {
+			margin-top: 1em;
+			font-size: 0.9em;
+			text-align: center;
+		}
+	}
+
+	// Definition Lists
+	dl {
+
+		dt {
+			font-weight: bold;
+		}
+
+		dd {
+			margin: 0;
+
+			&:not(:last-of-type) {
+				margin-bottom: 1em;
+			}
+		}
+	}
+
+	// Horizontal Rule
+	hr:not(.is-style-dots) {
+
+		@include nm-border;
+		width: 50%;
+		height: 3px;
+		margin-right: auto;
+		margin-left: auto;
+		padding: 10px 0;
+		border: none;
+		border-radius: 1000px;
+		transform: translateY(-6px);
+	}
 }
 
 /*----------------------
@@ -188,9 +350,9 @@
 .wp-block-image {
 	margin-bottom: 2em;
 
-	img {
+	> a {
 
-		@include nm-image;
+		@include nm-image-link;
 	}
 
 	figcaption {
@@ -250,8 +412,6 @@
 		}
 
 		img {
-
-			@include nm-image;
 			width: 100%;
 		}
 	}
@@ -624,46 +784,6 @@
 	margin-bottom: 2em;
 	overflow-x: initial;
 
-	table {
-
-		@include nm;
-		width: auto;
-		margin-bottom: 0.5em;
-		border-radius: $base_border_radius;
-
-	}
-
-	th,
-	td {
-		padding: 1em;
-		text-align: left;
-		border-right: 1px solid var(--color-nm-dark);
-		border-bottom: 1px solid var(--color-nm-dark);
-
-		&:last-child {
-			border-right: none;
-		}
-	}
-
-	thead th {
-		border-bottom-width: 3px;
-	}
-
-	tbody tr:last-child td {
-		border-bottom: none;
-	}
-
-	tfoot td {
-		border-top: 3px solid var(--color-nm-dark);
-		border-bottom: none;
-	}
-
-	figcaption {
-		margin-top: 1em;
-		font-size: 0.9em;
-		text-align: center;
-	}
-
 	&.aligncenter table {
 		margin-right: auto;
 		margin-left: auto;
@@ -674,11 +794,6 @@
 
 		tbody tr:nth-child(odd) {
 			background-color: var(--color-nm-light);
-		}
-
-		th,
-		td {
-			border-color: var(--color-nm-dark);
 		}
 	}
 }
@@ -853,7 +968,6 @@
 		}
 	}
 
-	> figure > img,
 	> figure > video {
 
 		@include nm-image;
@@ -912,27 +1026,38 @@
 /*----------------------
 ### Separator
 ----------------------*/
-
 .wp-block-separator {
-	margin-bottom: 2em;
 
-	&:not(.is-style-dots) {
+	&.is-style-wide {
+		width: 100% !important;
+	}
 
-		@include nm-border;
-		height: 3px;
-		margin-right: auto;
-		margin-left: auto;
-		border: none;
+	&.has-background:not(.is-style-dots) {
+		position: relative;
+		background-color: transparent !important;
 
-		&:not(.is-style-wide) {
-			max-width: 50%;
+		&::before {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			height: 2px;
+			background: currentColor;
+			content: "";
 		}
 	}
 
-	&.is-style-dots::before {
-		font-size: 24px;
-		font-family: inherit;
-		line-height: 0;
+	&.is-style-dots {
+
+		&::before {
+			padding-left: 2em;
+			color: currentColor;
+			font-size: 24px;
+			font-family: inherit;
+			line-height: 0;
+			letter-spacing: 2em;
+			content: "\00b7 \00b7 \00b7";
+		}
 	}
 }
 
@@ -1051,6 +1176,7 @@
 
 	&__comment {
 		position: relative;
+		display: flex;
 		margin-bottom: 0;
 		line-height: inherit;
 
@@ -1062,13 +1188,18 @@
 		}
 	}
 
+	&__comment-meta,
+	&__comment-excerpt {
+		margin-left: 0 !important;
+	}
+
 	.avatar,
 	&__comment-avatar {
 
 		@include nm;
-		position: absolute;
-		top: -9px;
-		margin: 0;
+		position: relative;
+		top: -6px;
+		margin-right: 1em;
 	}
 
 	&__comment-date {
@@ -1153,11 +1284,6 @@
 			margin: 0 8px 16px;
 			padding: 1em;
 		}
-	}
-
-	&__featured-image img {
-
-		@include nm-image;
 	}
 
 	&__post-date {
@@ -1555,6 +1681,26 @@
 
 .has-white-background-color {
 	background-color: #fff !important;
+}
+
+/*----------------------
+### Background color (Table)
+----------------------*/
+
+.has-subtle-light-gray-background-color {
+	background-color: #f3f4f5;
+}
+
+.has-subtle-pale-green-background-color {
+	background-color: #e9fbe5;
+}
+
+.has-subtle-pale-blue-background-color {
+	background-color: #e7f5fe;
+}
+
+.has-subtle-plae-pink-background-color {
+	background-color: #fcf0ef;
 }
 
 /*----------------------

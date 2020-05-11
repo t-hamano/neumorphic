@@ -19,7 +19,7 @@ get_header(); ?>
 </main>
 
 <?php
-
+// Switch sidebar on/off according to customizer settings
 if ( is_page_template( 'template/sidebar-left' ) || is_page_template( 'template/sidebar-right' ) || get_theme_mod( 'sidebar_display_page', NEOMORPHIC_SIDEBAR_DISPLAY_PAGE ) ) {
 	get_sidebar();
 }

@@ -205,11 +205,13 @@ add_action( 'after_setup_theme', 'neomorphic_setup' );
  * Register and enqueue front-end styles.
  */
 function neomorphic_scripts() {
+	$theme_version = wp_get_theme()->get( 'Version' );
+
 	// Font Awesome
 	wp_enqueue_style( 'neomorphic-style-fontawesome', get_theme_file_uri() . '/assets/packages/font-awesome/css/all.min.css', array(), $theme_version );
 
 	// Main style
-	wp_enqueue_style( 'neomorphic-style-front-main', get_theme_file_uri() . '/assets/css/main.min.css', array(), filemtime( get_template_directory() . '/assets/css/main.min.css' ) );
+	wp_enqueue_style( 'neomorphic-style-front-main', get_theme_file_uri() . '/assets/css/style.min.css', array(), $theme_version );
 
 	// Customizer output inline CSS
 	wp_add_inline_style( 'neomorphic-style-front-main', neomorphic_generate_css() );
@@ -245,10 +247,24 @@ add_action( 'enqueue_block_editor_assets', 'neomorphic_block_editor_styles' );
  * Register and enqueue classic editor styles.
  */
 function neomorphic_classic_editor_style() {
+	$theme_version = wp_get_theme()->get( 'Version' );
+
+	// Main style
 	add_editor_style( '/assets/css/editor-style-classic.min.css' );
+
 }
 add_action( 'admin_init', 'neomorphic_classic_editor_style' );
 
+
+/**
+ * Add inline style to classic editor.
+ */
+function neomorphic_classic_editor_inline_style( $settings ) {
+	$settings['content_style'] = neomorphic_generate_css();
+	return $settings;
+}
+
+add_filter( 'tiny_mce_before_init', 'neomorphic_classic_editor_inline_style' );
 
 /**
  * Enqueue WordPress media player styles.
@@ -292,9 +308,11 @@ add_action( 'widgets_init', 'neomorphic_widgets_init' );
  */
 function neomorphic_get_the_archive_title( $title ) {
 	if ( is_category() ) {
-		$title = single_cat_title( '', false );
+		$title  = '<i class="fas fa-folder" aria-hidden="true"></i>';
+		$title .= single_cat_title( '', false );
 	} elseif ( is_tag() ) {
-		$title = single_tag_title( '', false );
+		$title  = '<i class="fas fa-tag" aria-hidden="true"></i>';
+		$title .= single_tag_title( '', false );
 	} elseif ( is_year() ) {
 		$title = get_the_date( _x( 'Y', 'yearly archives date format', 'neomorphic' ) );
 	} elseif ( is_month() ) {
@@ -302,7 +320,8 @@ function neomorphic_get_the_archive_title( $title ) {
 	} elseif ( is_day() ) {
 		$title = get_the_date( _x( 'F j, Y', 'daily archives date format', 'neomorphic' ) );
 	} elseif ( is_tax() ) {
-		$title = single_term_title( '', false );
+		$title  = '<i class="fas fa-folder" aria-hidden="true"></i>';
+		$title .= single_term_title( '', false );
 	} elseif ( is_post_type_archive() ) {
 		$title = post_type_archive_title( '', false );
 	} else {

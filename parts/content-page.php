@@ -9,10 +9,16 @@
 
 <article <?php post_class( 'c-entry' ); ?>>
 	<header class="c-entry__header">
-		<h1 class="c-entry__title"><?php the_title(); ?></h1>
+		<h1 class="c-entry__title"><?php the_title_attribute(); ?></h1>
 	</header>
 
-	<div class="entry-content">
+	<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
+		<figure class="c-entry__thumbnail">
+			<?php the_post_thumbnail(); ?>
+		</figure>
+	<?php endif; ?>
+
+	<div class="entry-content clearfix">
 
 		<?php
 		the_content();

@@ -79,24 +79,8 @@
 		}
 	}
 
-	form {
-		position: relative;
-
-		&::after {
-			position: absolute;
-			top: 50%;
-			right: 20px;
-			font-weight: 900;
-			font-family: "Font Awesome 5 Free";
-			transform: translateY(-50%);
-			content: "\f078";
-		}
-	}
-
 	select {
-
-		@include nm-input;
-		border-radius: 1000px;
+		width: 100%;
 	}
 }
 

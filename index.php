@@ -23,6 +23,7 @@ get_header(); ?>
 </main>
 
 <?php
+// Switch sidebar on/off according to customizer settings
 if ( 'none' !== get_theme_mod( 'page_sidebar' ) ) {
 	get_sidebar();
 }
