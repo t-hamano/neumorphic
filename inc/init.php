@@ -205,6 +205,8 @@ add_action( 'after_setup_theme', 'neomorphic_setup' );
  * Register and enqueue front-end styles.
  */
 function neomorphic_scripts() {
+	$theme_version = wp_get_theme()->get( 'Version' );
+
 	// Font Awesome
 	wp_enqueue_style( 'neomorphic-style-fontawesome', get_theme_file_uri() . '/assets/packages/font-awesome/css/all.min.css', array(), $theme_version );
 
