@@ -354,6 +354,89 @@ select option {
 	appearance: searchfield-cancel-button;
 }
 
+.checkbox,
+.comment-form-cookies-consent {
+	position: relative;
+	display: block;
+	width: 100%;
+	margin: 15px auto;
+}
+
+.checkbox label,
+.comment-form-cookies-consent label {
+	position: relative;
+	display: block;
+	min-height: 30px;
+	padding-left: 35px;
+	cursor: pointer;
+}
+
+.checkbox label::before,
+.comment-form-cookies-consent label::before {
+	text-decoration: none;
+	border: none;
+	outline: none;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
+	position: absolute;
+	top: 2px;
+	left: 0;
+	width: 22px;
+	height: 22px;
+	border-radius: 3px;
+	transition: transform 0.28s ease;
+	content: "";
+}
+
+.checkbox label::before:not(.has-background):not(.has-background-dim),
+.comment-form-cookies-consent label::before:not(.has-background):not(.has-background-dim) {
+	background-color: var(--color-bg);
+}
+
+.checkbox label::before:focus,
+.checkbox label::before:hover,
+.checkbox label::before:active,
+.comment-form-cookies-consent label::before:focus,
+.comment-form-cookies-consent label::before:hover,
+.comment-form-cookies-consent label::before:active {
+	text-decoration: none;
+	outline: none;
+}
+
+.checkbox label::after,
+.comment-form-cookies-consent label::after {
+	position: absolute;
+	top: 4px;
+	left: 2px;
+	display: block;
+	width: 19px;
+	height: 19px;
+	color: var(--color-nm-light);
+	font-weight: 900;
+	font-size: 12px;
+	font-family: "Font Awesome 5 Free";
+	text-align: center;
+	background-color: var(--color-accent);
+	border-radius: 3px;
+	transform: scale(0);
+	transition: transform ease 0.25s;
+	content: "\f00c";
+	will-change: transform;
+}
+
+.checkbox input[type="checkbox"],
+.comment-form-cookies-consent input[type="checkbox"] {
+	display: none;
+}
+
+.checkbox input[type="checkbox"]:checked ~ label::after,
+.comment-form-cookies-consent input[type="checkbox"]:checked ~ label::after {
+	transform: scale(1);
+}
+
 textarea {
 	display: block;
 	width: 100%;
@@ -502,7 +585,7 @@ button:focus {
 	cursor: pointer;
 	display: inline-block;
 	padding: 0.7em 1.4em;
-	color: var(--color-text-link);
+	color: var(--color-accent);
 	border-radius: 1000px;
 }
 
@@ -711,8 +794,8 @@ button:focus {
 	-moz-appearance: none;
 	appearance: none;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
-	margin-top: 3em;
-	padding: 1.5em 2em;
+	margin-top: 5em;
+	padding: 1.5em;
 	border-radius: 10px;
 }
 
@@ -731,7 +814,7 @@ button:focus {
 	position: relative;
 	text-shadow: 1px 1px 0 var(--color-text-border-color);
 	position: relative;
-	margin: 0 0 1em;
+	margin: 0;
 	padding-bottom: 0.5em;
 	font-size: 1.4em;
 }
@@ -753,13 +836,12 @@ button:focus {
 	list-style: none;
 }
 
-.c-comment__list > li:not(:last-child) {
+.c-comment__list .comment-body {
 	position: relative;
-	margin-bottom: 1em;
-	padding-bottom: 1em;
+	padding: 1.5em 0;
 }
 
-.c-comment__list > li:not(:last-child)::before {
+.c-comment__list .comment-body::before {
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -780,41 +862,231 @@ button:focus {
 	margin-bottom: 1em;
 }
 
+.c-comment__list .comment-author {
+	position: relative;
+	display: flex;
+	margin-bottom: 15px;
+}
+
+.c-comment__list .comment-author .avatar {
+	text-decoration: none;
+	border: none;
+	outline: none;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+	position: relative;
+	top: -6px;
+	width: 40px;
+	height: 40px;
+	margin-right: 1em;
+	border-radius: 50%;
+}
+
+.c-comment__list .comment-author .avatar:not(.has-background):not(.has-background-dim) {
+	background-color: var(--color-bg);
+}
+
+.c-comment__list .comment-author .avatar:focus,
+.c-comment__list .comment-author .avatar:hover,
+.c-comment__list .comment-author .avatar:active {
+	text-decoration: none;
+	outline: none;
+}
+
+.c-comment__list .comment-author .fn {
+	font-weight: normal;
+}
+
+.c-comment__list .comment-author .fn a {
+	color: inherit;
+}
+
 .c-comment__list .comment-metadata {
 	font-size: 0.8em;
+}
+
+.c-comment__list .comment-metadata > a {
+	color: inherit;
+}
+
+.c-comment__list .comment-metadata time::before {
+	margin-right: 0.2em;
+	font-weight: 400;
+	font-family: "Font Awesome 5 Free";
+	content: "\f017";
 }
 
 .c-comment__list .comment-metadata .edit-link {
 	margin-left: 1em;
 }
 
-.c-comment__list .comment-content > p {
+.c-comment__list .comment-content p {
 	margin: 0;
 }
 
+.c-comment__list .comment-content img {
+	text-decoration: none;
+	border: none;
+	outline: none;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
+	padding: 5px;
+	border-radius: 8px;
+}
+
+.c-comment__list .comment-content img:not(.has-background):not(.has-background-dim) {
+	background-color: var(--color-bg);
+}
+
+.c-comment__list .comment-content img:focus,
+.c-comment__list .comment-content img:hover,
+.c-comment__list .comment-content img:active {
+	text-decoration: none;
+	outline: none;
+}
+
 .c-comment__list .reply {
-	margin-top: 0.5em;
-}
-
-.c-comment__nav--top {
-	margin-bottom: 1em;
-}
-
-.c-comment__nav--bottom {
 	margin-top: 1em;
 }
 
+.c-comment__list .reply a {
+	text-decoration: none;
+	border: none;
+	outline: none;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	color: inherit;
+	font-weight: bold;
+	font-size: inherit;
+	font-family: inherit;
+	text-align: center;
+	text-decoration: none;
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+	cursor: pointer;
+	padding: 0.3em 1em;
+	color: var(--color-accent);
+	border-radius: 1000px;
+}
+
+.c-comment__list .reply a:not(.has-background):not(.has-background-dim) {
+	background-color: var(--color-bg);
+}
+
+.c-comment__list .reply a:focus,
+.c-comment__list .reply a:hover,
+.c-comment__list .reply a:active {
+	text-decoration: none;
+	outline: none;
+}
+
+.c-comment__list .reply a:hover {
+	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
+}
+
+.c-comment__list .reply a:active {
+	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
+}
+
+.c-comment__nav {
+	position: relative;
+	padding: 1em 0;
+}
+
+.c-comment__nav::before {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 3px;
+	border-radius: 1000px;
+	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
+	content: "";
+}
+
+.c-comment__nav .nav-links::after {
+	display: table;
+	clear: both;
+	content: "";
+}
+
+.c-comment__nav .nav-links .nav-previous,
+.c-comment__nav .nav-links .nav-next {
+	position: relative;
+	max-width: 40%;
+	overflow: hidden;
+	color: var(--color-text-link);
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.c-comment__nav .nav-links .nav-previous::before,
+.c-comment__nav .nav-links .nav-next::before {
+	position: absolute;
+	top: 0.05em;
+	font-weight: 900;
+	font-family: "Font Awesome 5 Free";
+}
+
+.c-comment__nav .nav-links .nav-previous {
+	float: left;
+	padding-left: 1.5em;
+}
+
+.c-comment__nav .nav-links .nav-previous::before {
+	left: 0;
+	content: "\f100";
+}
+
+.c-comment__nav .nav-links .nav-next {
+	float: right;
+	padding-right: 1.5em;
+}
+
+.c-comment__nav .nav-links .nav-next::before {
+	right: 0;
+	content: "\f101";
+}
+
 .c-comment__form {
+	margin: 3em 0 1em;
+}
+
+.c-comment__form .required {
+	color: var(--color-text-link);
+	font-weight: bold;
+}
+
+.c-comment__form .comment-reply-title {
+	margin: 0 0 1em;
+	font-size: 1.4em;
+}
+
+.c-comment__form .comment-reply-title #cancel-comment-reply-link {
+	margin-left: 1em;
+	font-weight: normal;
+	font-size: 0.8em;
+}
+
+.c-comment__form .comment-notes {
 	margin: 0 0 1em;
 }
 
 .c-comment__form .comment-form-comment {
-	margin: 0 0 1em;
+	margin: 0 0 2em;
 }
 
 .c-comment__form .comment-form-comment label {
 	display: block;
 	margin-bottom: 0.5em;
+	font-weight: bold;
 }
 
 .c-comment__form .comment-form-comment textarea {
@@ -847,8 +1119,18 @@ button:focus {
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 }
 
-.c-comment__form .form-submit {
-	margin: 0;
+.c-comment__form .comment-form-author,
+.c-comment__form .comment-form-email,
+.c-comment__form .comment-form-url {
+	margin: 0 0 1em;
+}
+
+.c-comment__form .comment-form-author label,
+.c-comment__form .comment-form-email label,
+.c-comment__form .comment-form-url label {
+	display: block;
+	margin-bottom: 0.5em;
+	font-weight: bold;
 }
 
 .c-comment__form .form-submit [type="submit"] {
@@ -867,8 +1149,8 @@ button:focus {
 	text-decoration: none;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
-	width: auto;
-	border-radius: 1000px;
+	margin: 0 auto 0;
+	color: var(--color-accent);
 }
 
 .c-comment__form .form-submit [type="submit"]:not(.has-background):not(.has-background-dim) {
@@ -3848,6 +4130,7 @@ button:focus {
 
 .wp-block-latest-comments__comment {
 	position: relative;
+	display: flex;
 	margin-bottom: 0;
 	line-height: inherit;
 }
@@ -3869,6 +4152,11 @@ button:focus {
 	content: "";
 }
 
+.wp-block-latest-comments__comment-meta,
+.wp-block-latest-comments__comment-excerpt {
+	margin-left: 0 !important;
+}
+
 .wp-block-latest-comments .avatar,
 .wp-block-latest-comments__comment-avatar {
 	text-decoration: none;
@@ -3879,9 +4167,9 @@ button:focus {
 	-moz-appearance: none;
 	appearance: none;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
-	position: absolute;
-	top: -9px;
-	margin: 0;
+	position: relative;
+	top: -6px;
+	margin-right: 1em;
 }
 
 .wp-block-latest-comments .avatar:not(.has-background):not(.has-background-dim),
@@ -4798,6 +5086,12 @@ button:focus {
 @media screen and (max-width: 959px) {
 	.c-entry__post-nav .nav-links .nav-previous,
 	.c-entry__post-nav .nav-links .nav-next {
+		max-width: 100%;
+		margin: 0.2em 0;
+	}
+
+	.c-comment__nav .nav-links .nav-previous,
+	.c-comment__nav .nav-links .nav-next {
 		max-width: 100%;
 		margin: 0.2em 0;
 	}

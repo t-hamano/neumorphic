@@ -54,7 +54,7 @@
 		@include nm-button;
 		display: inline-block;
 		padding: 0.7em 1.4em;
-		color: var(--color-text-link);
+		color: var(--color-accent);
 		border-radius: 1000px;
 	}
 
@@ -222,8 +222,8 @@
 .c-comment {
 
 	@include nm;
-	margin-top: 3em;
-	padding: 1.5em 2em;
+	margin-top: 5em;
+	padding: 1.5em;
 	border-radius: 10px;
 
 	&__title {
@@ -231,7 +231,7 @@
 		@include nm-border;
 		@include nm-text-border;
 		position: relative;
-		margin: 0 0 1em;
+		margin: 0;
 		padding-bottom: 0.5em;
 		font-size: 1.4em;
 	}
@@ -241,14 +241,10 @@
 		padding: 0;
 		list-style: none;
 
-		> li {
+		.comment-body {
 
-			&:not(:last-child) {
-
-				@include nm-border;
-				margin-bottom: 1em;
-				padding-bottom: 1em;
-			}
+			@include nm-border;
+			padding: 1.5em 0;
 		}
 
 		.children {
@@ -261,43 +257,161 @@
 			margin-bottom: 1em;
 		}
 
+		.comment-author {
+			position: relative;
+			display: flex;
+			margin-bottom: 15px;
+
+			.avatar {
+
+				@include nm;
+				position: relative;
+				top: -6px;
+				width: 40px;
+				height: 40px;
+				margin-right: 1em;
+				border-radius: 50%;
+			}
+
+			.fn {
+				font-weight: normal;
+
+				a {
+					color: inherit;
+				}
+			}
+		}
+
 		.comment-metadata {
 			font-size: 0.8em;
+
+			> a {
+				color: inherit;
+			}
+
+			time {
+
+				&::before {
+					margin-right: 0.2em;
+					font-weight: 400;
+					font-family: "Font Awesome 5 Free";
+					content: "\f017";
+				}
+			}
 
 			.edit-link {
 				margin-left: 1em;
 			}
 		}
 
-		.comment-content > p {
-			margin: 0;
+		.comment-content {
+
+			p {
+				margin: 0;
+			}
+
+			img {
+
+				@include nm-image;
+			}
 		}
 
 		.reply {
-			margin-top: 0.5em;
+			margin-top: 1em;
+
+			a {
+
+				@include nm-button;
+				padding: 0.3em 1em;
+				color: var(--color-accent);
+				border-radius: 1000px;
+			}
 		}
 	}
 
 	&__nav {
 
-		&--top {
-			margin-bottom: 1em;
-		}
+		@include nm-border;
+		padding: 1em 0;
 
-		&--bottom {
-			margin-top: 1em;
+		.nav-links {
+
+			@include clearfix;
+
+			.nav-previous,
+			.nav-next {
+				position: relative;
+				max-width: 40%;
+				overflow: hidden;
+				color: var(--color-text-link);
+				white-space: nowrap;
+				text-overflow: ellipsis;
+
+				@include mq(md-max) {
+					max-width: 100%;
+					margin: 0.2em 0;
+				}
+
+				&::before {
+					position: absolute;
+					top: 0.05em;
+					font-weight: 900;
+					font-family: "Font Awesome 5 Free";
+				}
+			}
+
+			.nav-previous {
+				float: left;
+				padding-left: 1.5em;
+
+				&::before {
+					left: 0;
+					content: "\f100";
+				}
+			}
+
+			.nav-next {
+				float: right;
+				padding-right: 1.5em;
+
+				&::before {
+					right: 0;
+					content: "\f101";
+				}
+			}
 		}
 	}
 
 	&__form {
-		margin: 0 0 1em;
+		margin: 3em 0 1em;
+
+		.required {
+			color: var(--color-text-link);
+			font-weight: bold;
+		}
+
+		.comment-reply-title {
+			margin: 0 0 1em;
+			font-size: 1.4em;
+
+			#cancel-comment-reply-link {
+				margin-left: 1em;
+				font-weight: normal;
+				font-size: 0.8em;
+			}
+		}
+
+		.comment-notes {
+			margin: 0 0 1em;
+		}
 
 		.comment-form-comment {
-			margin: 0 0 1em;
+			margin: 0 0 2em;
 
 			label {
 				display: block;
 				margin-bottom: 0.5em;
+				font-weight: bold;
 			}
 
 			textarea {
@@ -307,15 +421,23 @@
 			}
 		}
 
-		.form-submit {
-			margin: 0;
+		.comment-form-author,
+		.comment-form-email,
+		.comment-form-url {
+			margin: 0 0 1em;
 
-			[type="submit"] {
-
-				@include nm-button;
-				width: auto;
-				border-radius: 1000px;
+			label {
+				display: block;
+				margin-bottom: 0.5em;
+				font-weight: bold;
 			}
+		}
+
+		.form-submit [type="submit"] {
+
+			@include nm-button;
+			margin: 0 auto 0;
+			color: var(--color-accent);
 		}
 	}
 }

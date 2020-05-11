@@ -207,6 +207,63 @@ select {
 	}
 }
 
+.checkbox,
+.comment-form-cookies-consent {
+	position: relative;
+	display: block;
+	width: 100%;
+	margin: 15px auto;
+
+	label {
+		position: relative;
+		display: block;
+		min-height: 30px;
+		padding-left: 35px;
+		cursor: pointer;
+
+		&::before {
+
+			@include nm-reverse;
+			position: absolute;
+			top: 2px;
+			left: 0;
+			width: 22px;
+			height: 22px;
+			border-radius: 3px;
+			transition: transform 0.28s ease;
+			content: "";
+		}
+
+		&::after {
+			position: absolute;
+			top: 4px;
+			left: 2px;
+			display: block;
+			width: 19px;
+			height: 19px;
+			color: var(--color-nm-light);
+			font-weight: 900;
+			font-size: 12px;
+			font-family: "Font Awesome 5 Free";
+			text-align: center;
+			background-color: var(--color-accent);
+			border-radius: 3px;
+			transform: scale(0);
+			transition: transform ease 0.25s;
+			content: "\f00c";
+			will-change: transform;
+		}
+	}
+
+	input[type="checkbox"] {
+		display: none;
+
+		&:checked ~ label::after {
+			transform: scale(1);
+		}
+	}
+}
+
 textarea {
 	display: block;
 	width: 100%;

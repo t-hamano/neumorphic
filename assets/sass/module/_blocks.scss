@@ -1176,6 +1176,7 @@
 
 	&__comment {
 		position: relative;
+		display: flex;
 		margin-bottom: 0;
 		line-height: inherit;
 
@@ -1187,13 +1188,18 @@
 		}
 	}
 
+	&__comment-meta,
+	&__comment-excerpt {
+		margin-left: 0 !important;
+	}
+
 	.avatar,
 	&__comment-avatar {
 
 		@include nm;
-		position: absolute;
-		top: -9px;
-		margin: 0;
+		position: relative;
+		top: -6px;
+		margin-right: 1em;
 	}
 
 	&__comment-date {

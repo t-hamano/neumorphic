@@ -32,7 +32,7 @@ if ( post_password_required() ) {
 			?>
 		</h2>
 
-		<div class="c-comment__nav c-comment__nav--top">
+		<div class="c-comment__nav">
 			<?php the_comments_navigation(); ?>
 		</div>
 
@@ -48,7 +48,7 @@ if ( post_password_required() ) {
 		</ol>
 
 		<?php if ( get_the_comments_navigation() ) : ?>
-			<div class="c-comment__nav c-comment__nav--bottom">
+			<div class="c-comment__nav">
 				<?php the_comments_navigation(); ?>
 			</div>
 		<?php endif; ?>
