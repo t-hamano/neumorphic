@@ -62,15 +62,18 @@
 	?>
 
 	<?php if ( has_tag() ) : ?>
-
 		<div class="c-tag">
 			<?php the_tags( '' ); ?>
 		</div>
 	<?php endif; ?>
 
-	<?php
-	the_post_navigation();
+	<?php if ( get_the_post_navigation() ) : ?>
+		<div class="c-entry__post-nav">
+			<?php the_post_navigation(); ?>
+		</div>
+	<?php endif; ?>
 
+	<?php
 	if ( comments_open() || get_comments_number() ) {
 		comments_template();
 	}

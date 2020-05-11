@@ -58,7 +58,7 @@
 		border-radius: 1000px;
 	}
 
-	.navigation .nav-links {
+	&__post-nav .nav-links {
 
 		@include clearfix;
 		margin-top: 4em;
