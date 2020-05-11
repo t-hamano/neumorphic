@@ -548,6 +548,7 @@ button:focus {
 .c-entry__post-nav .nav-links .nav-previous::before,
 .c-entry__post-nav .nav-links .nav-next::before {
 	position: absolute;
+	top: 0.05em;
 	font-weight: 900;
 	font-family: "Font Awesome 5 Free";
 }

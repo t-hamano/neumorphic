@@ -5,13 +5,6 @@
  * @package neomorphic
  */
 
-// Get current commenter’s name, email, and URL.
-$commenter = wp_get_current_commenter();
-// Whether the comment author must fill out name and email
-$req      = get_option( 'require_name_email' );
-$aria_req = ( $req ? ' aria-required="true"' : '' );
-
-// If the current post is protected by a password and the visitor has not yet entered the password we will return early without loading the comments.
 if ( post_password_required() ) {
 	return;
 }
@@ -54,9 +47,11 @@ if ( post_password_required() ) {
 			?>
 		</ol>
 
-		<div class="c-comment__nav c-comment__nav--bottom">
-			<?php the_comments_navigation(); ?>
-		</div>
+		<?php if ( get_the_comments_navigation() ) : ?>
+			<div class="c-comment__nav c-comment__nav--bottom">
+				<?php the_comments_navigation(); ?>
+			</div>
+		<?php endif; ?>
 
 		<?php if ( ! comments_open() ) : ?>
 			<p class="c-comment__no-comment"><?php esc_html_e( 'Comments are closed.', 'neomorphic' ); ?></p>

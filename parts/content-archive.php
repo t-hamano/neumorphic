@@ -36,6 +36,7 @@
 						</li>
 
 						<?php
+						// Store category name from the category objects.
 						$categories     = get_the_category();
 						$category_names = array();
 						if ( $categories ) {

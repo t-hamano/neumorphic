@@ -55,7 +55,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 			</div>
 
 			<?php
-			// Search bar
+			// Header search bar
 			if ( true === get_theme_mod( 'header_search_display', NEOMORPHIC_HEADER_SEARCH_DISPLAY ) ) :
 				?>
 				<div class="header__search">
