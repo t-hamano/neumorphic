@@ -255,23 +255,22 @@
 		&[class*="wp-image-"],
 		&.wp-post-image {
 
-			@include nm-image;
+			@include nm-media;
 		}
 	}
 
-	.wp-caption {
+	.wp-caption > a {
 
-		> a {
+		@include nm-media-link;
+	}
 
-			@include nm-image-link;
-		}
-
-		figcaption {
-			margin-top: 0.5em;
-			margin-bottom: 0;
-			font-size: 0.8em;
-			opacity: $text_color_thin;
-		}
+	// Figcaption
+	figcaption {
+		margin-top: 0.5em;
+		margin-bottom: 0;
+		color: inherit;
+		font-size: 0.8em;
+		opacity: $text_color_thin;
 	}
 
 	// Table
@@ -312,8 +311,6 @@
 		}
 
 		figcaption {
-			margin-top: 1em;
-			font-size: 0.9em;
 			text-align: center;
 		}
 	}
@@ -373,14 +370,7 @@
 
 	> a {
 
-		@include nm-image-link;
-	}
-
-	figcaption {
-		margin-top: 0.5em;
-		margin-bottom: 0;
-		font-size: 0.8em;
-		opacity: $text_color_thin;
+		@include nm-media-link;
 	}
 
 	.aligncenter,
@@ -429,7 +419,6 @@
 			width: calc(100% - 10px);
 			max-height: calc(100% - 10px);
 			padding: 0.5em;
-			font-size: 0.8em;
 			background: rgba(0, 0, 0, 0.6);
 			border-radius: 0 0 $base_border_radius $base_border_radius;
 		}
@@ -442,10 +431,7 @@
 	> figcaption {
 		display: block;
 		width: 100%;
-		color: inherit;
-		font-size: 0.8em;
 		text-align: center;
-		opacity: $text_color_thin;
 	}
 
 	&.is-style-nm {
@@ -541,14 +527,6 @@
 			outline: none;
 		}
 
-	}
-
-	figcaption {
-		margin-top: 1em;
-		margin-bottom: 0;
-		color: inherit;
-		font-size: 0.8em;
-		opacity: $text_color_thin;
 	}
 }
 
@@ -647,13 +625,12 @@
 ### Video
 ----------------------*/
 
-.wp-block-video,
-.wp-block-embed {
+.wp-block-video {
 	margin-bottom: 2em;
 
 	video {
 
-		@include nm-image;
+		@include nm-media;
 		display: block;
 	}
 
@@ -672,14 +649,6 @@
 				margin-left: auto;
 			}
 		}
-	}
-
-	figcaption {
-		margin-top: 1em;
-		margin-bottom: 0;
-		color: inherit;
-		font-size: 0.8em;
-		opacity: $text_color_thin;
 	}
 }
 
@@ -982,7 +951,7 @@
 
 	> figure > video {
 
-		@include nm-image;
+		@include nm-media;
 		max-width: 100%;
 	}
 
@@ -1560,83 +1529,54 @@
 
 .wp-block-embed {
 	margin-bottom: 2em;
-	text-align: center;
 
-	.wp-block-embed__wrapper {
+	blockquote {
+		padding: 0;
+		box-shadow: none;
 
-		> iframe {
-			display: block;
-			max-width: 100%;
-			// margin-right: auto !important;
-			// margin-left: auto !important;
+		&::before {
+			content: none;
 		}
 	}
-}
 
-/*----------------------
-### Twitter
-----------------------*/
-
-.wp-block-embed-twitter .twitter-tweet {
-	margin-right: auto;
-	margin-left: auto;
-}
-
-/*----------------------
-### Spotify
-----------------------*/
-
-.wp-block-embed-spotify .wp-block-embed__wrapper {
-
-	&::before {
-		// content: none !important;
+	figcaption {
+		text-align: center;
 	}
 
-	iframe {
-		// position: static !important;
-		display: block;
-		// height: 300px !important;
+	&.alignleft,
+	&.alignright,
+	&-facebook,
+	&-instagram,
+	&-twitter {
+		max-width: 500px;
+	}
+
+	&-twitter.aligncenter .twitter-tweet {
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	&-instagram.aligncenter iframe {
+		margin-right: auto !important;
+		margin-left: auto !important;
 	}
 }
 
-/*----------------------
-### Reddit, Crowdsignal
-----------------------*/
+.is-style-nm.wp-block-embed {
 
-.wp-block-embed-reddit iframe,
-.wp-block-embed-crowdsignal iframe {
-	background: #fff;
-}
+	&-youtube iframe,
+	&-facebook iframe,
+	&-twitter .twitter-tweet {
 
-/*----------------------
-### Issuu
-----------------------*/
-
-.wp-block-embed-issuu .issuuembed {
-	margin: 0 auto;
-}
-
-/*----------------------
-### Mixcloud
-----------------------*/
-
-.wp-block-embed-mixcloud .wp-block-embed__wrapper {
-
-	&::before {
-		// content: none !important;
+		@include nm-media;
 	}
 
-	iframe {
-		// position: static !important;
+	&-instagram iframe {
+		padding: 5px !important;
+		border: none !important;
+		border-radius: 8px !important;
+		box-shadow: $nm_shadow_reverse !important;
 	}
-}
-
-/*----------------------
-### ReverbNation
-----------------------*/
-
-.wp-block-embed-reverbnation .wp-block-embed__wrapper::before {
-	// padding-top: 55% !important;
 }
 
 /*------------------------------------------

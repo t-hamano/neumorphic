@@ -61,13 +61,13 @@ body#tinymce.wp-editor.content {
 
 			img {
 
-				@include nm-image;
+				@include nm-media;
 				width: 100%;
 			}
 
 			a {
 
-				@include nm-image-link;
+				@include nm-media-link;
 			}
 		}
 
@@ -250,7 +250,7 @@ body#tinymce.wp-editor.content {
 	// Image
 	img {
 
-		@include nm-image;
+		@include nm-media;
 	}
 
 	figcaption {

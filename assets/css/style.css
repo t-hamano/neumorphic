@@ -2864,9 +2864,10 @@ button:focus {
 	display: inline-block;
 }
 
-.entry-content .wp-caption figcaption {
+.entry-content figcaption {
 	margin-top: 0.5em;
 	margin-bottom: 0;
+	color: inherit;
 	font-size: 0.8em;
 	opacity: 0.8;
 }
@@ -2924,8 +2925,6 @@ button:focus {
 }
 
 .entry-content table figcaption {
-	margin-top: 1em;
-	font-size: 0.9em;
 	text-align: center;
 }
 
@@ -2980,13 +2979,6 @@ button:focus {
 	display: inline-block;
 }
 
-.wp-block-image figcaption {
-	margin-top: 0.5em;
-	margin-bottom: 0;
-	font-size: 0.8em;
-	opacity: 0.8;
-}
-
 .wp-block-image .aligncenter > figcaption,
 .wp-block-image .alignleft > figcaption,
 .wp-block-image .alignright > figcaption,
@@ -3025,7 +3017,6 @@ button:focus {
 	width: calc(100% - 10px);
 	max-height: calc(100% - 10px);
 	padding: 0.5em;
-	font-size: 0.8em;
 	background: rgba(0, 0, 0, 0.6);
 	border-radius: 0 0 8px 8px;
 }
@@ -3038,10 +3029,7 @@ button:focus {
 .wp-block-gallery > figcaption {
 	display: block;
 	width: 100%;
-	color: inherit;
-	font-size: 0.8em;
 	text-align: center;
-	opacity: 0.8;
 }
 
 .wp-block-gallery.is-style-nm {
@@ -3195,14 +3183,6 @@ button:focus {
 
 .wp-block-audio audio:focus {
 	outline: none;
-}
-
-.wp-block-audio figcaption {
-	margin-top: 1em;
-	margin-bottom: 0;
-	color: inherit;
-	font-size: 0.8em;
-	opacity: 0.8;
 }
 
 /*----------------------
@@ -3363,13 +3343,11 @@ button:focus {
 ### Video
 ----------------------*/
 
-.wp-block-video,
-.wp-block-embed {
+.wp-block-video {
 	margin-bottom: 2em;
 }
 
-.wp-block-video video,
-.wp-block-embed video {
+.wp-block-video video {
 	text-decoration: none;
 	border: none;
 	outline: none;
@@ -3383,34 +3361,20 @@ button:focus {
 	display: block;
 }
 
-.wp-block-video video:not(.has-background):not(.has-background-dim),
-.wp-block-embed video:not(.has-background):not(.has-background-dim) {
+.wp-block-video video:not(.has-background):not(.has-background-dim) {
 	background-color: var(--color-bg);
 }
 
 .wp-block-video video:focus,
 .wp-block-video video:hover,
-.wp-block-video video:active,
-.wp-block-embed video:focus,
-.wp-block-embed video:hover,
-.wp-block-embed video:active {
+.wp-block-video video:active {
 	text-decoration: none;
 	outline: none;
 }
 
-.wp-block-video.aligncenter video,
-.wp-block-embed.aligncenter video {
+.wp-block-video.aligncenter video {
 	margin-right: auto;
 	margin-left: auto;
-}
-
-.wp-block-video figcaption,
-.wp-block-embed figcaption {
-	margin-top: 1em;
-	margin-bottom: 0;
-	color: inherit;
-	font-size: 0.8em;
-	opacity: 0.8;
 }
 
 /*------------------------------------------
@@ -4723,55 +4687,79 @@ button:focus {
 
 .wp-block-embed {
 	margin-bottom: 2em;
+}
+
+.wp-block-embed blockquote {
+	padding: 0;
+	box-shadow: none;
+}
+
+.wp-block-embed blockquote::before {
+	content: none;
+}
+
+.wp-block-embed figcaption {
 	text-align: center;
 }
 
-.wp-block-embed .wp-block-embed__wrapper > iframe {
-	display: block;
-	max-width: 100%;
+.wp-block-embed.alignleft,
+.wp-block-embed.alignright,
+.wp-block-embed-facebook,
+.wp-block-embed-instagram,
+.wp-block-embed-twitter {
+	max-width: 500px;
 }
 
-/*----------------------
-### Twitter
-----------------------*/
-
-.wp-block-embed-twitter .twitter-tweet {
+.wp-block-embed-twitter.aligncenter .twitter-tweet {
 	margin-right: auto;
 	margin-left: auto;
 }
 
-/*----------------------
-### Spotify
-----------------------*/
-
-.wp-block-embed-spotify .wp-block-embed__wrapper iframe {
-	display: block;
+.wp-block-embed-instagram.aligncenter iframe {
+	margin-right: auto !important;
+	margin-left: auto !important;
 }
 
-/*----------------------
-### Reddit, Crowdsignal
-----------------------*/
-
-.wp-block-embed-reddit iframe,
-.wp-block-embed-crowdsignal iframe {
-	background: #fff;
+.is-style-nm.wp-block-embed-youtube iframe,
+.is-style-nm.wp-block-embed-facebook iframe,
+.is-style-nm.wp-block-embed-twitter .twitter-tweet {
+	text-decoration: none;
+	border: none;
+	outline: none;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
+	padding: 5px;
+	border-radius: 8px;
 }
 
-/*----------------------
-### Issuu
-----------------------*/
-
-.wp-block-embed-issuu .issuuembed {
-	margin: 0 auto;
+.is-style-nm.wp-block-embed-youtube iframe:not(.has-background):not(.has-background-dim),
+.is-style-nm.wp-block-embed-facebook iframe:not(.has-background):not(.has-background-dim),
+.is-style-nm.wp-block-embed-twitter .twitter-tweet:not(.has-background):not(.has-background-dim) {
+	background-color: var(--color-bg);
 }
 
-/*----------------------
-### Mixcloud
-----------------------*/
+.is-style-nm.wp-block-embed-youtube iframe:focus,
+.is-style-nm.wp-block-embed-youtube iframe:hover,
+.is-style-nm.wp-block-embed-youtube iframe:active,
+.is-style-nm.wp-block-embed-facebook iframe:focus,
+.is-style-nm.wp-block-embed-facebook iframe:hover,
+.is-style-nm.wp-block-embed-facebook iframe:active,
+.is-style-nm.wp-block-embed-twitter .twitter-tweet:focus,
+.is-style-nm.wp-block-embed-twitter .twitter-tweet:hover,
+.is-style-nm.wp-block-embed-twitter .twitter-tweet:active {
+	text-decoration: none;
+	outline: none;
+}
 
-/*----------------------
-### ReverbNation
-----------------------*/
+.is-style-nm.wp-block-embed-instagram iframe {
+	padding: 5px !important;
+	border: none !important;
+	border-radius: 8px !important;
+	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light) !important;
+}
 
 /*------------------------------------------
 ## Block Styles
@@ -5230,9 +5218,7 @@ button:focus {
 	}
 
 	.wp-block-video.alignleft video,
-	.wp-block-video.alignright video,
-	.wp-block-embed.alignleft video,
-	.wp-block-embed.alignright video {
+	.wp-block-video.alignright video {
 		margin-right: auto;
 		margin-left: auto;
 	}

@@ -260,13 +260,13 @@
 
 	img {
 
-		@include nm-image;
+		@include nm-media;
 		width: 100%;
 	}
 
 	a {
 
-		@include nm-image-link;
+		@include nm-media-link;
 	}
 
 	figure {
@@ -530,7 +530,7 @@
 
 	img {
 
-		@include nm-image();
+		@include nm-media();
 	}
 
 	figcaption {

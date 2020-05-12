@@ -70,4 +70,26 @@ wp.domReady( function() {
 		label: 'Neomorphic',
 		isDefault: false
 	});
+
+	// Add custom style (Embed)
+	wp.blocks.registerBlockStyle( 'core-embed/youtube', {
+		name: 'nm',
+		label: 'Neomorphic',
+		isDefault: false
+	});
+	wp.blocks.registerBlockStyle( 'core-embed/instagram', {
+		name: 'nm',
+		label: 'Neomorphic',
+		isDefault: false
+	});
+	wp.blocks.registerBlockStyle( 'core-embed/facebook', {
+		name: 'nm',
+		label: 'Neomorphic',
+		isDefault: false
+	});
+	wp.blocks.registerBlockStyle( 'core-embed/twitter', {
+		name: 'nm',
+		label: 'Neomorphic',
+		isDefault: false
+	});
 });

@@ -163,14 +163,14 @@
 	text-shadow: $nm_shadow_text;
 }
 
-@mixin nm-image() {
+@mixin nm-media() {
 
 	@include nm-reverse;
 	padding: 5px;
 	border-radius: $base_border_radius;
 }
 
-@mixin nm-image-link() {
+@mixin nm-media-link() {
 	display: inline-block;
 
 	@include mq(lg-min) {

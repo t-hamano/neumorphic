@@ -128,13 +128,13 @@ blockquote {
 
 		img {
 
-			@include nm-image;
+			@include nm-media;
 			width: 100%;
 		}
 
 		a {
 
-			@include nm-image-link;
+			@include nm-media-link;
 			display: block;
 		}
 	}
