@@ -15,7 +15,8 @@ get_header(); ?>
 				$image_size = apply_filters( 'wporg_attachment_size', 'large' );
 				echo wp_get_attachment_image( get_the_ID(), $image_size );
 
-				if ( has_excerpt() ) : ?>
+				if ( has_excerpt() ) :
+					?>
 					<figcaption>
 						<?php the_excerpt(); ?>
 					</figcaption>

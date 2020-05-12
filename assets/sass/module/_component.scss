@@ -3,6 +3,101 @@
 --------------------------------------------------------------*/
 
 /*------------------------------------------
+## Global menu
+------------------------------------------*/
+
+.c-gnav {
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	&__item {
+		position: relative;
+		list-style: none;
+
+		> a {
+			display: block;
+			padding: 0.5em 0.8em;
+			text-align: center;
+			transition: color $base_transition_duration ease-in-out;
+
+			@include mq(lg-min) {
+
+				&:hover {
+					color: var(--color-accent);
+					text-decoration: none;
+				}
+			}
+		}
+
+		> .c-gnav__submenu {
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			z-index: 2;
+			width: 14em;
+			padding: 0;
+			text-align: left;
+			list-style: none;
+			background: var(--color-nm-dark);
+			transform: translateX(-50%);
+			visibility: hidden;
+			opacity: 0;
+			transition: opacity $base_transition_duration ease-in-out;
+
+			&[aria-hidden="false"] {
+				visibility: visible;
+				opacity: 1;
+			}
+
+			&::before {
+				position: absolute;
+				top: -10px;
+				left: calc(50% - 8px);
+				display: block;
+				width: 0;
+				height: 0;
+				border-color: transparent transparent var(--color-nm-dark);
+				border-style: solid;
+				border-width: 0 8px 10px;
+				content: "";
+			}
+		}
+	}
+
+	&__subitem {
+		list-style: none;
+
+		> a {
+			display: block;
+			padding: 0.5em 1em;
+			color: inherit;
+			font-weight: normal;
+			line-height: 1.4;
+			transition: background $base_transition_duration ease-in-out;
+
+			@include mq(lg-min) {
+
+				&:hover {
+					text-decoration: none;
+					background: var(--color-nm-light);
+				}
+			}
+		}
+
+		> .c-gnav__submenu {
+			padding-left: 1em;
+		}
+	}
+}
+
+/*------------------------------------------
 ## Entry area
 ------------------------------------------*/
 

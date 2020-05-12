@@ -504,6 +504,82 @@ button:focus {
 --------------------------------------------------------------*/
 
 /*------------------------------------------
+## Global menu
+------------------------------------------*/
+
+.c-gnav__list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.c-gnav__item {
+	position: relative;
+	list-style: none;
+}
+
+.c-gnav__item > a {
+	display: block;
+	padding: 0.5em 0.8em;
+	text-align: center;
+	transition: color 0.2s ease-in-out;
+}
+
+.c-gnav__item > .c-gnav__submenu {
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	z-index: 2;
+	width: 14em;
+	padding: 0;
+	text-align: left;
+	list-style: none;
+	background: var(--color-nm-dark);
+	transform: translateX(-50%);
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.2s ease-in-out;
+}
+
+.c-gnav__item > .c-gnav__submenu[aria-hidden="false"] {
+	visibility: visible;
+	opacity: 1;
+}
+
+.c-gnav__item > .c-gnav__submenu::before {
+	position: absolute;
+	top: -10px;
+	left: calc(50% - 8px);
+	display: block;
+	width: 0;
+	height: 0;
+	border-color: transparent transparent var(--color-nm-dark);
+	border-style: solid;
+	border-width: 0 8px 10px;
+	content: "";
+}
+
+.c-gnav__subitem {
+	list-style: none;
+}
+
+.c-gnav__subitem > a {
+	display: block;
+	padding: 0.5em 1em;
+	color: inherit;
+	font-weight: normal;
+	line-height: 1.4;
+	transition: background 0.2s ease-in-out;
+}
+
+.c-gnav__subitem > .c-gnav__submenu {
+	padding-left: 1em;
+}
+
+/*------------------------------------------
 ## Entry area
 ------------------------------------------*/
 
@@ -1556,79 +1632,35 @@ button:focus {
 	padding: 0;
 }
 
-.gnav__list {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	margin: 1em 0 0;
-	padding: 0;
-	font-weight: bold;
-	list-style: none;
-}
-
-.gnav__item {
-	position: relative;
-	list-style: none;
-}
-
-.gnav__item > a {
+.gnav .c-gnav__item > a {
 	text-shadow: 1px 1px 0 var(--color-text-border-color);
-	display: block;
-	padding: 0.5em 0.8em;
 	color: inherit;
-	text-align: center;
-	transition: color 0.2s ease-in-out;
+	font-weight: bold;
 }
 
-.gnav__item > .gnav__submenu {
-	position: absolute;
-	top: 100%;
-	left: 50%;
-	z-index: 2;
-	width: 14em;
-	padding: 0;
-	text-align: left;
-	list-style: none;
-	background: var(--color-nm-dark);
-	transform: translateX(-50%);
+.fixed-gnav {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	z-index: 10;
+	background: rgba(0, 0, 0, 0.5);
+	transform: translateY(-100%);
 	visibility: hidden;
-	opacity: 0;
-	transition: opacity 0.2s ease-in-out;
+	transition: transform 0.2s ease-in-out, visibility 0.2s ease-in-out;
+	transition-timing-function: ease-out;
 }
 
-.gnav__item > .gnav__submenu[aria-hidden="false"] {
+.fixed-gnav[aria-hidden="false"] {
+	top: 0;
+	transform: translateY(0);
 	visibility: visible;
-	opacity: 1;
+	transition: transform 0.2s ease-in-out;
+	transition-timing-function: ease-out;
 }
 
-.gnav__item > .gnav__submenu::before {
-	position: absolute;
-	top: -10px;
-	left: calc(50% - 8px);
-	display: block;
-	width: 0;
-	height: 0;
-	border-color: transparent transparent var(--color-nm-dark);
-	border-style: solid;
-	border-width: 0 8px 10px;
-	content: "";
-}
-
-.gnav__subitem {
-	list-style: none;
-}
-
-.gnav__subitem > a {
-	display: block;
-	padding: 0.5em 1em;
-	color: inherit;
-	font-weight: normal;
-	line-height: 1.4;
-	transition: background 0.2s ease-in-out;
-}
-
-.gnav__subitem > .gnav__submenu {
-	padding-left: 1em;
+.fixed-gnav .c-gnav__item > a {
+	color: #fff;
 }
 
 /*------------------------------------------
@@ -4948,6 +4980,16 @@ button:focus {
 		opacity: 1;
 	}
 
+	.c-gnav__item > a:hover {
+		color: var(--color-accent);
+		text-decoration: none;
+	}
+
+	.c-gnav__subitem > a:hover {
+		text-decoration: none;
+		background: var(--color-nm-light);
+	}
+
 	.c-entry__title {
 		font-size: 2.2em;
 	}
@@ -5006,16 +5048,6 @@ button:focus {
 
 	.header__brand-title img {
 		max-height: 100px;
-	}
-
-	.gnav__item > a:hover {
-		color: var(--color-accent);
-		text-decoration: none;
-	}
-
-	.gnav__subitem > a:hover {
-		text-decoration: none;
-		background: var(--color-nm-light);
 	}
 
 	.fixed-nav {
@@ -5158,6 +5190,10 @@ button:focus {
 	}
 
 	.gnav {
+		display: none;
+	}
+
+	.fixed-gnav {
 		display: none;
 	}
 

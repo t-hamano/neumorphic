@@ -358,9 +358,9 @@ require( get_theme_file_path() . '/inc/classes/class-gnav-walker.php' );
 function neomorphic_nav_class( $classes, $item, $args, $depth ) {
 	if ( 'primary' === $args->theme_location ) {
 		if ( 0 === $depth ) {
-			$classes[] = 'gnav__item';
+			$classes[] = 'c-gnav__item';
 		} else {
-			$classes[] = 'gnav__subitem';
+			$classes[] = 'c-gnav__subitem';
 		}
 	} elseif ( 'mobile' === $args->theme_location ) {
 		if ( 0 === $depth ) {
