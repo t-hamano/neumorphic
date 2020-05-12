@@ -79,7 +79,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 			$gnav = wp_nav_menu(
 				array(
 					'theme_location' => 'primary',
-					'menu_class'     => 'gnav__list',
+					'menu_class'     => 'c-gnav__list',
 					'container'      => false,
 					'echo'           => false,
 					'walker'         => new Gnav_Walker(),
@@ -87,12 +87,27 @@ if ( function_exists( 'wp_body_open' ) ) {
 			);
 			if ( $gnav ) :
 				?>
-				<nav id="gnav" class="gnav" role="navigation" aria-hidden="true">
-					<?php echo $gnav; ?>
-				</nav>
+				<div class="gnav">
+					<nav class="c-gnav" role="navigation" aria-hidden="true">
+						<?php echo $gnav; ?>
+					</nav>
+				</div>
 			<?php endif; ?>
 		</div>
 	</div>
+
+	<?php
+	// Fixed global menu
+	if ( $gnav ) :
+		?>
+		<div id="fixed_gnav" class="fixed-gnav">
+			<div class="container">
+				<nav class="c-gnav" role="navigation" aria-hidden="true">
+					<?php echo $gnav; ?>
+				</nav>
+			</div>
+		</div>
+	<?php endif; ?>
 </header>
 
 <?php

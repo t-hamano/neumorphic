@@ -218,6 +218,9 @@ function neomorphic_scripts() {
 
 	// Main Script
 	wp_enqueue_script( 'neomorphic-script-main', get_theme_file_uri() . '/assets/js/main.js', array( 'jquery' ), $theme_version, false );
+
+	// CSS custom properties support for legacy and modern browsers
+	wp_enqueue_script( 'neomorphic-script-ponyfill', 'https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2', array(), $theme_version );
 }
 
 add_action( 'wp_enqueue_scripts', 'neomorphic_scripts' );
@@ -237,7 +240,10 @@ function neomorphic_block_editor_styles() {
 	// Main script.
 	wp_enqueue_script( 'neomorphic-script-block-editor', get_theme_file_uri() . '/assets/js/editor-block.js', array( 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-dom' ), $theme_version, true );
 
-	wp_set_script_translations( 'neomorphic-script-block-editor', 'neomorphic', '/languages' );
+	// CSS custom properties support for legacy and modern browsers
+	wp_enqueue_script( 'neomorphic-script-ponyfill', 'https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2', array(), $theme_version );
+
+		wp_set_script_translations( 'neomorphic-script-block-editor', 'neomorphic', '/languages' );
 }
 
 add_action( 'enqueue_block_editor_assets', 'neomorphic_block_editor_styles' );
@@ -352,9 +358,9 @@ require( get_theme_file_path() . '/inc/classes/class-gnav-walker.php' );
 function neomorphic_nav_class( $classes, $item, $args, $depth ) {
 	if ( 'primary' === $args->theme_location ) {
 		if ( 0 === $depth ) {
-			$classes[] = 'gnav__item';
+			$classes[] = 'c-gnav__item';
 		} else {
-			$classes[] = 'gnav__subitem';
+			$classes[] = 'c-gnav__subitem';
 		}
 	} elseif ( 'mobile' === $args->theme_location ) {
 		if ( 0 === $depth ) {
@@ -388,7 +394,7 @@ function neomorphic_contents_class() {
 		$class = ' contents--sidebar-left';
 	} elseif ( is_page_template( 'template/sidebar-right.php' ) ) {
 		$class = ' contents--sidebar-right';
-	} elseif ( is_page_template( 'template/sidebar-none.php' ) ) {
+	} elseif ( is_page_template( 'template/sidebar-none.php' ) || is_attachment() ) {
 		$class = '';
 	} else {
 		// Use customizer settings if the page template is not used.

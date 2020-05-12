@@ -128,13 +128,13 @@ blockquote {
 
 		img {
 
-			@include nm-image;
+			@include nm-media;
 			width: 100%;
 		}
 
 		a {
 
-			@include nm-image-link;
+			@include nm-media-link;
 			display: block;
 		}
 	}
@@ -188,10 +188,14 @@ select {
 	min-width: 0;
 	max-width: 100%;
 	height: auto;
-	padding: 0.7em 40px 0.7em 1.4em;
+	padding: 0.7em 3em 0.7em 1.4em;
 	background: url(../images/chevron-down-solid.svg) no-repeat right 20px center/1em;
 	border-radius: 1000px;
 	cursor: pointer;
+
+	&::-ms-expand {
+		display: none;
+	}
 
 	option {
 		color: #333;
@@ -269,7 +273,8 @@ textarea {
 	width: 100%;
 	max-width: 100%;
 	height: auto;
-	padding: 0.7em 40px 0.7em 1.4em;
+	padding: 1em;
+	overflow: auto;
 	color: inherit;
 	font-size: inherit;
 	font-family: inherit;

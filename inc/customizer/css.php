@@ -28,25 +28,31 @@ function neomorphic_generate_css() {
 
 	// Generate CSS variables.
 	$styles = array(
-		'selector' => ':root',
-		'style'    => array(
-			"--color-bg               : {$color_bg}",
-			"--color-nm-light         : {$light_color}",
-			"--color-nm-dark          : {$dark_color}",
-			"--color-text-main        : {$color_text_main}",
-			"--color-accent           : {$color_accent}",
-			"--color-text-link        : {$color_text_link}",
-			"--color-text-border-color: {$color_text_border_color}",
+		array(
+			'selector' => ':root',
+			'style'    => array(
+				"--color-bg               : {$color_bg}",
+				"--color-nm-light         : {$light_color}",
+				"--color-nm-dark          : {$dark_color}",
+				"--color-text-main        : {$color_text_main}",
+				"--color-accent           : {$color_accent}",
+				"--color-text-link        : {$color_text_link}",
+				"--color-text-border-color: {$color_text_border_color}",
+			),
 		),
 	);
 
-	$styles['style'] = implode( '; ', $styles['style'] );
+	$output = '';
 
-	$output = sprintf(
-		'%s { %s; }',
-		$styles['selector'],
-		$styles['style'],
-	);
+	foreach ( $styles as $style ) {
+		$style['style'] = implode( ';', $style['style'] );
 
-	return $output;
+		$output .= sprintf(
+			'%s { %s; }',
+			$style['selector'],
+			$style['style'],
+		);
+	}
+
+	return preg_replace( '/ /', '', $output );
 }

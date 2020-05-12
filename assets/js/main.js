@@ -1,5 +1,16 @@
+
+
 ( function( $ ) {
-$( function() {
+	$( function() {
+
+	// CSS custom properties support for legacy and modern browsers
+	cssVars();
+
+	// Admin bar
+	var adminBar = $( '#wpadminbar' );
+
+	// Fixed global menu
+	var fixedGnav = $( '#fixed_gnav' );
 
 	// Drawer menu
 	var drawer = $( '#drawer' );
@@ -10,16 +21,32 @@ $( function() {
 	// Drawer menu close button
 	var mobileCloseBtn = $( '#mobile_close_btn' );
 
+	// Show/Hide fixed global menu
+	if ( adminBar.length ) {
+		fixedGnav.css( 'margin-top', adminBar.height() );
+	}
+	$( window ).scroll( function() {
+		if ( 200 < $( this ).scrollTop() ) {
+
+			// Show
+			fixedGnav.attr( 'aria-hidden', false );
+		} else {
+
+			// Hide
+			fixedGnav.attr( 'aria-hidden', true );
+		}
+	});
+
 	// Open / Close drawer menu
 	mobileHmBtn.on( 'click', function() {
 		if ( mobileHmBtn.is( '[aria-expanded="false"]' ) ) {
 
-			// Open drawer menu
+			// Open
 			mobileHmBtn.attr( 'aria-expanded', true );
 			drawer.attr( 'aria-hidden', false );
 		} else {
 
-			// Close drawer menu
+			// Close
 			mobileHmBtn.attr( 'aria-expanded', false );
 			drawer.attr( 'aria-hidden', true );
 		}
@@ -42,22 +69,26 @@ $( function() {
 
 		if ( targetToggle.is( '[aria-expanded="false"]' ) ) {
 
-			// Open sub menu
+			// Open
 			targetToggle.attr( 'aria-expanded', true );
 			targetSubmenu.attr( 'aria-hidden', false );
 		} else {
 
-			// Close sub menu
+			// Close
 			targetToggle.attr( 'aria-expanded', false );
 			targetSubmenu.attr( 'aria-hidden', true );
 		}
 	});
 
 	// Open / Close global sub menu
-	$( '.gnav__list > .menu-item' ).mouseover( function() {
-		$( this ).find( '> .gnav__submenu' ).attr( 'aria-hidden', false );
+	$( '.c-gnav__list > .menu-item' ).mouseover( function() {
+
+		// Open
+		$( this ).find( '> .c-gnav__submenu' ).attr( 'aria-hidden', false );
 	}).mouseout( function() {
-		$( this ).find( '> .gnav__submenu' ).attr( 'aria-hidden', true );
+
+		// Close
+		$( this ).find( '> .c-gnav__submenu' ).attr( 'aria-hidden', true );
 	});
 
 	// Smooth scroll
@@ -77,4 +108,4 @@ $( function() {
 		return false;
 	});
 });
-}( jQuery ) );
+} ( jQuery ) );
