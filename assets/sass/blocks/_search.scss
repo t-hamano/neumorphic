@@ -1,0 +1,67 @@
+/*----------------------
+# Search
+----------------------*/
+
+.wp-block-search {
+	position: relative;
+	display: block;
+	max-width: 400px;
+	margin-bottom: 2em;
+
+	&__label {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		padding: 0;
+		overflow: hidden;
+		word-wrap: normal !important;
+		border: 0;
+		clip: rect(1px, 1px, 1px, 1px);
+		-webkit-clip-path: inset(50%);
+		clip-path: inset(50%);
+	}
+
+	.wp-block-search__input {
+
+		@include nm-input;
+		max-width: 100%;
+		padding-right: 3em;
+		border-radius: 1000px;
+	}
+
+	&__input {
+		width: 100%;
+	}
+
+	&__button {
+		position: absolute;
+		top: 50%;
+		right: 0.5em;
+		width: 2em;
+		height: 2em;
+		padding: 0;
+		color: var(--color-accent);
+		transform: translateY(-50%);
+		visibility: hidden;
+		transition: opacity $base_transition_duration ease-in-out;
+
+		&::before {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			font-weight: 900;
+			font-family: "Font Awesome 5 Free";
+			transform: translate(-50%, -50%);
+			visibility: visible;
+			content: "\f002";
+		}
+
+		@include mq(lg-min) {
+
+			&:hover {
+				opacity: $base_hover_opacity;
+			}
+		}
+	}
+}

@@ -1,0 +1,34 @@
+/*----------------------
+# Social links
+----------------------*/
+
+[data-type="core/social-links"] {
+
+	.wp-block-social-links {
+
+		.block-editor-block-list__layout {
+			flex-wrap: wrap;
+		}
+
+		.wp-social-link {
+			margin: 0 0.5em 0.5em 0;
+		}
+
+		&.is-style-nm {
+
+			.wp-social-link {
+
+				@include nm-button;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 2em;
+				height: 2em;
+				padding: 0;
+				color: var(--color-accent);
+				font-size: 1.3em;
+				border-radius: $base_border_radius;
+			}
+		}
+	}
+}

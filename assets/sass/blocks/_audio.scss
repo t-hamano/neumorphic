@@ -1,0 +1,29 @@
+/*----------------------
+# Audio
+----------------------*/
+
+.wp-block-audio {
+	margin-bottom: 2em;
+
+	@include mq(md-max) {
+
+		&.alignleft,
+		&.alignright {
+			text-align: center;
+		}
+	}
+
+	audio {
+
+		@include nm-reverse;
+		width: auto;
+		padding: 5px;
+		vertical-align: top;
+		border-radius: 1000px;
+
+		&:focus {
+			outline: none;
+		}
+
+	}
+}

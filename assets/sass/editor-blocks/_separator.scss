@@ -1,0 +1,47 @@
+/*----------------------
+# Separator
+----------------------*/
+
+[data-type="core/separator"] {
+
+	.wp-block-separator {
+		height: 3px;
+		margin-right: auto;
+		margin-left: auto;
+		padding: 10px 0;
+		border: none;
+		border-radius: 1000px;
+		transform: translateY(-6px);
+		cursor: pointer;
+
+		&:not(.is-style-wide):not(.is-style-dots) {
+			max-width: 50%;
+		}
+
+		&:not(.is-style-dots):not(.has-background) {
+
+			@include nm-border;
+		}
+
+		&.has-background:not(.is-style-dots) {
+			position: relative;
+			background-color: transparent !important;
+
+			&::before {
+				position: absolute;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				height: 3px;
+				background: currentColor;
+				content: "";
+			}
+		}
+
+		&.is-style-dots::before {
+			font-size: 30px;
+			font-family: inherit;
+			line-height: 0;
+		}
+	}
+}

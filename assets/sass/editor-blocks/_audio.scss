@@ -1,0 +1,29 @@
+/*----------------------
+### Audio
+----------------------*/
+
+[data-type="core/audio"] {
+
+	.wp-block-audio {
+		margin: 0;
+
+		audio {
+
+			@include nm-reverse;
+			display: inline-block;
+			width: auto;
+			padding: 5px;
+			vertical-align: top;
+			border-radius: 1000px;
+		}
+
+		figcaption {
+			margin-top: 1em;
+			margin-bottom: 0;
+			color: inherit;
+			font-size: 0.8em;
+			text-align: inherit;
+			opacity: $text_color_thin;
+		}
+	}
+}

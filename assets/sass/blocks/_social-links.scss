@@ -1,0 +1,44 @@
+/*----------------------
+# Social Icons
+----------------------*/
+
+.wp-block-social-links {
+
+	flex-wrap: wrap;
+	margin-bottom: 2em;
+	padding: 0;
+
+	&.aligncenter {
+		display: flex !important;
+	}
+
+	li {
+		margin: 0 0.5em 0.5em 0;
+	}
+
+	&.is-style-nm {
+		font-size: 1.3em;
+
+		.wp-social-link {
+			width: auto;
+			height: auto;
+
+			&:hover {
+				transform: none;
+			}
+
+			a {
+
+				@include nm-button;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 2em;
+				height: 2em;
+				padding: 0;
+				color: var(--color-accent);
+				border-radius: $base_border_radius;
+			}
+		}
+	}
+}

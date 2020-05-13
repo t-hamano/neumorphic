@@ -1,0 +1,28 @@
+/*----------------------
+# File
+----------------------*/
+
+.wp-block-file {
+	margin-bottom: 2em;
+
+	a {
+		display: inline-block;
+		margin-bottom: 0.5em;
+	}
+
+	a.wp-block-file__button {
+
+		@include nm-button;
+		color: var(--color-accent);
+		font-size: 0.8em;
+		border-radius: 1000px;
+
+		&:active,
+		&:focus,
+		&:hover,
+		&:visited {
+			color: var(--color-accent);
+			opacity: 1;
+		}
+	}
+}

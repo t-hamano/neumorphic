@@ -1,0 +1,30 @@
+/*----------------------
+# Video
+----------------------*/
+
+.wp-block-video {
+	margin-bottom: 2em;
+
+	video {
+
+		@include nm-media;
+		display: block;
+	}
+
+	&.aligncenter video {
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	@include mq(md-max) {
+
+		&.alignleft,
+		&.alignright {
+
+			video {
+				margin-right: auto;
+				margin-left: auto;
+			}
+		}
+	}
+}

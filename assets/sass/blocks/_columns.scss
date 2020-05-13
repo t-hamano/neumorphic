@@ -1,0 +1,43 @@
+/*----------------------
+# Columns
+----------------------*/
+
+.wp-block-columns {
+	margin-bottom: 2em;
+
+	&.has-background {
+		padding: 1.5em 1em;
+	}
+
+	&.is-style-nm {
+
+		@include nm;
+		padding: 1.5em 1em;
+		border-radius: $base_border_radius;
+	}
+
+	&.is-style-nm-reverse {
+
+		@include nm-reverse;
+		padding: 1.5em 1em;
+		border-radius: $base_border_radius;
+	}
+
+	> .wp-block-column {
+
+		> *:first-child {
+			margin-top: 0 !important;
+		}
+
+		> *:last-child {
+			margin-bottom: 0 !important;
+		}
+
+		@media screen and (max-width: 599px) {
+
+			&:not(:last-child) {
+				margin-bottom: 2em;
+			}
+		}
+	}
+}

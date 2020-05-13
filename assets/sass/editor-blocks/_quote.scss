@@ -1,0 +1,34 @@
+/*----------------------
+# Quote
+----------------------*/
+
+[data-type="core/quote"] {
+
+	.wp-block-quote,
+	.wp-block-quote.has-text-align-center,
+	.wp-block-quote.has-text-align-right {
+
+		&__citation {
+			display: block;
+			color: inherit;
+			font-size: 0.8em;
+			font-style: italic;
+			opacity: $text_color_thin;
+		}
+
+		&.is-style-large {
+			margin-bottom: 0;
+			padding: 2em 2em 2em 5em;
+
+			&::before {
+				font-size: 2.4em;
+			}
+
+			p {
+				font-size: 1.4em;
+				font-style: normal;
+				line-height: inherit;
+			}
+		}
+	}
+}

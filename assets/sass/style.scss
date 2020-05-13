@@ -1,4 +1,7 @@
-@charset "UTF-8";
+/*--------------------------------------------------------------
+# Front-end Styles
+--------------------------------------------------------------*/
+
 @import "variable";
 @import "mixin";
 @import "module/base";
@@ -9,4 +12,4 @@
 @import "module/footer";
 @import "module/sidebar";
 @import "module/widget";
-@import "module/blocks";
+@import "blocks/blocks";

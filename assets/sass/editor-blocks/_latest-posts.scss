@@ -1,0 +1,64 @@
+/*----------------------
+# Latest Posts
+----------------------*/
+
+[data-type="core/latest-posts"] {
+
+	.wp-block-latest-posts {
+		margin: 0;
+
+		&.wp-block-latest-posts__list {
+			padding: 0;
+		}
+
+		> li {
+
+			@include nm;
+			@include clearfix();
+			padding: 1.5em 1em;
+			border-radius: $base_border_radius;
+
+			> a {
+				margin: 0;
+				font-weight: bold;
+				font-size: 1.2em;
+				line-height: 1.4;
+			}
+		}
+
+		&:not(.is-grid) {
+
+			li:not(:last-child) {
+				margin-bottom: 1.5em;
+			}
+		}
+
+		&.is-grid {
+			margin-right: -8px;
+			margin-left: -8px;
+
+			> li {
+				margin: 0 8px 16px;
+				padding: 1em;
+			}
+		}
+
+		&__featured-image img {
+
+			@include nm-media;
+		}
+
+		&__post-date {
+			display: block;
+			color: inherit;
+			font-size: 0.8em;
+
+			&::before {
+				margin-right: 0.2em;
+				font-weight: 400;
+				font-family: "Font Awesome 5 Free";
+				content: "\f017";
+			}
+		}
+	}
+}

@@ -1,0 +1,21 @@
+/*----------------------
+# Table
+----------------------*/
+
+.wp-block-table {
+	margin-bottom: 2em;
+	overflow-x: initial;
+
+	&.aligncenter table {
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	&.is-style-stripes {
+		border-bottom: none;
+
+		tbody tr:nth-child(odd) {
+			background-color: var(--color-nm-light);
+		}
+	}
+}

@@ -1,0 +1,51 @@
+/*----------------------
+# Categories
+----------------------*/
+
+[data-type="core/categories"] {
+
+	.wp-block-categories .wp-block-categories__dropdown {
+
+		@include nm-input-editor;
+		min-width: 0;
+		max-width: 100%;
+		height: auto;
+		padding: 0.7em 3em 0.7em 1.4em;
+		color: inherit;
+		font-size: inherit;
+		font-family: $base_font_falily;
+		line-height: inherit;
+		background: url(../images/chevron-down-solid.svg) no-repeat right 20px center/1em;
+		border-radius: 1000px;
+
+		option {
+			background: #fff;
+		}
+	}
+
+	.wp-block-categories > ul {
+		margin-left: 0;
+		padding-left: 1.5em;
+
+		li {
+			margin: 0.5em 0;
+		}
+
+		ul {
+			margin-left: 0;
+			padding: 0;
+			list-style: none;
+
+			li {
+				position: relative;
+				padding-left: 1em;
+
+				&::before {
+					position: absolute;
+					left: 0;
+					content: "-";
+				}
+			}
+		}
+	}
+}
