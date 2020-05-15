@@ -1846,8 +1846,6 @@ button:focus {
 
 .contents__inner .main {
 	display: block;
-	width: 100%;
-	margin: 0 auto;
 }
 
 /*--------------------------------------------------------------
@@ -2603,27 +2601,6 @@ button:focus {
 	display: block;
 	margin: 0 auto 2em;
 	text-align: center;
-}
-
-.entry-content .alignwide {
-	position: relative;
-	right: -47.5vw;
-	width: auto;
-	max-width: none;
-	max-width: 1500px;
-	margin-right: calc(50% - 47.5vw);
-	margin-left: calc(50% - 47.5vw);
-	transform: translateX(-50%);
-}
-
-.entry-content .alignfull {
-	position: relative;
-	right: 50%;
-	left: 50%;
-	width: 100vw;
-	max-width: 100vw;
-	margin-right: -50vw;
-	margin-left: -50vw;
 }
 
 .entry-content a {
@@ -5043,10 +5020,6 @@ button:focus {
 		justify-content: space-between;
 	}
 
-	.contents__inner .main {
-		max-width: 1200px;
-	}
-
 	.contents--sidebar-right .main,
 	.contents--sidebar-left .main {
 		width: calc(70% - 70px);
@@ -5117,6 +5090,26 @@ button:focus {
 		opacity: 1;
 	}
 
+	.contents--sidebar-none .alignwide {
+		position: relative;
+		right: -47.5vw;
+		width: auto;
+		max-width: 1400px;
+		margin-right: calc(50% - 47.5vw);
+		margin-left: calc(50% - 47.5vw);
+		transform: translateX(-50%);
+	}
+
+	.contents--sidebar-none .alignfull {
+		position: relative;
+		right: 50%;
+		left: 50%;
+		width: 100vw;
+		max-width: 100vw;
+		margin-right: -50vw;
+		margin-left: -50vw;
+	}
+
 	.wp-block-image > a {
 		position: relative;
 	}
@@ -5185,6 +5178,26 @@ button:focus {
 		margin-right: auto;
 		margin-bottom: 2em;
 		margin-left: auto;
+	}
+
+	.alignwide {
+		position: relative;
+		right: -47.5vw;
+		width: auto;
+		max-width: 1400px;
+		margin-right: calc(50% - 47.5vw);
+		margin-left: calc(50% - 47.5vw);
+		transform: translateX(-50%);
+	}
+
+	.alignfull {
+		position: relative;
+		right: 50%;
+		left: 50%;
+		width: 100vw;
+		max-width: 100vw;
+		margin-right: -50vw;
+		margin-left: -50vw;
 	}
 
 	.wp-block-image .aligncenter > figcaption,

@@ -15,7 +15,12 @@ get_header(); ?>
 	if ( have_posts() ) {
 		while ( have_posts() ) {
 			the_post();
-			get_template_part( 'parts/content', 'page' );
+
+			if ( is_single() ) {
+				get_template_part( 'parts/content', 'post' );
+			} else {
+				get_template_part( 'parts/content', 'page' );
+			}
 		}
 	}
 	?>

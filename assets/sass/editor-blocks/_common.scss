@@ -56,6 +56,10 @@
 		letter-spacing: $base_letter_spacing;
 		word-break: break-word;
 
+		@media (max-width: 599px) {
+			max-width: calc(100% - 28px);
+		}
+
 		.wp-block {
 			color: inherit;
 		}
@@ -72,6 +76,14 @@
 				margin-top: 0;
 				margin-bottom: 0;
 			}
+		}
+
+		&[data-align="wide"] {
+			max-width: 1000px;
+		}
+
+		&[data-align="full"] {
+			max-width: none;
 		}
 
 		&:not(.editor-post-title__block) a {

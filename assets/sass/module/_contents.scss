@@ -19,12 +19,6 @@
 
 		.main {
 			display: block;
-			width: 100%;
-			margin: 0 auto;
-
-			@include mq(lg-min) {
-				max-width: 1200px;
-			}
 		}
 	}
 

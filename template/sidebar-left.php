@@ -17,7 +17,7 @@ get_header(); ?>
 			the_post();
 
 			if ( is_single() ) {
-				get_template_part( 'parts/content', 'single' );
+				get_template_part( 'parts/content', 'post' );
 			} else {
 				get_template_part( 'parts/content', 'page' );
 			}

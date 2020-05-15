@@ -395,7 +395,7 @@ function neomorphic_contents_class() {
 	} elseif ( is_page_template( 'template/sidebar-right.php' ) ) {
 		$class = ' contents--sidebar-right';
 	} elseif ( is_page_template( 'template/sidebar-none.php' ) || is_attachment() ) {
-		$class = '';
+		$class = ' contents--sidebar-none';
 	} else {
 		// Use customizer settings if the page template is not used.
 		if (
@@ -407,7 +407,7 @@ function neomorphic_contents_class() {
 		) {
 			$class = ' contents--sidebar-' . $display_position;
 		} else {
-			$class = '';
+			$class = ' contents--sidebar-none';
 		}
 	}
 
