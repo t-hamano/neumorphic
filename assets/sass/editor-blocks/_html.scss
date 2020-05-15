@@ -1,0 +1,11 @@
+/*----------------------
+# Custom HTML
+----------------------*/
+
+[data-type="core/html"] {
+
+	.wp-block-html .block-editor-plain-text {
+		font-size: 0.9em;
+		font-family: $base_code_font_family;
+	}
+}

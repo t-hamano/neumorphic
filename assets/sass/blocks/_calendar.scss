@@ -1,0 +1,66 @@
+/*----------------------
+# Calendar
+----------------------*/
+
+.wp-block-calendar {
+
+	@include nm;
+	max-width: 350px;
+	margin-bottom: 2em;
+	padding: 1.5em 1em;
+	border-radius: $base_border_radius;
+
+	.wp-calendar-table {
+		width: 100%;
+		table-layout: fixed;
+		box-shadow: none;
+
+		caption {
+			margin-bottom: 1em;
+			font-weight: bold;
+		}
+
+		thead th {
+			font-weight: bold;
+			text-align: center;
+			background: transparent;
+			border: none;
+		}
+
+		tbody td {
+			padding: 0;
+			padding: 0.3em;
+			line-height: 2.4;
+			text-align: center;
+			border: none;
+
+			a {
+
+				@include nm-button;
+				display: block;
+				color: var(--color-accent);
+				font-weight: bold;
+				border-radius: $base_border_radius;
+			}
+		}
+	}
+
+	.wp-calendar-nav {
+		display: flex;
+		justify-content: space-between;
+		padding-top: 0.5em;
+
+		a {
+			padding: 0.5em;
+			color: var(--color-accent);
+			text-decoration: none;
+
+			@include mq(lg-min) {
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}

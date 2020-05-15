@@ -1,0 +1,51 @@
+/*----------------------
+# Table
+----------------------*/
+
+[data-type="core/table"] {
+
+	.wp-block-table {
+		overflow-x: initial;
+
+		table {
+
+			@include nm;
+			width: auto;
+			margin-bottom: 0.5em;
+			border-radius: $base_border_radius;
+
+		}
+
+		th,
+		td {
+			padding: 1em;
+			border: none;
+			border-right: 1px solid var(--color-nm-dark);
+			border-bottom: 1px solid var(--color-nm-dark);
+
+			&:last-child {
+				border-right: none;
+			}
+		}
+
+		thead th {
+			text-align: left;
+			border-bottom-width: 3px;
+		}
+
+		tbody tr:last-child td {
+			border-bottom: none;
+		}
+
+		tfoot td {
+			border-top: 3px solid var(--color-nm-dark);
+			border-bottom: none;
+		}
+
+		figcaption {
+			margin-top: 1em;
+			color: inherit;
+			font-size: 0.9em;
+		}
+	}
+}

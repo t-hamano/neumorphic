@@ -1,0 +1,17 @@
+/*----------------------
+# Code
+----------------------*/
+
+[data-type="core/code"] {
+
+	.wp-block-code {
+
+		@include nm-reverse;
+		padding: 2em;
+		border-radius: $base_border_radius;
+
+		.block-editor-plain-text {
+			background: transparent;
+		}
+	}
+}

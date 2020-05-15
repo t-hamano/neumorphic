@@ -1,0 +1,36 @@
+/*----------------------
+# Image
+----------------------*/
+
+[data-type="core/image"] {
+
+	.wp-block-image {
+
+		img {
+
+			@include nm-media;
+		}
+
+		figcaption {
+			display: block;
+			margin-top: 0.5em;
+			margin-bottom: 0;
+			color: inherit;
+			font-size: 0.8em;
+			text-align: inherit;
+			opacity: $text_color_thin;
+		}
+
+		&.is-style-rounded img {
+			border-radius: 50%;
+		}
+	}
+
+	&[data-align="left"],
+	&[data-align="right"] {
+
+		figcaption {
+			text-align: center;
+		}
+	}
+}

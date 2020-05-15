@@ -1,0 +1,21 @@
+/*----------------------
+# Page Break
+----------------------*/
+
+[data-type="core/nextpage"] {
+
+	.wp-block-nextpage {
+
+		&::before {
+			border-top: 3px var(--color-accent) solid;
+		}
+
+		> span {
+			min-height: 30px;
+			color: var(--color-accent);
+			font-family: inherit;
+			line-height: normal;
+			background: var(--color-nm-light);
+		}
+	}
+}

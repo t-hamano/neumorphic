@@ -1,0 +1,31 @@
+/*----------------------
+# Image
+----------------------*/
+
+.wp-block-image {
+	margin-bottom: 2em;
+
+	> a {
+
+		@include nm-media-link;
+	}
+
+	.aligncenter,
+	.alignleft,
+	.alignright,
+	.is-resized {
+
+		> figcaption {
+			display: block;
+			text-align: center;
+
+			@include mq(md-max) {
+				text-align: center;
+			}
+		}
+	}
+
+	&.is-style-rounded img {
+		border-radius: 50%;
+	}
+}

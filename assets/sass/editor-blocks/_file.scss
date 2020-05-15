@@ -1,0 +1,26 @@
+/*----------------------
+# File
+----------------------*/
+
+[data-type="core/file"] {
+
+	.wp-block-file {
+
+		.wp-block-file__textlink {
+			margin-bottom: 0.5em;
+			color: var(--color-text-link);
+		}
+
+		.wp-block-file__button-richtext-wrapper {
+			margin-bottom: 0.5em;
+		}
+
+		.wp-block-file__button {
+
+			@include nm-button-editor();
+			color: var(--color-accent);
+			font-size: 0.8em;
+			border-radius: 1000px;
+		}
+	}
+}

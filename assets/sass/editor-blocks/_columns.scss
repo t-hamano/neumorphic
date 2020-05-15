@@ -1,0 +1,24 @@
+/*----------------------
+# Columns
+----------------------*/
+
+[data-type="core/columns"] {
+
+	.wp-block-columns {
+
+		&.has-background {
+			padding: 0 1em;
+		}
+
+		&.is-style-nm {
+
+			@include nm;
+			padding: 0 1em;
+			border-radius: $base_border_radius;
+		}
+
+		.wp-block:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

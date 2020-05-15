@@ -1,0 +1,35 @@
+/*------------------------------------------
+# Block Settings
+------------------------------------------*/
+
+/*----------------------
+## Color
+----------------------*/
+
+.has-bg-color {
+	color: var(--color-bg);
+}
+
+.has-dark-color {
+	color: var(--color-nm-dark);
+}
+
+.has-light-color {
+	color: var(--color-nm-light);
+}
+
+.has-main-text-color {
+	color: var(--color-text-main);
+}
+
+.has-accent-color {
+	color: var(--color-accent);
+}
+
+.has-link-text-color {
+	color: var(--color-text-link);
+}
+
+.has-white-color {
+	color: #fff;
+}

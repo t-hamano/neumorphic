@@ -1,0 +1,57 @@
+/*----------------------
+# Gallery
+----------------------*/
+
+[data-type="core/gallery"] {
+
+	.wp-block-gallery {
+
+		.blocks-gallery-grid.blocks-gallery-grid {
+			margin: 0;
+			padding: 0;
+		}
+
+		.blocks-gallery-image,
+		.blocks-gallery-item {
+
+			figure {
+				justify-content: center;
+			}
+
+			figcaption {
+				bottom: 5px;
+				left: 5px;
+				width: calc(100% - 10px);
+				max-height: calc(100% - 10px);
+				padding: 0.5em;
+				font-size: 0.8em;
+				background: rgba(0, 0, 0, 0.6);
+				border-radius: 0 0 $base_border_radius $base_border_radius;
+			}
+
+			img {
+				width: 100%;
+			}
+		}
+
+		> figcaption {
+			color: inherit;
+			font-size: 0.8em;
+			opacity: $text_color_thin;
+		}
+
+		&.is-style-nm {
+
+			@include nm;
+			padding: 1em;
+			border-radius: $base_border_radius;
+		}
+
+		&.is-style-nm-reverse {
+
+			@include nm-reverse;
+			padding: 1em;
+			border-radius: $base_border_radius;
+		}
+	}
+}
