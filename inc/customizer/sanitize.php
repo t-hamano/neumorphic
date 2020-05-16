@@ -1,21 +1,21 @@
 <?php
 /**
- * Neomorphic sanitizer
+ * Neumorphic sanitizer
  *
- * @package neomorphic
+ * @package neumorphic
  */
 
 /**
  * Checkbox
  */
-function neomorphic_sanitize_checkbox( $checked ) {
+function neumorphic_sanitize_checkbox( $checked ) {
 	return ( isset( $checked ) && true === $checked ) ? true : false;
 }
 
 /**
  * Select (Color skin)
  */
-function neomorphic_sanitize_choices_color_skin( $select ) {
+function neumorphic_sanitize_choices_color_skin( $select ) {
 	$valid = array_keys( NEOMORPHIC_COLOR_SKIN );
 
 	if ( in_array( $select, $valid, true ) ) {
@@ -28,7 +28,7 @@ function neomorphic_sanitize_choices_color_skin( $select ) {
 /**
  * Select (Sidebar)
  */
-function neomorphic_sanitize_choices_sidebar( $select ) {
+function neumorphic_sanitize_choices_sidebar( $select ) {
 	$valid = array( 'left', 'right' );
 
 	if ( in_array( $select, $valid, true ) ) {
@@ -41,9 +41,9 @@ function neomorphic_sanitize_choices_sidebar( $select ) {
 /**
  * Select (SNS icon)
  */
-function neomorphic_sanitize_choices_sns( $select ) {
+function neumorphic_sanitize_choices_sns( $select ) {
 	$valid = array_merge(
-		array( 'none' => __( 'None', 'neomorphic' ) ),
+		array( 'none' => __( 'None', 'neumorphic' ) ),
 		NEOMORPHIC_SNS_CHOICE
 	);
 
@@ -57,7 +57,7 @@ function neomorphic_sanitize_choices_sns( $select ) {
 /**
  * HTML (Footer credit)
  */
-function neomorphic_sanitize_footer_credit( $textarea ) {
+function neumorphic_sanitize_footer_credit( $textarea ) {
 	$allowed_html = array(
 		'a'      => array(
 			'href'    => array(),
@@ -75,7 +75,7 @@ function neomorphic_sanitize_footer_credit( $textarea ) {
 /**
  * File uploader (Image)
  */
-function neomorphic_sanitize_image( $image, $setting ) {
+function neumorphic_sanitize_image( $image, $setting ) {
 	$mimes = array(
 		'jpg|jpeg|jpe' => 'image/jpeg',
 		'gif'          => 'image/gif',

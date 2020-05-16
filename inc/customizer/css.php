@@ -1,15 +1,15 @@
 <?php
 /**
- * Neomorphic customizer CSS generator.
+ * Neumorphic customizer CSS generator.
  *
- * @package neomorphic
+ * @package neumorphic
  */
 
 /**
  * Generate CSS styles from customizer options.
  */
 
-function neomorphic_generate_css() {
+function neumorphic_generate_css() {
 	// Get customizer variables.
 	$color_bg                  = esc_html( get_theme_mod( 'color_bg', NEOMORPHIC_COLOR_SKIN['default']['bg'] ) );
 	$color_text_main           = esc_html( get_theme_mod( 'color_text_main', NEOMORPHIC_COLOR_SKIN['default']['text_main'] ) );
@@ -22,9 +22,9 @@ function neomorphic_generate_css() {
 		$color_text_border_color = 'none';
 	}
 
-	// Get a new color based on the neomorphic design and append CSS.
-	$light_color = neomorphic_generate_new_color( $color_bg, 0.1 );
-	$dark_color  = neomorphic_generate_new_color( $color_bg, -0.15 );
+	// Get a new color based on the neumorphic design and append CSS.
+	$light_color = neumorphic_generate_new_color( $color_bg, 0.1 );
+	$dark_color  = neumorphic_generate_new_color( $color_bg, -0.15 );
 
 	// Generate CSS variables.
 	$styles = array(

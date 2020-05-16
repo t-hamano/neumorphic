@@ -2,7 +2,7 @@
 /**
  * The template for displaying all pages
  *
- * @package neomorphic
+ * @package neumorphic
  */
 
 get_header(); ?>

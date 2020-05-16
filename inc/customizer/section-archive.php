@@ -1,16 +1,16 @@
 <?php
 /**
- * Neomorphic customizer (Archive page section)
+ * Neumorphic customizer (Archive page section)
  *
- * @package neomorphic
+ * @package neumorphic
  */
 
-function neomorphic_customizer_archive( $wp_customize ) {
+function neumorphic_customizer_archive( $wp_customize ) {
 	// Section
 	$wp_customize->add_section(
 		'section_archive',
 		array(
-			'title'    => __( 'Archive Page Setting', 'neomorphic' ),
+			'title'    => __( 'Archive Page Setting', 'neumorphic' ),
 			'priority' => 150,
 		)
 	);
@@ -20,7 +20,7 @@ function neomorphic_customizer_archive( $wp_customize ) {
 		'archive_default_image',
 		array(
 			'default'           => '',
-			'sanitize_callback' => 'neomorphic_sanitize_image',
+			'sanitize_callback' => 'neumorphic_sanitize_image',
 		)
 	);
 
@@ -31,11 +31,11 @@ function neomorphic_customizer_archive( $wp_customize ) {
 			array(
 				'section'     => 'section_archive',
 				'settings'    => 'archive_default_image',
-				'label'       => __( 'Default thumbnail image', 'neomorphic' ),
-				'description' => __( 'Display when no thumbnail image is set.', 'neomorphic' ),
+				'label'       => __( 'Default thumbnail image', 'neumorphic' ),
+				'description' => __( 'Display when no thumbnail image is set.', 'neumorphic' ),
 			)
 		)
 	);
 }
 
-add_action( 'customize_register', 'neomorphic_customizer_archive' );
+add_action( 'customize_register', 'neumorphic_customizer_archive' );

@@ -2,7 +2,7 @@
 /**
  * Parts for archive pagination
  *
- * @package neomorphic
+ * @package neumorphic
  */
 ?>
 
@@ -20,9 +20,9 @@ $pages = paginate_links(
 		'total'              => $wp_query->max_num_pages,
 		'type'               => 'array',
 		'mid_size'           => 1,
-		'prev_text'          => '<i class="fa fa-angle-left" title="' . __( 'Previous page', 'neomorphic' ) . '"></i>',
-		'next_text'          => '<i class="fa fa-angle-right" title="' . __( 'Next page', 'neomorphic' ) . '"></i>',
-		'before_page_number' => '<span class="screen-reader-text">' . __( 'Page Number', 'neomorphic' ) . '</span>',
+		'prev_text'          => '<i class="fa fa-angle-left" title="' . __( 'Previous page', 'neumorphic' ) . '"></i>',
+		'next_text'          => '<i class="fa fa-angle-right" title="' . __( 'Next page', 'neumorphic' ) . '"></i>',
+		'before_page_number' => '<span class="screen-reader-text">' . __( 'Page Number', 'neumorphic' ) . '</span>',
 	)
 );
 ?>

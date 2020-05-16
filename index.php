@@ -2,7 +2,7 @@
 /**
  * The main template file
  *
- * @package neomorphic
+ * @package neumorphic
  */
 
 get_header(); ?>

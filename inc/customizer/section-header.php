@@ -1,16 +1,16 @@
 <?php
 /**
- * Neomorphic customizer (Header section)
+ * Neumorphic customizer (Header section)
  *
- * @package neomorphic
+ * @package neumorphic
  */
 
-function neomorphic_customizer_header( $wp_customize ) {
+function neumorphic_customizer_header( $wp_customize ) {
 	// Section
 	$wp_customize->add_section(
 		'section_header',
 		array(
-			'title'    => __( 'Header Setting', 'neomorphic' ),
+			'title'    => __( 'Header Setting', 'neumorphic' ),
 			'priority' => 120,
 		)
 	);
@@ -20,7 +20,7 @@ function neomorphic_customizer_header( $wp_customize ) {
 		'header_search_display',
 		array(
 			'default'           => NEOMORPHIC_HEADER_SEARCH_DISPLAY,
-			'sanitize_callback' => 'neomorphic_sanitize_checkbox',
+			'sanitize_callback' => 'neumorphic_sanitize_checkbox',
 		)
 	);
 
@@ -29,7 +29,7 @@ function neomorphic_customizer_header( $wp_customize ) {
 		array(
 			'section'  => 'section_header',
 			'settings' => 'header_search_display',
-			'label'    => __( 'Display search bar on header (Desktop view)', 'neomorphic' ),
+			'label'    => __( 'Display search bar on header (Desktop view)', 'neumorphic' ),
 			'type'     => 'checkbox',
 		)
 	);
@@ -39,7 +39,7 @@ function neomorphic_customizer_header( $wp_customize ) {
 		'header_sns_display',
 		array(
 			'default'           => NEOMORPHIC_HEADER_SNS_DISPLAY,
-			'sanitize_callback' => 'neomorphic_sanitize_checkbox',
+			'sanitize_callback' => 'neumorphic_sanitize_checkbox',
 		)
 	);
 
@@ -48,10 +48,10 @@ function neomorphic_customizer_header( $wp_customize ) {
 		array(
 			'section'  => 'section_header',
 			'settings' => 'header_sns_display',
-			'label'    => __( 'Display SNS icon on header', 'neomorphic' ),
+			'label'    => __( 'Display SNS icon on header', 'neumorphic' ),
 			'type'     => 'checkbox',
 		)
 	);
 }
 
-add_action( 'customize_register', 'neomorphic_customizer_header' );
+add_action( 'customize_register', 'neumorphic_customizer_header' );

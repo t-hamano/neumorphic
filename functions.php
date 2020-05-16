@@ -1,8 +1,8 @@
 <?php
 /**
- * Neomorphic functions and definitions
+ * Neumorphic functions and definitions
  *
- * @package neomorphic
+ * @package neumorphic
  */
 
 // Theme Constants

@@ -3,9 +3,9 @@
  * Template Name: No Sidebar
  * Template Post Type: post, page
  *
- * @package neomorphic
+ * @package neumorphic
  */
-__( 'No Sidebar', 'neomorphic' );
+__( 'No Sidebar', 'neumorphic' );
 
 get_header(); ?>
 

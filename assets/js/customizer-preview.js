@@ -24,7 +24,7 @@
 
 		value.bind( function( color ) {
 
-			// Get a new color based on the neomorphic design and append CSS.
+			// Get a new color based on the neumorphic design and append CSS.
 			var lightColor = generateNewColor ( color, 0.1 );
 			var darkColor = generateNewColor ( color, -0.15 );
 

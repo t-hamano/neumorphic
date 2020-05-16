@@ -3,9 +3,9 @@
  * Template Name: Right Sidebar
  * Template Post Type: post, page
  *
- * @package neomorphic
+ * @package neumorphic
  */
-__( 'Right Sidebar', 'neomorphic' );
+__( 'Right Sidebar', 'neumorphic' );
 
 get_header(); ?>
 

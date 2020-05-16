@@ -2,7 +2,7 @@
 /**
  * The template for displaying search results pages
  *
- * @package neomorphic
+ * @package neumorphic
  */
 
 get_header(); ?>
@@ -14,7 +14,7 @@ get_header(); ?>
 				<?php
 				printf(
 					/* translators: 1: search keyword */
-					esc_html__( 'Search results for : %s', 'neomorphic' ),
+					esc_html__( 'Search results for : %s', 'neumorphic' ),
 					get_search_query()
 				);
 				?>
@@ -36,8 +36,8 @@ get_header(); ?>
 
 			<?php else : ?>
 
-				<p><?php esc_html_e( 'It looks like nothing was found at the location.', 'neomorphic' ); ?></p>
-				<p><?php esc_html_e( 'Enter a keyword below and try searching.', 'neomorphic' ); ?></p>
+				<p><?php esc_html_e( 'It looks like nothing was found at the location.', 'neumorphic' ); ?></p>
+				<p><?php esc_html_e( 'Enter a keyword below and try searching.', 'neumorphic' ); ?></p>
 				<?php
 					get_search_form();
 			endif;

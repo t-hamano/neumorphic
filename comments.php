@@ -2,7 +2,7 @@
 /**
  * The template for displaying comments
  *
- * @package neomorphic
+ * @package neumorphic
  */
 
 if ( post_password_required() ) {
@@ -24,7 +24,7 @@ if ( post_password_required() ) {
 							'%1$s comment',
 							'%1$s comments',
 							$comment_count,
-							'neomorphic'
+							'neumorphic'
 						)
 					),
 					number_format_i18n( $comment_count ),
@@ -56,7 +56,7 @@ if ( post_password_required() ) {
 		<?php endif; ?>
 
 		<?php if ( ! comments_open() ) : ?>
-			<p class="c-comment__no-comment"><?php esc_html_e( 'Comments are closed.', 'neomorphic' ); ?></p>
+			<p class="c-comment__no-comment"><?php esc_html_e( 'Comments are closed.', 'neumorphic' ); ?></p>
 			<?php
 		endif;
 

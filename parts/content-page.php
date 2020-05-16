@@ -2,7 +2,7 @@
 /**
  * Parts for displaying page content
  *
- * @package neomorphic
+ * @package neumorphic
  */
 
 ?>
@@ -33,7 +33,7 @@
 	);
 
 	edit_post_link(
-		__( 'Edit This Post', 'neomorphic' ),
+		__( 'Edit This Post', 'neumorphic' ),
 		'<div class="c-entry__edit">',
 		'</div>',
 		'',

@@ -1,16 +1,16 @@
 <?php
 /**
- * Neomorphic customizer (Footer section)
+ * Neumorphic customizer (Footer section)
  *
- * @package neomorphic
+ * @package neumorphic
  */
 
-function neomorphic_customizer_footer( $wp_customize ) {
+function neumorphic_customizer_footer( $wp_customize ) {
 	// Section
 	$wp_customize->add_section(
 		'section_footer',
 		array(
-			'title'    => __( 'Footer Setting', 'neomorphic' ),
+			'title'    => __( 'Footer Setting', 'neumorphic' ),
 			'priority' => 130,
 		)
 	);
@@ -20,7 +20,7 @@ function neomorphic_customizer_footer( $wp_customize ) {
 		'footer_sns_display',
 		array(
 			'default'           => NEOMORPHIC_FOOTER_SNS_DISPLAY,
-			'sanitize_callback' => 'neomorphic_sanitize_checkbox',
+			'sanitize_callback' => 'neumorphic_sanitize_checkbox',
 		)
 	);
 
@@ -29,7 +29,7 @@ function neomorphic_customizer_footer( $wp_customize ) {
 		array(
 			'section'  => 'section_footer',
 			'settings' => 'footer_sns_display',
-			'label'    => __( 'Display SNS icon on footer', 'neomorphic' ),
+			'label'    => __( 'Display SNS icon on footer', 'neumorphic' ),
 			'type'     => 'checkbox',
 		)
 	);
@@ -39,7 +39,7 @@ function neomorphic_customizer_footer( $wp_customize ) {
 		'footer_credit',
 		array(
 			'default'           => NEOMORPHIC_FOOTER_CREDIT,
-			'sanitize_callback' => 'neomorphic_sanitize_footer_credit',
+			'sanitize_callback' => 'neumorphic_sanitize_footer_credit',
 		)
 	);
 
@@ -48,11 +48,11 @@ function neomorphic_customizer_footer( $wp_customize ) {
 		array(
 			'section'     => 'section_footer',
 			'settings'    => 'footer_credit',
-			'label'       => __( 'Credit', 'neomorphic' ),
+			'label'       => __( 'Credit', 'neumorphic' ),
 			'type'        => 'textarea',
-			'description' => __( 'HTML tags can use &lt;a&gt;, &lt;br&gt;, &lt;strong&gt;, &lt;b&gt;.', 'neomorphic' ),
+			'description' => __( 'HTML tags can use &lt;a&gt;, &lt;br&gt;, &lt;strong&gt;, &lt;b&gt;.', 'neumorphic' ),
 		)
 	);
 }
 
-add_action( 'customize_register', 'neomorphic_customizer_footer' );
+add_action( 'customize_register', 'neumorphic_customizer_footer' );

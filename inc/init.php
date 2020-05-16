@@ -1,16 +1,16 @@
 <?php
 /**
- * Neomorphic theme initialization
+ * Neumorphic theme initialization
  *
- * @package neomorphic
+ * @package neumorphic
  */
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  */
-function neomorphic_setup() {
+function neumorphic_setup() {
 	// Make theme available for translation.
-	load_theme_textdomain( 'neomorphic', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'neumorphic', get_template_directory() . '/languages' );
 
 	// Let WordPress manage the document title.
 	add_theme_support( 'title-tag' );
@@ -33,8 +33,8 @@ function neomorphic_setup() {
 	// Register navigation menus uses wp_nav_menu in one location.
 	register_nav_menus(
 		array(
-			'primary' => __( 'Desktop Menu', 'neomorphic' ),
-			'mobile'  => __( 'Mobile Menu', 'neomorphic' ),
+			'primary' => __( 'Desktop Menu', 'neumorphic' ),
+			'mobile'  => __( 'Mobile Menu', 'neumorphic' ),
 		)
 	);
 
@@ -68,46 +68,46 @@ function neomorphic_setup() {
 	$color_text_link         = esc_html( get_theme_mod( 'color_text_link', NEOMORPHIC_COLOR_SKIN['default']['text_link'] ) );
 	$color_text_border_color = esc_html( get_theme_mod( 'color_text_border_color', NEOMORPHIC_COLOR_SKIN['default']['text_border_color'] ) );
 
-	// Generate new colors based on the neomorphic design.
-	$color_dark  = neomorphic_generate_new_color( $color_bg, -0.15 );
-	$color_light = neomorphic_generate_new_color( $color_bg, 0.1 );
+	// Generate new colors based on the neumorphic design.
+	$color_dark  = neumorphic_generate_new_color( $color_bg, -0.15 );
+	$color_light = neumorphic_generate_new_color( $color_bg, 0.1 );
 
 	// Change block editor color palettes.
 	add_theme_support(
 		'editor-color-palette',
 		array(
 			array(
-				'name'  => __( 'Background color', 'neomorphic' ),
+				'name'  => __( 'Background color', 'neumorphic' ),
 				'slug'  => 'bg',
 				'color' => $color_bg,
 			),
 			array(
-				'name'  => __( 'Dark color', 'neomorphic' ),
+				'name'  => __( 'Dark color', 'neumorphic' ),
 				'slug'  => 'dark',
 				'color' => $color_dark,
 			),
 			array(
-				'name'  => __( 'Light color', 'neomorphic' ),
+				'name'  => __( 'Light color', 'neumorphic' ),
 				'slug'  => 'light',
 				'color' => $color_light,
 			),
 			array(
-				'name'  => __( 'Main text color', 'neomorphic' ),
+				'name'  => __( 'Main text color', 'neumorphic' ),
 				'slug'  => 'main-text',
 				'color' => $color_text_main,
 			),
 			array(
-				'name'  => __( 'Accent color', 'neomorphic' ),
+				'name'  => __( 'Accent color', 'neumorphic' ),
 				'slug'  => 'accent',
 				'color' => $color_accent,
 			),
 			array(
-				'name'  => __( 'Link text color', 'neomorphic' ),
+				'name'  => __( 'Link text color', 'neumorphic' ),
 				'slug'  => 'link-text',
 				'color' => $color_text_link,
 			),
 			array(
-				'name'  => __( 'White', 'neomorphic' ),
+				'name'  => __( 'White', 'neumorphic' ),
 				'slug'  => 'white',
 				'color' => '#fff',
 			),
@@ -119,52 +119,52 @@ function neomorphic_setup() {
 		'editor-gradient-presets',
 		array(
 			array(
-				'name'     => __( 'Dark and light color', 'neomorphic' ),
+				'name'     => __( 'Dark and light color', 'neumorphic' ),
 				'gradient' => 'linear-gradient(135deg,' . $color_dark . ', ' . $color_light . ')',
 				'slug'     => 'dark-light',
 			),
 			array(
-				'name'     => __( 'Dark and main text color', 'neomorphic' ),
+				'name'     => __( 'Dark and main text color', 'neumorphic' ),
 				'gradient' => 'linear-gradient(135deg,' . $color_dark . ', ' . $color_text_main . ')',
 				'slug'     => 'dark-text-main',
 			),
 			array(
-				'name'     => __( 'Dark and accent color', 'neomorphic' ),
+				'name'     => __( 'Dark and accent color', 'neumorphic' ),
 				'gradient' => 'linear-gradient(135deg,' . $color_dark . ', ' . $color_accent . ')',
 				'slug'     => 'dark-accent',
 			),
 			array(
-				'name'     => __( 'Dark and link text color', 'neomorphic' ),
+				'name'     => __( 'Dark and link text color', 'neumorphic' ),
 				'gradient' => 'linear-gradient(135deg,' . $color_dark . ', ' . $color_text_link . ')',
 				'slug'     => 'dark-link-text',
 			),
 			array(
-				'name'     => __( 'Light and main text color', 'neomorphic' ),
+				'name'     => __( 'Light and main text color', 'neumorphic' ),
 				'gradient' => 'linear-gradient(135deg,' . $color_light . ', ' . $color_text_main . ')',
 				'slug'     => 'light-main-text',
 			),
 			array(
-				'name'     => __( 'Light and accent color', 'neomorphic' ),
+				'name'     => __( 'Light and accent color', 'neumorphic' ),
 				'gradient' => 'linear-gradient(135deg,' . $color_light . ', ' . $color_accent . ')',
 				'slug'     => 'light-accent',
 			),
 			array(
-				'name'     => __( 'Light and link text color', 'neomorphic' ),
+				'name'     => __( 'Light and link text color', 'neumorphic' ),
 				'gradient' => 'linear-gradient(135deg,' . $color_light . ', ' . $color_text_link . ')',
 				'slug'     => 'light-link-text',
 			),
 			array(
-				'name'     => __( 'Main text and accent color', 'neomorphic' ),
+				'name'     => __( 'Main text and accent color', 'neumorphic' ),
 				'gradient' => 'linear-gradient(135deg,' . $color_text_main . ', ' . $color_accent . ')',
 				'slug'     => 'main-text-accent',
 			),
 			array(
-				'name'     => __( 'Main text and link text color', 'neomorphic' ),
+				'name'     => __( 'Main text and link text color', 'neumorphic' ),
 				'gradient' => 'linear-gradient(135deg,' . $color_text_main . ', ' . $color_text_link . ')',
 				'slug'     => 'main-text-link-text',
 			),
 			array(
-				'name'     => __( 'Accent and link text color', 'neomorphic' ),
+				'name'     => __( 'Accent and link text color', 'neumorphic' ),
 				'gradient' => 'linear-gradient(135deg,' . $color_accent . ', ' . $color_text_link . ')',
 				'slug'     => 'accent-link-text',
 			),
@@ -176,22 +176,22 @@ function neomorphic_setup() {
 		'editor-font-sizes',
 		array(
 			array(
-				'name' => __( 'Small', 'neomorphic' ),
+				'name' => __( 'Small', 'neumorphic' ),
 				'size' => 13,
 				'slug' => 'small',
 			),
 			array(
-				'name' => __( 'Medium', 'neomorphic' ),
+				'name' => __( 'Medium', 'neumorphic' ),
 				'size' => 19,
 				'slug' => 'medium',
 			),
 			array(
-				'name' => __( 'Large', 'neomorphic' ),
+				'name' => __( 'Large', 'neumorphic' ),
 				'size' => 26,
 				'slug' => 'large',
 			),
 			array(
-				'name' => __( 'Huge', 'neomorphic' ),
+				'name' => __( 'Huge', 'neumorphic' ),
 				'size' => 32,
 				'slug' => 'huge',
 			),
@@ -199,101 +199,101 @@ function neomorphic_setup() {
 	);
 }
 
-add_action( 'after_setup_theme', 'neomorphic_setup' );
+add_action( 'after_setup_theme', 'neumorphic_setup' );
 
 /**
  * Register and enqueue front-end styles.
  */
-function neomorphic_scripts() {
+function neumorphic_scripts() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 
 	// Font Awesome
-	wp_enqueue_style( 'neomorphic-style-fontawesome', get_theme_file_uri() . '/assets/packages/font-awesome/css/all.min.css', array(), $theme_version );
+	wp_enqueue_style( 'neumorphic-style-fontawesome', get_theme_file_uri() . '/assets/packages/font-awesome/css/all.min.css', array(), $theme_version );
 
 	// Main style
-	wp_enqueue_style( 'neomorphic-style-front-main', get_theme_file_uri() . '/assets/css/style.min.css', array(), $theme_version );
+	wp_enqueue_style( 'neumorphic-style-front-main', get_theme_file_uri() . '/assets/css/style.min.css', array(), $theme_version );
 
 	// Customizer output inline CSS
-	wp_add_inline_style( 'neomorphic-style-front-main', neomorphic_generate_css() );
+	wp_add_inline_style( 'neumorphic-style-front-main', neumorphic_generate_css() );
 
 	// Main Script
-	wp_enqueue_script( 'neomorphic-script-main', get_theme_file_uri() . '/assets/js/main.js', array( 'jquery' ), $theme_version, false );
+	wp_enqueue_script( 'neumorphic-script-main', get_theme_file_uri() . '/assets/js/main.js', array( 'jquery' ), $theme_version, false );
 
 	// CSS custom properties support for legacy and modern browsers
-	wp_enqueue_script( 'neomorphic-script-ponyfill', 'https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2', array(), $theme_version );
+	wp_enqueue_script( 'neumorphic-script-ponyfill', 'https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2', array(), $theme_version );
 }
 
-add_action( 'wp_enqueue_scripts', 'neomorphic_scripts' );
+add_action( 'wp_enqueue_scripts', 'neumorphic_scripts' );
 
 /**
  * Register and enqueue block editor styles.
  */
-function neomorphic_block_editor_styles() {
+function neumorphic_block_editor_styles() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 
 	// Main style
-	wp_enqueue_style( 'neomorphic-style-block-editor', get_theme_file_uri() . '/assets/css/editor-style-block.min.css', array(), $theme_version );
+	wp_enqueue_style( 'neumorphic-style-block-editor', get_theme_file_uri() . '/assets/css/editor-style-block.min.css', array(), $theme_version );
 
 	// Customizer output inline CSS
-	wp_add_inline_style( 'neomorphic-style-block-editor', neomorphic_generate_css() );
+	wp_add_inline_style( 'neumorphic-style-block-editor', neumorphic_generate_css() );
 
 	// Main script.
-	wp_enqueue_script( 'neomorphic-script-block-editor', get_theme_file_uri() . '/assets/js/editor-block.js', array( 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-dom' ), $theme_version, true );
+	wp_enqueue_script( 'neumorphic-script-block-editor', get_theme_file_uri() . '/assets/js/editor-block.js', array( 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-dom' ), $theme_version, true );
 
 	// CSS custom properties support for legacy and modern browsers
-	wp_enqueue_script( 'neomorphic-script-ponyfill', 'https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2', array(), $theme_version );
+	wp_enqueue_script( 'neumorphic-script-ponyfill', 'https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2', array(), $theme_version );
 
-		wp_set_script_translations( 'neomorphic-script-block-editor', 'neomorphic', '/languages' );
+		wp_set_script_translations( 'neumorphic-script-block-editor', 'neumorphic', '/languages' );
 }
 
-add_action( 'enqueue_block_editor_assets', 'neomorphic_block_editor_styles' );
+add_action( 'enqueue_block_editor_assets', 'neumorphic_block_editor_styles' );
 
 
 /**
  * Register and enqueue classic editor styles.
  */
-function neomorphic_classic_editor_style() {
+function neumorphic_classic_editor_style() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 
 	// Main style
 	add_editor_style( '/assets/css/editor-style-classic.min.css' );
 
 }
-add_action( 'admin_init', 'neomorphic_classic_editor_style' );
+add_action( 'admin_init', 'neumorphic_classic_editor_style' );
 
 
 /**
  * Add inline style to classic editor.
  */
-function neomorphic_classic_editor_inline_style( $settings ) {
-	$settings['content_style'] = neomorphic_generate_css();
+function neumorphic_classic_editor_inline_style( $settings ) {
+	$settings['content_style'] = neumorphic_generate_css();
 	return $settings;
 }
 
-add_filter( 'tiny_mce_before_init', 'neomorphic_classic_editor_inline_style' );
+add_filter( 'tiny_mce_before_init', 'neumorphic_classic_editor_inline_style' );
 
 /**
  * Enqueue WordPress media player styles.
  */
-function neomorphic_footer_scripts() {
+function neumorphic_footer_scripts() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 
 	if ( wp_style_is( 'wp-mediaelement', 'enqueued' ) ) {
-		wp_enqueue_style( 'neomorphic-style-mediaelement', get_theme_file_uri() . '/assets/css/mediaelement.min.css', array( 'wp-mediaelement' ), $theme_version );
+		wp_enqueue_style( 'neumorphic-style-mediaelement', get_theme_file_uri() . '/assets/css/mediaelement.min.css', array( 'wp-mediaelement' ), $theme_version );
 	}
 }
 
-add_action( 'wp_footer', 'neomorphic_footer_scripts' );
+add_action( 'wp_footer', 'neumorphic_footer_scripts' );
 
 /**
  * Register Widget Area.
  */
-function neomorphic_widgets_init() {
+function neumorphic_widgets_init() {
 	// Sidebar
 	register_sidebar(
 		array(
-			'name'          => __( 'Sidebar', 'neomorphic' ),
-			'description'   => __( 'The display status and display position can be set from the customize menu.', 'neomorphic' ),
+			'name'          => __( 'Sidebar', 'neumorphic' ),
+			'description'   => __( 'The display status and display position can be set from the customize menu.', 'neumorphic' ),
 			'id'            => 'sidebar_main',
 			'before_widget' => '<div id="%1$s" class="widget clearfix %2$s">',
 			'after_widget'  => '</div>',
@@ -303,7 +303,7 @@ function neomorphic_widgets_init() {
 	);
 }
 
-add_action( 'widgets_init', 'neomorphic_widgets_init' );
+add_action( 'widgets_init', 'neumorphic_widgets_init' );
 
 /**
  * Filters the archive title and styles the word before the first colon.
@@ -312,7 +312,7 @@ add_action( 'widgets_init', 'neomorphic_widgets_init' );
  *
  * @return string $title Current archive title.
  */
-function neomorphic_get_the_archive_title( $title ) {
+function neumorphic_get_the_archive_title( $title ) {
 	if ( is_category() ) {
 		$title  = '<i class="fas fa-folder" aria-hidden="true"></i>';
 		$title .= single_cat_title( '', false );
@@ -320,24 +320,24 @@ function neomorphic_get_the_archive_title( $title ) {
 		$title  = '<i class="fas fa-tag" aria-hidden="true"></i>';
 		$title .= single_tag_title( '', false );
 	} elseif ( is_year() ) {
-		$title = get_the_date( _x( 'Y', 'yearly archives date format', 'neomorphic' ) );
+		$title = get_the_date( _x( 'Y', 'yearly archives date format', 'neumorphic' ) );
 	} elseif ( is_month() ) {
-		$title = get_the_date( _x( 'F Y', 'monthly archives date format', 'neomorphic' ) );
+		$title = get_the_date( _x( 'F Y', 'monthly archives date format', 'neumorphic' ) );
 	} elseif ( is_day() ) {
-		$title = get_the_date( _x( 'F j, Y', 'daily archives date format', 'neomorphic' ) );
+		$title = get_the_date( _x( 'F j, Y', 'daily archives date format', 'neumorphic' ) );
 	} elseif ( is_tax() ) {
 		$title  = '<i class="fas fa-folder" aria-hidden="true"></i>';
 		$title .= single_term_title( '', false );
 	} elseif ( is_post_type_archive() ) {
 		$title = post_type_archive_title( '', false );
 	} else {
-		$title = __( 'Archives', 'neomorphic' );
+		$title = __( 'Archives', 'neumorphic' );
 	}
 
 	return $title;
 }
 
-add_filter( 'get_the_archive_title', 'neomorphic_get_the_archive_title' );
+add_filter( 'get_the_archive_title', 'neumorphic_get_the_archive_title' );
 
 /**
  * Change the drawer/global navigation HTML structure
@@ -355,7 +355,7 @@ require( get_theme_file_path() . '/inc/classes/class-gnav-walker.php' );
  *
  * @return array $classes CSS classes applied to a menu item’s list item element.
  */
-function neomorphic_nav_class( $classes, $item, $args, $depth ) {
+function neumorphic_nav_class( $classes, $item, $args, $depth ) {
 	if ( 'primary' === $args->theme_location ) {
 		if ( 0 === $depth ) {
 			$classes[] = 'c-gnav__item';
@@ -373,14 +373,14 @@ function neomorphic_nav_class( $classes, $item, $args, $depth ) {
 	return $classes;
 }
 
-add_filter( 'nav_menu_css_class', 'neomorphic_nav_class', 10, 4 );
+add_filter( 'nav_menu_css_class', 'neumorphic_nav_class', 10, 4 );
 
 /**
  * Add conditional contents classes (Sidebar display position).
  *
  * @return string $class Class name added to the div.contents tag.
  */
-function neomorphic_contents_class() {
+function neumorphic_contents_class() {
 	// Get cutomizer settings.
 	$display_position = get_theme_mod( 'sidebar_position', NEOMORPHIC_SIDEBAR_POSITION );
 	$display_front    = get_theme_mod( 'sidebar_display_front', NEOMORPHIC_SIDEBAR_DISPLAY_FRONT );
@@ -422,7 +422,7 @@ function neomorphic_contents_class() {
  *
  * @return string $new_color HEX value.
  */
-function neomorphic_generate_new_color( $hex, $luminance ) {
+function neumorphic_generate_new_color( $hex, $luminance ) {
 	// Value expression check.
 	if ( ! preg_match( '/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/', $hex ) ) {
 		return $hex;

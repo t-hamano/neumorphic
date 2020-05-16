@@ -1,16 +1,16 @@
 <?php
 /**
- * Neomorphic customizer (Color section)
+ * Neumorphic customizer (Color section)
  *
- * @package neomorphic
+ * @package neumorphic
  */
 
-function neomorphic_customizer_color( $wp_customize ) {
+function neumorphic_customizer_color( $wp_customize ) {
 	// Section
 	$wp_customize->add_section(
 		'section_color',
 		array(
-			'title'    => __( 'Color', 'neomorphic' ),
+			'title'    => __( 'Color', 'neumorphic' ),
 			'priority' => 80,
 		)
 	);
@@ -20,7 +20,7 @@ function neomorphic_customizer_color( $wp_customize ) {
 		'color_skin',
 		array(
 			'default'           => 'default',
-			'sanitize_callback' => 'neomorphic_sanitize_choices_color_skin',
+			'sanitize_callback' => 'neumorphic_sanitize_choices_color_skin',
 			'transport'         => 'postMessage',
 		)
 	);
@@ -30,19 +30,19 @@ function neomorphic_customizer_color( $wp_customize ) {
 		array(
 			'section'     => 'section_color',
 			'settings'    => 'color_skin',
-			'label'       => __( 'Color skin', 'neomorphic' ),
+			'label'       => __( 'Color skin', 'neumorphic' ),
 			'type'        => 'select',
 			'choices'     => array(
-				'default'       => __( 'Default', 'neomorphic' ),
-				'cold_sweat'    => __( 'Cold Sweat', 'neomorphic' ),
-				'black_orpheus' => __( 'Black Orpheus', 'neomorphic' ),
-				'green_dolphin' => __( 'Green Dolphin', 'neomorphic' ),
-				'summertime'    => __( 'Summertime', 'neomorphic' ),
-				'brown_jub'     => __( 'Brown Jug', 'neomorphic' ),
-				'wine_roses'    => __( 'Wine & Roses', 'neomorphic' ),
-				'midnight_blue' => __( 'Midnight Blue', 'neomorphic' ),
+				'default'       => __( 'Default', 'neumorphic' ),
+				'cold_sweat'    => __( 'Cold Sweat', 'neumorphic' ),
+				'black_orpheus' => __( 'Black Orpheus', 'neumorphic' ),
+				'green_dolphin' => __( 'Green Dolphin', 'neumorphic' ),
+				'summertime'    => __( 'Summertime', 'neumorphic' ),
+				'brown_jub'     => __( 'Brown Jug', 'neumorphic' ),
+				'wine_roses'    => __( 'Wine & Roses', 'neumorphic' ),
+				'midnight_blue' => __( 'Midnight Blue', 'neumorphic' ),
 			),
-			'description' => __( 'Changing the color skin sets each color setting to the theme\'s default color.<br>You can also change the color setting individually after changing the color skin.', 'neomorphic' ),
+			'description' => __( 'Changing the color skin sets each color setting to the theme\'s default color.<br>You can also change the color setting individually after changing the color skin.', 'neumorphic' ),
 		)
 	);
 
@@ -63,7 +63,7 @@ function neomorphic_customizer_color( $wp_customize ) {
 			array(
 				'section'  => 'section_color',
 				'settings' => 'color_bg',
-				'label'    => __( 'Background color', 'neomorphic' ),
+				'label'    => __( 'Background color', 'neumorphic' ),
 			)
 		)
 	);
@@ -85,8 +85,8 @@ function neomorphic_customizer_color( $wp_customize ) {
 			array(
 				'section'     => 'section_color',
 				'settings'    => 'color_text_main',
-				'label'       => __( 'Main text color', 'neomorphic' ),
-				'description' => __( 'Set the color of main text.', 'neomorphic' ),
+				'label'       => __( 'Main text color', 'neumorphic' ),
+				'description' => __( 'Set the color of main text.', 'neumorphic' ),
 			)
 		)
 	);
@@ -108,8 +108,8 @@ function neomorphic_customizer_color( $wp_customize ) {
 			array(
 				'section'     => 'section_color',
 				'settings'    => 'color_accent',
-				'label'       => __( 'Accent color', 'neomorphic' ),
-				'description' => __( 'Set the color of title, SNS icons, widget title and so forth.', 'neomorphic' ),
+				'label'       => __( 'Accent color', 'neumorphic' ),
+				'description' => __( 'Set the color of title, SNS icons, widget title and so forth.', 'neumorphic' ),
 			)
 		)
 	);
@@ -131,8 +131,8 @@ function neomorphic_customizer_color( $wp_customize ) {
 			array(
 				'section'     => 'section_color',
 				'settings'    => 'color_text_link',
-				'label'       => __( 'Link text color', 'neomorphic' ),
-				'description' => __( 'Set the color of the link text in the article body.', 'neomorphic' ),
+				'label'       => __( 'Link text color', 'neumorphic' ),
+				'description' => __( 'Set the color of the link text in the article body.', 'neumorphic' ),
 			)
 		)
 	);
@@ -142,7 +142,7 @@ function neomorphic_customizer_color( $wp_customize ) {
 		'color_text_border_display',
 		array(
 			'default'           => NEOMORPHIC_COLOR_SKIN['default']['text_border_display'],
-			'sanitize_callback' => 'neomorphic_sanitize_checkbox',
+			'sanitize_callback' => 'neumorphic_sanitize_checkbox',
 			'transport'         => 'postMessage',
 		)
 	);
@@ -154,8 +154,8 @@ function neomorphic_customizer_color( $wp_customize ) {
 			array(
 				'section'     => 'section_color',
 				'settings'    => 'color_text_border_display',
-				'label'       => __( 'Enable border text', 'neomorphic' ),
-				'description' => __( 'Add a border to text so that it stands out from the background.<br>(Cover headlines, global menus and so forth.)', 'neomorphic' ),
+				'label'       => __( 'Enable border text', 'neumorphic' ),
+				'description' => __( 'Add a border to text so that it stands out from the background.<br>(Cover headlines, global menus and so forth.)', 'neumorphic' ),
 				'type'        => 'checkbox',
 			)
 		)
@@ -178,10 +178,10 @@ function neomorphic_customizer_color( $wp_customize ) {
 			array(
 				'section'  => 'section_color',
 				'settings' => 'color_text_border_color',
-				'label'    => __( 'Text border color', 'neomorphic' ),
+				'label'    => __( 'Text border color', 'neumorphic' ),
 			)
 		)
 	);
 }
 
-add_action( 'customize_register', 'neomorphic_customizer_color' );
+add_action( 'customize_register', 'neumorphic_customizer_color' );

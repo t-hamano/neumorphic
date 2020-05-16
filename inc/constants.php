@@ -1,8 +1,8 @@
 <?php
 /**
- * Neomorphic theme constants
+ * Neumorphic theme constants
  *
- * @package neomorphic
+ * @package neumorphic
  */
 
 /***********************************************************
@@ -137,7 +137,7 @@ define( 'NEOMORPHIC_SIDEBAR_DISPLAY_POST', true );
 define( 'NEOMORPHIC_SIDEBAR_DISPLAY_ARCHIVE', true );
 
 // Credit
-define( 'NEOMORPHIC_FOOTER_CREDIT', __( 'Neomorphic Theme : Powered by <a href="https://wordpress.org/" target="_blank">WordPress</a>' ) );
+define( 'NEOMORPHIC_FOOTER_CREDIT', __( 'Neumorphic Theme : Powered by <a href="https://wordpress.org/" target="_blank">WordPress</a>' ) );
 
 // Display search button on mobile drawer menu
 define( 'NEOMORPHIC_MOBILE_SEARCH_DISPLAY', false );
