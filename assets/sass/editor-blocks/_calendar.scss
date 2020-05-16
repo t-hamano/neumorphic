@@ -43,7 +43,7 @@
 
 					@include nm;
 					display: block;
-					color: var(--color-accent);
+					color: var(--color-accent) !important;
 					font-weight: bold;
 					border-radius: $base_border_radius;
 				}
@@ -57,7 +57,7 @@
 
 			a {
 				padding: 0.5em;
-				color: var(--color-accent);
+				color: var(--color-accent) !important;
 				text-decoration: none;
 			}
 		}

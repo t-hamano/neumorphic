@@ -12,6 +12,7 @@
 
 	blockquote {
 		margin: 0;
+		padding: 0;
 		border-radius: 0;
 		box-shadow: none;
 
@@ -68,6 +69,7 @@
 		}
 
 		&.has-background blockquote {
+			padding: 2em;
 			background-color: transparent;
 		}
 

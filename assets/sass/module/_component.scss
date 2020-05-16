@@ -441,6 +441,10 @@
 				border-radius: 1000px;
 			}
 		}
+
+		+ .c-comment__form {
+			margin-top: 3em;
+		}
 	}
 
 	&__nav {
@@ -494,10 +498,13 @@
 				}
 			}
 		}
+
+		+ .c-comment__form {
+			margin-top: 3em;
+		}
 	}
 
 	&__form {
-		margin: 3em 0 1em;
 
 		.required {
 			color: var(--color-text-link);

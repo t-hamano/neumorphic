@@ -38,13 +38,6 @@
 		border-radius: $base_border_radius;
 	}
 
-	&.is-style-nm-reverse {
-
-		@include nm-reverse;
-		padding: 1.5em 1em;
-		border-radius: $base_border_radius;
-	}
-
 	@include mq(md-max) {
 
 		&.is-stacked-on-mobile {

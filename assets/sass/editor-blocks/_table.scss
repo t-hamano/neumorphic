@@ -44,13 +44,19 @@
 		}
 
 		figcaption {
-			margin-top: 1em;
-			color: inherit;
-			font-size: 0.9em;
+			text-align: inherit;
 		}
 
-		&.is-style-stripes tbody tr:nth-child(odd) {
-			background-color: var(--color-nm-light);
+		&.is-style-stripes {
+			border-bottom: none;
+
+			tbody tr:nth-child(odd) {
+				background-color: var(--color-nm-light);
+			}
 		}
+	}
+
+	&[data-align="center"] figcaption {
+		text-align: center;
 	}
 }

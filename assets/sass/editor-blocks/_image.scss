@@ -6,7 +6,7 @@
 
 	.wp-block-image {
 
-		img {
+		&:not(.is-style-nm-none) img {
 
 			@include nm-media;
 		}
