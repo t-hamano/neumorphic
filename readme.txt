@@ -14,11 +14,18 @@ Neumorphic is a advanced WordPress theme based on neomorphic design.
 Neumorphic is a advanced WordPress theme based on neomorphic design. This theme surports WordPress Block Editor, and almost all the core blocks are styled for neomorphic design. You can change theme color by using color skin function, and you can also adjust each colors individually to create your original skin.
 
 == Installation ==
+
 1. In your admin panel, go to **Appearance > Themes** and click the **Add New** button.
 2. Type **Neumorphic** in the search form and press the **Enter** key.
 3. Click the **Activate** button to begin using this theme on your website.
 4. In your admin panel, navigate to **Appearance > Customize**.
 5. Put the finishing touches on your website by adding a logo, color skin, and custom colors.
+
+== Ressources ==
+
+1.css-vars-ponyfill
+License: MIT License
+Source: https://github.com/jhildenbiddle/css-vars-ponyfill
 
 == Changelog ==
 
