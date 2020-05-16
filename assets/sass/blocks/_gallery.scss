@@ -38,18 +38,4 @@
 		width: 100%;
 		text-align: center;
 	}
-
-	&.is-style-nm {
-
-		@include nm;
-		padding: 1em;
-		border-radius: $base_border_radius;
-	}
-
-	&.is-style-nm-reverse {
-
-		@include nm-reverse;
-		padding: 1em;
-		border-radius: $base_border_radius;
-	}
 }

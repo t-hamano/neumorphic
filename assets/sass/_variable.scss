@@ -22,7 +22,7 @@ $breakpoints: (
 	"lg-min": "screen and (min-width: 960px)",
 ) !default;
 
-// Neomorphic styles box shadow value
+// Neumorphic styles box shadow value
 $nm_shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 $nm_shadow_light: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
 $nm_shadow_acitve: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);

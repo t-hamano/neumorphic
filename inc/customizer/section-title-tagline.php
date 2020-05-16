@@ -1,11 +1,11 @@
 <?php
 /**
- * Neomorphic customizer (Site title and description)
+ * Neumorphic customizer (Site title and description)
  *
- * @package neomorphic
+ * @package neumorphic
  */
 
-function neomorphic_customizer_title_tagline( $wp_customize ) {
+function neumorphic_customizer_title_tagline( $wp_customize ) {
 	// Site title and description
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
@@ -31,4 +31,4 @@ function neomorphic_customizer_title_tagline( $wp_customize ) {
 	);
 }
 
-add_action( 'customize_register', 'neomorphic_customizer_title_tagline' );
+add_action( 'customize_register', 'neumorphic_customizer_title_tagline' );

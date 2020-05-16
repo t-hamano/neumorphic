@@ -2,7 +2,7 @@
 /**
  * Change the global navigation HTML structure.
  *
- * @package neomorphic
+ * @package neumorphic
  */
 
 class Gnav_Walker extends Walker_Nav_Menu {

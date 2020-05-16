@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts
  *
- * @package neomorphic
+ * @package neumorphic
  */
 
 get_header(); ?>
@@ -12,7 +12,7 @@ get_header(); ?>
 	<?php
 	while ( have_posts() ) {
 		the_post();
-		get_template_part( 'parts/content', 'post' );
+		get_template_part( 'parts/content-post' );
 	}
 	?>
 
@@ -20,7 +20,9 @@ get_header(); ?>
 
 <?php
 // Switch sidebar on/off according to customizer settings
-if ( is_page_template( 'template/sidebar-left' ) || is_page_template( 'template/sidebar-right' ) || get_theme_mod( 'sidebar_display_post', NEOMORPHIC_SIDEBAR_DISPLAY_POST ) ) {
+$display_post = get_theme_mod( 'sidebar_display_post', NEOMORPHIC_SIDEBAR_DISPLAY_POST );
+
+if ( $display_post ) {
 	get_sidebar();
 }
 

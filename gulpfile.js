@@ -14,7 +14,7 @@ const mmq = require( 'gulp-merge-media-queries' );
 
 // Delete a folder after archiving
 function cleanFiles( cb ) {
-	return del( './neomorphic', cb );
+	return del( './neumorphic', cb );
 }
 
 // Sass
@@ -58,14 +58,14 @@ function copyFiles() {
 		],
 		{ base: './' }
 	)
-	.pipe( gulp.dest( './neomorphic' ) );
+	.pipe( gulp.dest( './neumorphic' ) );
 }
 
 // Archive
 function makeZip() {
-	return gulp.src( 'neomorphic/**', { base: '.' })
+	return gulp.src( 'neumorphic/**', { base: '.' })
 	.pipe( chmod( 0o755, 0o755 ) )
-	.pipe( zip( 'neomorphic.zip' ) )
+	.pipe( zip( 'neumorphic.zip' ) )
 		.pipe( gulp.dest( 'release' ) );
 }
 

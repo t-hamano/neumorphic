@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Neomorphic\n"
+"Project-Id-Version: Neumorphic\n"
 "Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
-"POT-Creation-Date: 2020-05-04 23:05+0900\n"
+"POT-Creation-Date: 2020-05-16 13:17+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Tetsuaki Hamano <tetsuaki.hamano@gmail.com>\n"
 "Language-Team: Tetsuaki Hamano\n"
@@ -17,11 +17,13 @@ msgstr ""
 "esc_attr_e;esc_attr_x:1,2c;esc_attr__;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;"
 "_x:1,2c;_n:1,2;_n_noop:1,2;__ngettext:1,2;__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
 "X-Poedit-Basepath: ..\n"
-"X-Generator: Poedit 2.3\n"
+"X-Generator: Poedit 2.3.1\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: .\n"
 "X-Poedit-SearchPathExcluded-0: node_modules\n"
 "X-Poedit-SearchPathExcluded-1: assets\n"
+"X-Poedit-SearchPathExcluded-2: vendor\n"
+"X-Poedit-SearchPathExcluded-3: release\n"
 
 #: 404.php:12
 msgid "Page Not Found"
@@ -35,40 +37,40 @@ msgstr "お探しのページは見つかりませんでした。"
 msgid "Enter a keyword below and try searching."
 msgstr "以下にキーワードを入力して検索してみてください。"
 
-#: comments.php:31
+#: comments.php:24
 #, php-format
-msgctxt "neomorphic"
+msgctxt "neumorphic"
 msgid "%1$s comment"
 msgid_plural "%1$s comments"
 msgstr[0] "%1$s件のコメント"
 msgstr[1] "%1$s件のコメント"
 
-#: comments.php:62
+#: comments.php:59
 msgid "Comments are closed."
 msgstr "コメントは受け付けていません。"
 
-#: header.php:114
+#: header.php:129
 msgid "Home"
 msgstr "ホーム"
 
-#: header.php:122 inc/classes/class-drawer-walker.php:13
+#: header.php:137 inc/classes/class-drawer-walker.php:13
 msgid "Open / Close mobile menu"
 msgstr "グローバルメニューを開閉する"
 
-#: header.php:127
+#: header.php:142
 msgid "Scroll to top"
 msgstr "トップへ戻る"
 
-#: header.php:134
+#: header.php:149
 msgid "Close mobile menu"
 msgstr "グローバルメニューを閉じる"
 
 #: inc/constants.php:140
 msgid ""
-"Neomorphic Theme : Powered by <a href=\"https://wordpress.org/\" target="
+"Neumorphic Theme : Powered by <a href=\"https://wordpress.org/\" target="
 "\"_blank\">WordPress</a>"
 msgstr ""
-"Neomorphic Theme : Powered by <a href=\"https://wordpress.org/\" target="
+"Neumorphic Theme : Powered by <a href=\"https://wordpress.org/\" target="
 "\"_blank\">WordPress</a>"
 
 #: inc/customizer/sanitize.php:46 inc/customizer/section-sns.php:22
@@ -100,32 +102,34 @@ msgid "Default"
 msgstr "デフォルト"
 
 #: inc/customizer/section-color.php:37
-msgid "Fresh"
-msgstr "フレッシュ"
+msgid "Cold Sweat"
+msgstr ""
 
 #: inc/customizer/section-color.php:38
-msgid "Dark"
-msgstr "ダーク"
+msgid "Black Orpheus"
+msgstr ""
 
 #: inc/customizer/section-color.php:39
-msgid "Forest"
-msgstr "フォレスト"
+msgid "Green Dolphin"
+msgstr ""
 
 #: inc/customizer/section-color.php:40
-msgid "Sky"
-msgstr "スカイ"
+msgid "Summertime"
+msgstr ""
 
 #: inc/customizer/section-color.php:41
-msgid "Memory"
-msgstr "メモリー"
+msgid "Brown Jug"
+msgstr ""
 
 #: inc/customizer/section-color.php:42
-msgid "Wine red"
+#, fuzzy
+#| msgid "Wine red"
+msgid "Wine & Roses"
 msgstr "ワインレッド"
 
 #: inc/customizer/section-color.php:43
-msgid "Geek"
-msgstr "ギーク"
+msgid "Midnight Blue"
+msgstr ""
 
 #: inc/customizer/section-color.php:45
 msgid ""
@@ -136,11 +140,11 @@ msgstr ""
 "カラースキンを変更すると、各カラー設定がスキンのデフォルトの色に設定されま"
 "す。<br>カラースキンを変更した後、カラー設定を個別に変更することもできます。"
 
-#: inc/customizer/section-color.php:66
+#: inc/customizer/section-color.php:66 inc/init.php:80
 msgid "Background color"
 msgstr "背景カラー"
 
-#: inc/customizer/section-color.php:88 inc/init.php:93
+#: inc/customizer/section-color.php:88 inc/init.php:95
 msgid "Main text color"
 msgstr "メインテキストカラー"
 
@@ -148,7 +152,7 @@ msgstr "メインテキストカラー"
 msgid "Set the color of main text."
 msgstr "記事本文内のリンクテキストの色を設定します。"
 
-#: inc/customizer/section-color.php:111 inc/init.php:98
+#: inc/customizer/section-color.php:111 inc/init.php:100
 msgid "Accent color"
 msgstr "アクセントカラー"
 
@@ -158,7 +162,7 @@ msgstr ""
 "タイトル、SNSアイコン、ウィジェットのタイトルなどの色を設定します。記事本文内"
 "のリンクテキストの色を設定します。"
 
-#: inc/customizer/section-color.php:134 inc/init.php:103
+#: inc/customizer/section-color.php:134 inc/init.php:105
 msgid "Link text color"
 msgstr "リンクテキストカラー"
 
@@ -296,55 +300,131 @@ msgstr "デスクトップメニュー"
 msgid "Mobile Menu"
 msgstr "モバイルメニュー"
 
-#: inc/init.php:78
-msgid "Background Color"
-msgstr "背景色"
-
-#: inc/init.php:83
+#: inc/init.php:85
 msgid "Dark color"
 msgstr "ダークカラー"
 
-#: inc/init.php:88
+#: inc/init.php:90
 msgid "Light color"
 msgstr "ライトカラー"
 
-#: inc/init.php:176
+#: inc/init.php:110
+msgid "White"
+msgstr ""
+
+#: inc/init.php:122
+#, fuzzy
+#| msgid "Dark color"
+msgid "Dark and light color"
+msgstr "ダークカラー"
+
+#: inc/init.php:127
+#, fuzzy
+#| msgid "Main text color"
+msgid "Dark and main text color"
+msgstr "メインテキストカラー"
+
+#: inc/init.php:132
+#, fuzzy
+#| msgid "Accent color"
+msgid "Dark and accent color"
+msgstr "アクセントカラー"
+
+#: inc/init.php:137
+#, fuzzy
+#| msgid "Link text color"
+msgid "Dark and link text color"
+msgstr "リンクテキストカラー"
+
+#: inc/init.php:142
+#, fuzzy
+#| msgid "Main text color"
+msgid "Light and main text color"
+msgstr "メインテキストカラー"
+
+#: inc/init.php:147
+#, fuzzy
+#| msgid "Light color"
+msgid "Light and accent color"
+msgstr "ライトカラー"
+
+#: inc/init.php:152
+#, fuzzy
+#| msgid "Link text color"
+msgid "Light and link text color"
+msgstr "リンクテキストカラー"
+
+#: inc/init.php:157
+#, fuzzy
+#| msgid "Main text color"
+msgid "Main text and accent color"
+msgstr "メインテキストカラー"
+
+#: inc/init.php:162
+#, fuzzy
+#| msgid "Main text color"
+msgid "Main text and link text color"
+msgstr "メインテキストカラー"
+
+#: inc/init.php:167
+#, fuzzy
+#| msgid "Link text color"
+msgid "Accent and link text color"
+msgstr "リンクテキストカラー"
+
+#: inc/init.php:179
+msgid "Small"
+msgstr ""
+
+#: inc/init.php:184
+msgid "Medium"
+msgstr ""
+
+#: inc/init.php:189
+msgid "Large"
+msgstr ""
+
+#: inc/init.php:194
+msgid "Huge"
+msgstr ""
+
+#: inc/init.php:295
 msgid "Sidebar"
 msgstr "サイドバー"
 
-#: inc/init.php:177
+#: inc/init.php:296
 msgid ""
 "The display status and display position can be set from the customize menu."
 msgstr "表示ステータスと表示位置は、カスタマイズメニューから設定できます。"
 
-#: inc/init.php:202
+#: inc/init.php:323
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr "Y年"
 
-#: inc/init.php:204
+#: inc/init.php:325
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr "Y年 F"
 
-#: inc/init.php:206
+#: inc/init.php:327
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr "Y年Fj日"
 
-#: inc/init.php:212
+#: inc/init.php:334
 msgid "Archives"
 msgstr "アーカイブ"
 
-#: parts/content-page.php:33 parts/content.php:24
-msgid "Edit This Post"
-msgstr "記事を編集する"
-
-#: parts/entry-meta.php:13
+#: parts/content-archive.php:33 parts/content-post.php:17
 msgid "Post date"
 msgstr "投稿日"
 
-#: parts/entry-meta.php:21
+#: parts/content-page.php:36 parts/content-post.php:54
+msgid "Edit This Post"
+msgstr "記事を編集する"
+
+#: parts/content-post.php:22
 msgid "modified date"
 msgstr "更新日"
 
@@ -380,6 +460,27 @@ msgstr "サイドバーなし"
 #: template/sidebar-right.php:8
 msgid "Right Sidebar"
 msgstr "右サイドバー"
+
+#~ msgid "Fresh"
+#~ msgstr "フレッシュ"
+
+#~ msgid "Dark"
+#~ msgstr "ダーク"
+
+#~ msgid "Forest"
+#~ msgstr "フォレスト"
+
+#~ msgid "Sky"
+#~ msgstr "スカイ"
+
+#~ msgid "Memory"
+#~ msgstr "メモリー"
+
+#~ msgid "Geek"
+#~ msgstr "ギーク"
+
+#~ msgid "Background Color"
+#~ msgstr "背景色"
 
 #~ msgid "Light"
 #~ msgstr "ライト"

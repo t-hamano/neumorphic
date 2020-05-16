@@ -3,9 +3,9 @@
  * Template Name: Right Sidebar
  * Template Post Type: post, page
  *
- * @package neomorphic
+ * @package neumorphic
  */
-__( 'Right Sidebar', 'neomorphic' );
+__( 'Right Sidebar', 'neumorphic' );
 
 get_header(); ?>
 
@@ -17,9 +17,9 @@ get_header(); ?>
 			the_post();
 
 			if ( is_single() ) {
-				get_template_part( 'parts/content', 'post' );
+				get_template_part( 'parts/content-post' );
 			} else {
-				get_template_part( 'parts/content', 'page' );
+				get_template_part( 'parts/content-page' );
 			}
 		}
 	}

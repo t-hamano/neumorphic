@@ -2,13 +2,14 @@
 /**
  * Parts for displaying archive post
  *
- * @package neomorphic
+ * @package neumorphic
  */
 
 ?>
 
 <article <?php post_class( 'c-entries__item' ); ?>>
 	<a href="<?php the_permalink(); ?>" class="clearfix">
+
 		<?php
 		if ( has_post_thumbnail() ) {
 			// Show thumbnail image.
@@ -30,7 +31,7 @@
 					<ul class="c-meta__list">
 						<li class="c-meta__item c-meta__item--published">
 							<time datetime="<?php the_time( 'c' ); ?>">
-								<i class="far fa-clock" title="<?php esc_html_e( 'Post date', 'neomorphic' ); ?>"></i>
+								<i class="far fa-clock" title="<?php esc_html_e( 'Post date', 'neumorphic' ); ?>"></i>
 								<?php the_time( get_option( 'date_format' ) ); ?>
 							</time>
 						</li>

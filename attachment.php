@@ -2,7 +2,7 @@
 /**
  * The template for displaying attachment files
  *
- * @package neomorphic
+ * @package neumorphic
  */
 
 get_header(); ?>

@@ -2,7 +2,7 @@
 /**
  * The template for displaying the header
  *
- * @package neomorphic
+ * @package neumorphic
  */
 ?>
 
@@ -39,7 +39,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 					</div>
 				<?php endif; ?>
 
-				<?php if ( is_front_page() && is_home() ) : ?>
+				<?php if ( is_front_page() || is_home() ) : ?>
 					<h1 class="header__brand-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php else : ?>
 					<p class="header__brand-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
@@ -126,7 +126,7 @@ $drawer_menu = wp_nav_menu(
 <div class="fixed-nav">
 	<ul class="fixed-nav__list">
 		<li class="fixed-nav__item">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fas fa-home" title="<?php esc_html_e( 'Home', 'neomorphic' ); ?>"></i></a>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fas fa-home" title="<?php esc_html_e( 'Home', 'neumorphic' ); ?>"></i></a>
 		</li>
 
 		<?php
@@ -134,19 +134,19 @@ $drawer_menu = wp_nav_menu(
 		if ( $drawer_menu ) :
 			?>
 			<li class="fixed-nav__item">
-				<button id="mobile_hm_btn" aria-controls="drawer" aria-expanded="false" aria-label="<?php esc_html_e( 'Open / Close mobile menu', 'neomorphic' ); ?>"><i class="fas fa-bars"></i></button>
+				<button id="mobile_hm_btn" aria-controls="drawer" aria-expanded="false" aria-label="<?php esc_html_e( 'Open / Close mobile menu', 'neumorphic' ); ?>"><i class="fas fa-bars"></i></button>
 			</li>
 		<?php endif; ?>
 
 		<li class="fixed-nav__item">
-			<a href="#"><i class="fas fa-arrow-up" title="<?php esc_html_e( 'Scroll to top', 'neomorphic' ); ?>"></i></a>
+			<a href="#"><i class="fas fa-arrow-up" title="<?php esc_html_e( 'Scroll to top', 'neumorphic' ); ?>"></i></a>
 		</li>
 	</ul>
 </div>
 
 <?php if ( $drawer_menu ) : ?>
 	<nav id="drawer" class="drawer" aria-hidden="true">
-		<button id="mobile_close_btn" class="drawer__close" aria-controls="drawer" aria-label="<?php esc_html_e( 'Close mobile menu', 'neomorphic' ); ?>"><i class="fas fa-times"></i></button>
+		<button id="mobile_close_btn" class="drawer__close" aria-controls="drawer" aria-label="<?php esc_html_e( 'Close mobile menu', 'neumorphic' ); ?>"><i class="fas fa-times"></i></button>
 		<div class="drawer__inner container">
 
 			<?php
@@ -163,6 +163,6 @@ $drawer_menu = wp_nav_menu(
 	</nav>
 <?php endif; ?>
 
-<div class="contents <?php echo neomorphic_contents_class(); ?>" role="document">
+<div class="contents <?php echo neumorphic_contents_class(); ?>" role="document">
 	<div class="container">
 		<div class="contents__inner">

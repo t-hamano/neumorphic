@@ -2,7 +2,7 @@
 /**
  * Parts for displaying SNS icons on header / footer
  *
- * @package neomorphic
+ * @package neumorphic
  */
 
 $sns_icons = array();

@@ -12,6 +12,7 @@
 			@include nm;
 			width: auto;
 			margin-bottom: 0.5em;
+			overflow: hidden;
 			border-radius: $base_border_radius;
 
 		}
@@ -46,6 +47,10 @@
 			margin-top: 1em;
 			color: inherit;
 			font-size: 0.9em;
+		}
+
+		&.is-style-stripes tbody tr:nth-child(odd) {
+			background-color: var(--color-nm-light);
 		}
 	}
 }

@@ -1,25 +1,25 @@
 <?php
 /**
- * Neomorphic customizer (SNS section)
+ * Neumorphic customizer (SNS section)
  *
- * @package neomorphic
+ * @package neumorphic
  */
 
-function neomorphic_customizer_sns( $wp_customize ) {
+function neumorphic_customizer_sns( $wp_customize ) {
 	// Section
 	$wp_customize->add_section(
 		'section_sns',
 		array(
-			'title'       => __( 'SNS Setting', 'neomorphic' ),
+			'title'       => __( 'SNS Setting', 'neumorphic' ),
 			'priority'    => 160,
-			'description' => __( 'You can register up to five.<br>The icon will be displayed If you enter both icon and URL.<br>If you don\'t see any icons, make sure that "Display SNS icon" is checked in the header or footer settings.', 'neomorphic' ),
+			'description' => __( 'You can register up to five.<br>The icon will be displayed If you enter both icon and URL.<br>If you don\'t see any icons, make sure that "Display SNS icon" is checked in the header or footer settings.', 'neumorphic' ),
 		)
 	);
 
 	// SNS icon name list
 	$sns_icons = array_merge(
 		array(
-			'none' => __( 'None', 'neomorphic' ),
+			'none' => __( 'None', 'neumorphic' ),
 		),
 		NEOMORPHIC_SNS_CHOICE
 	);
@@ -30,7 +30,7 @@ function neomorphic_customizer_sns( $wp_customize ) {
 			'sns_icon_' . $i,
 			array(
 				'default'           => 'none',
-				'sanitize_callback' => 'neomorphic_sanitize_choices_sns',
+				'sanitize_callback' => 'neumorphic_sanitize_choices_sns',
 			)
 		);
 
@@ -41,7 +41,7 @@ function neomorphic_customizer_sns( $wp_customize ) {
 				'settings' => 'sns_icon_' . $i,
 				'label'    => sprintf(
 					/* translators: 1: sns label index */
-					__( '%s - Icon', 'neomorphic' ),
+					__( '%s - Icon', 'neumorphic' ),
 					$i
 				),
 				'type'     => 'select',
@@ -64,7 +64,7 @@ function neomorphic_customizer_sns( $wp_customize ) {
 				'settings' => 'sns_url_' . $i,
 				'label'    => sprintf(
 					/* translators: 1: sns url index */
-					__( '%s - URL', 'neomorphic' ),
+					__( '%s - URL', 'neumorphic' ),
 					$i
 				),
 				'type'     => 'url',
@@ -73,4 +73,4 @@ function neomorphic_customizer_sns( $wp_customize ) {
 	}
 }
 
-add_action( 'customize_register', 'neomorphic_customizer_sns' );
+add_action( 'customize_register', 'neumorphic_customizer_sns' );

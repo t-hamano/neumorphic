@@ -2,7 +2,7 @@
 /**
  * Parts for displaying post content
  *
- * @package neomorphic
+ * @package neumorphic
  */
 
 ?>
@@ -14,18 +14,19 @@
 			<ul class="c-meta__list">
 				<li class="c-meta__item c-meta__item--published">
 					<time datetime="<?php the_time( 'c' ); ?>">
-						<i class="far fa-clock" title="<?php esc_html_e( 'Post date', 'neomorphic' ); ?>"></i>
+						<i class="far fa-clock" title="<?php esc_html_e( 'Post date', 'neumorphic' ); ?>"></i>
 						<?php the_time( get_option( 'date_format' ) ); ?>
 					</time>
 				</li>
 				<li class="c-meta__item c-meta__item--modified">
-					<i class="fas fa-history" title="<?php esc_html_e( 'modified date', 'neomorphic' ); ?>"></i>
+					<i class="fas fa-history" title="<?php esc_html_e( 'modified date', 'neumorphic' ); ?>"></i>
 					<?php the_modified_time( get_option( 'date_format' ) ); ?>
 				</li>
 
 				<?php if ( has_category() ) : ?>
 					<li class="c-meta__item c-meta__item--categories"><?php the_category( ' / ' ); ?></li>
 				<?php endif; ?>
+
 			</ul>
 		</div>
 	</header>
@@ -41,7 +42,6 @@
 	</div>
 
 	<?php
-
 	wp_link_pages(
 		array(
 			'before'         => '<div class="c-pagination">',
@@ -51,7 +51,7 @@
 	);
 
 	edit_post_link(
-		__( 'Edit This Post', 'neomorphic' ),
+		__( 'Edit This Post', 'neumorphic' ),
 		'<div class="c-entry__edit">',
 		'</div>',
 		'',

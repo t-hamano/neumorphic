@@ -1,16 +1,16 @@
 <?php
 /**
- * Neomorphic customizer (Mobile section)
+ * Neumorphic customizer (Mobile section)
  *
- * @package neomorphic
+ * @package neumorphic
  */
 
-function neomorphic_customizer_mobile( $wp_customize ) {
+function neumorphic_customizer_mobile( $wp_customize ) {
 	// Section
 	$wp_customize->add_section(
 		'section_mobile',
 		array(
-			'title'    => __( 'Mobile Setting', 'neomorphic' ),
+			'title'    => __( 'Mobile Setting', 'neumorphic' ),
 			'priority' => 170,
 		)
 	);
@@ -20,7 +20,7 @@ function neomorphic_customizer_mobile( $wp_customize ) {
 		'mobile_search_display',
 		array(
 			'default'           => NEOMORPHIC_MOBILE_SEARCH_DISPLAY,
-			'sanitize_callback' => 'neomorphic_sanitize_checkbox',
+			'sanitize_callback' => 'neumorphic_sanitize_checkbox',
 		)
 	);
 
@@ -29,10 +29,10 @@ function neomorphic_customizer_mobile( $wp_customize ) {
 		array(
 			'section'  => 'section_mobile',
 			'settings' => 'mobile_search_display',
-			'label'    => __( 'Display search button on mobile menu', 'neomorphic' ),
+			'label'    => __( 'Display search button on mobile menu', 'neumorphic' ),
 			'type'     => 'checkbox',
 		)
 	);
 }
 
-add_action( 'customize_register', 'neomorphic_customizer_mobile' );
+add_action( 'customize_register', 'neumorphic_customizer_mobile' );
