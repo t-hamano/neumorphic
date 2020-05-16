@@ -29,7 +29,7 @@ function neumorphic_customizer_header( $wp_customize ) {
 		array(
 			'section'  => 'section_header',
 			'settings' => 'header_search_display',
-			'label'    => __( 'Display search bar on header (Desktop view)', 'neumorphic' ),
+			'label'    => __( 'Display search bar on header ( Desktop view )', 'neumorphic' ),
 			'type'     => 'checkbox',
 		)
 	);
