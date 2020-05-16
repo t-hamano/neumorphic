@@ -45,7 +45,6 @@ function neumorphic_customizer_sidebar( $wp_customize ) {
 		array(
 			'default'           => NEOMORPHIC_SIDEBAR_DISPLAY_FRONT,
 			'sanitize_callback' => 'neumorphic_sanitize_checkbox',
-			'transport'         => 'postMessage',
 		)
 	);
 
@@ -68,7 +67,6 @@ function neumorphic_customizer_sidebar( $wp_customize ) {
 		array(
 			'default'           => NEOMORPHIC_SIDEBAR_DISPLAY_FRONT,
 			'sanitize_callback' => 'neumorphic_sanitize_checkbox',
-			'transport'         => 'postMessage',
 		)
 	);
 
@@ -91,7 +89,6 @@ function neumorphic_customizer_sidebar( $wp_customize ) {
 		array(
 			'default'           => NEOMORPHIC_SIDEBAR_DISPLAY_PAGE,
 			'sanitize_callback' => 'neumorphic_sanitize_checkbox',
-			'transport'         => 'postMessage',
 		)
 	);
 
@@ -114,7 +111,6 @@ function neumorphic_customizer_sidebar( $wp_customize ) {
 		array(
 			'default'           => NEOMORPHIC_SIDEBAR_DISPLAY_POST,
 			'sanitize_callback' => 'neumorphic_sanitize_checkbox',
-			'transport'         => 'postMessage',
 		)
 	);
 
@@ -137,7 +133,6 @@ function neumorphic_customizer_sidebar( $wp_customize ) {
 		array(
 			'default'           => NEOMORPHIC_SIDEBAR_DISPLAY_ARCHIVE,
 			'sanitize_callback' => 'neumorphic_sanitize_checkbox',
-			'transport'         => 'postMessage',
 		)
 	);
 

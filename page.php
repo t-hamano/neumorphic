@@ -20,7 +20,15 @@ get_header(); ?>
 
 <?php
 // Switch sidebar on/off according to customizer settings
-if ( is_page_template( 'template/sidebar-left' ) || is_page_template( 'template/sidebar-right' ) || get_theme_mod( 'sidebar_display_page', NEOMORPHIC_SIDEBAR_DISPLAY_PAGE ) ) {
+$display_front = get_theme_mod( 'sidebar_display_front', NEOMORPHIC_SIDEBAR_DISPLAY_FRONT );
+$display_blog  = get_theme_mod( 'sidebar_display_blog', NEOMORPHIC_SIDEBAR_DISPLAY_BLOG );
+$display_page  = get_theme_mod( 'sidebar_display_page', NEOMORPHIC_SIDEBAR_DISPLAY_PAGE );
+
+if (
+	( is_front_page() && $display_front ) ||
+	( is_home() && $display_blog ) ||
+	( is_page() && ! is_front_page() && $display_page )
+) {
 	get_sidebar();
 }
 
