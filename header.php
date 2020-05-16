@@ -39,7 +39,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 					</div>
 				<?php endif; ?>
 
-				<?php if ( is_front_page() && is_home() ) : ?>
+				<?php if ( is_front_page() || is_home() ) : ?>
 					<h1 class="header__brand-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php else : ?>
 					<p class="header__brand-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>

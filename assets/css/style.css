@@ -1846,6 +1846,7 @@ button:focus {
 
 .contents__inner .main {
 	display: block;
+	width: 100%;
 }
 
 /*--------------------------------------------------------------

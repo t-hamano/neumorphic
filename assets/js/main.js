@@ -23,7 +23,7 @@
 
 	// Show/Hide fixed global menu
 	if ( adminBar.length ) {
-		fixedGnav.css( 'margin-top', adminBar.height() );
+		fixedGnav.css( 'margin-top', 32 );
 	}
 	$( window ).scroll( function() {
 		if ( 200 < $( this ).scrollTop() ) {

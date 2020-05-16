@@ -9,6 +9,7 @@
 
 <article <?php post_class( 'c-entries__item' ); ?>>
 	<a href="<?php the_permalink(); ?>" class="clearfix">
+
 		<?php
 		if ( has_post_thumbnail() ) {
 			// Show thumbnail image.

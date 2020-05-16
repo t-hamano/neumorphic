@@ -124,10 +124,7 @@ define( 'NEOMORPHIC_SIDEBAR_POSITION', 'right' );
 // Show sidebar on front page
 define( 'NEOMORPHIC_SIDEBAR_DISPLAY_FRONT', false );
 
-// Show sidebar on page set to a post page
-define( 'NEOMORPHIC_SIDEBAR_DISPLAY_BLOG', true );
-
-// Show sidebar on page
+// Show sidebar on static page
 define( 'NEOMORPHIC_SIDEBAR_DISPLAY_PAGE', true );
 
 // Show sidebar on post

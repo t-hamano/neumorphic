@@ -8,9 +8,12 @@
 ?>
 
 <article <?php post_class( 'c-entry' ); ?>>
-	<header class="c-entry__header">
-		<h1 class="c-entry__title"><?php the_title_attribute(); ?></h1>
-	</header>
+
+	<?php if ( ! is_front_page() ) : ?>
+		<header class="c-entry__header">
+			<h1 class="c-entry__title"><?php the_title_attribute(); ?></h1>
+		</header>
+	<?php endif; ?>
 
 	<?php if ( has_post_thumbnail() && ! post_password_required() ) : ?>
 		<figure class="c-entry__thumbnail">
@@ -23,7 +26,6 @@
 	</div>
 
 	<?php
-
 	wp_link_pages(
 		array(
 			'before'         => '<div class="c-pagination">',

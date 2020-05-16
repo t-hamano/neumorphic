@@ -26,6 +26,7 @@
 				<?php if ( has_category() ) : ?>
 					<li class="c-meta__item c-meta__item--categories"><?php the_category( ' / ' ); ?></li>
 				<?php endif; ?>
+
 			</ul>
 		</div>
 	</header>
@@ -41,7 +42,6 @@
 	</div>
 
 	<?php
-
 	wp_link_pages(
 		array(
 			'before'         => '<div class="c-pagination">',

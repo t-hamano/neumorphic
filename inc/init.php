@@ -387,7 +387,6 @@ function neumorphic_contents_class() {
 	// Get cutomizer settings.
 	$display_position = get_theme_mod( 'sidebar_position', NEOMORPHIC_SIDEBAR_POSITION );
 	$display_front    = get_theme_mod( 'sidebar_display_front', NEOMORPHIC_SIDEBAR_DISPLAY_FRONT );
-	$display_blog     = get_theme_mod( 'sidebar_display_blog', NEOMORPHIC_SIDEBAR_DISPLAY_BLOG );
 	$display_post     = get_theme_mod( 'sidebar_display_post', NEOMORPHIC_SIDEBAR_DISPLAY_POST );
 	$display_page     = get_theme_mod( 'sidebar_display_page', NEOMORPHIC_SIDEBAR_DISPLAY_PAGE );
 	$display_archive  = get_theme_mod( 'sidebar_display_archive', NEOMORPHIC_SIDEBAR_DISPLAY_ARCHIVE );
@@ -403,9 +402,8 @@ function neumorphic_contents_class() {
 		// Use customizer settings if the page template is not used.
 		if (
 			( is_front_page() && $display_front ) ||
-			( is_home() && $display_blog ) ||
 			( is_single() && $display_post ) ||
-			( is_archive() && $display_archive ) ||
+			( ( is_archive() || is_home() ) && $display_archive ) ||
 			( is_page() && ! is_front_page() && $display_page )
 		) {
 			$class = ' contents--sidebar-' . $display_position;

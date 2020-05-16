@@ -61,28 +61,6 @@ function neumorphic_customizer_sidebar( $wp_customize ) {
 		)
 	);
 
-	// Show sidebar on blog homepage
-	$wp_customize->add_setting(
-		'sidebar_display_blog',
-		array(
-			'default'           => NEOMORPHIC_SIDEBAR_DISPLAY_FRONT,
-			'sanitize_callback' => 'neumorphic_sanitize_checkbox',
-		)
-	);
-
-	$wp_customize->add_control(
-		new WP_Customize_Color_Control(
-			$wp_customize,
-			'sidebar_display_blog',
-			array(
-				'section'  => 'section_sidebar',
-				'settings' => 'sidebar_display_blog',
-				'label'    => __( 'Show sidebar on page set to a post page', 'neumorphic' ),
-				'type'     => 'checkbox',
-			)
-		)
-	);
-
 	// Display on page
 	$wp_customize->add_setting(
 		'sidebar_display_page',
@@ -99,7 +77,7 @@ function neumorphic_customizer_sidebar( $wp_customize ) {
 			array(
 				'section'  => 'section_sidebar',
 				'settings' => 'sidebar_display_page',
-				'label'    => __( 'Show sidebar on page', 'neumorphic' ),
+				'label'    => __( 'Show sidebar on static page', 'neumorphic' ),
 				'type'     => 'checkbox',
 			)
 		)
@@ -143,7 +121,7 @@ function neumorphic_customizer_sidebar( $wp_customize ) {
 			array(
 				'section'  => 'section_sidebar',
 				'settings' => 'sidebar_display_archive',
-				'label'    => __( 'Show sidebar on archive page', 'neumorphic' ),
+				'label'    => __( 'Show sidebar on archive page and blog posts index page', 'neumorphic' ),
 				'type'     => 'checkbox',
 			)
 		)

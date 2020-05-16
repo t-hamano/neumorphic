@@ -1,6 +1,6 @@
 <?php
 /**
- * The main template file
+ * The main template file (archive page, latest posts page, static posts page)
  *
  * @package neumorphic
  */
@@ -8,34 +8,39 @@
 get_header(); ?>
 
 <main class="main" role="main">
+	<div class="c-entry">
 
-	<?php
-	if ( have_posts() ) {
-		while ( have_posts() ) {
-			the_post();
-			get_template_part( 'parts/content', 'archive' );
-		}
-	} else {
-		get_template_part( 'parts/content', 'none' );
-	}
-	?>
+		<?php if ( is_archive() ) : ?>
+			<header class="c-entry__header">
+					<h1 class="c-entry__title"><?php the_archive_title(); ?></h1>
+			</header>
+		<?php endif; ?>
 
+		<div class="c-entries">
+
+			<?php
+			while ( have_posts() ) {
+				the_post();
+				get_template_part( 'parts/content-archive' );
+			}
+			?>
+
+		</div>
+
+		<?php get_template_part( 'parts/pagination' ); ?>
+
+	</div>
 </main>
 
 <?php
 // Switch sidebar on/off according to customizer settings
-if ( 'none' !== get_theme_mod( 'page_sidebar' ) ) {
-	get_sidebar();
-}
+$display_archive = get_theme_mod( 'sidebar_display_archive', NEOMORPHIC_SIDEBAR_DISPLAY_ARCHIVE );
+$display_front   = get_theme_mod( 'sidebar_display_front', NEOMORPHIC_SIDEBAR_DISPLAY_FRONT );
 
-if ( is_front_page() ) {
-	if ( is_page_template( 'template/sidebar-left' ) || is_page_template( 'template/sidebar-right' ) || get_theme_mod( 'sidebar_display_front', NEOMORPHIC_SIDEBAR_DISPLAY_FRONT ) ) {
-		get_sidebar();
-	}
-} elseif ( is_home() ) {
-	if ( is_page_template( 'template/sidebar-left' ) || is_page_template( 'template/sidebar-right' ) || get_theme_mod( 'sidebar_display_blog', NEOMORPHIC_SIDEBAR_DISPLAY_BLOG ) ) {
-		get_sidebar();
-	}
+if ( is_front_page() && $display_front ) {
+	get_sidebar();
+} elseif ( ( is_archive() || is_home() ) && $display_archive ) {
+	get_sidebar();
 }
 
 get_footer(); ?>
