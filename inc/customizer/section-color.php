@@ -155,7 +155,7 @@ function neumorphic_customizer_color( $wp_customize ) {
 				'section'     => 'section_color',
 				'settings'    => 'color_text_border_display',
 				'label'       => __( 'Enable border text', 'neumorphic' ),
-				'description' => __( 'Add a border to text so that it stands out from the background.<br>(Cover headlines, global menus and so forth.)', 'neumorphic' ),
+				'description' => __( 'Add a border to text so that it stands out from the background. ( Cover headlines, global menus and so forth. )', 'neumorphic' ),
 				'type'        => 'checkbox',
 			)
 		)
