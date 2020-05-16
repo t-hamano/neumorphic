@@ -43,7 +43,7 @@ const NEOMORPHIC_FA_CLASS = array(
 
 // Color skins
 const NEOMORPHIC_COLOR_SKIN = array(
-	'default' => array(
+	'default'       => array(
 		'bg'                  => '#bec5c9',
 		'text_main'           => '#374147',
 		'accent'              => '#2980b9',
@@ -51,7 +51,7 @@ const NEOMORPHIC_COLOR_SKIN = array(
 		'text_border_display' => true,
 		'text_border_color'   => '#ffffff',
 	),
-	'fresh'   => array(
+	'cold_sweat'    => array(
 		'bg'                  => '#dde4e6',
 		'text_main'           => '#696d6c',
 		'accent'              => '#067974',
@@ -59,7 +59,7 @@ const NEOMORPHIC_COLOR_SKIN = array(
 		'text_border_display' => true,
 		'text_border_color'   => '#ffffff',
 	),
-	'dark'    => array(
+	'black_orpheus' => array(
 		'bg'                  => '#384048',
 		'text_main'           => '#eceeee',
 		'accent'              => '#87a6a3',
@@ -67,7 +67,7 @@ const NEOMORPHIC_COLOR_SKIN = array(
 		'text_border_display' => false,
 		'text_border_color'   => '#ffffff',
 	),
-	'forest'  => array(
+	'green_dolphin' => array(
 		'bg'                  => '#1d7a64',
 		'text_main'           => '#eceeed',
 		'accent'              => '#d19445',
@@ -75,7 +75,7 @@ const NEOMORPHIC_COLOR_SKIN = array(
 		'text_border_display' => false,
 		'text_border_color'   => '#ffffff',
 	),
-	'sky'     => array(
+	'summertime'    => array(
 		'bg'                  => '#86bad8',
 		'text_main'           => '#35423f',
 		'accent'              => '#dd6735',
@@ -83,7 +83,7 @@ const NEOMORPHIC_COLOR_SKIN = array(
 		'text_border_display' => true,
 		'text_border_color'   => '#ffffff',
 	),
-	'memory'  => array(
+	'brown_jub'     => array(
 		'bg'                  => '#b9b2a5',
 		'text_main'           => '#443d40',
 		'accent'              => '#702a2a',
@@ -91,7 +91,7 @@ const NEOMORPHIC_COLOR_SKIN = array(
 		'text_border_display' => true,
 		'text_border_color'   => '#ffffff',
 	),
-	'winered' => array(
+	'wine_roses'    => array(
 		'bg'                  => '#7c2739',
 		'text_main'           => '#cfd6bc',
 		'accent'              => '#509586',
@@ -99,7 +99,7 @@ const NEOMORPHIC_COLOR_SKIN = array(
 		'text_border_display' => false,
 		'text_border_color'   => '#ffffff',
 	),
-	'geek'    => array(
+	'midnight_blue' => array(
 		'bg'                  => '#0C354B',
 		'text_main'           => '#ffffff',
 		'accent'              => '#23FB02',
