@@ -4820,26 +4820,11 @@ button:focus {
 }
 
 .wp-block-embed.alignleft,
-.wp-block-embed.alignright,
-.wp-block-embed-facebook,
-.wp-block-embed-instagram,
-.wp-block-embed-twitter {
+.wp-block-embed.alignright {
 	max-width: 500px;
 }
 
-.wp-block-embed-twitter.aligncenter .twitter-tweet {
-	margin-right: auto;
-	margin-left: auto;
-}
-
-.wp-block-embed-instagram.aligncenter iframe {
-	margin-right: auto !important;
-	margin-left: auto !important;
-}
-
-.is-style-nm.wp-block-embed-youtube iframe,
-.is-style-nm.wp-block-embed-facebook iframe,
-.is-style-nm.wp-block-embed-twitter .twitter-tweet {
+.wp-block-embed-youtube iframe {
 	text-decoration: none;
 	border: none;
 	outline: none;
@@ -4852,30 +4837,92 @@ button:focus {
 	border-radius: 8px;
 }
 
-.is-style-nm.wp-block-embed-youtube iframe:not(.has-background):not(.has-background-dim),
-.is-style-nm.wp-block-embed-facebook iframe:not(.has-background):not(.has-background-dim),
-.is-style-nm.wp-block-embed-twitter .twitter-tweet:not(.has-background):not(.has-background-dim) {
+.wp-block-embed-youtube iframe:not(.has-background):not(.has-background-dim) {
 	background-color: var(--color-bg);
 }
 
-.is-style-nm.wp-block-embed-youtube iframe:focus,
-.is-style-nm.wp-block-embed-youtube iframe:hover,
-.is-style-nm.wp-block-embed-youtube iframe:active,
-.is-style-nm.wp-block-embed-facebook iframe:focus,
-.is-style-nm.wp-block-embed-facebook iframe:hover,
-.is-style-nm.wp-block-embed-facebook iframe:active,
-.is-style-nm.wp-block-embed-twitter .twitter-tweet:focus,
-.is-style-nm.wp-block-embed-twitter .twitter-tweet:hover,
-.is-style-nm.wp-block-embed-twitter .twitter-tweet:active {
+.wp-block-embed-youtube iframe:focus,
+.wp-block-embed-youtube iframe:hover,
+.wp-block-embed-youtube iframe:active {
 	text-decoration: none;
 	outline: none;
 }
 
-.is-style-nm.wp-block-embed-instagram iframe {
+.wp-block-embed-facebook {
+	max-width: 500px;
+}
+
+.wp-block-embed-facebook iframe {
+	text-decoration: none;
+	border: none;
+	outline: none;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
+	padding: 5px;
+	border-radius: 8px;
+}
+
+.wp-block-embed-facebook iframe:not(.has-background):not(.has-background-dim) {
+	background-color: var(--color-bg);
+}
+
+.wp-block-embed-facebook iframe:focus,
+.wp-block-embed-facebook iframe:hover,
+.wp-block-embed-facebook iframe:active {
+	text-decoration: none;
+	outline: none;
+}
+
+.wp-block-embed-instagram {
+	max-width: 500px;
+}
+
+.wp-block-embed-instagram iframe {
 	padding: 5px !important;
 	border: none !important;
 	border-radius: 8px !important;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light) !important;
+}
+
+.wp-block-embed-instagram .aligncenter iframe {
+	margin-right: auto !important;
+	margin-left: auto !important;
+}
+
+.wp-block-embed-twitter {
+	max-width: 500px;
+}
+
+.wp-block-embed-twitter .twitter-tweet {
+	text-decoration: none;
+	border: none;
+	outline: none;
+	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
+	padding: 5px;
+	border-radius: 8px;
+}
+
+.wp-block-embed-twitter .twitter-tweet:not(.has-background):not(.has-background-dim) {
+	background-color: var(--color-bg);
+}
+
+.wp-block-embed-twitter .twitter-tweet:focus,
+.wp-block-embed-twitter .twitter-tweet:hover,
+.wp-block-embed-twitter .twitter-tweet:active {
+	text-decoration: none;
+	outline: none;
+}
+
+.wp-block-embed-twitter .aligncenter .twitter-tweet {
+	margin-right: auto;
+	margin-left: auto;
 }
 
 @media all and (-ms-high-contrast: none) {

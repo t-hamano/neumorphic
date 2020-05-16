@@ -19,37 +19,55 @@
 	}
 
 	&.alignleft,
-	&.alignright,
-	&-facebook,
-	&-instagram,
-	&-twitter {
+	&.alignright {
 		max-width: 500px;
 	}
 
-	&-twitter.aligncenter .twitter-tweet {
-		margin-right: auto;
-		margin-left: auto;
-	}
-
-	&-instagram.aligncenter iframe {
-		margin-right: auto !important;
-		margin-left: auto !important;
-	}
-}
-
-.is-style-nm.wp-block-embed {
-
-	&-youtube iframe,
-	&-facebook iframe,
-	&-twitter .twitter-tweet {
+	// You Tube
+	&-youtube iframe {
 
 		@include nm-media;
 	}
 
-	&-instagram iframe {
-		padding: 5px !important;
-		border: none !important;
-		border-radius: 8px !important;
-		box-shadow: $nm_shadow_reverse !important;
+	// Facebook
+	&-facebook {
+		max-width: 500px;
+
+		iframe {
+
+			@include nm-media;
+		}
+	}
+
+	// Instagram
+	&-instagram {
+		max-width: 500px;
+
+		iframe {
+			padding: 5px !important;
+			border: none !important;
+			border-radius: 8px !important;
+			box-shadow: $nm_shadow_reverse !important;
+		}
+
+		.aligncenter iframe {
+			margin-right: auto !important;
+			margin-left: auto !important;
+		}
+	}
+
+	// Twitter
+	&-twitter {
+		max-width: 500px;
+
+		.twitter-tweet {
+
+			@include nm-media;
+		}
+
+		.aligncenter .twitter-tweet {
+			margin-right: auto;
+			margin-left: auto;
+		}
 	}
 }

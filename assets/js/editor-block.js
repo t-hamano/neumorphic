@@ -21,9 +21,4 @@ wp.domReady( function() {
 	wp.blocks.registerBlockStyle( 'core/group',           { name: 'nm-reverse', label: 'Neumorphic Rev', isDefault: false });
 
 	wp.blocks.registerBlockStyle( 'core/social-links',    { name: 'nm',         label: 'Neumorphic',     isDefault: false });
-
-	wp.blocks.registerBlockStyle( 'core-embed/youtube',   { name: 'nm',         label: 'Neumorphic',     isDefault: false });
-	wp.blocks.registerBlockStyle( 'core-embed/instagram', { name: 'nm',         label: 'Neumorphic',     isDefault: false });
-	wp.blocks.registerBlockStyle( 'core-embed/facebook',  { name: 'nm',         label: 'Neumorphic',     isDefault: false });
-	wp.blocks.registerBlockStyle( 'core-embed/twitter',   { name: 'nm',         label: 'Neumorphic',     isDefault: false });
 });
