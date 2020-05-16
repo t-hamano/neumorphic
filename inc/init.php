@@ -359,13 +359,13 @@ require( get_theme_file_path() . '/inc/classes/class-gnav-walker.php' );
  * @return array $classes CSS classes applied to a menu item’s list item element.
  */
 function neumorphic_nav_class( $classes, $item, $args, $depth ) {
-	if ( 'primary' === $args->theme_location ) {
+	if ( 'primary' === $args['theme_location'] ) {
 		if ( 0 === $depth ) {
 			$classes[] = 'c-gnav__item';
 		} else {
 			$classes[] = 'c-gnav__subitem';
 		}
-	} elseif ( 'mobile' === $args->theme_location ) {
+	} elseif ( 'mobile' === $args['theme_location'] ) {
 		if ( 0 === $depth ) {
 			$classes[] = 'drawer__item';
 		} else {
