@@ -13,6 +13,7 @@
 
 		.blocks-gallery-image,
 		.blocks-gallery-item {
+			margin: 0 16px 16px 0;
 
 			figure {
 				justify-content: center;
@@ -24,34 +25,17 @@
 				width: calc(100% - 10px);
 				max-height: calc(100% - 10px);
 				padding: 0.5em;
+				color: #fff;
 				font-size: 0.8em;
 				background: rgba(0, 0, 0, 0.6);
 				border-radius: 0 0 $base_border_radius $base_border_radius;
 			}
 
 			img {
+
+				@include nm-media;
 				width: 100%;
 			}
-		}
-
-		> figcaption {
-			color: inherit;
-			font-size: 0.8em;
-			opacity: $text_color_thin;
-		}
-
-		&.is-style-nm {
-
-			@include nm;
-			padding: 1em;
-			border-radius: $base_border_radius;
-		}
-
-		&.is-style-nm-reverse {
-
-			@include nm-reverse;
-			padding: 1em;
-			border-radius: $base_border_radius;
 		}
 	}
 }

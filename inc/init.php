@@ -231,7 +231,10 @@ add_action( 'wp_enqueue_scripts', 'neumorphic_scripts' );
 function neumorphic_block_editor_styles() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 
-	// Main style
+	// Font Awesome
+	wp_enqueue_style( 'neumorphic-style-fontawesome', get_theme_file_uri() . '/assets/packages/font-awesome/css/all.min.css', array(), $theme_version );
+
+		// Main style
 	wp_enqueue_style( 'neumorphic-style-block-editor', get_theme_file_uri() . '/assets/css/editor-style-block.min.css', array(), $theme_version );
 
 	// Customizer output inline CSS

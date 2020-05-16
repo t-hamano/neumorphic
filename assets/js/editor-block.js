@@ -8,9 +8,6 @@ wp.domReady( function() {
 	wp.blocks.registerBlockStyle( 'core/cover',           { name: 'nm',         label: 'Neumorphic',     isDefault: false });
 	wp.blocks.registerBlockStyle( 'core/cover',           { name: 'nm-reverse', label: 'Neumorphic Rev', isDefault: false });
 
-	wp.blocks.registerBlockStyle( 'core/gallery',         { name: 'nm',         label: 'Neumorphic',     isDefault: false });
-	wp.blocks.registerBlockStyle( 'core/gallery',         { name: 'nm-reverse', label: 'Neumorphic Rev', isDefault: false });
-
 	wp.blocks.registerBlockStyle( 'core/media-text',      { name: 'nm',         label: 'Neumorphic',     isDefault: false });
 	wp.blocks.registerBlockStyle( 'core/media-text',      { name: 'nm-reverse', label: 'Neumorphic Rev', isDefault: false });
 

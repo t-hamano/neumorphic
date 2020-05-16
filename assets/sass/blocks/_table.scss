@@ -6,6 +6,10 @@
 	margin-bottom: 2em;
 	overflow-x: initial;
 
+	table {
+		overflow: hidden;
+	}
+
 	&.aligncenter table {
 		margin-right: auto;
 		margin-left: auto;
