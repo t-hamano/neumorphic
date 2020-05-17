@@ -671,6 +671,7 @@ button:focus {
 	display: inline-block;
 	padding: 0.7em 1.4em;
 	color: var(--color-accent);
+	font-size: 0.8em;
 	border-radius: 1000px;
 }
 
@@ -3767,7 +3768,7 @@ button:focus {
 .wp-block-separator.is-style-dots::before {
 	padding-left: 2em;
 	color: currentColor;
-	font-size: 30px;
+	font-size: 40px;
 	font-family: inherit;
 	line-height: 0;
 	letter-spacing: 2em;
@@ -3786,6 +3787,10 @@ button:focus {
 	margin-right: 20px;
 	margin-bottom: 20px;
 	color: inherit;
+}
+
+.wp-block-buttons .wp-block-button:last-child {
+	margin-right: 0;
 }
 
 .wp-block-buttons .wp-block-button__link {
@@ -3887,7 +3892,7 @@ button:focus {
 }
 
 .wp-block-group.has-background {
-	padding: 1.5em 1em;
+	padding: 1.5em 1.5em 2em;
 }
 
 .wp-block-group.is-style-nm {
@@ -3899,7 +3904,7 @@ button:focus {
 	-moz-appearance: none;
 	appearance: none;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
-	padding: 1.5em 1em;
+	padding: 1.5em 1.5em 2em;
 	border-radius: 8px;
 }
 
@@ -3923,7 +3928,7 @@ button:focus {
 	-moz-appearance: none;
 	appearance: none;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
-	padding: 1.5em 1em;
+	padding: 1.5em 1.5em 2em;
 	border-radius: 8px;
 }
 
@@ -3955,7 +3960,7 @@ button:focus {
 }
 
 .wp-block-columns.has-background {
-	padding: 1.5em 1em;
+	padding: 1.5em 1.5em 2em;
 }
 
 .wp-block-columns.is-style-nm {
@@ -3967,7 +3972,7 @@ button:focus {
 	-moz-appearance: none;
 	appearance: none;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
-	padding: 1.5em 1em;
+	padding: 1.5em 1.5em 2em;
 	border-radius: 8px;
 }
 
@@ -3991,7 +3996,7 @@ button:focus {
 	-moz-appearance: none;
 	appearance: none;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
-	padding: 1.5em 1em;
+	padding: 1.5em 1.5em 2em;
 	border-radius: 8px;
 }
 

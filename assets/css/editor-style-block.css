@@ -242,6 +242,13 @@
 	opacity: 0.8;
 }
 
+.block-editor-default-block-appender textarea.block-editor-default-block-appender__content {
+	color: inherit;
+	font-size: inherit;
+	font-family: inherit;
+	opacity: 0.7;
+}
+
 .wp-block {
 	max-width: 800px;
 	color: var(--color-text-main);
@@ -708,6 +715,7 @@
 	display: block;
 	font-size: 0.8em;
 	font-style: italic;
+	text-transform: initial;
 	opacity: 0.8;
 }
 
@@ -1089,7 +1097,7 @@
 }
 
 [data-type="core/separator"] .wp-block-separator.is-style-dots::before {
-	font-size: 30px;
+	font-size: 40px;
 	font-family: inherit;
 	line-height: 0;
 }
@@ -1159,7 +1167,7 @@
 ----------------------*/
 
 [data-type="core/group"] .wp-block-group.has-background {
-	padding: 1.5em 1em;
+	padding: 1.5em 1.5em 2em;
 }
 
 [data-type="core/group"] .wp-block-group.is-style-nm {
@@ -1171,7 +1179,7 @@
 	-moz-appearance: none;
 	appearance: none;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
-	padding: 1.5em 1em;
+	padding: 1.5em 1.5em 2em;
 	border-radius: 8px;
 }
 
@@ -1195,7 +1203,7 @@
 	-moz-appearance: none;
 	appearance: none;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
-	padding: 1.5em 1em;
+	padding: 1.5em 1.5em 2em;
 	border-radius: 8px;
 }
 
@@ -1259,7 +1267,7 @@
 	-moz-appearance: none;
 	appearance: none;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
-	padding: 1.5em 1em;
+	padding: 1.5em 1.5em 2em;
 	border-radius: 8px;
 }
 

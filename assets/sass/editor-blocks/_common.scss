@@ -188,6 +188,14 @@
 	}
 }
 
+// New Post Placeholder
+.block-editor-default-block-appender textarea.block-editor-default-block-appender__content {
+	color: inherit;
+	font-size: inherit;
+	font-family: inherit;
+	opacity: $base_placeholder_opacity;
+}
+
 // Block
 .wp-block {
 	max-width: 800px;
