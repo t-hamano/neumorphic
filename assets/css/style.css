@@ -352,14 +352,14 @@ select option {
 }
 
 [type="search"] {
-	-webkit-appearance: searchfield;
-	-moz-appearance: searchfield;
-	appearance: searchfield;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
 }
 
 [type="search"]::-webkit-search-cancel-button {
-	-webkit-appearance: searchfield-cancel-button;
-	appearance: searchfield-cancel-button;
+	-webkit-appearance: none;
+	appearance: none;
 }
 
 .checkbox,
@@ -2627,13 +2627,15 @@ button:focus {
 }
 
 .entry-content h1,
-.entry-content h2 {
+.entry-content h2,
+.entry-content h3 {
 	position: relative;
 	padding-bottom: 0.3em;
 }
 
 .entry-content h1::before,
-.entry-content h2::before {
+.entry-content h2::before,
+.entry-content h3::before {
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -3584,6 +3586,12 @@ button:focus {
 
 .wp-block-table table {
 	overflow: hidden;
+}
+
+.wp-block-table thead th {
+	font-weight: normal;
+	text-align: left;
+	border-bottom-width: 3px;
 }
 
 .wp-block-table.aligncenter table {
@@ -5243,6 +5251,11 @@ button:focus {
 	.wp-block-media-text.is-stacked-on-mobile > .wp-block-media-text__media > img,
 	.wp-block-media-text.is-stacked-on-mobile > .wp-block-media-text__media > video {
 		width: auto;
+		max-width: 100%;
+	}
+
+	.wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content {
+		padding: 0;
 	}
 
 	.wp-block-media-text.is-stacked-on-mobile.has-media-on-the-right .wp-block-media-text__content {

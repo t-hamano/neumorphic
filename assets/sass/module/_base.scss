@@ -204,10 +204,10 @@ select {
 }
 
 [type="search"] {
-	appearance: searchfield;
+	appearance: none;
 
 	&::-webkit-search-cancel-button {
-		appearance: searchfield-cancel-button;
+		appearance: none;
 	}
 }
 

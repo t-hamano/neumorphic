@@ -21,6 +21,7 @@
 
 			@include nm-text-border;
 			color: var(--color-text-main);
+			font-weight: bold;
 			font-size: 2.2em;
 			font-family: $base_font_falily;
 			line-height: 1.4;
@@ -62,7 +63,8 @@
 	}
 
 	h1,
-	h2 {
+	h2,
+	h3 {
 
 		@include nm-border;
 		padding-bottom: 0.3em;
