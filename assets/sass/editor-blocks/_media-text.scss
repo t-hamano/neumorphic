@@ -11,6 +11,8 @@
 
 			img,
 			video {
+
+				@include nm-media;
 				max-width: 100%;
 			}
 		}
@@ -41,13 +43,6 @@
 		&.is-style-nm {
 
 			@include nm;
-			padding: 1.5em 1em;
-			border-radius: $base_border_radius;
-		}
-
-		&.is-style-nm-reverse {
-
-			@include nm-reverse;
 			padding: 1.5em 1em;
 			border-radius: $base_border_radius;
 		}

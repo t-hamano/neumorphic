@@ -13,10 +13,12 @@
 		}
 
 		figcaption {
-			margin-top: 1em;
-			color: inherit;
-			font-size: 0.9em;
-			text-align: initial;
+			text-align: inherit;
 		}
+	}
+
+	&[data-align="center"]  .wp-block-video video {
+		margin-right: auto;
+		margin-left: auto;
 	}
 }

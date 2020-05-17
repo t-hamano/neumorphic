@@ -76,20 +76,20 @@ if ( function_exists( 'wp_body_open' ) ) {
 
 			<?php
 			// Global menu
-			$gnav = wp_nav_menu(
-				array(
-					'theme_location' => 'primary',
-					'menu_class'     => 'c-gnav__list',
-					'container'      => false,
-					'echo'           => false,
-					'walker'         => new Gnav_Walker(),
-				)
-			);
-			if ( $gnav ) :
+			if ( has_nav_menu( 'primary' ) ) :
 				?>
 				<div class="gnav">
 					<nav class="c-gnav" role="navigation" aria-hidden="true">
-						<?php echo $gnav; ?>
+						<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'primary',
+								'menu_class'     => 'c-gnav__list',
+								'container'      => false,
+								'walker'         => new Gnav_Walker(),
+							)
+						);
+						?>
 					</nav>
 				</div>
 			<?php endif; ?>
@@ -98,30 +98,26 @@ if ( function_exists( 'wp_body_open' ) ) {
 
 	<?php
 	// Fixed global menu
-	if ( $gnav ) :
+	if ( has_nav_menu( 'primary' ) ) :
 		?>
 		<div id="fixed_gnav" class="fixed-gnav">
 			<div class="container">
 				<nav class="c-gnav" role="navigation" aria-hidden="true">
-					<?php echo $gnav; ?>
+					<?php
+						wp_nav_menu(
+							array(
+								'theme_location' => 'primary',
+								'menu_class'     => 'c-gnav__list',
+								'container'      => false,
+								'walker'         => new Gnav_Walker(),
+							)
+						);
+					?>
 				</nav>
 			</div>
 		</div>
 	<?php endif; ?>
 </header>
-
-<?php
-// Drawer menu
-$drawer_menu = wp_nav_menu(
-	array(
-		'theme_location' => 'mobile',
-		'menu_class'     => 'drawer__list',
-		'container'      => false,
-		'echo'           => false,
-		'walker'         => new Drawer_Walker(),
-	)
-);
-?>
 
 <div class="fixed-nav">
 	<ul class="fixed-nav__list">
@@ -131,7 +127,7 @@ $drawer_menu = wp_nav_menu(
 
 		<?php
 		// Drawer menu open/close button
-		if ( $drawer_menu ) :
+		if ( has_nav_menu( 'mobile' ) ) :
 			?>
 			<li class="fixed-nav__item">
 				<button id="mobile_hm_btn" aria-controls="drawer" aria-expanded="false" aria-label="<?php esc_html_e( 'Open / Close mobile menu', 'neumorphic' ); ?>"><i class="fas fa-bars"></i></button>
@@ -144,13 +140,21 @@ $drawer_menu = wp_nav_menu(
 	</ul>
 </div>
 
-<?php if ( $drawer_menu ) : ?>
+<?php if ( has_nav_menu( 'mobile' ) ) : ?>
 	<nav id="drawer" class="drawer" aria-hidden="true">
 		<button id="mobile_close_btn" class="drawer__close" aria-controls="drawer" aria-label="<?php esc_html_e( 'Close mobile menu', 'neumorphic' ); ?>"><i class="fas fa-times"></i></button>
 		<div class="drawer__inner container">
 
 			<?php
-			echo $drawer_menu;
+			// Drawer menu
+			wp_nav_menu(
+				array(
+					'theme_location' => 'mobile',
+					'menu_class'     => 'drawer__list',
+					'container'      => false,
+					'walker'         => new Drawer_Walker(),
+				)
+			);
 
 			// Display mobile search window
 			if ( true === get_theme_mod( 'mobile_search_display' ) ) :

@@ -11,6 +11,7 @@
 
 // Customizer choices
 const NEOMORPHIC_SNS_CHOICE = array(
+	'wordpress' => 'WordPress',
 	'website'   => 'Web',
 	'facebook'  => 'Facebook',
 	'twitter'   => 'Twitter',
@@ -25,6 +26,7 @@ const NEOMORPHIC_SNS_CHOICE = array(
 
 // Font Awesome classes mapping
 const NEOMORPHIC_FA_CLASS = array(
+	'wordpress' => 'fab fa-wordpress-simple',
 	'website'   => 'fas fa-globe',
 	'facebook'  => 'fab fa-facebook-f',
 	'twitter'   => 'fab fa-twitter',

@@ -11,3 +11,8 @@ You can change theme color by using color skin function, and you can also adjust
 
 ## Browser support
 * Modern browser
+
+## Resources
+### css-vars-ponyfill
+* License: MIT License
+* Source: https://github.com/jhildenbiddle/css-vars-ponyfill

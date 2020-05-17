@@ -21,6 +21,7 @@
 
 			@include nm-text-border;
 			color: var(--color-text-main);
+			font-weight: bold;
 			font-size: 2.2em;
 			font-family: $base_font_falily;
 			line-height: 1.4;
@@ -46,52 +47,6 @@
 		}
 	}
 
-	// Block
-	.wp-block {
-		max-width: 800px;
-		color: var(--color-text-main);
-		font-size: $base_font_size_pc;
-		font-family: $base_font_falily;
-		line-height: $base_line_height;
-		letter-spacing: $base_letter_spacing;
-		word-break: break-word;
-
-		@media (max-width: 599px) {
-			max-width: calc(100% - 28px);
-		}
-
-		.wp-block {
-			color: inherit;
-		}
-
-		[data-block] {
-			margin-top: 48px;
-			margin-bottom: 48px;
-		}
-
-		&[data-align="left"],
-		&[data-align="right"] {
-
-			[data-block] {
-				margin-top: 0;
-				margin-bottom: 0;
-			}
-		}
-
-		&[data-align="wide"] {
-			max-width: 1000px;
-		}
-
-		&[data-align="full"] {
-			max-width: none;
-		}
-
-		&:not(.editor-post-title__block) a {
-			color: var(--color-text-link);
-			text-decoration: none;
-		}
-	}
-
 	// Heading
 	h1,
 	h2,
@@ -108,10 +63,11 @@
 	}
 
 	h1,
-	h2 {
+	h2,
+	h3 {
 
 		@include nm-border;
-		padding-bottom: 0.2em;
+		padding-bottom: 0.3em;
 	}
 
 	h1 {
@@ -156,7 +112,7 @@
 	}
 
 	// List
-	ul,
+	ul:not(.is-grid):not(.blocks-gallery-grid):not(.wp-block-latest-posts),
 	ol {
 		margin-left: 0;
 		padding-left: 1.5em;
@@ -231,5 +187,58 @@
 		color: inherit;
 		font-size: 0.8em;
 		opacity: $text_color_thin;
+	}
+}
+
+// New Post Placeholder
+.block-editor-default-block-appender textarea.block-editor-default-block-appender__content {
+	color: inherit;
+	font-size: inherit;
+	font-family: inherit;
+	opacity: $base_placeholder_opacity;
+}
+
+// Block
+.wp-block {
+	max-width: 800px;
+	color: var(--color-text-main);
+	font-size: $base_font_size_pc;
+	font-family: $base_font_falily;
+	line-height: $base_line_height;
+	letter-spacing: $base_letter_spacing;
+	word-break: break-word;
+
+	@media (max-width: 599px) {
+		max-width: calc(100% - 28px);
+	}
+
+	.wp-block {
+		color: inherit;
+	}
+
+	[data-block] {
+		margin-top: 48px;
+		margin-bottom: 48px;
+	}
+
+	&[data-align="left"],
+	&[data-align="right"] {
+
+		[data-block] {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
+
+	&[data-align="wide"] {
+		max-width: 1000px;
+	}
+
+	&[data-align="full"] {
+		max-width: none;
+	}
+
+	&:not(.editor-post-title__block) a {
+		color: var(--color-text-link);
 	}
 }

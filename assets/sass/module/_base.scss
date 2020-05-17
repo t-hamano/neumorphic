@@ -120,7 +120,7 @@ blockquote {
 	}
 
 	&-item {
-		margin: 0 0 10px;
+		margin: 0 0 20px;
 		padding: 0 5px;
 	}
 
@@ -204,10 +204,10 @@ select {
 }
 
 [type="search"] {
-	appearance: searchfield;
+	appearance: none;
 
 	&::-webkit-search-cancel-button {
-		appearance: searchfield-cancel-button;
+		appearance: none;
 	}
 }
 

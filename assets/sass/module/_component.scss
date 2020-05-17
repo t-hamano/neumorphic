@@ -150,6 +150,7 @@
 		display: inline-block;
 		padding: 0.7em 1.4em;
 		color: var(--color-accent);
+		font-size: 0.8em;
 		border-radius: 1000px;
 	}
 
@@ -441,6 +442,10 @@
 				border-radius: 1000px;
 			}
 		}
+
+		+ .c-comment__form {
+			margin-top: 3em;
+		}
 	}
 
 	&__nav {
@@ -494,10 +499,13 @@
 				}
 			}
 		}
+
+		+ .c-comment__form {
+			margin-top: 3em;
+		}
 	}
 
 	&__form {
-		margin: 3em 0 1em;
 
 		.required {
 			color: var(--color-text-link);
