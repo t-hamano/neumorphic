@@ -86,7 +86,6 @@ if ( function_exists( 'wp_body_open' ) ) {
 								'theme_location' => 'primary',
 								'menu_class'     => 'c-gnav__list',
 								'container'      => false,
-								'echo'           => false,
 								'walker'         => new Gnav_Walker(),
 							)
 						);
@@ -110,7 +109,6 @@ if ( function_exists( 'wp_body_open' ) ) {
 								'theme_location' => 'primary',
 								'menu_class'     => 'c-gnav__list',
 								'container'      => false,
-								'echo'           => false,
 								'walker'         => new Gnav_Walker(),
 							)
 						);
@@ -149,12 +147,11 @@ if ( function_exists( 'wp_body_open' ) ) {
 
 			<?php
 			// Drawer menu
-			$drawer_menu = wp_nav_menu(
+			wp_nav_menu(
 				array(
 					'theme_location' => 'mobile',
 					'menu_class'     => 'drawer__list',
 					'container'      => false,
-					'echo'           => false,
 					'walker'         => new Drawer_Walker(),
 				)
 			);
