@@ -50,7 +50,7 @@ function neumorphic_customizer_color( $wp_customize ) {
 	$wp_customize->add_setting(
 		'color_bg',
 		array(
-			'default'           => NEOMORPHIC_COLOR_SKIN['default']['bg'],
+			'default'           => NEUMORPHIC_COLOR_SKIN['default']['bg'],
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'postMessage',
 		)
@@ -72,7 +72,7 @@ function neumorphic_customizer_color( $wp_customize ) {
 	$wp_customize->add_setting(
 		'color_text_main',
 		array(
-			'default'           => NEOMORPHIC_COLOR_SKIN['default']['text_main'],
+			'default'           => NEUMORPHIC_COLOR_SKIN['default']['text_main'],
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'postMessage',
 		)
@@ -95,7 +95,7 @@ function neumorphic_customizer_color( $wp_customize ) {
 	$wp_customize->add_setting(
 		'color_accent',
 		array(
-			'default'           => NEOMORPHIC_COLOR_SKIN['default']['accent'],
+			'default'           => NEUMORPHIC_COLOR_SKIN['default']['accent'],
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'postMessage',
 		)
@@ -118,7 +118,7 @@ function neumorphic_customizer_color( $wp_customize ) {
 	$wp_customize->add_setting(
 		'color_text_link',
 		array(
-			'default'           => NEOMORPHIC_COLOR_SKIN['default']['text_link'],
+			'default'           => NEUMORPHIC_COLOR_SKIN['default']['text_link'],
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'postMessage',
 		)
@@ -141,7 +141,7 @@ function neumorphic_customizer_color( $wp_customize ) {
 	$wp_customize->add_setting(
 		'color_text_border_display',
 		array(
-			'default'           => NEOMORPHIC_COLOR_SKIN['default']['text_border_display'],
+			'default'           => NEUMORPHIC_COLOR_SKIN['default']['text_border_display'],
 			'sanitize_callback' => 'neumorphic_sanitize_checkbox',
 			'transport'         => 'postMessage',
 		)
@@ -165,7 +165,7 @@ function neumorphic_customizer_color( $wp_customize ) {
 	$wp_customize->add_setting(
 		'color_text_border_color',
 		array(
-			'default'           => NEOMORPHIC_COLOR_SKIN['default']['text_border_color'],
+			'default'           => NEUMORPHIC_COLOR_SKIN['default']['text_border_color'],
 			'sanitize_callback' => 'sanitize_hex_color',
 			'transport'         => 'postMessage',
 		)

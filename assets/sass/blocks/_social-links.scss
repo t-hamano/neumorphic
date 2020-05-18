@@ -8,6 +8,10 @@
 	margin-bottom: 2em;
 	padding: 0;
 
+	@include mq(md-max) {
+		justify-content: center;
+	}
+
 	&.aligncenter {
 		display: flex !important;
 	}

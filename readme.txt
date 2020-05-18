@@ -7,11 +7,11 @@ Requires at least: 5.4
 Requires PHP: 7.0
 Stable tag: 1.0.0
 
-Neumorphic is a advanced WordPress theme based on neomorphic design.
+Neumorphic is a advanced WordPress theme based on neumorphic design.
 
 == Description ==
 
-Neumorphic is a advanced WordPress theme based on neomorphic design. This theme surports WordPress Block Editor, and almost all the core blocks are styled for neomorphic design. You can change theme color by using color skin function, and you can also adjust each colors individually to create your original skin.
+Neumorphic is a advanced WordPress theme based on neumorphic design. This theme surports WordPress Block Editor, and almost all the core blocks are styled for neumorphic design. You can change theme color by using color skin function, and you can also adjust each colors individually to create your original skin.
 
 == Installation ==
 

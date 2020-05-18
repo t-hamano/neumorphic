@@ -21,7 +21,7 @@ function neumorphic_customizer_sns( $wp_customize ) {
 		array(
 			'none' => __( 'None', 'neumorphic' ),
 		),
-		NEOMORPHIC_SNS_CHOICE
+		NEUMORPHIC_SNS_CHOICE
 	);
 
 	// SNS icon and url

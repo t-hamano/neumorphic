@@ -5,6 +5,10 @@
 .wp-block-tag-cloud {
 	margin-bottom: 2em;
 
+	@include mq(md-max) {
+		text-align: center;
+	}
+
 	a {
 
 		@include nm-button;

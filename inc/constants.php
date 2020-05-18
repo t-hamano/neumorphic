@@ -10,7 +10,7 @@
  **********************************************************/
 
 // Customizer choices
-const NEOMORPHIC_SNS_CHOICE = array(
+const _SNS_CHOICE = array(
 	'wordpress' => 'WordPress',
 	'website'   => 'Web',
 	'facebook'  => 'Facebook',
@@ -25,7 +25,7 @@ const NEOMORPHIC_SNS_CHOICE = array(
 );
 
 // Font Awesome classes mapping
-const NEOMORPHIC_FA_CLASS = array(
+const NEUMORPHIC_FA_CLASS = array(
 	'wordpress' => 'fab fa-wordpress-simple',
 	'website'   => 'fas fa-globe',
 	'facebook'  => 'fab fa-facebook-f',
@@ -44,7 +44,7 @@ const NEOMORPHIC_FA_CLASS = array(
  **********************************************************/
 
 // Color skins
-const NEOMORPHIC_COLOR_SKIN = array(
+const NEUMORPHIC_COLOR_SKIN = array(
 	'default'       => array(
 		'bg'                  => '#bec5c9',
 		'text_main'           => '#374147',
@@ -112,31 +112,31 @@ const NEOMORPHIC_COLOR_SKIN = array(
 );
 
 // Display search bar on header
-define( 'NEOMORPHIC_HEADER_SEARCH_DISPLAY', true );
+define( 'NEUMORPHIC_HEADER_SEARCH_DISPLAY', true );
 
 // Display SNS icon on header
-define( 'NEOMORPHIC_HEADER_SNS_DISPLAY', true );
+define( 'NEUMORPHIC_HEADER_SNS_DISPLAY', true );
 
 // Display SNS icon on footer
-define( 'NEOMORPHIC_FOOTER_SNS_DISPLAY', true );
+define( 'NEUMORPHIC_FOOTER_SNS_DISPLAY', true );
 
 // Sidebar position
-define( 'NEOMORPHIC_SIDEBAR_POSITION', 'right' );
+define( 'NEUMORPHIC_SIDEBAR_POSITION', 'right' );
 
 // Show sidebar on front page
-define( 'NEOMORPHIC_SIDEBAR_DISPLAY_FRONT', false );
+define( 'NEUMORPHIC_SIDEBAR_DISPLAY_FRONT', false );
 
 // Show sidebar on static page
-define( 'NEOMORPHIC_SIDEBAR_DISPLAY_PAGE', true );
+define( 'NEUMORPHIC_SIDEBAR_DISPLAY_PAGE', true );
 
 // Show sidebar on post
-define( 'NEOMORPHIC_SIDEBAR_DISPLAY_POST', true );
+define( 'NEUMORPHIC_SIDEBAR_DISPLAY_POST', true );
 
 // Show sidebar on archive page
-define( 'NEOMORPHIC_SIDEBAR_DISPLAY_ARCHIVE', true );
+define( 'NEUMORPHIC_SIDEBAR_DISPLAY_ARCHIVE', true );
 
 // Credit
-define( 'NEOMORPHIC_FOOTER_CREDIT', __( 'Neumorphic Theme : Powered by <a href="https://wordpress.org/" target="_blank">WordPress</a>' ) );
+define( 'NEUMORPHIC_FOOTER_CREDIT', __( 'Neumorphic Theme : Powered by <a href="https://wordpress.org/" target="_blank">WordPress</a>', 'neumorphic' ) );
 
 // Display search button on mobile drawer menu
-define( 'NEOMORPHIC_MOBILE_SEARCH_DISPLAY', false );
+define( 'NEUMORPHIC_MOBILE_SEARCH_DISPLAY', false );

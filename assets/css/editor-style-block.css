@@ -633,12 +633,14 @@
 }
 
 [data-type="core/cover"] .wp-block-cover h1,
-[data-type="core/cover"] .wp-block-cover h2 {
+[data-type="core/cover"] .wp-block-cover h2,
+[data-type="core/cover"] .wp-block-cover h3 {
 	padding-bottom: 0;
 }
 
 [data-type="core/cover"] .wp-block-cover h1::before,
-[data-type="core/cover"] .wp-block-cover h2::before {
+[data-type="core/cover"] .wp-block-cover h2::before,
+[data-type="core/cover"] .wp-block-cover h3::before {
 	content: none;
 }
 

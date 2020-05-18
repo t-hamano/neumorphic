@@ -30,7 +30,13 @@ function neumorphic_setup() {
 	// Enable support for Post Thumbnails on posts and pages.
 	add_theme_support( 'post-thumbnails' );
 
-	// Register navigation menus uses wp_nav_menu in one location.
+	// Set content-width.
+	global $content_width;
+	if ( ! isset( $content_width ) ) {
+		$content_width = 580;
+	}
+
+		// Register navigation menus uses wp_nav_menu in one location.
 	register_nav_menus(
 		array(
 			'primary' => __( 'Desktop Menu', 'neumorphic' ),
@@ -62,11 +68,11 @@ function neumorphic_setup() {
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
 	// Get customizer variables.
-	$color_bg                = esc_html( get_theme_mod( 'color_bg', NEOMORPHIC_COLOR_SKIN['default']['bg'] ) );
-	$color_text_main         = esc_html( get_theme_mod( 'color_text_main', NEOMORPHIC_COLOR_SKIN['default']['text_main'] ) );
-	$color_accent            = esc_html( get_theme_mod( 'color_accent', NEOMORPHIC_COLOR_SKIN['default']['accent'] ) );
-	$color_text_link         = esc_html( get_theme_mod( 'color_text_link', NEOMORPHIC_COLOR_SKIN['default']['text_link'] ) );
-	$color_text_border_color = esc_html( get_theme_mod( 'color_text_border_color', NEOMORPHIC_COLOR_SKIN['default']['text_border_color'] ) );
+	$color_bg                = esc_html( get_theme_mod( 'color_bg', NEUMORPHIC_COLOR_SKIN['default']['bg'] ) );
+	$color_text_main         = esc_html( get_theme_mod( 'color_text_main', NEUMORPHIC_COLOR_SKIN['default']['text_main'] ) );
+	$color_accent            = esc_html( get_theme_mod( 'color_accent', NEUMORPHIC_COLOR_SKIN['default']['accent'] ) );
+	$color_text_link         = esc_html( get_theme_mod( 'color_text_link', NEUMORPHIC_COLOR_SKIN['default']['text_link'] ) );
+	$color_text_border_color = esc_html( get_theme_mod( 'color_text_border_color', NEUMORPHIC_COLOR_SKIN['default']['text_border_color'] ) );
 
 	// Generate new colors based on the neumorphic design.
 	$color_dark  = neumorphic_generate_new_color( $color_bg, -0.15 );
@@ -218,6 +224,11 @@ function neumorphic_scripts() {
 
 	// Main Script
 	wp_enqueue_script( 'neumorphic-script-main', get_theme_file_uri() . '/assets/js/main.js', array( 'jquery' ), $theme_version, false );
+
+	// Comment reply Script
+	if ( ( ! is_admin() ) && is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 
 	// CSS custom properties support for legacy and modern browsers
 	wp_enqueue_script( 'neumorphic-script-ponyfill', 'https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2', array(), $theme_version );
@@ -385,11 +396,11 @@ add_filter( 'nav_menu_css_class', 'neumorphic_nav_class', 10, 4 );
  */
 function neumorphic_contents_class() {
 	// Get cutomizer settings.
-	$display_position = get_theme_mod( 'sidebar_position', NEOMORPHIC_SIDEBAR_POSITION );
-	$display_front    = get_theme_mod( 'sidebar_display_front', NEOMORPHIC_SIDEBAR_DISPLAY_FRONT );
-	$display_post     = get_theme_mod( 'sidebar_display_post', NEOMORPHIC_SIDEBAR_DISPLAY_POST );
-	$display_page     = get_theme_mod( 'sidebar_display_page', NEOMORPHIC_SIDEBAR_DISPLAY_PAGE );
-	$display_archive  = get_theme_mod( 'sidebar_display_archive', NEOMORPHIC_SIDEBAR_DISPLAY_ARCHIVE );
+	$display_position = get_theme_mod( 'sidebar_position', NEUMORPHIC_SIDEBAR_POSITION );
+	$display_front    = get_theme_mod( 'sidebar_display_front', NEUMORPHIC_SIDEBAR_DISPLAY_FRONT );
+	$display_post     = get_theme_mod( 'sidebar_display_post', NEUMORPHIC_SIDEBAR_DISPLAY_POST );
+	$display_page     = get_theme_mod( 'sidebar_display_page', NEUMORPHIC_SIDEBAR_DISPLAY_PAGE );
+	$display_archive  = get_theme_mod( 'sidebar_display_archive', NEUMORPHIC_SIDEBAR_DISPLAY_ARCHIVE );
 
 	// Give priority to the template display settings If a specific page template is used.
 	if ( is_page_template( 'template/sidebar-left.php' ) ) {

@@ -19,7 +19,7 @@ function neumorphic_customizer_footer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'footer_sns_display',
 		array(
-			'default'           => NEOMORPHIC_FOOTER_SNS_DISPLAY,
+			'default'           => NEUMORPHIC_FOOTER_SNS_DISPLAY,
 			'sanitize_callback' => 'neumorphic_sanitize_checkbox',
 		)
 	);
@@ -38,7 +38,7 @@ function neumorphic_customizer_footer( $wp_customize ) {
 	$wp_customize->add_setting(
 		'footer_credit',
 		array(
-			'default'           => NEOMORPHIC_FOOTER_CREDIT,
+			'default'           => NEUMORPHIC_FOOTER_CREDIT,
 			'sanitize_callback' => 'neumorphic_sanitize_footer_credit',
 		)
 	);

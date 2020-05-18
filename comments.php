@@ -19,11 +19,12 @@ if ( post_password_required() ) {
 				$comment_count = get_comments_number();
 				printf(
 					esc_html(
-						/* translators: 1:  amount of comments */
+						/* translators: 1: amount of comments */
 						_nx(
 							'%1$s comment',
 							'%1$s comments',
 							$comment_count,
+							'comments title',
 							'neumorphic'
 						)
 					),

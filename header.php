@@ -56,7 +56,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 
 			<?php
 			// Header search bar
-			if ( true === get_theme_mod( 'header_search_display', NEOMORPHIC_HEADER_SEARCH_DISPLAY ) ) :
+			if ( true === get_theme_mod( 'header_search_display', NEUMORPHIC_HEADER_SEARCH_DISPLAY ) ) :
 				?>
 				<div class="header__search">
 					<?php get_search_form(); ?>
@@ -65,7 +65,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 
 			<?php
 			// SNS icon
-			if ( true === get_theme_mod( 'header_sns_display', NEOMORPHIC_HEADER_SNS_DISPLAY ) ) :
+			if ( true === get_theme_mod( 'header_sns_display', NEUMORPHIC_HEADER_SNS_DISPLAY ) ) :
 				?>
 				<nav class="header__sns" role="navigation">
 					<div class="container">

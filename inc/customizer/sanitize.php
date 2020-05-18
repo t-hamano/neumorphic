@@ -16,7 +16,7 @@ function neumorphic_sanitize_checkbox( $checked ) {
  * Select (Color skin)
  */
 function neumorphic_sanitize_choices_color_skin( $select ) {
-	$valid = array_keys( NEOMORPHIC_COLOR_SKIN );
+	$valid = array_keys( NEUMORPHIC_COLOR_SKIN );
 
 	if ( in_array( $select, $valid, true ) ) {
 		return $select;
@@ -35,7 +35,7 @@ function neumorphic_sanitize_choices_sidebar( $select ) {
 		return $select;
 	}
 
-	return NEOMORPHIC_SIDEBAR_POSITION;
+	return NEUMORPHIC_SIDEBAR_POSITION;
 }
 
 /**
@@ -44,7 +44,7 @@ function neumorphic_sanitize_choices_sidebar( $select ) {
 function neumorphic_sanitize_choices_sns( $select ) {
 	$valid = array_merge(
 		array( 'none' => __( 'None', 'neumorphic' ) ),
-		NEOMORPHIC_SNS_CHOICE
+		NEUMORPHIC_SNS_CHOICE
 	);
 
 	if ( array_key_exists( $select, $valid ) ) {

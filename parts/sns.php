@@ -15,8 +15,8 @@ for ( $i = 1; $i <= 5; $i++ ) {
 	if ( 'none' !== $icon && $url ) {
 		// Store SNS icon title, font awesome classname and URL
 		$sns_icons[] = array(
-			'title'      => NEOMORPHIC_SNS_CHOICE[ $icon ],
-			'icon_class' => NEOMORPHIC_FA_CLASS[ $icon ],
+			'title'      => NEUMORPHIC_SNS_CHOICE[ $icon ],
+			'icon_class' => NEUMORPHIC_FA_CLASS[ $icon ],
 			'url'        => $url,
 		);
 	}

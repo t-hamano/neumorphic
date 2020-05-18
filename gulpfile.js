@@ -1,16 +1,16 @@
-const gulp = require( 'gulp' );
-const zip = require( 'gulp-zip' );
-const chmod = require( 'gulp-chmod' );
-const rename = require( 'gulp-rename' );
-const cleanCss = require( 'gulp-clean-css' );
-const del = require( 'del' );
-const sass = require( 'gulp-sass' );
-const plumber = require( 'gulp-plumber' );
-const notify = require( 'gulp-notify' );
-const postcss = require( 'gulp-postcss' );
-const autoprefixer = require( 'autoprefixer' );
-const csscomb = require( 'gulp-csscomb' );
-const mmq = require( 'gulp-merge-media-queries' );
+var gulp = require( 'gulp' );
+var zip = require( 'gulp-zip' );
+var chmod = require( 'gulp-chmod' );
+var rename = require( 'gulp-rename' );
+var cleanCss = require( 'gulp-clean-css' );
+var del = require( 'del' );
+var sass = require( 'gulp-sass' );
+var plumber = require( 'gulp-plumber' );
+var notify = require( 'gulp-notify' );
+var postcss = require( 'gulp-postcss' );
+var autoprefixer = require( 'autoprefixer' );
+var csscomb = require( 'gulp-csscomb' );
+var mmq = require( 'gulp-merge-media-queries' );
 
 // Delete a folder after archiving
 function cleanFiles( cb ) {
@@ -49,9 +49,13 @@ function copyFiles() {
 			'!.gitignore',
 			'!node_modules',
 			'!node_modules/**',
+			'!vendor',
+			'!vendor/**',
 			'!release',
 			'!release/**',
 			'!gulpfile.js',
+			'!composer.json',
+			'!composer.lock',
 			'!package.json',
 			'!package-lock.json',
 			'!phpcs.ruleset.xml'
@@ -70,7 +74,7 @@ function makeZip() {
 }
 
 // Deploy
-exports.deploy = gulp.series( copyFiles, makeZip, cleanFiles );
+exports.deploy = gulp.series( compileSass, copyFiles, makeZip, cleanFiles );
 
 //Default Task
 exports.default = function () {

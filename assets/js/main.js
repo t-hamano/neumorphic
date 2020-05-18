@@ -6,7 +6,10 @@
 	// CSS custom properties support for legacy and modern browsers
 	cssVars();
 
-	// Admin bar
+	// Apply mediaelement style to audio block
+	$( '.wp-block-audio audio' ).addClass( 'mejs__player' );
+
+		// Admin bar
 	var adminBar = $( '#wpadminbar' );
 
 	// Fixed global menu

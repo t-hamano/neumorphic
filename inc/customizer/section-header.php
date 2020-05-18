@@ -19,7 +19,7 @@ function neumorphic_customizer_header( $wp_customize ) {
 	$wp_customize->add_setting(
 		'header_search_display',
 		array(
-			'default'           => NEOMORPHIC_HEADER_SEARCH_DISPLAY,
+			'default'           => NEUMORPHIC_HEADER_SEARCH_DISPLAY,
 			'sanitize_callback' => 'neumorphic_sanitize_checkbox',
 		)
 	);
@@ -38,7 +38,7 @@ function neumorphic_customizer_header( $wp_customize ) {
 	$wp_customize->add_setting(
 		'header_sns_display',
 		array(
-			'default'           => NEOMORPHIC_HEADER_SNS_DISPLAY,
+			'default'           => NEUMORPHIC_HEADER_SNS_DISPLAY,
 			'sanitize_callback' => 'neumorphic_sanitize_checkbox',
 		)
 	);
