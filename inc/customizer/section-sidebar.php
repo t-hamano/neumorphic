@@ -19,7 +19,7 @@ function neumorphic_customizer_sidebar( $wp_customize ) {
 	$wp_customize->add_setting(
 		'sidebar_position',
 		array(
-			'default'           => NEOMORPHIC_SIDEBAR_POSITION,
+			'default'           => NEUMORPHIC_SIDEBAR_POSITION,
 			'sanitize_callback' => 'neumorphic_sanitize_choices_sidebar',
 		)
 	);
@@ -43,7 +43,7 @@ function neumorphic_customizer_sidebar( $wp_customize ) {
 	$wp_customize->add_setting(
 		'sidebar_display_front',
 		array(
-			'default'           => NEOMORPHIC_SIDEBAR_DISPLAY_FRONT,
+			'default'           => NEUMORPHIC_SIDEBAR_DISPLAY_FRONT,
 			'sanitize_callback' => 'neumorphic_sanitize_checkbox',
 		)
 	);
@@ -65,7 +65,7 @@ function neumorphic_customizer_sidebar( $wp_customize ) {
 	$wp_customize->add_setting(
 		'sidebar_display_page',
 		array(
-			'default'           => NEOMORPHIC_SIDEBAR_DISPLAY_PAGE,
+			'default'           => NEUMORPHIC_SIDEBAR_DISPLAY_PAGE,
 			'sanitize_callback' => 'neumorphic_sanitize_checkbox',
 		)
 	);
@@ -87,7 +87,7 @@ function neumorphic_customizer_sidebar( $wp_customize ) {
 	$wp_customize->add_setting(
 		'sidebar_display_post',
 		array(
-			'default'           => NEOMORPHIC_SIDEBAR_DISPLAY_POST,
+			'default'           => NEUMORPHIC_SIDEBAR_DISPLAY_POST,
 			'sanitize_callback' => 'neumorphic_sanitize_checkbox',
 		)
 	);
@@ -109,7 +109,7 @@ function neumorphic_customizer_sidebar( $wp_customize ) {
 	$wp_customize->add_setting(
 		'sidebar_display_archive',
 		array(
-			'default'           => NEOMORPHIC_SIDEBAR_DISPLAY_ARCHIVE,
+			'default'           => NEUMORPHIC_SIDEBAR_DISPLAY_ARCHIVE,
 			'sanitize_callback' => 'neumorphic_sanitize_checkbox',
 		)
 	);

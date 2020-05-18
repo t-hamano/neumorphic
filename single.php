@@ -20,7 +20,7 @@ get_header(); ?>
 
 <?php
 // Switch sidebar on/off according to customizer settings
-$display_post = get_theme_mod( 'sidebar_display_post', NEOMORPHIC_SIDEBAR_DISPLAY_POST );
+$display_post = get_theme_mod( 'sidebar_display_post', NEUMORPHIC_SIDEBAR_DISPLAY_POST );
 
 if ( $display_post ) {
 	get_sidebar();

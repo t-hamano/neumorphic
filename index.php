@@ -34,8 +34,8 @@ get_header(); ?>
 
 <?php
 // Switch sidebar on/off according to customizer settings
-$display_archive = get_theme_mod( 'sidebar_display_archive', NEOMORPHIC_SIDEBAR_DISPLAY_ARCHIVE );
-$display_front   = get_theme_mod( 'sidebar_display_front', NEOMORPHIC_SIDEBAR_DISPLAY_FRONT );
+$display_archive = get_theme_mod( 'sidebar_display_archive', NEUMORPHIC_SIDEBAR_DISPLAY_ARCHIVE );
+$display_front   = get_theme_mod( 'sidebar_display_front', NEUMORPHIC_SIDEBAR_DISPLAY_FRONT );
 
 if ( is_front_page() && $display_front ) {
 	get_sidebar();

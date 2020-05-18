@@ -11,12 +11,12 @@
 
 function neumorphic_generate_css() {
 	// Get customizer variables.
-	$color_bg                  = esc_html( get_theme_mod( 'color_bg', NEOMORPHIC_COLOR_SKIN['default']['bg'] ) );
-	$color_text_main           = esc_html( get_theme_mod( 'color_text_main', NEOMORPHIC_COLOR_SKIN['default']['text_main'] ) );
-	$color_accent              = esc_html( get_theme_mod( 'color_accent', NEOMORPHIC_COLOR_SKIN['default']['accent'] ) );
-	$color_text_link           = esc_html( get_theme_mod( 'color_text_link', NEOMORPHIC_COLOR_SKIN['default']['text_link'] ) );
-	$color_text_border_display = get_theme_mod( 'color_text_border_display', NEOMORPHIC_COLOR_SKIN['default']['text_border_display'] );
-	$color_text_border_color   = esc_html( get_theme_mod( 'color_text_border_color', NEOMORPHIC_COLOR_SKIN['default']['text_border_color'] ) );
+	$color_bg                  = esc_html( get_theme_mod( 'color_bg', NEUMORPHIC_COLOR_SKIN['default']['bg'] ) );
+	$color_text_main           = esc_html( get_theme_mod( 'color_text_main', NEUMORPHIC_COLOR_SKIN['default']['text_main'] ) );
+	$color_accent              = esc_html( get_theme_mod( 'color_accent', NEUMORPHIC_COLOR_SKIN['default']['accent'] ) );
+	$color_text_link           = esc_html( get_theme_mod( 'color_text_link', NEUMORPHIC_COLOR_SKIN['default']['text_link'] ) );
+	$color_text_border_display = get_theme_mod( 'color_text_border_display', NEUMORPHIC_COLOR_SKIN['default']['text_border_display'] );
+	$color_text_border_color   = esc_html( get_theme_mod( 'color_text_border_color', NEUMORPHIC_COLOR_SKIN['default']['text_border_color'] ) );
 
 	if ( ! $color_text_border_display ) {
 		$color_text_border_color = 'none';

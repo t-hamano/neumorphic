@@ -19,7 +19,7 @@ function neumorphic_customizer_mobile( $wp_customize ) {
 	$wp_customize->add_setting(
 		'mobile_search_display',
 		array(
-			'default'           => NEOMORPHIC_MOBILE_SEARCH_DISPLAY,
+			'default'           => NEUMORPHIC_MOBILE_SEARCH_DISPLAY,
 			'sanitize_callback' => 'neumorphic_sanitize_checkbox',
 		)
 	);
