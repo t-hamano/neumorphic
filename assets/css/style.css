@@ -536,7 +536,7 @@ button:focus {
 	position: absolute;
 	top: 100%;
 	left: 50%;
-	z-index: 2;
+	z-index: 5;
 	width: 14em;
 	padding: 0;
 	text-align: left;
@@ -5276,6 +5276,12 @@ button:focus {
 
 	.wp-block-buttons {
 		text-align: center;
+	}
+
+	.wp-block-buttons .wp-block-button {
+		display: block;
+		margin-right: 0;
+		margin-bottom: 2em;
 	}
 
 	.wp-block-latest-posts.is-grid.alignleft,

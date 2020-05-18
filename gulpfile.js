@@ -54,8 +54,8 @@ function copyFiles() {
 			'!release',
 			'!release/**',
 			'!gulpfile.js',
-			'!cmmposer.json',
-			'!cmmposer-lock.json',
+			'!composer.json',
+			'!composer.lock',
 			'!package.json',
 			'!package-lock.json',
 			'!phpcs.ruleset.xml'
