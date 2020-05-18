@@ -5,6 +5,10 @@
 .wp-block-buttons {
 	margin-bottom: 1em;
 
+	@include mq(md-max) {
+		text-align: center;
+	}
+
 	.wp-block-button {
 		margin-right: 20px;
 		margin-bottom: 20px;

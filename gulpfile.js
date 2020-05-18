@@ -49,9 +49,13 @@ function copyFiles() {
 			'!.gitignore',
 			'!node_modules',
 			'!node_modules/**',
+			'!vendor',
+			'!vendor/**',
 			'!release',
 			'!release/**',
 			'!gulpfile.js',
+			'!cmmposer.json',
+			'!cmmposer-lock.json',
 			'!package.json',
 			'!package-lock.json',
 			'!phpcs.ruleset.xml'
@@ -70,7 +74,7 @@ function makeZip() {
 }
 
 // Deploy
-exports.deploy = gulp.series( copyFiles, makeZip, cleanFiles );
+exports.deploy = gulp.series( compileSass, copyFiles, makeZip, cleanFiles );
 
 //Default Task
 exports.default = function () {
