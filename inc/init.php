@@ -30,7 +30,13 @@ function neumorphic_setup() {
 	// Enable support for Post Thumbnails on posts and pages.
 	add_theme_support( 'post-thumbnails' );
 
-	// Register navigation menus uses wp_nav_menu in one location.
+	// Set content-width.
+	global $content_width;
+	if ( ! isset( $content_width ) ) {
+		$content_width = 580;
+	}
+
+		// Register navigation menus uses wp_nav_menu in one location.
 	register_nav_menus(
 		array(
 			'primary' => __( 'Desktop Menu', 'neumorphic' ),
@@ -218,6 +224,11 @@ function neumorphic_scripts() {
 
 	// Main Script
 	wp_enqueue_script( 'neumorphic-script-main', get_theme_file_uri() . '/assets/js/main.js', array( 'jquery' ), $theme_version, false );
+
+	// Comment reply Script
+	if ( ( ! is_admin() ) && is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+		wp_enqueue_script( 'comment-reply' );
+	}
 
 	// CSS custom properties support for legacy and modern browsers
 	wp_enqueue_script( 'neumorphic-script-ponyfill', 'https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2', array(), $theme_version );

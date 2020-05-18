@@ -241,7 +241,8 @@
 	}
 
 	// Figcaption
-	figcaption {
+	figcaption,
+	.wp-caption-text {
 		margin-top: 0.5em;
 		margin-bottom: 0;
 		color: inherit;

@@ -5,9 +5,14 @@
  * @package neumorphic
  */
 
+$post_class = array( 'c-entries__item' );
+
+if ( is_sticky() ) {
+	$post_class[] = 'sticky';
+}
 ?>
 
-<article <?php post_class( 'c-entries__item' ); ?>>
+<article <?php post_class( $post_class ); ?>>
 	<a href="<?php the_permalink(); ?>" class="clearfix">
 
 		<?php

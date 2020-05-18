@@ -233,6 +233,10 @@
 			width: 100%;
 		}
 
+		&.sticky {
+			font-size: 1.3em;
+		}
+
 		&:not(:last-child) {
 			margin-bottom: 1.5em;
 		}
@@ -360,6 +364,12 @@
 
 			@include nm-border;
 			padding: 1.5em 0;
+
+			+ .comment-respond {
+
+				@include nm-border;
+				padding-bottom: 2em;
+			}
 		}
 
 		.children {
@@ -370,6 +380,12 @@
 
 		.comment-meta {
 			margin-bottom: 1em;
+		}
+
+		.bypostauthor .comment-meta {
+			padding: 1em;
+			background-color: var(--color-nm-light);
+			border-radius: $base_border_radius;
 		}
 
 		.comment-author {
@@ -442,10 +458,6 @@
 				border-radius: 1000px;
 			}
 		}
-
-		+ .c-comment__form {
-			margin-top: 3em;
-		}
 	}
 
 	&__nav {
@@ -499,35 +511,30 @@
 				}
 			}
 		}
+	}
 
-		+ .c-comment__form {
-			margin-top: 3em;
+	.comment-respond {
+		margin-top: 2em;
+	}
+
+	.comment-reply-title {
+
+		@include nm-text-border;
+		margin: 0 0 1em;
+		font-size: 1.4em;
+
+		#cancel-comment-reply-link {
+			margin-left: 1em;
+			font-weight: normal;
+			font-size: 0.8em;
+		}
+
+		a {
+			text-shadow: none;
 		}
 	}
 
-	&__form {
-
-		.required {
-			color: var(--color-text-link);
-			font-weight: bold;
-		}
-
-		.comment-reply-title {
-
-			@include nm-text-border;
-			margin: 0 0 1em;
-			font-size: 1.4em;
-
-			#cancel-comment-reply-link {
-				margin-left: 1em;
-				font-weight: normal;
-				font-size: 0.8em;
-			}
-
-			a {
-				text-shadow: none;
-			}
-		}
+	.comment-form {
 
 		.comment-notes {
 			margin: 0 0 1em;
@@ -558,13 +565,17 @@
 				display: block;
 				margin-bottom: 0.5em;
 				font-weight: bold;
+
+				.required {
+					color: var(--color-text-link);
+					font-weight: bold;
+				}
 			}
 		}
 
 		.form-submit [type="submit"] {
 
 			@include nm-button;
-			margin: 0 auto 0;
 			color: var(--color-accent);
 		}
 	}

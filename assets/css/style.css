@@ -750,6 +750,10 @@ button:focus {
 ## Archive post area
 ------------------------------------------*/
 
+.c-entries__item.sticky {
+	font-size: 1.3em;
+}
+
 .c-entries__item:not(:last-child) {
 	margin-bottom: 1.5em;
 }
@@ -954,6 +958,22 @@ button:focus {
 	content: "";
 }
 
+.c-comment__list .comment-body + .comment-respond {
+	position: relative;
+	padding-bottom: 2em;
+}
+
+.c-comment__list .comment-body + .comment-respond::before {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	border-radius: 1000px;
+	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
+	content: "";
+}
+
 .c-comment__list .children {
 	margin: 0;
 	padding: 0 0 0 2em;
@@ -962,6 +982,12 @@ button:focus {
 
 .c-comment__list .comment-meta {
 	margin-bottom: 1em;
+}
+
+.c-comment__list .bypostauthor .comment-meta {
+	padding: 1em;
+	background-color: var(--color-nm-light);
+	border-radius: 8px;
 }
 
 .c-comment__list .comment-author {
@@ -1097,10 +1123,6 @@ button:focus {
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 }
 
-.c-comment__list + .c-comment__form {
-	margin-top: 3em;
-}
-
 .c-comment__nav {
 	position: relative;
 	padding: 1em 0;
@@ -1161,46 +1183,41 @@ button:focus {
 	content: "\f101";
 }
 
-.c-comment__nav + .c-comment__form {
-	margin-top: 3em;
+.c-comment .comment-respond {
+	margin-top: 2em;
 }
 
-.c-comment__form .required {
-	color: var(--color-text-link);
-	font-weight: bold;
-}
-
-.c-comment__form .comment-reply-title {
+.c-comment .comment-reply-title {
 	text-shadow: 1px 1px 0 var(--color-text-border-color);
 	margin: 0 0 1em;
 	font-size: 1.4em;
 }
 
-.c-comment__form .comment-reply-title #cancel-comment-reply-link {
+.c-comment .comment-reply-title #cancel-comment-reply-link {
 	margin-left: 1em;
 	font-weight: normal;
 	font-size: 0.8em;
 }
 
-.c-comment__form .comment-reply-title a {
+.c-comment .comment-reply-title a {
 	text-shadow: none;
 }
 
-.c-comment__form .comment-notes {
+.c-comment .comment-form .comment-notes {
 	margin: 0 0 1em;
 }
 
-.c-comment__form .comment-form-comment {
+.c-comment .comment-form .comment-form-comment {
 	margin: 0 0 2em;
 }
 
-.c-comment__form .comment-form-comment label {
+.c-comment .comment-form .comment-form-comment label {
 	display: block;
 	margin-bottom: 0.5em;
 	font-weight: bold;
 }
 
-.c-comment__form .comment-form-comment textarea {
+.c-comment .comment-form .comment-form-comment textarea {
 	text-decoration: none;
 	border: none;
 	outline: none;
@@ -1215,36 +1232,43 @@ button:focus {
 	border-radius: 8px;
 }
 
-.c-comment__form .comment-form-comment textarea:not(.has-background):not(.has-background-dim) {
+.c-comment .comment-form .comment-form-comment textarea:not(.has-background):not(.has-background-dim) {
 	background-color: var(--color-bg);
 }
 
-.c-comment__form .comment-form-comment textarea:focus,
-.c-comment__form .comment-form-comment textarea:hover,
-.c-comment__form .comment-form-comment textarea:active {
+.c-comment .comment-form .comment-form-comment textarea:focus,
+.c-comment .comment-form .comment-form-comment textarea:hover,
+.c-comment .comment-form .comment-form-comment textarea:active {
 	text-decoration: none;
 	outline: none;
 }
 
-.c-comment__form .comment-form-comment textarea:focus {
+.c-comment .comment-form .comment-form-comment textarea:focus {
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 }
 
-.c-comment__form .comment-form-author,
-.c-comment__form .comment-form-email,
-.c-comment__form .comment-form-url {
+.c-comment .comment-form .comment-form-author,
+.c-comment .comment-form .comment-form-email,
+.c-comment .comment-form .comment-form-url {
 	margin: 0 0 1em;
 }
 
-.c-comment__form .comment-form-author label,
-.c-comment__form .comment-form-email label,
-.c-comment__form .comment-form-url label {
+.c-comment .comment-form .comment-form-author label,
+.c-comment .comment-form .comment-form-email label,
+.c-comment .comment-form .comment-form-url label {
 	display: block;
 	margin-bottom: 0.5em;
 	font-weight: bold;
 }
 
-.c-comment__form .form-submit [type="submit"] {
+.c-comment .comment-form .comment-form-author label .required,
+.c-comment .comment-form .comment-form-email label .required,
+.c-comment .comment-form .comment-form-url label .required {
+	color: var(--color-text-link);
+	font-weight: bold;
+}
+
+.c-comment .comment-form .form-submit [type="submit"] {
 	text-decoration: none;
 	border: none;
 	outline: none;
@@ -1260,26 +1284,25 @@ button:focus {
 	text-decoration: none;
 	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	cursor: pointer;
-	margin: 0 auto 0;
 	color: var(--color-accent);
 }
 
-.c-comment__form .form-submit [type="submit"]:not(.has-background):not(.has-background-dim) {
+.c-comment .comment-form .form-submit [type="submit"]:not(.has-background):not(.has-background-dim) {
 	background-color: var(--color-bg);
 }
 
-.c-comment__form .form-submit [type="submit"]:focus,
-.c-comment__form .form-submit [type="submit"]:hover,
-.c-comment__form .form-submit [type="submit"]:active {
+.c-comment .comment-form .form-submit [type="submit"]:focus,
+.c-comment .comment-form .form-submit [type="submit"]:hover,
+.c-comment .comment-form .form-submit [type="submit"]:active {
 	text-decoration: none;
 	outline: none;
 }
 
-.c-comment__form .form-submit [type="submit"]:hover {
+.c-comment .comment-form .form-submit [type="submit"]:hover {
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
 }
 
-.c-comment__form .form-submit [type="submit"]:active {
+.c-comment .comment-form .form-submit [type="submit"]:active {
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 }
 
@@ -2857,7 +2880,8 @@ button:focus {
 	display: inline-block;
 }
 
-.entry-content figcaption {
+.entry-content figcaption,
+.entry-content .wp-caption-text {
 	margin-top: 0.5em;
 	margin-bottom: 0;
 	color: inherit;
