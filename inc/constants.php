@@ -10,7 +10,7 @@
  **********************************************************/
 
 // Customizer choices
-const _SNS_CHOICE = array(
+const NEUMORPHIC_SNS_CHOICE = array(
 	'wordpress' => 'WordPress',
 	'website'   => 'Web',
 	'facebook'  => 'Facebook',

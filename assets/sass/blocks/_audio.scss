@@ -5,21 +5,8 @@
 .wp-block-audio {
 	margin-bottom: 2em;
 
-	audio {
-
-		@include nm-reverse;
-		width: auto;
-		padding: 5px;
-		vertical-align: top;
-		border-radius: 1000px;
-
-		@include mq(md-max) {
-			min-width: 100%;
-		}
-
-		&:focus {
-			outline: none;
-		}
-
+	&.aligncenter .mejs-container.mejs-audio {
+		margin-right: auto;
+		margin-left: auto;
 	}
 }
