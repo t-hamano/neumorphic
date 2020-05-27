@@ -93,6 +93,11 @@
 	box-shadow: $nm_shadow;
 	cursor: pointer;
 
+	&:focus,
+	&:visited {
+		box-shadow: $nm_shadow;
+	}
+
 	&:hover {
 		box-shadow: $nm_shadow_light;
 	}
