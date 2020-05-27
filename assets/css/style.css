@@ -297,6 +297,11 @@ blockquote {
 	outline: none;
 }
 
+[type="submit"]:focus,
+[type="submit"]:visited {
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 [type="submit"]:hover {
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
 }
@@ -684,6 +689,11 @@ button:focus {
 .c-entry__edit-link:active {
 	text-decoration: none;
 	outline: none;
+}
+
+.c-entry__edit-link:focus,
+.c-entry__edit-link:visited {
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 }
 
 .c-entry__edit-link:hover {
@@ -1115,6 +1125,11 @@ button:focus {
 	outline: none;
 }
 
+.c-comment__list .reply a:focus,
+.c-comment__list .reply a:visited {
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 .c-comment__list .reply a:hover {
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
 }
@@ -1298,6 +1313,11 @@ button:focus {
 	outline: none;
 }
 
+.c-comment .comment-form .form-submit [type="submit"]:focus,
+.c-comment .comment-form .form-submit [type="submit"]:visited {
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 .c-comment .comment-form .form-submit [type="submit"]:hover {
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
 }
@@ -1400,6 +1420,11 @@ button:focus {
 	outline: none;
 }
 
+.c-tag a:focus,
+.c-tag a:visited {
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 .c-tag a:hover {
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
 }
@@ -1460,6 +1485,11 @@ button:focus {
 .c-sns__item a:active {
 	text-decoration: none;
 	outline: none;
+}
+
+.c-sns__item a:focus,
+.c-sns__item a:visited {
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 }
 
 .c-sns__item a:hover {
@@ -1557,6 +1587,13 @@ button:focus {
 .c-pagination .post-page-numbers:not(.dots):active {
 	text-decoration: none;
 	outline: none;
+}
+
+.c-pagination .page-numbers:not(.dots):focus,
+.c-pagination .page-numbers:not(.dots):visited,
+.c-pagination .post-page-numbers:not(.dots):focus,
+.c-pagination .post-page-numbers:not(.dots):visited {
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 }
 
 .c-pagination .page-numbers:not(.dots):hover,
@@ -2082,6 +2119,11 @@ button:focus {
 	outline: none;
 }
 
+.widget_tag_cloud .tagcloud a:focus,
+.widget_tag_cloud .tagcloud a:visited {
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 .widget_tag_cloud .tagcloud a:hover {
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
 }
@@ -2152,6 +2194,11 @@ button:focus {
 .widget_calendar table tbody td a:active {
 	text-decoration: none;
 	outline: none;
+}
+
+.widget_calendar table tbody td a:focus,
+.widget_calendar table tbody td a:visited {
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 }
 
 .widget_calendar table tbody td a:hover {
@@ -3282,6 +3329,11 @@ button:focus {
 	outline: none;
 }
 
+.wp-block-file a.wp-block-file__button:focus,
+.wp-block-file a.wp-block-file__button:visited {
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 .wp-block-file a.wp-block-file__button:hover {
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
 }
@@ -4185,6 +4237,11 @@ button:focus {
 	outline: none;
 }
 
+.wp-block-social-links.is-style-nm .wp-social-link a:focus,
+.wp-block-social-links.is-style-nm .wp-social-link a:visited {
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 .wp-block-social-links.is-style-nm .wp-social-link a:hover {
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
 }
@@ -4652,6 +4709,11 @@ button:focus {
 	outline: none;
 }
 
+.wp-block-tag-cloud a:focus,
+.wp-block-tag-cloud a:visited {
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 .wp-block-tag-cloud a:hover {
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
 }
@@ -4752,6 +4814,11 @@ button:focus {
 .wp-block-calendar .wp-calendar-table tbody td a:active {
 	text-decoration: none;
 	outline: none;
+}
+
+.wp-block-calendar .wp-calendar-table tbody td a:focus,
+.wp-block-calendar .wp-calendar-table tbody td a:visited {
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 }
 
 .wp-block-calendar .wp-calendar-table tbody td a:hover {

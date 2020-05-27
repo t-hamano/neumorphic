@@ -1481,6 +1481,11 @@
 	outline: none;
 }
 
+[data-type="core/social-links"] .wp-block-social-links.is-style-nm .wp-social-link:focus,
+[data-type="core/social-links"] .wp-block-social-links.is-style-nm .wp-social-link:visited {
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
+}
+
 [data-type="core/social-links"] .wp-block-social-links.is-style-nm .wp-social-link:hover {
 	box-shadow: 2px 2px 5px var(--color-nm-dark), -2px -2px 5px var(--color-nm-light);
 }
@@ -2008,6 +2013,11 @@
 [data-type="core/tag-cloud"] .wp-block-tag-cloud a:active {
 	text-decoration: none;
 	outline: none;
+}
+
+[data-type="core/tag-cloud"] .wp-block-tag-cloud a:focus,
+[data-type="core/tag-cloud"] .wp-block-tag-cloud a:visited {
+	box-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 }
 
 [data-type="core/tag-cloud"] .wp-block-tag-cloud a:hover {
