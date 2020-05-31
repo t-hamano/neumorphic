@@ -17,6 +17,7 @@ for ( $i = 1; $i <= 5; $i++ ) {
 		$sns_icons[] = array(
 			'title'      => NEUMORPHIC_SNS_CHOICE[ $icon ],
 			'icon_class' => NEUMORPHIC_FA_CLASS[ $icon ],
+			'link_class' => $icon,
 			'url'        => $url,
 		);
 	}
@@ -28,7 +29,7 @@ if ( ! empty( $sns_icons ) ) : ?>
 
 		<?php foreach ( $sns_icons as $sns_icon ) : ?>
 
-			<li class="c-sns__item">
+			<li class="c-sns__item c-sns__item--<?php echo wp_kses_post( $sns_icon['link_class'] ); ?>">
 				<a href="<?php echo esc_url( $sns_icon['url'] ); ?>" target="_blank"><i class="<?php echo wp_kses_post( $sns_icon['icon_class'] ); ?>" title="<?php echo wp_kses_post( $sns_icon['title'] ); ?>"></i></a>
 			</li>
 
