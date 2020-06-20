@@ -1,11 +1,12 @@
 === Neumorphic ===
 Contributors: wildworks
 Tags: one-column, two-columns, right-sidebar, left-sidebar, wide-blocks, block-styles, custom-background, custom-colors, custom-logo, custom-menu, editor-style, featured-images, theme-options, sticky-post, threaded-comments, translation-ready, blog, education, news, photography, portfolio,
+Donate link: https://www.paypal.me/thamanoJP
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Requires at least: 5.4
-Requires PHP: 7.0
-Stable tag: 1.1.1
+Tested up to: 5.4
+Requires PHP: 5.6
 
 Neumorphic is a advanced WordPress theme based on neumorphic design.
 
@@ -21,13 +22,53 @@ Neumorphic is a advanced WordPress theme based on neumorphic design. This theme 
 4. In your admin panel, navigate to **Appearance > Customize**.
 5. Put the finishing touches on your website by adding a logo, color skin, and custom colors.
 
-== Ressources ==
+== Resources ==
 
-1.css-vars-ponyfill
+= Font Awesome =
+License: Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License
+Source: https://fontawesome.com/
+
+= css-vars-ponyfill =
 License: MIT License
 Source: https://github.com/jhildenbiddle/css-vars-ponyfill
 
+= Image for theme screenshot =
+License: CC0 Public Domain
+Source: https://pxhere.com/ja/photo/32163
+
 == Changelog ==
+
+= v1.1.2 =
+Doc: Update license, donate link
+Doc: Change `Requied PHP ( 7.0 to 5.6 ) , add `Tested up to`
+Fix: Support for PHP 5.6 using Theme Sniffer
+Update: Screenshot
+
+= v1.1.1 =
+Fix: Problem about customizer SNS settings are not reflected
+Change: pagination function `paginate_links` to `the_posts_pagination`
+Change: script( css-vars-ponyfill ) loading method from CDN to file
+
+= v1.1.0 =
+Update: Package Font Awesome Free 5.12.1 to 5.13.1, and add no minification css files
+
+= v1.0.5 =
+Fix: Add escape Functions and translation
+Update: Development related configuration files
+
+= v1.0.4 =
+Update: block style(social icons)
+Update: gitignore
+Update: composer setting
+
+= v1.0.3 =
+Fix: The problem that the mouse action of the button does not work correctly
+
+= v1.0.2 =
+Update: apply mediaelement style to the front audio block
+
+= v1.0.1 =
+Fix: wrong variable name(sns choice)
 
 = 1.0.0 =
 * Initial release

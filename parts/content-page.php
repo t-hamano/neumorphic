@@ -39,7 +39,7 @@
 		'<div class="c-entry__edit">',
 		'</div>',
 		'',
-		'c-entry__edit-link',
+		'c-entry__edit-link'
 	);
 
 	if ( ! is_front_page() && ( comments_open() || get_comments_number() ) ) {

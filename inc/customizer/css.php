@@ -50,7 +50,7 @@ function neumorphic_generate_css() {
 		$output .= sprintf(
 			'%s { %s; }',
 			$style['selector'],
-			$style['style'],
+			$style['style']
 		);
 	}
 

@@ -63,7 +63,7 @@ if ( is_sticky() ) {
 			</header>
 
 			<div class="c-entries__excerpt">
-				<?php echo get_the_excerpt(); ?>
+				<?php echo esc_html( get_the_excerpt() ); ?>
 			</div>
 		</div>
 	</a>

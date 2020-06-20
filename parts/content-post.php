@@ -55,7 +55,7 @@
 		'<div class="c-entry__edit">',
 		'</div>',
 		'',
-		'c-entry__edit-link',
+		'c-entry__edit-link'
 	);
 	?>
 

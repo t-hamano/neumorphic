@@ -28,7 +28,7 @@ if ( post_password_required() ) {
 							'neumorphic'
 						)
 					),
-					number_format_i18n( $comment_count ),
+					number_format_i18n( $comment_count )
 				);
 			?>
 		</h2>
