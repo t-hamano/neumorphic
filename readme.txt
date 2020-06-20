@@ -38,6 +38,12 @@ Source: https://pxhere.com/ja/photo/32163
 
 == Changelog ==
 
+= v1.1.2 =
+Doc: Update license, donate link
+Doc: Change `Requied PHP ( 7.0 to 5.6 ) , add `Tested up to`
+Fix: Support for PHP 5.6 using Theme Sniffer
+Update: Screenshot
+
 = v1.1.1 =
 Fix: Problem about customizer SNS settings are not reflected
 Change: pagination function `paginate_links` to `the_posts_pagination`
