@@ -42,6 +42,7 @@ function neumorphic_sanitize_choices_sidebar( $select ) {
  * Select (SNS icon)
  */
 function neumorphic_sanitize_choices_sns( $select ) {
+	global $neumorphic_sns_choice;
 	$valid = array_merge(
 		array( 'none' => __( 'None', 'neumorphic' ) ),
 		$neumorphic_sns_choice

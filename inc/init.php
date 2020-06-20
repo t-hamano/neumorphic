@@ -228,7 +228,7 @@ function neumorphic_scripts() {
 	}
 
 	// CSS custom properties support for legacy and modern browsers
-	wp_enqueue_script( 'neumorphic-script-ponyfill', 'https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2', array(), $theme_version );
+	wp_enqueue_script( 'neumorphic-script-ponyfill', get_theme_file_uri() . '/assets/packages/css-vars-ponyfill.min.js', array(), $theme_version );
 }
 
 add_action( 'wp_enqueue_scripts', 'neumorphic_scripts' );

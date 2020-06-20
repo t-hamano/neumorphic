@@ -26,13 +26,13 @@ function compileSass() {
 	.pipe(sass({
 		outputStyle: 'expanded'
 	}))
-
-  .pipe(autoprefixer({
-    cascade: false
-  }))
-
+	.pipe( postcss([
+		autoprefixer({
+			grid: true
+		})
+	]) )
 	.pipe( mmq() )
-	.pipe(csscomb() )
+	.pipe( csscomb() )
 	.pipe( gulp.dest( './assets/css/' ) )
 	.pipe( cleanCss() )
 	.pipe( rename({

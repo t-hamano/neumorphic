@@ -12,13 +12,8 @@ global $wp_query;
 $paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
 $big   = 999999999;
 
-$pages = paginate_links(
+$pagination = get_the_posts_pagination(
 	array(
-		'base'               => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-		'format'             => '?paged=%#%',
-		'current'            => $paged,
-		'total'              => $wp_query->max_num_pages,
-		'type'               => 'array',
 		'mid_size'           => 1,
 		'prev_text'          => '<i class="fa fa-angle-left" title="' . __( 'Previous page', 'neumorphic' ) . '"></i>',
 		'next_text'          => '<i class="fa fa-angle-right" title="' . __( 'Next page', 'neumorphic' ) . '"></i>',
@@ -27,8 +22,8 @@ $pages = paginate_links(
 );
 ?>
 
-<?php if ( is_array( $pages ) ) : ?>
+<?php if ( $pagination ) : ?>
 	<div class="c-pagination">
-		<?php echo implode( '', $pages ); ?>
+		<?php echo $pagination; ?>
 	</div>
 <?php endif; ?>
