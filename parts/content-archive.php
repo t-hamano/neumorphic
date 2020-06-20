@@ -22,7 +22,7 @@ if ( is_sticky() ) {
 		} elseif ( get_theme_mod( 'archive_default_image', '' ) ) {
 			// Show thumbnail image set in the customizer.
 			$image = get_theme_mod( 'archive_default_image' );
-			echo '<figure class="c-entries__thumbnail"><img src="' . esc_url( $image ) . '" alt="' . get_the_title() . '"></figure>';
+			echo '<figure class="c-entries__thumbnail"><img src="' . esc_url( $image ) . '" alt="' . esc_attr( get_the_title() ) . '"></figure>';
 		} else {
 			// Show default thumbnail image.
 			echo '<div class="c-entries__thumbnail c-entries__thumbnail--noimage"><i class="fas fa-image" aria-hidden="true"></i></div>';
@@ -36,7 +36,7 @@ if ( is_sticky() ) {
 					<ul class="c-meta__list">
 						<li class="c-meta__item c-meta__item--published">
 							<time datetime="<?php the_time( 'c' ); ?>">
-								<i class="far fa-clock" title="<?php esc_html_e( 'Post date', 'neumorphic' ); ?>"></i>
+								<i class="far fa-clock" title="<?php esc_attr_e( 'Post date', 'neumorphic' ); ?>"></i>
 								<?php the_time( get_option( 'date_format' ) ); ?>
 							</time>
 						</li>

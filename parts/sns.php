@@ -15,7 +15,7 @@ for ( $i = 1; $i <= 5; $i++ ) {
 	if ( 'none' !== $icon && $url ) {
 		// Store SNS icon title, font awesome classname and URL
 		$sns_icons[] = array(
-			'title'      => NEUMORPHIC_SNS_CHOICE[ $icon ],
+			'title'      => $neumorphic_sns_choice[ $icon ],
 			'icon_class' => NEUMORPHIC_FA_CLASS[ $icon ],
 			'link_class' => $icon,
 			'url'        => $url,
@@ -29,8 +29,8 @@ if ( ! empty( $sns_icons ) ) : ?>
 
 		<?php foreach ( $sns_icons as $sns_icon ) : ?>
 
-			<li class="c-sns__item c-sns__item--<?php echo wp_kses_post( $sns_icon['link_class'] ); ?>">
-				<a href="<?php echo esc_url( $sns_icon['url'] ); ?>" target="_blank"><i class="<?php echo wp_kses_post( $sns_icon['icon_class'] ); ?>" title="<?php echo wp_kses_post( $sns_icon['title'] ); ?>"></i></a>
+			<li class="c-sns__item c-sns__item--<?php echo esc_attr( $sns_icon['link_class'] ); ?>">
+				<a href="<?php echo esc_url( $sns_icon['url'] ); ?>" target="_blank"><i class="<?php echo esc_attr( $sns_icon['icon_class'] ); ?>" title="<?php echo esc_attr( $sns_icon['title'] ); ?>"></i></a>
 			</li>
 
 		<?php endforeach; ?>

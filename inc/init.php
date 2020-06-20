@@ -9,9 +9,6 @@
  * Sets up theme defaults and registers support for various WordPress features.
  */
 function neumorphic_setup() {
-	// Make theme available for translation.
-	load_theme_textdomain( 'neumorphic', get_template_directory() . '/languages' );
-
 	// Let WordPress manage the document title.
 	add_theme_support( 'title-tag' );
 
@@ -273,8 +270,8 @@ function neumorphic_classic_editor_style() {
 	add_editor_style( '/assets/css/editor-style-classic.min.css' );
 
 }
-add_action( 'admin_init', 'neumorphic_classic_editor_style' );
 
+add_action( 'admin_init', 'neumorphic_classic_editor_style' );
 
 /**
  * Add inline style to classic editor.
@@ -356,8 +353,8 @@ add_filter( 'get_the_archive_title', 'neumorphic_get_the_archive_title' );
 /**
  * Change the drawer/global navigation HTML structure
  */
-require( get_theme_file_path() . '/inc/classes/class-drawer-walker.php' );
-require( get_theme_file_path() . '/inc/classes/class-gnav-walker.php' );
+require( get_theme_file_path() . '/inc/classes/class-neumorphic-drawer-walker.php' );
+require( get_theme_file_path() . '/inc/classes/class-neumorphic-gnav-walker.php' );
 
 /**
  * Filter the CSS classes applied to a menu item’s list item element.
@@ -417,7 +414,7 @@ function neumorphic_contents_class() {
 			( ( is_archive() || is_home() ) && $display_archive ) ||
 			( is_page() && ! is_front_page() && $display_page )
 		) {
-			$class = ' contents--sidebar-' . $display_position;
+			$class = ' contents--sidebar-' . esc_attr( $display_position );
 		} else {
 			$class = ' contents--sidebar-none';
 		}

@@ -86,7 +86,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 								'theme_location' => 'primary',
 								'menu_class'     => 'c-gnav__list',
 								'container'      => false,
-								'walker'         => new Gnav_Walker(),
+								'walker'         => new Neumorphic_Gnav_Walker(),
 							)
 						);
 						?>
@@ -109,7 +109,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 								'theme_location' => 'primary',
 								'menu_class'     => 'c-gnav__list',
 								'container'      => false,
-								'walker'         => new Gnav_Walker(),
+								'walker'         => new Neumorphic_Gnav_Walker(),
 							)
 						);
 					?>
@@ -122,7 +122,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 <div class="fixed-nav">
 	<ul class="fixed-nav__list">
 		<li class="fixed-nav__item">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fas fa-home" title="<?php esc_html_e( 'Home', 'neumorphic' ); ?>"></i></a>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fas fa-home" title="<?php esc_attr_e( 'Home', 'neumorphic' ); ?>"></i></a>
 		</li>
 
 		<?php
@@ -130,19 +130,19 @@ if ( function_exists( 'wp_body_open' ) ) {
 		if ( has_nav_menu( 'mobile' ) ) :
 			?>
 			<li class="fixed-nav__item">
-				<button id="mobile_hm_btn" aria-controls="drawer" aria-expanded="false" aria-label="<?php esc_html_e( 'Open / Close mobile menu', 'neumorphic' ); ?>"><i class="fas fa-bars"></i></button>
+				<button id="mobile_hm_btn" aria-controls="drawer" aria-expanded="false" aria-label="<?php esc_attr_e( 'Open / Close mobile menu', 'neumorphic' ); ?>"><i class="fas fa-bars"></i></button>
 			</li>
 		<?php endif; ?>
 
 		<li class="fixed-nav__item">
-			<a href="#"><i class="fas fa-arrow-up" title="<?php esc_html_e( 'Scroll to top', 'neumorphic' ); ?>"></i></a>
+			<a href="#"><i class="fas fa-arrow-up" title="<?php esc_attr_e( 'Scroll to top', 'neumorphic' ); ?>"></i></a>
 		</li>
 	</ul>
 </div>
 
 <?php if ( has_nav_menu( 'mobile' ) ) : ?>
 	<nav id="drawer" class="drawer" aria-hidden="true">
-		<button id="mobile_close_btn" class="drawer__close" aria-controls="drawer" aria-label="<?php esc_html_e( 'Close mobile menu', 'neumorphic' ); ?>"><i class="fas fa-times"></i></button>
+		<button id="mobile_close_btn" class="drawer__close" aria-controls="drawer" aria-label="<?php esc_attr_e( 'Close mobile menu', 'neumorphic' ); ?>"><i class="fas fa-times"></i></button>
 		<div class="drawer__inner container">
 
 			<?php
@@ -152,7 +152,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 					'theme_location' => 'mobile',
 					'menu_class'     => 'drawer__list',
 					'container'      => false,
-					'walker'         => new Drawer_Walker(),
+					'walker'         => new Neumorphic_Drawer_Walker(),
 				)
 			);
 

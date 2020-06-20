@@ -17,11 +17,13 @@ function neumorphic_customizer_sns( $wp_customize ) {
 	);
 
 	// SNS icon name list
+	global $neumorphic_sns_choice;
+
 	$sns_icons = array_merge(
 		array(
 			'none' => __( 'None', 'neumorphic' ),
 		),
-		NEUMORPHIC_SNS_CHOICE
+		$neumorphic_sns_choice
 	);
 
 	// SNS icon and url
