@@ -55,7 +55,7 @@ function neumorphic_setup() {
 			'width'       => 200,
 			'flex-width'  => true,
 			'flex-height' => true,
-		),
+		)
 	);
 
 	// Add default posts and comments RSS feed links to head.
@@ -414,9 +414,9 @@ function neumorphic_contents_class() {
 			( ( is_archive() || is_home() ) && $display_archive ) ||
 			( is_page() && ! is_front_page() && $display_page )
 		) {
-			$class = ' contents--sidebar-' . esc_attr( $display_position );
+			$class = 'contents--sidebar-' . $display_position;
 		} else {
-			$class = ' contents--sidebar-none';
+			$class = 'contents--sidebar-none';
 		}
 	}
 

@@ -49,7 +49,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 				$description = get_bloginfo( 'description', 'display' );
 				if ( $description ) :
 					?>
-					<p class="header__brand-description"><span><?php echo $description; ?></span></p>
+					<p class="header__brand-description"><span><?php echo esc_html( $description ); ?></span></p>
 				<?php endif; ?>
 
 			</div>
@@ -167,6 +167,6 @@ if ( function_exists( 'wp_body_open' ) ) {
 	</nav>
 <?php endif; ?>
 
-<div class="contents <?php echo neumorphic_contents_class(); ?>" role="document">
+<div class="contents <?php echo esc_attr( neumorphic_contents_class() ); ?>" role="document">
 	<div class="container">
 		<div class="contents__inner">

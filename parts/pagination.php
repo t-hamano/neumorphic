@@ -9,9 +9,6 @@
 <?php
 global $wp_query;
 
-$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
-$big   = 999999999;
-
 $pagination = get_the_posts_pagination(
 	array(
 		'mid_size'           => 1,
@@ -24,6 +21,6 @@ $pagination = get_the_posts_pagination(
 
 <?php if ( $pagination ) : ?>
 	<div class="c-pagination">
-		<?php echo $pagination; ?>
+		<?php echo esc_html( $pagination ); ?>
 	</div>
 <?php endif; ?>
