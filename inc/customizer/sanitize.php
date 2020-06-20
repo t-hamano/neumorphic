@@ -44,7 +44,7 @@ function neumorphic_sanitize_choices_sidebar( $select ) {
 function neumorphic_sanitize_choices_sns( $select ) {
 	$valid = array_merge(
 		array( 'none' => __( 'None', 'neumorphic' ) ),
-		NEUMORPHIC_SNS_CHOICE
+		$neumorphic_sns_choice
 	);
 
 	if ( array_key_exists( $select, $valid ) ) {

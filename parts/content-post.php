@@ -14,12 +14,12 @@
 			<ul class="c-meta__list">
 				<li class="c-meta__item c-meta__item--published">
 					<time datetime="<?php the_time( 'c' ); ?>">
-						<i class="far fa-clock" title="<?php esc_html_e( 'Post date', 'neumorphic' ); ?>"></i>
+						<i class="far fa-clock" title="<?php echo esc_attr_e( 'Post date', 'neumorphic' ); ?>"></i>
 						<?php the_time( get_option( 'date_format' ) ); ?>
 					</time>
 				</li>
 				<li class="c-meta__item c-meta__item--modified">
-					<i class="fas fa-history" title="<?php esc_html_e( 'modified date', 'neumorphic' ); ?>"></i>
+					<i class="fas fa-history" title="<?php echo esc_attr_e( 'modified date', 'neumorphic' ); ?>"></i>
 					<?php the_modified_time( get_option( 'date_format' ) ); ?>
 				</li>
 

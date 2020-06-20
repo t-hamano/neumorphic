@@ -16,16 +16,21 @@
 		display: flex !important;
 	}
 
-	li {
+	> li {
 		margin: 0 0.5em 0.5em 0;
 	}
 
 	&.is-style-nm {
 		font-size: 1.3em;
 
+		> li {
+			margin: 0 15px 15px 0;
+		}
+
 		.wp-social-link {
 			width: auto;
 			height: auto;
+			border-radius: 50%;
 
 			&:hover {
 				transform: none;
@@ -33,15 +38,36 @@
 
 			a {
 
-				@include nm-button;
+				position: relative;
 				display: flex;
 				align-items: center;
 				justify-content: center;
 				width: 2em;
 				height: 2em;
 				padding: 0;
-				color: var(--color-accent);
-				border-radius: $base_border_radius;
+				border-radius: 50%;
+
+				&::before {
+
+					@include nm;
+					position: absolute;
+					top: -3px;
+					right: -3px;
+					bottom: -3px;
+					left: -3px;
+					border-radius: inherit;
+					content: "";
+				}
+
+				&:hover::before {
+
+					@include nm-light;
+				}
+
+				&:active::before {
+
+					@include nm-active;
+				}
 			}
 		}
 	}

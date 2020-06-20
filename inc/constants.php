@@ -10,18 +10,18 @@
  **********************************************************/
 
 // Customizer choices
-const NEUMORPHIC_SNS_CHOICE = array(
-	'wordpress' => 'WordPress',
-	'website'   => 'Web',
-	'facebook'  => 'Facebook',
-	'twitter'   => 'Twitter',
-	'instagram' => 'Instagram',
-	'youtube'   => 'YouTube',
-	'amazon'    => 'Amazon',
-	'github'    => 'GitHub',
-	'line'      => 'LINE',
-	'pinterest' => 'Pinterest',
-	'linkedIn'  => 'LinkedIn',
+$neumorphic_sns_choice = array(
+	'wordpress' => __( 'WordPress', 'neumorphic' ),
+	'website'   => __( 'Web', 'neumorphic' ),
+	'facebook'  => __( 'Facebook', 'neumorphic' ),
+	'twitter'   => __( 'Twitter', 'neumorphic' ),
+	'instagram' => __( 'Instagram', 'neumorphic' ),
+	'youtube'   => __( 'YouTube', 'neumorphic' ),
+	'amazon'    => __( 'Amazon', 'neumorphic' ),
+	'github'    => __( 'GitHub', 'neumorphic' ),
+	'line'      => __( 'LINE', 'neumorphic' ),
+	'pinterest' => __( 'Pinterest', 'neumorphic' ),
+	'linkedIn'  => __( 'LinkedIn', 'neumorphic' ),
 );
 
 // Font Awesome classes mapping
@@ -136,7 +136,15 @@ define( 'NEUMORPHIC_SIDEBAR_DISPLAY_POST', true );
 define( 'NEUMORPHIC_SIDEBAR_DISPLAY_ARCHIVE', true );
 
 // Credit
-define( 'NEUMORPHIC_FOOTER_CREDIT', __( 'Neumorphic Theme : Powered by <a href="https://wordpress.org/" target="_blank">WordPress</a>', 'neumorphic' ) );
+define(
+	'NEUMORPHIC_FOOTER_CREDIT',
+	sprintf(
+		'%s : <a href="%s">%s</a>',
+		__( 'Neumorphic Theme', 'neumorphic' ),
+		esc_url( __( 'https://wordpress.org/', 'neumorphic' ) ),
+		__( 'Powered by WordPress', 'neumorphic' )
+	)
+);
 
 // Display search button on mobile drawer menu
 define( 'NEUMORPHIC_MOBILE_SEARCH_DISPLAY', false );

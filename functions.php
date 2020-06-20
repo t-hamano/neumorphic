@@ -5,6 +5,9 @@
  * @package neumorphic
  */
 
+// Make theme available for translation.
+load_theme_textdomain( 'neumorphic', get_template_directory() . '/languages' );
+
 // Theme Constants
 require_once( 'inc/constants.php' );
 

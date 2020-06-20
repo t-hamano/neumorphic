@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Neumorphic\n"
 "Report-Msgid-Bugs-To: Translator Name <translations@example.com>\n"
-"POT-Creation-Date: 2020-05-16 18:47+0900\n"
+"POT-Creation-Date: 2020-06-20 17:13+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Tetsuaki Hamano <tetsuaki.hamano@gmail.com>\n"
 "Language-Team: Tetsuaki Hamano\n"
@@ -39,41 +39,89 @@ msgstr "以下にキーワードを入力して検索してみてください。
 
 #: comments.php:24
 #, php-format
-msgctxt "neumorphic"
+msgctxt "comments title"
 msgid "%1$s comment"
 msgid_plural "%1$s comments"
 msgstr[0] "%1$s件のコメント"
 msgstr[1] "%1$s件のコメント"
 
-#: comments.php:59
+#: comments.php:60
 msgid "Comments are closed."
 msgstr "コメントは受け付けていません。"
 
-#: header.php:129
+#: header.php:125
 msgid "Home"
 msgstr "ホーム"
 
-#: header.php:137 inc/classes/class-drawer-walker.php:13
+#: header.php:133 inc/classes/class-neumorphic-drawer-walker.php:13
 msgid "Open / Close mobile menu"
 msgstr "グローバルメニューを開閉する"
 
-#: header.php:142
+#: header.php:138
 msgid "Scroll to top"
 msgstr "トップへ戻る"
 
-#: header.php:149
+#: header.php:145
 msgid "Close mobile menu"
 msgstr "グローバルメニューを閉じる"
 
-#: inc/constants.php:137
-msgid ""
-"Neumorphic Theme : Powered by <a href=\"https://wordpress.org/\" target="
-"\"_blank\">WordPress</a>"
-msgstr ""
-"Neumorphic Theme : Powered by <a href=\"https://wordpress.org/\" target="
-"\"_blank\">WordPress</a>"
+#: inc/constants.php:14
+msgid "WordPress"
+msgstr "WordPress"
 
-#: inc/customizer/sanitize.php:46 inc/customizer/section-sns.php:22
+#: inc/constants.php:15
+msgid "Web"
+msgstr "Web"
+
+#: inc/constants.php:16
+msgid "Facebook"
+msgstr "Facebook"
+
+#: inc/constants.php:17
+msgid "Twitter"
+msgstr "Twitter"
+
+#: inc/constants.php:18
+msgid "Instagram"
+msgstr "Instagram"
+
+#: inc/constants.php:19
+msgid "YouTube"
+msgstr "YouTube"
+
+#: inc/constants.php:20
+msgid "Amazon"
+msgstr "Amazon"
+
+#: inc/constants.php:21
+msgid "GitHub"
+msgstr "GitHub"
+
+#: inc/constants.php:22
+msgid "LINE"
+msgstr "LINE"
+
+#: inc/constants.php:23
+msgid "Pinterest"
+msgstr "Pinterest"
+
+#: inc/constants.php:24
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: inc/constants.php:143
+msgid "Neumorphic Theme"
+msgstr "Neumorphicテーマ"
+
+#: inc/constants.php:144
+msgid "https://wordpress.org/"
+msgstr "https://wordpress.org/"
+
+#: inc/constants.php:145
+msgid "Powered by WordPress"
+msgstr "Powered by WordPress"
+
+#: inc/customizer/sanitize.php:46 inc/customizer/section-sns.php:24
 msgid "None"
 msgstr "なし"
 
@@ -138,11 +186,11 @@ msgstr ""
 "カラースキンを変更すると、各カラー設定がスキンのデフォルトの色に設定されま"
 "す。<br>カラースキンを変更した後、カラー設定を個別に変更することもできます。"
 
-#: inc/customizer/section-color.php:66 inc/init.php:80
+#: inc/customizer/section-color.php:66 inc/init.php:83
 msgid "Background color"
 msgstr "背景色"
 
-#: inc/customizer/section-color.php:88 inc/init.php:95
+#: inc/customizer/section-color.php:88 inc/init.php:98
 msgid "Main text color"
 msgstr "メインテキストの色"
 
@@ -150,7 +198,7 @@ msgstr "メインテキストの色"
 msgid "Set the color of main text."
 msgstr "記事本文内のリンクテキストの色を設定します。"
 
-#: inc/customizer/section-color.php:111 inc/init.php:100
+#: inc/customizer/section-color.php:111 inc/init.php:103
 msgid "Accent color"
 msgstr "アクセントの色"
 
@@ -158,7 +206,7 @@ msgstr "アクセントの色"
 msgid "Set the color of title, SNS icons, widget title and so forth."
 msgstr "タイトル、SNSアイコン、ウィジェットのタイトルなどの色を設定します。"
 
-#: inc/customizer/section-color.php:134 inc/init.php:105
+#: inc/customizer/section-color.php:134 inc/init.php:108
 msgid "Link text color"
 msgstr "リンクテキストの色"
 
@@ -274,121 +322,121 @@ msgstr ""
 "されます。<br>アイコンが表示されない場合は、ヘッダー設定またはフッター設定の"
 "「SNSアイコンを表示する」にチェックが入っているか確認して下さい。"
 
-#: inc/customizer/section-sns.php:44
+#: inc/customizer/section-sns.php:46
 #, php-format
 msgid "%s - Icon"
 msgstr "%s - アイコン"
 
-#: inc/customizer/section-sns.php:67
+#: inc/customizer/section-sns.php:69
 #, php-format
 msgid "%s - URL"
 msgstr "%s - URL"
 
-#: inc/init.php:36
+#: inc/init.php:39
 msgid "Desktop Menu"
 msgstr "デスクトップメニュー"
 
-#: inc/init.php:37
+#: inc/init.php:40
 msgid "Mobile Menu"
 msgstr "モバイルメニュー"
 
-#: inc/init.php:85
+#: inc/init.php:88
 msgid "Dark color"
 msgstr "ダークカラー"
 
-#: inc/init.php:90
+#: inc/init.php:93
 msgid "Light color"
 msgstr "ライトカラー"
 
-#: inc/init.php:110
+#: inc/init.php:113
 msgid "White"
 msgstr "ホワイト"
 
-#: inc/init.php:122
+#: inc/init.php:125
 msgid "Dark and light color"
 msgstr "ダーク・ライトカラー"
 
-#: inc/init.php:127
+#: inc/init.php:130
 msgid "Dark and main text color"
 msgstr "ダーク・メインテキストカラー"
 
-#: inc/init.php:132
+#: inc/init.php:135
 msgid "Dark and accent color"
 msgstr "ダーク・アクセントカラー"
 
-#: inc/init.php:137
+#: inc/init.php:140
 msgid "Dark and link text color"
 msgstr "ダーク・リンクテキストカラー"
 
-#: inc/init.php:142
+#: inc/init.php:145
 msgid "Light and main text color"
 msgstr "ライト・メインテキストカラー"
 
-#: inc/init.php:147
+#: inc/init.php:150
 msgid "Light and accent color"
 msgstr "ライト・アクセントカラー"
 
-#: inc/init.php:152
+#: inc/init.php:155
 msgid "Light and link text color"
 msgstr "ライト・リンクテキストカラー"
 
-#: inc/init.php:157
+#: inc/init.php:160
 msgid "Main text and accent color"
 msgstr "メインテキスト・アクセントカラー"
 
-#: inc/init.php:162
+#: inc/init.php:165
 msgid "Main text and link text color"
 msgstr "メインテキスト・リンクテキストカラー"
 
-#: inc/init.php:167
+#: inc/init.php:170
 msgid "Accent and link text color"
 msgstr "アクセント・リンクテキストカラー"
 
-#: inc/init.php:179
+#: inc/init.php:182
 msgid "Small"
 msgstr "小"
 
-#: inc/init.php:184
+#: inc/init.php:187
 msgid "Medium"
 msgstr "中"
 
-#: inc/init.php:189
+#: inc/init.php:192
 msgid "Large"
 msgstr "大"
 
-#: inc/init.php:194
+#: inc/init.php:197
 msgid "Huge"
 msgstr "特大"
 
-#: inc/init.php:298
+#: inc/init.php:306
 msgid "Sidebar"
 msgstr "サイドバー"
 
-#: inc/init.php:299
+#: inc/init.php:307
 msgid ""
 "The display status and display position can be set from the customize menu."
 msgstr "表示ステータスと表示位置は、カスタマイズメニューから設定できます。"
 
-#: inc/init.php:326
+#: inc/init.php:334
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr "Y年"
 
-#: inc/init.php:328
+#: inc/init.php:336
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr "Y年 F"
 
-#: inc/init.php:330
+#: inc/init.php:338
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr "Y年Fj日"
 
-#: inc/init.php:337
+#: inc/init.php:345
 msgid "Archives"
 msgstr "アーカイブ"
 
-#: parts/content-archive.php:34 parts/content-post.php:17
+#: parts/content-archive.php:39 parts/content-post.php:17
 msgid "Post date"
 msgstr "投稿日"
 
@@ -417,7 +465,12 @@ msgstr "ページ番号"
 msgid "Search results for : %s"
 msgstr "「%s」の検索結果"
 
-#: searchform.php:10 searchform.php:12 searchform.php:13
+#: searchform.php:10
+msgid "Search"
+msgstr "検索"
+
+#: searchform.php:12 searchform.php:13
+msgctxt "neumorphic"
 msgid "Search"
 msgstr "検索"
 
@@ -432,6 +485,17 @@ msgstr "サイドバーなし"
 #: template/sidebar-right.php:8
 msgid "Right Sidebar"
 msgstr "右サイドバー"
+
+#~ msgid ""
+#~ "Neumorphic Theme : Powered by <a href=\"https://wordpress.org/\" target="
+#~ "\"_blank\">WordPress</a>"
+#~ msgstr ""
+#~ "Neumorphic Theme : Powered by <a href=\"https://wordpress.org/\" target="
+#~ "\"_blank\">WordPress</a>"
+
+#~ msgctxt "neumorphic"
+#~ msgid "Post date"
+#~ msgstr "投稿日"
 
 #~ msgid "Show sidebar on archive page"
 #~ msgstr "アーカイブページに表示する"
@@ -509,24 +573,6 @@ msgstr "右サイドバー"
 
 #~ msgid "Your GitHub page URL"
 #~ msgstr "GitHubのURL"
-
-#~ msgid "Facebook"
-#~ msgstr "Facebook"
-
-#~ msgid "Twitter"
-#~ msgstr "Twitter"
-
-#~ msgid "Instagram"
-#~ msgstr "Instagram"
-
-#~ msgid "YouTube"
-#~ msgstr "YouTube"
-
-#~ msgid "Amazon"
-#~ msgstr "Amazon"
-
-#~ msgid "GitHub"
-#~ msgstr "GitHub"
 
 #, fuzzy
 #~| msgid "Page"
