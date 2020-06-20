@@ -20,19 +20,19 @@ function cleanFiles( cb ) {
 // Sass
 function compileSass() {
 	return gulp.src( './assets/sass/**/*.scss' )
-	.pipe( plumber( {
-		errorHandler: notify.onError( 'Error: <%= error.message %>' )
-	} ) )
-	.pipe( sass( {
+	.pipe(plumber({
+		errorHandler: notify.onError( 'Error: <%= error.message %>')
+	}))
+	.pipe(sass({
 		outputStyle: 'expanded'
-	} ) )
-	.pipe( postcss( [
-		autoprefixer( {
-			grid: true
-		} ),
-	] ) )
+	}))
+
+  .pipe(autoprefixer({
+    cascade: false
+  }))
+
 	.pipe( mmq() )
-	.pipe( csscomb() )
+	.pipe(csscomb() )
 	.pipe( gulp.dest( './assets/css/' ) )
 	.pipe( cleanCss() )
 	.pipe( rename({
