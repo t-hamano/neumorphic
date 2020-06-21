@@ -794,7 +794,9 @@
 ------------------------------------------*/
 
 .c-pagination {
-
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 	margin-top: 4em;
 
 	.nav-links {

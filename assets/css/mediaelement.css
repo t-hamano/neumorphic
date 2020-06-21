@@ -5,7 +5,6 @@
 .mejs-container.mejs-audio {
 	text-decoration: none;
 	border: none;
-	outline: none;
 	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -19,11 +18,14 @@
 	background-color: var(--color-bg);
 }
 
-.mejs-container.mejs-audio:focus,
 .mejs-container.mejs-audio:hover,
 .mejs-container.mejs-audio:active {
 	text-decoration: none;
 	outline: none;
+}
+
+.mejs-container.mejs-audio:focus {
+	text-decoration: none;
 }
 
 .mejs-container.mejs-audio .mejs-mediaelement {
@@ -46,7 +48,6 @@
 .mejs-container.mejs-video {
 	text-decoration: none;
 	border: none;
-	outline: none;
 	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -61,11 +62,14 @@
 	background-color: var(--color-bg);
 }
 
-.mejs-container.mejs-video:focus,
 .mejs-container.mejs-video:hover,
 .mejs-container.mejs-video:active {
 	text-decoration: none;
 	outline: none;
+}
+
+.mejs-container.mejs-video:focus {
+	text-decoration: none;
 }
 
 .mejs-container.mejs-video .mejs-mediaelement {

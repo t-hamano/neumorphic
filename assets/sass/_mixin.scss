@@ -20,7 +20,6 @@
 @mixin nm-common() {
 	text-decoration: none;
 	border: none;
-	outline: none;
 	transition: box-shadow $base_transition_duration ease-in-out, opacity $base_transition_duration ease-in-out;
 	appearance: none;
 
@@ -28,11 +27,14 @@
 		background-color: var(--color-bg);
 	}
 
-	&:focus,
 	&:hover,
 	&:active {
 		text-decoration: none;
 		outline: none;
+	}
+
+	&:focus {
+		text-decoration: none;
 	}
 }
 
