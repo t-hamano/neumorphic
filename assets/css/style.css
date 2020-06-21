@@ -479,10 +479,6 @@ button {
 	cursor: pointer;
 }
 
-button:focus {
-	outline: none;
-}
-
 ::-moz-placeholder {
 	color: inherit;
 	opacity: 0.7;
