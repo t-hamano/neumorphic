@@ -38,6 +38,9 @@ Source: https://pxhere.com/ja/photo/32163
 
 == Changelog ==
 
+= v1.1.4 =
+Fix: Accessibility css
+
 = v1.1.3 =
 Update: Accessibility support for drop down menus ( make it possible to navigate with tab key )
 
