@@ -142,9 +142,8 @@ if ( function_exists( 'wp_body_open' ) ) {
 
 <?php if ( has_nav_menu( 'mobile' ) ) : ?>
 	<nav id="drawer" class="drawer" aria-hidden="true">
-		<button id="mobile_close_btn" class="drawer__close" aria-controls="drawer" aria-label="<?php esc_attr_e( 'Close mobile menu', 'neumorphic' ); ?>"><i class="fas fa-times"></i></button>
 		<div class="drawer__inner container">
-
+			<button id="mobile_close_btn" class="drawer__close" aria-controls="drawer" aria-label="<?php esc_attr_e( 'Close mobile menu', 'neumorphic' ); ?>"><i class="fas fa-times"></i></button>
 			<?php
 			// Drawer menu
 			wp_nav_menu(

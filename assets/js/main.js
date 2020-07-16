@@ -24,8 +24,9 @@
 
 	// Show / Hide fixed global menu
 	if ( adminBar.length ) {
-		fixedGnav.css( 'margin-top', 32 );
+		fixedGnav.css( 'margin-top', adminBar.outerHeight() );
 	}
+
 	$( window ).scroll( function() {
 		if ( 200 < $( this ).scrollTop() ) {
 			fixedGnav.attr( 'aria-hidden', false );
@@ -35,6 +36,10 @@
 	});
 
 	// Open / Close drawer menu
+	if ( adminBar.length ) {
+		drawer.css( 'padding-top', adminBar.outerHeight() );
+	}
+
 	mobileHmBtn.on( 'click', function() {
 		var toggled = ( 'true' == $( this ).attr( 'aria-expanded' ) );
 		mobileHmBtn.attr( 'aria-expanded', ! toggled );
