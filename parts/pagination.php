@@ -21,6 +21,6 @@ $pagination = get_the_posts_pagination(
 
 <?php if ( $pagination ) : ?>
 	<div class="c-pagination">
-		<?php echo esc_html( $pagination ); ?>
+		<?php echo wp_kses_post( $pagination ); ?>
 	</div>
 <?php endif; ?>
