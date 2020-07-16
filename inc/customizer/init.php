@@ -43,7 +43,7 @@ function neumorphic_customize_controls_enqueue_scripts() {
 
 	wp_enqueue_script( 'neumorphic-customize', get_theme_file_uri() . '/assets/js/customizer-control.js', array( 'customize-controls', 'jquery' ), $theme_version, false );
 
-	wp_add_inline_script( 'neumorphic-customize', sprintf( 'var skinList = %s;', wp_json_encode( NEUMORPHIC_COLOR_SKIN ) ), 'before' );
+	wp_add_inline_script( 'neumorphic-customize', sprintf( 'var neumorphicSkinList = %s;', wp_json_encode( NEUMORPHIC_COLOR_SKIN ) ), 'before' );
 }
 
 add_action( 'customize_controls_enqueue_scripts', 'neumorphic_customize_controls_enqueue_scripts' );

@@ -8,10 +8,10 @@
 		// Set default color for each color based on current color skin.
 		var skinName = _wpCustomizeSettings.settings.color_skin.value;
 
-		for ( var controlName in skinList[ skinName ]) {
+		for ( var controlName in neumorphicSkinList[ skinName ]) {
 			var control = wp.customize.control.instance( 'color_' + controlName );
 			picker = control.container.find( '.color-picker-hex' );
-			control.setting.set( skinList[ skinName ][ controlName ]);
+			control.setting.set( neumorphicSkinList[ skinName ][ controlName ]);
 
 			picker.val( control.setting() );
 			picker.wpColorPicker( 'defaultColor', control.setting() );
@@ -25,10 +25,10 @@
 		wp.customize( 'color_skin', function( value ) {
 
 			value.bind( function( skinName ) {
-				for ( var controlName in skinList[ skinName ]) {
+				for ( var controlName in neumorphicSkinList[ skinName ]) {
 					var control = wp.customize.control.instance( 'color_' + controlName );
 					picker = control.container.find( '.color-picker-hex' );
-					control.setting.set( skinList[ skinName ][ controlName ]);
+					control.setting.set( neumorphicSkinList[ skinName ][ controlName ]);
 
 					picker.val( control.setting() );
 					picker.wpColorPicker( 'defaultColor', control.setting() );
