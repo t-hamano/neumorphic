@@ -38,6 +38,10 @@ Source: https://pxhere.com/ja/photo/32163
 
 == Changelog ==
 
+= v1.1.6 =
+Update: Control tab key movement in the modal window
+Fix: Adjust the x button of the drawer menu to does not overlapp the wp admin bar
+
 = v1.1.5 =
 Fix: Pagination HTML was escaping
 Add translation on searchform.php
