@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-<main class="main" role="main">
+<main id="main" class="main" role="main">
 	<div class="c-entry">
 
 		<?php if ( is_archive() ) : ?>

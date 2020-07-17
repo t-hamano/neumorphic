@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-<main class="main" role="main">
+<main id="main" class="main" role="main">
 	<div class="c-entry">
 		<div class="c-attachment">
 			<figure class="c-attachment__image">

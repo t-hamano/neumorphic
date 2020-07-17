@@ -259,6 +259,17 @@ function neumorphic_block_editor_styles() {
 
 add_action( 'enqueue_block_editor_assets', 'neumorphic_block_editor_styles' );
 
+/**
+ * Fix skip link focus in IE11.
+ */
+function neumorphic_skip_link_focus_fix() {
+	?>
+	<script>
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script>
+	<?php
+}
+add_action( 'wp_print_footer_scripts', 'neumorphic_skip_link_focus_fix' );
 
 /**
  * Register and enqueue classic editor styles.
@@ -295,6 +306,15 @@ function neumorphic_footer_scripts() {
 }
 
 add_action( 'wp_footer', 'neumorphic_footer_scripts' );
+
+/**
+ * Include a skip to content link at the top of the page so that users can bypass the menu.
+ */
+function neumorphic_skip_link() {
+	echo '<a class="skip-link screen-reader-text" href="#main">' . __( 'Skip to the content', 'neumorphic' ) . '</a>';
+}
+
+add_action( 'wp_body_open', 'neumorphic_skip_link', 5 );
 
 /**
  * Register Widget Area.

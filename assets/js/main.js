@@ -113,7 +113,7 @@
 	});
 
 	// Smooth scroll
-	$( 'a[href*=#]' ).on( 'click', function() {
+	$( 'a[href*=#]:not(.skip-link)' ).on( 'click', function() {
 		var href = $( this ).attr( 'href' );
 		var target = $( '#' == href || '' == href ? 'html' : href );
 

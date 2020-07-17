@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-<main class="main" role="main">
+<main id="main" class="main" role="main">
 
 	<?php
 	while ( have_posts() ) {
