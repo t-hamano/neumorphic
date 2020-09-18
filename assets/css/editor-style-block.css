@@ -627,7 +627,7 @@ figcaption {
 ----------------------*/
 
 .wp-block-cover {
-	min-height: 300px;
+	min-height: 200px;
 	overflow: hidden;
 }
 

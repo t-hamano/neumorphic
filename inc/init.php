@@ -16,6 +16,7 @@ function neumorphic_setup() {
 	add_theme_support(
 		'html5',
 		array(
+			'navigation-widgets',
 			'search-form',
 			'comment-form',
 			'comment-list',
@@ -33,7 +34,7 @@ function neumorphic_setup() {
 		$content_width = 580;
 	}
 
-		// Register navigation menus uses wp_nav_menu in one location.
+	// Register navigation menus uses wp_nav_menu in one location.
 	register_nav_menus(
 		array(
 			'primary' => __( 'Desktop Menu', 'neumorphic' ),
@@ -63,6 +64,12 @@ function neumorphic_setup() {
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	// Custom line heights.
+	add_theme_support( 'custom-line-height' );
+
+	// Custom Units.
+	add_theme_support( 'custom-units' );
 
 	// Get customizer variables.
 	$color_bg                = esc_html( get_theme_mod( 'color_bg', NEUMORPHIC_COLOR_SKIN['default']['bg'] ) );
