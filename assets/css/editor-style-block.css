@@ -3,22 +3,22 @@
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
-# Front-end Block Styles
+# Back-end Block Styles
 --------------------------------------------------------------*/
 
 /*------------------------------------------
 # Common Style
 ------------------------------------------*/
 
-.editor-styles-wrapper.edit-post-visual-editor {
+body {
 	background: var(--color-bg);
 }
 
-.editor-styles-wrapper.edit-post-visual-editor .editor-post-title__block {
+.editor-post-title__block {
 	position: relative;
 }
 
-.editor-styles-wrapper.edit-post-visual-editor .editor-post-title__block::before {
+.editor-post-title__block::before {
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -29,14 +29,14 @@
 	content: "";
 }
 
-.editor-styles-wrapper.edit-post-visual-editor .editor-post-title__block::after {
+.editor-post-title__block::after {
 	bottom: 12px;
 	left: 14px;
 	width: calc(100% - 28px);
 	height: 3px;
 }
 
-.editor-styles-wrapper.edit-post-visual-editor .editor-post-title__block .editor-post-title__input {
+.editor-post-title__block .editor-post-title__input {
 	text-shadow: 1px 1px 0 var(--color-text-border-color);
 	color: var(--color-text-main);
 	font-weight: bold;
@@ -46,26 +46,26 @@
 	letter-spacing: 0.04em;
 }
 
-.editor-styles-wrapper.edit-post-visual-editor .editor-post-title__block .editor-post-title__input:focus {
+.editor-post-title__block .editor-post-title__input:focus {
 	color: inherit;
 }
 
-.editor-styles-wrapper.edit-post-visual-editor .block-editor-block-list__layout .block-editor-block-list__block[data-align="left"] > .is-block-content {
+.block-editor-block-list__layout .block-editor-block-list__block[data-align="left"] > .is-block-content {
 	margin-right: 1.5em;
 	margin-bottom: 1em;
 }
 
-.editor-styles-wrapper.edit-post-visual-editor .block-editor-block-list__layout .block-editor-block-list__block[data-align="right"] > .is-block-content {
+.block-editor-block-list__layout .block-editor-block-list__block[data-align="right"] > .is-block-content {
 	margin-bottom: 1em;
 	margin-left: 1.5em;
 }
 
-.editor-styles-wrapper.edit-post-visual-editor h1,
-.editor-styles-wrapper.edit-post-visual-editor h2,
-.editor-styles-wrapper.edit-post-visual-editor h3,
-.editor-styles-wrapper.edit-post-visual-editor h4,
-.editor-styles-wrapper.edit-post-visual-editor h5,
-.editor-styles-wrapper.edit-post-visual-editor h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	margin-top: 1.5em;
 	margin-bottom: 1em;
 	font-weight: bold;
@@ -73,16 +73,16 @@
 	text-shadow: 1px 1px 0 var(--color-text-border-color);
 }
 
-.editor-styles-wrapper.edit-post-visual-editor h1,
-.editor-styles-wrapper.edit-post-visual-editor h2,
-.editor-styles-wrapper.edit-post-visual-editor h3 {
+h1,
+h2,
+h3 {
 	position: relative;
 	padding-bottom: 0.3em;
 }
 
-.editor-styles-wrapper.edit-post-visual-editor h1::before,
-.editor-styles-wrapper.edit-post-visual-editor h2::before,
-.editor-styles-wrapper.edit-post-visual-editor h3::before {
+h1::before,
+h2::before,
+h3::before {
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -93,39 +93,35 @@
 	content: "";
 }
 
-.editor-styles-wrapper.edit-post-visual-editor h1 {
+h1 {
 	font-size: 2em;
 }
 
-.editor-styles-wrapper.edit-post-visual-editor h2 {
+h2 {
 	font-size: 1.8em;
 }
 
-.editor-styles-wrapper.edit-post-visual-editor h3 {
+h3 {
 	font-size: 1.6em;
 }
 
-.editor-styles-wrapper.edit-post-visual-editor h4 {
+h4 {
 	font-size: 1.4em;
 }
 
-.editor-styles-wrapper.edit-post-visual-editor h5 {
+h5 {
 	font-size: 1.2em;
 }
 
-.editor-styles-wrapper.edit-post-visual-editor h6 {
+h6 {
 	font-size: 1em;
 }
 
-.editor-styles-wrapper.edit-post-visual-editor p {
-	margin: 0 0 2em;
-}
-
-.editor-styles-wrapper.edit-post-visual-editor p.has-background {
+p.has-background {
 	padding: 1.5em 1em;
 }
 
-.editor-styles-wrapper.edit-post-visual-editor p.has-drop-cap:not(:focus)::first-letter {
+p.has-drop-cap:not(:focus)::first-letter {
 	float: left;
 	margin: 0 0.1em 0 0;
 	padding: 0;
@@ -133,37 +129,37 @@
 	line-height: 1;
 }
 
-.editor-styles-wrapper.edit-post-visual-editor ul:not(.is-grid):not(.blocks-gallery-grid):not(.wp-block-latest-posts),
-.editor-styles-wrapper.edit-post-visual-editor ol {
+ul:not(.is-grid):not(.blocks-gallery-grid):not(.wp-block-latest-posts),
+ol {
 	margin-left: 0;
 	padding-left: 1.5em;
 }
 
-.editor-styles-wrapper.edit-post-visual-editor ul:not(.is-grid):not(.blocks-gallery-grid):not(.wp-block-latest-posts) li,
-.editor-styles-wrapper.edit-post-visual-editor ol li {
+ul:not(.is-grid):not(.blocks-gallery-grid):not(.wp-block-latest-posts) li,
+ol li {
 	margin: 0.5em 0;
 }
 
-.editor-styles-wrapper.edit-post-visual-editor ul:not(.is-grid):not(.blocks-gallery-grid):not(.wp-block-latest-posts) ul,
-.editor-styles-wrapper.edit-post-visual-editor ol ul {
+ul:not(.is-grid):not(.blocks-gallery-grid):not(.wp-block-latest-posts) ul,
+ol ul {
 	padding: 0;
 	list-style: none;
 }
 
-.editor-styles-wrapper.edit-post-visual-editor ul:not(.is-grid):not(.blocks-gallery-grid):not(.wp-block-latest-posts) ul li,
-.editor-styles-wrapper.edit-post-visual-editor ol ul li {
+ul:not(.is-grid):not(.blocks-gallery-grid):not(.wp-block-latest-posts) ul li,
+ol ul li {
 	position: relative;
 	padding-left: 1em;
 }
 
-.editor-styles-wrapper.edit-post-visual-editor ul:not(.is-grid):not(.blocks-gallery-grid):not(.wp-block-latest-posts) ul li::before,
-.editor-styles-wrapper.edit-post-visual-editor ol ul li::before {
+ul:not(.is-grid):not(.blocks-gallery-grid):not(.wp-block-latest-posts) ul li::before,
+ol ul li::before {
 	position: absolute;
 	left: 0;
 	content: "-";
 }
 
-.editor-styles-wrapper.edit-post-visual-editor code {
+code {
 	padding: 0.1em 0.3em;
 	color: var(--color-text-main);
 	font-family: consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", monaco, "Courier New", courier, monospace;
@@ -171,7 +167,7 @@
 	border-radius: 4px;
 }
 
-.editor-styles-wrapper.edit-post-visual-editor blockquote {
+blockquote {
 	position: relative;
 	padding: 2em 2em 2em 3.5em;
 	color: var(--color-text-main);
@@ -186,21 +182,21 @@
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 }
 
-.editor-styles-wrapper.edit-post-visual-editor blockquote:not(.has-background):not(.has-background-dim) {
+blockquote:not(.has-background):not(.has-background-dim) {
 	background-color: var(--color-bg);
 }
 
-.editor-styles-wrapper.edit-post-visual-editor blockquote:hover,
-.editor-styles-wrapper.edit-post-visual-editor blockquote:active {
+blockquote:hover,
+blockquote:active {
 	text-decoration: none;
 	outline: none;
 }
 
-.editor-styles-wrapper.edit-post-visual-editor blockquote:focus {
+blockquote:focus {
 	text-decoration: none;
 }
 
-.editor-styles-wrapper.edit-post-visual-editor blockquote::before {
+blockquote::before {
 	text-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
 	position: absolute;
 	top: 0.5em;
@@ -211,11 +207,11 @@
 	content: "\f10d";
 }
 
-.editor-styles-wrapper.edit-post-visual-editor blockquote p {
+blockquote p {
 	margin: 0 0 1em;
 }
 
-.editor-styles-wrapper.edit-post-visual-editor img[class*="wp-image-"] {
+img[class*="wp-image-"] {
 	text-decoration: none;
 	border: none;
 	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
@@ -227,21 +223,21 @@
 	border-radius: 8px;
 }
 
-.editor-styles-wrapper.edit-post-visual-editor img[class*="wp-image-"]:not(.has-background):not(.has-background-dim) {
+img[class*="wp-image-"]:not(.has-background):not(.has-background-dim) {
 	background-color: var(--color-bg);
 }
 
-.editor-styles-wrapper.edit-post-visual-editor img[class*="wp-image-"]:hover,
-.editor-styles-wrapper.edit-post-visual-editor img[class*="wp-image-"]:active {
+img[class*="wp-image-"]:hover,
+img[class*="wp-image-"]:active {
 	text-decoration: none;
 	outline: none;
 }
 
-.editor-styles-wrapper.edit-post-visual-editor img[class*="wp-image-"]:focus {
+img[class*="wp-image-"]:focus {
 	text-decoration: none;
 }
 
-.editor-styles-wrapper.edit-post-visual-editor figcaption {
+figcaption {
 	margin-top: 0.5em;
 	margin-bottom: 0;
 	color: inherit;

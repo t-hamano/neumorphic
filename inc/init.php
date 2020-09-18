@@ -216,7 +216,7 @@ function neumorphic_scripts() {
 	// Main style
 	wp_enqueue_style( 'neumorphic-style-front-main', get_theme_file_uri() . '/assets/css/style.min.css', array(), $theme_version );
 
-	// Customizer output inline CSS
+	// Customizer CSS
 	wp_add_inline_style( 'neumorphic-style-front-main', neumorphic_generate_css() );
 
 	// Main Script
@@ -237,10 +237,8 @@ add_action( 'wp_enqueue_scripts', 'neumorphic_scripts' );
  * Register and enqueue block editor styles.
  */
 function neumorphic_block_editor_styles() {
-	$theme_version = wp_get_theme()->get( 'Version' );
-
-	// Main style
-	wp_enqueue_style( 'neumorphic-style-block-editor', get_theme_file_uri() . '/assets/css/editor-style-block.min.css', array(), $theme_version );
+	add_theme_support( 'editor-styles' );
+	add_editor_style( '/assets/css/editor-style-block.min.css' );
 }
 
 add_action( 'after_setup_theme', 'neumorphic_block_editor_styles' );
@@ -251,8 +249,9 @@ function neumorphic_block_editor_assets() {
 	// Font Awesome
 	wp_enqueue_style( 'neumorphic-style-fontawesome', get_theme_file_uri() . '/assets/packages/font-awesome/css/all.min.css', array(), $theme_version );
 
-	// Customizer output inline CSS
-	wp_add_inline_style( 'neumorphic-style-block-editor', neumorphic_generate_css() );
+	// Customizer CSS
+	wp_enqueue_style( 'neumorphic-style-customizer', get_theme_file_uri() . '/assets/css/editor-style-customizer.min.css', array(), $theme_version );
+	wp_add_inline_style( 'neumorphic-style-customizer', neumorphic_generate_css() );
 }
 
 add_action( 'enqueue_block_editor_assets', 'neumorphic_block_editor_assets' );
