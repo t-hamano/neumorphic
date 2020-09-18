@@ -38,6 +38,11 @@ Source: https://pxhere.com/ja/photo/32163
 
 == Changelog ==
 
+= v1.1.8 =
+Fix: Problem about customizer color settings are not reflected
+Fix: jQuery selector expression
+Change: The way to load CSS/JS on the admin side
+
 = v1.1.7 =
 Update: Add skip links
 
