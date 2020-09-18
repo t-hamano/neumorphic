@@ -2,9 +2,10 @@
 # Tag Cloud
 ----------------------*/
 
-[data-type="core/tag-cloud"] {
+.wp-block-tag-cloud {
+	margin-top: 0;
 
-	.wp-block-tag-cloud a {
+	a {
 
 		@include nm-button;
 		display: inline-block;
@@ -20,12 +21,12 @@
 			opacity: $text_color_thin;
 		}
 	}
+}
 
-	&[data-align="left"],
-	&[data-align="right"] {
+[data-align="left"],
+[data-align="right"] {
 
-		.wp-block-tag-cloud {
-			margin-bottom: 0;
-		}
+	.wp-block-tag-cloud {
+		margin-bottom: 0;
 	}
 }

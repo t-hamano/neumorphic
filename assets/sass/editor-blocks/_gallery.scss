@@ -2,39 +2,36 @@
 # Gallery
 ----------------------*/
 
-[data-type="core/gallery"] {
+.wp-block-gallery {
 
-	.wp-block-gallery {
+	.blocks-gallery-grid.blocks-gallery-grid {
+		margin: 0;
+		padding: 0;
+	}
 
-		.blocks-gallery-grid.blocks-gallery-grid {
-			margin: 0;
-			padding: 0;
+	.blocks-gallery-image,
+	.blocks-gallery-item {
+
+		figure {
+			justify-content: center;
 		}
 
-		.blocks-gallery-image,
-		.blocks-gallery-item {
+		figcaption {
+			bottom: 5px;
+			left: 5px;
+			width: calc(100% - 10px);
+			max-height: calc(100% - 10px);
+			padding: 0.5em;
+			color: #fff;
+			font-size: 0.8em;
+			background: rgba(0, 0, 0, 0.6);
+			border-radius: 0 0 $base_border_radius $base_border_radius;
+		}
 
-			figure {
-				justify-content: center;
-			}
+		img {
 
-			figcaption {
-				bottom: 5px;
-				left: 5px;
-				width: calc(100% - 10px);
-				max-height: calc(100% - 10px);
-				padding: 0.5em;
-				color: #fff;
-				font-size: 0.8em;
-				background: rgba(0, 0, 0, 0.6);
-				border-radius: 0 0 $base_border_radius $base_border_radius;
-			}
-
-			img {
-
-				@include nm-media;
-				width: 100%;
-			}
+			@include nm-media;
+			width: 100%;
 		}
 	}
 }

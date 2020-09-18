@@ -3,18 +3,7 @@
 ----------------------*/
 
 .wp-block-table {
-	margin-bottom: 2em;
 	overflow-x: initial;
-
-	table {
-		overflow: hidden;
-	}
-
-	thead th {
-		font-weight: normal;
-		text-align: left;
-		border-bottom-width: 3px;
-	}
 
 	&.aligncenter table {
 		margin-right: auto;
@@ -23,6 +12,11 @@
 
 	&.is-style-stripes {
 		border-bottom: none;
+
+		th,
+		td {
+			border-color: var(--color-nm-dark);
+		}
 
 		tbody tr:nth-child(odd) {
 			background-color: var(--color-nm-light);

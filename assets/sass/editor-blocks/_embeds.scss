@@ -2,68 +2,64 @@
 ## Embeds
 ------------------------------------------*/
 
-[data-type^="core-embed"] {
+.wp-block-embed {
 
-	.wp-block-embed {
-		margin: 0;
+	// YouTube
+	&-youtube iframe {
 
-		// YouTube
-		&-youtube iframe {
+		@include nm-media;
+	}
+
+	// Facebook
+	&-facebook {
+		max-width: 500px;
+
+		.components-placeholder {
+
+			@include nm-media;
+			padding: 1em;
+		}
+	}
+
+	// Instagram
+	&-instagram {
+		max-width: 500px;
+
+		iframe {
 
 			@include nm-media;
 		}
+	}
 
-		// Facebook
-		&-facebook {
-			max-width: 500px;
+	// Twitter
+	&-twitter {
+		max-width: 500px;
 
-			.components-placeholder {
+		iframe {
 
-				@include nm-media;
-				padding: 1em;
-			}
+			@include nm-media;
 		}
+	}
+}
 
-		// Instagram
-		&-instagram {
-			max-width: 500px;
+[data-align="left"],
+[data-align="right"] {
 
-			iframe {
+	.wp-block-embed {
+		width: 100%;
+		max-width: 500px;
+	}
+}
 
-				@include nm-media;
-			}
-		}
+[data-align="center"] {
 
-		// Twitter
+	.wp-block-embed {
+
+		&-facebook,
+		&-instagram,
 		&-twitter {
-			max-width: 500px;
-
-			iframe {
-
-				@include nm-media;
-			}
-		}
-	}
-
-	&[data-align="left"],
-	&[data-align="right"] {
-
-		> .is-block-content {
-			width: 100%;
-			max-width: 500px;
-		}
-	}
-
-	&[data-align="center"] {
-
-		.wp-block-embed {
-
-			&-facebook,
-			&-instagram,
-			&-twitter {
-				margin-right: auto;
-				margin-left: auto;
-			}
+			margin-right: auto;
+			margin-left: auto;
 		}
 	}
 }

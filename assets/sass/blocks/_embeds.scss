@@ -33,6 +33,14 @@
 	&-facebook {
 		max-width: 500px;
 
+		.fb_iframe_widget {
+			width: 100% !important;
+
+			> span {
+				width: 100% !important;
+			}
+		}
+
 		iframe {
 
 			@include nm-media;

@@ -2803,10 +2803,6 @@ button {
 	opacity: 0.8;
 }
 
-/*--------------------------------------------------------------
-# Front-end Block Styles
---------------------------------------------------------------*/
-
 /*------------------------------------------
 # Common Style
 ------------------------------------------*/
@@ -3026,9 +3022,9 @@ button {
 	appearance: none;
 	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
 	position: relative;
-	padding: 2em 2em 2em 55px;
+	margin-bottom: 2em;
+	padding: 2em 2em 2em 3.5em;
 	color: var(--color-text-main);
-	border: none;
 	border-radius: 8px;
 }
 
@@ -3052,7 +3048,7 @@ button {
 	top: 0.5em;
 	left: 0.7em;
 	font-weight: 900;
-	font-size: 26px;
+	font-size: 1.6em;
 	font-family: "Font Awesome 5 Free";
 	content: "\f10d";
 }
@@ -3061,12 +3057,35 @@ button {
 	margin: 0 0 1em;
 }
 
+.entry-content blockquote p:last-of-type {
+	margin-bottom: 0;
+}
+
 .entry-content blockquote cite {
 	display: block;
-	color: inherit;
+	margin-top: 1em;
 	font-size: 0.8em;
-	font-style: italic;
 	opacity: 0.8;
+}
+
+.entry-content blockquote.is-style-large {
+	margin-bottom: 2em;
+	padding: 2em 2em 2em 5em;
+}
+
+.entry-content blockquote.is-style-large::before {
+	font-size: 2.4em;
+}
+
+.entry-content blockquote.is-style-large p {
+	font-size: 1.4em;
+	font-style: normal;
+	line-height: inherit;
+}
+
+.entry-content blockquote.is-style-large cite {
+	font-size: 1em;
+	text-align: inherit;
 }
 
 .entry-content img[class*="wp-image-"],
@@ -3108,6 +3127,7 @@ button {
 .entry-content .wp-caption-text {
 	margin-top: 0.5em;
 	margin-bottom: 0;
+	padding: 0;
 	color: inherit;
 	font-size: 0.8em;
 	opacity: 0.8;
@@ -3154,7 +3174,7 @@ button {
 }
 
 .entry-content table thead th {
-	border-bottom-width: 3px;
+	border-bottom-width: 2px;
 }
 
 .entry-content table tbody tr:last-child th,
@@ -3163,7 +3183,7 @@ button {
 }
 
 .entry-content table tfoot td {
-	border-top: 3px solid var(--color-nm-dark);
+	border-top: 2px solid var(--color-nm-dark);
 	border-bottom: none;
 }
 
@@ -3183,19 +3203,13 @@ button {
 	margin-bottom: 1em;
 }
 
-.entry-content hr:not(.is-style-dots) {
+.entry-content hr:not([class]) {
 	position: relative;
-	width: 50%;
-	height: 3px;
-	margin-right: auto;
-	margin-left: auto;
 	padding: 10px 0;
 	border: none;
-	border-radius: 1000px;
-	transform: translateY(-6px);
 }
 
-.entry-content hr:not(.is-style-dots)::before {
+.entry-content hr:not([class])::before {
 	position: absolute;
 	bottom: 0;
 	left: 0;
@@ -3204,6 +3218,12 @@ button {
 	border-radius: 1000px;
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 	content: "";
+}
+
+.entry-content hr:not([class])::before {
+	top: 50%;
+	bottom: auto;
+	margin-top: -2px;
 }
 
 .entry-content pre {
@@ -3360,80 +3380,6 @@ button {
 
 .has-huge-font-size {
 	font-size: 2em;
-}
-
-/*----------------------
-# Quote
-----------------------*/
-
-.wp-block-quote {
-	text-decoration: none;
-	border: none;
-	transition: box-shadow 0.2s ease-in-out, opacity 0.2s ease-in-out;
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-	box-shadow: inset 3px 3px 6px var(--color-nm-dark), inset -6px -6px 12px var(--color-nm-light);
-	position: relative;
-	margin-bottom: 2em;
-	padding: 2em 2em 2em 3.5em;
-	color: var(--color-text-main);
-	border-radius: 8px;
-}
-
-.wp-block-quote:not(.has-background):not(.has-background-dim) {
-	background-color: var(--color-bg);
-}
-
-.wp-block-quote:hover,
-.wp-block-quote:active {
-	text-decoration: none;
-	outline: none;
-}
-
-.wp-block-quote:focus {
-	text-decoration: none;
-}
-
-.wp-block-quote::before {
-	text-shadow: 5px 5px 10px var(--color-nm-dark), -5px -5px 10px var(--color-nm-light);
-	position: absolute;
-	top: 0.5em;
-	left: 0.7em;
-	font-weight: 900;
-	font-size: 1.6em;
-	font-family: "Font Awesome 5 Free";
-	content: "\f10d";
-}
-
-.wp-block-quote p {
-	margin: 0 0 1em;
-}
-
-.wp-block-quote cite {
-	display: block;
-	font-size: 0.8em;
-	opacity: 0.8;
-}
-
-.wp-block-quote.is-style-large {
-	margin-bottom: 2em;
-	padding: 2em 2em 2em 80px;
-}
-
-.wp-block-quote.is-style-large::before {
-	font-size: 38px;
-}
-
-.wp-block-quote.is-style-large p {
-	font-size: 1.4em;
-	font-style: normal;
-	line-height: inherit;
-}
-
-.wp-block-quote.is-style-large cite {
-	font-size: 1em;
-	text-align: inherit;
 }
 
 /*----------------------
@@ -3622,6 +3568,7 @@ button {
 	min-height: 300px;
 	margin-bottom: 2em;
 	padding: 2em 3em;
+	overflow: hidden;
 }
 
 .wp-block-cover.is-style-nm {
@@ -3828,18 +3775,7 @@ button {
 ----------------------*/
 
 .wp-block-table {
-	margin-bottom: 2em;
 	overflow-x: initial;
-}
-
-.wp-block-table table {
-	overflow: hidden;
-}
-
-.wp-block-table thead th {
-	font-weight: normal;
-	text-align: left;
-	border-bottom-width: 3px;
 }
 
 .wp-block-table.aligncenter table {
@@ -3849,6 +3785,11 @@ button {
 
 .wp-block-table.is-style-stripes {
 	border-bottom: none;
+}
+
+.wp-block-table.is-style-stripes th,
+.wp-block-table.is-style-stripes td {
+	border-color: var(--color-nm-dark);
 }
 
 .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
@@ -4010,8 +3951,36 @@ button {
 # Separator
 ----------------------*/
 
-.wp-block-separator.is-style-wide {
-	width: 100% !important;
+.wp-block-separator {
+	margin-right: auto;
+	margin-left: auto;
+	padding: 10px 0;
+	border: none;
+}
+
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+	max-width: 50%;
+}
+
+.wp-block-separator:not(.is-style-dots):not(.has-background) {
+	position: relative;
+}
+
+.wp-block-separator:not(.is-style-dots):not(.has-background)::before {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 4px;
+	border-radius: 1000px;
+	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
+	content: "";
+}
+
+.wp-block-separator:not(.is-style-dots):not(.has-background)::before {
+	top: 50%;
+	bottom: auto;
+	margin-top: -2px;
 }
 
 .wp-block-separator.has-background:not(.is-style-dots) {
@@ -4021,10 +3990,11 @@ button {
 
 .wp-block-separator.has-background:not(.is-style-dots)::before {
 	position: absolute;
-	right: 0;
-	bottom: 0;
+	top: 50%;
 	left: 0;
+	width: 100%;
 	height: 3px;
+	margin-top: -1.5px;
 	background: currentColor;
 	content: "";
 }
@@ -4039,6 +4009,10 @@ button {
 	content: "\00b7 \00b7 \00b7";
 }
 
+.wp-block-separator.is-style-wide {
+	width: 100% !important;
+}
+
 /*----------------------
 # Buttons
 ----------------------*/
@@ -4048,8 +4022,7 @@ button {
 }
 
 .wp-block-buttons .wp-block-button {
-	margin-right: 20px;
-	margin-bottom: 20px;
+	margin: 0 10px 20px;
 	color: inherit;
 }
 
@@ -4688,6 +4661,23 @@ button {
 	box-shadow: inset 1px 1px 2px var(--color-nm-dark), inset -1px -1px 2px var(--color-nm-light);
 }
 
+.wp-block-categories ul {
+	margin-left: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.wp-block-categories ul li {
+	position: relative;
+	padding-left: 1em;
+}
+
+.wp-block-categories ul li::before {
+	position: absolute;
+	left: 0;
+	content: "-";
+}
+
 /*----------------------
 # Latest Comments
 ----------------------*/
@@ -5175,6 +5165,14 @@ button {
 
 .wp-block-embed-facebook {
 	max-width: 500px;
+}
+
+.wp-block-embed-facebook .fb_iframe_widget {
+	width: 100% !important;
+}
+
+.wp-block-embed-facebook .fb_iframe_widget > span {
+	width: 100% !important;
 }
 
 .wp-block-embed-facebook iframe {

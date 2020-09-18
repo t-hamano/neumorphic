@@ -2,86 +2,73 @@
 # Pullquote
 ----------------------*/
 
-[data-type="core/pullquote"] {
+.wp-block-pullquote {
+	padding: 0;
+	color: var(--color-text-main);
+	text-align: inherit;
 
-	.wp-block-pullquote {
-		margin-right: auto;
-		margin-left: auto;
+	blockquote {
+		margin: 0;
 		padding: 0;
-		color: var(--color-text-main);
-		text-align: inherit;
+		border-radius: 0;
+		box-shadow: none;
 
-		blockquote {
-			margin: 0;
-			padding: 0;
-			border-radius: 0;
-			box-shadow: none;
-
-			&::before {
-				content: none;
-			}
-
-			p {
-				margin: 0 0 1em;
-				font-size: inherit;
-			}
-
-			.wp-block-pullquote__citation {
-				display: block;
-				font-size: 0.8em;
-				font-style: italic;
-				text-transform: initial;
-				opacity: $text_color_thin;
-			}
+		&::before {
+			content: none;
 		}
 
-		&:not(.is-style-solid-color) {
-
-			@include nm-reverse();
-			padding: 2em;
-			border-color: var(--color-text-main);
-			border-radius: $base_border_radius;
-
-			blockquote {
-				padding: 1em 0;
-				border-color: inherit !important;
-				border-top: 3px solid;
-				border-bottom: 3px solid;
-			}
+		p {
+			margin: 0 0 1em;
+			font-size: inherit;
 		}
 
-		&.is-style-solid-color {
-
-			blockquote {
-				max-width: 100%;
-				padding: 2em;
-
-				p {
-					margin-bottom: 1em;
-					font-size: 1.4em;
-				}
-
-				.wp-block-pullquote__citation {
-					font-size: 1em;
-					font-style: italic;
-				}
-			}
-
-			&.has-background blockquote {
-				background-color: transparent;
-			}
-
-			&:not(.has-background) blockquote {
-				padding: 0;
-			}
+		.wp-block-pullquote__citation {
+			display: block;
+			font-size: 0.8em;
+			font-style: italic;
+			text-transform: initial;
+			opacity: $text_color_thin;
 		}
 	}
 
-	&[data-align="left"],
-	&[data-align="right"] {
+	&:not(.is-style-solid-color) {
 
-		.wp-block-pullquote.is-style-solid-color {
-			margin-top: 20px;
+		@include nm-reverse();
+		padding: 2em;
+		border-color: var(--color-text-main);
+		border-radius: $base_border_radius;
+
+		blockquote {
+			padding: 1em 0;
+			border-color: inherit !important;
+			border-top: 3px solid;
+			border-bottom: 3px solid;
+		}
+	}
+
+	&.is-style-solid-color {
+
+		blockquote {
+			max-width: 100%;
+			padding: 2em;
+
+			p {
+				margin-bottom: 1em;
+				font-size: 1.4em;
+			}
+
+			.wp-block-pullquote__citation {
+				font-size: 1em;
+				font-style: italic;
+			}
+		}
+
+		&.has-background blockquote {
+			background-color: transparent;
+		}
+
+		&:not(.has-background) blockquote {
+			padding: 0;
 		}
 	}
 }

@@ -2,35 +2,44 @@
 # Image
 ----------------------*/
 
-[data-type="core/image"] {
+.wp-block-image {
 
-	.wp-block-image {
-
-		&:not(.is-style-nm-none) img {
-
-			@include nm-media;
-		}
-
-		figcaption {
-			display: block;
-			margin-top: 0.5em;
-			margin-bottom: 0;
-			color: inherit;
-			font-size: 0.8em;
-			text-align: inherit;
-			opacity: $text_color_thin;
-		}
-
-		&.is-style-rounded img {
-			border-radius: 50%;
-		}
+	&.is-resized {
+		display: block;
 	}
 
-	&[data-align="left"],
-	&[data-align="right"] {
+	&:not(.is-style-nm-none) img {
 
-		figcaption {
-			text-align: center;
-		}
+		@include nm-media;
+	}
+
+	figcaption {
+		display: block;
+		margin-top: 0.5em;
+		margin-bottom: 0;
+		color: inherit;
+		font-size: 0.8em;
+		text-align: inherit;
+		opacity: $text_color_thin;
+	}
+
+	&.is-style-rounded img {
+		border-radius: 50%;
+	}
+}
+
+.wp-block[data-align="left"] > .wp-block-image {
+	margin-right: 1.5em;
+
+	figcaption {
+		text-align: center;
+	}
+}
+
+.wp-block[data-align="right"] > .wp-block-image {
+	margin-left: 1.5em;
+
+	figcaption {
+		text-align: center;
 	}
 }

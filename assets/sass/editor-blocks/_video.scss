@@ -2,23 +2,20 @@
 # Video
 ----------------------*/
 
-[data-type="core/video"] {
+.wp-block-video {
 
-	.wp-block-video {
+	video {
 
-		video {
-
-			@include nm-media;
-			display: block;
-		}
-
-		figcaption {
-			text-align: inherit;
-		}
+		@include nm-media;
+		display: block;
 	}
 
-	&[data-align="center"]  .wp-block-video video {
-		margin-right: auto;
-		margin-left: auto;
+	figcaption {
+		text-align: inherit;
 	}
+}
+
+.wp-block[data-align="center"] > .wp-block-video video {
+	margin-right: auto;
+	margin-left: auto;
 }

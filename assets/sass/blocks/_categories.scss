@@ -19,4 +19,21 @@
 			border-radius: 1000px;
 		}
 	}
+
+	ul {
+		margin-left: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			position: relative;
+			padding-left: 1em;
+
+			&::before {
+				position: absolute;
+				left: 0;
+				content: "-";
+			}
+		}
+	}
 }

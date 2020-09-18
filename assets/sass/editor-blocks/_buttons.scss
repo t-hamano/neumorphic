@@ -2,41 +2,35 @@
 # Buttons
 ----------------------*/
 
-[data-type="core/button"] {
-	margin-top: 7px !important;
-	margin-bottom: 7px !important;
+.wp-block-button {
+	margin: 0 10px 20px;
+	color: inherit;
 
-	.wp-block-button {
-		margin-right: 20px;
-		margin-bottom: 20px;
+	&:not(.has-text-color):not(.is-style-outline) [data-rich-text-placeholder]::after {
 		color: inherit;
+	}
 
-		&:not(.has-text-color):not(.is-style-outline) [data-rich-text-placeholder]::after {
-			color: inherit;
+	&__link {
+		position: relative;
+		padding: 0.5em 1.5em;
+		font-weight: bold;
+		font-size: 1.1em;
+		border-radius: 1000px;
+
+		&:not(.has-background) {
+			background-color: transparent;
 		}
 
-		&__link {
-			position: relative;
-			padding: 0.5em 1.5em;
-			font-weight: bold;
-			font-size: 1.1em;
-			border-radius: 1000px;
+		&::before {
 
-			&:not(.has-background) {
-				background-color: transparent;
-			}
-
-			&::before {
-
-				@include nm;
-				position: absolute;
-				top: -3px;
-				right: -3px;
-				bottom: -3px;
-				left: -3px;
-				border-radius: inherit;
-				content: "";
-			}
+			@include nm;
+			position: absolute;
+			top: -3px;
+			right: -3px;
+			bottom: -3px;
+			left: -3px;
+			border-radius: inherit;
+			content: "";
 		}
 	}
 }

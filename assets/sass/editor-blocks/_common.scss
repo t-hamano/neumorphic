@@ -34,20 +34,6 @@ body {
 	}
 }
 
-// Block alignment
-.block-editor-block-list__layout .block-editor-block-list__block {
-
-	&[data-align="left"] > .is-block-content {
-		margin-right: 1.5em;
-		margin-bottom: 1em;
-	}
-
-	&[data-align="right"] > .is-block-content {
-		margin-bottom: 1em;
-		margin-left: 1.5em;
-	}
-}
-
 // Heading
 h1,
 h2,
@@ -58,7 +44,7 @@ h6 {
 	margin-top: 1.5em;
 	margin-bottom: 1em;
 	font-weight: bold;
-	line-height: 1.4;
+	line-height: 1.4 !important;
 
 	@include nm-text-border;
 }
@@ -112,9 +98,9 @@ p {
 }
 
 // List
-ul:not(.is-grid):not(.blocks-gallery-grid):not(.wp-block-latest-posts),
+ul,
 ol {
-	margin-left: 0;
+	margin-left: auto;
 	padding-left: 1.5em;
 
 	li {
@@ -147,33 +133,6 @@ code {
 	border-radius: 4px;
 }
 
-// Quote
-blockquote {
-	position: relative;
-	padding: 2em 2em 2em 3.5em;
-	color: var(--color-text-main);
-	border: none;
-	border-radius: $base_border_radius;
-
-	@include nm-reverse;
-
-	&::before {
-
-		@include nm-text();
-		position: absolute;
-		top: 0.5em;
-		left: 0.7em;
-		font-weight: 900;
-		font-size: 1.6em;
-		font-family: "Font Awesome 5 Free";
-		content: "\f10d";
-	}
-
-	p {
-		margin: 0 0 1em;
-	}
-}
-
 // Image
 img[class*="wp-image-"] {
 
@@ -201,7 +160,6 @@ figcaption {
 .wp-block {
 	max-width: 800px;
 	color: var(--color-text-main);
-	font-size: $base_font_size_pc;
 	font-family: $base_font_falily;
 	line-height: $base_line_height;
 	letter-spacing: $base_letter_spacing;
@@ -211,13 +169,8 @@ figcaption {
 		max-width: calc(100% - 28px);
 	}
 
-	.wp-block {
+	.wp-block:not([data-type="core/social-link"]) {
 		color: inherit;
-	}
-
-	[data-block] {
-		margin-top: 48px;
-		margin-bottom: 48px;
 	}
 
 	&[data-align="left"],
@@ -225,8 +178,16 @@ figcaption {
 
 		[data-block] {
 			margin-top: 0;
-			margin-bottom: 0;
+			margin-bottom: 0.5em;
 		}
+
+		> * {
+			position: relative;
+		}
+	}
+
+	&[data-align="center"] {
+		text-align: center;
 	}
 
 	&[data-align="wide"] {
@@ -235,9 +196,5 @@ figcaption {
 
 	&[data-align="full"] {
 		max-width: none;
-	}
-
-	&:not(.editor-post-title__block) a {
-		color: var(--color-text-link);
 	}
 }
