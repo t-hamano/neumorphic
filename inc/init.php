@@ -205,7 +205,7 @@ function neumorphic_setup() {
 add_action( 'after_setup_theme', 'neumorphic_setup' );
 
 /**
- * Register and enqueue front-end styles.
+ * Register and enqueue front-end styles & scripts.
  */
 function neumorphic_scripts() {
 	$theme_version = wp_get_theme()->get( 'Version' );
@@ -239,14 +239,29 @@ add_action( 'wp_enqueue_scripts', 'neumorphic_scripts' );
 function neumorphic_block_editor_styles() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 
+	// Main style
+	wp_enqueue_style( 'neumorphic-style-block-editor', get_theme_file_uri() . '/assets/css/editor-style-block.min.css', array(), $theme_version );
+}
+
+add_action( 'after_setup_theme', 'neumorphic_block_editor_styles' );
+
+function neumorphic_block_editor_assets() {
+	$theme_version = wp_get_theme()->get( 'Version' );
+
 	// Font Awesome
 	wp_enqueue_style( 'neumorphic-style-fontawesome', get_theme_file_uri() . '/assets/packages/font-awesome/css/all.min.css', array(), $theme_version );
 
-		// Main style
-	wp_enqueue_style( 'neumorphic-style-block-editor', get_theme_file_uri() . '/assets/css/editor-style-block.min.css', array(), $theme_version );
-
 	// Customizer output inline CSS
 	wp_add_inline_style( 'neumorphic-style-block-editor', neumorphic_generate_css() );
+}
+
+add_action( 'enqueue_block_editor_assets', 'neumorphic_block_editor_assets' );
+
+/**
+ * Register and enqueue admin scripts.
+ */
+function neumorphic_admin_scripts() {
+	$theme_version = wp_get_theme()->get( 'Version' );
 
 	// Main script.
 	wp_enqueue_script( 'neumorphic-script-block-editor', get_theme_file_uri() . '/assets/js/editor-block.js', array( 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-dom' ), $theme_version, true );
@@ -257,7 +272,7 @@ function neumorphic_block_editor_styles() {
 	wp_set_script_translations( 'neumorphic-script-block-editor', 'neumorphic', '/languages' );
 }
 
-add_action( 'enqueue_block_editor_assets', 'neumorphic_block_editor_styles' );
+add_action( 'admin_enqueue_scripts', 'neumorphic_admin_scripts' );
 
 /**
  * Fix skip link focus in IE11.
