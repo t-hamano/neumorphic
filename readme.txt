@@ -38,6 +38,9 @@ Source: https://pxhere.com/ja/photo/32163
 
 == Changelog ==
 
+= v1.2.1 =
+Add: style for the form parts
+
 = v1.2.0 =
 add theme-support custom-line-height, custom-units, navigation-widgets(html5)
 
