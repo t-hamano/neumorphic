@@ -8,13 +8,12 @@
 
 * {
 	box-sizing: border-box;
-	appearance: none;
 	text-size-adjust: 100%;
-}
 
-*::before,
-*::after {
-	box-sizing: border-box;
+	&::before,
+	&::after {
+		box-sizing: border-box;
+	}
 }
 
 body {
@@ -69,6 +68,25 @@ pre {
 
 blockquote {
 	margin: 0;
+}
+
+fieldset {
+
+	@include nm-reverse;
+	padding: 1.5em 1.5em 2em;
+	border-radius: $base_border_radius;
+}
+
+legend {
+
+	@include nm-border;
+	@include nm-text-border;
+	float: left;
+	width: 100%;
+	padding-bottom: 0.3em;
+	font-weight: bold;
+	font-size: 1.6em;
+	line-height: 1.4;
 }
 
 /*------------------------------------------
@@ -199,7 +217,8 @@ blockquote {
 [type="url"],
 [type="number"],
 [type="password"],
-[type="search"] {
+[type="search"],
+[type="file"] {
 
 	@include nm-input;
 	display: block;
@@ -208,9 +227,18 @@ blockquote {
 	height: auto;
 	padding: 0.7em 1.4em;
 	border-radius: 1000px;
+
+	&:-webkit-autofill {
+		box-shadow: $nm_shadow_reverse, 0 0 0 1000px var(--color-bg) inset;
+
+		&:focus {
+			box-shadow: $nm_shadow_acitve, 0 0 0 1000px var(--color-bg) inset;
+		}
+	}
 }
 
-[type="submit"] {
+[type="submit"],
+[type="reset"] {
 
 	@include nm-button;
 	display: block;
@@ -252,75 +280,17 @@ select {
 	}
 }
 
-.checkbox,
-.comment-form-cookies-consent {
-	position: relative;
-	display: block;
-	width: 100%;
-	margin: 15px auto;
-
-	label {
-		position: relative;
-		display: block;
-		min-height: 30px;
-		padding-left: 35px;
-		cursor: pointer;
-
-		&::before {
-
-			@include nm-reverse;
-			position: absolute;
-			top: 2px;
-			left: 0;
-			width: 22px;
-			height: 22px;
-			border-radius: 3px;
-			transition: transform 0.28s ease;
-			content: "";
-		}
-
-		&::after {
-			position: absolute;
-			top: 4px;
-			left: 2px;
-			display: block;
-			width: 19px;
-			height: 19px;
-			color: var(--color-nm-light);
-			font-weight: 900;
-			font-size: 12px;
-			font-family: "Font Awesome 5 Free";
-			text-align: center;
-			background-color: var(--color-accent);
-			border-radius: 3px;
-			transform: scale(0);
-			transition: transform ease 0.25s;
-			content: "\f00c";
-			will-change: transform;
-		}
-	}
-
-	input[type="checkbox"] {
-		display: none;
-
-		&:checked ~ label::after {
-			transform: scale(1);
-		}
-	}
-}
-
 textarea {
+
+	@include nm-input;
 	display: block;
 	width: 100%;
 	max-width: 100%;
 	height: auto;
 	padding: 1em;
 	overflow: auto;
-	color: inherit;
-	font-size: inherit;
-	font-family: inherit;
 	background: transparent;
-	border: none;
+	border-radius: $base_border_radius;
 	outline: 0;
 	appearance: none;
 }
