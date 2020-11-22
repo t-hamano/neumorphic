@@ -4,7 +4,8 @@
 	"license": "GPL-2.0+",
 	"scripts": {
 		"wp-env": "wp-env",
-		"start": "wp-env start && opener http://localhost:8888"
+		"start": "wp-env start && opener http://localhost:8888",
+		"stop": "wp-env stop"
 	},
 	"devDependencies": {
 		"@wordpress/env": "^2.1.0",
