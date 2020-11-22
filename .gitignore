@@ -2,6 +2,7 @@
 node_modules/
 vendor/
 release/
+.wp-env.override.json
 composer.lock
 package-lock.json
 *.zip
