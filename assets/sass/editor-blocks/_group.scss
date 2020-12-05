@@ -2,35 +2,32 @@
 # Group
 ----------------------*/
 
-[data-type="core/group"] {
+.wp-block-group {
 
-	.wp-block-group {
+	&.has-background {
+		margin-bottom: 28px;
+		padding: 1.5em 1.5em 2em;
+	}
 
-		&.has-background {
-			padding: 1.5em 1.5em 2em;
+	&.is-style-nm {
 
-		}
+		@include nm;
+		padding: 1.5em 1.5em 2em;
+		border-radius: $base_border_radius;
+	}
 
-		&.is-style-nm {
+	&.is-style-nm-reverse {
 
-			@include nm;
-			padding: 1.5em 1.5em 2em;
-			border-radius: $base_border_radius;
-		}
+		@include nm-reverse;
+		padding: 1.5em 1.5em 2em;
+		border-radius: $base_border_radius;
+	}
 
-		&.is-style-nm-reverse {
+	.wp-block:first-child {
+		margin-top: 0;
+	}
 
-			@include nm-reverse;
-			padding: 1.5em 1.5em 2em;
-			border-radius: $base_border_radius;
-		}
-
-		.wp-block:first-child {
-			margin-top: 0;
-		}
-
-		.wp-block:last-child {
-			margin-bottom: 0;
-		}
+	.wp-block:last-child {
+		margin-bottom: 0;
 	}
 }

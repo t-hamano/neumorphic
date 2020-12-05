@@ -9,7 +9,7 @@ __( 'No Sidebar', 'neumorphic' );
 
 get_header(); ?>
 
-<main class="main" role="main">
+<main id="main" class="main" role="main">
 
 	<?php
 	if ( have_posts() ) {

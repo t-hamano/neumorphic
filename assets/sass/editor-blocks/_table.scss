@@ -2,62 +2,60 @@
 # Table
 ----------------------*/
 
-[data-type="core/table"] {
 
-	.wp-block-table {
-		overflow-x: initial;
+.wp-block-table {
+	overflow-x: initial;
 
-		table {
+	table {
 
-			@include nm;
-			width: auto;
-			margin-bottom: 0.5em;
-			overflow: hidden;
-			border-radius: $base_border_radius;
+		@include nm;
+		width: auto;
+		margin-bottom: 0.5em;
+		overflow: hidden;
+		border-radius: $base_border_radius;
 
-		}
+	}
 
-		th,
-		td {
-			padding: 1em;
-			border: none;
-			border-right: 1px solid var(--color-nm-dark);
-			border-bottom: 1px solid var(--color-nm-dark);
+	th,
+	td {
+		padding: 1em;
+		text-align: left;
+		border: none;
+		border-right: 1px solid var(--color-nm-dark);
+		border-bottom: 1px solid var(--color-nm-dark);
 
-			&:last-child {
-				border-right: none;
-			}
-		}
-
-		thead th {
-			font-weight: normal;
-			text-align: left;
-			border-bottom-width: 3px;
-		}
-
-		tbody tr:last-child td {
-			border-bottom: none;
-		}
-
-		tfoot td {
-			border-top: 3px solid var(--color-nm-dark);
-			border-bottom: none;
-		}
-
-		figcaption {
-			text-align: inherit;
-		}
-
-		&.is-style-stripes {
-			border-bottom: none;
-
-			tbody tr:nth-child(odd) {
-				background-color: var(--color-nm-light);
-			}
+		&:last-child {
+			border-right: none;
 		}
 	}
 
-	&[data-align="center"] figcaption {
-		text-align: center;
+	thead th {
+		text-align: left;
+		border-bottom-width: 2px;
 	}
+
+	tbody tr:last-child td {
+		border-bottom: none;
+	}
+
+	tfoot td {
+		border-top: 2px solid var(--color-nm-dark);
+		border-bottom: none;
+	}
+
+	figcaption {
+		text-align: inherit;
+	}
+
+	&.is-style-stripes {
+		border-bottom: none;
+
+		tbody tr:nth-child(odd) {
+			background-color: var(--color-nm-light);
+		}
+	}
+}
+
+.wp-block[data-align="center"] > .wp-block-table {
+	text-align: inherit;
 }

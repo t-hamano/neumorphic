@@ -2,13 +2,10 @@
 # Verse
 ----------------------*/
 
-[data-type="core/verse"] {
+.wp-block-verse {
 
-	.wp-block-verse {
-
-		@include nm-reverse();
-		position: relative;
-		padding: 2em;
-		border-radius: $base_border_radius;
-	}
+	@include nm-reverse();
+	position: relative;
+	padding: 2em;
+	border-radius: $base_border_radius;
 }

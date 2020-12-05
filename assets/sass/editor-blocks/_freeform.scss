@@ -2,29 +2,83 @@
 ### Classic
 ----------------------*/
 
-[data-type="core/freeform"] {
+.wp-block-freeform.block-library-rich-text__tinymce {
 
-	.wp-block-freeform.block-library-rich-text__tinymce {
+	> * {
+		margin: 0 0 2em;
+	}
 
-		> * {
-			margin: 0 0 2em;
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-top: 1.5em;
+		margin-bottom: 1em;
+		line-height: 1.4;
+	}
+
+	code {
+		padding: 0.1em 0.3em;
+		color: var(--color-text-main);
+		font-size: 0.9em;
+		font-family: $base_code_font_family;
+		background: var(--color-nm-dark);
+		border-radius: 4px;
+	}
+
+	blockquote {
+		position: relative;
+		padding: 2em 2em 2em 3.5em;
+		color: var(--color-text-main);
+		border-radius: $base_border_radius;
+
+		@include nm-reverse;
+
+		&::before {
+
+			@include nm-text();
+			position: absolute;
+			top: 0.5em;
+			left: 0.7em;
+			font-weight: 900;
+			font-size: 1.6em;
+			font-family: "Font Awesome 5 Free";
+			content: "\f10d";
 		}
 
-		// Vanilla Galleries
-		.gallery {
+		p {
+			margin: 0 0 1em;
 
-			img {
-
-				@include nm-media;
-				width: 100%;
-			}
-
-			.gallery-caption {
-				margin-top: 0.5em;
+			&:last-of-type {
 				margin-bottom: 0;
-				font-size: 0.8em;
-				opacity: 0.8;
 			}
+		}
+	}
+
+	dl.wp-caption .wp-caption-dd {
+		margin-top: 0.5em;
+		margin-bottom: 0;
+		color: inherit;
+		font-size: 0.8em;
+		opacity: $text_color_thin;
+	}
+
+	// Vanilla Galleries
+	.gallery {
+
+		img {
+
+			@include nm-media;
+			width: 100%;
+		}
+
+		.gallery-caption {
+			margin-top: 0.5em;
+			margin-bottom: 0;
+			font-size: 0.8em;
+			opacity: 0.8;
 		}
 	}
 }

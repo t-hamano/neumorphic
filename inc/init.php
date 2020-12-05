@@ -16,6 +16,7 @@ function neumorphic_setup() {
 	add_theme_support(
 		'html5',
 		array(
+			'navigation-widgets',
 			'search-form',
 			'comment-form',
 			'comment-list',
@@ -33,7 +34,7 @@ function neumorphic_setup() {
 		$content_width = 580;
 	}
 
-		// Register navigation menus uses wp_nav_menu in one location.
+	// Register navigation menus uses wp_nav_menu in one location.
 	register_nav_menus(
 		array(
 			'primary' => __( 'Desktop Menu', 'neumorphic' ),
@@ -63,6 +64,12 @@ function neumorphic_setup() {
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	// Custom line heights.
+	add_theme_support( 'custom-line-height' );
+
+	// Custom Units.
+	add_theme_support( 'custom-units' );
 
 	// Get customizer variables.
 	$color_bg                = esc_html( get_theme_mod( 'color_bg', NEUMORPHIC_COLOR_SKIN['default']['bg'] ) );
@@ -205,7 +212,7 @@ function neumorphic_setup() {
 add_action( 'after_setup_theme', 'neumorphic_setup' );
 
 /**
- * Register and enqueue front-end styles.
+ * Register and enqueue front-end styles & scripts.
  */
 function neumorphic_scripts() {
 	$theme_version = wp_get_theme()->get( 'Version' );
@@ -216,7 +223,7 @@ function neumorphic_scripts() {
 	// Main style
 	wp_enqueue_style( 'neumorphic-style-front-main', get_theme_file_uri() . '/assets/css/style.min.css', array(), $theme_version );
 
-	// Customizer output inline CSS
+	// Customizer CSS
 	wp_add_inline_style( 'neumorphic-style-front-main', neumorphic_generate_css() );
 
 	// Main Script
@@ -228,7 +235,7 @@ function neumorphic_scripts() {
 	}
 
 	// CSS custom properties support for legacy and modern browsers
-	wp_enqueue_script( 'neumorphic-script-ponyfill', get_theme_file_uri() . '/assets/packages/css-vars-ponyfill.min.js', array(), $theme_version );
+	wp_enqueue_script( 'neumorphic-script-ponyfill', get_theme_file_uri() . '/assets/packages/css-vars-ponyfill/css-vars-ponyfill.min.js', array(), $theme_version );
 }
 
 add_action( 'wp_enqueue_scripts', 'neumorphic_scripts' );
@@ -237,28 +244,53 @@ add_action( 'wp_enqueue_scripts', 'neumorphic_scripts' );
  * Register and enqueue block editor styles.
  */
 function neumorphic_block_editor_styles() {
+	add_theme_support( 'editor-styles' );
+	add_editor_style( '/assets/css/editor-style-block.min.css' );
+}
+
+add_action( 'after_setup_theme', 'neumorphic_block_editor_styles' );
+
+function neumorphic_block_editor_assets() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 
 	// Font Awesome
 	wp_enqueue_style( 'neumorphic-style-fontawesome', get_theme_file_uri() . '/assets/packages/font-awesome/css/all.min.css', array(), $theme_version );
 
-		// Main style
-	wp_enqueue_style( 'neumorphic-style-block-editor', get_theme_file_uri() . '/assets/css/editor-style-block.min.css', array(), $theme_version );
+	// Customizer CSS
+	wp_enqueue_style( 'neumorphic-style-customizer', get_theme_file_uri() . '/assets/css/editor-style-customizer.min.css', array(), $theme_version );
+	wp_add_inline_style( 'neumorphic-style-customizer', neumorphic_generate_css() );
+}
 
-	// Customizer output inline CSS
-	wp_add_inline_style( 'neumorphic-style-block-editor', neumorphic_generate_css() );
+add_action( 'enqueue_block_editor_assets', 'neumorphic_block_editor_assets' );
+
+/**
+ * Register and enqueue admin scripts.
+ */
+function neumorphic_admin_scripts() {
+	$theme_version = wp_get_theme()->get( 'Version' );
 
 	// Main script.
 	wp_enqueue_script( 'neumorphic-script-block-editor', get_theme_file_uri() . '/assets/js/editor-block.js', array( 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-dom' ), $theme_version, true );
 
 	// CSS custom properties support for legacy and modern browsers
-	wp_enqueue_script( 'neumorphic-script-ponyfill', 'https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2', array(), $theme_version );
+	wp_enqueue_script( 'neumorphic-script-ponyfill', get_theme_file_uri() . '/assets/packages/css-vars-ponyfill/css-vars-ponyfill.min.js', array(), $theme_version );
 
 	wp_set_script_translations( 'neumorphic-script-block-editor', 'neumorphic', '/languages' );
 }
 
-add_action( 'enqueue_block_editor_assets', 'neumorphic_block_editor_styles' );
+add_action( 'admin_enqueue_scripts', 'neumorphic_admin_scripts' );
 
+/**
+ * Fix skip link focus in IE11.
+ */
+function neumorphic_skip_link_focus_fix() {
+	?>
+	<script>
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script>
+	<?php
+}
+add_action( 'wp_print_footer_scripts', 'neumorphic_skip_link_focus_fix' );
 
 /**
  * Register and enqueue classic editor styles.
@@ -295,6 +327,15 @@ function neumorphic_footer_scripts() {
 }
 
 add_action( 'wp_footer', 'neumorphic_footer_scripts' );
+
+/**
+ * Include a skip to content link at the top of the page so that users can bypass the menu.
+ */
+function neumorphic_skip_link() {
+	echo '<a class="skip-link screen-reader-text" href="#main">' . __( 'Skip to the content', 'neumorphic' ) . '</a>';
+}
+
+add_action( 'wp_body_open', 'neumorphic_skip_link', 5 );
 
 /**
  * Register Widget Area.

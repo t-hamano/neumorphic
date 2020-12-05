@@ -2,29 +2,33 @@
 # Columns
 ----------------------*/
 
-[data-type="core/columns"] {
+.wp-block-columns {
 
-	.wp-block-columns {
+	&.has-background {
+		padding: 1.5em 1.5em 2em;
+	}
 
-		&.has-background {
-			padding: 0 1em;
+	&.is-style-nm {
+
+		@include nm;
+		padding: 1.5em 1.5em 2em;
+		border-radius: $base_border_radius;
+	}
+
+	&.is-style-nm-reverse {
+
+		@include nm-reverse;
+		padding: 1.5em 1.5em 2em;
+		border-radius: $base_border_radius;
+	}
+
+	.wp-block {
+
+		&:first-child {
+			margin-top: 0;
 		}
 
-		&.is-style-nm {
-
-			@include nm;
-			padding: 0 1em;
-			border-radius: $base_border_radius;
-		}
-
-		&.is-style-nm-reverse {
-
-			@include nm-reverse;
-			padding: 1.5em 1.5em 2em;
-			border-radius: $base_border_radius;
-		}
-
-		.wp-block:last-child {
+		&:last-child {
 			margin-bottom: 0;
 		}
 	}

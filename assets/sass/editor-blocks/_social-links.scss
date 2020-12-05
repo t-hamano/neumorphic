@@ -2,44 +2,43 @@
 # Social links
 ----------------------*/
 
-[data-type="core/social-links"] {
+.wp-block-social-links {
 
-	.wp-block-social-links {
+	flex-wrap: wrap;
 
-		.block-editor-block-list__layout {
-			flex-wrap: wrap;
-		}
+	.wp-social-link {
+		margin: 0 0.5em 0.5em 0;
+	}
+
+	&.is-style-nm {
 
 		.wp-social-link {
-			margin: 0 0.5em 0.5em 0;
-		}
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 2em;
+			height: 2em;
+			padding: 0;
+			overflow: initial;
+			font-size: 1.3em;
+			border-radius: 50%;
 
-		&.is-style-nm {
+			&::before {
 
-			.wp-social-link {
-				position: relative;
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				width: 2em;
-				height: 2em;
-				padding: 0;
-				overflow: initial;
-				font-size: 1.3em;
-				border-radius: 50%;
-
-				&::before {
-
-					@include nm;
-					position: absolute;
-					top: -3px;
-					right: -3px;
-					bottom: -3px;
-					left: -3px;
-					border-radius: inherit;
-					content: "";
-				}
+				@include nm;
+				position: absolute;
+				top: -3px;
+				right: -3px;
+				bottom: -3px;
+				left: -3px;
+				border-radius: inherit;
+				content: "";
 			}
 		}
 	}
+}
+
+.block-editor-block-list__block[data-type="core/social-link"]:not([contenteditable]):focus::after {
+	content: none;
 }

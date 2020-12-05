@@ -3,65 +3,55 @@
 # Cover
 ----------------------*/
 
-[data-type="core/cover"] {
 
-	&[data-align="left"],
-	&[data-align="right"] {
+.wp-block-cover {
+	min-height: 200px;
+	overflow: hidden;
 
-		> .is-block-content {
-			width: 100%;
-			max-width: 300px;
+	.block-editor-block-list__layout > .wp-block {
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:nth-last-child(2) {
+			margin-bottom: 0;
 		}
 	}
 
-	.wp-block-cover {
-		min-height: 300px;
+	.wp-block-cover__inner-container {
+		padding: 2em 0;
+	}
 
-		.block-editor-block-list__layout > .wp-block {
+	&.is-style-nm {
 
-			&:first-child {
-				margin-top: 0;
-			}
+		@include nm;
+		border-radius: $base_border_radius;
+	}
 
-			&:nth-last-child(2) {
-				margin-bottom: 0;
-			}
-		}
+	&.is-style-nm-reverse {
 
-		.wp-block-cover__inner-container {
-			padding: 2em 0;
-		}
+		@include nm-reverse;
+		border-radius: $base_border_radius;
+	}
 
-		&.is-style-nm {
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-top: 0;
+		text-shadow: none;
+	}
 
-			@include nm;
-			border-radius: $base_border_radius;
-		}
+	h1,
+	h2,
+	h3 {
+		padding-bottom: 0;
 
-		&.is-style-nm-reverse {
-
-			@include nm-reverse;
-			border-radius: $base_border_radius;
-		}
-
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			margin-top: 0;
-			text-shadow: none;
-		}
-
-		h1,
-		h2,
-		h3 {
-			padding-bottom: 0;
-
-			&::before {
-				content: none;
-			}
+		&::before {
+			content: none;
 		}
 	}
 }

@@ -3,9 +3,10 @@
 ----------------------*/
 
 .wp-block-cover {
-	min-height: 300px;
+	min-height: 200px;
 	margin-bottom: 2em;
 	padding: 2em 3em;
+	overflow: hidden;
 
 	&.is-style-nm {
 

@@ -38,6 +38,38 @@ Source: https://pxhere.com/ja/photo/32163
 
 == Changelog ==
 
+= v1.2.1 =
+Add: style for the form parts
+
+= v1.2.0 =
+add theme-support custom-line-height, custom-units, navigation-widgets(html5)
+
+= v1.1.9 =
+Update: Overall refactoring of the block style
+Change: Refactoring of css loading
+
+= v1.1.8 =
+Fix: Problem about customizer color settings are not reflected
+Fix: jQuery selector expression
+Change: The way to load CSS/JS on the admin side
+
+= v1.1.7 =
+Update: Add skip links
+
+= v1.1.6 =
+Update: Control tab key movement in the modal window
+Fix: Adjust the x button of the drawer menu to does not overlapp the wp admin bar
+
+= v1.1.5 =
+Fix: Pagination HTML was escaping
+Add translation on searchform.php
+Change:Removing escape process at get_search_query()
+Change:Add prefix to the var in customizer inline script
+Change:script( css-vars-ponyfill ) loading method from CDN to file
+
+= v1.1.4 =
+Fix: Accessibility css
+
 = v1.1.3 =
 Update: Accessibility support for drop down menus ( make it possible to navigate with tab key )
 

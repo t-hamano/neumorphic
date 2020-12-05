@@ -236,10 +236,15 @@ body#tinymce.wp-editor.content {
 
 		p {
 			margin: 0 0 1em;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
 		}
 
 		cite {
 			display: block;
+			margin-top: 1em;
 			color: inherit;
 			font-size: 0.8em;
 			font-style: italic;
@@ -330,7 +335,6 @@ body#tinymce.wp-editor.content {
 		margin-left: auto;
 		padding: 10px 0;
 		border: none;
-		border-radius: 1000px;
 		transform: translateY(-6px);
 	}
 

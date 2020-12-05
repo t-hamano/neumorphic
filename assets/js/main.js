@@ -16,6 +16,9 @@
 	// Drawer menu
 	var drawer = $( '#drawer' );
 
+	// Drawer focus elements
+	var drawerElements = drawer.find( 'a, button' );
+
 	// Drawer menu open/close button
 	var mobileHmBtn = $( '#mobile_hm_btn' );
 
@@ -24,8 +27,9 @@
 
 	// Show / Hide fixed global menu
 	if ( adminBar.length ) {
-		fixedGnav.css( 'margin-top', 32 );
+		fixedGnav.css( 'margin-top', adminBar.outerHeight() );
 	}
+
 	$( window ).scroll( function() {
 		if ( 200 < $( this ).scrollTop() ) {
 			fixedGnav.attr( 'aria-hidden', false );
@@ -35,10 +39,18 @@
 	});
 
 	// Open / Close drawer menu
+	if ( adminBar.length ) {
+		drawer.css( 'padding-top', adminBar.outerHeight() );
+	}
+
 	mobileHmBtn.on( 'click', function() {
-		var toggled = ( 'true' == $( this ).attr( 'aria-expanded' ) );
-		mobileHmBtn.attr( 'aria-expanded', ! toggled );
-		drawer.attr( 'aria-hidden', toggled );
+		var showDrawer = ( 'false' == $( this ).attr( 'aria-expanded' ) );
+		mobileHmBtn.attr( 'aria-expanded', showDrawer );
+		drawer.attr( 'aria-hidden', ! showDrawer );
+
+		if ( showDrawer ) {
+			mobileCloseBtn.focus();
+		}
 	});
 
 	// Close drawer menu
@@ -49,11 +61,11 @@
 
 	// Open / Close Drawer sub menu
 	$( '.drawer__toggle' ).on( 'click', function() {
-		var toggled = ( 'true' == $( this ).attr( 'aria-expanded' ) );
+		var showSubMenu = ( 'false' == $( this ).attr( 'aria-expanded' ) );
 		$( '.drawer__toggle' ).attr( 'aria-expanded', false );
 		$( '.drawer__submenu' ).attr( 'aria-hidden', true );
-		$( this ).attr( 'aria-expanded', ! toggled );
-		$( this ).next( '.drawer__submenu' ).attr( 'aria-hidden', toggled );
+		$( this ).attr( 'aria-expanded', showSubMenu );
+		$( this ).next( '.drawer__submenu' ).attr( 'aria-hidden', ! showSubMenu );
 	});
 
 	$( '.drawer__subitem a' ).on( 'focus', function() {
@@ -63,6 +75,29 @@
 		drawerItem.find( '.drawer__toggle' ).attr( 'aria-expanded', true );
 		drawerItem.find( '.drawer__submenu' ).attr( 'aria-hidden', false );
 	});
+
+	// Control tab key movement in the modal window
+	$( document ).keydown( function( event ) {
+		var showDrawer = ( 'false' == drawer.attr( 'aria-hidden' ) );
+
+		if ( showDrawer ) {
+			var activeEl = document.activeElement;
+			var firstEl = drawerElements[0];
+			var lastEl = drawerElements[ drawerElements.length - 1 ];
+			var tabKey = ( 9 === event.keyCode );
+			var shiftKey = event.shiftKey;
+
+			if ( ! shiftKey && tabKey && lastEl === activeEl ) {
+				event.preventDefault();
+				firstEl.focus();
+			}
+
+			if ( shiftKey && tabKey && firstEl === activeEl ) {
+				event.preventDefault();
+				lastEl.focus();
+			}
+		}
+  });
 
 	// Open / Close global sub menu
 	$( '.c-gnav__list > .menu-item' ).on( 'mouseover', function() {
@@ -78,7 +113,7 @@
 	});
 
 	// Smooth scroll
-	$( 'a[href*=#]' ).on( 'click', function() {
+	$( 'a[href*="#"]:not(.skip-link)' ).on( 'click', function() {
 		var href = $( this ).attr( 'href' );
 		var target = $( '#' == href || '' == href ? 'html' : href );
 

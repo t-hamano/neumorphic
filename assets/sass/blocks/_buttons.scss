@@ -10,8 +10,7 @@
 	}
 
 	.wp-block-button {
-		margin-right: 20px;
-		margin-bottom: 20px;
+		margin: 0 10px 20px;
 		color: inherit;
 
 		@include mq(md-max) {

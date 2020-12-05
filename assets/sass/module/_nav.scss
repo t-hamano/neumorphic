@@ -114,10 +114,10 @@
 	position: fixed;
 	top: 0;
 	right: 100%;
+	bottom: 60px;
 	z-index: 100;
 	width: 100%;
-	height: calc(100vh - 60px);
-	padding: 70px 0 30px;
+	padding-bottom: 0 0 30px;
 	background: rgba(0, 0, 0, 0.8);
 	transition: right $base_transition_duration ease-in-out;
 
@@ -151,6 +151,7 @@
 
 	&__inner {
 		height: 100%;
+		padding-top: 70px;
 		overflow-y: scroll;
 	}
 

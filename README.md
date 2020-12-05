@@ -6,7 +6,7 @@ You can change theme color by using color skin function, and you can also adjust
 ## Screenshot
 
 ## Requirements
-* WordPress 5.4
+* WordPress 5.5
 * PHP 5.6+
 
 ## Browser support

@@ -193,11 +193,11 @@
 	// Quote
 	blockquote {
 
-		@include nm-reverse;
+		@include nm-reverse();
 		position: relative;
-		padding: 2em 2em 2em 55px;
+		margin-bottom: 2em;
+		padding: 2em 2em 2em 3.5em;
 		color: var(--color-text-main);
-		border: none;
 		border-radius: $base_border_radius;
 
 		&::before {
@@ -207,21 +207,44 @@
 			top: 0.5em;
 			left: 0.7em;
 			font-weight: 900;
-			font-size: 26px;
+			font-size: 1.6em;
 			font-family: "Font Awesome 5 Free";
 			content: "\f10d";
 		}
 
 		p {
 			margin: 0 0 1em;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
 		}
 
 		cite {
 			display: block;
-			color: inherit;
+			margin-top: 1em;
 			font-size: 0.8em;
-			font-style: italic;
 			opacity: $text_color_thin;
+		}
+
+		&.is-style-large {
+			margin-bottom: 2em;
+			padding: 2em 2em 2em 5em;
+
+			&::before {
+				font-size: 2.4em;
+			}
+
+			p {
+				font-size: 1.4em;
+				font-style: normal;
+				line-height: inherit;
+			}
+
+			cite {
+				font-size: 1em;
+				text-align: inherit;
+			}
 		}
 	}
 
@@ -245,6 +268,7 @@
 	.wp-caption-text {
 		margin-top: 0.5em;
 		margin-bottom: 0;
+		padding: 0;
 		color: inherit;
 		font-size: 0.8em;
 		opacity: $text_color_thin;
@@ -271,7 +295,7 @@
 		}
 
 		thead th {
-			border-bottom-width: 3px;
+			border-bottom-width: 2px;
 		}
 
 		tbody tr:last-child {
@@ -283,7 +307,7 @@
 		}
 
 		tfoot td {
-			border-top: 3px solid var(--color-nm-dark);
+			border-top: 2px solid var(--color-nm-dark);
 			border-bottom: none;
 		}
 
@@ -319,17 +343,17 @@
 	}
 
 	// Horizontal Rule
-	hr:not(.is-style-dots) {
+	hr:not([class]) {
 
 		@include nm-border;
-		width: 50%;
-		height: 3px;
-		margin-right: auto;
-		margin-left: auto;
 		padding: 10px 0;
 		border: none;
-		border-radius: 1000px;
-		transform: translateY(-6px);
+
+		&::before {
+			top: 50%;
+			bottom: auto;
+			margin-top: -2px;
+		}
 	}
 
 	// Preformatted text
