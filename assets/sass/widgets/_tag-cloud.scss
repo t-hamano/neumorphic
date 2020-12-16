@@ -1,0 +1,21 @@
+/*--------------------------------------------------------------
+# Tag Cloud
+--------------------------------------------------------------*/
+
+.widget_tag_cloud {
+
+	.tagcloud {
+		margin: 0 -0.3em;
+
+		a {
+
+			@include nm-button;
+			display: inline-block;
+			margin: 0 0.3em 1em;
+			padding: 0.3em 1em;
+			color: var(--color-accent);
+			font-size: 0.9em !important;
+			border-radius: 1000px;
+		}
+	}
+}

@@ -1,0 +1,27 @@
+/*--------------------------------------------------------------
+# Meta
+--------------------------------------------------------------*/
+
+.widget_meta ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	li {
+		position: relative;
+		padding-left: 1.5em;
+
+		&::before {
+			position: absolute;
+			left: 0;
+			font-weight: 900;
+			font-family: "Font Awesome 5 Free";
+			content: "\f05a";
+		}
+	}
+
+	a {
+		position: relative;
+		color: inherit;
+	}
+}

@@ -1,0 +1,55 @@
+/*--------------------------------------------------------------
+# Text
+--------------------------------------------------------------*/
+
+.widget_text:not(.widget_custom_html) .textwidget {
+
+	> * {
+		margin: 0 0 2em;
+	}
+
+	> :last-child {
+		margin-bottom: 0 !important;
+	}
+
+	ul {
+		margin-left: 0;
+		padding-left: 1.5em;
+		list-style: outside disc;
+	}
+
+	ol {
+		margin-left: 0;
+		padding-left: 1.5em;
+		list-style: outside decimal;
+	}
+
+	.alignleft {
+		float: left;
+		margin: 0 $base_font_size_pc 0 0;
+	}
+
+	.alignright {
+		float: right;
+		margin: 0 0 0 $base_font_size_pc;
+	}
+
+	.aligncenter {
+		display: block;
+		margin: 0 auto;
+	}
+
+	img {
+
+		@include nm-media();
+	}
+
+	figcaption {
+		margin-top: 0.5em;
+		margin-bottom: 0;
+		color: inherit;
+		font-size: 0.8em;
+		text-align: center;
+		opacity: $text_color_thin;
+	}
+}

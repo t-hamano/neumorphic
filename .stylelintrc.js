@@ -9,6 +9,7 @@ module.exports = {
 		"assets/**/*.css",
   ],
 	rules: {
+		'max-line-length': null,
 		'no-descending-specificity': null,
 		'font-weight-notation': null,
 		'font-family-no-missing-generic-family-keyword': null,

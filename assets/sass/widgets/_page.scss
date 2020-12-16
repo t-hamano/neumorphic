@@ -1,0 +1,47 @@
+/*--------------------------------------------------------------
+# Page
+--------------------------------------------------------------*/
+
+.widget_pages {
+
+	ul {
+		padding: 0;
+		list-style: none;
+	}
+
+	a {
+		color: inherit;
+	}
+
+	> ul > li {
+		position: relative;
+		padding-left: 1.5em;
+
+		&::before {
+			position: absolute;
+			left: 0;
+			font-weight: 900;
+			font-family: "Font Awesome 5 Free";
+			content: "\f15b";
+		}
+	}
+
+	.children {
+		margin: 0 0 0.5em;
+		padding: 0;
+
+		> li {
+			position: relative;
+			padding-left: 1em;
+
+			&::before {
+				position: absolute;
+				left: 0;
+				font-weight: 900;
+				font-family: "Font Awesome 5 Free";
+				transform: scale(0.6) translateY(2px);
+				content: "\f054";
+			}
+		}
+	}
+}

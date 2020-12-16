@@ -1,0 +1,49 @@
+/*--------------------------------------------------------------
+# Widget
+--------------------------------------------------------------*/
+
+.widget_recent_entries ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+
+	li {
+		position: relative;
+		padding-left: 1.5em;
+
+		&:not(:last-child) {
+
+			@include nm-border;
+			margin-bottom: 1em;
+			padding-bottom: 1em;
+		}
+
+		&::after {
+			position: absolute;
+			top: 0;
+			left: 0;
+			font-weight: 900;
+			font-family: "Font Awesome 5 Free";
+			content: "\f303";
+		}
+
+		a {
+			color: inherit;
+			font-weight: bold;
+
+
+		}
+
+		.post-date {
+			display: block;
+			font-size: 0.8em;
+
+			&::before {
+				margin-right: 0.2em;
+				font-weight: 400;
+				font-family: "Font Awesome 5 Free";
+				content: "\f017";
+			}
+		}
+	}
+}

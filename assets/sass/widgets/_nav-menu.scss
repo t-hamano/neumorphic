@@ -1,0 +1,47 @@
+/*--------------------------------------------------------------
+# Nav Menu
+--------------------------------------------------------------*/
+
+.widget_nav_menu {
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	a {
+		color: inherit;
+	}
+
+	.menu > li {
+		position: relative;
+		padding-left: 1.5em;
+
+		&::before {
+			position: absolute;
+			left: 0;
+			font-weight: 900;
+			font-family: "Font Awesome 5 Free";
+			content: "\f15b";
+		}
+	}
+
+	.sub-menu {
+		margin-bottom: 0.5em;
+
+		li {
+			position: relative;
+			padding-left: 1em;
+
+			&::before {
+				position: absolute;
+				left: 0;
+				font-weight: 900;
+				font-family: "Font Awesome 5 Free";
+				transform: scale(0.6) translateY(2px);
+				content: "\f054";
+			}
+		}
+	}
+}

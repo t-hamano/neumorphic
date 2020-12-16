@@ -1,0 +1,77 @@
+/*--------------------------------------------------------------
+# RSS
+--------------------------------------------------------------*/
+
+.widget_rss {
+
+	.widget__title .rsswidget {
+		color: var(--color-accent);
+
+		&:first-child {
+			display: none;
+		}
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			position: relative;
+			padding-left: 1.5em;
+
+			&::after {
+				position: absolute;
+				top: 0;
+				left: 0;
+				font-weight: 900;
+				font-family: "Font Awesome 5 Free";
+				content: "\f09e";
+			}
+
+			&:not(:last-child) {
+
+				@include nm-border;
+				margin-bottom: 1em;
+				padding-bottom: 1em;
+			}
+
+			.rsswidget {
+				color: inherit;
+				font-weight: bold;
+			}
+
+			.rss-date {
+				display: block;
+				font-size: 0.8em;
+
+				&::before {
+					margin-right: 0.2em;
+					font-weight: 400;
+					font-family: "Font Awesome 5 Free";
+					content: "\f017";
+				}
+			}
+
+			.rssSummary {
+				font-size: 0.9em;
+			}
+
+			cite {
+				display: block;
+				font-size: 0.8em;
+				text-align: right;
+
+				&::before {
+					display: inline-block;
+					margin-right: 0.5em;
+					font-weight: 900;
+					font-family: "Font Awesome 5 Free";
+					font-style: normal;
+					content: "\f4ff";
+				}
+			}
+		}
+	}
+}
