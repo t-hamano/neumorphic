@@ -2,8 +2,13 @@
 # Front-end Styles
 --------------------------------------------------------------*/
 
+// Default property value, Media Query Breakpoints, Neumorphic styles box shadow value
 @import "variable";
+
+// Media query, Clearfix, Neumorphic styles
 @import "mixin";
+
+// Module
 @import "module/base";
 @import "module/component";
 @import "module/header";
@@ -11,32 +16,16 @@
 @import "module/contents";
 @import "module/footer";
 @import "module/sidebar";
-@import "module/widget";
-@import "blocks/common";
-@import "blocks/settings.scss";
-@import "blocks/image";
-@import "blocks/file";
-@import "blocks/video";
-@import "blocks/gallery";
-@import "blocks/cover";
-@import "blocks/audio";
-@import "blocks/pullquote";
-@import "blocks/table";
-@import "blocks/verse";
-@import "blocks/code";
-@import "blocks/media-text";
-@import "blocks/separator";
-@import "blocks/buttons";
-@import "blocks/group";
-@import "blocks/columns";
-@import "blocks/latest-posts";
-@import "blocks/social-links";
-@import "blocks/rss";
-@import "blocks/categories";
-@import "blocks/latest-comments";
-@import "blocks/archives";
-@import "blocks/search";
-@import "blocks/tag-cloud";
-@import "blocks/calendar";
-@import "blocks/embeds";
 
+// Widget Styles
+@import "widgets/_common.scss";
+@import "widgets/!(common)/**/*.scss";
+
+// Block Settings(Color, Gradient color)
+@import "blocks/settings/_block.scss";
+
+// Block Common Styles
+@import "blocks/common/_block.scss";
+
+// Block Styles
+@import "blocks/!(settings|common)/**/_block.scss";

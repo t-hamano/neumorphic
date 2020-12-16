@@ -1,0 +1,57 @@
+/*--------------------------------------------------------------
+# Calendar
+--------------------------------------------------------------*/
+
+.widget_calendar {
+
+	.calendar_wrap {
+		max-width: 350px;
+		margin: 0 auto;
+
+		@include mq(lg-min) {
+			max-width: 100%;
+		}
+	}
+
+	table {
+		width: 100%;
+		table-layout: fixed;
+
+		caption {
+			margin-bottom: 1em;
+			font-weight: bold;
+		}
+
+		thead th {
+			font-weight: bold;
+			text-align: center;
+		}
+
+		tbody td {
+			padding: 0;
+			padding: 0.3em;
+			line-height: 2.4;
+			text-align: center;
+
+			a {
+
+				@include nm-button;
+				display: block;
+				color: var(--color-accent);
+				font-weight: bold;
+				border-radius: $base_border_radius;
+			}
+		}
+	}
+
+	.wp-calendar-nav {
+		display: flex;
+		justify-content: space-between;
+		padding-top: 0.5em;
+
+		a {
+			padding: 0.5em;
+			color: var(--color-accent);
+		}
+	}
+}

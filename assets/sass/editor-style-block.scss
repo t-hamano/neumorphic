@@ -2,40 +2,17 @@
 # Block Editor Styles
 --------------------------------------------------------------*/
 
+// Default property value, Media Query Breakpoints, Neumorphic styles box shadow value
 @import "variable";
-@import "mixin";
-@import "editor-blocks/common";
-@import "editor-blocks/settings.scss";
-@import "editor-blocks/quote";
-@import "editor-blocks/image";
-@import "editor-blocks/file";
-@import "editor-blocks/video";
-@import "editor-blocks/gallery";
-@import "editor-blocks/cover";
-@import "editor-blocks/audio";
-@import "editor-blocks/pullquote";
-@import "editor-blocks/table";
-@import "editor-blocks/verse";
-@import "editor-blocks/code";
-@import "editor-blocks/freeform";
-@import "editor-blocks/media-text";
-@import "editor-blocks/separator";
-@import "editor-blocks/buttons";
-@import "editor-blocks/group";
-@import "editor-blocks/columns";
-@import "editor-blocks/more";
-@import "editor-blocks/nextpage";
-@import "editor-blocks/spacer";
-@import "editor-blocks/shortcode";
-@import "editor-blocks/html";
-@import "editor-blocks/latest-posts";
-@import "editor-blocks/social-links";
-@import "editor-blocks/rss";
-@import "editor-blocks/categories";
-@import "editor-blocks/latest-comments";
-@import "editor-blocks/archives";
-@import "editor-blocks/search";
-@import "editor-blocks/tag-cloud";
-@import "editor-blocks/calendar";
-@import "editor-blocks/embeds";
 
+// Media query, Clearfix, Neumorphic styles
+@import "mixin";
+
+// Block Settings(Color, Gradient color)
+@import "blocks/settings/_editor.scss";
+
+// Block Common Styles
+@import "blocks/common/_editor.scss";
+
+// Block Styles
+@import "blocks/!(settings|common)/**/_editor.scss";

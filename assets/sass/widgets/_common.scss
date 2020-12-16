@@ -1,0 +1,27 @@
+/*--------------------------------------------------------------
+# Common
+--------------------------------------------------------------*/
+
+.widget {
+
+	@include nm;
+	padding: 1.5em 1em;
+	border-radius: $base_border_radius;
+
+	+ .widget {
+		margin-top: 2em;
+	}
+
+	&__title {
+
+		@include nm-border;
+		@include nm-text-border;
+		margin: 0 0 1em;
+		padding-bottom: 0.5em;
+		color: var(--color-accent);
+		font-weight: bold;
+		font-size: 1.2em;
+		line-height: 1.4;
+		text-align: center;
+	}
+}

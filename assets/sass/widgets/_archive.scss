@@ -1,0 +1,53 @@
+/*--------------------------------------------------------------
+# Categories, Archive
+--------------------------------------------------------------*/
+
+.widget_categories,
+.widget_archive {
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	a {
+		color: inherit;
+	}
+
+	> ul > li {
+		position: relative;
+		padding-left: 1.5em;
+
+		&::before {
+			position: absolute;
+			left: 0;
+			font-weight: 900;
+			font-family: "Font Awesome 5 Free";
+			content: "\f07b";
+		}
+	}
+
+	.children {
+		margin: 0 0 0.5em;
+		padding: 0;
+
+		> li {
+			position: relative;
+			padding-left: 1em;
+
+			&::before {
+				position: absolute;
+				left: 0;
+				font-weight: 900;
+				font-family: "Font Awesome 5 Free";
+				transform: scale(0.6) translateY(2px);
+				content: "\f054";
+			}
+		}
+	}
+
+	select {
+		width: 100%;
+	}
+}
