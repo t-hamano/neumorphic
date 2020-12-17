@@ -16,7 +16,7 @@
 		"release": "npm-run-all -s release:clean:dir release:clean:zip release:mkdir release:copy release:archive release:clean:dir",
 		"release:clean:dir": "cross-conf-env rimraf ./npm_package_name",
 		"release:clean:zip": "cross-conf-env rimraf ./*.zip",
-		"release:copy": "cross-conf-env copyfiles -e \"./node_modules/**/*\" -e \"./vendor/**/*\" -e \"./*.json\" -e \"./*.xml\" -e \"./*.lock\" ./**/* ./npm_package_name",
+		"release:copy": "cross-conf-env copyfiles -e \"./node_modules/**/*\" -e \"./vendor/**/*\" -e \"./*.json\" -e \"./*.xml\" -e \"./*.lock\" -e \"./*.zip\" ./**/* ./npm_package_name",
 		"release:mkdir": "cross-conf-env mkdirp npm_package_name",
 		"release:archive": "cross-conf-env bestzip ./npm_package_name-npm_package_version.zip ./npm_package_name"
 	},
