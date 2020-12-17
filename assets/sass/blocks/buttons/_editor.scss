@@ -3,7 +3,7 @@
 ----------------------*/
 
 .wp-block-button {
-	margin: 0 10px 20px;
+	margin: 0 1em 1em 0;
 	color: inherit;
 
 	&:not(.has-text-color):not(.is-style-outline) [data-rich-text-placeholder]::after {
@@ -12,9 +12,10 @@
 
 	&__link {
 		position: relative;
-		padding: 0.5em 1.5em;
+		padding: 0.6em 1.5em;
 		font-weight: bold;
 		font-size: 1.1em;
+		line-height: 1.4;
 		border-radius: 1000px;
 
 		&:not(.has-background) {
