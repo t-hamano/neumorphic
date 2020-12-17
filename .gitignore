@@ -1,5 +1,6 @@
 .vscode
 node_modules/
+neumorphic/
 vendor/
 .wp-env.override.json
 *.zip
