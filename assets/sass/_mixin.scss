@@ -179,6 +179,7 @@
 
 @mixin nm-media-link() {
 	display: inline-block;
+	overflow: hidden;
 
 	@include mq(lg-min) {
 		position: relative;

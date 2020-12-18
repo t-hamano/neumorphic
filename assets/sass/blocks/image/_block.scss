@@ -5,13 +5,11 @@
 .wp-block-image {
 	margin-bottom: 2em;
 
-	&:not(.is-style-nm-none) {
 
-		> figure > a,
-		> a {
+	> figure > a,
+	> a {
 
-			@include nm-media-link;
-		}
+		@include nm-media-link;
 	}
 
 	.aligncenter,
@@ -29,11 +27,19 @@
 		}
 	}
 
-	&.is-style-rounded img {
-		border-radius: 50%;
+	&.is-style-rounded {
+
+		a::before {
+			border-radius: 50%;
+		}
+
+		img {
+			border-radius: 50%;
+		}
 	}
 
 	&.is-style-nm-none img {
+		border-radius: 0;
 		box-shadow: none;
 	}
 }
