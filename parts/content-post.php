@@ -61,7 +61,7 @@
 
 	<?php if ( has_tag() ) : ?>
 		<div class="c-tag">
-			<?php the_tags( '' ); ?>
+			<?php the_tags( '', '' ); ?>
 		</div>
 	<?php endif; ?>
 

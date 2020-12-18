@@ -2,7 +2,7 @@
 # Calendar
 ----------------------*/
 
-.wp-block-calendar {
+.wp-block-calendar .wp-block-calendar {
 
 	@include nm;
 	max-width: 350px;
@@ -24,6 +24,7 @@
 		}
 
 		thead th {
+			padding: 0.3em;
 			font-weight: bold;
 			text-align: center;
 			background: transparent;
@@ -31,7 +32,6 @@
 		}
 
 		tbody td {
-			padding: 0;
 			padding: 0.3em;
 			line-height: 2.4;
 			text-align: center;

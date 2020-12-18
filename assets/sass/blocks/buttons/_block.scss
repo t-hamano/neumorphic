@@ -10,7 +10,8 @@
 	}
 
 	.wp-block-button {
-		margin: 0 10px 20px;
+		margin-right: 1em;
+		margin-bottom: 1em;
 		color: inherit;
 
 		@include mq(md-max) {
@@ -23,11 +24,12 @@
 			margin-right: 0;
 		}
 
-		&__link {
+		.wp-block-button__link {
 			position: relative;
-			padding: 0.5em 1.5em;
+			padding: 0.6em 1.5em;
 			font-weight: bold;
 			font-size: 1.1em;
+			line-height: 1.4;
 			text-decoration: none;
 			border-radius: 1000px;
 
