@@ -3,11 +3,6 @@
 ----------------------*/
 
 .wp-block-tag-cloud {
-	margin-bottom: 2em;
-
-	@include mq(md-max) {
-		text-align: center;
-	}
 
 	a {
 
@@ -21,6 +16,7 @@
 
 		.tag-link-count {
 			color: var(--color-text-main);
+			font-weight: normal;
 			opacity: $text_color_thin;
 		}
 	}
