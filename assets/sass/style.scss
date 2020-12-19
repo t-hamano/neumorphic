@@ -10,12 +10,14 @@
 
 // Module
 @import "module/base";
-@import "module/component";
 @import "module/header";
 @import "module/nav";
 @import "module/contents";
 @import "module/footer";
 @import "module/sidebar";
+
+// Component
+@import "component/**/*.scss";
 
 // Widget Styles
 @import "widgets/_common.scss";
