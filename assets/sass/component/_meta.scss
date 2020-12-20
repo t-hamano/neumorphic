@@ -1,0 +1,44 @@
+/*--------------------------------------------------------------
+# Meta info
+--------------------------------------------------------------*/
+
+.c-meta {
+	margin-top: 0.5em;
+
+	&__list {
+		display: flex;
+		margin: 0;
+		padding: 0;
+		font-size: 0.8em;
+		list-style-type: none;
+	}
+
+	&__item {
+
+		&:not(:last-child) {
+			margin-right: 1em;
+		}
+
+		&--published,
+		&--modified {
+			white-space: nowrap;
+		}
+
+		&--categories {
+			position: relative;
+			padding-left: 1.5em;
+
+			&::before {
+				position: absolute;
+				left: 0;
+				font-weight: 900;
+				font-family: "Font Awesome 5 Free";
+				content: "\f07b";
+			}
+
+			a {
+				color: inherit;
+			}
+		}
+	}
+}

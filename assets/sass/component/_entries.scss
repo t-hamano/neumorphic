@@ -1,0 +1,110 @@
+/*--------------------------------------------------------------
+# Archive post area
+--------------------------------------------------------------*/
+
+.c-entries {
+
+	@include mq(md-min) {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+
+	@include mq(lg-min) {
+		display: block;
+	}
+
+	&__item {
+
+		@include mq(md-min) {
+			width: calc(50% - #{$container_padding / 2});
+		}
+
+		@include mq(lg-min) {
+			width: 100%;
+		}
+
+		&.sticky {
+			font-size: 1.3em;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 1.5em;
+		}
+
+		> a {
+
+			@include nm-link;
+			display: block;
+			height: 100%;
+			padding: 1em;
+			border-radius: $base_border_radius;
+
+			@include mq(lg-min) {
+				display: flex;
+				align-items: flex-start;
+			}
+		}
+	}
+
+	&__thumbnail {
+
+		position: relative;
+		margin: 0 0 1em;
+		overflow: hidden;
+
+		@include mq(lg-min) {
+			width: 30%;
+			margin: 0 1em 0 0;
+		}
+
+		&::before {
+			display: block;
+			padding-top: 62%;
+			content: "";
+		}
+
+		img {
+
+			@include nm-media;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		&--noimage {
+
+			@include nm-reverse;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+
+			i {
+				font-size: 18vw;
+				transition: transform $base_transition_duration ease-in-out;
+
+				@include mq(md-min) {
+					font-size: 3em;
+				}
+			}
+		}
+	}
+
+	&__body {
+		flex: 1;
+	}
+
+	&__header {
+		margin: -0.3em 0 0.5em;
+	}
+
+	&__title {
+		margin: 0;
+		font-weight: bold;
+		font-size: 1.2em;
+		line-height: 1.4;
+	}
+}

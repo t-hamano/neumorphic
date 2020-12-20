@@ -32,9 +32,6 @@
 	}
 
 	&.is-grid {
-		max-width: none;
-		margin-right: -8px;
-		margin-left: -8px;
 
 		&.alignleft {
 			margin-right: 1.5em;
@@ -54,8 +51,11 @@
 		}
 
 		> li {
-			margin: 0 8px 16px;
 			padding: 1em;
+
+			@media screen and (max-width: 599px) {
+				margin-right: 0;
+			}
 		}
 	}
 
@@ -70,5 +70,9 @@
 			font-family: "Font Awesome 5 Free";
 			content: "\f017";
 		}
+	}
+
+	&__post-excerpt {
+		margin-bottom: 0;
 	}
 }

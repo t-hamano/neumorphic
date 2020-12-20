@@ -3,12 +3,7 @@
 ----------------------*/
 
 .wp-block-latest-posts {
-	position: relative;
-	margin-left: 0;
-
-	&.wp-block-latest-posts__list {
-		padding: 0;
-	}
+	padding: 0;
 
 	> li {
 
@@ -33,12 +28,8 @@
 		}
 	}
 
-	&.is-grid {
-		margin-right: -20px;
-
-		> li {
-			padding: 1em;
-		}
+	&.is-grid > li {
+		padding: 1em;
 	}
 
 	&__featured-image img {
@@ -57,6 +48,10 @@
 			font-family: "Font Awesome 5 Free";
 			content: "\f017";
 		}
+	}
+
+	&__post-excerpt {
+		margin-bottom: 0;
 	}
 }
 

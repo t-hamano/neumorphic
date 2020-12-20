@@ -136,36 +136,43 @@
 	}
 
 	/* List */
-	ul:not([class]),
-	ol:not([class]),
-	ul.rich-text,
-	ol.rich-text {
-		margin: 0 0 2em;
-		padding-left: 1.5em;
+	ul,
+	ol {
 
-		li {
-			margin: 0.5em 0;
-		}
-
-		ul {
-			margin-left: 0;
-			padding: 0;
-			list-style: none;
+		&.has-background,
+		&:not([class]),
+		&.rich-text {
+			margin: 0 0 2em;
+			padding-left: 1.5em;
 
 			li {
-				position: relative;
-				padding-left: 1em;
+				margin: 0.5em 0;
+			}
 
-				&::before {
-					position: absolute;
-					left: 0;
-					content: "-";
+			ul {
+				margin-left: 0;
+				padding: 0;
+				list-style: none;
+
+				li {
+					position: relative;
+					padding-left: 1em;
+
+					&::before {
+						position: absolute;
+						left: 0;
+						content: "-";
+					}
 				}
+			}
+
+			ol {
+				padding-left: 1.5em;
 			}
 		}
 
-		ol {
-			padding-left: 1.5em;
+		&.has-background {
+			padding: 1.5em 1.5em 1.5em 2.5em;
 		}
 	}
 

@@ -1,0 +1,34 @@
+/*--------------------------------------------------------------
+# Search form
+--------------------------------------------------------------*/
+
+.c-search-form {
+
+	&__inner {
+		position: relative;
+	}
+
+	&__input {
+		width: 100%;
+		padding-right: 3em;
+	}
+
+	&__btn {
+		position: absolute;
+		top: 50%;
+		right: 0.5em;
+		width: 2em;
+		height: 2em;
+		padding: 0;
+		color: var(--color-accent);
+		transform: translateY(-50%);
+		transition: opacity $base_transition_duration ease-in-out;
+
+		@include mq(lg-min) {
+
+			&:hover {
+				opacity: $base_hover_opacity;
+			}
+		}
+	}
+}

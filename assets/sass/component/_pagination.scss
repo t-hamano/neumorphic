@@ -1,0 +1,50 @@
+/*--------------------------------------------------------------
+# Pagination
+--------------------------------------------------------------*/
+
+.c-pagination {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 4em;
+
+	.nav-links {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+	.page-numbers,
+	.post-page-numbers {
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 2.5em;
+		height: 2.5em;
+		margin: 0 0.3em 0.6em;
+		color: var(--color-accent);
+		font-weight: bold;
+
+		&:not(.dots) {
+
+			@include nm-button;
+			color: var(--color-accent);
+			text-decoration: none;
+			border-radius: 50%;
+		}
+
+		&.current {
+
+			@include nm-light;
+			color: inherit;
+		}
+
+		@include mq(lg-min) {
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+}

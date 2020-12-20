@@ -5,3 +5,4 @@ vendor/
 .wp-env.override.json
 *.zip
 assets/css/
+*.log

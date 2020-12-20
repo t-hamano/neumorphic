@@ -8,16 +8,12 @@
 		padding-left: 1.5em;
 	}
 
-	&.wp-block-categories-dropdown {
-		margin-bottom: 2em;
+	&.wp-block-categories-dropdown select {
 
-		select {
-
-			@include nm-input;
-			display: inline-block;
-			width: auto;
-			border-radius: 1000px;
-		}
+		@include nm-input;
+		display: inline-block;
+		width: auto;
+		border-radius: 1000px;
 	}
 
 	ul {
