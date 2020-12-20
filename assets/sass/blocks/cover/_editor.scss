@@ -1,12 +1,27 @@
+
 /*----------------------
 # Cover
 ----------------------*/
 
+
 .wp-block-cover {
 	min-height: 200px;
-	margin-bottom: 2em;
-	padding: 2em 3em;
 	overflow: hidden;
+
+	.block-editor-block-list__layout > .wp-block {
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:nth-last-child(2) {
+			margin-bottom: 0;
+		}
+	}
+
+	.wp-block-cover__inner-container {
+		padding: 2em 0;
+	}
 
 	&.is-style-nm {
 
@@ -20,44 +35,23 @@
 		border-radius: $base_border_radius;
 	}
 
-	.wp-block-cover__inner-container {
-		width: 100%;
-
-		> *:first-child {
-			margin-top: 0;
-		}
-
-		> *:last-child {
-			margin-bottom: 0;
-		}
-
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			text-shadow: none;
-		}
-
-		h1,
-		h2,
-		h3 {
-			padding-bottom: 0;
-
-			&::before {
-				content: none;
-			}
-		}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		margin-top: 0;
+		text-shadow: none;
 	}
 
-	&.aligncenter,
-	&.alignleft,
-	&.alignright {
-		max-width: 300px;
+	h1,
+	h2,
+	h3 {
+		padding-bottom: 0;
 
-		@include mq(md-max) {
-			max-width: 100%;
+		&::before {
+			content: none;
 		}
 	}
 }
