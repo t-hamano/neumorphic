@@ -89,7 +89,8 @@
 	color: inherit;
 	font-weight: bold;
 	font-size: inherit;
-	font-family: inherit;
+	font-family: $base_font_falily;
+	line-height: $base_line_height;
 	text-align: center;
 	text-decoration: none;
 	box-shadow: $nm_shadow;
@@ -138,7 +139,7 @@
 	@include nm-common;
 	color: inherit;
 	font-size: inherit;
-	font-family: inherit;
+	font-family: $base_font_falily;
 	box-shadow: $nm_shadow_reverse;
 
 	&:focus {
@@ -151,7 +152,7 @@
 	@include nm-common;
 	color: inherit;
 	font-size: inherit;
-	font-family: inherit;
+	font-family: $base_font_falily;
 	box-shadow: $nm_shadow_reverse;
 
 	&:focus,

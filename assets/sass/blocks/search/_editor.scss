@@ -3,65 +3,94 @@
 ----------------------*/
 
 .wp-block-search {
-	position: relative;
-	display: block;
-	max-width: 400px;
+
+	.wp-block-search__inside-wrapper {
+		align-items: center;
+	}
 
 	.wp-block-search__label {
-		position: absolute;
-		width: 1px;
-		height: 1px;
-		margin: -1px;
-		padding: 0;
-		overflow: hidden;
-		word-wrap: normal !important;
-		border: 0;
-		clip: rect(1px, 1px, 1px, 1px);
-		-webkit-clip-path: inset(50%);
-		clip-path: inset(50%);
+		margin-bottom: 0.5em;
 	}
 
 	.wp-block-search__input {
 
 		@include nm-input-editor;
-		width: 100%;
-		max-width: 100%;
-		padding: 0.7em 3em 0.7em 1.4em;
-		color: inherit;
+		flex: 1;
+		padding: 0.7em 1.4em;
 		font-size: inherit;
-		font-family: $base_font_falily;
 		border-radius: 1000px;
-		opacity: $base_placeholder_opacity;
-
-		&::placeholder {
-			color: inherit;
-			opacity: $base_placeholder_opacity;
-		}
 	}
 
 	.wp-block-search__button {
-		position: absolute;
-		top: 50%;
-		right: 0.5em;
-		width: 2em;
-		height: 2em;
-		margin: 0;
-		padding: 0;
-		color: var(--color-accent);
 		font-size: inherit;
-		transform: translateY(-50%);
-		visibility: hidden;
-		transition: opacity $base_transition_duration ease-in-out;
+		font-family: inherit;
+		border: none;
 
-		&::before {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			font-weight: 900;
-			font-family: "Font Awesome 5 Free";
-			transform: translate(-50%, -50%);
-			visibility: visible;
-			content: "\f002";
+		&:not(.has-icon) {
+
+			@include nm-button-editor();
+			padding: 0.5em 1.4em;
+			color: var(--color-accent);
+			border-radius: 1000px;
+		}
+
+		&.has-icon {
+			min-width: 2em;
+			height: 2em;
+			padding: 0;
+			color: var(--color-accent);
+			background: none;
+			box-shadow: none;
+
+			svg {
+				display: none;
+			}
+
+			&::before {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				height: 100%;
+				font-weight: 900;
+				font-family: "Font Awesome 5 Free";
+				visibility: visible;
+				content: "\f002";
+			}
+		}
+	}
+
+	&.wp-block-search__button-inside .wp-block-search__inside-wrapper {
+		padding: 0;
+		font-size: inherit;
+		font-family: inherit;
+		background-color: transparent;
+		border: none;
+
+		.wp-block-search__button {
+			margin-left: -2em;
+			padding: 0.5em 1.4em;
+
+			&.has-icon {
+				margin-left: -2.5em;
+				padding: 0;
+			}
+		}
+
+		.wp-block-search__input {
+			padding: 0.7em 2.5em 0.7em 1.4em;
+			border: none;
+			border-radius: 1000px;
+		}
+	}
+
+	&.wp-block-search__button-outside .wp-block-search__inside-wrapper {
+
+		.wp-block-search__button {
+			margin-left: 1em;
+
+			&.has-icon {
+				margin-left: 0.5em;
+			}
 		}
 	}
 }
