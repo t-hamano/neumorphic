@@ -24,7 +24,7 @@
 				margin-top: 0 !important;
 			}
 
-			&:nth-last-child(2) {
+			&:last-child {
 				margin-bottom: 0 !important;
 			}
 		}
@@ -43,6 +43,10 @@
 		@include nm;
 		padding: 1.5em 1em;
 		border-radius: $base_border_radius;
+	}
+
+	&.is-image-fill figure.wp-block-media-text__media {
+		min-height: initial;
 	}
 
 	@media screen and (max-width: 959px) {

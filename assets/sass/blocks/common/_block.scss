@@ -209,7 +209,7 @@
 
 		&::before {
 
-			@include nm-text();
+			@include nm-text;
 			position: absolute;
 			top: 0.5em;
 			left: 0.7em;
@@ -252,16 +252,6 @@
 				font-size: 1em;
 				text-align: inherit;
 			}
-		}
-	}
-
-	// Image
-	img {
-
-		&[class*="wp-image-"],
-		&.wp-post-image {
-
-			@include nm-media;
 		}
 	}
 

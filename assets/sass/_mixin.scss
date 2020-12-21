@@ -173,14 +173,30 @@
 
 @mixin nm-media() {
 
-	@include nm-reverse;
+	@include nm-common;
 	padding: 5px;
 	border-radius: $base_border_radius;
+	box-shadow: $nm_shadow_reverse;
 }
 
 @mixin nm-media-link() {
-	display: inline-block;
+
+	@include nm-common;
+	display: block;
+	padding: 5px;
 	overflow: hidden;
+	border-radius: $base_border_radius;
+	box-shadow: $nm_shadow_reverse;
+	cursor: pointer;
+
+	> a {
+		display: block;
+		height: 100%;
+	}
+
+	> img {
+		border-radius: $base_border_radius / 2;
+	}
 
 	@include mq(lg-min) {
 		position: relative;
