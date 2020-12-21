@@ -24,50 +24,39 @@
 		font-size: 1.3em;
 
 		> li {
-			margin: 0 15px 15px 0;
+			margin: 0 10px 10px 0;
 		}
 
 		.wp-social-link {
-			width: auto;
-			height: auto;
+
+			width: 2.2em;
+			height: 2.2em;
+			padding: 3px;
+			background-clip: content-box;
 			border-radius: 50%;
+			box-shadow: $nm_shadow;
+			transition: box-shadow $base_transition_duration ease-in-out;
 
 			&:hover {
+				box-shadow: $nm_shadow_light;
 				transform: none;
 			}
 
-			a {
+			&:focus,
+			&:visited {
+				box-shadow: $nm_shadow;
+			}
 
-				position: relative;
+			&:active {
+				box-shadow: $nm_shadow_acitve;
+			}
+
+			a {
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				width: 2em;
-				height: 2em;
+				height: 100%;
 				padding: 0;
-				border-radius: 50%;
-
-				&::before {
-
-					@include nm;
-					position: absolute;
-					top: -3px;
-					right: -3px;
-					bottom: -3px;
-					left: -3px;
-					border-radius: inherit;
-					content: "";
-				}
-
-				&:hover::before {
-
-					@include nm-light;
-				}
-
-				&:active::before {
-
-					@include nm-active;
-				}
 			}
 		}
 	}
