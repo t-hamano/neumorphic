@@ -6,21 +6,35 @@
 
 	&.has-background {
 		margin-bottom: 28px;
-		padding: 1.5em 1.5em 2em;
+	}
+
+	&.is-style-nm,
+	&.is-style-nm-reverse {
+		border-radius: $base_border_radius;
+
+		&.has-background {
+			padding: 5px;
+			background-clip: content-box;
+		}
 	}
 
 	&.is-style-nm {
 
 		@include nm;
-		padding: 1.5em 1.5em 2em;
-		border-radius: $base_border_radius;
 	}
 
 	&.is-style-nm-reverse {
 
 		@include nm-reverse;
-		padding: 1.5em 1.5em 2em;
-		border-radius: $base_border_radius;
+	}
+
+	&.is-style-nm,
+	&.is-style-nm-reverse,
+	&.has-background {
+
+		.wp-block-group__inner-container {
+			padding: 1.5em 1.5em 2em;
+		}
 	}
 
 	.wp-block:first-child {
