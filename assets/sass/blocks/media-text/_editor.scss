@@ -5,7 +5,6 @@
 .wp-block-media-text {
 
 	.wp-block-media-text__media {
-		text-align: center;
 
 		img,
 		video {
@@ -46,32 +45,9 @@
 	}
 
 	&.is-image-fill figure.wp-block-media-text__media {
-		min-height: initial;
-	}
 
-	@media screen and (max-width: 959px) {
-
-		&.is-stacked-on-mobile {
-
-			> .wp-block-media-text__media {
-				margin-bottom: 2em;
-
-				> img,
-				> video {
-					width: auto;
-				}
-			}
-
-			&.has-media-on-the-right {
-
-				.wp-block-media-text__content {
-					grid-row: 2;
-				}
-
-				.wp-block-media-text__media {
-					grid-row: 1;
-				}
-			}
-		}
+		@include nm-media;
+		min-height: 200px;
+		background-clip: content-box;
 	}
 }
