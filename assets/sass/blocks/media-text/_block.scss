@@ -5,6 +5,10 @@
 .wp-block-media-text {
 	margin-bottom: 2em;
 
+	.wp-block-media-text__media video {
+		border-radius: $base_border_radius / 2;
+	}
+
 	&:not(.is-image-fill) .wp-block-media-text__media {
 
 		a {
@@ -28,12 +32,6 @@
 		> *:last-child {
 			margin-bottom: 0 !important;
 		}
-	}
-
-	> figure > video {
-
-		@include nm-media;
-		max-width: 100%;
 	}
 
 	&.has-media-on-the-right .wp-block-media-text__content {
