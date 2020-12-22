@@ -187,8 +187,12 @@ legend {
 
 		img {
 
-			@include nm-media;
 			width: 100%;
+		}
+
+		> img {
+
+			@include nm-media;
 		}
 
 		a {

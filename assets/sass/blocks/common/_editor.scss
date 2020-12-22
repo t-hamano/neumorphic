@@ -159,12 +159,6 @@ code {
 	border-radius: 4px;
 }
 
-// Image
-img[class*="wp-image-"] {
-
-	@include nm-media;
-}
-
 // Figure
 figcaption {
 	margin-top: 0.5em;
