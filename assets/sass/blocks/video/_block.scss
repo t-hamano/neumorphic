@@ -5,6 +5,11 @@
 .wp-block-video {
 	margin-bottom: 2em;
 
+	&.alignleft,
+	&.alignright {
+		max-width: 500px;
+	}
+
 	video {
 
 		@include nm-media;
@@ -14,6 +19,10 @@
 	&.aligncenter video {
 		margin-right: auto;
 		margin-left: auto;
+	}
+
+	figcaption {
+		text-align: center;
 	}
 
 	@include mq(md-max) {
