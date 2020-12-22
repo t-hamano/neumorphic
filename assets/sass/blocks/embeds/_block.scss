@@ -3,11 +3,14 @@
 ------------------------------------------*/
 
 .wp-block-embed {
-	margin-bottom: 2em;
+
+	&.alignleft,
+	&.alignright {
+		max-width: 500px;
+	}
 
 	blockquote {
 		padding: 0;
-		box-shadow: none;
 
 		&::before {
 			content: none;
@@ -18,64 +21,123 @@
 		text-align: center;
 	}
 
-	&.alignleft,
-	&.alignright {
-		max-width: 500px;
-	}
-
-	// You Tube
-	&-youtube iframe {
-
-		@include nm-media;
-	}
-
-	// Facebook
-	&-facebook {
-		max-width: 500px;
-
-		.fb_iframe_widget {
-			width: 100% !important;
-
-			> span {
-				width: 100% !important;
-			}
-		}
+	&.wp-has-aspect-ratio,
+	&-crowdsignal,
+	&-imgur,
+	&-plugin-directory {
 
 		iframe {
 
 			@include nm-media;
+			display: block;
+			width: 100%;
+			margin: 0 !important;
+			border: none !important;
 		}
 	}
 
-	// Instagram
-	&-instagram {
-		max-width: 500px;
+	&-tumblr {
+
+		.wp-block-embed__wrapper {
+
+			@include nm-media;
+			display: inline-block;
+			vertical-align: top;
+
+			iframe {
+				margin: 0 !important;
+			}
+		}
+	}
+
+	&-tiktok {
 
 		iframe {
-			padding: 5px !important;
-			border: none !important;
-			border-radius: 8px !important;
-			box-shadow: $nm_shadow_reverse !important;
-		}
-
-		.aligncenter iframe {
-			margin-right: auto !important;
-			margin-left: auto !important;
+			padding: 5px;
+			border-radius: $base_border_radius;
 		}
 	}
 
-	// Twitter
+	&-smugmug,
+	&-flickr {
+
+		.wp-block-embed__wrapper {
+
+			&::before {
+				content: none !important;
+			}
+
+			img {
+
+				@include nm-media;
+			}
+		}
+	}
+
+	&-issuu {
+
+		.issuuembed {
+
+			@include nm-media;
+			max-width: 100%;
+			border-radius: $base_border_radius;
+
+			iframe {
+				border-radius: $base_border_radius / 2;
+			}
+		}
+	}
+
+	&-meetup {
+
+		@include nm-media;
+
+		#meetup_oembed {
+			height: auto !important;
+		}
+
+		h1,
+		h2,
+		h3 {
+
+			&::before {
+				content: none;
+			}
+		}
+	}
+
+	&-reddit {
+
+		.embedly-card-hug {
+
+			@include nm-media;
+			margin: 0 !important;
+			background: #e1e2e6 !important;
+		}
+	}
+
+	&-reverbnation {
+
+		.wp-block-embed__wrapper {
+			max-width: 500px;
+		}
+	}
+
+	&-amazon {
+
+		iframe {
+
+			@include nm-media;
+			display: block;
+		}
+	}
+
 	&-twitter {
-		max-width: 500px;
 
 		.twitter-tweet {
 
 			@include nm-media;
-		}
-
-		.aligncenter .twitter-tweet {
-			margin-right: auto;
-			margin-left: auto;
+			margin: 0 !important;
 		}
 	}
 }

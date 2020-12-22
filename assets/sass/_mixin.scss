@@ -174,7 +174,7 @@
 @mixin nm-media() {
 
 	@include nm-common;
-	padding: 5px;
+	padding: 5px !important;
 	border-radius: $base_border_radius;
 	box-shadow: $nm_shadow_reverse;
 }
@@ -183,7 +183,7 @@
 
 	@include nm-common;
 	display: block;
-	padding: 5px;
+	padding: 5px !important;
 	overflow: hidden;
 	border-radius: $base_border_radius;
 	box-shadow: $nm_shadow_reverse;

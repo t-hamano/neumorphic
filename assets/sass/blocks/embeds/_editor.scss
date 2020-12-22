@@ -2,43 +2,25 @@
 ## Embeds
 ------------------------------------------*/
 
-.wp-block-embed {
+div.wp-block-embed {
 
-	// YouTube
-	&-youtube iframe {
+	.wp-block-embed__wrapper {
 
 		@include nm-media;
 	}
 
-	// Facebook
-	&-facebook {
-		max-width: 500px;
-
-		.components-placeholder {
-
-			@include nm-media;
-			padding: 1em;
-		}
+	iframe {
+		display: block;
+		border-radius: $base_border_radius;
 	}
 
-	// Instagram
-	&-instagram {
-		max-width: 500px;
-
-		iframe {
-
-			@include nm-media;
-		}
-	}
-
-	// Twitter
-	&-twitter {
-		max-width: 500px;
-
-		iframe {
-
-			@include nm-media;
-		}
+	.wp-has-aspect-ratio iframe {
+		top: 5px;
+		right: 5px;
+		bottom: 5px;
+		left: 5px;
+		width: calc(100% - 10px);
+		height: calc(100% - 10px);
 	}
 }
 
