@@ -183,19 +183,14 @@
 
 	@include nm-common;
 	display: block;
-	padding: 5px !important;
 	overflow: hidden;
 	border-radius: $base_border_radius;
 	box-shadow: $nm_shadow_reverse;
 	cursor: pointer;
 
-	> a {
-		display: block;
-		height: 100%;
-	}
-
 	> img {
-		border-radius: $base_border_radius / 2;
+		padding: 5px !important;
+		border-radius: $base_border_radius;
 	}
 
 	@include mq(lg-min) {

@@ -4,6 +4,10 @@
 
 .wp-block-image {
 
+	.components-resizable-box__container {
+		vertical-align: top;
+	}
+
 	&.is-resized {
 		display: block;
 	}
@@ -28,18 +32,20 @@
 	}
 }
 
-.wp-block[data-align="left"] > .wp-block-image {
-	margin-right: 1.5em;
+.wp-block[data-align="left"],
+.wp-block[data-align="center"],
+.wp-block[data-align="right"] {
 
-	figcaption {
+	> .wp-block-image > figcaption {
+		display: block;
 		text-align: center;
 	}
 }
 
+.wp-block[data-align="left"] > .wp-block-image {
+	margin-right: 1.5em;
+}
+
 .wp-block[data-align="right"] > .wp-block-image {
 	margin-left: 1.5em;
-
-	figcaption {
-		text-align: center;
-	}
 }
