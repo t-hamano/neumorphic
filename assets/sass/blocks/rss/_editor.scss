@@ -3,13 +3,14 @@
 ----------------------*/
 
 .wp-block-rss {
+	padding: 0;
 	list-style: none;
 
-	&:not(.is-grid) {
+	.wp-block-rss:not(.is-grid) {
 
 		@include nm;
 		margin-left: 0;
-		padding: 1.5em 1em;
+		padding: 1.5em;
 		border-radius: $base_border_radius;
 
 		> li {
@@ -24,7 +25,7 @@
 		}
 	}
 
-	&.is-grid {
+	.wp-block-rss.is-grid {
 		max-width: none;
 		margin-right: -8px;
 		margin-left: -8px;
@@ -33,20 +34,27 @@
 
 			@include nm;
 			margin: 0 8px 16px;
-			padding: 1em;
+			padding: 1.5em;
 			border-radius: $base_border_radius;
 		}
 	}
 
-	&__item-title a {
-		display: inline-block;
+	&__item-title {
 
-		&::before {
+		+ * {
+			margin-top: 0.5em;
+		}
+
+		a {
 			display: inline-block;
-			margin-right: 0.5em;
-			font-weight: 900;
-			font-family: "Font Awesome 5 Free";
-			content: "\f09e";
+
+			&::before {
+				display: inline-block;
+				margin-right: 0.5em;
+				font-weight: 900;
+				font-family: "Font Awesome 5 Free";
+				content: "\f09e";
+			}
 		}
 	}
 

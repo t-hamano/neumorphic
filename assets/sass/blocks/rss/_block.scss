@@ -9,7 +9,7 @@
 	&:not(.is-grid) {
 
 		@include nm;
-		padding: 1.5em 1em;
+		padding: 1.5em;
 		border-radius: $base_border_radius;
 
 		> li {
@@ -54,17 +54,24 @@
 
 			@include nm;
 			margin: 0 8px 16px;
-			padding: 1em;
+			padding: 1.5em;
 			border-radius: $base_border_radius;
 		}
 	}
 
-	&__item-title a::before {
-		display: inline-block;
-		margin-right: 0.5em;
-		font-weight: 900;
-		font-family: "Font Awesome 5 Free";
-		content: "\f09e";
+	&__item-title {
+
+		+ * {
+			margin-top: 0.5em;
+		}
+
+		a::before {
+			display: inline-block;
+			margin-right: 0.5em;
+			font-weight: 900;
+			font-family: "Font Awesome 5 Free";
+			content: "\f09e";
+		}
 	}
 
 	&__item-author {
