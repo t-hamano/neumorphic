@@ -13,9 +13,17 @@
 	.blocks-gallery-item {
 
 		figure {
-			display: flex;
-			align-items: flex-end;
-			justify-content: center;
+
+			> img {
+
+				@include nm-media;
+			}
+
+			> a {
+
+				@include nm-media-link;
+				width: 100%;
+			}
 		}
 
 		figcaption {
@@ -25,17 +33,19 @@
 			max-height: calc(100% - 10px);
 			padding: 0.5em;
 			background: rgba(0, 0, 0, 0.6);
-			border-radius: 0 0 $base_border_radius $base_border_radius;
+			border-radius: 0 0 $base_border_radius / 2 $base_border_radius / 2;
 		}
 
 		img {
 			width: 100%;
+			border-radius: $base_border_radius / 2;
 		}
 	}
 
 	> figcaption {
 		display: block;
 		width: 100%;
+		margin: 0;
 		text-align: center;
 	}
 }
