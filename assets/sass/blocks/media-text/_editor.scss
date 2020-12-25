@@ -37,14 +37,30 @@
 	}
 
 	&.has-background {
-		padding: 1.5em 1em;
+		padding: 1.5em;
 	}
 
 	&.is-style-nm {
 
 		@include nm;
-		padding: 1.5em 1em;
+		padding: 1.5em;
 		border-radius: $base_border_radius;
+
+		&.has-background {
+			position: relative;
+
+			&::before {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				border: 5px var(--color-bg) solid;
+				border-radius: $base_border_radius;
+				content: "";
+				pointer-events: none;
+			}
+		}
 	}
 
 	&.is-image-fill figure.wp-block-media-text__media {
