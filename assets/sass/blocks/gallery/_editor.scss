@@ -12,10 +12,6 @@
 	.blocks-gallery-image,
 	.blocks-gallery-item {
 
-		figure {
-			justify-content: center;
-		}
-
 		figcaption {
 			bottom: 5px;
 			left: 5px;
@@ -25,13 +21,18 @@
 			color: #fff;
 			font-size: 0.8em;
 			background: rgba(0, 0, 0, 0.6);
-			border-radius: 0 0 $base_border_radius $base_border_radius;
+			border-radius: 0 0 $base_border_radius / 2 $base_border_radius / 2;
 		}
 
 		img {
 
 			@include nm-media;
 			width: 100%;
+			border-radius: $base_border_radius;
 		}
+	}
+
+	> figcaption {
+		margin: 0;
 	}
 }

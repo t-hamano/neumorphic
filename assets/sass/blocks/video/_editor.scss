@@ -9,13 +9,18 @@
 		@include nm-media;
 		display: block;
 	}
-
-	figcaption {
-		text-align: inherit;
-	}
 }
 
-.wp-block[data-align="center"] > .wp-block-video video {
+[data-align="center"] > .wp-block-video video {
 	margin-right: auto;
 	margin-left: auto;
+}
+
+[data-align="left"],
+[data-align="right"] {
+
+	.wp-block-video {
+		width: 100%;
+		max-width: 500px;
+	}
 }

@@ -1,11 +1,10 @@
-
 /*----------------------
 # Cover
 ----------------------*/
 
-
 .wp-block-cover {
 	min-height: 200px;
+	margin-bottom: 2em;
 	overflow: hidden;
 
 	&.is-style-nm,
@@ -34,7 +33,13 @@
 	}
 
 	.wp-block-cover__inner-container {
+		width: 100%;
 		padding: 2em 3em;
+
+		@include mq(md-max) {
+			padding-right: 1.5em;
+			padding-left: 1.5em;
+		}
 
 		> *:first-child {
 			margin-top: 0;
@@ -50,7 +55,6 @@
 		h4,
 		h5,
 		h6 {
-			margin-top: 0;
 			text-shadow: none;
 		}
 
@@ -62,6 +66,16 @@
 			&::before {
 				content: none;
 			}
+		}
+	}
+
+	&.aligncenter,
+	&.alignleft,
+	&.alignright {
+		max-width: 300px;
+
+		@include mq(md-max) {
+			max-width: 100%;
 		}
 	}
 }

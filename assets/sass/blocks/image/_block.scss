@@ -5,11 +5,62 @@
 .wp-block-image {
 	margin-bottom: 2em;
 
+	> img {
 
-	> figure > a,
+		@include nm-media;
+	}
+
 	> a {
 
 		@include nm-media-link;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	figure {
+		display: inline-block;
+		vertical-align: top;
+
+		> a {
+
+			@include nm-media-link;
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		> img {
+
+			@include nm-media;
+		}
+	}
+
+	&.is-style-rounded {
+
+		a {
+			border-radius: 50%;
+
+			&::before {
+				border-radius: 50%;
+			}
+		}
+
+		img {
+			border-radius: 50%;
+		}
+	}
+
+	&.is-style-nm-none {
+
+		a,
+		img {
+			padding: 0 !important;
+			border-radius: 0;
+			box-shadow: none;
+		}
+
+		a::before {
+			content: none;
+		}
 	}
 
 	.aligncenter,
@@ -25,21 +76,5 @@
 				text-align: center;
 			}
 		}
-	}
-
-	&.is-style-rounded {
-
-		a::before {
-			border-radius: 50%;
-		}
-
-		img {
-			border-radius: 50%;
-		}
-	}
-
-	&.is-style-nm-none img {
-		border-radius: 0;
-		box-shadow: none;
 	}
 }

@@ -38,6 +38,11 @@ Source: https://pxhere.com/ja/photo/32163
 
 == Changelog ==
 
+= v1.2.2 =
+Clean: Update npm packages, change the scss directory structure, and refactor the development environment
+Fix: Problem about skin color is not applied to a tag in the editor
+Fix: Fine tuning of all blocks
+
 = v1.2.1 =
 Add: style for the form parts
 

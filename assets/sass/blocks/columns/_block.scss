@@ -3,25 +3,6 @@
 ----------------------*/
 
 .wp-block-columns {
-	margin-bottom: 2em;
-
-	&.has-background {
-		padding: 1.5em 1.5em 2em;
-	}
-
-	&.is-style-nm {
-
-		@include nm;
-		padding: 1.5em 1.5em 2em;
-		border-radius: $base_border_radius;
-	}
-
-	&.is-style-nm-reverse {
-
-		@include nm-reverse;
-		padding: 1.5em 1.5em 2em;
-		border-radius: $base_border_radius;
-	}
 
 	> .wp-block-column {
 
@@ -33,10 +14,80 @@
 			margin-bottom: 0 !important;
 		}
 
+		@media (max-width: 781px) and (min-width: 600px) {
+
+			&:not(:nth-last-child(-n+2)) {
+				margin-bottom: 2em;
+			}
+		}
+
 		@media screen and (max-width: 599px) {
 
 			&:not(:last-child) {
 				margin-bottom: 2em;
+			}
+		}
+	}
+
+	&.has-background {
+		padding: calc(1.5em + 5px) calc(1.5em + 5px) calc(2em + 5px);
+	}
+
+	&.is-style-nm {
+
+		@include nm;
+	}
+
+	&.is-style-nm-reverse {
+
+		@include nm-reverse;
+	}
+
+	&.is-style-nm,
+	&.is-style-nm-reverse {
+		padding: 5px;
+		background-clip: content-box;
+		border-radius: $base_border_radius;
+
+		> .wp-block-column {
+			padding-top: 1.5em;
+			padding-bottom: 1.5em;
+
+			&:first-child {
+				padding-left: 1.5em;
+			}
+
+			&:last-child {
+				padding-right: 1.5em;
+			}
+
+			@media (max-width: 781px) and (min-width: 600px) {
+
+				&:nth-child(odd) {
+					padding-left: 1.5em;
+				}
+
+				&:nth-child(even) {
+					padding-right: 1.5em;
+				}
+
+				&:not(:nth-last-child(-n+2)) {
+					margin-bottom: 0;
+					padding-bottom: 0;
+				}
+			}
+
+			@media screen and (max-width: 599px) {
+				padding-right: 1.5em;
+				padding-left: 1.5em;
+
+				&:not(:first-child) {
+					padding-top: 0;
+				}
+
+				&:not(:last-child) {
+					padding-bottom: 0;
+				}
 			}
 		}
 	}

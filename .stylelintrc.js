@@ -9,6 +9,7 @@ module.exports = {
 		"assets/**/*.css",
   ],
 	rules: {
+		'selector-id-pattern': null,
 		'max-line-length': null,
 		'no-descending-specificity': null,
 		'font-weight-notation': null,

@@ -224,7 +224,7 @@ body#tinymce.wp-editor.content {
 
 		&::before {
 
-			@include nm-text();
+			@include nm-text;
 			position: absolute;
 			top: 0.5em;
 			left: 0.7em;

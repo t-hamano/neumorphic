@@ -86,14 +86,6 @@
 		@include nm-text-border;
 	}
 
-	h1,
-	h2,
-	h3 {
-
-		@include nm-border;
-		padding-bottom: 0.3em;
-	}
-
 	h1 {
 		font-size: 2em;
 	}
@@ -116,6 +108,31 @@
 
 	h6 {
 		font-size: 1em;
+	}
+
+	h1,
+	h2,
+	h3 {
+
+		@include nm-border;
+		padding-bottom: 0.3em;
+
+		&.has-background {
+			padding: 0.3em 0.6em;
+
+			&::before {
+				bottom: -0.3em;
+			}
+		}
+	}
+
+	h4,
+	h5,
+	h6 {
+
+		&.has-background {
+			padding: 0.3em 0.6em;
+		}
 	}
 
 	/* Paragraph */
@@ -209,7 +226,7 @@
 
 		&::before {
 
-			@include nm-text();
+			@include nm-text;
 			position: absolute;
 			top: 0.5em;
 			left: 0.7em;
@@ -252,16 +269,6 @@
 				font-size: 1em;
 				text-align: inherit;
 			}
-		}
-	}
-
-	// Image
-	img {
-
-		&[class*="wp-image-"],
-		&.wp-post-image {
-
-			@include nm-media;
 		}
 	}
 
