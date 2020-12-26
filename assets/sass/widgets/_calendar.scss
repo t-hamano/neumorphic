@@ -30,7 +30,6 @@
 		tbody td {
 			padding: 0;
 			padding: 0.3em;
-			line-height: 2.4;
 			text-align: center;
 
 			a {
@@ -39,6 +38,7 @@
 				display: block;
 				color: var(--color-accent);
 				font-weight: bold;
+				line-height: 2.4;
 				border-radius: $base_border_radius;
 			}
 		}
