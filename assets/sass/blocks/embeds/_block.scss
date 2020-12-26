@@ -3,6 +3,7 @@
 ------------------------------------------*/
 
 .wp-block-embed {
+	margin-bottom: 2em;
 
 	&.alignleft,
 	&.alignright {
@@ -137,7 +138,7 @@
 		.twitter-tweet {
 
 			@include nm-media;
-			margin: 0 !important;
+			margin: 0 auto !important;
 		}
 	}
 }

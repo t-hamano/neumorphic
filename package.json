@@ -13,7 +13,7 @@
 		"css:compressed": "node-sass --importer node_modules/node-sass-glob-importer/dist/cli.js assets/sass/ --output assets/css/ --output-style compressed",
 		"css:rename": "renamer -f \"/.css$/\" -r \".min.css\" \"assets/css/*\"",
 		"css:clean": "rimraf assets/css",
-		"build": "npm-run-all -s build:clean css:compressed css:rename css:expanded",
+		"build": "npm-run-all -s css:clean css:compressed css:rename css:expanded",
 		"release": "npm-run-all -s release:clean:dir release:clean:zip release:mkdir release:copy release:archive release:clean:dir",
 		"release:clean:dir": "cross-conf-env rimraf ./npm_package_name",
 		"release:clean:zip": "cross-conf-env rimraf ./*.zip",
