@@ -10,6 +10,15 @@
 		max-width: 500px;
 	}
 
+	iframe.wp-embedded-content {
+
+		@include nm-reverse;
+		display: block;
+		width: 100%;
+		padding: 5px;
+		border-radius: $base_border_radius;
+	}
+
 	blockquote {
 		padding: 0;
 
@@ -24,7 +33,6 @@
 
 	&.wp-has-aspect-ratio,
 	&-crowdsignal,
-	&-imgur,
 	&-plugin-directory {
 
 		iframe {
@@ -34,6 +42,17 @@
 			width: 100%;
 			margin: 0 !important;
 			border: none !important;
+		}
+	}
+
+	&-imgur {
+
+		iframe {
+
+			@include nm-media;
+			display: inline-block;
+			margin: 0 !important;
+			vertical-align: top;
 		}
 	}
 
@@ -53,6 +72,12 @@
 
 	&-tiktok {
 
+		.tiktok-embed {
+			display: inline-block;
+			margin: 0;
+			vertical-align: top;
+		}
+
 		iframe {
 			padding: 5px;
 			border-radius: $base_border_radius;
@@ -71,6 +96,7 @@
 			img {
 
 				@include nm-media;
+				width: 100%;
 			}
 		}
 	}
@@ -80,7 +106,9 @@
 		.issuuembed {
 
 			@include nm-media;
+			display: inline-block;
 			max-width: 100%;
+			vertical-align: top;
 			border-radius: $base_border_radius;
 
 			iframe {
@@ -130,6 +158,7 @@
 
 			@include nm-media;
 			display: block;
+			width: 100%;
 		}
 	}
 
