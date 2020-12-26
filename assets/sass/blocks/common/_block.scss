@@ -375,6 +375,14 @@
 	pre {
 		font-family: inherit;
 	}
+
+	// Password Protected Form
+	.post-password-form {
+
+		[type="submit"] {
+			margin-top: 2em;
+		}
+	}
 }
 
 // Align wide/full
