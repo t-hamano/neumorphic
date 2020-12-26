@@ -1,0 +1,152 @@
+/*------------------------------------------
+# Embed
+------------------------------------------*/
+
+.wp-block-embed {
+
+	&.alignleft,
+	&.alignright {
+		max-width: 500px;
+	}
+
+	iframe.wp-embedded-content {
+
+		@include nm-reverse;
+		display: block;
+		width: 100%;
+		padding: 5px;
+		border-radius: $base_border_radius;
+	}
+
+	blockquote {
+		padding: 0;
+
+		&::before {
+			content: none;
+		}
+	}
+
+	figcaption {
+		text-align: center;
+	}
+
+	&.wp-has-aspect-ratio,
+	&-crowdsignal,
+	&-imgur,
+	&-plugin-directory {
+
+		iframe {
+
+			@include nm-media;
+			display: block;
+			width: 100%;
+			margin: 0 !important;
+			border: none !important;
+		}
+	}
+
+	&-tumblr {
+
+		.wp-block-embed__wrapper {
+
+			@include nm-media;
+			display: inline-block;
+			vertical-align: top;
+
+			iframe {
+				margin: 0 !important;
+			}
+		}
+	}
+
+	&-tiktok {
+
+		iframe {
+			padding: 5px;
+			border-radius: $base_border_radius;
+		}
+	}
+
+	&-smugmug,
+	&-flickr {
+
+		.wp-block-embed__wrapper {
+
+			&::before {
+				content: none !important;
+			}
+
+			img {
+
+				@include nm-media;
+			}
+		}
+	}
+
+	&-issuu {
+
+		.issuuembed {
+
+			@include nm-media;
+			max-width: 100%;
+			border-radius: $base_border_radius;
+
+			iframe {
+				border-radius: $base_border_radius / 2;
+			}
+		}
+	}
+
+	&-meetup {
+
+		@include nm-media;
+
+		#meetup_oembed {
+			height: auto !important;
+		}
+
+		h1,
+		h2,
+		h3 {
+
+			&::before {
+				content: none;
+			}
+		}
+	}
+
+	&-reddit {
+
+		.embedly-card-hug {
+
+			@include nm-media;
+			margin: 0 !important;
+			background: #e1e2e6 !important;
+		}
+	}
+
+	&-reverbnation {
+
+		.wp-block-embed__wrapper {
+			max-width: 500px;
+		}
+	}
+
+	&-amazon {
+
+		iframe {
+
+			@include nm-media;
+			display: block;
+		}
+	}
+
+	&-twitter {
+
+		.twitter-tweet {
+
+			@include nm-media;
+			margin: 0 !important;
+		}
+	}
+}

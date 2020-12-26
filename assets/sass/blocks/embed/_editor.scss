@@ -1,0 +1,47 @@
+/*------------------------------------------
+## Embeds
+------------------------------------------*/
+
+div.wp-block-embed {
+
+	.wp-block-embed__wrapper {
+
+		@include nm-media;
+	}
+
+	iframe {
+		display: block;
+		border-radius: $base_border_radius;
+	}
+
+	.wp-has-aspect-ratio iframe {
+		top: 5px;
+		right: 5px;
+		bottom: 5px;
+		left: 5px;
+		width: calc(100% - 10px);
+		height: calc(100% - 10px);
+	}
+}
+
+[data-align="left"],
+[data-align="right"] {
+
+	.wp-block-embed {
+		width: 100%;
+		max-width: 500px;
+	}
+}
+
+[data-align="center"] {
+
+	.wp-block-embed {
+
+		&-facebook,
+		&-instagram,
+		&-twitter {
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+}
