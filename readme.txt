@@ -38,6 +38,11 @@ Source: https://pxhere.com/ja/photo/32163
 
 == Changelog ==
 
+= v1.3.0 =
+Fix: Fine tuning of embed blocks
+Add: Indivisual block margin-bottom style
+Add: embed block style
+
 = v1.2.3 =
 Fix: Fine tuning of all widgets, some blocks, comment tag style
 Fix: add classic style(table, definition list, inline quotes)
