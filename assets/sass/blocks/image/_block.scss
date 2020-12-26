@@ -34,7 +34,8 @@
 		}
 	}
 
-	&.is-style-rounded {
+	&.is-style-rounded,
+	&.is-style-circle-mask {
 
 		a {
 			border-radius: 50%;

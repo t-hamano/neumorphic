@@ -27,8 +27,12 @@
 		opacity: $text_color_thin;
 	}
 
-	&.is-style-rounded img {
-		border-radius: 50%;
+	&.is-style-rounded,
+	&.is-style-circle-mask {
+
+		img {
+			border-radius: 50%;
+		}
 	}
 }
 
