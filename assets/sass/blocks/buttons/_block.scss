@@ -10,58 +10,61 @@
 	}
 
 	.wp-block-button {
-		margin-right: 1em;
-		margin-bottom: 1em;
-		color: inherit;
+		margin-right: 20px;
+		margin-bottom: 20px;
+	}
+}
 
-		@include mq(md-max) {
-			display: block;
-			margin-right: 0;
-			margin-bottom: 2em;
+.wp-block-button {
+	color: inherit;
+
+	@include mq(md-max) {
+		display: block;
+		margin-right: 0;
+		margin-bottom: 2em;
+	}
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	.wp-block-button__link {
+		position: relative;
+		padding: 0.6em 1.5em;
+		font-weight: bold;
+		font-size: 1.1em;
+		line-height: 1.4;
+		text-decoration: none;
+		border-radius: 1000px;
+
+		&:not(.has-background) {
+			background-color: transparent;
 		}
 
-		&:last-child {
-			margin-right: 0;
+		&::before {
+
+			@include nm;
+			position: absolute;
+			top: -3px;
+			right: -3px;
+			bottom: -3px;
+			left: -3px;
+			border-radius: inherit;
+			content: "";
 		}
 
-		.wp-block-button__link {
-			position: relative;
-			padding: 0.6em 1.5em;
-			font-weight: bold;
-			font-size: 1.1em;
-			line-height: 1.4;
+		&:hover {
 			text-decoration: none;
-			border-radius: 1000px;
-
-			&:not(.has-background) {
-				background-color: transparent;
-			}
 
 			&::before {
 
-				@include nm;
-				position: absolute;
-				top: -3px;
-				right: -3px;
-				bottom: -3px;
-				left: -3px;
-				border-radius: inherit;
-				content: "";
+				@include nm-light;
 			}
+		}
 
-			&:hover {
-				text-decoration: none;
+		&:active::before {
 
-				&::before {
-
-					@include nm-light;
-				}
-			}
-
-			&:active::before {
-
-				@include nm-active;
-			}
+			@include nm-active;
 		}
 	}
 }
