@@ -7,8 +7,7 @@
 
 	ul {
 		margin: 0;
-		padding: 0;
-		list-style: none;
+		padding-left: 1.5em;
 	}
 
 	a {
@@ -31,6 +30,7 @@
 	.children {
 		margin: 0 0 0.5em;
 		padding: 0;
+		list-style: none;
 
 		> li {
 			position: relative;

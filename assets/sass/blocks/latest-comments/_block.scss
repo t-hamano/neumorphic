@@ -3,9 +3,9 @@
 ----------------------*/
 
 .wp-block-latest-comments {
+	margin-bottom: 2em;
 
 	@include nm;
-	margin-bottom: 2em;
 	padding: 1.5em 1em;
 	border-radius: $base_border_radius;
 

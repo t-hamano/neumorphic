@@ -7,7 +7,7 @@
 	.tagcloud {
 		margin: 0 -0.3em;
 
-		a {
+		.tag-cloud-link {
 
 			@include nm-button;
 			display: inline-block;
@@ -16,6 +16,12 @@
 			color: var(--color-accent);
 			font-size: 0.9em !important;
 			border-radius: 1000px;
+		}
+
+		.tag-link-count {
+			color: var(--color-text-main);
+			font-weight: normal;
+			opacity: $text_color_thin;
 		}
 	}
 }

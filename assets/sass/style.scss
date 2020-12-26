@@ -17,11 +17,11 @@
 @import "module/sidebar";
 
 // Component
-@import "component/**/*.scss";
+@import "component/**/*";
 
 // Widget Styles
 @import "widgets/_common.scss";
-@import "widgets/!(common)/**/*.scss";
+@import "widgets/**/!(_common.scss)";
 
 // Block Settings(Color, Gradient color)
 @import "blocks/settings/_block.scss";

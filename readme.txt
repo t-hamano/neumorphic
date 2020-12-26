@@ -38,6 +38,19 @@ Source: https://pxhere.com/ja/photo/32163
 
 == Changelog ==
 
+= v1.3.0 =
+Fix: Fine tuning of embed blocks
+Add: Indivisual block margin-bottom style
+Add: embed block style
+
+= v1.2.3 =
+Fix: Fine tuning of all widgets, some blocks, comment tag style
+Fix: add classic style(table, definition list, inline quotes)
+Clean: Remove indivisual block margin-bottom style
+Add: Comment content tag style
+Add: Style for password protected post
+Change: post meta component layout
+
 = v1.2.2 =
 Clean: Update npm packages, change the scss directory structure, and refactor the development environment
 Fix: Problem about skin color is not applied to a tag in the editor

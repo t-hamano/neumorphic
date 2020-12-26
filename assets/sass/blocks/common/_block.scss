@@ -272,6 +272,7 @@
 		}
 	}
 
+	// Linked Image
 	.wp-caption > a {
 
 		@include nm-media-link;
@@ -373,6 +374,14 @@
 	// Preformatted text
 	pre {
 		font-family: inherit;
+	}
+
+	// Password Protected Form
+	.post-password-form {
+
+		[type="submit"] {
+			margin-top: 2em;
+		}
 	}
 }
 
