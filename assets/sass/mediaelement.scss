@@ -44,7 +44,7 @@
 			width: calc(100% - 10px);
 			height: calc(100% - 10px);
 			overflow: hidden;
-			border-radius: 10px;
+			border-radius: $base_border_radius;
 		}
 
 		.mejs-controls {
