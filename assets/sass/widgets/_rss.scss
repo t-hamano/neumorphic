@@ -40,6 +40,10 @@
 			.rsswidget {
 				color: inherit;
 				font-weight: bold;
+
+				+ * {
+					margin-top: 0.5em;
+				}
 			}
 
 			.rss-date {
@@ -60,6 +64,7 @@
 
 			cite {
 				display: block;
+				margin-top: 0.5em;
 				font-size: 0.8em;
 				text-align: right;
 
