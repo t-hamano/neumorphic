@@ -38,6 +38,10 @@ Source: https://pxhere.com/ja/photo/32163
 
 == Changelog ==
 
+= v1.3.1 =
+Clean: Remove sourceMappingURL from css-vars-ponyfill.min.js
+Fix: File loading error when using a child theme
+
 = v1.3.0 =
 Fix: Fine tuning of embed blocks
 Add: Indivisual block margin-bottom style

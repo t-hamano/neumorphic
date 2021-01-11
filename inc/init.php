@@ -218,16 +218,16 @@ function neumorphic_scripts() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 
 	// Font Awesome
-	wp_enqueue_style( 'neumorphic-style-fontawesome', get_theme_file_uri() . '/assets/packages/font-awesome/css/all.min.css', array(), $theme_version );
+	wp_enqueue_style( 'neumorphic-style-fontawesome', get_theme_file_uri( '/assets/packages/font-awesome/css/all.min.css' ), array(), $theme_version );
 
 	// Main style
-	wp_enqueue_style( 'neumorphic-style-front-main', get_theme_file_uri() . '/assets/css/style.min.css', array(), $theme_version );
+	wp_enqueue_style( 'neumorphic-style-front-main', get_theme_file_uri( '/assets/css/style.min.css' ), array(), $theme_version );
 
 	// Customizer CSS
 	wp_add_inline_style( 'neumorphic-style-front-main', neumorphic_generate_css() );
 
 	// Main Script
-	wp_enqueue_script( 'neumorphic-script-main', get_theme_file_uri() . '/assets/js/main.js', array( 'jquery' ), $theme_version, false );
+	wp_enqueue_script( 'neumorphic-script-main', get_theme_file_uri( '/assets/js/main.js' ), array( 'jquery' ), $theme_version, false );
 
 	// Comment reply Script
 	if ( ( ! is_admin() ) && is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -235,7 +235,7 @@ function neumorphic_scripts() {
 	}
 
 	// CSS custom properties support for legacy and modern browsers
-	wp_enqueue_script( 'neumorphic-script-ponyfill', get_theme_file_uri() . '/assets/packages/css-vars-ponyfill/css-vars-ponyfill.min.js', array(), $theme_version );
+	wp_enqueue_script( 'neumorphic-script-ponyfill', get_theme_file_uri( '/assets/packages/css-vars-ponyfill/css-vars-ponyfill.min.js' ), array(), $theme_version );
 }
 
 add_action( 'wp_enqueue_scripts', 'neumorphic_scripts' );
@@ -254,10 +254,10 @@ function neumorphic_block_editor_assets() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 
 	// Font Awesome
-	wp_enqueue_style( 'neumorphic-style-fontawesome', get_theme_file_uri() . '/assets/packages/font-awesome/css/all.min.css', array(), $theme_version );
+	wp_enqueue_style( 'neumorphic-style-fontawesome', get_theme_file_uri( '/assets/packages/font-awesome/css/all.min.css' ), array(), $theme_version );
 
 	// Customizer CSS
-	wp_enqueue_style( 'neumorphic-style-customizer', get_theme_file_uri() . '/assets/css/editor-style-customizer.min.css', array(), $theme_version );
+	wp_enqueue_style( 'neumorphic-style-customizer', get_theme_file_uri( '/assets/css/editor-style-customizer.min.css' ), array(), $theme_version );
 	wp_add_inline_style( 'neumorphic-style-customizer', neumorphic_generate_css() );
 }
 
@@ -270,10 +270,10 @@ function neumorphic_admin_scripts() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 
 	// Main script.
-	wp_enqueue_script( 'neumorphic-script-block-editor', get_theme_file_uri() . '/assets/js/editor-block.js', array( 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-dom' ), $theme_version, true );
+	wp_enqueue_script( 'neumorphic-script-block-editor', get_theme_file_uri( '/assets/js/editor-block.js' ), array( 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-dom' ), $theme_version, true );
 
 	// CSS custom properties support for legacy and modern browsers
-	wp_enqueue_script( 'neumorphic-script-ponyfill', get_theme_file_uri() . '/assets/packages/css-vars-ponyfill/css-vars-ponyfill.min.js', array(), $theme_version );
+	wp_enqueue_script( 'neumorphic-script-ponyfill', get_theme_file_uri( '/assets/packages/css-vars-ponyfill/css-vars-ponyfill.min.js' ), array(), $theme_version );
 
 	wp_set_script_translations( 'neumorphic-script-block-editor', 'neumorphic', '/languages' );
 }
@@ -322,7 +322,7 @@ function neumorphic_footer_scripts() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 
 	wp_enqueue_style( 'wp-mediaelement' );
-	wp_enqueue_style( 'neumorphic-style-mediaelement', get_theme_file_uri() . '/assets/css/mediaelement.min.css', array( 'wp-mediaelement' ), $theme_version );
+	wp_enqueue_style( 'neumorphic-style-mediaelement', get_theme_file_uri( '/assets/css/mediaelement.min.css' ), array( 'wp-mediaelement' ), $theme_version );
 	wp_enqueue_script( 'wp-mediaelement' );
 }
 
@@ -394,8 +394,8 @@ add_filter( 'get_the_archive_title', 'neumorphic_get_the_archive_title' );
 /**
  * Change the drawer/global navigation HTML structure
  */
-require( get_theme_file_path() . '/inc/classes/class-neumorphic-drawer-walker.php' );
-require( get_theme_file_path() . '/inc/classes/class-neumorphic-gnav-walker.php' );
+require( get_theme_file_path( '/inc/classes/class-neumorphic-drawer-walker.php' ) );
+require( get_theme_file_path( '/inc/classes/class-neumorphic-gnav-walker.php' ) );
 
 /**
  * Filter the CSS classes applied to a menu item’s list item element.
