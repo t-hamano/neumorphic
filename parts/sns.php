@@ -5,6 +5,8 @@
  * @package neumorphic
  */
 
+global $neumorphic_sns_choice;
+
 $sns_icons = array();
 
 // Get customizer configuration info
