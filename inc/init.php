@@ -250,6 +250,9 @@ function neumorphic_block_editor_styles() {
 
 add_action( 'after_setup_theme', 'neumorphic_block_editor_styles' );
 
+/**
+ * Register and enqueue customizer styles.
+ */
 function neumorphic_block_editor_assets() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 
