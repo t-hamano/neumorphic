@@ -1,6 +1,6 @@
 {
 	"name": "neumorphic",
-	"version": "1.3.1",
+	"version": "1.3.2",
 	"author": "Tetsuaki Hamano",
 	"license": "GPL-2.0+",
 	"scripts": {
@@ -22,7 +22,7 @@
 		"release:archive": "cross-conf-env bestzip ./npm_package_name-npm_package_version.zip ./npm_package_name"
 	},
 	"devDependencies": {
-		"@wordpress/env": "^2.1.0",
+		"@wordpress/env": "^3.0.2",
 		"bestzip": "^2.1.7",
 		"chokidar-cli": "^2.1.0",
 		"copyfiles": "^2.4.1",
