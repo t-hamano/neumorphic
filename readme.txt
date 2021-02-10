@@ -4,8 +4,8 @@ Tags: one-column, two-columns, right-sidebar, left-sidebar, wide-blocks, block-s
 Donate link: https://www.paypal.me/thamanoJP
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Requires at least: 5.4
-Tested up to: 5.4
+Requires at least: 5.5
+Tested up to: 5.5
 Requires PHP: 5.6
 
 Neumorphic is a advanced WordPress theme based on neumorphic design.
@@ -37,6 +37,11 @@ License: CC0 Public Domain
 Source: https://pxhere.com/ja/photo/32163
 
 == Changelog ==
+
+= v1.3.2 =
+Fix: Problem about installation error in PHP 8
+Fix: Notice Error on SNS icons parts
+Tested to PHP 8
 
 = v1.3.1 =
 Clean: Remove sourceMappingURL from css-vars-ponyfill.min.js
