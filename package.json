@@ -22,26 +22,26 @@
 		"release:archive": "cross-conf-env bestzip ./npm_package_name-npm_package_version.zip ./npm_package_name"
 	},
 	"devDependencies": {
-		"@wordpress/env": "^3.0.2",
-		"bestzip": "^2.1.7",
+		"@wordpress/env": "^4.0.5",
+		"bestzip": "^2.2.0",
 		"chokidar-cli": "^2.1.0",
 		"copyfiles": "^2.4.1",
 		"cross-conf-env": "^1.2.1",
-		"eslint": "^7.15.0",
-		"eslint-config-prettier": "^7.0.0",
+		"eslint": "^7.28.0",
+		"eslint-config-prettier": "^8.3.0",
 		"eslint-config-wordpress": "^2.0.0",
-		"eslint-plugin-prettier": "^3.3.0",
+		"eslint-plugin-prettier": "^3.4.0",
 		"mkdirp": "^1.0.4",
-		"node-sass": "^5.0.0",
+		"node-sass": "^6.0.0",
 		"node-sass-glob-importer": "^5.3.2",
 		"npm-run-all": "^4.1.5",
 		"opener": "^1.5.2",
-		"renamer": "^2.0.1",
+		"renamer": "^3.2.1",
 		"rimraf": "^3.0.2",
 		"stylelint-config-rational-order": "^0.1.2",
 		"stylelint-config-recommended-scss": "^4.2.0",
 		"stylelint-config-wordpress": "^17.0.0",
-		"stylelint-scss": "^3.18.0"
+		"stylelint-scss": "^3.19.0"
 	},
 	"dependencies": {}
 }
