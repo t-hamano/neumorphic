@@ -14,6 +14,9 @@ require_once( get_template_directory() . '/inc/customizer/section-title-tagline.
 // Section (Color)
 require_once( get_template_directory() . '/inc/customizer/section-color.php' );
 
+// Section (Gutenberg)
+require_once( get_template_directory() . '/inc/customizer/section-gutenberg.php' );
+
 // Section (Header)
 require_once( get_template_directory() . '/inc/customizer/section-header.php' );
 

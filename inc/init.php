@@ -207,6 +207,11 @@ function neumorphic_setup() {
 			),
 		)
 	);
+
+	// Disable block-based widgets editor
+	if ( ! get_theme_mod( 'enable_widgets_block_editor', NEUMORPHIC_ENABLE_WIDGETS_BLOCK_EDITOR ) ) {
+		remove_theme_support( 'widgets-block-editor' );
+	}
 }
 
 add_action( 'after_setup_theme', 'neumorphic_setup' );

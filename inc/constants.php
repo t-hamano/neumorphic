@@ -135,6 +135,9 @@ define( 'NEUMORPHIC_SIDEBAR_DISPLAY_POST', true );
 // Show sidebar on archive page
 define( 'NEUMORPHIC_SIDEBAR_DISPLAY_ARCHIVE', true );
 
+// Use block-based widgets editor
+define( 'NEUMORPHIC_ENABLE_WIDGETS_BLOCK_EDITOR', false );
+
 // Credit
 define(
 	'NEUMORPHIC_FOOTER_CREDIT',
