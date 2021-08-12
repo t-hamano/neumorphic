@@ -46,7 +46,6 @@ body#tinymce.wp-editor.content {
 		margin: 0;
 
 		@for $i from 2 through 9 {
-
 			&.gallery-columns-#{$i} .gallery-item {
 				width: #{percentage(1 / $i)};
 			}
