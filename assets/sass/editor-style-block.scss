@@ -2,11 +2,9 @@
 # Block Editor Styles
 --------------------------------------------------------------*/
 
-// Default property value, Media Query Breakpoints, Neumorphic styles box shadow value
-@import "variable";
-
-// Media query, Clearfix, Neumorphic styles
-@import "mixin";
+// Foundation
+@import "foundation/variable";
+@import "foundation/mixin";
 
 // Block Settings(Color, Gradient color)
 @import "blocks/settings/_editor.scss";

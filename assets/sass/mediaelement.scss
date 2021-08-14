@@ -2,8 +2,9 @@
 # WordPress media player styles
 --------------------------------------------------------------*/
 
-@import "variable";
-@import "mixin";
+// Foundation
+@import "foundation/variable";
+@import "foundation/mixin";
 
 .mejs-container {
 

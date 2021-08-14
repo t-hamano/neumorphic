@@ -9,6 +9,9 @@
  * Sets up theme defaults and registers support for various WordPress features.
  */
 function neumorphic_setup() {
+	// Make theme available for translation.
+	load_theme_textdomain( 'neumorphic', get_template_directory() . '/languages' );
+
 	// Let WordPress manage the document title.
 	add_theme_support( 'title-tag' );
 
@@ -208,6 +211,10 @@ function neumorphic_setup() {
 		)
 	);
 
+	// Register and enqueue block editor styles.
+	add_theme_support( 'editor-styles' );
+	add_editor_style( '/assets/css/editor-style-block.min.css' );
+
 	// Disable block-based widgets editor
 	if ( ! get_theme_mod( 'enable_widgets_block_editor', NEUMORPHIC_ENABLE_WIDGETS_BLOCK_EDITOR ) ) {
 		remove_theme_support( 'widgets-block-editor' );
@@ -246,17 +253,7 @@ function neumorphic_scripts() {
 add_action( 'wp_enqueue_scripts', 'neumorphic_scripts' );
 
 /**
- * Register and enqueue block editor styles.
- */
-function neumorphic_block_editor_styles() {
-	add_theme_support( 'editor-styles' );
-	add_editor_style( '/assets/css/editor-style-block.min.css' );
-}
-
-add_action( 'after_setup_theme', 'neumorphic_block_editor_styles' );
-
-/**
- * Register and enqueue customizer styles.
+ * Register and enqueue block editor styles & scripts.
  */
 function neumorphic_block_editor_assets() {
 	$theme_version = wp_get_theme()->get( 'Version' );
@@ -264,29 +261,19 @@ function neumorphic_block_editor_assets() {
 	// Font Awesome
 	wp_enqueue_style( 'neumorphic-style-fontawesome', get_theme_file_uri( '/assets/packages/font-awesome/css/all.min.css' ), array(), $theme_version );
 
-	// Customizer CSS
-	wp_enqueue_style( 'neumorphic-style-customizer', get_theme_file_uri( '/assets/css/editor-style-customizer.min.css' ), array(), $theme_version );
-	wp_add_inline_style( 'neumorphic-style-customizer', neumorphic_generate_css() );
-}
-
-add_action( 'enqueue_block_editor_assets', 'neumorphic_block_editor_assets' );
-
-/**
- * Register and enqueue admin scripts.
- */
-function neumorphic_admin_scripts() {
-	$theme_version = wp_get_theme()->get( 'Version' );
-
 	// Main script.
 	wp_enqueue_script( 'neumorphic-script-block-editor', get_theme_file_uri( '/assets/js/editor-block.js' ), array( 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-dom' ), $theme_version, true );
 
 	// CSS custom properties support for legacy and modern browsers
 	wp_enqueue_script( 'neumorphic-script-ponyfill', get_theme_file_uri( '/assets/packages/css-vars-ponyfill/css-vars-ponyfill.min.js' ), array(), $theme_version );
 
-	wp_set_script_translations( 'neumorphic-script-block-editor', 'neumorphic', '/languages' );
+	// Customizer CSS
+	wp_register_style( 'neumorphic-style-customizer', false );
+	wp_enqueue_style( 'neumorphic-style-customizer' );
+	wp_add_inline_style( 'neumorphic-style-customizer', neumorphic_generate_css() );
 }
 
-add_action( 'admin_enqueue_scripts', 'neumorphic_admin_scripts' );
+add_action( 'enqueue_block_editor_assets', 'neumorphic_block_editor_assets' );
 
 /**
  * Fix skip link focus in IE11.
@@ -434,76 +421,3 @@ function neumorphic_nav_class( $classes, $item, $args, $depth ) {
 }
 
 add_filter( 'nav_menu_css_class', 'neumorphic_nav_class', 10, 4 );
-
-/**
- * Add conditional contents classes (Sidebar display position).
- *
- * @return string $class Class name added to the div.contents tag.
- */
-function neumorphic_contents_class() {
-	// Get cutomizer settings.
-	$display_position = get_theme_mod( 'sidebar_position', NEUMORPHIC_SIDEBAR_POSITION );
-	$display_front    = get_theme_mod( 'sidebar_display_front', NEUMORPHIC_SIDEBAR_DISPLAY_FRONT );
-	$display_post     = get_theme_mod( 'sidebar_display_post', NEUMORPHIC_SIDEBAR_DISPLAY_POST );
-	$display_page     = get_theme_mod( 'sidebar_display_page', NEUMORPHIC_SIDEBAR_DISPLAY_PAGE );
-	$display_archive  = get_theme_mod( 'sidebar_display_archive', NEUMORPHIC_SIDEBAR_DISPLAY_ARCHIVE );
-
-	// Give priority to the template display settings If a specific page template is used.
-	if ( is_page_template( 'template/sidebar-left.php' ) ) {
-		$class = ' contents--sidebar-left';
-	} elseif ( is_page_template( 'template/sidebar-right.php' ) ) {
-		$class = ' contents--sidebar-right';
-	} elseif ( is_page_template( 'template/sidebar-none.php' ) || is_attachment() ) {
-		$class = ' contents--sidebar-none';
-	} else {
-		// Use customizer settings if the page template is not used.
-		if (
-			( is_front_page() && $display_front ) ||
-			( is_single() && $display_post ) ||
-			( ( is_archive() || is_home() ) && $display_archive ) ||
-			( is_page() && ! is_front_page() && $display_page )
-		) {
-			$class = 'contents--sidebar-' . $display_position;
-		} else {
-			$class = 'contents--sidebar-none';
-		}
-	}
-
-	return $class;
-}
-
-/**
- * Generate a new HEX color with changed intensity based on the param HEX color.
- *
- * @param string $hex HEX value.
- * @param double $luminance Percentage of luminance to change
- *
- * @return string $new_color HEX value.
- */
-function neumorphic_generate_new_color( $hex, $luminance ) {
-	// Value expression check.
-	if ( ! preg_match( '/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/', $hex ) ) {
-		return $hex;
-	}
-
-	// Trim "#".
-	$hex = substr( $hex, 1 );
-
-	// Convert 3 digits to 6 digits.
-	if ( strlen( $hex ) === 3 ) {
-		$hex = substr( $hex, 0, 1 ) . substr( $hex, 0, 1 ) . substr( $hex, 1, 1 ) . substr( $hex, 1, 1 ) . substr( $hex, 2, 1 ) . substr( $hex, 2, 1 );
-	}
-
-	$new_hex = '#';
-
-	// Cut out the value of hex by two digits and change luminance.
-	for ( $i = 0; $i < 3; $i++ ) {
-		$color_pair  = hexdec( substr( $hex, $i * 2, 2 ) );
-		$color_pair += $color_pair * $luminance;
-		$color_pair  = dechex( round( min( 245, max( 10, $color_pair ) ) ) );
-		$color_pair  = str_pad( $color_pair, 2, '0', STR_PAD_LEFT );
-		$new_hex    .= $color_pair;
-	}
-
-	return $new_hex;
-}

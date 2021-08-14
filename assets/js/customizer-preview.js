@@ -4,18 +4,20 @@
 
 ( function ( $ ) {
 	const root = $( ':root' );
+	const blogName = document.querySelector( '.header__brand-title a' );
+	const blogDescription = document.querySelector( '.header__brand-description' );
 
 	// Site title
 	wp.customize( 'blogname', function ( value ) {
 		value.bind( function ( to ) {
-			$( '.header__brand-title a' ).text( to );
+			blogName.innerText = to;
 		} );
 	} );
 
 	// Site description
 	wp.customize( 'blogdescription', function ( value ) {
 		value.bind( function ( to ) {
-			$( '.header__brand-description' ).text( to );
+			blogDescription.innerText = to;
 		} );
 	} );
 
@@ -58,9 +60,7 @@
 	// Enable border text
 	wp.customize( 'color_text_border_display', function ( value ) {
 		value.bind( function ( display ) {
-			let color = wp.customize
-				.instance( 'color_text_border_color' )
-				.get();
+			let color = wp.customize.instance( 'color_text_border_color' ).get();
 
 			if ( ! display ) {
 				color = 'none';
@@ -73,9 +73,7 @@
 	// Text border color
 	wp.customize( 'color_text_border_color', function ( value ) {
 		value.bind( function ( color ) {
-			const display = wp.customize
-				.instance( 'color_text_border_display' )
-				.get();
+			const display = wp.customize.instance( 'color_text_border_display' ).get();
 
 			if ( ! display ) {
 				color = 'none';
@@ -96,9 +94,7 @@
 
 		// Get existing styles and store in object
 		const currentStyles = root.attr( 'style' );
-		const currentStylesArr = currentStyles
-			? currentStyles.split( ';' )
-			: [];
+		const currentStylesArr = currentStyles ? currentStyles.split( ';' ) : [];
 
 		for ( let i = 0; i < currentStylesArr.length; i++ ) {
 			if ( currentStylesArr[ i ] ) {
@@ -155,9 +151,7 @@
 		for ( let i = 0; 3 > i; i++ ) {
 			let colorPair = parseInt( hex.substr( i * 2, 2 ), 16 );
 			colorPair += colorPair * luminance;
-			colorPair = Math.round(
-				Math.min( 245, Math.max( 10, colorPair ) )
-			).toString( 16 );
+			colorPair = Math.round( Math.min( 245, Math.max( 10, colorPair ) ) ).toString( 16 );
 			colorPair = ( '00' + colorPair ).substr( colorPair.length );
 			newHex += colorPair;
 		}

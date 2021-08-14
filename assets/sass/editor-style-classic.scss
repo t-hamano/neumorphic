@@ -2,8 +2,9 @@
 # Classic editor styles
 --------------------------------------------------------------*/
 
-@import "variable";
-@import "mixin";
+// Foundation
+@import "foundation/variable";
+@import "foundation/mixin";
 
 body#tinymce.wp-editor.content {
 

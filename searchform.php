@@ -1,6 +1,6 @@
 <?php
 /**
- * The Template For Search Form
+ * The template for search form
  *
  * @package neumorphic
  */

@@ -7,31 +7,31 @@
 ----------------------*/
 
 .has-bg-color {
-	color: var(--color-bg);
+	color: var(--color-bg) !important;
 }
 
 .has-dark-color {
-	color: var(--color-nm-dark);
+	color: var(--color-nm-dark) !important;
 }
 
 .has-light-color {
-	color: var(--color-nm-light);
+	color: var(--color-nm-light) !important;
 }
 
 .has-main-text-color {
-	color: var(--color-text-main);
+	color: var(--color-text-main) !important;
 }
 
 .has-accent-color {
-	color: var(--color-accent);
+	color: var(--color-accent) !important;
 }
 
 .has-link-text-color {
-	color: var(--color-text-link);
+	color: var(--color-text-link) !important;
 }
 
 .has-white-color {
-	color: #fff;
+	color: #fff !important;
 }
 
 /*----------------------

@@ -35,9 +35,6 @@ require_once( get_template_directory() . '/inc/customizer/section-sns.php' );
 // Section (Mobile)
 require_once( get_template_directory() . '/inc/customizer/section-mobile.php' );
 
-// CSS Generator
-require_once( get_template_directory() . '/inc/customizer/css.php' );
-
 /**
  * Enqueues scripts for customizer controls & settings.
  */

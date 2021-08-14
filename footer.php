@@ -11,7 +11,6 @@
 </div>
 
 <footer class="footer" role="contentinfo">
-
 	<?php
 	// SNS icon
 	if ( true === get_theme_mod( 'footer_sns_display', NEUMORPHIC_FOOTER_SNS_DISPLAY ) ) :
@@ -21,8 +20,7 @@
 				<?php get_template_part( 'parts/sns' ); ?>
 			</div>
 		</nav>
-		<?php endif; ?>
-
+	<?php endif; ?>
 	<?php
 	// Credit
 	if ( get_theme_mod( 'footer_credit', NEUMORPHIC_FOOTER_CREDIT ) ) :
@@ -33,7 +31,6 @@
 			</div>
 		</div>
 	<?php endif; ?>
-
 </footer>
 
 <?php wp_footer(); ?>

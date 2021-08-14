@@ -38,20 +38,17 @@ if ( function_exists( 'wp_body_open' ) ) {
 						<?php the_custom_logo(); ?>
 					</div>
 				<?php endif; ?>
-
 				<?php if ( is_front_page() || is_home() ) : ?>
 					<h1 class="header__brand-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 				<?php else : ?>
 					<p class="header__brand-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php endif; ?>
-
 				<?php
 				$description = get_bloginfo( 'description', 'display' );
 				if ( $description ) :
 					?>
 					<p class="header__brand-description"><span><?php echo esc_html( $description ); ?></span></p>
 				<?php endif; ?>
-
 			</div>
 
 			<?php
@@ -73,7 +70,6 @@ if ( function_exists( 'wp_body_open' ) ) {
 					</div>
 				</nav>
 			<?php endif; ?>
-
 			<?php
 			// Global menu
 			if ( has_nav_menu( 'primary' ) ) :
@@ -95,7 +91,6 @@ if ( function_exists( 'wp_body_open' ) ) {
 			<?php endif; ?>
 		</div>
 	</div>
-
 	<?php
 	// Fixed global menu
 	if ( has_nav_menu( 'primary' ) ) :
@@ -124,7 +119,6 @@ if ( function_exists( 'wp_body_open' ) ) {
 		<li class="fixed-nav__item">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fas fa-home" title="<?php esc_attr_e( 'Home', 'neumorphic' ); ?>"></i></a>
 		</li>
-
 		<?php
 		// Drawer menu open/close button
 		if ( has_nav_menu( 'mobile' ) ) :
@@ -133,7 +127,6 @@ if ( function_exists( 'wp_body_open' ) ) {
 				<button id="mobile_hm_btn" aria-controls="drawer" aria-expanded="false" aria-label="<?php esc_attr_e( 'Open / Close mobile menu', 'neumorphic' ); ?>"><i class="fas fa-bars"></i></button>
 			</li>
 		<?php endif; ?>
-
 		<li class="fixed-nav__item">
 			<a href="#"><i class="fas fa-arrow-up" title="<?php esc_attr_e( 'Scroll to top', 'neumorphic' ); ?>"></i></a>
 		</li>

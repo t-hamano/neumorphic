@@ -14,7 +14,7 @@
 		font-family: $base_font_falily;
 		line-height: inherit;
 		text-shadow: none;
-		background: url(../images/chevron-down-solid.svg) no-repeat right 20px center/1em;
+		background: url($icon_chevron_down_solid) no-repeat right 20px center/1em;
 		border-radius: 1000px;
 	}
 }

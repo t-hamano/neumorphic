@@ -2,19 +2,17 @@
 # Front-end Styles
 --------------------------------------------------------------*/
 
-// Default property value, Media Query Breakpoints, Neumorphic styles box shadow value
-@import "variable";
+// Foundation
+@import "foundation/variable";
+@import "foundation/mixin";
+@import "foundation/base";
 
-// Media query, Clearfix, Neumorphic styles
-@import "mixin";
-
-// Module
-@import "module/base";
-@import "module/header";
-@import "module/nav";
-@import "module/contents";
-@import "module/footer";
-@import "module/sidebar";
+// Layout
+@import "layout/header";
+@import "layout/nav";
+@import "layout/contents";
+@import "layout/footer";
+@import "layout/sidebar";
 
 // Component
 @import "component/**/*";

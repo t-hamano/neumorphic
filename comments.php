@@ -11,9 +11,7 @@ if ( post_password_required() ) {
 ?>
 
 <div class="c-comment">
-
 	<?php if ( have_comments() ) : ?>
-
 		<h2 class="c-comment__title">
 			<?php
 				$comment_count = get_comments_number();
@@ -32,13 +30,11 @@ if ( post_password_required() ) {
 				);
 			?>
 		</h2>
-
 		<?php if ( get_the_comments_navigation() ) : ?>
 			<div class="c-comment__nav">
 				<?php the_comments_navigation(); ?>
 			</div>
 		<?php endif; ?>
-
 		<ol class="c-comment__list">
 			<?php
 				wp_list_comments(
@@ -49,23 +45,16 @@ if ( post_password_required() ) {
 				);
 			?>
 		</ol>
-
 		<?php if ( get_the_comments_navigation() ) : ?>
 			<div class="c-comment__nav">
 				<?php the_comments_navigation(); ?>
 			</div>
 		<?php endif; ?>
-
 		<?php if ( ! comments_open() ) : ?>
 			<p class="c-comment__no-comment"><?php esc_html_e( 'Comments are closed.', 'neumorphic' ); ?></p>
-			<?php
-		endif;
-
-	endif;
-	?>
-
+		<?php endif; ?>
+	<?php endif; ?>
 	<div class="c-comment__form">
 		<?php comment_form(); ?>
 	</div>
-
 </div>

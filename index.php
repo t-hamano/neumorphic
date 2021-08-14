@@ -9,26 +9,20 @@ get_header(); ?>
 
 <main id="main" class="main" role="main">
 	<div class="c-entry">
-
 		<?php if ( is_archive() ) : ?>
 			<header class="c-entry__header">
 					<h1 class="c-entry__title"><?php the_archive_title(); ?></h1>
 			</header>
 		<?php endif; ?>
-
 		<div class="c-entries">
-
 			<?php
 			while ( have_posts() ) {
 				the_post();
 				get_template_part( 'parts/content-archive' );
 			}
 			?>
-
 		</div>
-
 		<?php get_template_part( 'parts/pagination' ); ?>
-
 	</div>
 </main>
 
@@ -43,4 +37,4 @@ if ( is_front_page() && $display_front ) {
 	get_sidebar();
 }
 
-get_footer(); ?>
+get_footer();
