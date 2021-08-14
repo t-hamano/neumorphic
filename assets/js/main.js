@@ -64,9 +64,7 @@
 			$( '.drawer__toggle' ).attr( 'aria-expanded', false );
 			$( '.drawer__submenu' ).attr( 'aria-hidden', true );
 			$( this ).attr( 'aria-expanded', showSubMenu );
-			$( this )
-				.next( '.drawer__submenu' )
-				.attr( 'aria-hidden', ! showSubMenu );
+			$( this ).next( '.drawer__submenu' ).attr( 'aria-hidden', ! showSubMenu );
 		} );
 
 		$( '.drawer__subitem a' ).on( 'focus', function () {
@@ -104,9 +102,7 @@
 		$( '.c-gnav__list > .menu-item' )
 			.on( 'mouseover', function () {
 				$( '.c-gnav__submenu' ).attr( 'aria-hidden', true );
-				$( this )
-					.find( '.c-gnav__submenu' )
-					.attr( 'aria-hidden', false );
+				$( this ).find( '.c-gnav__submenu' ).attr( 'aria-hidden', false );
 			} )
 			.on( 'mouseout', function () {
 				$( '.c-gnav__submenu' ).attr( 'aria-hidden', true );
@@ -124,11 +120,7 @@
 
 			if ( target.length ) {
 				const position = target.offset().top;
-				$( 'html, body' ).animate(
-					{ scrollTop: position },
-					500,
-					'swing'
-				);
+				$( 'html, body' ).animate( { scrollTop: position }, 500, 'swing' );
 			}
 
 			return false;

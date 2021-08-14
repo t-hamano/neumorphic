@@ -46,12 +46,11 @@ h3,
 h4,
 h5,
 h6 {
-	margin-top: 1.5em;
-	margin-bottom: 1em;
-	font-weight: bold;
-	line-height: 1.4 !important;
 
 	@include nm-text-border;
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+	line-height: 1.4 !important;
 }
 
 h1 {
@@ -89,7 +88,15 @@ h3 {
 		padding: 0.3em 0.6em;
 
 		&::before {
-			bottom: -0.3em;
+			bottom: -6px;
+		}
+	}
+
+	&.is-style-nm-none {
+		text-shadow: none;
+
+		&::before {
+			content: none;
 		}
 	}
 }
@@ -100,6 +107,10 @@ h6 {
 
 	&.has-background {
 		padding: 0.3em 0.6em;
+	}
+
+	&.is-style-nm-none {
+		text-shadow: none;
 	}
 }
 
@@ -122,7 +133,8 @@ p {
 // List
 ul,
 ol {
-	margin-left: auto;
+	box-sizing: border-box;
+	margin-bottom: 2em;
 	padding-left: 1.5em;
 
 	&.has-background {
@@ -143,7 +155,7 @@ ol {
 
 			&::before {
 				position: absolute;
-				left: 0;
+				left: 0.2em;
 				content: "-";
 			}
 		}

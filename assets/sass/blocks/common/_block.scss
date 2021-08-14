@@ -78,12 +78,11 @@
 	h4,
 	h5,
 	h6 {
-		margin-top: 1.5em;
-		margin-bottom: 1em;
-		font-weight: bold;
-		line-height: 1.4;
 
 		@include nm-text-border;
+		margin-top: 1.5em;
+		margin-bottom: 1em;
+		line-height: 1.4;
 	}
 
 	h1 {
@@ -121,7 +120,15 @@
 			padding: 0.3em 0.6em;
 
 			&::before {
-				bottom: -0.3em;
+				bottom: -6px;
+			}
+		}
+
+		&.is-style-nm-none {
+			text-shadow: none;
+
+			&::before {
+				content: none;
 			}
 		}
 	}
@@ -132,6 +139,10 @@
 
 		&.has-background {
 			padding: 0.3em 0.6em;
+		}
+
+		&.is-style-nm-none {
+			text-shadow: none;
 		}
 	}
 
@@ -155,41 +166,31 @@
 	/* List */
 	ul,
 	ol {
-
-		&.has-background,
-		&:not([class]),
-		&.rich-text {
-			margin: 0 0 2em;
-			padding-left: 1.5em;
-
-			li {
-				margin: 0.5em 0;
-			}
-
-			ul {
-				margin-left: 0;
-				padding: 0;
-				list-style: none;
-
-				li {
-					position: relative;
-					padding-left: 1em;
-
-					&::before {
-						position: absolute;
-						left: 0;
-						content: "-";
-					}
-				}
-			}
-
-			ol {
-				padding-left: 1.5em;
-			}
-		}
+		margin-left: auto;
+		padding-left: 1.5em;
 
 		&.has-background {
 			padding: 1.5em 1.5em 1.5em 2.5em;
+		}
+
+		li {
+			margin: 0.5em 0;
+		}
+
+		ul {
+			padding: 0;
+			list-style: none;
+
+			li {
+				position: relative;
+				padding-left: 1em;
+
+				&::before {
+					position: absolute;
+					left: 0.2em;
+					content: "-";
+				}
+			}
 		}
 	}
 

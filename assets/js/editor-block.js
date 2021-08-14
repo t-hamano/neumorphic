@@ -4,6 +4,12 @@
 
 wp.domReady( function () {
 	// Add custom style
+	wp.blocks.registerBlockStyle( 'core/heading', {
+		name: 'nm-none',
+		label: 'No Neumorphic',
+		isDefault: false,
+	} );
+
 	wp.blocks.registerBlockStyle( 'core/image', {
 		name: 'nm-none',
 		label: 'No Neumorphic',
