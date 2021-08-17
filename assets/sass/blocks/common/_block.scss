@@ -233,58 +233,6 @@
 		opacity: $text_color_thin;
 	}
 
-	// Table
-	table {
-
-		@include nm;
-		width: auto;
-		margin-bottom: 0.5em;
-		border-radius: $base_border_radius;
-
-		th,
-		td {
-			padding: 1em;
-			text-align: left;
-			border-right: 1px solid var(--color-nm-dark);
-			border-bottom: 1px solid var(--color-nm-dark);
-
-			&:last-child {
-				border-right: none;
-			}
-		}
-
-		thead th {
-			border-bottom-width: 2px;
-		}
-
-		tbody tr:last-child {
-
-			th,
-			td {
-				border-bottom: none;
-			}
-		}
-
-		tfoot td {
-			border-top: 2px solid var(--color-nm-dark);
-			border-bottom: none;
-		}
-
-		figcaption {
-			text-align: center;
-		}
-	}
-
-	// IE11 hack
-	@media all and (-ms-high-contrast: none) {
-
-		*::-ms-backdrop,
-		table {
-			border-collapse: separate;
-			transform: scale(0.98);
-		}
-	}
-
 	// Definition Lists
 	dl {
 

@@ -3,9 +3,11 @@
 ----------------------*/
 
 .wp-block-verse {
-
-	@include nm-reverse();
-	position: relative;
 	padding: 2em;
-	border-radius: $base_border_radius;
+
+	&:not(.is-style-nm-none) {
+
+		@include nm-reverse();
+		border-radius: $base_border_radius;
+	}
 }

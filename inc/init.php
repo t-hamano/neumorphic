@@ -262,7 +262,7 @@ function neumorphic_block_editor_assets() {
 	wp_enqueue_style( 'neumorphic-style-fontawesome', get_theme_file_uri( '/assets/packages/font-awesome/css/all.min.css' ), array(), $theme_version );
 
 	// Main script.
-	wp_enqueue_script( 'neumorphic-script-block-editor', get_theme_file_uri( '/assets/js/editor-block.js' ), array( 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-dom' ), $theme_version, true );
+	wp_enqueue_script( 'neumorphic-script-block-editor', get_theme_file_uri( '/assets/js/block-style.js' ), array( 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-dom' ), $theme_version, true );
 
 	// CSS custom properties support for legacy and modern browsers
 	wp_enqueue_script( 'neumorphic-script-ponyfill', get_theme_file_uri( '/assets/packages/css-vars-ponyfill/css-vars-ponyfill.min.js' ), array(), $theme_version );

@@ -4,17 +4,25 @@
 
 
 .wp-block-table {
+	margin-top: 28px;
+	margin-bottom: 28px;
 	overflow-x: initial;
 	text-align: left;
 
 	table {
-
-		@include nm;
 		width: auto;
 		margin-bottom: 0.5em;
 		overflow: hidden;
-		border-radius: $base_border_radius;
+	}
 
+	&.is-style-nm-none table {
+		border: 1px solid var(--color-nm-dark);
+	}
+
+	&:not(.is-style-nm-none) table {
+
+		@include nm;
+		border-radius: $base_border_radius;
 	}
 
 	th,

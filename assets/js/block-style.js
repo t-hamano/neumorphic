@@ -22,6 +22,18 @@ wp.domReady( function () {
 		isDefault: false,
 	} );
 
+	wp.blocks.registerBlockStyle( 'core/verse', {
+		name: 'nm-none',
+		label: 'No Neumorphic',
+		isDefault: false,
+	} );
+
+	wp.blocks.registerBlockStyle( 'core/table', {
+		name: 'nm-none',
+		label: 'No Neumorphic',
+		isDefault: false,
+	} );
+
 	wp.blocks.registerBlockStyle( 'core/cover', {
 		name: 'nm',
 		label: 'Neumorphic',
