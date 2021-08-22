@@ -38,13 +38,7 @@
 
 			@include nm-light;
 			color: inherit;
-		}
-
-		@include mq(lg-min) {
-
-			&:hover {
-				text-decoration: none;
-			}
+			pointer-events: none;
 		}
 	}
 }
