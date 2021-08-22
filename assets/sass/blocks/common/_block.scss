@@ -294,12 +294,9 @@
 
 		.alignfull {
 			position: relative;
-			right: 50%;
-			left: 50%;
-			width: 100vw;
+			left: calc(50% - (50vw - var(--scrollbar-width, 0)/ 2));
+			width: calc(100vw - var(--scrollbar-width, 0));
 			max-width: 100vw;
-			margin-right: -50vw;
-			margin-left: -50vw;
 		}
 	}
 }
@@ -318,11 +315,8 @@
 
 	.alignfull {
 		position: relative;
-		right: 50%;
-		left: 50%;
-		width: 100vw;
+		left: calc(50% - (50vw - var(--scrollbar-width, 0)/ 2));
+		width: calc(100vw - var(--scrollbar-width, 0));
 		max-width: 100vw;
-		margin-right: -50vw;
-		margin-left: -50vw;
 	}
 }

@@ -7,13 +7,9 @@ wp.customize.bind( 'ready', function () {
 	wp.customize( 'color_skin', function ( value ) {
 		value.bind( function ( skinName ) {
 			for ( const controlName in neumorphicSkinList[ skinName ] ) {
-				const control = wp.customize.control.instance(
-					'color_' + controlName
-				);
+				const control = wp.customize.control.instance( 'color_' + controlName );
 				picker = control.container.find( '.color-picker-hex' );
-				control.setting.set(
-					neumorphicSkinList[ skinName ][ controlName ]
-				);
+				control.setting.set( neumorphicSkinList[ skinName ][ controlName ] );
 
 				picker.val( control.setting() );
 				picker.wpColorPicker( 'defaultColor', control.setting() );

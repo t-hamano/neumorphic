@@ -3,6 +3,12 @@
 		// CSS custom properties support for legacy and modern browsers
 		cssVars();
 
+		// Set scrollbar width to CSS custom properties.
+		document.documentElement.style.setProperty(
+			'--scrollbar-width',
+			window.innerWidth - document.documentElement.clientWidth + 'px'
+		);
+
 		// Apply mediaelement style to audio block
 		$( '.wp-block-audio audio' ).addClass( 'mejs__player' );
 
