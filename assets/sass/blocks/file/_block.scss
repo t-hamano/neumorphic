@@ -3,26 +3,33 @@
 ----------------------*/
 
 .wp-block-file {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
 	margin-bottom: 2em;
 
 	a {
-		display: inline-block;
-		margin-bottom: 0.5em;
+
+		&.wp-block-file__button {
+
+			@include nm-button;
+			margin: 0.5em 0 0.5em 1em;
+			color: var(--color-accent);
+			font-size: 0.8em;
+			border-radius: 1000px;
+
+			&:active,
+			&:focus,
+			&:hover,
+			&:visited {
+				color: var(--color-accent);
+				opacity: 1;
+			}
+		}
 	}
 
-	a.wp-block-file__button {
-
-		@include nm-button;
-		color: var(--color-accent);
-		font-size: 0.8em;
-		border-radius: 1000px;
-
-		&:active,
-		&:focus,
-		&:hover,
-		&:visited {
-			color: var(--color-accent);
-			opacity: 1;
-		}
+	&.aligncenter {
+		display: flex;
+		justify-content: center;
 	}
 }

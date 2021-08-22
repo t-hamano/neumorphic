@@ -7,6 +7,7 @@
 @import "foundation/mixin";
 
 .mejs-container {
+	height: 60px !important;
 
 	&.mejs-audio {
 
@@ -24,6 +25,9 @@
 		}
 
 		.mejs-controls {
+			align-items: center;
+			height: 100%;
+			padding: 0 20px;
 			background: transparent;
 
 			.mejs-time-rail .mejs-time-current {
