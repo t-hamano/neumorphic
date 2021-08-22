@@ -2,7 +2,8 @@
 # Block Common Styles
 ------------------------------------------*/
 
-.entry-content {
+.entry-content,
+.widget_block {
 
 	> *:last-child {
 		margin-bottom: 0 !important;

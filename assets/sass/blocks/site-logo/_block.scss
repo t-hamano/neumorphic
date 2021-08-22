@@ -1,0 +1,24 @@
+/*----------------------
+# Site Title
+----------------------*/
+
+.wp-block-site-logo {
+	margin-bottom: 2em;
+
+	&.is-style-nm a {
+
+		@include nm-media-link;
+		display: inline-block;
+	}
+
+	&:not(.is-style-nm) a {
+
+		@include mq(lg-min) {
+			transition: opacity $base_transition_duration ease-in-out;
+
+			&:hover {
+				opacity: $base_hover_opacity;
+			}
+		}
+	}
+}

@@ -1,0 +1,13 @@
+/*----------------------
+# Site Logo
+----------------------*/
+
+.wp-block-site-logo {
+	margin-bottom: 2em;
+
+	&.is-style-nm a {
+
+		@include nm-media;
+		display: inline-block;
+	}
+}

@@ -1,0 +1,39 @@
+/*----------------------
+# Site Title
+----------------------*/
+
+h1.wp-block-site-title {
+	padding-bottom: 0;
+	font-size: 3em;
+
+	@include mq(md-max) {
+		font-size: 2em;
+	}
+
+	&::before {
+		content: none;
+	}
+
+	a {
+		color: var(--color-accent);
+		text-decoration: none;
+		text-shadow: -3px -3px 3px var(--color-nm-light), 3px 3px 3px var(--color-nm-dark);
+		transition: opacity $base_transition_duration ease-in-out;
+
+		@include mq(lg-min) {
+
+			&:hover {
+				text-decoration: none;
+				opacity: $base_hover_opacity;
+			}
+		}
+	}
+
+	&.is-style-nm-none a {
+		text-shadow: none;
+
+		&::before {
+			content: none;
+		}
+	}
+}
