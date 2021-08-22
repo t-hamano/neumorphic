@@ -4,12 +4,7 @@
 
 .entry-content {
 
-	> * {
-		max-width: 100%;
-		margin: 0 0 2em;
-	}
-
-	> :last-child {
+	> *:last-child {
 		margin-bottom: 0 !important;
 	}
 
@@ -305,18 +300,18 @@
 
 	.alignwide {
 		position: relative;
-		right: -47.5vw;
-		width: auto;
-		max-width: $container_width;
-		margin-right: calc(50% - 47.5vw);
-		margin-left: calc(50% - 47.5vw);
-		transform: translateX(-50%);
+		left: calc(50% - (50vw - var(--scrollbar-width, 0)/ 2));
+		width: calc(100vw - var(--scrollbar-width, 0));
+		max-width: calc(100vw - var(--scrollbar-width, 0));
+		margin-right: 0;
+		margin-left: 0;
+		transform: none;
 	}
 
 	.alignfull {
 		position: relative;
 		left: calc(50% - (50vw - var(--scrollbar-width, 0)/ 2));
 		width: calc(100vw - var(--scrollbar-width, 0));
-		max-width: 100vw;
+		max-width: calc(100vw - var(--scrollbar-width, 0));
 	}
 }

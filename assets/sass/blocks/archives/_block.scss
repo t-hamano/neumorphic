@@ -2,18 +2,38 @@
 # Archives
 ----------------------*/
 
-.wp-block-archives {
+.wp-block-archives-list,
+.wp-block-archives-dropdown {
 	margin-bottom: 2em;
 
-	&:not(.wp-block-archives-dropdown) {
-		padding-left: 1.5em;
+	&.is-style-nm,
+	&.is-style-nm-reverse {
+		border-radius: $base_border_radius;
 	}
 
-	&.wp-block-archives-dropdown select {
+	&.is-style-nm {
 
-		@include nm-input;
-		display: inline-block;
-		width: auto;
-		border-radius: 1000px;
+		@include nm;
+	}
+
+	&.is-style-nm-reverse {
+
+		@include nm-reverse;
+	}
+}
+
+.wp-block-archives-list {
+
+	&.is-style-nm,
+	&.is-style-nm-reverse {
+		padding: 1.5em 1.5em 1.5em 2.5em;
+	}
+}
+
+.wp-block-archives-dropdown {
+
+	&.is-style-nm,
+	&.is-style-nm-reverse {
+		padding: 1.5em;
 	}
 }

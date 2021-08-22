@@ -2,35 +2,38 @@
 # Categories
 ----------------------*/
 
-.wp-block-categories {
+.wp-block-categories-list,
+.wp-block-categories-dropdown {
 	margin-bottom: 2em;
 
-	&.wp-block-categories-list {
-		padding-left: 1.5em;
+	&.is-style-nm,
+	&.is-style-nm-reverse {
+		border-radius: $base_border_radius;
 	}
 
-	&.wp-block-categories-dropdown select {
+	&.is-style-nm {
 
-		@include nm-input;
-		display: inline-block;
-		width: auto;
-		border-radius: 1000px;
+		@include nm;
 	}
 
-	ul {
-		margin-left: 0;
-		padding: 0;
-		list-style: none;
+	&.is-style-nm-reverse {
 
-		li {
-			position: relative;
-			padding-left: 1em;
+		@include nm-reverse;
+	}
+}
 
-			&::before {
-				position: absolute;
-				left: 0;
-				content: "-";
-			}
-		}
+.wp-block-categories-list {
+
+	&.is-style-nm,
+	&.is-style-nm-reverse {
+		padding: 1.5em 1.5em 1.5em 2.5em;
+	}
+}
+
+.wp-block-categories-dropdown {
+
+	&.is-style-nm,
+	&.is-style-nm-reverse {
+		padding: 1.5em;
 	}
 }

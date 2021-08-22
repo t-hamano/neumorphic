@@ -2,7 +2,7 @@
 # Calendar
 ----------------------*/
 
-.wp-block-calendar .wp-block-calendar {
+[data-type="core/calendar"] .wp-block-calendar {
 
 	@include nm;
 	max-width: 350px;
@@ -12,6 +12,11 @@
 	&.aligncenter {
 		margin-right: auto;
 		margin-left: auto;
+	}
+
+	&.alignwide,
+	&.alignfull {
+		max-width: 100%;
 	}
 
 	.wp-calendar-table {

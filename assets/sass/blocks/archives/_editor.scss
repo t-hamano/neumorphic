@@ -2,24 +2,54 @@
 # Archives
 ----------------------*/
 
-.wp-block-archives-dropdown select {
+.wp-block-archives-list,
+.wp-block-archives-dropdown {
 
-	&:active,
-	&:focus,
-	&:disabled {
+	&.is-style-nm,
+	&.is-style-nm-reverse {
+		border-radius: $base_border_radius;
+	}
 
-		@include nm-input-editor;
-		padding: 0.7em 3em 0.7em 1.4em;
-		font-size: inherit;
-		font-family: $base_font_falily;
-		line-height: inherit;
-		text-shadow: none;
-		background: url($icon_chevron_down_solid) no-repeat right 20px center/1em;
-		border-radius: 1000px;
+	&.is-style-nm {
+
+		@include nm;
+	}
+
+	&.is-style-nm-reverse {
+
+		@include nm-reverse;
 	}
 }
 
-ul.wp-block-archives {
-	margin-left: 0;
-	padding-left: 1.5em;
+.wp-block-archives-dropdown {
+
+	&.is-style-nm,
+	&.is-style-nm-reverse {
+		padding: 1.5em;
+	}
+
+	select {
+
+		&:active,
+		&:focus,
+		&:disabled {
+
+			@include nm-input-editor;
+			padding: 0.7em 3em 0.7em 1.4em;
+			font-size: inherit;
+			font-family: $base_font_falily;
+			line-height: inherit;
+			text-shadow: none;
+			background: url($icon_chevron_down_solid) no-repeat right 20px center/1em;
+			border-radius: 1000px;
+		}
+	}
+}
+
+.wp-block-archives-list {
+
+	&.is-style-nm,
+	&.is-style-nm-reverse {
+		padding: 1.5em 1.5em 1.5em 2.5em;
+	}
 }
