@@ -10,6 +10,7 @@ body {
 .editor-post-title__block {
 
 	@include nm-border;
+	margin-bottom: 1em;
 
 	&::after {
 		bottom: 12px;

@@ -2,9 +2,7 @@
 # Shortcode
 ----------------------*/
 
-.wp-block-shortcode.components-placeholder,
-[data-type="core/shortcode"] {
-	min-height: auto;
+[data-type="core/shortcode"].components-placeholder {
 	color: inherit;
 	background: var(--color-nm-light);
 	box-shadow: inset 0 0 0 1px var(--color-nm-dark);
