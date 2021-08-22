@@ -3,29 +3,38 @@
 ----------------------*/
 
 .wp-block-social-links {
+	margin-bottom: 1.4em;
 
-	flex-wrap: wrap;
+	.wp-social-link.wp-social-link.wp-social-link {
+		margin: 0.3em 0.5em 0.3em 0;
+	}
 
-	.wp-social-link {
-		margin: 0 0.5em 0.5em 0;
+	.wp-social-link button {
+		display: block;
+	}
+
+	.block-list-appender {
+		margin-right: 0;
+	}
+
+	&__social-placeholder-icons .wp-social-link {
+		border-radius: 9999px;
+	}
+
+	&.is-style-logos-only .wp-social-link.wp-social-link.wp-social-link {
+		margin: 0;
 	}
 
 	&.is-style-nm {
-		font-size: 1.3em;
-
-		> li {
-			margin: 0 10px 10px 0;
-		}
 
 		.wp-social-link {
 
-			width: 2.2em;
-			height: 2.2em;
+			width: 2em;
+			height: 2em;
 			padding: 3px;
 			background-clip: content-box;
 			border-radius: 50%;
 			box-shadow: $nm_shadow;
-			transition: all 0.1s;
 
 			button {
 				display: flex;
@@ -38,7 +47,3 @@
 		}
 	}
 }
-
-// .block-editor-block-list__block[data-type="core/social-link"]:not([contenteditable]):focus::after {
-// 	content: none;
-// }

@@ -3,33 +3,37 @@
 ----------------------*/
 
 .wp-block-social-links {
-	flex-wrap: wrap;
-	margin-bottom: 2em;
-	padding: 0;
+	margin-top: 0;
+	margin-bottom: 1.4em;
 
-	@include mq(md-max) {
-		justify-content: center;
+	.entry-content & {
+		padding-left: 0;
+	}
+
+	&.alignleft,
+	&.aligncenter,
+	&.alignrght {
+		margin-bottom: 1.4em;
 	}
 
 	&.aligncenter {
 		display: flex !important;
 	}
 
-	> li {
-		margin: 0 0.5em 0.5em 0;
+	.wp-social-link.wp-social-link.wp-social-link {
+		margin: 0.3em 0.5em 0.3em 0;
+	}
+
+	&.is-style-logos-only .wp-social-link.wp-social-link.wp-social-link {
+		margin: 0;
 	}
 
 	&.is-style-nm {
-		font-size: 1.3em;
-
-		> li {
-			margin: 0 10px 10px 0;
-		}
 
 		.wp-social-link {
 
-			width: 2.2em;
-			height: 2.2em;
+			width: 2em;
+			height: 2em;
 			padding: 3px;
 			background-clip: content-box;
 			border-radius: 50%;
