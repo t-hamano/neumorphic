@@ -73,6 +73,14 @@ body {
 		}
 	}
 
+	&[data-align="left"] > * {
+		margin-right: 1.5em;
+	}
+
+	&[data-align="right"] > * {
+		margin-left: 1.5em;
+	}
+
 	&[data-align="center"] {
 		text-align: center;
 	}

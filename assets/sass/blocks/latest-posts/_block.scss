@@ -3,13 +3,10 @@
 ----------------------*/
 
 .wp-block-latest-posts {
+	margin-top: 0;
 	margin-bottom: 2em;
 
-	&.wp-block-latest-posts__list {
-		padding: 0;
-	}
-
-	> li {
+	&.wp-block-latest-posts__list > li {
 
 		@include nm;
 		@include clearfix();
@@ -17,50 +14,50 @@
 		border-radius: $base_border_radius;
 
 		> a {
-			margin: 0;
+			display: inline-block;
 			font-weight: bold;
 			font-size: 1.2em;
 			line-height: 1.4;
 		}
 	}
 
-	&:not(.is-grid) {
+	&__featured-image {
+		margin-bottom: 0.5em;
 
-		li:not(:last-child) {
-			margin-bottom: 1.5em;
+		&.aligncenter {
+			margin-bottom: 0.5em;
+		}
+
+		&.alignleft,
+		&.alignright {
+			margin-bottom: 0;
+
+			@include mq(md-max) {
+				margin-bottom: 0.5em;
+			}
+		}
+
+		a {
+
+			@include nm-media-link;
+			display: inline-block;
+			vertical-align: top;
+		}
+
+		img {
+
+			@include nm-media;
+			max-width: 100% !important;
+			vertical-align: top;
 		}
 	}
 
-	&.is-grid {
-
-		&.alignleft {
-			margin-right: 1.5em;
-		}
-
-		&.alignright {
-			margin-left: 1.5em;
-		}
-
-		@include mq(md-max) {
-
-			&.alignleft,
-			&.alignright {
-				margin-right: auto;
-				margin-left: auto;
-			}
-		}
-
-		> li {
-			padding: 1em;
-
-			@media screen and (max-width: 599px) {
-				margin-right: 0;
-			}
-		}
+	&__post-author {
+		color: inherit;
+		font-size: 0.8em;
 	}
 
 	&__post-date {
-		display: block;
 		color: inherit;
 		font-size: 0.8em;
 
@@ -74,5 +71,35 @@
 
 	&__post-excerpt {
 		margin-bottom: 0;
+	}
+
+	&:not(.is-grid) {
+
+		li {
+			margin: 0;
+
+			&:not(:last-child) {
+				margin-bottom: 1.5em;
+			}
+		}
+	}
+
+	&.is-grid {
+
+		@include mq(md-max) {
+
+			&.alignleft,
+			&.alignright {
+				margin-right: auto;
+				margin-left: auto;
+			}
+		}
+
+		> li {
+
+			@media screen and (max-width: 599px) {
+				margin-right: 0;
+			}
+		}
 	}
 }

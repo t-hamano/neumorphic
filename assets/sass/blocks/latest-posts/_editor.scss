@@ -2,10 +2,17 @@
 # Latest Posts
 ----------------------*/
 
-.wp-block-latest-posts {
-	padding: 0;
+/*----------------------
+# Latest Posts
+----------------------*/
 
-	> li {
+.wp-block-latest-posts {
+
+	a {
+		pointer-events: none;
+	}
+
+	&.wp-block-latest-posts__list > li {
 
 		@include nm;
 		@include clearfix();
@@ -13,32 +20,39 @@
 		border-radius: $base_border_radius;
 
 		> a {
-			margin: 0;
+			display: inline-block;
 			font-weight: bold;
 			font-size: 1.2em;
 			line-height: 1.4;
-			text-decoration: underline;
 		}
 	}
 
-	&:not(.is-grid) {
+	&__featured-image {
+		margin-bottom: 0.5em;
 
-		li:not(:last-child) {
-			margin-bottom: 1.5em;
+		&.aligncenter {
+			margin-bottom: 0.5em;
+		}
+
+		&.alignleft,
+		&.alignright {
+			margin-bottom: 0;
+		}
+
+		img {
+
+			@include nm-media;
+			max-width: 100% !important;
+			vertical-align: top;
 		}
 	}
 
-	&.is-grid > li {
-		padding: 1em;
-	}
-
-	&__featured-image img {
-
-		@include nm-media;
+	&__post-author {
+		color: inherit;
+		font-size: 0.8em;
 	}
 
 	&__post-date {
-		display: block;
 		color: inherit;
 		font-size: 0.8em;
 
@@ -53,14 +67,25 @@
 	&__post-excerpt {
 		margin-bottom: 0;
 	}
-}
 
-.wp-block[data-align="left"] .wp-block-latest-posts {
-	margin-right: 2em;
-	margin-bottom: 0;
-}
+	&:not(.is-grid) {
 
-.wp-block[data-align="right"] .wp-block-latest-posts {
-	margin-bottom: 0;
-	margin-left: 2em;
+		li {
+			margin: 0;
+
+			&:not(:last-child) {
+				margin-bottom: 1.5em;
+			}
+		}
+	}
+
+	&.is-grid {
+
+		> li {
+
+			@media screen and (max-width: 599px) {
+				margin-right: 0;
+			}
+		}
+	}
 }

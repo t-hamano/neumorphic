@@ -6,36 +6,33 @@
 
 	@include nm;
 	margin: 0;
-	padding: 1.5em 1em;
+	padding: 0.5em 1em;
 	border-radius: $base_border_radius;
 
 	&__comment {
 		position: relative;
-		margin-bottom: 0;
+		min-height: 4.2em;
+		margin: 0;
+		padding: 1em 0 calc(1em + 4px);
 		line-height: inherit;
 		text-align: left;
 
 		&:not(:last-child) {
 
 			@include nm-border;
-			margin-bottom: 1em;
-			padding-bottom: 1em;
 		}
 	}
 
-	.avatar,
 	&__comment-avatar {
 
 		@include nm;
 		position: absolute;
-		top: -9px;
+		top: 0.6em;
 		margin: 0;
 	}
 
 	&__comment-date {
-		display: block;
 		margin-top: 0.3em;
-		color: inherit;
 		font-size: 0.8em;
 
 		&::before {
