@@ -9,19 +9,6 @@
 		border-radius: $base_border_radius / 2;
 	}
 
-	&:not(.is-image-fill) .wp-block-media-text__media {
-
-		a {
-
-			@include nm-media-link;
-		}
-
-		> img {
-
-			@include nm-media;
-		}
-	}
-
 	.wp-block-media-text__content {
 		padding: 0 0 0 2em;
 
@@ -62,6 +49,20 @@
 				content: "";
 				pointer-events: none;
 			}
+		}
+	}
+
+	&:not(.is-image-fill) .wp-block-media-text__media {
+
+		a {
+
+			@include nm-media-link;
+		}
+
+		> img,
+		> video {
+
+			@include nm-media;
 		}
 	}
 

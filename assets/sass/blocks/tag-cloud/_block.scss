@@ -5,6 +5,12 @@
 .wp-block-tag-cloud {
 	margin-bottom: 2em;
 
+	&.alignwide,
+	&.alignfull {
+		padding-right: 1em;
+		padding-left: 1em;
+	}
+
 	a {
 
 		@include nm-button;
