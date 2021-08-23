@@ -27,6 +27,8 @@ wp.domReady( function () {
 		{ block: 'core/archives',     name: 'nm-reverse', label: 'Neumorphic Rev', isDefault: false },
 		{ block: 'core/categories',   name: 'nm',         label: 'Neumorphic',     isDefault: false },
 		{ block: 'core/categories',   name: 'nm-reverse', label: 'Neumorphic Rev', isDefault: false },
+		{ block: 'core/page-list',    name: 'nm',         label: 'Neumorphic',     isDefault: false },
+		{ block: 'core/page-list',    name: 'nm-reverse', label: 'Neumorphic Rev', isDefault: false },
 		{ block: 'core/social-links', name: 'nm',         label: 'Neumorphic',     isDefault: false },
 	];
 

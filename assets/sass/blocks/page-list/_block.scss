@@ -1,0 +1,24 @@
+/*----------------------
+# Page List
+----------------------*/
+
+.wp-block-page-list {
+	margin-top: 0;
+	margin-bottom: 2em;
+
+	&.is-style-nm,
+	&.is-style-nm-reverse {
+		padding: 1em 1.5em 1em 2.5em;
+		border-radius: $base_border_radius;
+	}
+
+	&.is-style-nm {
+
+		@include nm;
+	}
+
+	&.is-style-nm-reverse {
+
+		@include nm-reverse;
+	}
+}
