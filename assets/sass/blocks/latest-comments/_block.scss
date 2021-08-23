@@ -6,8 +6,11 @@
 	margin-bottom: 2em;
 
 	@include nm;
-	padding: 0.5em 1em;
 	border-radius: $base_border_radius;
+
+	&.wp-block-latest-comments {
+		padding: 0.5em 1em;
+	}
 
 	.wp-block-latest-comments__comment {
 		position: relative;

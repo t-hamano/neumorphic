@@ -276,9 +276,11 @@
 // Align wide/full
 @include mq(lg-min) {
 
-	.contents--sidebar-none {
+	.alignwide {
+		width: 100%;
+		max-width: 100%;
 
-		.alignwide {
+		.contents--sidebar-none & {
 			position: relative;
 			right: -47.5vw;
 			width: auto;
@@ -287,8 +289,13 @@
 			margin-left: calc(50% - 47.5vw);
 			transform: translateX(-50%);
 		}
+	}
 
-		.alignfull {
+	.alignfull {
+		width: 100%;
+		max-width: 100%;
+
+		.contents--sidebar-none & {
 			position: relative;
 			left: calc(50% - (50vw - var(--scrollbar-width, 0)/ 2));
 			width: calc(100vw - var(--scrollbar-width, 0));

@@ -5,18 +5,12 @@
 .wp-block-calendar {
 
 	@include nm;
-	max-width: 350px;
 	margin-bottom: 2em;
 	padding: 1.5em 1em;
 	border-radius: $base_border_radius;
 
-
-	@include mq(md-max) {
-
-		&.alignwide,
-		&.alignfull {
-			max-width: calc(100vw - var(--scrollbar-width, 0));
-		}
+	&:not(.alignwide):not(.alignfull) {
+		max-width: 350px;
 	}
 
 	.wp-calendar-table {
