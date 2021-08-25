@@ -18,6 +18,8 @@ wp.domReady( function () {
 		// Design
 		{ block: 'core/columns',      name: 'nm',         label: 'Neumorphic',     isDefault: false },
 		{ block: 'core/columns',      name: 'nm-reverse', label: 'Neumorphic Rev', isDefault: false },
+		{ block: 'core/column',       name: 'nm',         label: 'Neumorphic',     isDefault: false },
+		{ block: 'core/column',       name: 'nm-reverse', label: 'Neumorphic Rev', isDefault: false },
 		{ block: 'core/group',        name: 'nm',         label: 'Neumorphic',     isDefault: false },
 		{ block: 'core/group',        name: 'nm-reverse', label: 'Neumorphic Rev', isDefault: false },
 		{ block: 'core/site-logo',    name: 'nm',         label: 'Neumorphic',     isDefault: false },

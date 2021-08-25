@@ -4,19 +4,8 @@
 
 .wp-block-columns {
 
-	> .wp-block-column {
-
-		> *:first-child {
-			margin-top: 0 !important;
-		}
-
-		> *:last-child {
-			margin-bottom: 0 !important;
-		}
-	}
-
 	&.has-background {
-		padding: calc(1.5em + 5px) calc(1.5em + 5px) calc(2em + 5px);
+		padding: 1.5em;
 	}
 
 	&.is-style-nm {
@@ -31,21 +20,70 @@
 
 	&.is-style-nm,
 	&.is-style-nm-reverse {
-		padding: 5px;
-		background-clip: content-box;
+		padding: 1.5em;
 		border-radius: $base_border_radius;
 
-		> .wp-block-column {
-			padding-top: 1.5em;
-			padding-bottom: 1.5em;
+		&.has-background {
+			position: relative;
 
-			&:first-child {
-				padding-left: 1.5em;
-			}
-
-			&:last-child {
-				padding-right: 1.5em;
+			&::before {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				border: 5px var(--color-bg) solid;
+				border-radius: $base_border_radius;
+				content: "";
+				pointer-events: none;
 			}
 		}
+	}
+}
+
+.wp-block-column {
+
+	&.has-background {
+		padding: 1em;
+	}
+
+	&.is-style-nm {
+
+		@include nm;
+	}
+
+	&.is-style-nm-reverse {
+
+		@include nm-reverse;
+	}
+
+	&.is-style-nm,
+	&.is-style-nm-reverse {
+		padding: 1em;
+		border-radius: $base_border_radius;
+
+		&.has-background {
+			position: relative;
+
+			&::before {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				border: 5px var(--color-bg) solid;
+				border-radius: $base_border_radius;
+				content: "";
+				pointer-events: none;
+			}
+		}
+	}
+
+	> *:first-child {
+		margin-top: 0 !important;
+	}
+
+	> *:last-child {
+		margin-bottom: 0 !important;
 	}
 }

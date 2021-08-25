@@ -14,7 +14,6 @@
 	.wp-block-search__label {
 		display: block;
 		margin-bottom: 0.5em;
-		font-weight: bold;
 	}
 
 	.wp-block-search__input {
@@ -29,14 +28,21 @@
 		margin: 0;
 		padding: 0.5em 1.4em;
 		color: var(--color-accent);
-		white-space: nowrap;
 
 		&.has-icon {
 			min-width: 2em;
 			height: 2em;
 			padding: 0;
 			background: none;
+			border: none;
 			box-shadow: none;
+
+			@include mq(lg-min) {
+
+				&:hover {
+					opacity: $base_hover_opacity;
+				}
+			}
 
 			.search-icon {
 				display: none;
@@ -52,13 +58,7 @@
 				visibility: visible;
 				content: "\f002";
 			}
-		}
 
-		@include mq(lg-min) {
-
-			&:hover {
-				opacity: $base_hover_opacity;
-			}
 		}
 	}
 
