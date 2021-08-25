@@ -12,6 +12,7 @@ wp.domReady( function () {
 		{ block: 'core/table',        name: 'nm-none',    label: 'No Neumorphic',  isDefault: false },
 		// Media
 		{ block: 'core/image',        name: 'nm-none',    label: 'No Neumorphic',  isDefault: false },
+		{ block: 'core/gallery',      name: 'nm-none',    label: 'No Neumorphic',  isDefault: false },
 		{ block: 'core/cover',        name: 'nm',         label: 'Neumorphic',     isDefault: false },
 		{ block: 'core/cover',        name: 'nm-reverse', label: 'Neumorphic Rev', isDefault: false },
 		{ block: 'core/media-text',   name: 'nm',         label: 'Neumorphic',     isDefault: false },

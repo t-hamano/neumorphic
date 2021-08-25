@@ -163,6 +163,10 @@ h3 {
 	&.is-style-nm-none {
 		text-shadow: none;
 
+		&:not(.has-background) {
+			padding-bottom: 0;
+		}
+
 		&::before {
 			content: none;
 		}
