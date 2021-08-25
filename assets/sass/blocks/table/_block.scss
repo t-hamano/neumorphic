@@ -12,48 +12,18 @@
 		margin-left: auto;
 	}
 
-	table {
-		width: auto;
-		overflow: hidden;
+	&.alignwide,
+	&.alignfull {
+
+		table {
+			width: 100%;
+		}
 	}
 
 	&.is-style-nm-none table {
+		overflow: auto;
 		border: 1px solid var(--color-nm-dark);
-	}
-
-	&:not(.is-style-nm-none) table {
-
-		@include nm;
-		border-radius: $base_border_radius;
-	}
-
-	th,
-	td {
-		padding: 1em;
-		text-align: left;
-		border-right: 1px solid var(--color-nm-dark);
-		border-bottom: 1px solid var(--color-nm-dark);
-
-		&:last-child {
-			border-right: none;
-		}
-	}
-
-	thead th {
-		border-bottom-width: 2px;
-	}
-
-	tbody tr:last-child {
-
-		th,
-		td {
-			border-bottom: none;
-		}
-	}
-
-	tfoot td {
-		border-top: 2px solid var(--color-nm-dark);
-		border-bottom: none;
+		box-shadow: none;
 	}
 
 	&.is-style-stripes {

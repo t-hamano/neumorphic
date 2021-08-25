@@ -1,10 +1,10 @@
-/*----------------------
-### Classic
-----------------------*/
+// /*----------------------
+// ### Classic
+// ----------------------*/
 
 .wp-block-freeform.block-library-rich-text__tinymce {
-	position: relative;
-	padding: 1em 0;
+	padding: 1em;
+	line-height: $base_line_height;
 
 	> * {
 		margin: 0 0 2em;
@@ -18,11 +18,6 @@
 		}
 	}
 
-	// Link
-	a {
-		color: var(--color-text-link);
-	}
-
 	// Heading
 	h1,
 	h2,
@@ -32,7 +27,11 @@
 	h6 {
 		margin-top: 1.5em;
 		margin-bottom: 1em;
-		line-height: 1.4;
+	}
+
+	// Link
+	a {
+		color: var(--color-text-link);
 	}
 
 	// List
@@ -48,7 +47,7 @@
 	// Code
 	code {
 		padding: 0.1em 0.3em;
-		color: var(--color-text-main);
+		color: inherit;
 		font-size: 0.9em;
 		font-family: $base_code_font_family;
 		background: var(--color-nm-dark);
@@ -57,24 +56,9 @@
 
 	// Quote
 	blockquote {
-		position: relative;
-		padding: 2em 2em 2em 3.5em;
-		color: var(--color-text-main);
-		border-radius: $base_border_radius;
 
 		@include nm-reverse;
-
-		&::before {
-
-			@include nm-text;
-			position: absolute;
-			top: 0.5em;
-			left: 0.7em;
-			font-weight: 900;
-			font-size: 1.6em;
-			font-family: "Font Awesome 5 Free";
-			content: "\f10d";
-		}
+		padding: 1.5em 1.5em 1.5em 3.5em;
 
 		p {
 			margin: 0 0 1em;
@@ -107,65 +91,6 @@
 		opacity: $text_color_thin;
 	}
 
-	// Definition Lists
-	dl {
-
-		dt {
-			font-weight: bold;
-		}
-
-		dd {
-			margin: 0;
-
-			&:not(:last-of-type) {
-				margin-bottom: 1em;
-			}
-		}
-	}
-
-	// Table
-	table {
-
-		@include nm;
-		border-radius: $base_border_radius;
-		border-collapse: collapse;
-
-		th,
-		td {
-			padding: 1em;
-			text-align: left;
-			border-right: 1px solid var(--color-nm-dark);
-			border-bottom: 1px solid var(--color-nm-dark);
-
-			&:last-child {
-				border-right: none;
-			}
-		}
-
-		thead th {
-			border-bottom-width: 2px;
-		}
-
-		tbody tr:last-child {
-
-			th,
-			td {
-				border-bottom: none;
-			}
-		}
-	}
-
-	// Inline quotes
-	q {
-
-		@include nm-reverse;
-		position: relative;
-		padding: 0.3em 0.5em;
-		color: var(--color-text-main);
-		border: none;
-		border-radius: $base_border_radius / 2;
-	}
-
 	// More
 	.wp-more-tag {
 		background-color: var(--color-nm-light);
@@ -191,13 +116,11 @@
 
 [data-type="core/freeform"].is-selected::before {
 	position: absolute;
-	top: -5px;
-	right: -5px;
-	bottom: -5px;
-	left: -5px;
-	z-index: 1;
-	border: none;
-	box-shadow: 0 0 0 1.5px #2276d2;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border-color: var(--color-text-main);
 	content: "";
 	pointer-events: none;
 }

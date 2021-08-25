@@ -1,62 +1,21 @@
-/*----------------------
-# Quote
-----------------------*/
+// /*----------------------
+// # Quote
+// ----------------------*/
 
-.wp-block-quote,
-.wp-block-quote.has-text-align-center,
-.wp-block-quote.has-text-align-right {
-
-	position: relative;
-	color: var(--color-text-main);
-	border: none;
-
-	&::before {
-
-		@include nm-text;
-		position: absolute;
-		top: 0.5em;
-		left: 0.7em;
-		font-weight: 900;
-		font-size: 1.6em;
-		font-family: "Font Awesome 5 Free";
-		content: "\f10d";
-	}
-
-	p {
-		margin: 0 0 1em;
-
-		&:last-of-type {
-			margin-bottom: 0;
-		}
-	}
-
-	&__citation {
-		display: block;
-		color: inherit;
-		font-size: 0.8em;
-		font-style: italic;
-		opacity: $text_color_thin;
-	}
-
-	&:not(.is-style-nm-none) {
-
-		@include nm-reverse;
-		padding: 2em 2em 2em 3.5em;
-		border-radius: $base_border_radius;
-	}
+.wp-block-quote {
 
 	&.is-style-nm-none {
-		padding-left: 2.8em;
+		padding: 0 0 0 2.8em;
+		box-shadow: none;
 
 		&::before {
-			top: 0;
+			top: -0.5em;
 			left: 0;
 		}
 	}
 
 	&.is-style-large {
-		margin-bottom: 0;
-		padding: 2em 2em 2em 5em;
+		padding: 1.5em 1.5em 1.5em 5em;
 
 		&::before {
 			font-size: 2.4em;
@@ -68,8 +27,9 @@
 			line-height: inherit;
 		}
 
-		.wp-block-quote__citation {
+		cite {
 			font-size: 1em;
+			text-align: inherit;
 		}
 	}
 }

@@ -2,67 +2,49 @@
 # Table
 ----------------------*/
 
-
 .wp-block-table {
 	margin-top: 28px;
 	margin-bottom: 28px;
 	overflow-x: initial;
 	text-align: left;
 
-	table {
-		width: auto;
-		margin-bottom: 0.5em;
-		overflow: hidden;
+	&.aligncenter table {
+		margin-right: auto;
+		margin-left: auto;
 	}
 
 	&.is-style-nm-none table {
+		overflow: auto;
 		border: 1px solid var(--color-nm-dark);
-	}
-
-	&:not(.is-style-nm-none) table {
-
-		@include nm;
-		border-radius: $base_border_radius;
-	}
-
-	th,
-	td {
-		padding: 1em;
-		border: none;
-		border-right: 1px solid var(--color-nm-dark);
-		border-bottom: 1px solid var(--color-nm-dark);
-
-		&:last-child {
-			border-right: none;
-		}
-	}
-
-	thead th {
-		border-bottom-width: 2px;
-	}
-
-	tbody tr:last-child td {
-		border-bottom: none;
-	}
-
-	tfoot td {
-		border-top: 2px solid var(--color-nm-dark);
-		border-bottom: none;
-	}
-
-	figcaption {
-		text-align: inherit;
+		box-shadow: none;
 	}
 
 	&.is-style-stripes {
 		border-bottom: none;
 
+		th,
+		td {
+			border-color: var(--color-nm-dark);
+		}
+
 		tbody tr:nth-child(odd) {
 			background-color: var(--color-nm-light);
 		}
+	}
+
+	figcaption {
+		text-align: inherit;
 	}
 }
 
 .wp-block[data-align="center"] > .wp-block-table {
 	text-align: inherit;
+}
+
+.wp-block[data-align="wide"],
+.wp-block[data-align="full"] {
+
+	> .wp-block-table table {
+		width: 100%;
+	}
 }

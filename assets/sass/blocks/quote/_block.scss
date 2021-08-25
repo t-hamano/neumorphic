@@ -4,56 +4,20 @@
 
 .wp-block-quote {
 
-	position: relative;
 	margin-bottom: 2em;
-	color: var(--color-text-main);
-
-	&::before {
-
-		@include nm-text;
-		position: absolute;
-		top: 0.5em;
-		left: 0.7em;
-		font-weight: 900;
-		font-size: 1.6em;
-		font-family: "Font Awesome 5 Free";
-		content: "\f10d";
-	}
-
-	p {
-		margin: 0 0 1em;
-
-		&:last-of-type {
-			margin-bottom: 0;
-		}
-	}
-
-	cite {
-		display: block;
-		margin-top: 1em;
-		font-size: 0.8em;
-		opacity: $text_color_thin;
-	}
-
-	&:not(.is-style-nm-none) {
-
-		@include nm-reverse;
-		padding: 2em 2em 2em 3.5em;
-		border-radius: $base_border_radius;
-	}
 
 	&.is-style-nm-none {
-		padding-left: 2.8em;
+		padding: 0 0 0 2.8em;
+		box-shadow: none;
 
 		&::before {
-			top: 0;
+			top: -0.5em;
 			left: 0;
 		}
 	}
 
 	&.is-style-large {
-		margin-bottom: 2em;
-		padding: 2em 2em 2em 5em;
+		padding: 1.5em 1.5em 1.5em 5em;
 
 		&::before {
 			font-size: 2.4em;
