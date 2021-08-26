@@ -171,10 +171,28 @@ legend {
 	width: 100%;
 	margin: 0 0 -20px;
 
-	@for $i from 2 through 9 {
+	@for $i from 1 through 9 {
 
 		&.gallery-columns-#{$i} .gallery-item {
 			width: #{percentage(1 / $i)};
+		}
+	}
+
+	@include mq(md-max) {
+
+		@for $i from 5 through 9 {
+			&.gallery-columns-#{$i} .gallery-item {
+				width: 25%;
+			}
+		}
+	}
+
+	@include mq(sm-max) {
+
+		@for $i from 3 through 9 {
+			&.gallery-columns-#{$i} .gallery-item {
+				width: 50%;
+			}
 		}
 	}
 
@@ -295,7 +313,6 @@ textarea {
 	overflow: auto;
 	background: transparent;
 	border-radius: $base_border_radius;
-	outline: 0;
 	appearance: none;
 }
 

@@ -52,6 +52,24 @@ body#tinymce.wp-editor.content {
 			}
 		}
 
+		@include mq(md-max) {
+
+			@for $i from 5 through 9 {
+				&.gallery-columns-#{$i} .gallery-item {
+					width: 25%;
+				}
+			}
+		}
+
+		@include mq(sm-max) {
+
+			@for $i from 3 through 9 {
+				&.gallery-columns-#{$i} .gallery-item {
+					width: 50%;
+				}
+			}
+		}
+
 		&-item {
 			margin: 0 0 10px;
 			padding: 0 5px;
@@ -165,29 +183,12 @@ body#tinymce.wp-editor.content {
 		margin: 0 0 2em;
 		padding-left: 1.5em;
 
-		li {
-			margin: 0.5em 0;
-		}
-
 		ul {
-			margin-left: 0;
-			padding: 0;
-			list-style: none;
-
-			li {
-				position: relative;
-				padding-left: 1em;
-
-				&::before {
-					position: absolute;
-					left: 0;
-					content: "-";
-				}
-			}
+			list-style-type: disc;
 		}
 
-		ol {
-			padding-left: 1.5em;
+		li {
+			margin: 0.2em 0;
 		}
 	}
 

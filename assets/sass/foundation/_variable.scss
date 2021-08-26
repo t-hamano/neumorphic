@@ -16,8 +16,9 @@ $container_padding: 5vw;
 
 // Media Query Breakpoints
 $breakpoints: (
-	"md-max": "screen and (max-width: 959px)",
+	"sm-max": "screen and (max-width: 559px)",
 	"md-min": "screen and (min-width: 560px)",
+	"md-max": "screen and (max-width: 959px)",
 	"lg-min": "screen and (min-width: 960px)",
 ) !default;
 

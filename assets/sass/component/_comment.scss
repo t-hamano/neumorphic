@@ -103,7 +103,7 @@
 
 			> * {
 				max-width: 100%;
-				margin: 0 0 2em;
+				margin: 0 0 1em;
 			}
 
 			> :last-child {
@@ -127,12 +127,11 @@
 			h4,
 			h5,
 			h6 {
-				margin-top: 1.5em;
-				margin-bottom: 1em;
-				font-weight: bold;
-				line-height: 1.4;
 
 				@include nm-text-border;
+				margin-top: 1.5em;
+				margin-bottom: 1em;
+				line-height: 1.4;
 			}
 
 			h1 {
@@ -170,7 +169,7 @@
 					padding: 0.3em 0.6em;
 
 					&::before {
-						bottom: -0.3em;
+						bottom: -6px;
 					}
 				}
 			}
@@ -186,28 +185,10 @@
 
 			ul,
 			ol {
-				margin: 0 0 2em;
 				padding-left: 1.5em;
 
 				li {
-					margin: 0.5em 0;
-				}
-
-				ul {
-					margin-left: 0;
-					padding: 0;
-					list-style: none;
-
-					li {
-						position: relative;
-						padding-left: 1em;
-
-						&::before {
-							position: absolute;
-							left: 0;
-							content: "-";
-						}
-					}
+					margin: 0.2em 0;
 				}
 			}
 
@@ -217,7 +198,7 @@
 
 			code {
 				padding: 0.1em 0.3em;
-				color: var(--color-text-main);
+				color: inherit;
 				font-size: 0.9em;
 				font-family: $base_code_font_family;
 				background: var(--color-nm-dark);
@@ -238,8 +219,7 @@
 
 				@include nm-reverse();
 				position: relative;
-				margin-bottom: 2em;
-				padding: 2em 2em 2em 3.5em;
+				padding: 1.5em 1.5em 1.5em 3.5em;
 				color: var(--color-text-main);
 				border-radius: $base_border_radius;
 
@@ -363,6 +343,7 @@
 			img {
 
 				@include nm-media;
+				margin: 0.5em 0;
 			}
 		}
 
