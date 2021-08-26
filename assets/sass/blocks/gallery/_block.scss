@@ -44,10 +44,8 @@
 	}
 
 	> figcaption {
-		display: block;
-		width: 100%;
-		margin: 0;
-		text-align: center;
+		font-size: 0.8em;
+		opacity: $text_color_thin;
 	}
 
 	&.is-style-nm-none {
@@ -80,6 +78,14 @@
 				border-radius: 0;
 				box-shadow: none;
 			}
+		}
+	}
+
+	&.alignwide,
+	&.alignfull {
+
+		> figcaption {
+			text-align: center;
 		}
 	}
 }

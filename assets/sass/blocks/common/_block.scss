@@ -191,17 +191,6 @@ q {
 	border-radius: $base_border_radius / 2;
 }
 
-// Figcaption
-figcaption,
-.wp-caption-text {
-	margin-top: 0.5em;
-	margin-bottom: 0;
-	padding: 0;
-	color: inherit;
-	font-size: 0.8em;
-	opacity: $text_color_thin;
-}
-
 // Definition Lists
 dl {
 

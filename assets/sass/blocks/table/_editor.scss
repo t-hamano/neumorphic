@@ -71,12 +71,21 @@ table {
 	}
 
 	figcaption {
-		text-align: inherit;
+		margin-top: 0.5em;
+		color: var(--color-text-main);
+		font-size: 0.8em;
+		text-align: left;
+		opacity: 0.8;
 	}
 }
 
-.wp-block[data-align="center"] > .wp-block-table {
-	text-align: inherit;
+.wp-block[data-align="center"],
+.wp-block[data-align="wide"],
+.wp-block[data-align="full"] {
+
+	> .wp-block-table figcaption {
+		text-align: center;
+	}
 }
 
 .wp-block[data-align="wide"],

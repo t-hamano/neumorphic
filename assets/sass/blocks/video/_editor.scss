@@ -9,6 +9,12 @@
 		@include nm-media;
 		display: block;
 	}
+
+	figcaption {
+		margin-bottom: 0;
+		font-size: 0.8em;
+		opacity: $text_color_thin;
+	}
 }
 
 [data-align="center"] > .wp-block-video video {
@@ -19,8 +25,19 @@
 [data-align="left"],
 [data-align="right"] {
 
-	.wp-block-video {
+	> .wp-block-video {
 		width: 100%;
 		max-width: 500px;
+	}
+}
+
+.wp-block[data-align="wide"],
+.wp-block[data-align="full"] {
+
+	> .wp-block-video {
+
+		figcaption {
+			text-align: center;
+		}
 	}
 }

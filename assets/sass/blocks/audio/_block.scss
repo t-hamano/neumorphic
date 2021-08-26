@@ -9,4 +9,22 @@
 		margin-right: auto;
 		margin-left: auto;
 	}
+
+	figcaption {
+		margin-bottom: 0;
+		font-size: 0.8em;
+		opacity: $text_color_thin;
+	}
+
+	&.alignwide,
+	&.alignfull {
+
+		figcaption {
+			text-align: center;
+		}
+
+		.mejs-container.mejs-audio {
+			width: 100% !important;
+		}
+	}
 }

@@ -91,4 +91,19 @@ table {
 			background-color: var(--color-nm-light);
 		}
 	}
+
+	figcaption {
+		margin-top: 0.5em;
+		font-size: 0.8em;
+		opacity: $text_color_thin;
+	}
+
+	&.aligncenter,
+	&.alignwide,
+	&.alignfull {
+
+		figcaption {
+			text-align: center;
+		}
+	}
 }

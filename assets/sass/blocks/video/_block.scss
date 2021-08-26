@@ -22,7 +22,9 @@
 	}
 
 	figcaption {
-		text-align: center;
+		margin-bottom: 0;
+		font-size: 0.8em;
+		opacity: $text_color_thin;
 	}
 
 	@include mq(md-max) {
@@ -34,6 +36,14 @@
 				margin-right: auto;
 				margin-left: auto;
 			}
+		}
+	}
+
+	&.alignwide,
+	&.alignfull {
+
+		figcaption {
+			text-align: center;
 		}
 	}
 }

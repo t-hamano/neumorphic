@@ -34,6 +34,12 @@
 		}
 	}
 
+	figcaption {
+		margin-bottom: 0;
+		font-size: 0.8em;
+		opacity: $text_color_thin;
+	}
+
 	&.is-style-rounded,
 	&.is-style-circle-mask {
 
@@ -59,23 +65,46 @@
 			box-shadow: none;
 		}
 
-		a::before {
-			content: none;
+		a {
+
+			&::before {
+				content: none;
+			}
+
+			@include mq(lg-min) {
+
+				&:hover {
+					opacity: $base_hover_opacity;
+				}
+			}
 		}
 	}
 
 	.aligncenter,
 	.alignleft,
-	.alignright,
-	.is-resized {
+	.alignright {
 
 		> figcaption {
 			display: block;
-			text-align: center;
+		}
+	}
 
-			@include mq(md-max) {
-				text-align: center;
-			}
+	.aligncenter {
+		display: block;
+		margin-right: auto;
+		margin-left: auto;
+		text-align: center;
+	}
+
+	&.alignwide,
+	&.alignfull {
+
+		> a {
+			display: block;
+		}
+
+		> figcaption {
+			text-align: center;
 		}
 	}
 }
