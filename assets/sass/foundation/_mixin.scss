@@ -1,4 +1,8 @@
-// Media query
+/**
+ * Mixin
+ */
+
+// Media Query
 @mixin mq( $breakpoint ) {
 
 	@media #{ map-get( $breakpoints, $breakpoint ) } {
@@ -16,7 +20,7 @@
 	}
 }
 
-// Neumorphic styles
+// Neumorphic Styles
 @mixin nm-common() {
 	text-decoration: none;
 	border: none;

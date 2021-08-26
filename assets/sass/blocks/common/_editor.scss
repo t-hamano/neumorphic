@@ -1,6 +1,6 @@
-/*------------------------------------------
-# Block Common Styles
-------------------------------------------*/
+/**
+ * Block Common Styles
+ */
 
 body {
 	background: var(--color-bg);
@@ -102,214 +102,34 @@ body {
 	}
 }
 
+// Text Color
+.has-bg-color {
+	color: var(--color-bg) !important;
+}
+
+.has-dark-color {
+	color: var(--color-nm-dark) !important;
+}
+
+.has-light-color {
+	color: var(--color-nm-light) !important;
+}
+
+.has-main-text-color {
+	color: var(--color-text-main) !important;
+}
+
+.has-accent-color {
+	color: var(--color-accent) !important;
+}
+
+.has-link-text-color {
+	color: var(--color-text-link) !important;
+}
+
 // Link
 a {
 	color: var(--color-text-link);
-}
-
-// Heading
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-
-	@include nm-text-border;
-	margin-top: 1.5em;
-	margin-bottom: 1em;
-	line-height: 1.4 !important;
-}
-
-h1 {
-	font-size: 2em;
-}
-
-h2 {
-	font-size: 1.8em;
-}
-
-h3 {
-	font-size: 1.6em;
-}
-
-h4 {
-	font-size: 1.4em;
-}
-
-h5 {
-	font-size: 1.2em;
-}
-
-h6 {
-	font-size: 1em;
-}
-
-h1,
-h2,
-h3 {
-
-	@include nm-border;
-	padding-bottom: 0.3em;
-
-	&.has-background {
-		padding: 0.3em 0.6em;
-
-		&::before {
-			bottom: -6px;
-		}
-	}
-
-	&.is-style-nm-none {
-		text-shadow: none;
-
-		&:not(.has-background) {
-			padding-bottom: 0;
-		}
-
-		&::before {
-			content: none;
-		}
-	}
-}
-
-h4,
-h5,
-h6 {
-
-	&.has-background {
-		padding: 0.3em 0.6em;
-	}
-
-	&.is-style-nm-none {
-		text-shadow: none;
-	}
-}
-
-// Paragraph
-p {
-
-	&.has-background {
-		padding: 1.5em 1em;
-	}
-
-	&.has-drop-cap:not(:focus)::first-letter {
-		float: left;
-		margin: 0 0.1em 0 0;
-		padding: 0;
-		font-size: 4em;
-		line-height: 1;
-	}
-}
-
-// List
-ul,
-ol {
-	box-sizing: border-box;
-	margin-bottom: 2em;
-	padding-left: 1.5em;
-
-	&.has-background {
-		padding: 1em 1.5em 1em 2.5em;
-	}
-
-	ul {
-		list-style-type: disc;
-	}
-
-	li {
-		margin: 0.2em 0;
-	}
-}
-
-// Code
-code {
-	margin: 0 0.3em;
-	padding: 0.1em 0.3em;
-	color: inherit;
-	font-family: $base_code_font_family;
-	background: var(--color-nm-dark);
-	border-radius: 4px;
-}
-
-// Table
-table {
-
-	@include nm;
-	width: auto;
-	overflow: hidden;
-	border-radius: $base_border_radius;
-
-	th,
-	td {
-		padding: 1em;
-		text-align: left;
-		border: none;
-		border-right: 1px solid var(--color-nm-dark);
-		border-bottom: 1px solid var(--color-nm-dark);
-
-		&:last-child {
-			border-right: none;
-		}
-	}
-
-	thead th {
-		border-bottom-width: 2px;
-	}
-
-	tbody tr:last-child {
-
-		th,
-		td {
-			border-bottom: none;
-		}
-	}
-
-	tfoot td {
-		border-top: 2px solid var(--color-nm-dark);
-		border-bottom: none;
-	}
-}
-
-// Blockquote
-blockquote {
-
-	@include nm-reverse;
-	position: relative;
-	padding: 1.5em 1.5em 1.5em 3.5em;
-	color: var(--color-text-main);
-	border-radius: $base_border_radius;
-
-	&::before {
-
-		@include nm-text;
-		position: absolute;
-		top: 0.5em;
-		left: 0.7em;
-		font-weight: 900;
-		font-size: 1.6em;
-		font-family: "Font Awesome 5 Free";
-		content: "\f10d";
-	}
-
-	> *:first-child {
-		margin-top: 0 !important;
-	}
-
-	> *:last-child {
-		margin-bottom: 0 !important;
-	}
-
-	p {
-		margin: 0 0 1em;
-	}
-
-	cite {
-		display: block;
-		margin-top: 1em;
-		font-size: 0.8em;
-		opacity: $text_color_thin;
-	}
 }
 
 // Definition Lists

@@ -1,0 +1,74 @@
+/**
+ * Classic
+ */
+
+// Classic Image
+.wp-caption > a {
+
+	@include nm-media-link;
+}
+
+// Classic Gallery
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	margin: 0 0 -20px;
+
+	@for $i from 1 through 9 {
+
+		&.gallery-columns-#{$i} .gallery-item {
+			width: #{percentage(1 / $i)};
+		}
+	}
+
+	@include mq(md-max) {
+
+		@for $i from 5 through 9 {
+			&.gallery-columns-#{$i} .gallery-item {
+				width: 25%;
+			}
+		}
+	}
+
+	@include mq(sm-max) {
+
+		@for $i from 3 through 9 {
+			&.gallery-columns-#{$i} .gallery-item {
+				width: 50%;
+			}
+		}
+	}
+
+	&-item {
+		margin: 0 0 20px;
+		padding: 0 5px;
+	}
+
+	&-icon {
+
+		img {
+
+			width: 100%;
+		}
+
+		> img {
+
+			@include nm-media;
+		}
+
+		a {
+
+			@include nm-media-link;
+			display: block;
+		}
+	}
+
+	&-caption {
+		margin-top: 0.5em;
+		color: inherit;
+		font-size: 0.8em;
+		text-align: center;
+		opacity: $text_color_thin;
+	}
+}

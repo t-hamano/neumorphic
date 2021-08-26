@@ -1,17 +1,19 @@
-/*----------------------
-# Separator
-----------------------*/
+/**
+ * Separator
+ */
 
-.wp-block-separator {
+hr {
+	position: relative;
 	margin: 2em auto;
-	padding: 10px 0;
+	padding: 15px 0;
 	border: none;
 
-	&:not(.is-style-dots) {
+	&.has-background,
+	&.has-link-text-color {
+		background-color: transparent !important;
+	}
 
-		&:not(.is-style-wide) {
-			max-width: 50%;
-		}
+	&:not(.is-style-dots) {
 
 		&:not(.has-background) {
 
@@ -27,7 +29,6 @@
 		&.has-background {
 			position: relative;
 			height: auto;
-			background-color: transparent !important;
 
 			&::before {
 				position: absolute;
@@ -40,16 +41,29 @@
 				content: "";
 			}
 		}
+
+		&:not(.is-style-wide)::before {
+			left: 25%;
+			width: 50%;
+		}
 	}
 
 	&.is-style-dots {
 
 		&::before {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			padding-left: 2em;
 			color: currentColor;
-			font-size: 3em;
+			font-size: 48px;
 			font-family: inherit;
-			line-height: 0;
+			font-family: serif;
 			letter-spacing: 2em;
 			content: "\00b7 \00b7 \00b7";
 

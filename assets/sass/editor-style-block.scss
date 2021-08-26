@@ -1,16 +1,13 @@
-/*--------------------------------------------------------------
-# Block Editor Styles
---------------------------------------------------------------*/
+/**
+ * Block Editor Styles
+ */
 
 // Foundation
 @import "foundation/variable";
 @import "foundation/mixin";
 
-// Block Settings(Color, Gradient color)
-@import "blocks/settings/_editor.scss";
-
 // Block Common Styles
 @import "blocks/common/_editor.scss";
 
 // Block Styles
-@import "blocks/!(settings|common)/**/_editor.scss";
+@import "blocks/!(common)/**/_editor.scss";

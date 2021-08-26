@@ -1,6 +1,6 @@
-/*--------------------------------------------------------------
-# Front-end Styles
---------------------------------------------------------------*/
+/**
+ * Front-end Styles
+ */
 
 // Foundation
 @import "foundation/variable";
@@ -21,11 +21,11 @@
 @import "widgets/_common.scss";
 @import "widgets/**/!(_common.scss)";
 
-// Block Settings(Color, Gradient color)
-@import "blocks/settings/_block.scss";
+.entry-content,
+.widget_block {
+	// Block Common Styles
+	@import "blocks/common/_block.scss";
 
-// Block Common Styles
-@import "blocks/common/_block.scss";
-
-// Block Styles
-@import "blocks/!(settings|common)/**/_block.scss";
+	// Block Styles
+	@import "blocks/!(common)/**/_block.scss";
+}

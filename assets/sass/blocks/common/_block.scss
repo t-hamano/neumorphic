@@ -1,363 +1,242 @@
-/*------------------------------------------
-# Block Common Styles
-------------------------------------------*/
+/**
+ * Block Common Styles
+ */
 
-.entry-content,
-.widget_block {
+> * {
+	margin: 0 0 2em;
 
-	> * {
-		margin: 0 0 2em;
-
-		&:last-child {
-			margin-bottom: 0 !important;
-		}
+	&:last-child {
+		margin-bottom: 0 !important;
 	}
+}
 
-	// Text Alignment
-	.has-text-align-left {
-		text-align: left;
-	}
+// Text Color
+.has-bg-color {
+	color: var(--color-bg) !important;
+}
 
-	.has-text-align-right {
-		text-align: right;
-	}
+.has-dark-color {
+	color: var(--color-nm-dark) !important;
+}
 
-	.has-text-align-center {
-		text-align: center;
-	}
+.has-light-color {
+	color: var(--color-nm-light) !important;
+}
 
-	// Alignment
-	.alignleft {
-		float: left;
-		margin-right: 1.5em;
-		margin-bottom: 0.5em;
+.has-main-text-color {
+	color: var(--color-text-main) !important;
+}
 
-		@include mq(md-max) {
-			float: none;
-			margin-right: auto;
-			margin-bottom: 2em;
-			margin-left: auto;
-		}
-	}
+.has-accent-color {
+	color: var(--color-accent) !important;
+}
 
-	.alignright {
-		float: right;
-		margin-bottom: 0.5em;
-		margin-left: 1.5em;
+.has-link-text-color {
+	color: var(--color-text-link) !important;
+}
 
-		@include mq(md-max) {
-			float: none;
-			margin-right: auto;
-			margin-bottom: 2em;
-			margin-left: auto;
-		}
-	}
+// Background Color
+.has-bg-background-color {
+	background-color: var(--color-bg) !important;
+}
 
-	.aligncenter {
-		display: block;
-		margin: 0 auto 2em;
-		text-align: center;
-	}
+.has-dark-background-color {
+	background-color: var(--color-nm-dark) !important;
+}
 
-	// Link
-	a {
-		text-decoration: underline;
+.has-light-background-color {
+	background-color: var(--color-nm-light) !important;
+}
 
-		@include mq(lg-min) {
+.has-main-text-background-color {
+	background-color: var(--color-text-main) !important;
+}
 
-			&:hover {
-				text-decoration: none;
-			}
-		}
-	}
+.has-accent-background-color {
+	background-color: var(--color-accent) !important;
+}
 
-	/* Heading */
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
+.has-link-text-background-color {
+	background-color: var(--color-text-link) !important;
+}
 
-		@include nm-text-border;
-		margin-top: 1.5em;
-		margin-bottom: 1em;
-		line-height: 1.4;
-	}
+.has-white-background-color {
+	background-color: #fff !important;
+}
 
-	h1 {
-		font-size: 2em;
-	}
+// Gradient Color
+.has-dark-light-gradient-background {
+	background: linear-gradient(135deg, var(--color-nm-dark), var(--color-nm-light)) !important;
+}
 
-	h2 {
-		font-size: 1.8em;
-	}
+.has-dark-text-main-gradient-background {
+	background: linear-gradient(135deg, var(--color-nm-dark), var(--color-text-main)) !important;
+}
 
-	h3 {
-		font-size: 1.6em;
-	}
+.has-dark-accent-gradient-background {
+	background: linear-gradient(135deg, var(--color-nm-dark), var(--color-accent)) !important;
+}
 
-	h4 {
-		font-size: 1.4em;
-	}
+.has-dark-link-text-gradient-background {
+	background: linear-gradient(135deg, var(--color-nm-dark), var(--color-text-link)) !important;
+}
 
-	h5 {
-		font-size: 1.2em;
-	}
+.has-light-main-text-gradient-background {
+	background: linear-gradient(135deg, var(--color-nm-light), var(--color-text-main)) !important;
+}
 
-	h6 {
-		font-size: 1em;
-	}
+.has-light-accent-gradient-background {
+	background: linear-gradient(135deg, var(--color-nm-light), var(--color-accent)) !important;
+}
 
-	h1,
-	h2,
-	h3 {
+.has-light-link-text-gradient-background {
+	background: linear-gradient(135deg, var(--color-nm-light), var(--color-text-link)) !important;
+}
 
-		@include nm-border;
-		padding-bottom: 0.3em;
+.has-main-text-accent-gradient-background {
+	background: linear-gradient(135deg, var(--color-text-main), var(--color-accent)) !important;
+}
 
-		&.has-background {
-			padding: 0.3em 0.6em;
+.has-main-text-link-text-gradient-background {
+	background: linear-gradient(135deg, var(--color-text-main), var(--color-text-link)) !important;
+}
 
-			&::before {
-				bottom: -6px;
-			}
-		}
+.has-accent-link-text-gradient-background {
+	background: linear-gradient(135deg, var(--color-accent), var(--color-text-link)) !important;
+}
 
-		&.is-style-nm-none {
-			text-shadow: none;
+// Font Size
+.has-small-font-size {
+	font-size: 0.8em;
+}
 
-			&:not(.has-background) {
-				padding-bottom: 0;
-			}
+.has-medium-font-size {
+	font-size: 1.2em;
+}
 
-			&::before {
-				content: none;
-			}
-		}
-	}
+.has-large-font-size {
+	font-size: 1.6em;
+}
 
-	h4,
-	h5,
-	h6 {
+.has-huge-font-size {
+	font-size: 2em;
+}
 
-		&.has-background {
-			padding: 0.3em 0.6em;
-		}
+// Text Alignment
+.has-text-align-left {
+	text-align: left;
+}
 
-		&.is-style-nm-none {
-			text-shadow: none;
-		}
-	}
+.has-text-align-right {
+	text-align: right;
+}
 
-	/* Paragraph */
-	p {
-		margin: 0 0 2em;
+.has-text-align-center {
+	text-align: center;
+}
 
-		&.has-drop-cap::first-letter {
-			float: left;
-			margin: 0 0.1em 0 0;
-			padding: 0;
-			font-size: 4em;
-			line-height: 1;
-		}
+// Alignment
+.alignleft {
+	float: left;
+	margin-right: 1.5em;
+	margin-bottom: 0.5em;
 
-		&.has-background {
-			padding: 1.5em 1em;
-		}
-	}
-
-	/* List */
-	ul,
-	ol {
+	@include mq(md-max) {
+		float: none;
+		margin-right: auto;
+		margin-bottom: 2em;
 		margin-left: auto;
-		padding-left: 1.5em;
-
-		&.has-background {
-			padding: 1em 1.5em 1em 2.5em;
-		}
-
-		ul {
-			list-style-type: disc;
-		}
-
-		li {
-			margin: 0.2em 0;
-		}
 	}
+}
 
-	// Code
-	code {
-		margin: 0 0.3em;
-		padding: 0.1em 0.3em;
-		color: inherit;
-		font-size: 0.9em;
-		font-family: $base_code_font_family;
-		background: var(--color-nm-dark);
-		border-radius: 4px;
+.alignright {
+	float: right;
+	margin-bottom: 0.5em;
+	margin-left: 1.5em;
+
+	@include mq(md-max) {
+		float: none;
+		margin-right: auto;
+		margin-bottom: 2em;
+		margin-left: auto;
 	}
+}
 
-	// Table
-	table {
+.aligncenter {
+	display: block;
+	margin: 0 auto 2em;
+	text-align: center;
+}
 
-		@include nm;
-		width: auto;
-		overflow: hidden;
-		border-radius: $base_border_radius;
+// Link
+a {
+	text-decoration: underline;
 
-		th,
-		td {
-			padding: 1em;
-			text-align: left;
-			border-right: 1px solid var(--color-nm-dark);
-			border-bottom: 1px solid var(--color-nm-dark);
+	@include mq(lg-min) {
 
-			&:last-child {
-				border-right: none;
-			}
-		}
-
-		thead th {
-			border-bottom-width: 2px;
-		}
-
-		tbody tr:last-child {
-
-			th,
-			td {
-				border-bottom: none;
-			}
-		}
-
-		tfoot td {
-			border-top: 2px solid var(--color-nm-dark);
-			border-bottom: none;
-		}
-	}
-
-	// Blockquote
-	blockquote {
-
-		@include nm-reverse;
-		position: relative;
-		padding: 1.5em 1.5em 1.5em 3.5em;
-		color: var(--color-text-main);
-		border-radius: $base_border_radius;
-
-		&::before {
-
-			@include nm-text;
-			position: absolute;
-			top: 0.5em;
-			left: 0.7em;
-			font-weight: 900;
-			font-size: 1.6em;
-			font-family: "Font Awesome 5 Free";
-			content: "\f10d";
-		}
-
-		> *:first-child {
-			margin-top: 0 !important;
-		}
-
-		> *:last-child {
-			margin-bottom: 0 !important;
-		}
-
-		p {
-			margin: 0 0 1em;
-
-			&:last-of-type {
-				margin-bottom: 0;
-			}
-		}
-
-		cite {
-			display: block;
-			margin-top: 1em;
-			font-size: 0.8em;
-			opacity: $text_color_thin;
-		}
-	}
-
-	// Inline quotes
-	q {
-
-		@include nm-reverse;
-		position: relative;
-		padding: 0.3em 0.5em;
-		color: var(--color-text-main);
-		border: none;
-		border-radius: $base_border_radius / 2;
-	}
-
-	// Linked Image
-	.wp-caption > a {
-
-		@include nm-media-link;
-	}
-
-	// Figcaption
-	figcaption,
-	.wp-caption-text {
-		margin-top: 0.5em;
-		margin-bottom: 0;
-		padding: 0;
-		color: inherit;
-		font-size: 0.8em;
-		opacity: $text_color_thin;
-	}
-
-	// Definition Lists
-	dl {
-
-		dt {
-			font-weight: bold;
-		}
-
-		dd {
-			margin: 0;
-
-			&:not(:last-of-type) {
-				margin-bottom: 1em;
-			}
-		}
-	}
-
-	// Horizontal Rule
-	hr:not([class]) {
-
-		@include nm-border;
-		padding: 10px 0;
-		border: none;
-
-		&::before {
-			top: 50%;
-			bottom: auto;
-			margin-top: -2px;
-		}
-	}
-
-	// Preformatted text
-	pre {
-		font-family: inherit;
-	}
-
-	// Password Protected Form
-	.post-password-form {
-
-		[name="post_password"] {
-			margin-top: 0.5em;
-		}
-
-		[type="submit"] {
-			margin-top: 2em;
-			color: var(--color-accent);
+		&:hover {
+			text-decoration: none;
 		}
 	}
 }
 
-// Align wide/full
+// Inline Quotes
+q {
+
+	@include nm-reverse;
+	position: relative;
+	padding: 0.3em 0.5em;
+	color: var(--color-text-main);
+	border: none;
+	border-radius: $base_border_radius / 2;
+}
+
+// Figcaption
+figcaption,
+.wp-caption-text {
+	margin-top: 0.5em;
+	margin-bottom: 0;
+	padding: 0;
+	color: inherit;
+	font-size: 0.8em;
+	opacity: $text_color_thin;
+}
+
+// Definition Lists
+dl {
+
+	dt {
+		font-weight: bold;
+	}
+
+	dd {
+		margin: 0;
+
+		&:not(:last-of-type) {
+			margin-bottom: 1em;
+		}
+	}
+}
+
+// Preformatted Text
+pre {
+	font-family: inherit;
+}
+
+// Password Protected Form
+.post-password-form {
+
+	[name="post_password"] {
+		margin-top: 0.5em;
+	}
+
+	[type="submit"] {
+		margin-top: 2em;
+		color: var(--color-accent);
+	}
+}
+
+// Align Wide/Full
 @include mq(lg-min) {
 
 	.alignwide {

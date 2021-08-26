@@ -1,6 +1,46 @@
-// /*----------------------
-// # Quote
-// ----------------------*/
+/**
+ * Quote, Pullquote
+ */
+
+blockquote {
+
+	@include nm-reverse;
+	position: relative;
+	padding: 1.5em 1.5em 1.5em 3.5em;
+	color: var(--color-text-main);
+	border-radius: $base_border_radius;
+
+	&::before {
+
+		@include nm-text;
+		position: absolute;
+		top: 0.5em;
+		left: 0.7em;
+		font-weight: 900;
+		font-size: 1.6em;
+		font-family: "Font Awesome 5 Free";
+		content: "\f10d";
+	}
+
+	> *:first-child {
+		margin-top: 0 !important;
+	}
+
+	> *:last-child {
+		margin-bottom: 0 !important;
+	}
+
+	p {
+		margin: 0 0 1em;
+	}
+
+	cite {
+		display: block;
+		margin-top: 1em;
+		font-size: 0.8em;
+		opacity: $text_color_thin;
+	}
+}
 
 .wp-block-quote {
 

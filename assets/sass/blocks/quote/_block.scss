@@ -1,7 +1,53 @@
-/*----------------------
-# Quote
-----------------------*/
+/**
+ * Quote, Pullquote
+ */
 
+// Common
+blockquote {
+
+	@include nm-reverse;
+	position: relative;
+	padding: 1.5em 1.5em 1.5em 3.5em;
+	color: var(--color-text-main);
+	border-radius: $base_border_radius;
+
+	&::before {
+
+		@include nm-text;
+		position: absolute;
+		top: 0.5em;
+		left: 0.7em;
+		font-weight: 900;
+		font-size: 1.6em;
+		font-family: "Font Awesome 5 Free";
+		content: "\f10d";
+	}
+
+	> *:first-child {
+		margin-top: 0 !important;
+	}
+
+	> *:last-child {
+		margin-bottom: 0 !important;
+	}
+
+	p {
+		margin: 0 0 1em;
+
+		&:last-of-type {
+			margin-bottom: 0;
+		}
+	}
+
+	cite {
+		display: block;
+		margin-top: 1em;
+		font-size: 0.8em;
+		opacity: $text_color_thin;
+	}
+}
+
+// Quote
 .wp-block-quote {
 
 	margin-bottom: 2em;
@@ -32,6 +78,80 @@
 		cite {
 			font-size: 1em;
 			text-align: inherit;
+		}
+	}
+}
+
+// Pullquote
+.wp-block-pullquote {
+	margin-bottom: 2em;
+	padding: 0;
+	color: var(--color-text-main);
+	text-align: inherit;
+
+	blockquote {
+		border-radius: 0;
+		box-shadow: none;
+
+		&::before {
+			content: none;
+		}
+
+		p {
+			margin: 0 0 1em;
+			font-size: inherit;
+		}
+
+		cite {
+			display: block;
+			font-size: 0.8em;
+			opacity: $text_color_thin;
+		}
+	}
+
+	&:not(.is-style-solid-color) {
+
+		@include nm-reverse();
+		padding: 2em;
+		border-color: var(--color-text-main);
+		border-radius: $base_border_radius;
+
+		blockquote {
+			padding: 1em 0;
+			border-color: inherit !important;
+			border-top: 3px solid;
+			border-bottom: 3px solid;
+		}
+	}
+
+	&.is-style-solid-color {
+
+		&.alignleft,
+		&.alignright {
+			margin-top: 10px;
+		}
+
+		blockquote {
+			max-width: 100%;
+
+			p {
+				margin-bottom: 1em;
+				font-size: 1.4em;
+			}
+
+			cite {
+				font-size: 1em;
+				font-style: italic;
+			}
+		}
+
+		&.has-background blockquote {
+			padding: 2em;
+			background-color: transparent;
+		}
+
+		&:not(.has-background) blockquote {
+			padding: 0;
 		}
 	}
 }

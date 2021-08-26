@@ -1,0 +1,81 @@
+/**
+ * Heading
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+	@include nm-text-border;
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+	line-height: 1.4;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 1.8em;
+}
+
+h3 {
+	font-size: 1.6em;
+}
+
+h4 {
+	font-size: 1.4em;
+}
+
+h5 {
+	font-size: 1.2em;
+}
+
+h6 {
+	font-size: 1em;
+}
+
+h1,
+h2,
+h3 {
+
+	@include nm-border;
+	padding-bottom: 0.3em;
+
+	&.has-background {
+		padding: 0.3em 0.6em;
+
+		&::before {
+			bottom: -6px;
+		}
+	}
+
+	&.is-style-nm-none {
+		text-shadow: none;
+
+		&:not(.has-background) {
+			padding-bottom: 0;
+		}
+
+		&::before {
+			content: none;
+		}
+	}
+}
+
+h4,
+h5,
+h6 {
+
+	&.has-background {
+		padding: 0.3em 0.6em;
+	}
+
+	&.is-style-nm-none {
+		text-shadow: none;
+	}
+}
