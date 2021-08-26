@@ -5,13 +5,19 @@
  * @package neumorphic
  */
 
-get_header(); ?>
+$description = get_the_archive_description();
+
+get_header();
+?>
 
 <main id="main" class="main" role="main">
 	<div class="c-entry">
 		<?php if ( is_archive() ) : ?>
 			<header class="c-entry__header">
 					<h1 class="c-entry__title"><?php the_archive_title(); ?></h1>
+					<?php if ( $description ) : ?>
+						<div class="c-entry__description"><?php echo wp_kses_post( wpautop( $description ) ); ?></div>
+					<?php endif; ?>
 			</header>
 		<?php endif; ?>
 		<div class="c-entries">

@@ -5,7 +5,8 @@
  * @package neumorphic
  */
 
-get_header(); ?>
+get_header();
+?>
 
 <main id="main" class="main" role="main">
 	<?php

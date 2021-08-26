@@ -358,8 +358,13 @@
 	// Password Protected Form
 	.post-password-form {
 
+		[name="post_password"] {
+			margin-top: 0.5em;
+		}
+
 		[type="submit"] {
 			margin-top: 2em;
+			color: var(--color-accent);
 		}
 	}
 }

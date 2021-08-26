@@ -29,6 +29,15 @@
 		}
 	}
 
+	&__description {
+		margin-top: 0.5em;
+		font-size: 0.8em;
+
+		p {
+			margin: 0;
+		}
+	}
+
 	&__thumbnail {
 		margin-bottom: 4em;
 		text-align: center;
