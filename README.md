@@ -18,10 +18,6 @@ You can change theme color by using color skin function, and you can also adjust
 * License: Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License
 * Source: https://fontawesome.com/
 
-### css-vars-ponyfill
-* License: MIT License
-* Source: https://github.com/jhildenbiddle/css-vars-ponyfill
-
 ### Image for theme screenshot
 * License: CC0 Public Domain
 * Source: https://pxhere.com/ja/photo/32163

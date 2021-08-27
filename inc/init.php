@@ -246,8 +246,6 @@ function neumorphic_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	// CSS custom properties support for legacy and modern browsers
-	wp_enqueue_script( 'neumorphic-script-ponyfill', get_theme_file_uri( '/assets/packages/css-vars-ponyfill/css-vars-ponyfill.min.js' ), array(), $theme_version );
 }
 
 add_action( 'wp_enqueue_scripts', 'neumorphic_scripts' );
@@ -263,9 +261,6 @@ function neumorphic_block_editor_assets() {
 
 	// Main script.
 	wp_enqueue_script( 'neumorphic-script-block-editor', get_theme_file_uri( '/assets/js/block-style.js' ), array( 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-dom' ), $theme_version, true );
-
-	// CSS custom properties support for legacy and modern browsers
-	wp_enqueue_script( 'neumorphic-script-ponyfill', get_theme_file_uri( '/assets/packages/css-vars-ponyfill/css-vars-ponyfill.min.js' ), array(), $theme_version );
 
 	// Customizer CSS
 	wp_register_style( 'neumorphic-style-customizer', false );

@@ -1,8 +1,5 @@
 ( function ( $ ) {
 	$( function () {
-		// CSS custom properties support for legacy and modern browsers
-		cssVars();
-
 		// Set scrollbar width to CSS custom properties.
 		document.documentElement.style.setProperty(
 			'--scrollbar-width',
