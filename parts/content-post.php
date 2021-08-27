@@ -18,10 +18,12 @@
 						<?php the_time( get_option( 'date_format' ) ); ?>
 					</time>
 				</li>
-				<li class="c-meta__item c-meta__item--modified">
-					<i class="fas fa-history" title="<?php echo esc_attr_e( 'modified date', 'neumorphic' ); ?>"></i>
-					<?php the_modified_time( get_option( 'date_format' ) ); ?>
-				</li>
+				<?php if ( true === get_theme_mod( 'post_modified_date_display', NEUMORPHIC_POST_MODIFIED_DATE_DISPLAY ) ) : ?>
+					<li class="c-meta__item c-meta__item--modified">
+						<i class="fas fa-history" title="<?php echo esc_attr_e( 'modified date', 'neumorphic' ); ?>"></i>
+						<?php the_modified_time( get_option( 'date_format' ) ); ?>
+					</li>
+				<?php endif; ?>
 				<?php if ( has_category() ) : ?>
 					<li class="c-meta__item c-meta__item--categories"><?php the_category( ' / ' ); ?></li>
 				<?php endif; ?>

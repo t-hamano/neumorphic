@@ -11,7 +11,7 @@ function neumorphic_customizer_mobile( $wp_customize ) {
 		'section_mobile',
 		array(
 			'title'    => __( 'Mobile Setting', 'neumorphic' ),
-			'priority' => 170,
+			'priority' => 180,
 		)
 	);
 

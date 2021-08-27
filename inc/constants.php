@@ -111,6 +111,9 @@ const NEUMORPHIC_COLOR_SKIN = array(
 	),
 );
 
+// Use block-based widgets editor
+define( 'NEUMORPHIC_ENABLE_WIDGETS_BLOCK_EDITOR', false );
+
 // Display search bar on header
 define( 'NEUMORPHIC_HEADER_SEARCH_DISPLAY', true );
 
@@ -135,8 +138,8 @@ define( 'NEUMORPHIC_SIDEBAR_DISPLAY_POST', true );
 // Show sidebar on archive page
 define( 'NEUMORPHIC_SIDEBAR_DISPLAY_ARCHIVE', true );
 
-// Use block-based widgets editor
-define( 'NEUMORPHIC_ENABLE_WIDGETS_BLOCK_EDITOR', false );
+// Display modified date
+define( 'NEUMORPHIC_POST_MODIFIED_DATE_DISPLAY', true );
 
 // Credit
 define(

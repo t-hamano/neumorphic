@@ -29,6 +29,9 @@ require_once( get_template_directory() . '/inc/customizer/section-sidebar.php' )
 // Section (Archive page)
 require_once( get_template_directory() . '/inc/customizer/section-archive.php' );
 
+// Section (Post page)
+require_once( get_template_directory() . '/inc/customizer/section-post.php' );
+
 // Section (SNS)
 require_once( get_template_directory() . '/inc/customizer/section-sns.php' );
 
