@@ -24,10 +24,6 @@
 			width: 100%;
 		}
 
-		&.sticky {
-			font-size: 1.3em;
-		}
-
 		&:not(:last-child) {
 			margin-bottom: 1.5em;
 		}
@@ -44,6 +40,10 @@
 				display: flex;
 				align-items: flex-start;
 			}
+		}
+
+		&.sticky .c-entries__body {
+			font-size: 1.3em;
 		}
 	}
 
