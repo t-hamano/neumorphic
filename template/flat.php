@@ -1,11 +1,11 @@
 <?php
 /**
- * Template Name: Right Sidebar
+ * Template Name: Flat
  * Template Post Type: post, page
  *
  * @package neumorphic
  */
-__( 'Right Sidebar', 'neumorphic' );
+__( 'Flat', 'neumorphic' );
 
 get_header(); ?>
 
@@ -15,12 +15,7 @@ get_header(); ?>
 	if ( have_posts() ) {
 		while ( have_posts() ) {
 			the_post();
-
-			if ( is_single() ) {
-				get_template_part( 'parts/content-post' );
-			} else {
-				get_template_part( 'parts/content-page' );
-			}
+			get_template_part( 'parts/content-flat' );
 		}
 	}
 	?>
@@ -28,6 +23,4 @@ get_header(); ?>
 </main>
 
 <?php
-get_sidebar();
-
 get_footer();

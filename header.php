@@ -26,93 +26,95 @@ if ( function_exists( 'wp_body_open' ) ) {
 }
 ?>
 
-<header class="header" role="banner">
-	<div class="container">
-		<div class="header__inner">
-			<div class="header__brand">
+<?php if ( is_page_template( 'flat' ) ) : ?>
+	<header class="header" role="banner">
+		<div class="container">
+			<div class="header__inner">
+				<div class="header__brand">
+					<?php
+					// Header logo
+					if ( has_custom_logo() ) :
+						?>
+						<div class="header__brand-logo">
+							<?php the_custom_logo(); ?>
+						</div>
+					<?php endif; ?>
+					<?php if ( is_front_page() || is_home() ) : ?>
+						<h1 class="header__brand-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<?php else : ?>
+						<p class="header__brand-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+					<?php endif; ?>
+					<?php
+					$description = get_bloginfo( 'description', 'display' );
+					if ( $description ) :
+						?>
+						<p class="header__brand-description"><span><?php echo esc_html( $description ); ?></span></p>
+					<?php endif; ?>
+				</div>
+
 				<?php
-				// Header logo
-				if ( has_custom_logo() ) :
+				// Header search bar
+				if ( true === get_theme_mod( 'header_search_display', NEUMORPHIC_HEADER_SEARCH_DISPLAY ) ) :
 					?>
-					<div class="header__brand-logo">
-						<?php the_custom_logo(); ?>
+					<div class="header__search">
+						<?php get_search_form(); ?>
 					</div>
 				<?php endif; ?>
-				<?php if ( is_front_page() || is_home() ) : ?>
-					<h1 class="header__brand-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php else : ?>
-					<p class="header__brand-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+
+				<?php
+				// SNS icon
+				if ( true === get_theme_mod( 'header_sns_display', NEUMORPHIC_HEADER_SNS_DISPLAY ) ) :
+					?>
+					<nav class="header__sns" role="navigation">
+						<div class="container">
+							<?php get_template_part( 'parts/sns' ); ?>
+						</div>
+					</nav>
 				<?php endif; ?>
 				<?php
-				$description = get_bloginfo( 'description', 'display' );
-				if ( $description ) :
+				// Global menu
+				if ( has_nav_menu( 'primary' ) ) :
 					?>
-					<p class="header__brand-description"><span><?php echo esc_html( $description ); ?></span></p>
+					<div class="gnav">
+						<nav class="c-gnav" role="navigation" aria-hidden="true">
+							<?php
+							wp_nav_menu(
+								array(
+									'theme_location' => 'primary',
+									'menu_class'     => 'c-gnav__list',
+									'container'      => false,
+									'walker'         => new Neumorphic_Gnav_Walker(),
+								)
+							);
+							?>
+						</nav>
+					</div>
 				<?php endif; ?>
 			</div>
-
-			<?php
-			// Header search bar
-			if ( true === get_theme_mod( 'header_search_display', NEUMORPHIC_HEADER_SEARCH_DISPLAY ) ) :
-				?>
-				<div class="header__search">
-					<?php get_search_form(); ?>
-				</div>
-			<?php endif; ?>
-
-			<?php
-			// SNS icon
-			if ( true === get_theme_mod( 'header_sns_display', NEUMORPHIC_HEADER_SNS_DISPLAY ) ) :
-				?>
-				<nav class="header__sns" role="navigation">
-					<div class="container">
-						<?php get_template_part( 'parts/sns' ); ?>
-					</div>
-				</nav>
-			<?php endif; ?>
-			<?php
-			// Global menu
-			if ( has_nav_menu( 'primary' ) ) :
-				?>
-				<div class="gnav">
+		</div>
+		<?php
+		// Fixed global menu
+		if ( has_nav_menu( 'primary' ) ) :
+			?>
+			<div id="fixed_gnav" class="fixed-gnav">
+				<div class="container">
 					<nav class="c-gnav" role="navigation" aria-hidden="true">
 						<?php
-						wp_nav_menu(
-							array(
-								'theme_location' => 'primary',
-								'menu_class'     => 'c-gnav__list',
-								'container'      => false,
-								'walker'         => new Neumorphic_Gnav_Walker(),
-							)
-						);
+							wp_nav_menu(
+								array(
+									'theme_location' => 'primary',
+									'menu_class'     => 'c-gnav__list',
+									'container'      => false,
+									'walker'         => new Neumorphic_Gnav_Walker(),
+								)
+							);
 						?>
 					</nav>
 				</div>
-			<?php endif; ?>
-		</div>
-	</div>
-	<?php
-	// Fixed global menu
-	if ( has_nav_menu( 'primary' ) ) :
-		?>
-		<div id="fixed_gnav" class="fixed-gnav">
-			<div class="container">
-				<nav class="c-gnav" role="navigation" aria-hidden="true">
-					<?php
-						wp_nav_menu(
-							array(
-								'theme_location' => 'primary',
-								'menu_class'     => 'c-gnav__list',
-								'container'      => false,
-								'walker'         => new Neumorphic_Gnav_Walker(),
-							)
-						);
-					?>
-				</nav>
 			</div>
-		</div>
-	<?php endif; ?>
-</header>
+		<?php endif; ?>
+	</header>
+<?php endif; ?>
 
 <div class="fixed-nav">
 	<ul class="fixed-nav__list">
@@ -159,6 +161,6 @@ if ( function_exists( 'wp_body_open' ) ) {
 	</nav>
 <?php endif; ?>
 
-<div class="contents <?php echo esc_attr( neumorphic_contents_class() ); ?>" role="document">
+<div class="<?php echo esc_attr( neumorphic_contents_class() ); ?>" role="document">
 	<div class="container">
 		<div class="contents__inner">

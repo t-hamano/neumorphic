@@ -11,6 +11,8 @@
  * @return string $class Class name added to the div.contents tag.
  */
 function neumorphic_contents_class() {
+	$contents_classes = array( 'contents' );
+
 	// Get cutomizer settings.
 	$display_position = get_theme_mod( 'sidebar_position', NEUMORPHIC_SIDEBAR_POSITION );
 	$display_front    = get_theme_mod( 'sidebar_display_front', NEUMORPHIC_SIDEBAR_DISPLAY_FRONT );
@@ -19,12 +21,14 @@ function neumorphic_contents_class() {
 	$display_archive  = get_theme_mod( 'sidebar_display_archive', NEUMORPHIC_SIDEBAR_DISPLAY_ARCHIVE );
 
 	// Give priority to the template display settings If a specific page template is used.
-	if ( is_page_template( 'template/sidebar-left.php' ) ) {
-		$class = ' contents--sidebar-left';
+	if ( is_page_template( 'template/flat.php' ) ) {
+		$contents_classes[] = 'contents--flat';
+	} elseif ( is_page_template( 'template/sidebar-left.php' ) ) {
+		$contents_classes[] = 'contents--sidebar-left';
 	} elseif ( is_page_template( 'template/sidebar-right.php' ) ) {
-		$class = ' contents--sidebar-right';
+		$contents_classes[] = 'contents--sidebar-right';
 	} elseif ( is_page_template( 'template/sidebar-none.php' ) || is_attachment() ) {
-		$class = ' contents--sidebar-none';
+		$contents_classes[] = 'contents--sidebar-none';
 	} else {
 		// Use customizer settings if the page template is not used.
 		if (
@@ -33,13 +37,13 @@ function neumorphic_contents_class() {
 			( ( is_archive() || is_home() ) && $display_archive ) ||
 			( is_page() && ! is_front_page() && $display_page )
 		) {
-			$class = 'contents--sidebar-' . $display_position;
+			$contents_classes[] = 'contents--sidebar-' . $display_position;
 		} else {
-			$class = 'contents--sidebar-none';
+			$contents_classes[] = 'contents--sidebar-none';
 		}
 	}
 
-	return $class;
+	return implode( ' ', $contents_classes );
 }
 
 /**

@@ -232,7 +232,8 @@ pre {
 		width: 100%;
 		max-width: 100%;
 
-		.contents--sidebar-none & {
+		.contents--sidebar-none &,
+		.contents--flat & {
 			position: relative;
 			right: -47.5vw;
 			width: auto;
@@ -247,7 +248,8 @@ pre {
 		width: 100%;
 		max-width: 100%;
 
-		.contents--sidebar-none & {
+		.contents--sidebar-none &,
+		.contents--flat & {
 			position: relative;
 			left: calc(50% - (50vw - var(--scrollbar-width, 0)/ 2));
 			width: calc(100vw - var(--scrollbar-width, 0));
