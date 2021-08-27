@@ -65,7 +65,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 				// SNS icon
 				if ( true === get_theme_mod( 'header_sns_display', NEUMORPHIC_HEADER_SNS_DISPLAY ) ) :
 					?>
-					<nav class="header__sns" role="navigation">
+					<nav class="header__sns" role="navigation" aria-label="<?php esc_attr_e( 'Header SNS Links', 'neumorphic' ); ?>">
 						<div class="container">
 							<?php get_template_part( 'parts/sns' ); ?>
 						</div>
@@ -76,7 +76,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 				if ( has_nav_menu( 'primary' ) ) :
 					?>
 					<div class="gnav">
-						<nav class="c-gnav" role="navigation" aria-hidden="true">
+						<nav class="c-gnav" role="navigation" aria-hidden="true"  aria-label="<?php esc_attr_e( 'Global menu', 'neumorphic' ); ?>">
 							<?php
 							wp_nav_menu(
 								array(
@@ -98,7 +98,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 			?>
 			<div id="fixed_gnav" class="fixed-gnav">
 				<div class="container">
-					<nav class="c-gnav" role="navigation" aria-hidden="true">
+					<nav class="c-gnav" role="navigation" aria-hidden="true" aria-label="<?php esc_attr_e( 'Fixed global menu', 'neumorphic' ); ?>">
 						<?php
 							wp_nav_menu(
 								array(
@@ -116,7 +116,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 	</header>
 <?php endif; ?>
 
-<div class="fixed-nav">
+<nav class="fixed-nav" aria-label="<?php esc_attr_e( 'Fixed mobile menu', 'neumorphic' ); ?>">
 	<ul class="fixed-nav__list">
 		<li class="fixed-nav__item">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><i class="fas fa-home" title="<?php esc_attr_e( 'Home', 'neumorphic' ); ?>"></i></a>
@@ -133,10 +133,10 @@ if ( function_exists( 'wp_body_open' ) ) {
 			<a href="#"><i class="fas fa-arrow-up" title="<?php esc_attr_e( 'Scroll to top', 'neumorphic' ); ?>"></i></a>
 		</li>
 	</ul>
-</div>
+</nav>
 
 <?php if ( has_nav_menu( 'mobile' ) ) : ?>
-	<nav id="drawer" class="drawer" aria-hidden="true">
+	<nav id="drawer" class="drawer" aria-hidden="true" aria-label="<?php esc_attr_e( 'Mobile menu', 'neumorphic' ); ?>">
 		<div class="drawer__inner container">
 			<button id="mobile_close_btn" class="drawer__close" aria-controls="drawer" aria-label="<?php esc_attr_e( 'Close mobile menu', 'neumorphic' ); ?>"><i class="fas fa-times"></i></button>
 			<?php
