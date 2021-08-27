@@ -26,7 +26,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 }
 ?>
 
-<?php if ( is_page_template( 'flat' ) ) : ?>
+<?php if ( ! is_page_template( 'template/flat.php' ) ) : ?>
 	<header class="header" role="banner">
 		<div class="container">
 			<div class="header__inner">
