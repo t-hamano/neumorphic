@@ -353,6 +353,18 @@ function neumorphic_widgets_init() {
 add_action( 'widgets_init', 'neumorphic_widgets_init' );
 
 /**
+ * Filters the classname used in the block widget's container HTML.
+ *
+ * @param string $classname  The classname to be used in the block widget's container HTML,
+ *
+ * @return string The classname to use in the block widget's container HTML.
+ */
+function neumorphic_widget_block_dynamic_classname( $classname ) {
+	return $classname . ' entry-content';
+}
+add_filter( 'widget_block_dynamic_classname', 'neumorphic_widget_block_dynamic_classname' );
+
+/**
  * Filters the archive title and styles the word before the first colon.
  *
  * @param string $title Current archive title.

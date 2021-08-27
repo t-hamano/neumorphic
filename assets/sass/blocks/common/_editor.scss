@@ -3,7 +3,14 @@
  */
 
 body {
+	color: var(--color-text-main);
+	font-size: $base_font_size_pc;
+	font-family: $base_font_falily;
+	line-height: $base_line_height;
+	letter-spacing: $base_letter_spacing;
+	word-break: break-word;
 	background: var(--color-bg);
+
 }
 
 // Title
@@ -46,11 +53,6 @@ body {
 // Block
 .wp-block {
 	max-width: 800px;
-	color: var(--color-text-main);
-	font-family: $base_font_falily;
-	line-height: $base_line_height;
-	letter-spacing: $base_letter_spacing;
-	word-break: break-word;
 
 	@media (max-width: 599px) {
 		max-width: calc(100% - 28px);

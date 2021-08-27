@@ -5,6 +5,10 @@
 > * {
 	margin: 0 0 2em;
 
+	&:first-child {
+		margin-top: 0 !important;
+	}
+
 	&:last-child {
 		margin-bottom: 0 !important;
 	}

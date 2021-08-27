@@ -4,6 +4,11 @@
 
 .wp-block-group {
 
+	&[class^="wp-container-"],
+	&[class*=" wp-container-"] {
+		padding: 1.5em 1em;
+	}
+
 	&.has-background {
 		margin-bottom: 28px;
 	}

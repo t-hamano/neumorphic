@@ -21,8 +21,7 @@
 @import "widgets/_common.scss";
 @import "widgets/**/!(_common.scss)";
 
-.entry-content,
-.widget_block {
+.entry-content {
 	// Block Common Styles
 	@import "blocks/common/_block.scss";
 

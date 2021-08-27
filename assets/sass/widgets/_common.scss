@@ -4,15 +4,19 @@
 
 .widget {
 
-	@include nm;
-	padding: 1.5em 1em;
-	border-radius: $base_border_radius;
+	&:not(.widget_block) {
+
+		@include nm;
+		padding: 1.5em 1em;
+		border-radius: $base_border_radius;
+	}
 
 	+ .widget {
 		margin-top: 2em;
 	}
 
-	&__title {
+	&__title,
+	.widgettitle {
 
 		@include nm-border;
 		@include nm-text-border;
