@@ -254,3 +254,60 @@ button {
 	color: inherit;
 	opacity: $base_placeholder_opacity;
 }
+
+// Media Player Styles
+.mejs-container {
+	height: 60px !important;
+
+	&.mejs-audio {
+
+		@include nm-reverse();
+		background: transparent;
+		border-radius: 1000px;
+
+		.mejs-mediaelement {
+			top: 5px;
+			left: 5px;
+			width: calc(100% - 10px);
+			height: calc(100% - 10px);
+			background: var(--color-nm-dark);
+			border-radius: 1000px;
+		}
+
+		.mejs-controls {
+			align-items: center;
+			height: 100%;
+			padding: 0 20px;
+			background: transparent;
+
+			.mejs-time-rail .mejs-time-current {
+				background: var(--color-accent);
+			}
+		}
+	}
+
+	&.mejs-video {
+
+		@include nm-reverse();
+		overflow: hidden;
+		background: transparent;
+		border-radius: $base_border_radius;
+
+		.mejs-mediaelement {
+			top: 5px;
+			left: 5px;
+			width: calc(100% - 10px);
+			height: calc(100% - 10px);
+			overflow: hidden;
+			border-radius: $base_border_radius;
+		}
+
+		.mejs-controls {
+			background: transparent;
+
+			.mejs-time-rail .mejs-time-current {
+				background: var(--color-accent);
+			}
+		}
+	}
+}
