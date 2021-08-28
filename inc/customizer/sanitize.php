@@ -26,6 +26,19 @@ function neumorphic_sanitize_choices_color_skin( $select ) {
 }
 
 /**
+ * Select (Logo style)
+ */
+function neumorphic_sanitize_choices_logo_style( $select ) {
+	$valid = array( 'none', 'nm', 'nm reverse' );
+
+	if ( in_array( $select, $valid, true ) ) {
+		return $select;
+	}
+
+	return NEUMORPHIC_SITE_LOGO_STYLE;
+}
+
+/**
  * Select (Sidebar)
  */
 function neumorphic_sanitize_choices_sidebar( $select ) {

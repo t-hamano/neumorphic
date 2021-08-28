@@ -34,8 +34,12 @@ if ( function_exists( 'wp_body_open' ) ) {
 					<?php
 					// Header logo
 					if ( has_custom_logo() ) :
+						$logo_class = 'header__brand-logo';
+						if ( get_theme_mod( 'site_logo_nm_style', NEUMORPHIC_SITE_LOGO_NM_STYLE ) ) {
+							$logo_class .= ' header__brand-logo--nm';
+						}
 						?>
-						<div class="header__brand-logo">
+						<div class="<?php echo esc_attr( $logo_class ); ?>">
 							<?php the_custom_logo(); ?>
 						</div>
 					<?php endif; ?>

@@ -114,6 +114,9 @@ const NEUMORPHIC_COLOR_SKIN = array(
 // Use block-based widgets editor
 define( 'NEUMORPHIC_ENABLE_WIDGETS_BLOCK_EDITOR', false );
 
+// Use neumorphic style site logo image
+define( 'NEUMORPHIC_SITE_LOGO_NM_STYLE', false );
+
 // Display search bar on header
 define( 'NEUMORPHIC_HEADER_SEARCH_DISPLAY', true );
 

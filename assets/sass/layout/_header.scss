@@ -39,6 +39,17 @@
 				max-height: 100px;
 			}
 		}
+
+		&--nm {
+
+			@include nm-media-link;
+			display: inline-block;
+
+			img {
+
+				@include nm-media;
+			}
+		}
 	}
 
 	&__brand-title {
