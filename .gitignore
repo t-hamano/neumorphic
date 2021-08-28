@@ -1,8 +1,8 @@
 .vscode
-node_modules/
-neumorphic/
-vendor/
+/node_modules/
+/neumorphic/
+/vendor/
 .wp-env.override.json
 *.zip
-assets/css/
+/assets/css/
 *.log

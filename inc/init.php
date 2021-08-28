@@ -229,9 +229,6 @@ add_action( 'after_setup_theme', 'neumorphic_setup' );
 function neumorphic_scripts() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 
-	// Font Awesome
-	wp_enqueue_style( 'neumorphic-style-fontawesome', get_theme_file_uri( '/assets/packages/font-awesome/css/all.min.css' ), array(), $theme_version );
-
 	// WordPress media player styles
 	wp_enqueue_style( 'wp-mediaelement' );
 
@@ -265,9 +262,6 @@ add_action( 'wp_enqueue_scripts', 'neumorphic_scripts' );
  */
 function neumorphic_block_editor_assets() {
 	$theme_version = wp_get_theme()->get( 'Version' );
-
-	// Font Awesome
-	wp_enqueue_style( 'neumorphic-style-fontawesome', get_theme_file_uri( '/assets/packages/font-awesome/css/all.min.css' ), array(), $theme_version );
 
 	// Main script.
 	wp_enqueue_script( 'neumorphic-script-block-editor', get_theme_file_uri( '/assets/js/block-style.js' ), array( 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-dom' ), $theme_version, true );

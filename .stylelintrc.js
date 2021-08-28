@@ -5,7 +5,7 @@ module.exports = {
 	],
   ignoreFiles: [
 		"node_modules/**/*.css",
-		"packages/**/*.css",
+		"assets/sass/vendor/**/*.scss",
 		"assets/**/*.css",
   ],
 	rules: {
