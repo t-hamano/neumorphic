@@ -248,6 +248,14 @@ function neumorphic_scripts() {
 	if ( ( ! is_admin() ) && is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	// CSS custom properties support for IE
+	global $is_IE;
+
+	if ( $is_IE ) {
+		wp_enqueue_script( 'neumorphic-script-ponyfill', get_theme_file_uri( '/assets/js/lib/css-vars-ponyfill.min.js' ), array(), $theme_version, false );
+		wp_add_inline_script( 'neumorphic-script-ponyfill', 'cssVars();' );
+	}
 }
 
 add_action( 'wp_enqueue_scripts', 'neumorphic_scripts' );
