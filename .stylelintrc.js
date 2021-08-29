@@ -17,7 +17,7 @@ module.exports = {
 		"selector-class-pattern": null,
 		"at-rule-no-unknown": [
 			true,
-			{"ignoreAtRules": ["include","mixin","each", "for"]}
+			{"ignoreAtRules": ["include","mixin","each", "for", "use"]}
 		],
 	}
 }

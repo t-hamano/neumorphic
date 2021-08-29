@@ -34,12 +34,12 @@
 			max-height: calc(100% - 10px);
 			padding: 0.5em;
 			background: rgba(0, 0, 0, 0.6);
-			border-radius: 0 0 $base_border_radius / 2 $base_border_radius / 2;
+			border-radius: 0 0 math.div($base_border_radius, 2) math.div($base_border_radius, 2);
 		}
 
 		img {
 			width: 100%;
-			border-radius: $base_border_radius / 2;
+			border-radius: math.div($base_border_radius, 2);
 		}
 	}
 

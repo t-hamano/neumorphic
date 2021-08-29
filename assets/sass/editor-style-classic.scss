@@ -1,6 +1,7 @@
 /**
  * Classic Editor Styles
  */
+@use "sass:math";
 
 // Foundation
 @import "foundation/fontawesome";
@@ -49,7 +50,7 @@ body#tinymce.wp-editor.content {
 
 		@for $i from 2 through 9 {
 			&.gallery-columns-#{$i} .gallery-item {
-				width: #{percentage(1 / $i)};
+				width: #{percentage(math.div(1, $i))};
 			}
 		}
 
@@ -212,7 +213,7 @@ body#tinymce.wp-editor.content {
 		padding: 0.3em 0.5em;
 		color: var(--color-text-main);
 		border: none;
-		border-radius: $base_border_radius / 2;
+		border-radius: math.div($base_border_radius, 2);
 	}
 
 	// Quote

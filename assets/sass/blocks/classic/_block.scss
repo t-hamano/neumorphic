@@ -34,7 +34,7 @@ p > a,
 	@for $i from 1 through 9 {
 
 		&.gallery-columns-#{$i} .gallery-item {
-			width: #{percentage(1 / $i)};
+			width: #{percentage(math.div(1, $i))};
 		}
 	}
 

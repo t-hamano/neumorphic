@@ -6,7 +6,7 @@
 	margin-bottom: 2em;
 
 	.wp-block-media-text__media video {
-		border-radius: $base_border_radius / 2;
+		border-radius: math.div($base_border_radius, 2);
 	}
 
 	.wp-block-media-text__content {

@@ -18,7 +18,7 @@
 			right: 5px;
 			bottom: 5px;
 			left: 5px;
-			border-radius: $base_border_radius / 2;
+			border-radius: math.div($base_border_radius, 2);
 		}
 
 		.wp-block-cover__video-background,
@@ -29,7 +29,7 @@
 			left: 5px;
 			width: calc(100% - 10px);
 			height: calc(100% - 10px);
-			border-radius: $base_border_radius / 2;
+			border-radius: math.div($base_border_radius, 2);
 		}
 	}
 

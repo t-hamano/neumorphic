@@ -112,7 +112,7 @@
 			border-radius: $base_border_radius;
 
 			iframe {
-				border-radius: $base_border_radius / 2;
+				border-radius: math.div($base_border_radius, 2);
 			}
 		}
 	}

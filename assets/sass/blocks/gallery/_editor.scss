@@ -25,7 +25,7 @@ figure.wp-block-gallery {
 			color: #fff;
 			font-size: 0.8em;
 			background: rgba(0, 0, 0, 0.6);
-			border-radius: 0 0 $base_border_radius / 2 $base_border_radius / 2;
+			border-radius: 0 0 math.div($base_border_radius, 2) math.div($base_border_radius, 2);
 		}
 
 		img {

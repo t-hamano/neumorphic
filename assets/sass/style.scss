@@ -1,6 +1,7 @@
 /**
  * Front-end Styles
  */
+@use "sass:math";
 
 // Foundation
 @import "foundation/fontawesome";
@@ -16,16 +17,66 @@
 @import "layout/sidebar";
 
 // Component
-@import "component/**/*";
+@import "component/attachment";
+@import "component/comment";
+@import "component/entries";
+@import "component/entry";
+@import "component/global-menu";
+@import "component/meta";
+@import "component/pagination";
+@import "component/searchform";
+@import "component/sns";
+@import "component/tag";
 
 // Widget Styles
-@import "widgets/_common.scss";
-@import "widgets/**/!(_common.scss)";
+@import "widgets/common";
+@import "widgets/archive";
+@import "widgets/calendar";
+@import "widgets/html";
+@import "widgets/image";
+@import "widgets/meta";
+@import "widgets/nav-menu";
+@import "widgets/page";
+@import "widgets/recent-comments";
+@import "widgets/recent-entries";
+@import "widgets/rss";
+@import "widgets/tag-cloud";
+@import "widgets/text";
 
 .entry-content {
-	// Block Common Styles
-	@import "blocks/common/_block.scss";
-
 	// Block Styles
-	@import "blocks/!(common)/**/_block.scss";
+	@import "blocks/common/block";
+	@import "blocks/archives/block";
+	@import "blocks/audio/block";
+	@import "blocks/buttons/block";
+	@import "blocks/calendar/block";
+	@import "blocks/categories/block";
+	@import "blocks/classic/block";
+	@import "blocks/code/block";
+	@import "blocks/columns/block";
+	@import "blocks/cover/block";
+	@import "blocks/embeds/block";
+	@import "blocks/file/block";
+	@import "blocks/gallery/block";
+	@import "blocks/group/block";
+	@import "blocks/heading/block";
+	@import "blocks/image/block";
+	@import "blocks/latest-comments/block";
+	@import "blocks/latest-posts/block";
+	@import "blocks/list/block";
+	@import "blocks/media-text/block";
+	@import "blocks/page-list/block";
+	@import "blocks/paragraph/block";
+	@import "blocks/post-terms/block";
+	@import "blocks/quote/block";
+	@import "blocks/rss/block";
+	@import "blocks/search/block";
+	@import "blocks/separator/block";
+	@import "blocks/site-logo/block";
+	@import "blocks/site-title/block";
+	@import "blocks/social-links/block";
+	@import "blocks/table/block";
+	@import "blocks/tag-cloud/block";
+	@import "blocks/verse/block";
+	@import "blocks/video/block";
 }

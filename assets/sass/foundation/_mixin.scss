@@ -208,7 +208,7 @@
 			width: calc(100% - 10px);
 			height: calc(100% - 10px);
 			background: rgba(0, 0, 0, 0.3);
-			border-radius: $base_border_radius / 2;
+			border-radius: math.div($base_border_radius, 2);
 			opacity: 0;
 			transition: opacity $base_transition_duration ease-in-out;
 			content: "";
