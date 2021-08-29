@@ -1,0 +1,15 @@
+/**
+ * Login/out
+ */
+
+.wp-block-loginout {
+
+	&.is-style-nm > a {
+
+		@include nm-button-editor;
+		display: inline-block;
+		padding: 0.7em 1.4em;
+		color: var(--color-accent);
+		border-radius: 1000px;
+	}
+}

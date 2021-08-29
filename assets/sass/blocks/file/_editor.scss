@@ -16,7 +16,7 @@
 
 	.wp-block-file__button {
 
-		@include nm-button-editor();
+		@include nm-button-editor;
 		color: var(--color-accent);
 		font-size: 0.8em;
 		text-align: center;

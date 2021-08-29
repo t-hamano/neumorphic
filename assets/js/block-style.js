@@ -35,6 +35,8 @@ wp.domReady( function () {
 		{ block: 'core/page-list',    name: 'nm',         label: 'Neumorphic',     isDefault: false },
 		{ block: 'core/page-list',    name: 'nm-reverse', label: 'Neumorphic Rev', isDefault: false },
 		{ block: 'core/social-links', name: 'nm',         label: 'Neumorphic',     isDefault: false },
+		// Theme
+		{ block: 'core/loginout',     name: 'nm',         label: 'Neumorphic',     isDefault: false },
 	];
 
 	styles.forEach(function( style ){

@@ -28,7 +28,7 @@
 
 		&:not(.has-icon) {
 
-			@include nm-button-editor();
+			@include nm-button-editor;
 			padding: 0.5em 1.4em;
 			color: var(--color-accent);
 			border-radius: 1000px;
