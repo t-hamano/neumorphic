@@ -1,0 +1,47 @@
+/**
+ * Post Featured Image
+ */
+
+.wp-block-post-featured-image {
+	margin-bottom: 2em;
+
+	a {
+
+		@include nm-media-link;
+		display: inline-block;
+		vertical-align: top;
+	}
+
+	img {
+
+		@include nm-media;
+	}
+
+	&.alignfull a {
+		display: block;
+	}
+
+	&.is-style-nm-none {
+
+		a,
+		img {
+			padding: 0 !important;
+			border-radius: 0;
+			box-shadow: none;
+		}
+
+		a {
+
+			&::before {
+				content: none;
+			}
+
+			@include mq(lg-min) {
+
+				&:hover {
+					opacity: $base_hover_opacity;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,16 @@
+/**
+ * Post Excerpt
+ */
+
+.wp-block-post-excerpt {
+	margin-bottom: 2em;
+
+	&__excerpt {
+		margin-bottom: 0;
+	}
+
+	&__more-text {
+		margin-top: 0.5em;
+		margin-bottom: 0;
+	}
+}

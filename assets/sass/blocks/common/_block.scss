@@ -14,6 +14,11 @@
 	}
 }
 
+// Background
+.has-background {
+	padding: 1.5em 1em;
+}
+
 // Text Color
 .has-bg-color {
 	color: var(--color-bg) !important;
@@ -232,7 +237,7 @@ pre {
 // Align Wide/Full
 @include mq(lg-min) {
 
-	.alignwide {
+	> .alignwide {
 		width: 100%;
 		max-width: 100%;
 
@@ -248,7 +253,7 @@ pre {
 		}
 	}
 
-	.alignfull {
+	> .alignfull {
 		width: 100%;
 		max-width: 100%;
 
@@ -264,7 +269,7 @@ pre {
 
 @include mq(md-max) {
 
-	.alignwide {
+	> .alignwide {
 		position: relative;
 		left: calc(50% - (50vw - var(--scrollbar-width, 0)/ 2));
 		width: calc(100vw - var(--scrollbar-width, 0));
@@ -274,7 +279,7 @@ pre {
 		transform: none;
 	}
 
-	.alignfull {
+	> .alignfull {
 		position: relative;
 		left: calc(50% - (50vw - var(--scrollbar-width, 0)/ 2));
 		width: calc(100vw - var(--scrollbar-width, 0));

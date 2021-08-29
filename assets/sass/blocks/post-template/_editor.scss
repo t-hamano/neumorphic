@@ -1,0 +1,39 @@
+/**
+ * Post Template
+ */
+
+.wp-block-post-template {
+
+	> li {
+		margin: 0 0 1.5em;
+
+		> *,
+		> div > .components-disabled > .block-editor-block-list__layout > * {
+
+			&:first-child {
+				margin-top: 0 !important;
+			}
+
+			&:last-child {
+				margin-bottom: 0 !important;
+			}
+		}
+	}
+
+	&.is-flex-container {
+
+		@media (min-width: 600px) {
+
+			> li:not(:last-child) {
+				margin-right: 1.25em;
+			}
+		}
+	}
+
+	&.is-style-nm > li {
+
+		@include nm;
+		padding: 1.5em 1em;
+		border-radius: $base_border_radius;
+	}
+}

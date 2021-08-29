@@ -5,10 +5,6 @@
 .wp-block-columns {
 	margin-bottom: 2em;
 
-	&.has-background {
-		padding: 1.5em;
-	}
-
 	&.is-style-nm {
 
 		@include nm;
@@ -84,10 +80,6 @@
 }
 
 .wp-block-column {
-
-	&.has-background {
-		padding: 1em;
-	}
 
 	&.is-style-nm {
 

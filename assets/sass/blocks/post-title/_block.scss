@@ -1,0 +1,19 @@
+/**
+ * Post Title
+ */
+
+.wp-block-post-title {
+	margin-bottom: 2em;
+
+	&.is-style-nm-none {
+		text-shadow: none;
+
+		&:not(.has-background) {
+			padding-bottom: 0;
+		}
+
+		&::before {
+			content: none;
+		}
+	}
+}

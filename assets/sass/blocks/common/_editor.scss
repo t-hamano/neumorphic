@@ -54,6 +54,10 @@ body {
 .wp-block {
 	max-width: 800px;
 
+	&.has-background {
+		padding: 1.5em 1em;
+	}
+
 	@media (max-width: 599px) {
 		max-width: calc(100% - 28px);
 	}
