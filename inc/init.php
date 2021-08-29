@@ -74,6 +74,9 @@ function neumorphic_setup() {
 	// Custom Units.
 	add_theme_support( 'custom-units' );
 
+	// Custom Spacing.
+	add_theme_support( 'custom-spacing' );
+
 	// Get customizer variables.
 	$color_bg                = esc_html( get_theme_mod( 'color_bg', NEUMORPHIC_COLOR_SKIN['default']['bg'] ) );
 	$color_text_main         = esc_html( get_theme_mod( 'color_text_main', NEUMORPHIC_COLOR_SKIN['default']['text_main'] ) );
