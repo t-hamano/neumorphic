@@ -3,7 +3,6 @@
  */
 
 .wp-block-image {
-	margin-bottom: 2em;
 
 	> img {
 
@@ -32,12 +31,6 @@
 
 			@include nm-media;
 		}
-	}
-
-	figcaption {
-		margin-bottom: 0;
-		font-size: 0.8em;
-		opacity: $text_color_thin;
 	}
 
 	&.is-style-rounded,
@@ -80,20 +73,16 @@
 		}
 	}
 
-	.aligncenter,
-	.alignleft,
-	.alignright {
+	.alignleft {
+		margin: 0 1.5em 2em 0;
+	}
 
-		> figcaption {
-			display: block;
-		}
+	.alignright {
+		margin: 0 0 2em 1.5em;
 	}
 
 	.aligncenter {
 		display: block;
-		margin-right: auto;
-		margin-left: auto;
-		text-align: center;
 	}
 
 	&.alignwide,
@@ -102,9 +91,14 @@
 		> a {
 			display: block;
 		}
+	}
+
+	.aligncenter,
+	.alignleft,
+	.alignright {
 
 		> figcaption {
-			text-align: center;
+			display: block;
 		}
 	}
 }

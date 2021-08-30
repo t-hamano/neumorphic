@@ -3,7 +3,7 @@
  */
 @use "sass:math";
 
-// Foundation
+// // Foundation
 @import "foundation/fontawesome";
 @import "foundation/variable";
 @import "foundation/mixin";
@@ -68,7 +68,6 @@
 	@import "blocks/media-text/block";
 	@import "blocks/page-list/block";
 	@import "blocks/paragraph/block";
-	@import "blocks/post-content/block";
 	@import "blocks/post-date/block";
 	@import "blocks/post-excerpt/block";
 	@import "blocks/post-featured-image/block";

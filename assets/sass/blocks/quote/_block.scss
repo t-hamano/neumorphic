@@ -7,8 +7,7 @@ blockquote {
 
 	@include nm-reverse;
 	position: relative;
-	padding: 1.5em 1.5em 1.5em 3.5em;
-	color: var(--color-text-main);
+	padding: 1em 1em 1em 3.5em;
 	border-radius: $base_border_radius;
 
 	&::before {
@@ -32,16 +31,12 @@ blockquote {
 	}
 
 	p {
-		margin: 0 0 1em;
-
-		&:last-of-type {
-			margin-bottom: 0;
-		}
+		margin-top: 0;
+		margin-bottom: 1em;
 	}
 
 	cite {
 		display: block;
-		margin-top: 1em;
 		font-size: 0.8em;
 		opacity: $text_color_thin;
 	}
@@ -50,33 +45,28 @@ blockquote {
 // Quote
 .wp-block-quote {
 
-	margin-bottom: 2em;
-
 	&.is-style-nm-none {
 		padding: 0 0 0 2.8em;
 		box-shadow: none;
 
 		&::before {
-			top: -0.5em;
+			top: -0.2em;
 			left: 0;
 		}
 	}
 
 	&.is-style-large {
-		padding: 1.5em 1.5em 1.5em 5em;
-
-		&::before {
-			font-size: 2.4em;
-		}
+		padding: 1em 1em 1em 3.5em;
+		font-size: 1.4em;
 
 		p {
-			font-size: 1.4em;
+			font-size: 1em;
 			font-style: normal;
 			line-height: inherit;
 		}
 
 		cite {
-			font-size: 1em;
+			font-size: 0.8em;
 			text-align: inherit;
 		}
 	}
@@ -84,9 +74,7 @@ blockquote {
 
 // Pullquote
 .wp-block-pullquote {
-	margin-bottom: 2em;
 	padding: 0;
-	color: var(--color-text-main);
 	text-align: inherit;
 
 	blockquote {
@@ -98,21 +86,14 @@ blockquote {
 		}
 
 		p {
-			margin: 0 0 1em;
 			font-size: inherit;
-		}
-
-		cite {
-			display: block;
-			font-size: 0.8em;
-			opacity: $text_color_thin;
 		}
 	}
 
 	&:not(.is-style-solid-color) {
 
 		@include nm-reverse();
-		padding: 2em;
+		padding: 1.5em 1em;
 		border-color: var(--color-text-main);
 		border-radius: $base_border_radius;
 
@@ -125,33 +106,24 @@ blockquote {
 	}
 
 	&.is-style-solid-color {
-
-		&.alignleft,
-		&.alignright {
-			margin-top: 10px;
-		}
+		font-size: 1.4em;
 
 		blockquote {
 			max-width: 100%;
+			padding: 0;
 
 			p {
 				margin-bottom: 1em;
-				font-size: 1.4em;
 			}
 
 			cite {
-				font-size: 1em;
 				font-style: italic;
 			}
 		}
 
 		&.has-background blockquote {
-			padding: 2em;
+			padding: 1em;
 			background-color: transparent;
-		}
-
-		&:not(.has-background) blockquote {
-			padding: 0;
 		}
 	}
 }

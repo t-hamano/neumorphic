@@ -41,15 +41,8 @@ table {
 }
 
 .wp-block-table {
-	margin-top: 28px;
-	margin-bottom: 28px;
 	overflow-x: initial;
 	text-align: left;
-
-	&.aligncenter table {
-		margin-right: auto;
-		margin-left: auto;
-	}
 
 	&.is-style-nm-none table {
 		overflow: auto;
@@ -68,30 +61,5 @@ table {
 		tbody tr:nth-child(odd) {
 			background-color: var(--color-nm-light);
 		}
-	}
-
-	figcaption {
-		margin-top: 0.5em;
-		color: var(--color-text-main);
-		font-size: 0.8em;
-		text-align: left;
-		opacity: 0.8;
-	}
-}
-
-.wp-block[data-align="center"],
-.wp-block[data-align="wide"],
-.wp-block[data-align="full"] {
-
-	> .wp-block-table figcaption {
-		text-align: center;
-	}
-}
-
-.wp-block[data-align="wide"],
-.wp-block[data-align="full"] {
-
-	> .wp-block-table table {
-		width: 100%;
 	}
 }

@@ -4,7 +4,7 @@
 
 .wp-block-cover {
 	min-height: 200px;
-	margin-bottom: 2em;
+	padding: 0;
 	overflow: hidden;
 
 	&.is-style-nm,
@@ -54,31 +54,30 @@
 			padding-left: 1.5em;
 		}
 
-		> *:first-child {
-			margin-top: 0;
-		}
+		> * {
 
-		> *:last-child {
-			margin-bottom: 0;
-		}
-
-		h1,
-		h2,
-		h3,
-		h4,
-		h5,
-		h6 {
-			text-shadow: none;
-		}
-
-		h1,
-		h2,
-		h3 {
-			padding-bottom: 0;
-
-			&::before {
-				content: none;
+			&:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+				margin-top: 0;
+				margin-bottom: 2em;
 			}
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&.alignwide,
+	&.alignfull {
+
+		.wp-block-cover__inner-container > * {
+			max-width: calc(#{$container_width} - #{$container_padding * 2});
+			margin-right: auto;
+			margin-left: auto;
 		}
 	}
 }

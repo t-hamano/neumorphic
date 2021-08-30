@@ -24,3 +24,17 @@
 		}
 	}
 }
+
+[data-align="wide"],
+[data-align="full"] {
+
+	> h1.wp-block-site-title,
+	> h2.wp-block-site-title,
+	> h3.wp-block-site-title,
+	> h4.wp-block-site-title,
+	> h5.wp-block-site-title,
+	> h6.wp-block-site-title {
+		margin-top: 1.5em;
+		margin-bottom: 1em;
+	}
+}

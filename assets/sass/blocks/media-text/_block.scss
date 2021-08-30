@@ -3,7 +3,6 @@
  */
 
 .wp-block-media-text {
-	margin-bottom: 2em;
 
 	.wp-block-media-text__media video {
 		border-radius: math.div($base_border_radius, 2);
@@ -28,7 +27,7 @@
 	&.is-style-nm {
 
 		@include nm;
-		padding: 1.5em;
+		padding: 1em;
 		border-radius: $base_border_radius;
 
 		&.has-background {

@@ -27,7 +27,7 @@ div.wp-block-embed {
 [data-align="left"],
 [data-align="right"] {
 
-	.wp-block-embed {
+	> .wp-block-embed {
 		width: 100%;
 		max-width: 500px;
 	}
@@ -35,7 +35,7 @@ div.wp-block-embed {
 
 [data-align="center"] {
 
-	.wp-block-embed {
+	> .wp-block-embed {
 
 		&-facebook,
 		&-instagram,
@@ -43,5 +43,13 @@ div.wp-block-embed {
 			margin-right: auto;
 			margin-left: auto;
 		}
+	}
+}
+
+[data-align="wide"],
+[data-align="full"] {
+
+	> .wp-block-embed .wp-block-embed__wrapper {
+		width: 100%;
 	}
 }

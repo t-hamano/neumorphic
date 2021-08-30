@@ -3,7 +3,6 @@
  */
 
 .wp-block-video {
-	margin-bottom: 2em;
 
 	&.alignleft,
 	&.alignright {
@@ -14,36 +13,5 @@
 
 		@include nm-media;
 		display: block;
-	}
-
-	&.aligncenter video {
-		margin-right: auto;
-		margin-left: auto;
-	}
-
-	figcaption {
-		margin-bottom: 0;
-		font-size: 0.8em;
-		opacity: $text_color_thin;
-	}
-
-	@include mq(md-max) {
-
-		&.alignleft,
-		&.alignright {
-
-			video {
-				margin-right: auto;
-				margin-left: auto;
-			}
-		}
-	}
-
-	&.alignwide,
-	&.alignfull {
-
-		figcaption {
-			text-align: center;
-		}
 	}
 }

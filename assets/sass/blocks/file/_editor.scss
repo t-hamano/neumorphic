@@ -3,6 +3,7 @@
  */
 
 .wp-block-file {
+	margin-bottom: 2em;
 
 	.wp-block-file__content-wrapper {
 		display: flex;
@@ -24,6 +25,8 @@
 	}
 }
 
-.wp-block[data-align="center"] > .wp-block-file > .wp-block-file__content-wrapper {
+[data-align="center"],
+[data-align="wide"],
+[data-align="full"] > .wp-block-file > .wp-block-file__content-wrapper {
 	justify-content: center;
 }

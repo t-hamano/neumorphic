@@ -6,7 +6,7 @@
 
 	@include nm;
 	margin-top: 5em;
-	padding: 1.5em;
+	padding: 1em;
 	border-radius: 10px;
 
 	&__title {
@@ -27,7 +27,7 @@
 		.comment-body {
 
 			@include nm-border;
-			padding: 1.5em 0;
+			padding: 1em 0;
 
 			+ .comment-respond {
 
@@ -202,7 +202,7 @@
 
 				@include nm-reverse();
 				position: relative;
-				padding: 1.5em 1.5em 1.5em 3.5em;
+				padding: 1em 1em 1em 3em;
 				color: var(--color-text-main);
 				border-radius: $base_border_radius;
 
@@ -268,10 +268,6 @@
 				tfoot td {
 					border-top: 2px solid var(--color-nm-dark);
 					border-bottom: none;
-				}
-
-				figcaption {
-					text-align: center;
 				}
 			}
 

@@ -13,10 +13,9 @@ code {
 }
 
 .wp-block-code {
-	margin-bottom: 2em;
 
 	@include nm-reverse;
-	padding: 2em;
+	padding: 1em;
 	border-radius: $base_border_radius;
 
 	.block-editor-plain-text,

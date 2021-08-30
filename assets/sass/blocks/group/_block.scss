@@ -3,17 +3,12 @@
  */
 
 .wp-block-group {
-	margin-bottom: 2em;
+	position: relative;
 	padding: 0;
 
 	&.is-style-nm,
 	&.is-style-nm-reverse {
 		border-radius: $base_border_radius;
-
-		&.has-background {
-			padding: 5px;
-			background-clip: content-box;
-		}
 	}
 
 	&.is-style-nm {
@@ -26,13 +21,22 @@
 		@include nm-reverse;
 	}
 
-	&__inner-container {
+	&__inner-container > * {
 
-		> *:first-child {
+		max-width: calc(#{$container_width} - #{$container_padding * 2});
+		margin-right: auto;
+		margin-left: auto;
+
+		&:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+			margin-top: 0;
+			margin-bottom: 2em;
+		}
+
+		&:first-child {
 			margin-top: 0 !important;
 		}
 
-		> *:last-child {
+		&:last-child {
 			margin-bottom: 0 !important;
 		}
 	}
@@ -40,9 +44,52 @@
 	&.is-style-nm,
 	&.is-style-nm-reverse,
 	&.has-background {
+		padding: 1em;
+	}
+}
 
-		.wp-block-group__inner-container {
-			padding: 1.5em 1em;
+header.wp-block-group,
+main.wp-block-group,
+section.wp-block-group,
+article.wp-block-group,
+aside.wp-block-group,
+footer.wp-block-group {
+
+	&::before {
+		position: absolute;
+		top: 5px;
+		right: 5px;
+		bottom: 5px;
+		left: 5px;
+		background-color: inherit;
+		content: "";
+		pointer-events: none;
+	}
+
+	&.is-style-nm,
+	&.is-style-nm-reverse,
+	&.has-background {
+		padding: 1em;
+	}
+
+	> * {
+		position: relative;
+		z-index: 1;
+		max-width: calc(#{$container_width} - #{$container_padding * 2});
+		margin-right: auto;
+		margin-left: auto;
+
+		&:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+			margin-top: 0;
+			margin-bottom: 2em;
+		}
+
+		&:first-child {
+			margin-top: 0 !important;
+		}
+
+		&:last-child {
+			margin-bottom: 0 !important;
 		}
 	}
 }

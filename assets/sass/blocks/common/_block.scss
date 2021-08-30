@@ -14,9 +14,76 @@
 	}
 }
 
+// Link
+a {
+	text-decoration: underline;
+
+	@include mq(lg-min) {
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+// Inline Quotes
+q {
+
+	@include nm-reverse;
+	position: relative;
+	padding: 0.3em 0.5em;
+	color: var(--color-text-main);
+	border: none;
+	border-radius: math.div($base_border_radius, 2);
+}
+
+// Definition Lists
+dl {
+
+	dt {
+		font-weight: bold;
+	}
+
+	dd {
+		margin: 0;
+
+		&:not(:last-of-type) {
+			margin-bottom: 1em;
+		}
+	}
+}
+
+// Preformatted Text
+pre {
+	font-family: inherit;
+}
+
+// Figcaption
+figcaption {
+	margin-top: 0.5em;
+	margin-bottom: 0;
+	color: var(--color-text-main);
+	font-size: 0.8em;
+	text-align: left;
+	opacity: $text_color_thin;
+}
+
+// Password Protected Form
+.post-password-form {
+
+	[name="post_password"] {
+		margin-top: 0.5em;
+	}
+
+	[type="submit"] {
+		margin-top: 2em;
+		color: var(--color-accent);
+	}
+}
+
 // Background
 .has-background {
-	padding: 1.5em 1em;
+	padding: 1em;
 }
 
 // Text Color
@@ -131,110 +198,63 @@
 	font-size: 2em;
 }
 
-// Text Alignment
-.has-text-align-left {
-	text-align: left;
-}
-
-.has-text-align-right {
-	text-align: right;
-}
-
-.has-text-align-center {
-	text-align: center;
-}
-
 // Alignment
 .alignleft {
 	float: left;
 	margin-right: 1.5em;
-	margin-bottom: 0.5em;
 
 	@include mq(md-max) {
 		float: none;
 		margin-right: auto;
-		margin-bottom: 2em;
 		margin-left: auto;
 	}
 }
 
 .alignright {
 	float: right;
-	margin-bottom: 0.5em;
 	margin-left: 1.5em;
 
 	@include mq(md-max) {
 		float: none;
 		margin-right: auto;
-		margin-bottom: 2em;
 		margin-left: auto;
 	}
 }
 
 .aligncenter {
-	display: block;
-	margin: 0 auto 2em;
 	text-align: center;
-}
 
-// Link
-a {
-	text-decoration: underline;
+	> * {
+		margin-right: auto;
+		margin-left: auto;
 
-	@include mq(lg-min) {
-
-		&:hover {
-			text-decoration: none;
+		> figcaption {
+			text-align: center;
 		}
 	}
-}
 
-// Inline Quotes
-q {
-
-	@include nm-reverse;
-	position: relative;
-	padding: 0.3em 0.5em;
-	color: var(--color-text-main);
-	border: none;
-	border-radius: math.div($base_border_radius, 2);
-}
-
-// Definition Lists
-dl {
-
-	dt {
-		font-weight: bold;
-	}
-
-	dd {
-		margin: 0;
-
-		&:not(:last-of-type) {
-			margin-bottom: 1em;
-		}
-	}
-}
-
-// Preformatted Text
-pre {
-	font-family: inherit;
-}
-
-// Password Protected Form
-.post-password-form {
-
-	[name="post_password"] {
-		margin-top: 0.5em;
-	}
-
-	[type="submit"] {
-		margin-top: 2em;
-		color: var(--color-accent);
+	> figcaption {
+		text-align: center;
 	}
 }
 
 // Align Wide/Full
+> .alignwide,
+> .alignfull {
+
+	> * {
+		width: 100%;
+
+		> figcaption {
+			text-align: center;
+		}
+	}
+
+	> figcaption {
+		text-align: center;
+	}
+}
+
 @include mq(lg-min) {
 
 	> .alignwide {

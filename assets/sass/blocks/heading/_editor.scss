@@ -2,12 +2,12 @@
  * Heading
  */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1.wp-block,
+h2.wp-block,
+h3.wp-block,
+h4.wp-block,
+h5.wp-block,
+h6.wp-block {
 
 	@include nm-text-border;
 	margin-top: 1.5em;

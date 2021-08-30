@@ -13,22 +13,12 @@
 		vertical-align: top;
 		border-radius: 1000px;
 	}
-
-	figcaption {
-		margin-bottom: 0;
-		font-size: 0.8em;
-		opacity: $text_color_thin;
-	}
 }
 
-.wp-block[data-align="wide"],
-.wp-block[data-align="full"] {
+[data-align="wide"],
+[data-align="full"] {
 
 	> .wp-block-audio {
-
-		figcaption {
-			text-align: center;
-		}
 
 		audio {
 			width: 100%;

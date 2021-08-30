@@ -6,9 +6,10 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	margin-bottom: 2em;
 
 	a {
+		width: auto;
+		margin: 0;
 
 		&.wp-block-file__button {
 
@@ -28,8 +29,9 @@
 		}
 	}
 
-	&.aligncenter {
-		display: flex;
+	&.aligncenter,
+	&.alignwide,
+	&.alignfull {
 		justify-content: center;
 	}
 }

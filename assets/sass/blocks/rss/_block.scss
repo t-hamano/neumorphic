@@ -11,10 +11,9 @@
 	}
 
 	&:not(.is-grid) {
-		margin-bottom: 2em;
 
 		@include nm;
-		padding: 0.5em 1em;
+		padding: 0 1em;
 		border-radius: $base_border_radius;
 
 		> li {
@@ -31,15 +30,11 @@
 	&.is-grid {
 		margin-bottom: 0.75em;
 
-		&.aligncenter {
-			display: flex;
-		}
-
 		li {
 
 			@include nm;
 			margin: 0 1.25em 1.25em 0;
-			padding: 1.5em;
+			padding: 1em;
 			border-radius: $base_border_radius;
 
 			@media screen and (max-width: 599px) {

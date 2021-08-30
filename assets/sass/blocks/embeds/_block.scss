@@ -3,14 +3,13 @@
  */
 
 .wp-block-embed {
-	margin-bottom: 2em;
 
 	&.alignleft,
 	&.alignright {
 		max-width: 500px;
 	}
 
-	iframe.wp-embedded-content {
+	iframe {
 
 		@include nm-reverse;
 		display: block;
@@ -19,155 +18,174 @@
 		border-radius: $base_border_radius;
 	}
 
-	blockquote {
-		padding: 0;
+	// blockquote {
+	// 	padding: 0;
 
-		&::before {
-			content: none;
-		}
-	}
+	// 	&::before {
+	// 		content: none;
+	// 	}
+	// }
 
-	figcaption {
-		text-align: center;
-	}
+	// figcaption {
+	// 	margin-bottom: 0;
+	// 	font-size: 0.8em;
+	// 	opacity: $text_color_thin;
+	// }
 
-	&.wp-has-aspect-ratio,
-	&-crowdsignal,
-	&-plugin-directory {
+	// &.wp-has-aspect-ratio,
+	// &-crowdsignal,
+	// &-plugin-directory {
 
-		iframe {
+	// 	iframe {
 
-			@include nm-media;
-			display: block;
-			width: 100%;
-			margin: 0 !important;
-			border: none !important;
-		}
-	}
+	// 		@include nm-media;
+	// 		display: block;
+	// 		width: 100%;
+	// 		margin: 0 !important;
+	// 		border: none !important;
+	// 	}
+	// }
 
-	&-imgur {
+	// &-imgur {
 
-		iframe {
+	// 	iframe {
 
-			@include nm-media;
-			display: inline-block;
-			margin: 0 !important;
-			vertical-align: top;
-		}
-	}
+	// 		@include nm-media;
+	// 		display: inline-block;
+	// 		margin: 0 !important;
+	// 		vertical-align: top;
+	// 	}
+	// }
 
-	&-tumblr {
+	// &-tumblr {
 
-		.wp-block-embed__wrapper {
+	// 	.wp-block-embed__wrapper {
 
-			@include nm-media;
-			display: inline-block;
-			vertical-align: top;
+	// 		@include nm-media;
+	// 		display: inline-block;
+	// 		vertical-align: top;
 
-			iframe {
-				margin: 0 !important;
-			}
-		}
-	}
+	// 		iframe {
+	// 			margin: 0 !important;
+	// 		}
+	// 	}
+	// }
 
-	&-tiktok {
+	// &-tiktok {
 
-		.tiktok-embed {
-			display: inline-block;
-			margin: 0;
-			vertical-align: top;
-		}
+	// 	.tiktok-embed {
+	// 		display: inline-block;
+	// 		margin: 0;
+	// 		vertical-align: top;
+	// 	}
 
-		iframe {
-			padding: 5px;
-			border-radius: $base_border_radius;
-		}
-	}
+	// 	iframe {
+	// 		padding: 5px;
+	// 		border-radius: $base_border_radius;
+	// 	}
+	// }
 
-	&-smugmug,
-	&-flickr {
+	// &-smugmug,
+	// &-flickr {
 
-		.wp-block-embed__wrapper {
+	// 	.wp-block-embed__wrapper {
 
-			&::before {
-				content: none !important;
-			}
+	// 		&::before {
+	// 			content: none !important;
+	// 		}
 
-			img {
+	// 		img {
 
-				@include nm-media;
-				width: 100%;
-			}
-		}
-	}
+	// 			@include nm-media;
+	// 			width: 100%;
+	// 		}
+	// 	}
+	// }
 
-	&-issuu {
+	// &-issuu {
 
-		.issuuembed {
+	// 	.issuuembed {
 
-			@include nm-media;
-			display: inline-block;
-			max-width: 100%;
-			vertical-align: top;
-			border-radius: $base_border_radius;
+	// 		@include nm-media;
+	// 		display: inline-block;
+	// 		max-width: 100%;
+	// 		vertical-align: top;
+	// 		border-radius: $base_border_radius;
 
-			iframe {
-				border-radius: math.div($base_border_radius, 2);
-			}
-		}
-	}
+	// 		iframe {
+	// 			border-radius: math.div($base_border_radius, 2);
+	// 		}
+	// 	}
+	// }
 
-	&-meetup {
+	// &-meetup {
 
-		@include nm-media;
+	// 	@include nm-media;
 
-		#meetup_oembed {
-			height: auto !important;
-		}
+	// 	#meetup_oembed {
+	// 		height: auto !important;
+	// 	}
 
-		h1,
-		h2,
-		h3 {
+	// 	h1,
+	// 	h2,
+	// 	h3 {
 
-			&::before {
-				content: none;
-			}
-		}
-	}
+	// 		&::before {
+	// 			content: none;
+	// 		}
+	// 	}
+	// }
 
-	&-reddit {
+	// &-reddit {
 
-		.embedly-card-hug {
+	// 	.embedly-card-hug {
 
-			@include nm-media;
-			margin: 0 !important;
-			background: #e1e2e6 !important;
-		}
-	}
+	// 		@include nm-media;
+	// 		margin: 0 !important;
+	// 		background: #e1e2e6 !important;
+	// 	}
+	// }
 
-	&-reverbnation {
+	// &-reverbnation {
 
-		.wp-block-embed__wrapper {
-			max-width: 500px;
-		}
-	}
+	// 	.wp-block-embed__wrapper {
+	// 		max-width: 500px;
+	// 	}
+	// }
 
-	&-amazon {
+	// &-amazon {
 
-		iframe {
+	// 	iframe {
 
-			@include nm-media;
-			display: block;
-			width: 100%;
-		}
-	}
+	// 		@include nm-media;
+	// 		display: block;
+	// 		width: 100%;
+	// 	}
+	// }
 
-	&-twitter {
+	// &-twitter {
 
-		.twitter-tweet {
+	// 	.twitter-tweet {
 
-			@include nm-media;
-			margin: 0 auto !important;
-		}
-	}
+	// 		@include nm-media;
+	// 		margin-top: 0 !important;
+	// 		margin-bottom: 0 !important;
+	// 	}
+
+	// 	&.alignwide,
+	// 	&.alignfull {
+
+	// 		.twitter-tweet {
+	// 			max-width: 100% !important;
+	// 		}
+	// 	}
+
+	// 	&.aligncenter {
+
+	// 		.twitter-tweet {
+	// 			margin-right: auto;
+	// 			margin-left: auto;
+	// 		}
+	// 	}
+	// }
 }

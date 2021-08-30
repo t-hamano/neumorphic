@@ -56,21 +56,11 @@ table {
 }
 
 .wp-block-table {
-	margin-bottom: 2em;
 	overflow-x: initial;
-	text-align: left;
 
-	&.aligncenter table {
+	&.aligncenter {
 		margin-right: auto;
 		margin-left: auto;
-	}
-
-	&.alignwide,
-	&.alignfull {
-
-		table {
-			width: 100%;
-		}
 	}
 
 	&.is-style-nm-none table {
@@ -89,21 +79,6 @@ table {
 
 		tbody tr:nth-child(odd) {
 			background-color: var(--color-nm-light);
-		}
-	}
-
-	figcaption {
-		margin-top: 0.5em;
-		font-size: 0.8em;
-		opacity: $text_color_thin;
-	}
-
-	&.aligncenter,
-	&.alignwide,
-	&.alignfull {
-
-		figcaption {
-			text-align: center;
 		}
 	}
 }

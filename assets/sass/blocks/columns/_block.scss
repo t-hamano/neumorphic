@@ -3,7 +3,6 @@
  */
 
 .wp-block-columns {
-	margin-bottom: 2em;
 
 	&.is-style-nm {
 
@@ -17,7 +16,7 @@
 
 	&.is-style-nm,
 	&.is-style-nm-reverse {
-		padding: 1.5em;
+		padding: 1em;
 		border-radius: $base_border_radius;
 
 		&.has-background {
@@ -35,47 +34,6 @@
 				pointer-events: none;
 			}
 		}
-		// > .wp-block-column {
-		// 	padding-top: 1.5em;
-		// 	padding-bottom: 1.5em;
-
-		// 	&:first-child {
-		// 		padding-left: 1.5em;
-		// 	}
-
-		// 	&:last-child {
-		// 		padding-right: 1.5em;
-		// 	}
-
-		// 	@media (max-width: 781px) and (min-width: 600px) {
-
-		// 		&:nth-child(odd) {
-		// 			padding-left: 1.5em;
-		// 		}
-
-		// 		&:nth-child(even) {
-		// 			padding-right: 1.5em;
-		// 		}
-
-		// 		&:not(:nth-last-child(-n+2)) {
-		// 			margin-bottom: 0;
-		// 			padding-bottom: 0;
-		// 		}
-		// 	}
-
-		// 	@media screen and (max-width: 599px) {
-		// 		padding-right: 1.5em;
-		// 		padding-left: 1.5em;
-
-		// 		&:not(:first-child) {
-		// 			padding-top: 0;
-		// 		}
-
-		// 		&:not(:last-child) {
-		// 			padding-bottom: 0;
-		// 		}
-		// 	}
-		// }
 	}
 }
 
@@ -113,12 +71,20 @@
 		}
 	}
 
-	> *:first-child {
-		margin-top: 0 !important;
-	}
+	> * {
 
-	> *:last-child {
-		margin-bottom: 0 !important;
+		&:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+			margin-top: 0;
+			margin-bottom: 2em;
+		}
+
+		&:first-child {
+			margin-top: 0;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 
 	@media (max-width: 781px) and (min-width: 600px) {

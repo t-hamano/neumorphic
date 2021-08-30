@@ -3,10 +3,10 @@
  */
 
 .wp-block-gallery {
-	margin-bottom: 2em;
 
 	.blocks-gallery-grid {
 		width: 100%;
+		margin-bottom: -1em;
 		padding: 0;
 	}
 
@@ -43,11 +43,6 @@
 		}
 	}
 
-	> figcaption {
-		font-size: 0.8em;
-		opacity: $text_color_thin;
-	}
-
 	&.is-style-nm-none {
 
 		.blocks-gallery-image,
@@ -78,14 +73,6 @@
 				border-radius: 0;
 				box-shadow: none;
 			}
-		}
-	}
-
-	&.alignwide,
-	&.alignfull {
-
-		> figcaption {
-			text-align: center;
 		}
 	}
 }

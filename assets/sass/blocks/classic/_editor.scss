@@ -32,6 +32,7 @@
 		h6 {
 			margin-top: 1.5em;
 			margin-bottom: 1em;
+			line-height: 1.4;
 		}
 
 		// Link
@@ -59,7 +60,7 @@
 		blockquote {
 
 			@include nm-reverse;
-			padding: 1.5em 1.5em 1.5em 3.5em;
+			padding: 1em 1em 1em 3.5em;
 		}
 
 		// More

@@ -3,13 +3,12 @@
  */
 
 .wp-block-buttons {
-	margin-bottom: 2em;
 	column-gap: 20px;
 
 	&.alignwide,
 	&.alignfull {
-		padding-right: 1em;
-		padding-left: 1em;
+		padding-right: 0.5em;
+		padding-left: 0.5em;
 	}
 
 	> .wp-block-button {
@@ -59,6 +58,10 @@
 			&:active::before {
 
 				@include nm-active;
+			}
+
+			&:focus-visible::before {
+				z-index: -1;
 			}
 		}
 	}

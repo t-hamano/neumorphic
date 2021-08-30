@@ -3,7 +3,6 @@
  */
 
 .wp-block-buttons {
-	margin-bottom: 2em;
 	column-gap: 20px;
 
 	> .wp-block-button {
@@ -52,7 +51,7 @@
 [data-align="full"] {
 
 	> .wp-block-buttons {
-		padding-right: 1em;
-		padding-left: 1em;
+		padding-right: 0.5em;
+		padding-left: 0.5em;
 	}
 }

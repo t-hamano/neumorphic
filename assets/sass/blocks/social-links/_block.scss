@@ -5,19 +5,19 @@
 .wp-block-social-links {
 	margin-top: 0;
 	margin-bottom: 1.4em;
+	padding-left: 0;
 
-	.entry-content & {
+	&.wp-block-social-links {
 		padding-left: 0;
 	}
 
-	&.alignleft,
-	&.aligncenter,
-	&.alignrght {
+	&.aligncenter {
 		margin-bottom: 1.4em;
 	}
 
-	&.aligncenter {
-		display: flex !important;
+	&.alignleft,
+	&.alignright {
+		margin-bottom: 1em;
 	}
 
 	.wp-social-link.wp-social-link.wp-social-link {

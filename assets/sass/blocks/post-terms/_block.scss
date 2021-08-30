@@ -3,11 +3,10 @@
  */
 
 .wp-block-post-terms {
-	margin-bottom: 2em;
 
 	&.is-style-nm,
 	&.is-style-nm-reverse {
-		padding: 1.5em;
+		padding: 1em;
 		border-radius: $base_border_radius;
 	}
 

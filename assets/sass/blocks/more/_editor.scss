@@ -3,6 +3,7 @@
  */
 
 .wp-block-more {
+	clear: both;
 
 	&::before {
 		margin-top: -1.5px;
@@ -11,9 +12,10 @@
 	}
 
 	input[type="text"] {
-		width: auto !important;
+		max-width: calc(100% - 4em);
 		color: var(--color-accent);
 		font-family: inherit;
+		text-overflow: ellipsis;
 		background: var(--color-nm-light);
 
 		&::placeholder {

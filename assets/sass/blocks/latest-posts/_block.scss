@@ -4,13 +4,12 @@
 
 .wp-block-latest-posts {
 	margin-top: 0;
-	margin-bottom: 2em;
 
 	&.wp-block-latest-posts__list > li {
 
 		@include nm;
 		@include clearfix();
-		padding: 1.5em 1em;
+		padding: 1em;
 		border-radius: $base_border_radius;
 
 		> a {

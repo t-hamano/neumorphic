@@ -20,7 +20,7 @@
 		&:not(.is-grid) {
 
 			@include nm;
-			padding: 0.5em 1em;
+			padding: 0 1em;
 			border-radius: $base_border_radius;
 
 			> li {
@@ -40,7 +40,7 @@
 
 				@include nm;
 				margin: 0 1.25em 1.25em 0;
-				padding: 1.5em;
+				padding: 1em;
 				border-radius: $base_border_radius;
 
 				@media screen and (max-width: 599px) {

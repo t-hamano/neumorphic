@@ -6,7 +6,7 @@
 
 	&.is-style-nm,
 	&.is-style-nm-reverse {
-		padding: 1.5em 1em;
+		padding: 1em;
 		border-radius: $base_border_radius;
 	}
 
@@ -22,10 +22,6 @@
 
 	&__list {
 		margin: 0;
-
-		.wp-block-categories__list {
-			padding: 0;
-		}
 	}
 
 	&__dropdown {

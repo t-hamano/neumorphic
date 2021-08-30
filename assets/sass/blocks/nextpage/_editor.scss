@@ -3,6 +3,7 @@
  */
 
 .wp-block-nextpage {
+	clear: both;
 
 	&::before {
 		border-top: 3px var(--color-accent) solid;

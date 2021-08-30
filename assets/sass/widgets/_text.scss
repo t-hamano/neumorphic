@@ -43,13 +43,4 @@
 
 		@include nm-media();
 	}
-
-	figcaption {
-		margin-top: 0.5em;
-		margin-bottom: 0;
-		color: inherit;
-		font-size: 0.8em;
-		text-align: center;
-		opacity: $text_color_thin;
-	}
 }
