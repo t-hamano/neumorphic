@@ -5,18 +5,19 @@
 .wp-block-group {
 	padding: 0;
 
+	&.is-style-nm,
+	&.is-style-nm-reverse,
 	&.has-background {
-		margin-bottom: 28px;
+		padding: 1em;
+	}
+
+	&.has-background {
+		margin-bottom: 2em;
 	}
 
 	&.is-style-nm,
 	&.is-style-nm-reverse {
 		border-radius: $base_border_radius;
-
-		&.has-background {
-			padding: 5px;
-			background-clip: content-box;
-		}
 	}
 
 	&.is-style-nm {
@@ -27,15 +28,6 @@
 	&.is-style-nm-reverse {
 
 		@include nm-reverse;
-	}
-
-	&.is-style-nm,
-	&.is-style-nm-reverse,
-	&.has-background {
-
-		.wp-block-group__inner-container {
-			padding: 1em;
-		}
 	}
 
 	.wp-block:first-child {

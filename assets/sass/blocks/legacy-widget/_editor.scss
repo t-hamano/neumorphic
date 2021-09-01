@@ -3,9 +3,9 @@
  */
 
 .wp-block-legacy-widget {
+	font-size: 16px;
 
 	@include nm;
-	padding: 1em;
 	border-radius: $base_border_radius;
 
 	.wp-block-legacy-widget__edit-form {
@@ -36,7 +36,8 @@
 				font-family: inherit;
 			}
 
-			input {
+			input,
+			select {
 				background: #fff;
 			}
 		}

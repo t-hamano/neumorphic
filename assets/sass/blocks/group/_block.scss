@@ -7,6 +7,12 @@
 	padding: 0;
 
 	&.is-style-nm,
+	&.is-style-nm-reverse,
+	&.has-background {
+		padding: 1em;
+	}
+
+	&.is-style-nm,
 	&.is-style-nm-reverse {
 		border-radius: $base_border_radius;
 	}
@@ -40,12 +46,6 @@
 			margin-bottom: 0 !important;
 		}
 	}
-
-	&.is-style-nm,
-	&.is-style-nm-reverse,
-	&.has-background {
-		padding: 1em;
-	}
 }
 
 header.wp-block-group,
@@ -54,23 +54,6 @@ section.wp-block-group,
 article.wp-block-group,
 aside.wp-block-group,
 footer.wp-block-group {
-
-	&::before {
-		position: absolute;
-		top: 5px;
-		right: 5px;
-		bottom: 5px;
-		left: 5px;
-		background-color: inherit;
-		content: "";
-		pointer-events: none;
-	}
-
-	&.is-style-nm,
-	&.is-style-nm-reverse,
-	&.has-background {
-		padding: 1em;
-	}
 
 	> * {
 		position: relative;
