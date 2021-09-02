@@ -5,6 +5,11 @@
 // Image
 .wp-caption {
 	max-width: 100%;
+
+	&.aligncenter {
+		margin-right: auto;
+		margin-left: auto;
+	}
 }
 
 p,
@@ -82,9 +87,5 @@ p > a,
 }
 
 .gallery-caption {
-	margin-top: 0.5em;
-	color: inherit;
-	font-size: 0.8em;
 	text-align: center;
-	opacity: $text_color_thin;
 }

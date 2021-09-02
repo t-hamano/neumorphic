@@ -116,14 +116,12 @@ body#tinymce.wp-editor.content {
 	// Alignment
 	.alignleft {
 		float: left;
-		margin-right: 1.5em;
-		margin-bottom: 0.5em;
+		margin: 0 1.5em 1.5em 0;
 	}
 
 	.align-right {
 		float: right;
-		margin-bottom: 0.5em;
-		margin-left: 1.5em;
+		margin: 0 0 1.5em 1.5em;
 	}
 
 	.align-center {

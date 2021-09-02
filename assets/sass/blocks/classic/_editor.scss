@@ -23,6 +23,15 @@
 			}
 		}
 
+		// Alignment
+		.alignright {
+			margin: 0 0 1.5em 1.5em;
+		}
+
+		.alignleft {
+			margin: 0 1.5em 1.5em 0;
+		}
+
 		// Heading
 		h1,
 		h2,
@@ -76,6 +85,15 @@
 		// Image
 		.wp-caption {
 			max-width: 100%;
+
+			&.aligncenter {
+				margin-right: auto;
+				margin-left: auto;
+
+				.wp-caption-dd {
+					text-align: center;
+				}
+			}
 		}
 
 		p,
@@ -91,9 +109,18 @@
 		}
 
 		.wp-caption-text {
-			margin-top: 0.5em;
 			font-size: 0.8em;
 			opacity: $text_color_thin;
+		}
+
+		.wp-caption-dd {
+			margin-top: 0.5em;
+			font-size: 0.8em;
+			opacity: 0.8;
+
+			a {
+				display: inline;
+			}
 		}
 
 		// Gallery
@@ -110,15 +137,13 @@
 
 		.gallery-item {
 			margin-bottom: 20px;
+			padding: 0 5px;
 		}
 
 		.gallery-caption {
 			margin-top: 0.5em;
 			margin-bottom: 0;
-			color: inherit;
-			font-size: 0.8em;
 			text-align: center;
-			opacity: $text_color_thin;
 		}
 	}
 }

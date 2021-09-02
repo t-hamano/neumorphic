@@ -201,7 +201,7 @@ figcaption {
 // Alignment
 .alignleft {
 	float: left;
-	margin-right: 1.5em;
+	margin: 0 1.5em 1.5em 0;
 
 	@include mq(md-max) {
 		float: none;
@@ -212,7 +212,7 @@ figcaption {
 
 .alignright {
 	float: right;
-	margin-left: 1.5em;
+	margin: 0 0 1.5em 1.5em;
 
 	@include mq(md-max) {
 		float: none;
@@ -236,6 +236,13 @@ figcaption {
 	> figcaption {
 		text-align: center;
 	}
+}
+
+img[class^="wp-image-"].aligncenter,
+img[class*=" wp-image-"].aligncenter {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 // Align Wide/Full
