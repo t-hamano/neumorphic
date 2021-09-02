@@ -45,6 +45,15 @@ blockquote {
 // Quote
 .wp-block-quote {
 
+	&.has-text-align-center {
+		padding-left: 3.5em;
+	}
+
+	&.has-text-align-right {
+		padding-left: 3.5em;
+		border: none;
+	}
+
 	&.is-style-nm-none {
 		padding: 0 0 0 2.8em;
 		box-shadow: none;
