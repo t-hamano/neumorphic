@@ -31,7 +31,8 @@
 		}
 	}
 
-	> figcaption {
+	&.wp-block-gallery > figcaption {
+		color: var(--color-text-main);
 		font-size: 0.8em;
 		opacity: $text_color_thin;
 	}

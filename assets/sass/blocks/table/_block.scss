@@ -66,6 +66,7 @@ table {
 	&.is-style-nm-none table {
 		overflow: auto;
 		border: 1px solid var(--color-nm-dark);
+		border-radius: 0;
 		box-shadow: none;
 	}
 
@@ -80,5 +81,16 @@ table {
 		tbody tr:nth-child(odd) {
 			background-color: var(--color-nm-light);
 		}
+	}
+
+	&.alignwide > table {
+
+		@include mq(md-max) {
+			border-radius: 0;
+		}
+	}
+
+	&.alignfull > table {
+		border-radius: 0;
 	}
 }

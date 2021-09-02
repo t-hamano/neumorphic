@@ -34,6 +34,29 @@
 				pointer-events: none;
 			}
 		}
+
+		&.alignwide {
+
+			@include mq(md-max) {
+				border-radius: 0;
+
+				&.has-background::before {
+					border-right: none;
+					border-left: none;
+					border-radius: 0;
+				}
+			}
+		}
+
+		&.alignfull {
+			border-radius: 0;
+
+			&.has-background::before {
+				border-right: none;
+				border-left: none;
+				border-radius: 0;
+			}
+		}
 	}
 }
 

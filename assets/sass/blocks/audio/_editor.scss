@@ -13,6 +13,10 @@
 		vertical-align: top;
 		border-radius: 1000px;
 	}
+
+	&.wp-block-audio > figcaption {
+		color: var(--color-text-main);
+	}
 }
 
 [data-align="wide"],

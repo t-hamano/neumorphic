@@ -9,6 +9,10 @@
 		@include nm-media;
 		display: block;
 	}
+
+	&.wp-block-video > figcaption {
+		color: var(--color-text-main);
+	}
 }
 
 [data-align="center"] > .wp-block-video video {

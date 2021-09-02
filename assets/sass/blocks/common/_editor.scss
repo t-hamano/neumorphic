@@ -39,6 +39,11 @@ body {
 		&:focus {
 			color: inherit;
 		}
+
+		&::placeholder {
+			color: inherit;
+			opacity: $base_placeholder_opacity;
+		}
 	}
 }
 

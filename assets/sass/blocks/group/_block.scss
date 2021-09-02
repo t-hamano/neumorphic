@@ -15,6 +15,17 @@
 	&.is-style-nm,
 	&.is-style-nm-reverse {
 		border-radius: $base_border_radius;
+
+		&.alignwide {
+
+			@include mq(md-max) {
+				border-radius: 0;
+			}
+		}
+
+		&.alignfull {
+			border-radius: 0;
+		}
 	}
 
 	&.is-style-nm {

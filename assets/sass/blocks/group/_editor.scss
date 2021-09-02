@@ -38,3 +38,11 @@
 		margin-bottom: 0;
 	}
 }
+
+[data-align="full"] > .wp-block-group {
+
+	&.is-style-nm,
+	&.is-style-nm-reverse {
+		border-radius: 0;
+	}
+}

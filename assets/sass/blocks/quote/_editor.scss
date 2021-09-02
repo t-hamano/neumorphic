@@ -142,3 +142,7 @@ blockquote {
 		}
 	}
 }
+
+[data-align="full"] > .wp-block-pullquote {
+	border-radius: 0;
+}

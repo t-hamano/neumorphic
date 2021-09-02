@@ -28,6 +28,10 @@
 			border-radius: 50%;
 		}
 	}
+
+	&.wp-block-image figcaption {
+		color: var(--color-text-main);
+	}
 }
 
 .wp-block[data-align="center"],

@@ -39,3 +39,14 @@
 		}
 	}
 }
+
+.wp-block-query.alignwide > .wp-block-post-template > li {
+
+	@include mq(md-max) {
+		border-radius: 0;
+	}
+}
+
+.wp-block-query.alignfull > .wp-block-post-template > li {
+	border-radius: 0;
+}

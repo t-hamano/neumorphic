@@ -79,3 +79,17 @@
 		margin-bottom: 0 !important;
 	}
 }
+
+[data-align="full"] > .wp-block-columns {
+
+	&.is-style-nm,
+	&.is-style-nm-reverse {
+		border-radius: 0;
+
+		&.has-background::before {
+			border-right: none;
+			border-left: none;
+			border-radius: 0;
+		}
+	}
+}
