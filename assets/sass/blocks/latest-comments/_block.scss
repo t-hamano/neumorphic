@@ -11,6 +11,17 @@
 		padding: 0.5em 1em;
 	}
 
+	&.alignwide {
+
+		@include mq(md-max) {
+			border-radius: 0;
+		}
+	}
+
+	&.alignfull {
+		border-radius: 0;
+	}
+
 	.wp-block-latest-comments__comment {
 		position: relative;
 		min-height: 4.2em;

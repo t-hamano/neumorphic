@@ -18,22 +18,6 @@
 	&.is-style-nm-reverse {
 		padding: 1em;
 		border-radius: $base_border_radius;
-
-		&.has-background {
-			position: relative;
-
-			&::before {
-				position: absolute;
-				top: 0;
-				right: 0;
-				bottom: 0;
-				left: 0;
-				border: 5px var(--color-bg) solid;
-				border-radius: $base_border_radius;
-				content: "";
-				pointer-events: none;
-			}
-		}
 	}
 }
 
@@ -85,11 +69,5 @@
 	&.is-style-nm,
 	&.is-style-nm-reverse {
 		border-radius: 0;
-
-		&.has-background::before {
-			border-right: none;
-			border-left: none;
-			border-radius: 0;
-		}
 	}
 }

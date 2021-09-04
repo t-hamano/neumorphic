@@ -19,6 +19,10 @@
 		max-width: 100%;
 	}
 
+	&.alignfull {
+		border-radius: 0;
+	}
+
 	.wp-calendar-table {
 		width: 100%;
 		table-layout: fixed;
