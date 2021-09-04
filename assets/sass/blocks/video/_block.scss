@@ -9,6 +9,17 @@
 		max-width: 500px;
 	}
 
+	&.alignwide video {
+
+		@include mq(md-max) {
+			border-radius: 0;
+		}
+	}
+
+	&.alignfull video {
+		border-radius: 0;
+	}
+
 	video {
 
 		@include nm-media;

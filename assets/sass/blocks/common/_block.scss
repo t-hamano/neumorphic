@@ -287,8 +287,8 @@ img[class*=" wp-image-"].aligncenter {
 		.contents--sidebar-none &,
 		.contents--flat & {
 			position: relative;
-			left: calc(50% - (50vw - var(--scrollbar-width, 0)/ 2));
-			width: calc(100vw - var(--scrollbar-width, 0));
+			left: calc(50% - (50vw - var(--scrollbar-width, 17px)/ 2));
+			width: calc(100vw - var(--scrollbar-width, 17px));
 			max-width: 100vw;
 		}
 	}
@@ -298,9 +298,9 @@ img[class*=" wp-image-"].aligncenter {
 
 	> .alignwide {
 		position: relative;
-		left: calc(50% - (50vw - var(--scrollbar-width, 0)/ 2));
-		width: calc(100vw - var(--scrollbar-width, 0));
-		max-width: calc(100vw - var(--scrollbar-width, 0));
+		left: calc(50% - (50vw - var(--scrollbar-width, 17px)/ 2));
+		width: calc(100vw - var(--scrollbar-width, 17px));
+		max-width: calc(100vw - var(--scrollbar-width, 17px));
 		margin-right: 0;
 		margin-left: 0;
 		transform: none;
@@ -308,8 +308,8 @@ img[class*=" wp-image-"].aligncenter {
 
 	> .alignfull {
 		position: relative;
-		left: calc(50% - (50vw - var(--scrollbar-width, 0)/ 2));
-		width: calc(100vw - var(--scrollbar-width, 0));
-		max-width: calc(100vw - var(--scrollbar-width, 0));
+		left: calc(50% - (50vw - var(--scrollbar-width, 17px)/ 2));
+		width: calc(100vw - var(--scrollbar-width, 17px));
+		max-width: calc(100vw - var(--scrollbar-width, 17px));
 	}
 }

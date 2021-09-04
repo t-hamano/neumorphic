@@ -88,7 +88,7 @@
 		position: relative;
 		width: 100%;
 		padding: 2em 3em;
-		text-align: initial;
+		text-align: left;
 
 		@include mq(md-max) {
 			padding-right: 1.5em;

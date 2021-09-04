@@ -28,3 +28,7 @@
 		max-width: 500px;
 	}
 }
+
+[data-align="full"] > .wp-block-video video {
+	border-radius: 0;
+}

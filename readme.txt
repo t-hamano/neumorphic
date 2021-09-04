@@ -28,6 +28,14 @@ Neumorphic is a advanced WordPress theme based on neumorphic design. This theme 
 License: Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License
 Source: https://fontawesome.com/
 
+= css-vars-ponyfill=
+License: MIT License
+Source: https://github.com/jhildenbiddle/css-vars-ponyfill
+
+= object-fit-images =
+License: MIT License
+Source: https://github.com/fregante/object-fit-images
+
 = Image for theme screenshot =
 License: CC0 Public Domain
 Source: https://pxhere.com/ja/photo/32163

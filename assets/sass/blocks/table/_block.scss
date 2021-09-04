@@ -56,7 +56,7 @@ table {
 }
 
 .wp-block-table {
-	overflow-x: initial;
+	overflow: visible;
 
 	&.aligncenter {
 		margin-right: auto;

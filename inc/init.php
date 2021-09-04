@@ -252,21 +252,24 @@ function neumorphic_scripts() {
 	// Customizer CSS
 	wp_add_inline_style( 'neumorphic', neumorphic_generate_css() );
 
-	// Main Script
-	wp_enqueue_script( 'neumorphic', get_theme_file_uri( '/assets/js/main.js' ), array( 'jquery' ), $theme_version, false );
-
 	// Comment reply Script
 	if ( ( ! is_admin() ) && is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	// CSS custom properties support for IE
+	// CSS custom properties and object-fit properties support for IE
 	global $is_IE;
 
 	if ( $is_IE ) {
-		wp_enqueue_script( 'neumorphic-ponyfill', get_theme_file_uri( '/assets/js/lib/css-vars-ponyfill.min.js' ), array(), $theme_version, false );
+		wp_enqueue_script( 'neumorphic-ponyfill', get_theme_file_uri( '/assets/js/lib/css-vars-ponyfill.min.js' ), array(), $theme_version );
 		wp_add_inline_script( 'neumorphic-ponyfill', 'cssVars();' );
+
+		wp_enqueue_script( 'neumorphic-ofi', get_theme_file_uri( '/assets/js/lib/ofi.min.js' ), array(), $theme_version );
+		wp_add_inline_script( 'neumorphic-ofi', ' objectFitImages();' );
 	}
+
+	// Main Script
+	wp_enqueue_script( 'neumorphic', get_theme_file_uri( '/assets/js/main.js' ), array( 'jquery' ), $theme_version, false );
 }
 
 add_action( 'wp_enqueue_scripts', 'neumorphic_scripts' );
@@ -301,10 +304,34 @@ function neumorphic_skip_link_focus_fix() {
 add_action( 'wp_print_footer_scripts', 'neumorphic_skip_link_focus_fix' );
 
 /**
+ * Add a class to the body tag when the browser is ie.
+ *
+ * @param string[] $classes An array of body class names.
+ *
+ * @return string[] Array of class names.
+ */
+function neumorphic_body_class( $classes ) {
+	global $is_IE;
+
+	if ( $is_IE ) {
+		$classes[] = 'is-ie';
+	}
+
+	return $classes;
+}
+
+add_filter( 'body_class', 'neumorphic_body_class' );
+
+/**
  * Add inline style to classic editor.
+ *
+ * @param array  $settings   An array with TinyMCE config.
+ *
+ * @return string[] Array of TinyMCE config.
  */
 function neumorphic_classic_editor_inline_style( $settings ) {
 	$settings['content_style'] = neumorphic_generate_css();
+
 	return $settings;
 }
 
