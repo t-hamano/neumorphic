@@ -3,11 +3,9 @@
  */
 
 .wp-block-site-logo {
-	margin-bottom: 2em;
 
-	&.is-style-nm a {
+	&.is-style-nm img {
 
 		@include nm-media;
-		display: inline-block;
 	}
 }

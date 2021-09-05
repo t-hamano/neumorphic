@@ -8,6 +8,7 @@ blockquote {
 	position: relative;
 	margin: 0;
 	padding: 1em 1em 1em 3.5em;
+	border: none;
 	border-radius: $base_border_radius;
 
 	&::before {
@@ -38,6 +39,7 @@ blockquote {
 	cite {
 		display: block;
 		font-size: 0.8em;
+		font-style: italic;
 		opacity: $text_color_thin;
 	}
 }
@@ -85,6 +87,7 @@ blockquote {
 .wp-block-pullquote {
 	padding: 0;
 	text-align: inherit;
+	border: none;
 
 	blockquote {
 		border-radius: 0;
@@ -129,10 +132,6 @@ blockquote {
 
 			p {
 				margin-bottom: 1em;
-			}
-
-			cite {
-				font-style: italic;
 			}
 		}
 

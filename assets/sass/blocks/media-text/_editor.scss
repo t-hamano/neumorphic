@@ -32,18 +32,6 @@
 
 		&.has-background {
 			position: relative;
-
-			&::before {
-				position: absolute;
-				top: 0;
-				right: 0;
-				bottom: 0;
-				left: 0;
-				border: 5px var(--color-bg) solid;
-				border-radius: $base_border_radius;
-				content: "";
-				pointer-events: none;
-			}
 		}
 	}
 
@@ -61,17 +49,6 @@
 		@include nm-media;
 		min-height: 200px;
 		background-clip: content-box;
-
-		img {
-			position: absolute;
-			width: 1px;
-			height: 1px;
-			margin: -1px;
-			padding: 0;
-			overflow: hidden;
-			border: 0;
-			clip: rect(0, 0, 0, 0);
-		}
 	}
 
 	@include mq(md-max) {
@@ -107,4 +84,8 @@
 			}
 		}
 	}
+}
+
+[data-align="full"] > .wp-block-media-text {
+	border-radius: 0;
 }

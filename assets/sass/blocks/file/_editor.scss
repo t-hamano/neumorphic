@@ -27,6 +27,9 @@
 
 [data-align="center"],
 [data-align="wide"],
-[data-align="full"] > .wp-block-file > .wp-block-file__content-wrapper {
-	justify-content: center;
+[data-align="full"] {
+
+	> .wp-block-file > .wp-block-file__content-wrapper {
+		justify-content: center;
+	}
 }

@@ -51,8 +51,9 @@
 
 				@include nm;
 				display: block;
-				color: var(--color-accent) !important;
+				color: var(--color-accent);
 				font-weight: bold;
+				text-decoration: none;
 				border-radius: $base_border_radius;
 			}
 		}

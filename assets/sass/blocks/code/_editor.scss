@@ -16,6 +16,7 @@ code {
 
 	@include nm-reverse;
 	padding: 1em;
+	border: none;
 	border-radius: $base_border_radius;
 
 	code {

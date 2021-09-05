@@ -12,11 +12,15 @@
 	&.alignwide video {
 
 		@include mq(md-max) {
+			padding-right: 0;
+			padding-left: 0;
 			border-radius: 0;
 		}
 	}
 
 	&.alignfull video {
+		padding-right: 0;
+		padding-left: 0;
 		border-radius: 0;
 	}
 

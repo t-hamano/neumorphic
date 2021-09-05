@@ -8,7 +8,7 @@
 
 	&:not(.is-style-nm-none) {
 
-		@include nm-reverse();
+		@include nm-reverse;
 		border-radius: $base_border_radius;
 	}
 }

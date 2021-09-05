@@ -225,6 +225,11 @@
 		&__input {
 			top: 0;
 			background-color: #fff !important;
+			box-shadow: inset 3px 3px 6px #999, inset -6px -6px 12px #aaa;
+		}
+
+		&__btn {
+			color: inherit;
 		}
 	}
 }

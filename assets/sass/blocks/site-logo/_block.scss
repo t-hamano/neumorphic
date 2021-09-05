@@ -3,11 +3,11 @@
  */
 
 .wp-block-site-logo {
+	text-align: center;
 
 	&.is-style-nm a {
 
 		@include nm-media-link;
-		display: inline-block;
 	}
 
 	&:not(.is-style-nm) a {

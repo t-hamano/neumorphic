@@ -44,6 +44,11 @@ table {
 	overflow-x: initial;
 	text-align: left;
 
+	thead,
+	tfoot {
+		border: none;
+	}
+
 	&.is-style-nm-none table {
 		overflow: auto;
 		border: 1px solid var(--color-nm-dark);

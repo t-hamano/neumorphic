@@ -12,8 +12,6 @@
 	> a {
 
 		@include nm-media-link;
-		display: inline-block;
-		vertical-align: top;
 	}
 
 	figure {
@@ -23,8 +21,6 @@
 		> a {
 
 			@include nm-media-link;
-			display: inline-block;
-			vertical-align: top;
 		}
 
 		> img {

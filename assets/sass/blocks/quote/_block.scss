@@ -92,7 +92,7 @@ blockquote {
 
 	&:not(.is-style-solid-color) {
 
-		@include nm-reverse();
+		@include nm-reverse;
 		padding: 1.5em 1em;
 		border-color: var(--color-text-main);
 		border-radius: $base_border_radius;

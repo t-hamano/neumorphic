@@ -21,84 +21,36 @@
 }
 
 // Neumorphic Styles
-@mixin nm-common() {
-	text-decoration: none;
-	border: none;
-	transition: box-shadow $base_transition_duration ease-in-out, opacity $base_transition_duration ease-in-out;
-	appearance: none;
-
-	&:not(.has-background):not(.has-background-dim) {
-		background-color: var(--color-bg);
-	}
-
-	&:hover,
-	&:active {
-		text-decoration: none;
-		outline: none;
-	}
-
-	&:focus {
-		text-decoration: none;
-	}
-}
-
 @mixin nm() {
-
-	@include nm-common;
 	box-shadow: $nm_shadow;
 }
 
 @mixin nm-light() {
-
-	@include nm-common;
 	box-shadow: $nm_shadow_light;
 }
 
 @mixin nm-active() {
-
-	@include nm-common;
 	box-shadow: $nm_shadow_acitve;
 }
 
 @mixin nm-reverse() {
-
-	@include nm-common;
 	box-shadow: $nm_shadow_reverse;
 }
 
-@mixin nm-link() {
-
-	@include nm-common;
-	color: inherit;
-	text-decoration: none;
-	box-shadow: $nm_shadow;
-	cursor: pointer;
-
-	&:focus {
-		box-shadow: $nm_shadow;
-	}
-
-	&:hover {
-		box-shadow: $nm_shadow_light;
-
-		a {
-			text-decoration: none;
-		}
-	}
-}
-
 @mixin nm-button() {
-
-	@include nm-common;
 	color: inherit;
 	font-weight: bold;
 	font-size: inherit;
-	font-family: $base_font_falily;
-	line-height: $base_line_height;
-	text-align: center;
+	font-family: inherit;
+	line-height: inherit;
 	text-decoration: none;
+	background-color: transparent;
+	border: none;
 	box-shadow: $nm_shadow;
 	cursor: pointer;
+	transition: box-shadow $base_transition_duration ease-in-out;
+	-webkit-appearance: none;
+	appearance: none;
 
 	&:focus,
 	&:visited {
@@ -115,15 +67,18 @@
 }
 
 @mixin nm-button-editor() {
-
-	@include nm-common;
 	display: inline-block;
 	color: inherit;
 	font-weight: bold;
+	text-decoration: none;
+	background-color: transparent;
+	border: none;
 	box-shadow: $nm_shadow;
+	-webkit-appearance: none;
+	appearance: none;
 }
 
-@mixin nm-border( $position:bottom ) {
+@mixin nm-border() {
 	position: relative;
 
 	&::before {
@@ -139,12 +94,20 @@
 }
 
 @mixin nm-input() {
-
-	@include nm-common;
 	color: inherit;
 	font-size: inherit;
-	font-family: $base_font_falily;
+	font-family: inherit;
+	background-color: transparent;
+	border: none;
 	box-shadow: $nm_shadow_reverse;
+	transition: box-shadow $base_transition_duration ease-in-out;
+	-webkit-appearance: none;
+	appearance: none;
+
+	&:hover,
+	&:active {
+		outline: none;
+	}
 
 	&:focus {
 		box-shadow: $nm_shadow_acitve;
@@ -152,19 +115,14 @@
 }
 
 @mixin nm-input-editor() {
-
-	@include nm-common;
 	color: inherit;
 	font-size: inherit;
-	font-family: $base_font_falily;
+	font-family: inherit;
+	background-color: transparent;
+	border: none;
 	box-shadow: $nm_shadow_reverse;
-
-	&:focus,
-	&:active,
-	&:disabled {
-		color: inherit;
-		box-shadow: $nm_shadow_reverse;
-	}
+	-webkit-appearance: none;
+	appearance: none;
 }
 
 @mixin nm-text() {
@@ -176,25 +134,21 @@
 }
 
 @mixin nm-media() {
-
-	@include nm-common;
-	padding: 5px !important;
-	border-radius: $base_border_radius;
+	padding: 5px;
+	border-radius: $base_border_radius * 1.25;
 	box-shadow: $nm_shadow_reverse;
 }
 
-@mixin nm-media-link() {
-
-	@include nm-common;
-	display: block;
+@mixin nm-media-link {
+	display: inline-block;
 	overflow: hidden;
+	vertical-align: top;
 	border-radius: $base_border_radius;
 	box-shadow: $nm_shadow_reverse;
-	cursor: pointer;
 
 	> img {
-		padding: 5px !important;
-		border-radius: $base_border_radius;
+		padding: 5px;
+		border-radius: $base_border_radius * 1.25;
 	}
 
 	@include mq(lg-min) {
@@ -207,7 +161,7 @@
 			z-index: 1;
 			width: calc(100% - 10px);
 			height: calc(100% - 10px);
-			background: rgba(0, 0, 0, 0.3);
+			background-color: rgba(0, 0, 0, 0.3);
 			border-radius: math.div($base_border_radius, 2);
 			opacity: 0;
 			transition: opacity $base_transition_duration ease-in-out;

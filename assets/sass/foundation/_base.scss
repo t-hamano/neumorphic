@@ -218,6 +218,7 @@ select {
 }
 
 [type="search"] {
+	-webkit-appearance: none;
 	appearance: none;
 
 	&::-webkit-search-cancel-button {
@@ -236,6 +237,7 @@ textarea {
 	overflow: auto;
 	background: transparent;
 	border-radius: $base_border_radius;
+	-webkit-appearance: none;
 	appearance: none;
 }
 
@@ -261,7 +263,7 @@ button {
 
 	&.mejs-audio {
 
-		@include nm-reverse();
+		@include nm-reverse;
 		background: transparent;
 		border-radius: 1000px;
 
@@ -288,7 +290,7 @@ button {
 
 	&.mejs-video {
 
-		@include nm-reverse();
+		@include nm-reverse;
 		overflow: hidden;
 		background: transparent;
 		border-radius: $base_border_radius;

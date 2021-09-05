@@ -4,7 +4,11 @@
 
 .wp-block-latest-posts {
 	margin-top: 0;
-	margin-bottom: 0.75em;
+
+	&.alignleft,
+	&.alignright {
+		max-width: 500px;
+	}
 
 	&.wp-block-latest-posts__list > li {
 
@@ -40,8 +44,6 @@
 		a {
 
 			@include nm-media-link;
-			display: inline-block;
-			vertical-align: top;
 		}
 
 		img {
@@ -85,6 +87,7 @@
 	}
 
 	&.is-grid {
+		margin-bottom: 0.75em;
 
 		@include mq(md-max) {
 

@@ -37,3 +37,15 @@
 		border-radius: $base_border_radius;
 	}
 }
+
+[data-align="wide"],
+[data-align="full"] {
+
+	> .wp-block-query > .wp-block-post-template {
+		max-width: 100%;
+	}
+}
+
+[data-align="full"] > .wp-block-query > .wp-block-post-template > li {
+	border-radius: 0;
+}
