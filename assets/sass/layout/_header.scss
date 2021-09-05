@@ -42,8 +42,11 @@
 
 		&--nm {
 
-			@include nm-media-link;
-			display: inline-block;
+			a {
+
+				@include nm-media-link;
+				display: inline-block;
+			}
 
 			img {
 
