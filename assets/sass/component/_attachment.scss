@@ -6,6 +6,11 @@
 
 	&__image {
 		text-align: center;
+
+		img {
+
+			@include nm-media;
+		}
 	}
 
 	figcaption {
