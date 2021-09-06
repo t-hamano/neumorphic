@@ -4,6 +4,7 @@ module.exports = {
 		"stylelint-config-rational-order",
 	],
   ignoreFiles: [
+		".git/**/*",
 		"node_modules/**/*.css",
 		"assets/sass/vendor/**/*.scss",
 		"assets/**/*.css",
