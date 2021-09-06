@@ -203,7 +203,7 @@ figcaption {
 	float: left;
 	margin: 0 1.5em 1.5em 0;
 
-	@include mq(md-max) {
+	@include mq(sm-max) {
 		float: none;
 		margin-right: auto;
 		margin-left: auto;
@@ -214,7 +214,7 @@ figcaption {
 	float: right;
 	margin: 0 0 1.5em 1.5em;
 
-	@include mq(md-max) {
+	@include mq(sm-max) {
 		float: none;
 		margin-right: auto;
 		margin-left: auto;
@@ -274,7 +274,6 @@ img[class*=" wp-image-"].aligncenter {
 			right: -47.5vw;
 			width: auto;
 			max-width: $container_width;
-			margin-right: calc(50% - 47.5vw);
 			margin-left: calc(50% - 47.5vw);
 			transform: translateX(-50%);
 		}

@@ -83,6 +83,25 @@ function neumorphic_generate_css() {
 		),
 	);
 
+	// Fix color FOUT before css custom properties are applied in ie.
+	global $is_IE;
+
+	if ( $is_IE ) {
+		$styles[] = array(
+			'selector' => 'body',
+			'style'    => array(
+				"color           : {$color_text_main}",
+				"background-color: {$color_bg}",
+			),
+		);
+		$styles[] = array(
+			'selector' => 'a',
+			'style'    => array(
+				"color           : {$color_text_link}",
+			),
+		);
+	}
+
 	$output = '';
 
 	foreach ( $styles as $style ) {

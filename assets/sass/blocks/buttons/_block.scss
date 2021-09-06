@@ -5,12 +5,6 @@
 .wp-block-buttons {
 	column-gap: 20px;
 
-	&.alignwide,
-	&.alignfull {
-		padding-right: 0.5em;
-		padding-left: 0.5em;
-	}
-
 	> .wp-block-button {
 		margin-bottom: 26px;
 		color: inherit;
@@ -25,6 +19,10 @@
 
 		&.wp-block-button__width-75 {
 			width: calc(75% - 5px);
+		}
+
+		&.wp-block-button__width-100 {
+			width: 100%;
 		}
 
 		.wp-block-button__link {

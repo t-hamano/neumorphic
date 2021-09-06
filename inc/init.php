@@ -264,7 +264,7 @@ function neumorphic_scripts() {
 		wp_enqueue_script( 'neumorphic-ponyfill', get_theme_file_uri( '/assets/js/lib/css-vars-ponyfill.min.js' ), array(), $theme_version );
 		wp_add_inline_script( 'neumorphic-ponyfill', 'cssVars();' );
 
-		wp_enqueue_script( 'neumorphic-ofi', get_theme_file_uri( '/assets/js/lib/ofi.min.js' ), array(), $theme_version );
+		wp_enqueue_script( 'neumorphic-ofi', get_theme_file_uri( '/assets/js/lib/ofi.min.js' ), array(), $theme_version, true );
 		wp_add_inline_script( 'neumorphic-ofi', ' objectFitImages();' );
 	}
 

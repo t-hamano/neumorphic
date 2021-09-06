@@ -19,11 +19,16 @@
 		display: block;
 	}
 
+	&.alignleft,
+	&.alignright {
+		max-width: 500px;
+	}
+
 	&.is-style-nm-none {
 
 		a,
 		img {
-			padding: 0 !important;
+			padding: 0;
 			border-radius: 0;
 			box-shadow: none;
 		}
@@ -35,6 +40,7 @@
 			}
 
 			@include mq(lg-min) {
+				transition: opacity $base_transition_duration ease-in-out;
 
 				&:hover {
 					opacity: $base_hover_opacity;

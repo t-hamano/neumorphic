@@ -29,7 +29,6 @@
 	}
 
 	&.is-style-nm {
-		margin-bottom: -1.5em;
 
 		> li {
 
@@ -38,15 +37,4 @@
 			border-radius: $base_border_radius;
 		}
 	}
-}
-
-.wp-block-query.alignwide > .wp-block-post-template > li {
-
-	@include mq(md-max) {
-		border-radius: 0;
-	}
-}
-
-.wp-block-query.alignfull > .wp-block-post-template > li {
-	border-radius: 0;
 }

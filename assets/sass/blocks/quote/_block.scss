@@ -126,15 +126,4 @@ blockquote {
 			background-color: transparent;
 		}
 	}
-
-	&.alignwide {
-
-		@include mq(md-max) {
-			border-radius: 0;
-		}
-	}
-
-	&.alignfull {
-		border-radius: 0;
-	}
 }

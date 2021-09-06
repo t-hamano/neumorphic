@@ -89,15 +89,6 @@
 	&.is-grid {
 		margin-bottom: 0.75em;
 
-		@include mq(md-max) {
-
-			&.alignleft,
-			&.alignright {
-				margin-right: auto;
-				margin-left: auto;
-			}
-		}
-
 		> li {
 
 			@media screen and (max-width: 599px) {

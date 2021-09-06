@@ -16,17 +16,25 @@
 	&.is-style-nm-none {
 
 		img {
-			padding: 0 !important;
+			padding: 0;
 			border-radius: 0;
 			box-shadow: none;
 		}
 	}
 }
 
-.wp-block[data-align="wide"],
-.wp-block[data-align="full"] {
+[data-align="wide"],
+[data-align="full"] {
 
 	> .wp-block-post-featured-image  img {
 		width: 100%;
+	}
+}
+
+[data-align="left"],
+[data-align="right"] {
+
+	> .wp-block-post-featured-image {
+		max-width: 500px;
 	}
 }

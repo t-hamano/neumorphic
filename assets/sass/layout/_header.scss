@@ -3,7 +3,7 @@
  */
 
 .header {
-	padding: 1em 0 3em;
+	padding: 2em 0 3em;
 
 	@include mq(lg-min) {
 		padding-bottom: 4em;

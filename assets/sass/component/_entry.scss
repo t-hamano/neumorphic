@@ -18,6 +18,7 @@
 		font-weight: bold;
 		font-size: 2em;
 		line-height: 1.4;
+		word-wrap: break-word;
 
 		@include mq(lg-min) {
 			font-size: 2.2em;
@@ -72,7 +73,7 @@
 		.nav-next {
 			position: relative;
 			max-width: 40%;
-			padding: 2px;
+			padding: 0.2em;
 			overflow: hidden;
 			color: var(--color-text-link);
 			white-space: nowrap;
@@ -93,6 +94,7 @@
 
 		.nav-previous {
 			float: left;
+			margin-right: 1em;
 			padding-left: 1.5em;
 
 			&::before {
@@ -103,6 +105,7 @@
 
 		.nav-next {
 			float: right;
+			margin-left: 1em;
 			padding-right: 1.5em;
 
 			&::before {

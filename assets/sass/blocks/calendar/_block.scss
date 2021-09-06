@@ -13,17 +13,6 @@
 		margin-left: auto;
 	}
 
-	&.alignwide {
-
-		@include mq(md-max) {
-			border-radius: 0;
-		}
-	}
-
-	&.alignfull {
-		border-radius: 0;
-	}
-
 	&:not(.alignwide):not(.alignfull) {
 		max-width: 350px;
 	}

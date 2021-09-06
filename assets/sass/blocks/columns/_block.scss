@@ -18,17 +18,6 @@
 	&.is-style-nm-reverse {
 		padding: 1em;
 		border-radius: $base_border_radius;
-
-		&.alignwide {
-
-			@include mq(md-max) {
-				border-radius: 0;
-			}
-		}
-
-		&.alignfull {
-			border-radius: 0;
-		}
 	}
 }
 
@@ -81,6 +70,10 @@
 
 		&:not(:last-child) {
 			margin-bottom: 2em;
+
+			&:empty {
+				margin-bottom: 0;
+			}
 		}
 	}
 }

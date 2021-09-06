@@ -95,31 +95,4 @@
 	&.alignright {
 		max-width: 500px;
 	}
-
-	&.alignwide {
-
-		@include mq(md-max) {
-
-			&.is-grid {
-				padding-right: 0.5em;
-				padding-left: 0.5em;
-			}
-
-			&:not(.is-grid) {
-				border-radius: 0;
-			}
-		}
-	}
-
-	&.alignfull {
-
-		&.is-grid {
-			padding-right: 0.5em;
-			padding-left: 0.5em;
-		}
-
-		&:not(.is-grid) {
-			border-radius: 0;
-		}
-	}
 }

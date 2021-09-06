@@ -27,6 +27,17 @@ table {
 			background-clip: content-box;
 		}
 	}
+
+	@media (min-width: 600px) {
+
+		// Make the width a little narrower to prevent column drop.
+		@for $i from 2 through 8 {
+			&.columns-#{$i} .blocks-gallery-image,
+			&.columns-#{$i} .blocks-gallery-item {
+				width: calc(100% / #{$i} - 1.26em + (1.26em / #{$i}));
+			}
+		}
+	}
 }
 
 // Media & Text
@@ -114,24 +125,10 @@ table {
 	.wp-block-post-template.is-flex-container.is-flex-container {
 
 		// Make the width a little narrower to prevent column drop.
-		&.columns-2 li {
-			width: calc((100% / 2) - 1.26em + (1.26em / 2));
-		}
-
-		&.columns-3 li {
-			width: calc((100% / 3) - 1.26em + (1.26em / 3));
-		}
-
-		&.columns-4 li {
-			width: calc((100% / 4) - 1.26em + (1.26em / 4));
-		}
-
-		&.columns-5 li {
-			width: calc((100% / 5) - 1.26em + (1.26em / 5));
-		}
-
-		&.columns-6 li {
-			width: calc((100% / 6) - 1.26em + (1.26em / 6));
+		@for $i from 2 through 6 {
+			&.columns-#{$i} li {
+				width: calc(100% / #{$i} - 1.26em + (1.26em / #{$i}));
+			}
 		}
 	}
 }

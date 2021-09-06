@@ -2,6 +2,15 @@
  * Embeds
  */
 
+iframe {
+
+	@include nm-reverse;
+	display: block;
+	max-width: 100%;
+	padding: 5px;
+	border-radius: $base_border_radius;
+}
+
 .wp-block-embed {
 
 	&.alignleft,
@@ -9,13 +18,14 @@
 		max-width: 500px;
 	}
 
-	iframe {
+	&.alignwide {
 
-		@include nm-reverse;
-		display: block;
-		width: 100%;
-		padding: 5px;
-		border-radius: $base_border_radius;
+		@include mq(md-max) {
+
+			iframe {
+
+			}
+		}
 	}
 
 	// blockquote {

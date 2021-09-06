@@ -102,18 +102,6 @@
 		margin-top: 0.5em;
 		font-size: 0.9em;
 	}
-
-	&.alignfull {
-
-		&.is-grid {
-			padding-right: 0.5em;
-			padding-left: 0.5em;
-		}
-
-		&:not(.is-grid) {
-			border-radius: 0;
-		}
-	}
 }
 
 [data-align="left"],

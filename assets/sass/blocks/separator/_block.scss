@@ -67,6 +67,10 @@ hr {
 			letter-spacing: 2em;
 			content: "\00b7 \00b7 \00b7";
 
+			@include mq(sm-max) {
+				font-size: 40px;
+			}
+
 			@include mq(md-max) {
 				padding-left: 1em;
 				letter-spacing: 1em;

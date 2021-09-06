@@ -4,16 +4,6 @@
 
 .wp-block-tag-cloud {
 
-	&.alignwide,
-	&.alignfull {
-		padding-right: 0.5em;
-		padding-left: 0.5em;
-
-		a {
-			width: auto;
-		}
-	}
-
 	a {
 
 		@include nm-button;

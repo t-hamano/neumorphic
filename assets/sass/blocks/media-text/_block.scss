@@ -33,29 +33,6 @@
 		&.has-background {
 			position: relative;
 		}
-
-		&.alignwide {
-
-			@include mq(md-max) {
-				border-radius: 0;
-
-				&.has-background::before {
-					border-right: none;
-					border-left: none;
-					border-radius: 0;
-				}
-			}
-		}
-
-		&.alignfull {
-			border-radius: 0;
-
-			&.has-background::before {
-				border-right: none;
-				border-left: none;
-				border-radius: 0;
-			}
-		}
 	}
 
 	&:not(.is-image-fill) .wp-block-media-text__media {

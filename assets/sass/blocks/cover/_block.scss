@@ -31,47 +31,6 @@
 			height: calc(100% - 10px);
 			border-radius: math.div($base_border_radius, 2);
 		}
-
-		&.alignwide {
-
-			@include mq(md-max) {
-				padding-right: 0;
-				padding-left: 0;
-				border-radius: 0;
-
-				&.has-background-dim:not(.has-background-gradient)::before {
-					right: 0;
-					left: 0;
-					border-radius: 0;
-				}
-
-				.wp-block-cover__video-background,
-				.wp-block-cover__image-background {
-					right: 0;
-					left: 0;
-					width: 100%;
-				}
-			}
-		}
-
-		&.alignfull {
-			padding-right: 0;
-			padding-left: 0;
-			border-radius: 0;
-
-			&.has-background-dim:not(.has-background-gradient)::before {
-				right: 0;
-				left: 0;
-				border-radius: 0;
-			}
-
-			.wp-block-cover__video-background,
-			.wp-block-cover__image-background {
-				right: 0;
-				left: 0;
-				width: 100%;
-			}
-		}
 	}
 
 	&.is-style-nm {

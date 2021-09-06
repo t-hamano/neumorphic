@@ -21,6 +21,10 @@
 			width: calc(75% - 5px);
 		}
 
+		&.wp-block-button__width-100 {
+			width: 100%;
+		}
+
 		.wp-block-button__link {
 			position: relative;
 			padding: 0.6em 1.5em;
@@ -44,14 +48,5 @@
 				content: "";
 			}
 		}
-	}
-}
-
-[data-align="wide"],
-[data-align="full"] {
-
-	> .wp-block-buttons {
-		padding-right: 0.5em;
-		padding-left: 0.5em;
 	}
 }

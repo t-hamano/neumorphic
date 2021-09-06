@@ -115,18 +115,5 @@
 			$( '.c-gnav__submenu' ).attr( 'aria-hidden', true );
 			$( this ).next( '.c-gnav__submenu' ).attr( 'aria-hidden', false );
 		} );
-
-		// Smooth scroll
-		$( 'a[href*="#"]:not(.skip-link)' ).on( 'click', function () {
-			const href = $( this ).attr( 'href' );
-			const target = $( '#' === href || '' === href ? 'html' : href );
-
-			if ( target.length ) {
-				const position = target.offset().top;
-				$( 'html, body' ).animate( { scrollTop: position }, 500, 'swing' );
-			}
-
-			return false;
-		} );
 	} );
 } )( jQuery );

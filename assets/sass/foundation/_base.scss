@@ -13,6 +13,17 @@
 	}
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
 body {
 	margin: 0;
 	padding: 0;
@@ -21,6 +32,7 @@ body {
 	font-family: $base_font_falily;
 	line-height: $base_line_height;
 	letter-spacing: $base_letter_spacing;
+	word-wrap: break-word;
 	word-break: break-word;
 	overflow-wrap: break-word;
 	background: var(--color-bg);
@@ -253,6 +265,12 @@ button {
 }
 
 ::placeholder {
+	color: inherit;
+	white-space: nowrap;
+	opacity: $base_placeholder_opacity;
+}
+
+:-ms-input-placeholder {
 	color: inherit;
 	opacity: $base_placeholder_opacity;
 }

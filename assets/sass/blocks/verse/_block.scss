@@ -11,4 +11,8 @@
 		@include nm-reverse;
 		border-radius: $base_border_radius;
 	}
+
+	&.is-style-nm-none:not(.has-background) {
+		padding: 0;
+	}
 }
