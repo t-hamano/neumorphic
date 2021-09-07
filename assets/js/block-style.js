@@ -40,6 +40,8 @@ wp.domReady( function () {
 		{ block: 'core/post-template',       name: 'nm',         label: 'Neumorphic',     isDefault: false },
 		{ block: 'core/post-title',          name: 'nm-none',    label: 'No Neumorphic',  isDefault: false },
 		{ block: 'core/loginout',            name: 'nm',         label: 'Neumorphic',     isDefault: false },
+		// Embeds
+		{ block: 'core/embed',               name: 'nm-none',    label: 'No Neumorphic',  isDefault: false },
 	];
 
 	styles.forEach(function( style ){

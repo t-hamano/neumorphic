@@ -13,189 +13,201 @@ iframe {
 
 .wp-block-embed {
 
-	&.alignleft,
-	&.alignright {
-		max-width: 500px;
+	img {
+		width: 100%;
 	}
 
-	&.alignwide {
+	blockquote {
+		border-radius: 0;
+		box-shadow: none;
 
-		@include mq(md-max) {
+		&::before {
+			content: none;
+		}
+	}
 
-			iframe {
+	&.alignleft,
+	&.alignright {
+		max-width: 400px;
+	}
 
+	&.aligncenter,
+	&.alignwide,
+	&.alignfull {
+
+		.wp-block-embed__wrapper > * {
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+
+	&.is-style-nm-none iframe {
+		padding: 0;
+		border-radius: 0;
+		box-shadow: none;
+	}
+
+	&-twitter {
+
+		.twitter-tweet {
+			margin-top: 0 !important;
+			margin-bottom: 0 !important;
+		}
+	}
+
+	&-flickr:not(.is-style-nm-none) img {
+
+		@include nm-media;
+	}
+
+	&-crowdsignal {
+
+		.pds-box {
+			max-width: 100%;
+			border: none !important;
+		}
+
+		&:not(.is-style-nm-none) .pds-box {
+
+			@include nm-reverse;
+			padding: 1em !important;
+			border-radius: 8px;
+		}
+
+		&.alignleft,
+		&.alignright {
+
+			.pds-box {
+				width: 100% !important;
+			}
+		}
+
+		&.aligncenter .pds-box {
+			margin-right: auto;
+			margin-left: auto;
+		}
+
+		&.alignwide,
+		&.alignfull {
+
+			.pds-box {
+				width: 100% !important;
 			}
 		}
 	}
 
-	// blockquote {
-	// 	padding: 0;
+	&-issuu,
+	&-mixcloud {
 
-	// 	&::before {
-	// 		content: none;
-	// 	}
-	// }
+		&.alignleft,
+		&.alignright {
+			width: auto;
+			max-width: 100%;
 
-	// figcaption {
-	// 	margin-bottom: 0;
-	// 	font-size: 0.8em;
-	// 	opacity: $text_color_thin;
-	// }
+			.wp-block-embed__wrapper {
+				min-width: auto;
+			}
+		}
+	}
 
-	// &.wp-has-aspect-ratio,
-	// &-crowdsignal,
-	// &-plugin-directory {
+	&-issuu .issuuembed {
+		max-width: 100%;
+	}
 
-	// 	iframe {
+	&-reddit {
 
-	// 		@include nm-media;
-	// 		display: block;
-	// 		width: 100%;
-	// 		margin: 0 !important;
-	// 		border: none !important;
-	// 	}
-	// }
+		.embedly-card-hug {
+			margin: 0 !important;
+		}
 
-	// &-imgur {
+		iframe {
+			background: #e1e2e6;
+		}
 
-	// 	iframe {
+		&.aligncenter,
+		&.alignwide,
+		&.alignfull {
 
-	// 		@include nm-media;
-	// 		display: inline-block;
-	// 		margin: 0 !important;
-	// 		vertical-align: top;
-	// 	}
-	// }
+			.embedly-card-hug {
+				margin: 0 auto !important;
+			}
+		}
 
-	// &-tumblr {
+		&.alignwide,
+		&.alignfull {
 
-	// 	.wp-block-embed__wrapper {
+			.embedly-card-hug {
+				width: 100%;
+				max-width: 100% !important;
+			}
 
-	// 		@include nm-media;
-	// 		display: inline-block;
-	// 		vertical-align: top;
+			iframe {
+				width: 100%;
+			}
+		}
+	}
 
-	// 		iframe {
-	// 			margin: 0 !important;
-	// 		}
-	// 	}
-	// }
+	&-slideshare {
 
-	// &-tiktok {
+		iframe {
+			border: none !important;
+		}
 
-	// 	.tiktok-embed {
-	// 		display: inline-block;
-	// 		margin: 0;
-	// 		vertical-align: top;
-	// 	}
+		&.alignleft,
+		&.alignright {
+			width: auto;
+		}
 
-	// 	iframe {
-	// 		padding: 5px;
-	// 		border-radius: $base_border_radius;
-	// 	}
-	// }
+		&.aligncenter,
+		&.alignwide,
+		&.alignfull {
 
-	// &-smugmug,
-	// &-flickr {
+			.wp-block-embed__wrapper > div {
+				text-align: center;
+			}
+		}
+	}
 
-	// 	.wp-block-embed__wrapper {
+	&-tiktok {
 
-	// 		&::before {
-	// 			content: none !important;
-	// 		}
+		.tiktok-embed {
+			margin: 0;
+			padding: 0;
+		}
+	}
 
-	// 		img {
+	&-tumblr {
 
-	// 			@include nm-media;
-	// 			width: 100%;
-	// 		}
-	// 	}
-	// }
+		iframe {
+			margin-top: 0 !important;
+			margin-bottom: 0 !important;
+			padding: 5px !important;
+		}
 
-	// &-issuu {
+		&.aligncenter,
+		&.alignwide,
+		&.alignfull {
 
-	// 	.issuuembed {
+			iframe {
+				margin-right: auto !important;
+				margin-left: auto !important;
+			}
+		}
+	}
 
-	// 		@include nm-media;
-	// 		display: inline-block;
-	// 		max-width: 100%;
-	// 		vertical-align: top;
-	// 		border-radius: $base_border_radius;
+	&-speaker-deck:not(.is-style-nm-none) iframe {
+		padding: 5px !important;
+	}
 
-	// 		iframe {
-	// 			border-radius: math.div($base_border_radius, 2);
-	// 		}
-	// 	}
-	// }
+	&-amazon {
 
-	// &-meetup {
+		iframe {
+			margin-right: auto;
+			margin-left: auto;
+		}
 
-	// 	@include nm-media;
-
-	// 	#meetup_oembed {
-	// 		height: auto !important;
-	// 	}
-
-	// 	h1,
-	// 	h2,
-	// 	h3 {
-
-	// 		&::before {
-	// 			content: none;
-	// 		}
-	// 	}
-	// }
-
-	// &-reddit {
-
-	// 	.embedly-card-hug {
-
-	// 		@include nm-media;
-	// 		margin: 0 !important;
-	// 		background: #e1e2e6 !important;
-	// 	}
-	// }
-
-	// &-reverbnation {
-
-	// 	.wp-block-embed__wrapper {
-	// 		max-width: 500px;
-	// 	}
-	// }
-
-	// &-amazon {
-
-	// 	iframe {
-
-	// 		@include nm-media;
-	// 		display: block;
-	// 		width: 100%;
-	// 	}
-	// }
-
-	// &-twitter {
-
-	// 	.twitter-tweet {
-
-	// 		@include nm-media;
-	// 		margin-top: 0 !important;
-	// 		margin-bottom: 0 !important;
-	// 	}
-
-	// 	&.alignwide,
-	// 	&.alignfull {
-
-	// 		.twitter-tweet {
-	// 			max-width: 100% !important;
-	// 		}
-	// 	}
-
-	// 	&.aligncenter {
-
-	// 		.twitter-tweet {
-	// 			margin-right: auto;
-	// 			margin-left: auto;
-	// 		}
-	// 	}
-	// }
+		figcaption {
+			text-align: center;
+		}
+	}
 }
