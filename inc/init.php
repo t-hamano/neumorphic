@@ -215,19 +215,8 @@ function neumorphic_setup() {
 	);
 
 	// Register and enqueue editor styles.
-	function neumorphic_replace_editor( $result, $post ) {
-		if ( ! empty( get_editor_stylesheets() ) ) {
-			return $result;
-		}
-		if ( use_block_editor_for_post( $post ) ) {
-			add_theme_support( 'editor-styles' );
-			add_editor_style( 'assets/css/editor-style-block.min.css' );
-		} else {
-			add_editor_style( 'assets/css/editor-style-classic.min.css' );
-		}
-		return $result;
-	}
-	add_filter( 'replace_editor', 'neumorphic_replace_editor', 10, 2 );
+	add_theme_support( 'editor-styles' );
+	add_editor_style( 'assets/css/editor-style.min.css' );
 
 	// Disable block-based widgets editor
 	if ( ! get_theme_mod( 'enable_widgets_block_editor', NEUMORPHIC_ENABLE_WIDGETS_BLOCK_EDITOR ) ) {
