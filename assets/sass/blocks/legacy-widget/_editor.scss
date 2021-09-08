@@ -8,7 +8,11 @@
 	@include nm;
 	border-radius: $base_border_radius;
 
-	.wp-block-legacy-widget__edit-form {
+	&__edit-preview-iframe {
+		display: block;
+	}
+
+	&__edit-form {
 		background: var(--color-nm-light);
 		border-color: var(--color-nm-dark);
 
@@ -28,6 +32,7 @@
 		}
 
 		.widget-inside.widget-inside {
+			font-family: inherit;
 
 			a,
 			input,
