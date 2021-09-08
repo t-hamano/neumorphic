@@ -27,21 +27,17 @@
 		}
 	}
 
-	.sub-menu {
-		margin-bottom: 0.5em;
+	.sub-menu li {
+		position: relative;
+		padding-left: 1em;
 
-		li {
-			position: relative;
-			padding-left: 1em;
-
-			&::before {
-				position: absolute;
-				left: 0;
-				font-weight: 900;
-				font-family: "Font Awesome 5 Free";
-				transform: scale(0.6) translateY(2px);
-				content: "\f054";
-			}
+		&::before {
+			position: absolute;
+			left: 0;
+			font-weight: 900;
+			font-family: "Font Awesome 5 Free";
+			transform: scale(0.6) translateY(2px);
+			content: "\f054";
 		}
 	}
 }

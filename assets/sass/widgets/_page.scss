@@ -5,6 +5,7 @@
 .widget_pages {
 
 	ul {
+		margin: 0;
 		padding: 0;
 		list-style: none;
 	}
@@ -27,7 +28,7 @@
 	}
 
 	.children {
-		margin: 0 0 0.5em;
+		margin: 0;
 		padding: 0;
 
 		> li {

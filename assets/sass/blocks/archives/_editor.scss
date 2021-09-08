@@ -7,6 +7,7 @@
 
 	&.is-style-nm,
 	&.is-style-nm-reverse {
+		padding: 1em;
 		border-radius: $base_border_radius;
 	}
 
@@ -22,11 +23,6 @@
 }
 
 .wp-block-archives-dropdown {
-
-	&.is-style-nm,
-	&.is-style-nm-reverse {
-		padding: 1em;
-	}
 
 	select {
 
@@ -47,9 +43,20 @@
 }
 
 .wp-block-archives-list {
+	margin: 0;
+	padding: 0;
+	list-style: none;
 
-	&.is-style-nm,
-	&.is-style-nm-reverse {
-		padding: 1em 1em 1em 2.5em;
+	> li {
+		position: relative;
+		padding-left: 1.5em;
+
+		&::before {
+			position: absolute;
+			left: 0;
+			font-weight: 900;
+			font-family: "Font Awesome 5 Free";
+			content: "\f07b";
+		}
 	}
 }

@@ -22,6 +22,37 @@
 
 	&__list {
 		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			position: relative;
+		}
+
+		&-level-0 > li {
+			padding-left: 1.5em;
+
+			&::before {
+				position: absolute;
+				left: 0;
+				font-weight: 900;
+				font-family: "Font Awesome 5 Free";
+				content: "\f07b";
+			}
+		}
+
+		&:not(.wp-block-categories__list-level-0) > li {
+			padding-left: 1em;
+
+			&::before {
+				position: absolute;
+				left: 0;
+				font-weight: 900;
+				font-family: "Font Awesome 5 Free";
+				transform: scale(0.6) translateY(2px);
+				content: "\f054";
+			}
+		}
 	}
 
 	&__dropdown {

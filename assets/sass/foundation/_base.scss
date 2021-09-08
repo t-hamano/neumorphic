@@ -277,11 +277,11 @@ button {
 
 // Media Player Styles
 .mejs-container {
-	height: 60px !important;
 
 	&.mejs-audio {
 
 		@include nm-reverse;
+		height: 60px !important;
 		background: transparent;
 		border-radius: 1000px;
 

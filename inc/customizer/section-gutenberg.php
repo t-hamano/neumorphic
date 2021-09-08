@@ -6,6 +6,10 @@
  */
 
 function neumorphic_customizer_gutenberg( $wp_customize ) {
+	if ( version_compare( $GLOBALS['wp_version'], '4.8', '<' ) ) {
+		return;
+	}
+
 	// Section
 	$wp_customize->add_section(
 		'section_gutenberg',
