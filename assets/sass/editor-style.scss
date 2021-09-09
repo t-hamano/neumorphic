@@ -8,18 +8,44 @@
 @import "foundation/variable";
 @import "foundation/mixin";
 
+// Widget Block Editor
+.wp-block-widget-area .editor-styles-wrapper {
+	font-family: $base_font_falily;
+}
+
+// Customizer Widget Block Editor
+.customize-control-sidebar_block_editor {
+	width: calc(100% + 24px);
+	max-width: none;
+	margin-right: -12px;
+	margin-left: -12px;
+
+	.customize-widgets-header {
+		margin-right: 0;
+		margin-left: 0;
+	}
+
+	.block-editor-writing-flow {
+		padding-right: 1em;
+		padding-left: 1em;
+	}
+}
+
+// Block Editor
+.editor-styles-wrapper.block-editor-writing-flow {
+	font-family: $base_font_falily;
+}
+
 // Block Styles
-.editor-styles-wrapper {
+.editor-styles-wrapper,
+.customize-control-sidebar_block_editor {
 
 	color: var(--color-text-main);
 	font-size: $base_font_size_pc;
+	font-family: $base_font_falily;
 	line-height: $base_line_height;
 	letter-spacing: $base_letter_spacing;
 	background: var(--color-bg);
-
-	&.block-editor-writing-flow {
-		font-family: $base_font_falily;
-	}
 
 	@import "blocks/common/editor";
 	@import "blocks/archives/editor";
