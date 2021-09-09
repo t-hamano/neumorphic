@@ -2,7 +2,7 @@
  * Classic
  */
 
-.wp-block-freeform {
+[data-type="core/freeform"] {
 
 	&.is-selected .wp-block-freeform.block-library-rich-text__tinymce {
 		padding: 1em;
@@ -46,6 +46,30 @@
 			line-height: 1.4;
 		}
 
+		h1 {
+			font-size: 2em;
+		}
+
+		h2 {
+			font-size: 1.8em;
+		}
+
+		h3 {
+			font-size: 1.6em;
+		}
+
+		h4 {
+			font-size: 1.4em;
+		}
+
+		h5 {
+			font-size: 1.2em;
+		}
+
+		h6 {
+			font-size: 1em;
+		}
+
 		// Link
 		a {
 			color: var(--color-text-link);
@@ -55,16 +79,6 @@
 		ul,
 		ol {
 			padding-left: 1.5em;
-		}
-
-		// Code
-		code {
-			padding: 0.1em 0.3em;
-			color: inherit;
-			font-size: 0.9em;
-			font-family: $base_code_font_family;
-			background: var(--color-nm-dark);
-			border-radius: 4px;
 		}
 
 		// Quote

@@ -20,4 +20,12 @@
 			opacity: $text_color_thin;
 		}
 	}
+
+	&.alignwide,
+	&.alignfull {
+
+		a {
+			width: auto;
+		}
+	}
 }

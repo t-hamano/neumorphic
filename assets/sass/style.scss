@@ -86,11 +86,8 @@
 	@import "blocks/tag-cloud/block";
 	@import "blocks/verse/block";
 	@import "blocks/video/block";
-
 }
 
-// Fallback (IE 11)
-body.is-ie .entry-content {
-
-	@import "blocks/fallback/ie/block";
-}
+// Fallback
+@import "fallback/ie";
+@import "fallback/block";

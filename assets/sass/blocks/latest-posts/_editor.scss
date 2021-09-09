@@ -91,3 +91,12 @@
 		max-width: 500px;
 	}
 }
+
+[data-align="left"],
+[data-align="center"],
+[data-align="right"] {
+
+	> div > .wp-block-latest-posts {
+		margin: 0;
+	}
+}

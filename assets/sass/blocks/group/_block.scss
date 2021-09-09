@@ -27,11 +27,21 @@
 		@include nm-reverse;
 	}
 
-	&__inner-container > * {
-
+	> * {
 		max-width: calc(#{$container_width} - #{$container_padding * 2});
 		margin-right: auto;
 		margin-left: auto;
+
+		&:first-child {
+			margin-top: 0 !important;
+		}
+
+		&:last-child {
+			margin-bottom: 0 !important;
+		}
+	}
+
+	&__inner-container > * {
 
 		&:not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
 			margin-top: 0;

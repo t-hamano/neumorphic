@@ -3,7 +3,8 @@
  */
 
 // Common
-blockquote {
+blockquote,
+.wp-block blockquote {
 
 	@include nm-reverse;
 	position: relative;

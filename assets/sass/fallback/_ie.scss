@@ -1,0 +1,141 @@
+/**
+ * Fallback Styles ( IE11 )
+ */
+
+// Common
+body.is-ie main {
+	display: block;
+}
+
+body.is-ie .entry-content {
+	// Table
+	table {
+		// box-shadow properties fix.
+		border-collapse: separate;
+	}
+
+	// Gallery
+	.wp-block-gallery {
+
+		// object-fit-images polyfill.
+		.blocks-gallery-image,
+		.blocks-gallery-item {
+
+			img {
+				height: 100%;
+				object-fit: cover;
+				font-family: "object-fit: cover;";
+				background-clip: content-box;
+			}
+		}
+
+		@media (min-width: 600px) {
+
+			// Make the width a little narrower to prevent column drop.
+			@for $i from 2 through 8 {
+				&.columns-#{$i} .blocks-gallery-image,
+				&.columns-#{$i} .blocks-gallery-item {
+					width: calc(100% / #{$i} - 1.26em + (1.26em / #{$i}));
+				}
+			}
+		}
+	}
+
+	// Media & Text
+	.wp-block-media-text {
+
+		// Grid support.
+		display: -ms-grid;
+		-ms-grid-rows: auto;
+		-ms-grid-columns: 50% 1fr;
+
+		.wp-block-media-text__media {
+			-ms-grid-row: 1;
+			-ms-grid-column: 1;
+		}
+
+		.wp-block-media-text__content {
+			-ms-grid-row: 1;
+			-ms-grid-column: 2;
+		}
+
+		&.has-media-on-the-right {
+			-ms-grid-columns: 1fr 50%;
+
+			.wp-block-media-text__media {
+				-ms-grid-column: 2;
+			}
+
+			.wp-block-media-text__content {
+				-ms-grid-column: 1;
+			}
+		}
+
+		@include mq(md-max) {
+
+			&.is-stacked-on-mobile {
+				-ms-grid-columns: 100% !important;
+
+				> .wp-block-media-text__media {
+					-ms-grid-row: 1;
+					-ms-grid-column: 1;
+				}
+
+				.wp-block-media-text__content {
+					-ms-grid-row: 2;
+					-ms-grid-column: 1;
+				}
+
+				&.has-media-on-the-right {
+
+					.wp-block-media-text__content {
+						-ms-grid-row: 2;
+					}
+
+					.wp-block-media-text__media {
+						-ms-grid-row: 1;
+					}
+				}
+			}
+		}
+	}
+
+	// Cover
+	.wp-block-cover {
+
+		// object-fit-images polyfill.
+		.wp-block-cover__image-background,
+		.wp-block-cover__video-background {
+			font-family: "object-fit: cover;";
+		}
+	}
+
+	// Button
+	.wp-block-buttons > .wp-block-button {
+
+		// Instead of column-gap.
+		padding-right: 5px;
+		padding-left: 5px;
+	}
+
+	// Latest Posts, RSS
+	@media (min-width: 600px) {
+
+		.wp-block-latest-posts.is-grid,
+		.wp-block-rss.is-grid,
+		.wp-block-post-template.is-flex-container.is-flex-container {
+
+			// Make the width a little narrower to prevent column drop.
+			@for $i from 2 through 6 {
+				&.columns-#{$i} li {
+					width: calc(100% / #{$i} - 1.26em + (1.26em / #{$i}));
+				}
+			}
+		}
+	}
+
+	// Social Links
+	.wp-block-social-links.is-style-nm .wp-social-link {
+		padding: 0;
+	}
+}

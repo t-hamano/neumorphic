@@ -4,6 +4,10 @@
 
 .widget {
 
+	&.widget_block > .customize-partial-edit-shortcut + * {
+		margin-top: 0;
+	}
+
 	&:not(.widget_block) {
 
 		@include nm;

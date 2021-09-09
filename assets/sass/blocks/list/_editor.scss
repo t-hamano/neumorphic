@@ -11,8 +11,13 @@ ol {
 		padding-left: 2.5em;
 	}
 
-	ul {
+	li > ul {
 		list-style-type: disc;
+	}
+
+	ul,
+	ol {
+		margin-left: 0;
 	}
 
 	li {

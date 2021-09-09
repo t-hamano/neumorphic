@@ -75,11 +75,13 @@ blockquote {
 			font-style: normal;
 			line-height: inherit;
 		}
+	}
 
-		cite {
-			font-size: 0.8em;
-			text-align: inherit;
-		}
+	.wp-block-quote__citation {
+		font-size: 0.8em;
+		font-style: italic;
+		text-align: inherit;
+		opacity: $base_placeholder_opacity;
 	}
 }
 

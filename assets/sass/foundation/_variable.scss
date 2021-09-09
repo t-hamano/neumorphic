@@ -3,20 +3,20 @@
  */
 
 // Default Property Value
-$base_font_falily: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Hiragino Sans", "Noto Sans CJK JP", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Sans Emoji";
+$base_font_falily        : -apple-system, blinkmacsystemfont, "Segoe UI", roboto, "Hiragino Sans", "Noto Sans CJK JP", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Sans Emoji";
 $base_code_font_family: consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", monaco, "Courier New", courier, monospace;
-$base_font_size_sp: 14px;
-$base_font_size_pc: 16px;
-$base_line_height: 1.7;
-$base_letter_spacing: 0.04em;
+$base_font_size_sp       : 14px;
+$base_font_size_pc       : 16px;
+$base_line_height        : 1.7;
+$base_letter_spacing     : 0.04em;
 $base_transition_duration: 0.2s;
-$base_border_radius: 8px;
-$base_hover_opacity: 0.7;
+$base_border_radius      : 8px;
+$base_hover_opacity      : 0.7;
 $base_placeholder_opacity: 0.7;
-
-$text_color_thin: 0.8;
-$container_width: 1400px;
-$container_padding: 5vw;
+$editor_block_width      : 800px;
+$text_color_thin         : 0.8;
+$container_width         : 1400px;
+$container_padding       : 5vw;
 
 // Media Query Breakpoints
 $breakpoints: (

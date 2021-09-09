@@ -214,10 +214,6 @@ function neumorphic_setup() {
 		)
 	);
 
-	// Register and enqueue editor styles.
-	add_theme_support( 'editor-styles' );
-	add_editor_style( 'assets/css/editor-style.min.css' );
-
 	// Disable block-based widgets editor
 	if ( ! get_theme_mod( 'enable_widgets_block_editor', NEUMORPHIC_ENABLE_WIDGETS_BLOCK_EDITOR ) ) {
 		remove_theme_support( 'widgets-block-editor' );
@@ -269,6 +265,9 @@ add_action( 'wp_enqueue_scripts', 'neumorphic_scripts' );
 function neumorphic_block_editor_assets() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 
+	// Main Style.
+	wp_enqueue_style( 'neumorphic', get_theme_file_uri( '/assets/css/editor-style.min.css' ), array(), $theme_version );
+
 	// Main script.
 	wp_enqueue_script( 'neumorphic', get_theme_file_uri( '/assets/js/block-style.js' ), array( 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-dom' ), $theme_version, true );
 
@@ -293,7 +292,7 @@ function neumorphic_skip_link_focus_fix() {
 add_action( 'wp_print_footer_scripts', 'neumorphic_skip_link_focus_fix' );
 
 /**
- * Add a class to the body tag when the browser is ie.
+ * Add a class to the body tag.
  *
  * @param string[] $classes An array of body class names.
  *
@@ -305,6 +304,9 @@ function neumorphic_body_class( $classes ) {
 	if ( $is_IE ) {
 		$classes[] = 'is-ie';
 	}
+
+	$classes[] = 'branch-' . str_replace( array( '.', ',' ), '-', (float) get_bloginfo( 'version' ) );
+	$classes[] = 'version-' . str_replace( '.', '-', preg_replace( '/^([.0-9]+).*/', '$1', get_bloginfo( 'version' ) ) );
 
 	return $classes;
 }
@@ -318,13 +320,23 @@ add_filter( 'body_class', 'neumorphic_body_class' );
  *
  * @return string[] Array of TinyMCE config.
  */
-function neumorphic_classic_editor_inline_style( $settings ) {
+function neumorphic_tiny_mce_before_init( $settings ) {
 	$settings['content_style'] = neumorphic_generate_css();
+	$classic_style             = file_get_contents( get_template_directory() . '/assets/css/editor-style-classic.min.css' );
+
+	if ( $classic_style ) {
+		$classic_style = str_replace( array( "\n", "\r" ), '', $classic_style );
+		$classic_style = str_replace( '../webfonts/', get_template_directory_uri() . '/assets/webfonts/', $classic_style );
+		$classic_style = str_replace( '"\\', '"\\\\', $classic_style );
+		$classic_style = str_replace( '"', '\\"', $classic_style );
+
+		$settings['content_style'] .= $classic_style;
+	}
 
 	return $settings;
 }
 
-add_filter( 'tiny_mce_before_init', 'neumorphic_classic_editor_inline_style' );
+add_filter( 'tiny_mce_before_init', 'neumorphic_tiny_mce_before_init' );
 
 /**
  * Enqueue WordPress media player styles.

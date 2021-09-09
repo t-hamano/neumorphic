@@ -6,7 +6,7 @@
  */
 
 function neumorphic_customizer_gutenberg( $wp_customize ) {
-	if ( version_compare( $GLOBALS['wp_version'], '4.8', '<' ) ) {
+	if ( version_compare( $GLOBALS['wp_version'], '5.8', '<' ) ) {
 		return;
 	}
 

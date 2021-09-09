@@ -1,16 +1,6 @@
 /**
- * Block Common Styles
+ * Block Styles
  */
-
-body {
-	color: var(--color-text-main);
-	font-size: $base_font_size_pc;
-	font-family: $base_font_falily;
-	line-height: $base_line_height;
-	letter-spacing: $base_letter_spacing;
-	word-break: break-word;
-	background: var(--color-bg);
-}
 
 // Title
 .wp-block.editor-post-title__block {
@@ -56,7 +46,7 @@ body {
 
 // Block
 .wp-block {
-	max-width: 800px;
+	max-width: $editor_block_width;
 	margin-top: 0;
 	margin-bottom: 2em;
 
@@ -142,13 +132,106 @@ figcaption {
 	color: var(--color-text-link) !important;
 }
 
+.has-white-color {
+	color: #fff !important;
+}
+
+// Background Color
+.has-bg-background-color {
+	background-color: var(--color-bg) !important;
+}
+
+.has-dark-background-color {
+	background-color: var(--color-nm-dark) !important;
+}
+
+.has-light-background-color {
+	background-color: var(--color-nm-light) !important;
+}
+
+.has-main-text-background-color {
+	background-color: var(--color-text-main) !important;
+}
+
+.has-accent-background-color {
+	background-color: var(--color-accent) !important;
+}
+
+.has-link-text-background-color {
+	background-color: var(--color-text-link) !important;
+}
+
+.has-white-background-color {
+	background-color: #fff !important;
+}
+
+// Gradient Color
+.has-dark-light-gradient-background {
+	background: linear-gradient(135deg, var(--color-nm-dark), var(--color-nm-light)) !important;
+}
+
+.has-dark-text-main-gradient-background {
+	background: linear-gradient(135deg, var(--color-nm-dark), var(--color-text-main)) !important;
+}
+
+.has-dark-accent-gradient-background {
+	background: linear-gradient(135deg, var(--color-nm-dark), var(--color-accent)) !important;
+}
+
+.has-dark-link-text-gradient-background {
+	background: linear-gradient(135deg, var(--color-nm-dark), var(--color-text-link)) !important;
+}
+
+.has-light-main-text-gradient-background {
+	background: linear-gradient(135deg, var(--color-nm-light), var(--color-text-main)) !important;
+}
+
+.has-light-accent-gradient-background {
+	background: linear-gradient(135deg, var(--color-nm-light), var(--color-accent)) !important;
+}
+
+.has-light-link-text-gradient-background {
+	background: linear-gradient(135deg, var(--color-nm-light), var(--color-text-link)) !important;
+}
+
+.has-main-text-accent-gradient-background {
+	background: linear-gradient(135deg, var(--color-text-main), var(--color-accent)) !important;
+}
+
+.has-main-text-link-text-gradient-background {
+	background: linear-gradient(135deg, var(--color-text-main), var(--color-text-link)) !important;
+}
+
+.has-accent-link-text-gradient-background {
+	background: linear-gradient(135deg, var(--color-accent), var(--color-text-link)) !important;
+}
+
+// Font Size
+.has-small-font-size {
+	font-size: 13px;
+}
+
+.has-medium-font-size {
+	font-size: 19px;
+}
+
+.has-large-font-size {
+	font-size: 26px;
+}
+
+.has-huge-font-size {
+	font-size: 32px;
+}
+
 // Alignment
 [data-align="left"] > * {
+	margin-top: 0;
 	margin-right: 1.5em;
 	margin-bottom: 1.5em;
 }
 
 [data-align="right"] > * {
+	margin-top: 0;
 	margin-bottom: 1.5em;
 	margin-left: 1.5em;
 }
