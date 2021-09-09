@@ -96,28 +96,29 @@ if ( function_exists( 'wp_body_open' ) ) {
 				<?php endif; ?>
 			</div>
 		</div>
-		<?php
-		// Fixed global menu
-		if ( has_nav_menu( 'primary' ) ) :
-			?>
-			<div id="fixed_gnav" class="fixed-gnav">
-				<div class="container">
-					<nav class="c-gnav" role="navigation" aria-hidden="true" aria-label="<?php esc_attr_e( 'Fixed global menu', 'neumorphic' ); ?>">
-						<?php
-							wp_nav_menu(
-								array(
-									'theme_location' => 'primary',
-									'menu_class'     => 'c-gnav__list',
-									'container'      => false,
-									'walker'         => new Neumorphic_Gnav_Walker(),
-								)
-							);
-						?>
-					</nav>
-				</div>
-			</div>
-		<?php endif; ?>
 	</header>
+<?php endif; ?>
+
+<?php
+// Fixed global menu
+if ( has_nav_menu( 'primary' ) ) :
+	?>
+	<div id="fixed_gnav" class="fixed-gnav">
+		<div class="container">
+			<nav class="c-gnav" role="navigation" aria-hidden="true" aria-label="<?php esc_attr_e( 'Fixed global menu', 'neumorphic' ); ?>">
+				<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'primary',
+							'menu_class'     => 'c-gnav__list',
+							'container'      => false,
+							'walker'         => new Neumorphic_Gnav_Walker(),
+						)
+					);
+				?>
+			</nav>
+		</div>
+	</div>
 <?php endif; ?>
 
 <nav class="fixed-nav" aria-label="<?php esc_attr_e( 'Fixed mobile menu', 'neumorphic' ); ?>">
