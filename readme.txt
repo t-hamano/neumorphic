@@ -4,8 +4,9 @@ Tags: one-column, two-columns, right-sidebar, left-sidebar, wide-blocks, block-s
 Donate link: https://www.paypal.me/thamanoJP
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Stable tag: 2.0.0
 Requires at least: 5.5
-Tested up to: 5.5
+Tested up to: 5.8
 Requires PHP: 5.6
 
 Neumorphic is a advanced WordPress theme based on neumorphic design.
@@ -41,6 +42,25 @@ License: CC0 Public Domain
 Source: https://pxhere.com/ja/photo/32163
 
 == Changelog ==
+
+= v2.0.0=
+Add: Customizer setting (Block-based widgets editor switch control)
+Add: Customizer setting (neumoprhic style site logo image)
+Add: Customizer setting (post modified date)
+Add: Customizer SNS setting variation
+Add: Flat template
+Add: Support for custom spacing
+Change: Style and script handle name
+Clean: Change sass compiler from node sass to dart sass
+Clean: CSS refactoring
+Clean: npm packages
+Fix: Accessibility check
+Fix: Page template identification error
+Remove: Bundled language files
+Styling: IE and old WordPress version fallback
+Styling: Tuning of all blocks
+Styling: Widget Block Editor
+Update: Font Awesome version and build flow
 
 = v1.3.2 =
 Fix: Problem about installation error in PHP 8
