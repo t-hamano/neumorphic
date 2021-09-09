@@ -29,6 +29,13 @@
 		}
 	}
 
+	.wp-block-file__embed {
+
+		@include nm-reverse;
+		padding: 5px;
+		border-radius: $base_border_radius;
+	}
+
 	&.aligncenter,
 	&.alignwide,
 	&.alignfull {
