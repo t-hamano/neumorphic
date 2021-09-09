@@ -1,0 +1,73 @@
+/**
+ * Block Editor Styles
+ */
+@use "sass:math";
+
+// Foundation
+@import "foundation/fontawesome";
+@import "foundation/variable";
+@import "foundation/mixin";
+
+// Block Styles
+.editor-styles-wrapper {
+
+	color: var(--color-text-main);
+	font-size: $base_font_size_pc;
+	line-height: $base_line_height;
+	letter-spacing: $base_letter_spacing;
+	background: var(--color-bg);
+
+	&.block-editor-writing-flow {
+		font-family: $base_font_falily;
+	}
+
+	@import "blocks/common/editor";
+	@import "blocks/archives/editor";
+	@import "blocks/audio/editor";
+	@import "blocks/buttons/editor";
+	@import "blocks/calendar/editor";
+	@import "blocks/categories/editor";
+	@import "blocks/classic/editor";
+	@import "blocks/code/editor";
+	@import "blocks/columns/editor";
+	@import "blocks/cover/editor";
+	@import "blocks/embeds/editor";
+	@import "blocks/file/editor";
+	@import "blocks/gallery/editor";
+	@import "blocks/group/editor";
+	@import "blocks/heading/editor";
+	@import "blocks/html/editor";
+	@import "blocks/image/editor";
+	@import "blocks/latest-comments/editor";
+	@import "blocks/latest-posts/editor";
+	@import "blocks/legacy-widget/editor";
+	@import "blocks/list/editor";
+	@import "blocks/loginout/editor";
+	@import "blocks/media-text/editor";
+	@import "blocks/more/editor";
+	@import "blocks/nextpage/editor";
+	@import "blocks/page-list/editor";
+	@import "blocks/paragraph/editor";
+	@import "blocks/post-date/editor";
+	@import "blocks/post-excerpt/editor";
+	@import "blocks/post-featured-image/editor";
+	@import "blocks/post-template/editor";
+	@import "blocks/post-terms/editor";
+	@import "blocks/query-title/editor";
+	@import "blocks/quote/editor";
+	@import "blocks/rss/editor";
+	@import "blocks/search/editor";
+	@import "blocks/separator/editor";
+	@import "blocks/shortcode/editor";
+	@import "blocks/site-logo/editor";
+	@import "blocks/site-title/editor";
+	@import "blocks/social-links/editor";
+	@import "blocks/spacer/editor";
+	@import "blocks/table/editor";
+	@import "blocks/tag-cloud/editor";
+	@import "blocks/verse/editor";
+	@import "blocks/video/editor";
+}
+
+// Fallback
+@import "fallback/editor";

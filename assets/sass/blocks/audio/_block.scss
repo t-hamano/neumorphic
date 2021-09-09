@@ -1,12 +1,14 @@
-/*----------------------
-# Audio
-----------------------*/
+/**
+ * Audio
+ */
 
 .wp-block-audio {
-	margin-bottom: 2em;
 
-	&.aligncenter .mejs-container.mejs-audio {
-		margin-right: auto;
-		margin-left: auto;
+	&.alignwide,
+	&.alignfull {
+
+		.mejs-container.mejs-audio {
+			width: 100% !important;
+		}
 	}
 }

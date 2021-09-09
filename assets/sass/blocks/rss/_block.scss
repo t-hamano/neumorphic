@@ -1,69 +1,62 @@
-/*----------------------
-# RSS
-----------------------*/
+/**
+ * RSS
+ */
 
 .wp-block-rss {
-	margin-bottom: 2em;
+	margin-top: 0;
 	list-style: none;
+
+	a {
+		display: inline-block;
+	}
 
 	&:not(.is-grid) {
 
 		@include nm;
-		padding: 1.5em;
+		padding: 0 1em;
 		border-radius: $base_border_radius;
 
 		> li {
 			margin: 0;
+			padding: 1em 0 calc(1em + 4px);
 
 			&:not(:last-child) {
 
 				@include nm-border;
-				margin-bottom: 1em;
-				padding-bottom: 1em;
 			}
 		}
 	}
 
 	&.is-grid {
-		max-width: none;
-		margin-right: -8px;
-		margin-left: -8px;
+		margin-bottom: 0.75em;
 
-		&.alignleft {
-			margin-right: 1.5em;
-		}
+		li {
 
-		&.alignright {
-			margin-left: 1.5em;
-		}
+			@include nm;
+			margin: 0 1.25em 1.25em 0;
+			padding: 1em;
+			border-radius: $base_border_radius;
 
-		@include mq(md-max) {
-
-			&.alignleft,
-			&.alignright {
-				margin-right: auto;
-				margin-left: auto;
+			@media screen and (max-width: 599px) {
+				margin-right: 0;
 			}
 		}
 
-		&.aligncenter {
-			display: flex;
-		}
+		@media (min-width: 600px) {
 
-		> li {
+			@for $i from 2 through 6 {
+				&.columns-#{ $i } li {
+					width: calc((100% / #{ $i }) - 1.25em + (1.25em / #{ $i }));
 
-			@include nm;
-			margin: 0 8px 16px;
-			padding: 1.5em;
-			border-radius: $base_border_radius;
+					&:nth-child( #{ $i }n ) {
+						margin-right: 0;
+					}
+				}
+			}
 		}
 	}
 
 	&__item-title {
-
-		+ * {
-			margin-top: 0.5em;
-		}
 
 		a::before {
 			display: inline-block;
@@ -94,6 +87,12 @@
 	}
 
 	&__item-excerpt {
+		margin-top: 0.5em;
 		font-size: 0.9em;
+	}
+
+	&.alignleft,
+	&.alignright {
+		max-width: 500px;
 	}
 }

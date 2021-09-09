@@ -1,0 +1,91 @@
+/**
+ * Classic
+ */
+
+// Image
+.wp-caption {
+	max-width: 100%;
+
+	&.aligncenter {
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+p,
+p > a,
+.wp-caption,
+.wp-caption > a {
+
+	> [class^="wp-image-"],
+	> [class*=" wp-image-"] {
+
+		@include nm-media;
+	}
+}
+
+.wp-caption-text {
+	margin-top: 0.5em;
+	font-size: 0.8em;
+	opacity: $text_color_thin;
+}
+
+// Gallery
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+
+	@for $i from 1 through 9 {
+
+		&.gallery-columns-#{$i} .gallery-item {
+			width: #{percentage(math.div(1, $i))};
+		}
+	}
+
+	@include mq(md-max) {
+
+		@for $i from 5 through 9 {
+			&.gallery-columns-#{$i} .gallery-item {
+				width: 25%;
+			}
+		}
+	}
+
+	@include mq(sm-max) {
+
+		@for $i from 3 through 9 {
+			&.gallery-columns-#{$i} .gallery-item {
+				width: 50%;
+			}
+		}
+	}
+}
+
+.gallery-item {
+	margin: 0 0 20px;
+	padding: 0 5px;
+}
+
+.gallery-icon {
+
+	img {
+
+		width: 100%;
+	}
+
+	> img {
+
+		@include nm-media;
+	}
+
+	a {
+
+		@include nm-media-link;
+		display: block;
+	}
+}
+
+.gallery-caption {
+	text-align: center;
+}

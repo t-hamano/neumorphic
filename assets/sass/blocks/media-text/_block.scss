@@ -1,25 +1,11 @@
-/*----------------------
-# Media & Text
-----------------------*/
+/**
+ * Media & Text
+ */
 
 .wp-block-media-text {
-	margin-bottom: 2em;
 
 	.wp-block-media-text__media video {
-		border-radius: $base_border_radius / 2;
-	}
-
-	&:not(.is-image-fill) .wp-block-media-text__media {
-
-		a {
-
-			@include nm-media-link;
-		}
-
-		> img {
-
-			@include nm-media;
-		}
+		border-radius: math.div($base_border_radius, 2);
 	}
 
 	.wp-block-media-text__content {
@@ -34,34 +20,32 @@
 		}
 	}
 
-	&.has-media-on-the-right .wp-block-media-text__content {
+	&.has-media-on-the-right  .wp-block-media-text__content {
 		padding: 0 2em 0 0;
-	}
-
-	&.has-background {
-		padding: 1.5em;
 	}
 
 	&.is-style-nm {
 
 		@include nm;
-		padding: 1.5em;
+		padding: 1em;
 		border-radius: $base_border_radius;
 
 		&.has-background {
 			position: relative;
+		}
+	}
 
-			&::before {
-				position: absolute;
-				top: 0;
-				right: 0;
-				bottom: 0;
-				left: 0;
-				border: 5px var(--color-bg) solid;
-				border-radius: $base_border_radius;
-				content: "";
-				pointer-events: none;
-			}
+	&:not(.is-image-fill) .wp-block-media-text__media {
+
+		a {
+
+			@include nm-media-link;
+		}
+
+		> img,
+		> video {
+
+			@include nm-media;
 		}
 	}
 
@@ -74,7 +58,6 @@
 		a {
 
 			@include nm-media-link;
-			display: block;
 			height: 100%;
 			padding: 0;
 			background: none !important;

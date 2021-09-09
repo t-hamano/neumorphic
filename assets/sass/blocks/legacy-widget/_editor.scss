@@ -1,0 +1,50 @@
+/**
+ * Legacy Widget
+ */
+
+.wp-block-legacy-widget {
+	font-size: 16px;
+
+	@include nm;
+	border-radius: $base_border_radius;
+
+	&__edit-preview-iframe {
+		display: block;
+	}
+
+	&__edit-form {
+		background: var(--color-nm-light);
+		border-color: var(--color-nm-dark);
+
+		.wp-block-legacy-widget__edit-form-title {
+			padding: 0;
+			color: inherit;
+			font-size: inherit;
+			font-family: inherit;
+
+			&::before {
+				content: none;
+			}
+		}
+
+		.widget-inside {
+			background: transparent;
+		}
+
+		.widget-inside.widget-inside {
+			font-family: inherit;
+
+			a,
+			input,
+			label {
+				color: inherit;
+				font-family: inherit;
+			}
+
+			input,
+			select {
+				background: #fff;
+			}
+		}
+	}
+}

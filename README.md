@@ -22,6 +22,10 @@ You can change theme color by using color skin function, and you can also adjust
 * License: MIT License
 * Source: https://github.com/jhildenbiddle/css-vars-ponyfill
 
+### object-fit-images
+* License: MIT License
+* Source: https://github.com/fregante/object-fit-images
+
 ### Image for theme screenshot
 * License: CC0 Public Domain
 * Source: https://pxhere.com/ja/photo/32163

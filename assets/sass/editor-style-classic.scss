@@ -1,12 +1,15 @@
-/*--------------------------------------------------------------
-# Classic editor styles
---------------------------------------------------------------*/
+/**
+ * Classic Editor Styles
+ */
+@use "sass:math";
 
-@import "variable";
-@import "mixin";
+// Foundation
+@import "foundation/fontawesome";
+@import "foundation/variable";
+@import "foundation/mixin";
 
-body#tinymce.wp-editor.content {
-
+.mce-content-body {
+	margin: 2em;
 	color: var(--color-text-main);
 	font-size: $base_font_size_pc;
 	font-family: $base_font_falily;
@@ -44,40 +47,60 @@ body#tinymce.wp-editor.content {
 		flex-wrap: wrap;
 		width: 100%;
 		margin: 0;
+		line-height: inherit;
 
 		@for $i from 2 through 9 {
-
 			&.gallery-columns-#{$i} .gallery-item {
-				width: #{percentage(1 / $i)};
+				width: #{percentage(math.div(1, $i))};
 			}
 		}
 
-		&-item {
-			margin: 0 0 10px;
-			padding: 0 5px;
-		}
+		@include mq(md-max) {
 
-		&-icon {
-
-			img {
-
-				@include nm-media;
-				width: 100%;
-			}
-
-			a {
-
-				@include nm-media-link;
+			@for $i from 5 through 9 {
+				&.gallery-columns-#{$i} .gallery-item {
+					width: 25%;
+				}
 			}
 		}
 
-		&-caption {
-			margin-top: 0.5em;
-			color: inherit;
-			font-size: 0.8em;
-			text-align: center;
-			opacity: $text_color_thin;
+		@include mq(sm-max) {
+
+			@for $i from 3 through 9 {
+				&.gallery-columns-#{$i} .gallery-item {
+					width: 50%;
+				}
+			}
 		}
+	}
+
+	.gallery-item {
+		margin: 0 0 20px;
+		padding: 0 5px;
+	}
+
+	.gallery-icon {
+
+		img {
+
+			@include nm-media;
+			width: 100%;
+			vertical-align: top;
+		}
+
+		a {
+
+			@include nm-media-link;
+		}
+	}
+
+	.gallery-caption {
+		margin-top: 0.5em;
+		margin-bottom: 0;
+		color: inherit;
+		font-size: 0.8em;
+		text-align: center;
+		opacity: $text_color_thin;
 	}
 
 	// Text Alignment
@@ -96,24 +119,22 @@ body#tinymce.wp-editor.content {
 	// Alignment
 	.alignleft {
 		float: left;
-		margin-right: 1.5em;
-		margin-bottom: 0.5em;
+		margin: 0 1.5em 1.5em 0;
 	}
 
-	.align-right {
+	.alignright {
 		float: right;
-		margin-bottom: 0.5em;
-		margin-left: 1.5em;
+		margin: 0 0 1.5em 1.5em;
 	}
 
-	.align-center {
+	.aligncenter {
 		display: block;
 		margin: 0 auto 2em;
 		text-align: center;
 	}
 
 
-	/* Heading */
+	// Heading
 	h1,
 	h2,
 	h3,
@@ -159,42 +180,31 @@ body#tinymce.wp-editor.content {
 		font-size: 1em;
 	}
 
-	/* List */
+	// List
 	ul,
 	ol {
 		margin: 0 0 2em;
 		padding-left: 1.5em;
 
-		li {
-			margin: 0.5em 0;
-		}
-
 		ul {
-			margin-left: 0;
-			padding: 0;
-			list-style: none;
-
-			li {
-				position: relative;
-				padding-left: 1em;
-
-				&::before {
-					position: absolute;
-					left: 0;
-					content: "-";
-				}
-			}
+			list-style-type: disc;
 		}
 
+		li {
+			margin: 0.2em 0;
+		}
+
+		ul,
 		ol {
-			padding-left: 1.5em;
+			margin-bottom: 0;
 		}
 	}
 
 	// Code
 	code {
+		margin: 0 0.3em;
 		padding: 0.1em 0.3em;
-		color: var(--color-text-main);
+		color: inherit;
 		font-size: 0.9em;
 		font-family: $base_code_font_family;
 		background: var(--color-nm-dark);
@@ -209,13 +219,13 @@ body#tinymce.wp-editor.content {
 		padding: 0.3em 0.5em;
 		color: var(--color-text-main);
 		border: none;
-		border-radius: $base_border_radius / 2;
+		border-radius: math.div($base_border_radius, 2);
 	}
 
 	// Quote
 	blockquote {
 		position: relative;
-		padding: 2em 2em 2em 3.5em;
+		padding: 1em 1em 1em 3.5em;
 		color: var(--color-text-main);
 		border: none;
 		border-radius: $base_border_radius;
@@ -232,6 +242,17 @@ body#tinymce.wp-editor.content {
 			font-size: 1.6em;
 			font-family: "Font Awesome 5 Free";
 			content: "\f10d";
+		}
+
+		> * {
+
+			&:first-child {
+				margin-top: 0 !important;
+			}
+
+			&:last-child {
+				margin-bottom: 0 !important;
+			}
 		}
 
 		p {
@@ -252,6 +273,16 @@ body#tinymce.wp-editor.content {
 		}
 	}
 
+	// More, Next Page
+	img[data-wp-more="nextpage"],
+	img[data-wp-more="more"] {
+		width: 100%;
+		margin: 2em 0;
+		padding: 15px 0;
+		background-color: #fff;
+		box-shadow: none;
+	}
+
 	// Image
 	img {
 
@@ -265,13 +296,20 @@ body#tinymce.wp-editor.content {
 		opacity: $text_color_thin;
 	}
 
+	.wp-caption-dd {
+		font-size: 0.8em;
+		opacity: $text_color_thin;
+	}
+
 	// Table
 	table {
 
 		@include nm;
 		width: auto;
 		margin-bottom: 0.5em;
+		border: none;
 		border-radius: $base_border_radius;
+		border-collapse: collapse;
 
 		th,
 		td {
@@ -286,7 +324,7 @@ body#tinymce.wp-editor.content {
 		}
 
 		thead th {
-			border-bottom-width: 3px;
+			border-bottom-width: 2px;
 		}
 
 		tbody tr:last-child {
@@ -298,7 +336,7 @@ body#tinymce.wp-editor.content {
 		}
 
 		tfoot td {
-			border-top: 3px solid var(--color-nm-dark);
+			border-top: 2px solid var(--color-nm-dark);
 			border-bottom: none;
 		}
 

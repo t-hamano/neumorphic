@@ -5,17 +5,16 @@
  * @package neumorphic
  */
 
-get_header(); ?>
+get_header();
+?>
 
 <main id="main" class="main" role="main">
-
 	<?php
 	while ( have_posts() ) {
 		the_post();
 		get_template_part( 'parts/content-post' );
 	}
 	?>
-
 </main>
 
 <?php
@@ -26,4 +25,4 @@ if ( $display_post ) {
 	get_sidebar();
 }
 
-get_footer(); ?>
+get_footer();

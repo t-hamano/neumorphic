@@ -1,0 +1,130 @@
+/**
+ * Quote, Pullquote
+ */
+
+// Common
+blockquote,
+.wp-block blockquote {
+
+	@include nm-reverse;
+	position: relative;
+	padding: 1em 1em 1em 3.5em;
+	border-radius: $base_border_radius;
+
+	&::before {
+
+		@include nm-text;
+		position: absolute;
+		top: 0.5em;
+		left: 0.7em;
+		font-weight: 900;
+		font-size: 1.6em;
+		font-family: "Font Awesome 5 Free";
+		content: "\f10d";
+	}
+
+	> *:first-child {
+		margin-top: 0 !important;
+	}
+
+	> *:last-child {
+		margin-bottom: 0 !important;
+	}
+
+	p {
+		margin-top: 0;
+		margin-bottom: 1em;
+	}
+
+	cite {
+		display: block;
+		font-size: 0.8em;
+		opacity: $text_color_thin;
+	}
+}
+
+// Quote
+.wp-block-quote {
+
+	&.is-style-nm-none {
+		padding: 0 0 0 2.8em;
+		box-shadow: none;
+
+		&::before {
+			top: -0.2em;
+			left: 0;
+		}
+	}
+
+	&.is-style-large {
+		padding: 1em 1em 1em 3.5em;
+		font-size: 1.4em;
+
+		p {
+			font-size: 1em;
+			font-style: normal;
+			line-height: inherit;
+		}
+
+		cite {
+			font-size: 0.8em;
+			text-align: inherit;
+		}
+	}
+}
+
+// Pullquote
+.wp-block-pullquote {
+	padding: 0;
+	text-align: inherit;
+
+	blockquote {
+		border-radius: 0;
+		box-shadow: none;
+
+		&::before {
+			content: none;
+		}
+
+		p {
+			font-size: inherit;
+		}
+	}
+
+	&:not(.is-style-solid-color) {
+
+		@include nm-reverse;
+		padding: 1.5em 1em;
+		border-color: var(--color-text-main);
+		border-radius: $base_border_radius;
+
+		blockquote {
+			padding: 1em 0;
+			border-color: inherit !important;
+			border-top: 3px solid;
+			border-bottom: 3px solid;
+		}
+	}
+
+	&.is-style-solid-color {
+		font-size: 1.4em;
+
+		blockquote {
+			max-width: 100%;
+			padding: 0;
+
+			p {
+				margin-bottom: 1em;
+			}
+
+			cite {
+				font-style: italic;
+			}
+		}
+
+		&.has-background blockquote {
+			padding: 1em;
+			background-color: transparent;
+		}
+	}
+}

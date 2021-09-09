@@ -1,0 +1,71 @@
+/**
+ * Page List
+ */
+
+.wp-block-page-list {
+
+	&.is-style-nm,
+	&.is-style-nm-reverse {
+		padding: 1em 1em 1em 1.5em;
+		border-radius: $base_border_radius;
+
+		.wp-block-page-list {
+			margin: 0;
+			padding: 0;
+		}
+	}
+
+	&.is-style-nm {
+
+		@include nm;
+	}
+
+	&.is-style-nm-reverse {
+
+		@include nm-reverse;
+	}
+
+
+	a {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	ul.wp-block-page-list {
+		margin: 0;
+		padding-left: 0;
+		list-style: none;
+
+		> li {
+			position: relative;
+			padding-left: 1.5em;
+
+			&::before {
+				position: absolute;
+				left: 0;
+				font-weight: 900;
+				font-family: "Font Awesome 5 Free";
+				content: "\f15b";
+			}
+		}
+
+		.submenu-container {
+			padding-left: 0;
+			list-style: none;
+
+			> li {
+				position: relative;
+				padding-left: 1em;
+
+				&::before {
+					position: absolute;
+					left: 0;
+					font-weight: 900;
+					font-family: "Font Awesome 5 Free";
+					transform: scale(0.6) translateY(2px);
+					content: "\f054";
+				}
+			}
+		}
+	}
+}

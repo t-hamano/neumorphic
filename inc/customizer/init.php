@@ -14,6 +14,9 @@ require_once( get_template_directory() . '/inc/customizer/section-title-tagline.
 // Section (Color)
 require_once( get_template_directory() . '/inc/customizer/section-color.php' );
 
+// Section (Gutenberg)
+require_once( get_template_directory() . '/inc/customizer/section-gutenberg.php' );
+
 // Section (Header)
 require_once( get_template_directory() . '/inc/customizer/section-header.php' );
 
@@ -26,14 +29,14 @@ require_once( get_template_directory() . '/inc/customizer/section-sidebar.php' )
 // Section (Archive page)
 require_once( get_template_directory() . '/inc/customizer/section-archive.php' );
 
+// Section (Post page)
+require_once( get_template_directory() . '/inc/customizer/section-post.php' );
+
 // Section (SNS)
 require_once( get_template_directory() . '/inc/customizer/section-sns.php' );
 
 // Section (Mobile)
 require_once( get_template_directory() . '/inc/customizer/section-mobile.php' );
-
-// CSS Generator
-require_once( get_template_directory() . '/inc/customizer/css.php' );
 
 /**
  * Enqueues scripts for customizer controls & settings.

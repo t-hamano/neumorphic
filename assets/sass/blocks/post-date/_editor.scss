@@ -1,0 +1,27 @@
+/**
+ * Post Date
+ */
+
+.wp-block-post-date {
+	font-size: 0.8em;
+
+	> time,
+	> a {
+
+		&::before {
+			margin-right: 0.5em;
+			color: inherit;
+			font-weight: 400;
+			font-family: "Font Awesome 5 Free";
+			content: "\f017";
+		}
+	}
+
+	a {
+		text-decoration: none;
+
+		time {
+			text-decoration: underline;
+		}
+	}
+}

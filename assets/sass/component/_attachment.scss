@@ -1,11 +1,16 @@
-/*--------------------------------------------------------------
-# Attachment file area
---------------------------------------------------------------*/
+/**
+ * Attachment File
+ */
 
 .c-attachment {
 
 	&__image {
 		text-align: center;
+
+		img {
+
+			@include nm-media;
+		}
 	}
 
 	figcaption {

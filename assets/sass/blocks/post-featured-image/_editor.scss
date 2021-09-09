@@ -1,0 +1,40 @@
+/**
+ * Post Featured Image
+ */
+
+.wp-block-post-featured-image {
+
+	img {
+
+		@include nm-media;
+	}
+
+	&.alignfull a {
+		display: block;
+	}
+
+	&.is-style-nm-none {
+
+		img {
+			padding: 0;
+			border-radius: 0;
+			box-shadow: none;
+		}
+	}
+}
+
+[data-align="wide"],
+[data-align="full"] {
+
+	> .wp-block-post-featured-image  img {
+		width: 100%;
+	}
+}
+
+[data-align="left"],
+[data-align="right"] {
+
+	> .wp-block-post-featured-image {
+		max-width: 500px;
+	}
+}

@@ -1,6 +1,6 @@
-/*----------------------
-# Custom HTML
-----------------------*/
+/**
+ * Custom HTML
+ */
 
 .wp-block-html,
 [data-type="core/html"] {
@@ -11,6 +11,7 @@
 		font-size: 0.9em;
 		font-family: $base_code_font_family;
 		background: var(--color-nm-light);
-		border: 1px solid var(--color-nm-dark);
+		border: none;
+		border-radius: 0;
 	}
 }

@@ -1,23 +1,8 @@
-/*----------------------
-# Columns
-----------------------*/
+/**
+ * Columns
+ */
 
 .wp-block-columns {
-
-	> .wp-block-column {
-
-		> *:first-child {
-			margin-top: 0 !important;
-		}
-
-		> *:last-child {
-			margin-bottom: 0 !important;
-		}
-	}
-
-	&.has-background {
-		padding: calc(1.5em + 5px) calc(1.5em + 5px) calc(2em + 5px);
-	}
 
 	&.is-style-nm {
 
@@ -31,21 +16,38 @@
 
 	&.is-style-nm,
 	&.is-style-nm-reverse {
-		padding: 5px;
-		background-clip: content-box;
+		padding: 1em;
+		border-radius: $base_border_radius;
+	}
+}
+
+.wp-block-column {
+
+	&.is-style-nm {
+
+		@include nm;
+	}
+
+	&.is-style-nm-reverse {
+
+		@include nm-reverse;
+	}
+
+	&.is-style-nm,
+	&.is-style-nm-reverse {
+		padding: 1em;
 		border-radius: $base_border_radius;
 
-		> .wp-block-column {
-			padding-top: 1.5em;
-			padding-bottom: 1.5em;
-
-			&:first-child {
-				padding-left: 1.5em;
-			}
-
-			&:last-child {
-				padding-right: 1.5em;
-			}
+		&.has-background {
+			position: relative;
 		}
+	}
+
+	> *:first-child {
+		margin-top: 0 !important;
+	}
+
+	> *:last-child {
+		margin-bottom: 0 !important;
 	}
 }

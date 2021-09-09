@@ -1,6 +1,6 @@
-/*----------------------
-### Audio
-----------------------*/
+/**
+ * Audio
+ */
 
 .wp-block-audio {
 
@@ -14,12 +14,15 @@
 		border-radius: 1000px;
 	}
 
-	figcaption {
-		margin-top: 1em;
-		margin-bottom: 0;
-		color: inherit;
-		font-size: 0.8em;
-		text-align: inherit;
-		opacity: $text_color_thin;
+	&.wp-block-audio > figcaption {
+		color: var(--color-text-main);
+	}
+}
+
+[data-align="wide"],
+[data-align="full"] {
+
+	audio {
+		width: 100%;
 	}
 }

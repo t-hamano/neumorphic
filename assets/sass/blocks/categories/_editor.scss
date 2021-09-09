@@ -1,51 +1,77 @@
-/*----------------------
-# Categories
-----------------------*/
+/**
+ * Categories
+ */
 
 .wp-block-categories {
 
-	.wp-block-categories__dropdown {
+	&.is-style-nm,
+	&.is-style-nm-reverse {
+		padding: 1em;
+		border-radius: $base_border_radius;
+	}
 
-		@include nm-input-editor;
-		min-width: 0;
-		max-width: 100%;
-		height: auto;
-		padding: 0.7em 3em 0.7em 1.4em;
-		color: inherit;
-		font-size: inherit;
-		font-family: $base_font_falily;
-		line-height: inherit;
-		background: url(../images/chevron-down-solid.svg) no-repeat right 20px center/1em;
-		border-radius: 1000px;
+	&.is-style-nm {
 
-		option {
-			background: #fff;
+		@include nm;
+	}
+
+	&.is-style-nm-reverse {
+
+		@include nm-reverse;
+	}
+
+	&__list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+
+		li {
+			position: relative;
+		}
+
+		&-level-0 > li {
+			padding-left: 1.5em;
+
+			&::before {
+				position: absolute;
+				left: 0;
+				font-weight: 900;
+				font-family: "Font Awesome 5 Free";
+				content: "\f07b";
+			}
+		}
+
+		&:not(.wp-block-categories__list-level-0) > li {
+			padding-left: 1em;
+
+			&::before {
+				position: absolute;
+				left: 0;
+				font-weight: 900;
+				font-family: "Font Awesome 5 Free";
+				transform: scale(0.6) translateY(2px);
+				content: "\f054";
+			}
 		}
 	}
 
-	> ul {
-		margin-left: 0;
-		padding-left: 1.5em;
+	&__dropdown {
 
-		li {
-			margin: 0.5em 0;
+		@include nm-input;
+		padding: 0.7em 3em 0.7em 1.4em;
+		font-size: inherit;
+		font-family: $base_font_falily;
+		line-height: inherit;
+		text-shadow: none;
+		background: url($icon_chevron_down_solid) no-repeat right 20px center/1em;
+		border-radius: 1000px;
+
+		&:hover {
+			color: inherit;
 		}
 
-		ul {
-			margin-left: 0;
-			padding: 0;
-			list-style: none;
-
-			li {
-				position: relative;
-				padding-left: 1em;
-
-				&::before {
-					position: absolute;
-					left: 0;
-					content: "-";
-				}
-			}
+		option {
+			background: #fff;
 		}
 	}
 }

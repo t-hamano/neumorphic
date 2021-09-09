@@ -29,6 +29,26 @@ function neumorphic_customizer_title_tagline( $wp_customize ) {
 			},
 		)
 	);
+
+	// Use neumorphic style site logo image
+	$wp_customize->add_setting(
+		'site_logo_nm_style',
+		array(
+			'default'           => NEUMORPHIC_SITE_LOGO_NM_STYLE,
+			'sanitize_callback' => 'neumorphic_sanitize_checkbox',
+		)
+	);
+
+	$wp_customize->add_control(
+		'site_logo_nm_style',
+		array(
+			'section'  => 'title_tagline',
+			'settings' => 'site_logo_nm_style',
+			'label'    => __( 'Use neumorphic style site logo image', 'neumorphic' ),
+			'type'     => 'checkbox',
+			'priority' => 8,
+		)
+	);
 }
 
 add_action( 'customize_register', 'neumorphic_customizer_title_tagline' );

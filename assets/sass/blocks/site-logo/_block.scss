@@ -1,0 +1,23 @@
+/**
+ * Site Title
+ */
+
+.wp-block-site-logo {
+	text-align: center;
+
+	&.is-style-nm a {
+
+		@include nm-media-link;
+	}
+
+	&:not(.is-style-nm) a {
+
+		@include mq(lg-min) {
+			transition: opacity $base_transition_duration ease-in-out;
+
+			&:hover {
+				opacity: $base_hover_opacity;
+			}
+		}
+	}
+}

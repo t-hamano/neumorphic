@@ -1,35 +1,59 @@
-/*----------------------
-# Categories
-----------------------*/
+/**
+ * Categories
+ */
 
-.wp-block-categories {
-	margin-bottom: 2em;
+.wp-block-categories-list,
+.wp-block-categories-dropdown {
 
-	&.wp-block-categories-list {
+	&.is-style-nm,
+	&.is-style-nm-reverse {
+		padding: 1em;
+		border-radius: $base_border_radius;
+	}
+
+	&.is-style-nm {
+
+		@include nm;
+	}
+
+	&.is-style-nm-reverse {
+
+		@include nm-reverse;
+	}
+}
+
+.wp-block-categories-list {
+	padding: 0;
+	list-style: none;
+
+	> li {
+		position: relative;
 		padding-left: 1.5em;
+
+		&::before {
+			position: absolute;
+			left: 0;
+			font-weight: 900;
+			font-family: "Font Awesome 5 Free";
+			content: "\f07b";
+		}
 	}
 
-	&.wp-block-categories-dropdown select {
-
-		@include nm-input;
-		display: inline-block;
-		width: auto;
-		border-radius: 1000px;
-	}
-
-	ul {
-		margin-left: 0;
+	.children {
 		padding: 0;
 		list-style: none;
 
-		li {
+		> li {
 			position: relative;
 			padding-left: 1em;
 
 			&::before {
 				position: absolute;
 				left: 0;
-				content: "-";
+				font-weight: 900;
+				font-family: "Font Awesome 5 Free";
+				transform: scale(0.6) translateY(2px);
+				content: "\f054";
 			}
 		}
 	}

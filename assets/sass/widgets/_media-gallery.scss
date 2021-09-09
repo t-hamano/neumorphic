@@ -1,0 +1,42 @@
+/**
+ * Gallery
+ */
+
+.widget_media_gallery {
+
+	.gallery {
+		display: flex;
+		flex-wrap: wrap;
+		margin: 0 -0.2em -0.4em;
+	}
+
+	@for $i from 1 through 9 {
+
+		.gallery-columns-#{$i} .gallery-item {
+			width: #{percentage(math.div(1, $i))};
+		}
+	}
+
+	.gallery-item {
+		padding: 0 0.2em 0.4em;
+	}
+
+	a {
+
+		@include nm-media-link;
+		display: block;
+	}
+
+	img {
+
+		@include nm-media;
+		width: 100%;
+	}
+
+	figcaption {
+		margin-top: 0.5em;
+		font-size: 0.8em;
+		text-align: center;
+		opacity: $text_color_thin;
+	}
+}

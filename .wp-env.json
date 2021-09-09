@@ -1,7 +1,7 @@
 {
-  "core": null,
-  "themes": [ "." ],
-  "config": {
-    "WP_DEBUG": true
-  }
+	"core": null,
+	"themes": [ "." ],
+	"config": {
+		"WP_DEBUG": true
+	}
 }

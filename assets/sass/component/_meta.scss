@@ -1,16 +1,16 @@
-/*--------------------------------------------------------------
-# Meta info
---------------------------------------------------------------*/
+/**
+ * Post Meta
+ */
 
 .c-meta {
 	margin-top: 0.5em;
+	font-size: 0.8em;
 
 	&__list {
 		display: flex;
 		flex-wrap: wrap;
 		margin: 0;
 		padding: 0;
-		font-size: 0.8em;
 		list-style-type: none;
 	}
 

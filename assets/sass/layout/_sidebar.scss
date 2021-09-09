@@ -1,0 +1,12 @@
+/**
+ * Sidebar
+ */
+
+.sidebar {
+	margin-top: 5em;
+
+	@include mq(lg-min) {
+		width: 30%;
+		margin-top: 0;
+	}
+}

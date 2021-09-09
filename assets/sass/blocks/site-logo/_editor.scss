@@ -1,0 +1,11 @@
+/**
+ * Site Title
+ */
+
+.wp-block-site-logo {
+
+	&.is-style-nm img {
+
+		@include nm-media;
+	}
+}

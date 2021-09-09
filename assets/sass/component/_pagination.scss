@@ -1,12 +1,12 @@
-/*--------------------------------------------------------------
-# Pagination
---------------------------------------------------------------*/
+/**
+ * Pagination
+ */
 
 .c-pagination {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	margin-top: 4em;
+	margin-top: 3em;
 
 	.nav-links {
 		display: flex;
@@ -38,13 +38,7 @@
 
 			@include nm-light;
 			color: inherit;
-		}
-
-		@include mq(lg-min) {
-
-			&:hover {
-				text-decoration: none;
-			}
+			pointer-events: none;
 		}
 	}
 }

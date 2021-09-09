@@ -1,0 +1,26 @@
+/**
+ * List
+ */
+
+ul,
+ol {
+	margin: 0 0 2em;
+	padding-left: 1.5em;
+
+	&.has-background {
+		padding-left: 2.5em;
+	}
+
+	ul {
+		list-style-type: disc;
+	}
+
+	li {
+		margin: 0.2em 0;
+	}
+
+	ul,
+	ol {
+		margin-bottom: 0;
+	}
+}

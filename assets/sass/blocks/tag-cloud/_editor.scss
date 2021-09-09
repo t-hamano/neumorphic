@@ -1,6 +1,6 @@
-/*----------------------
-# Tag Cloud
-----------------------*/
+/**
+ * Tag Cloud
+ */
 
 .wp-block-tag-cloud {
 	margin-top: 0;
@@ -18,15 +18,8 @@
 
 		.tag-link-count {
 			color: var(--color-text-main);
+			font-weight: normal;
 			opacity: $text_color_thin;
 		}
-	}
-}
-
-[data-align="left"],
-[data-align="right"] {
-
-	.wp-block-tag-cloud {
-		margin-bottom: 0;
 	}
 }

@@ -1,0 +1,94 @@
+/**
+ * Heading
+ */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h1.wp-block,
+h2.wp-block,
+h3.wp-block,
+h4.wp-block,
+h5.wp-block,
+h6.wp-block {
+
+	@include nm-text-border;
+	margin-top: 1.5em;
+	margin-bottom: 1em;
+	font-weight: bold;
+	line-height: 1.4 !important;
+}
+
+h1,
+h1.wp-block {
+	font-size: 2em;
+}
+
+h2,
+h2.wp-block {
+	font-size: 1.8em;
+}
+
+h3,
+h3.wp-block {
+	font-size: 1.6em;
+}
+
+h4,
+h4.wp-block {
+	font-size: 1.4em;
+}
+
+h5,
+h5.wp-block {
+	font-size: 1.2em;
+}
+
+h6,
+h6.wp-block {
+	font-size: 1em;
+}
+
+h1.wp-block,
+h2.wp-block,
+h3.wp-block {
+
+	@include nm-border;
+	padding-bottom: 0.3em;
+
+	&.has-background {
+		padding: 0.3em 0.6em;
+
+		&::before {
+			bottom: -6px;
+		}
+	}
+
+	&.is-style-nm-none {
+		text-shadow: none;
+
+		&:not(.has-background) {
+			padding-bottom: 0;
+		}
+
+		&::before {
+			content: none;
+		}
+	}
+}
+
+h4.wp-block,
+h5.wp-block,
+h6.wp-block {
+
+	&.has-background {
+		padding: 0.3em 0.6em;
+	}
+
+	&.is-style-nm-none {
+		text-shadow: none;
+	}
+}

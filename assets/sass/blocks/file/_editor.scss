@@ -1,24 +1,35 @@
-/*----------------------
-# File
-----------------------*/
+/**
+ * File
+ */
 
 .wp-block-file {
+	margin-bottom: 2em;
 
-	.wp-block-file__textlink {
-		margin-bottom: 0.5em;
-		color: var(--color-text-link);
-		text-decoration: underline;
+	.wp-block-file__content-wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
 	}
 
 	.wp-block-file__button-richtext-wrapper {
-		margin-bottom: 0.5em;
+		margin: 0.5em 0 0.5em 1em;
 	}
 
 	.wp-block-file__button {
 
-		@include nm-button-editor();
+		@include nm-button-editor;
 		color: var(--color-accent);
 		font-size: 0.8em;
+		text-align: center;
 		border-radius: 1000px;
+	}
+}
+
+[data-align="center"],
+[data-align="wide"],
+[data-align="full"] {
+
+	> .wp-block-file > .wp-block-file__content-wrapper {
+		justify-content: center;
 	}
 }

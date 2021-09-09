@@ -26,17 +26,11 @@ for ( $i = 1; $i <= 5; $i++ ) {
 }
 
 if ( ! empty( $sns_icons ) ) : ?>
-
 	<ul class="c-sns">
-
 		<?php foreach ( $sns_icons as $sns_icon ) : ?>
-
 			<li class="c-sns__item c-sns__item--<?php echo esc_attr( $sns_icon['link_class'] ); ?>">
 				<a href="<?php echo esc_url( $sns_icon['url'] ); ?>" target="_blank"><i class="<?php echo esc_attr( $sns_icon['icon_class'] ); ?>" title="<?php echo esc_attr( $sns_icon['title'] ); ?>"></i></a>
 			</li>
-
 		<?php endforeach; ?>
-
 	</ul>
-
 <?php endif; ?>

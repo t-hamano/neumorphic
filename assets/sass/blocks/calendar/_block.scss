@@ -1,14 +1,21 @@
-/*----------------------
-# Calendar
-----------------------*/
+/**
+ * Calendar
+ */
 
 .wp-block-calendar {
 
 	@include nm;
-	max-width: 350px;
-	margin-bottom: 2em;
-	padding: 1.5em 1em;
+	padding: 1em;
 	border-radius: $base_border_radius;
+
+	&.aligncenter {
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	&:not(.alignwide):not(.alignfull) {
+		max-width: 350px;
+	}
 
 	.wp-calendar-table {
 		width: 100%;

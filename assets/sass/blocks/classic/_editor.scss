@@ -1,0 +1,177 @@
+/**
+ * Classic
+ */
+
+[data-type="core/freeform"] {
+
+	&.is-selected .wp-block-freeform.block-library-rich-text__tinymce {
+		padding: 1em;
+	}
+
+	.wp-block-freeform.block-library-rich-text__tinymce {
+		line-height: $base_line_height;
+
+		> * {
+			margin: 0 0 2em;
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		// Alignment
+		.alignright {
+			margin: 0 0 1.5em 1.5em;
+		}
+
+		.alignleft {
+			margin: 0 1.5em 1.5em 0;
+		}
+
+		// Heading
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+
+			@include nm-text-border;
+			margin-top: 1.5em;
+			margin-bottom: 1em;
+			line-height: 1.4;
+		}
+
+		h1 {
+			font-size: 2em;
+		}
+
+		h2 {
+			font-size: 1.8em;
+		}
+
+		h3 {
+			font-size: 1.6em;
+		}
+
+		h4 {
+			font-size: 1.4em;
+		}
+
+		h5 {
+			font-size: 1.2em;
+		}
+
+		h6 {
+			font-size: 1em;
+		}
+
+		// Link
+		a {
+			color: var(--color-text-link);
+		}
+
+		// List
+		ul,
+		ol {
+			padding-left: 1.5em;
+		}
+
+		// Quote
+		blockquote {
+
+			@include nm-reverse;
+			padding: 1em 1em 1em 3.5em;
+			border: none;
+		}
+
+		// More
+		.wp-more-tag {
+			display: block;
+			width: 100%;
+			margin: 2em 0;
+			padding: 15px 0;
+			background-color: var(--color-nm-light);
+			border: 2px solid var(--color-accent);
+		}
+
+		// Image
+		.wp-caption {
+			max-width: 100%;
+
+			&.aligncenter {
+				margin-right: auto;
+				margin-left: auto;
+
+				.wp-caption-dd {
+					text-align: center;
+				}
+			}
+		}
+
+		p,
+		p > a,
+		.wp-caption-dt,
+		.wp-caption-dt > a {
+
+			> [class^="wp-image-"],
+			> [class*=" wp-image-"] {
+
+				@include nm-media;
+			}
+		}
+
+		.wp-caption-text {
+			font-size: 0.8em;
+			opacity: $text_color_thin;
+		}
+
+		.wp-caption-dd {
+			margin-top: 0.5em;
+			font-size: 0.8em;
+			opacity: 0.8;
+
+			a {
+				display: inline;
+			}
+		}
+
+		// Gallery
+		.gallery {
+			line-height: inherit;
+
+			img {
+
+				@include nm-media;
+				width: 100%;
+				vertical-align: top;
+			}
+		}
+
+		.gallery-item {
+			margin-bottom: 20px;
+			padding: 0 5px;
+		}
+
+		.gallery-caption {
+			margin-top: 0.5em;
+			margin-bottom: 0;
+			text-align: center;
+		}
+	}
+}
+
+[data-type="core/freeform"].is-selected::before {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	border-color: var(--color-text-main);
+	content: "";
+	pointer-events: none;
+}

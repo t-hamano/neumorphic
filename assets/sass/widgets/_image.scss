@@ -1,6 +1,6 @@
-/*--------------------------------------------------------------
-# Image
---------------------------------------------------------------*/
+/**
+ * Image
+ */
 
 .widget_media_image {
 	text-align: center;
@@ -17,13 +17,12 @@
 	}
 
 	figure {
+		max-width: 100%;
 		margin: 0 auto;
 	}
 
 	figcaption {
 		margin-top: 0.5em;
-		margin-bottom: 0;
-		color: inherit;
 		font-size: 0.8em;
 		text-align: center;
 		opacity: $text_color_thin;

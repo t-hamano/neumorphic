@@ -5,7 +5,8 @@
  * @package neumorphic
  */
 
-get_header(); ?>
+get_header();
+?>
 
 <main id="main" class="main" role="main">
 	<header class="c-entry__header">
@@ -18,4 +19,5 @@ get_header(); ?>
 	</div>
 </main>
 
-<?php get_footer(); ?>
+<?php
+get_footer();

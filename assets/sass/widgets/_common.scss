@@ -1,18 +1,26 @@
-/*--------------------------------------------------------------
-# Common
---------------------------------------------------------------*/
+/**
+ * Common
+ */
 
 .widget {
 
-	@include nm;
-	padding: 1.5em 1em;
-	border-radius: $base_border_radius;
+	&.widget_block > .customize-partial-edit-shortcut + * {
+		margin-top: 0;
+	}
+
+	&:not(.widget_block) {
+
+		@include nm;
+		padding: 1em;
+		border-radius: $base_border_radius;
+	}
 
 	+ .widget {
 		margin-top: 2em;
 	}
 
-	&__title {
+	&__title,
+	.widgettitle {
 
 		@include nm-border;
 		@include nm-text-border;
@@ -23,5 +31,9 @@
 		font-size: 1.2em;
 		line-height: 1.4;
 		text-align: center;
+	}
+
+	> .wp-block-group {
+		margin-bottom: 0;
 	}
 }

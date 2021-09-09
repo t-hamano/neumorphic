@@ -1,6 +1,6 @@
-/*----------------------
-# Video
-----------------------*/
+/**
+ * Video
+ */
 
 .wp-block-video {
 
@@ -8,6 +8,10 @@
 
 		@include nm-media;
 		display: block;
+	}
+
+	&.wp-block-video > figcaption {
+		color: var(--color-text-main);
 	}
 }
 
@@ -19,7 +23,7 @@
 [data-align="left"],
 [data-align="right"] {
 
-	.wp-block-video {
+	> .wp-block-video {
 		width: 100%;
 		max-width: 500px;
 	}

@@ -1,9 +1,8 @@
-/*----------------------
-# Tag Cloud
-----------------------*/
+/**
+ * Tag Cloud
+ */
 
 .wp-block-tag-cloud {
-	margin-bottom: 2em;
 
 	a {
 
@@ -19,6 +18,14 @@
 			color: var(--color-text-main);
 			font-weight: normal;
 			opacity: $text_color_thin;
+		}
+	}
+
+	&.alignwide,
+	&.alignfull {
+
+		a {
+			width: auto;
 		}
 	}
 }

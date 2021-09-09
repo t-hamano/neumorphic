@@ -1,54 +1,40 @@
-/*----------------------
-# Latest Comments
-----------------------*/
+/**
+ * Latest Comments
+ */
 
 .wp-block-latest-comments {
-	margin-bottom: 2em;
 
 	@include nm;
-	padding: 1.5em 1em;
 	border-radius: $base_border_radius;
 
-	&__comment {
+	&.wp-block-latest-comments {
+		padding: 0.5em 1em;
+	}
+
+	.wp-block-latest-comments__comment {
 		position: relative;
-		display: flex;
-		margin-bottom: 0;
+		min-height: 4.2em;
+		margin: 0;
+		padding: 1em 0 calc(1em + 4px);
 		line-height: inherit;
 		text-align: left;
 
 		&:not(:last-child) {
 
 			@include nm-border;
-			margin-bottom: 1em;
-			padding-bottom: 1em;
 		}
 	}
 
-	&__comment-meta {
-		margin-left: 0 !important;
-	}
-
-	&__comment-excerpt {
-		margin-left: 0 !important;
-
-		p {
-			font-size: inherit;
-		}
-	}
-
-	.avatar,
-	&__comment-avatar {
+	.wp-block-latest-comments__comment-avatar {
 
 		@include nm;
-		position: relative;
-		top: -6px;
-		margin-right: 1em;
+		position: absolute;
+		top: 0.6em;
+		margin: 0;
 	}
 
 	&__comment-date {
-		display: block;
 		margin-top: 0.3em;
-		color: inherit;
 		font-size: 0.8em;
 
 		&::before {

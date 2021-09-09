@@ -1,0 +1,22 @@
+/**
+ * Post Categories, Post Tags
+ */
+
+.wp-block-post-terms {
+
+	&.is-style-nm,
+	&.is-style-nm-reverse {
+		padding: 1em;
+		border-radius: $base_border_radius;
+	}
+
+	&.is-style-nm {
+
+		@include nm;
+	}
+
+	&.is-style-nm-reverse {
+
+		@include nm-reverse;
+	}
+}

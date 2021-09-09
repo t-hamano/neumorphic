@@ -1,28 +1,37 @@
-/*----------------------
-# File
-----------------------*/
+/**
+ * File
+ */
 
 .wp-block-file {
-	margin-bottom: 2em;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
 
 	a {
-		display: inline-block;
-		margin-bottom: 0.5em;
+		width: auto;
+		margin: 0;
+
+		&.wp-block-file__button {
+
+			@include nm-button;
+			margin: 0.5em 0 0.5em 1em;
+			color: var(--color-accent);
+			font-size: 0.8em;
+			border-radius: 1000px;
+
+			&:active,
+			&:focus,
+			&:hover,
+			&:visited {
+				color: var(--color-accent);
+				opacity: 1;
+			}
+		}
 	}
 
-	a.wp-block-file__button {
-
-		@include nm-button;
-		color: var(--color-accent);
-		font-size: 0.8em;
-		border-radius: 1000px;
-
-		&:active,
-		&:focus,
-		&:hover,
-		&:visited {
-			color: var(--color-accent);
-			opacity: 1;
-		}
+	&.aligncenter,
+	&.alignwide,
+	&.alignfull {
+		justify-content: center;
 	}
 }

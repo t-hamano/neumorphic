@@ -1,25 +1,18 @@
-/*----------------------
-# Table
-----------------------*/
+/**
+ * Table
+ */
 
+table {
 
-.wp-block-table {
-	overflow-x: initial;
-	text-align: left;
-
-	table {
-
-		@include nm;
-		width: auto;
-		margin-bottom: 0.5em;
-		overflow: hidden;
-		border-radius: $base_border_radius;
-
-	}
+	@include nm;
+	width: auto;
+	overflow: hidden;
+	border-radius: $base_border_radius;
 
 	th,
 	td {
 		padding: 1em;
+		text-align: left;
 		border: none;
 		border-right: 1px solid var(--color-nm-dark);
 		border-bottom: 1px solid var(--color-nm-dark);
@@ -33,28 +26,58 @@
 		border-bottom-width: 2px;
 	}
 
-	tbody tr:last-child td {
-		border-bottom: none;
+	tbody tr:last-child {
+
+		th,
+		td {
+			border-bottom: none;
+		}
 	}
 
 	tfoot td {
 		border-top: 2px solid var(--color-nm-dark);
 		border-bottom: none;
 	}
+}
 
-	figcaption {
-		text-align: inherit;
+.wp-block-table {
+	overflow-x: initial;
+	text-align: left;
+
+	thead,
+	tfoot {
+		border: none;
+	}
+
+	&.is-style-nm-none table {
+		overflow: auto;
+		border: 1px solid var(--color-nm-dark);
+		border-radius: 0;
+		box-shadow: none;
 	}
 
 	&.is-style-stripes {
 		border-bottom: none;
 
+		th,
+		td {
+			border-color: var(--color-nm-dark);
+		}
+
 		tbody tr:nth-child(odd) {
 			background-color: var(--color-nm-light);
 		}
 	}
+
+	&.wp-block-table figcaption {
+		color: var(--color-text-main);
+	}
 }
 
-.wp-block[data-align="center"] > .wp-block-table {
-	text-align: inherit;
+[data-align="wide"],
+[data-align="full"] {
+
+	> .wp-block-table table {
+		width: 100%;
+	}
 }

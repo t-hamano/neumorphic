@@ -1,19 +1,41 @@
-/*----------------------
-# Archives
-----------------------*/
+/**
+ * Archives
+ */
 
-.wp-block-archives {
-	margin-bottom: 2em;
+.wp-block-archives-list,
+.wp-block-archives-dropdown {
 
-	&:not(.wp-block-archives-dropdown) {
-		padding-left: 1.5em;
+	&.is-style-nm,
+	&.is-style-nm-reverse {
+		padding: 1em;
+		border-radius: $base_border_radius;
 	}
 
-	&.wp-block-archives-dropdown select {
+	&.is-style-nm {
 
-		@include nm-input;
-		display: inline-block;
-		width: auto;
-		border-radius: 1000px;
+		@include nm;
+	}
+
+	&.is-style-nm-reverse {
+
+		@include nm-reverse;
+	}
+}
+
+.wp-block-archives-list {
+	padding-left: 0;
+	list-style: none;
+
+	> li {
+		position: relative;
+		padding-left: 1.5em;
+
+		&::before {
+			position: absolute;
+			left: 0;
+			font-weight: 900;
+			font-family: "Font Awesome 5 Free";
+			content: "\f07b";
+		}
 	}
 }

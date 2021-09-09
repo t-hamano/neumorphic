@@ -11,7 +11,7 @@ function neumorphic_customizer_sns( $wp_customize ) {
 		'section_sns',
 		array(
 			'title'       => __( 'SNS Setting', 'neumorphic' ),
-			'priority'    => 160,
+			'priority'    => 170,
 			'description' => __( 'You can register up to five.<br>The icon will be displayed If you enter both icon and URL.<br>If you don\'t see any icons, make sure that "Display SNS icon" is checked in the header or footer settings.', 'neumorphic' ),
 		)
 	);

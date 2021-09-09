@@ -1,12 +1,23 @@
-/*----------------------
-# Code
-----------------------*/
+/**
+ * Code
+ */
+
+code,
+.wp-block code {
+	margin: 0 0.3em;
+	padding: 0.1em 0.3em;
+	color: inherit;
+	font-size: 0.9em;
+	font-family: $base_code_font_family;
+	background: var(--color-nm-dark);
+	border-radius: 4px;
+}
 
 .wp-block-code {
 
 	@include nm-reverse;
-	margin-bottom: 2em;
-	padding: 2em;
+	padding: 1em;
+	border: none;
 	border-radius: $base_border_radius;
 
 	code {

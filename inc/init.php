@@ -9,6 +9,9 @@
  * Sets up theme defaults and registers support for various WordPress features.
  */
 function neumorphic_setup() {
+	// Make theme available for translation.
+	load_theme_textdomain( 'neumorphic', get_template_directory() . '/languages' );
+
 	// Let WordPress manage the document title.
 	add_theme_support( 'title-tag' );
 
@@ -70,6 +73,9 @@ function neumorphic_setup() {
 
 	// Custom Units.
 	add_theme_support( 'custom-units' );
+
+	// Custom Spacing.
+	add_theme_support( 'custom-spacing' );
 
 	// Get customizer variables.
 	$color_bg                = esc_html( get_theme_mod( 'color_bg', NEUMORPHIC_COLOR_SKIN['default']['bg'] ) );
@@ -207,6 +213,11 @@ function neumorphic_setup() {
 			),
 		)
 	);
+
+	// Disable block-based widgets editor
+	if ( ! get_theme_mod( 'enable_widgets_block_editor', NEUMORPHIC_ENABLE_WIDGETS_BLOCK_EDITOR ) ) {
+		remove_theme_support( 'widgets-block-editor' );
+	}
 }
 
 add_action( 'after_setup_theme', 'neumorphic_setup' );
@@ -217,71 +228,56 @@ add_action( 'after_setup_theme', 'neumorphic_setup' );
 function neumorphic_scripts() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 
-	// Font Awesome
-	wp_enqueue_style( 'neumorphic-style-fontawesome', get_theme_file_uri( '/assets/packages/font-awesome/css/all.min.css' ), array(), $theme_version );
+	// WordPress media player styles
+	wp_enqueue_style( 'wp-mediaelement' );
 
 	// Main style
-	wp_enqueue_style( 'neumorphic-style-front-main', get_theme_file_uri( '/assets/css/style.min.css' ), array(), $theme_version );
+	wp_enqueue_style( 'neumorphic', get_theme_file_uri( '/assets/css/style.min.css' ), array(), $theme_version );
 
 	// Customizer CSS
-	wp_add_inline_style( 'neumorphic-style-front-main', neumorphic_generate_css() );
-
-	// Main Script
-	wp_enqueue_script( 'neumorphic-script-main', get_theme_file_uri( '/assets/js/main.js' ), array( 'jquery' ), $theme_version, false );
+	wp_add_inline_style( 'neumorphic', neumorphic_generate_css() );
 
 	// Comment reply Script
 	if ( ( ! is_admin() ) && is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	// CSS custom properties support for legacy and modern browsers
-	wp_enqueue_script( 'neumorphic-script-ponyfill', get_theme_file_uri( '/assets/packages/css-vars-ponyfill/css-vars-ponyfill.min.js' ), array(), $theme_version );
+	// CSS custom properties and object-fit properties support for IE
+	global $is_IE;
+
+	if ( $is_IE ) {
+		wp_enqueue_script( 'neumorphic-ponyfill', get_theme_file_uri( '/assets/js/lib/css-vars-ponyfill.min.js' ), array(), $theme_version );
+		wp_add_inline_script( 'neumorphic-ponyfill', 'cssVars();' );
+
+		wp_enqueue_script( 'neumorphic-ofi', get_theme_file_uri( '/assets/js/lib/ofi.min.js' ), array(), $theme_version, true );
+		wp_add_inline_script( 'neumorphic-ofi', ' objectFitImages();' );
+	}
+
+	// Main Script
+	wp_enqueue_script( 'neumorphic', get_theme_file_uri( '/assets/js/main.js' ), array( 'jquery' ), $theme_version, false );
 }
 
 add_action( 'wp_enqueue_scripts', 'neumorphic_scripts' );
 
 /**
- * Register and enqueue block editor styles.
- */
-function neumorphic_block_editor_styles() {
-	add_theme_support( 'editor-styles' );
-	add_editor_style( '/assets/css/editor-style-block.min.css' );
-}
-
-add_action( 'after_setup_theme', 'neumorphic_block_editor_styles' );
-
-/**
- * Register and enqueue customizer styles.
+ * Register and enqueue block editor styles & scripts.
  */
 function neumorphic_block_editor_assets() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 
-	// Font Awesome
-	wp_enqueue_style( 'neumorphic-style-fontawesome', get_theme_file_uri( '/assets/packages/font-awesome/css/all.min.css' ), array(), $theme_version );
+	// Main Style.
+	wp_enqueue_style( 'neumorphic', get_theme_file_uri( '/assets/css/editor-style.min.css' ), array(), $theme_version );
+
+	// Main script.
+	wp_enqueue_script( 'neumorphic', get_theme_file_uri( '/assets/js/block-style.js' ), array( 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-dom' ), $theme_version, true );
 
 	// Customizer CSS
-	wp_enqueue_style( 'neumorphic-style-customizer', get_theme_file_uri( '/assets/css/editor-style-customizer.min.css' ), array(), $theme_version );
-	wp_add_inline_style( 'neumorphic-style-customizer', neumorphic_generate_css() );
+	wp_register_style( 'neumorphic-customizer', false );
+	wp_enqueue_style( 'neumorphic-customizer' );
+	wp_add_inline_style( 'neumorphic-customizer', neumorphic_generate_css() );
 }
 
 add_action( 'enqueue_block_editor_assets', 'neumorphic_block_editor_assets' );
-
-/**
- * Register and enqueue admin scripts.
- */
-function neumorphic_admin_scripts() {
-	$theme_version = wp_get_theme()->get( 'Version' );
-
-	// Main script.
-	wp_enqueue_script( 'neumorphic-script-block-editor', get_theme_file_uri( '/assets/js/editor-block.js' ), array( 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-dom' ), $theme_version, true );
-
-	// CSS custom properties support for legacy and modern browsers
-	wp_enqueue_script( 'neumorphic-script-ponyfill', get_theme_file_uri( '/assets/packages/css-vars-ponyfill/css-vars-ponyfill.min.js' ), array(), $theme_version );
-
-	wp_set_script_translations( 'neumorphic-script-block-editor', 'neumorphic', '/languages' );
-}
-
-add_action( 'admin_enqueue_scripts', 'neumorphic_admin_scripts' );
 
 /**
  * Fix skip link focus in IE11.
@@ -296,27 +292,51 @@ function neumorphic_skip_link_focus_fix() {
 add_action( 'wp_print_footer_scripts', 'neumorphic_skip_link_focus_fix' );
 
 /**
- * Register and enqueue classic editor styles.
+ * Add a class to the body tag.
+ *
+ * @param string[] $classes An array of body class names.
+ *
+ * @return string[] Array of class names.
  */
-function neumorphic_classic_editor_style() {
-	$theme_version = wp_get_theme()->get( 'Version' );
+function neumorphic_body_class( $classes ) {
+	global $is_IE;
 
-	// Main style
-	add_editor_style( '/assets/css/editor-style-classic.min.css' );
+	if ( $is_IE ) {
+		$classes[] = 'is-ie';
+	}
 
+	$classes[] = 'branch-' . str_replace( array( '.', ',' ), '-', (float) get_bloginfo( 'version' ) );
+	$classes[] = 'version-' . str_replace( '.', '-', preg_replace( '/^([.0-9]+).*/', '$1', get_bloginfo( 'version' ) ) );
+
+	return $classes;
 }
 
-add_action( 'admin_init', 'neumorphic_classic_editor_style' );
+add_filter( 'body_class', 'neumorphic_body_class' );
 
 /**
  * Add inline style to classic editor.
+ *
+ * @param array  $settings   An array with TinyMCE config.
+ *
+ * @return string[] Array of TinyMCE config.
  */
-function neumorphic_classic_editor_inline_style( $settings ) {
+function neumorphic_tiny_mce_before_init( $settings ) {
 	$settings['content_style'] = neumorphic_generate_css();
+	$classic_style             = file_get_contents( get_template_directory() . '/assets/css/editor-style-classic.min.css' );
+
+	if ( $classic_style ) {
+		$classic_style = str_replace( array( "\n", "\r" ), '', $classic_style );
+		$classic_style = str_replace( '../webfonts/', get_template_directory_uri() . '/assets/webfonts/', $classic_style );
+		$classic_style = str_replace( '"\\', '"\\\\', $classic_style );
+		$classic_style = str_replace( '"', '\\"', $classic_style );
+
+		$settings['content_style'] .= $classic_style;
+	}
+
 	return $settings;
 }
 
-add_filter( 'tiny_mce_before_init', 'neumorphic_classic_editor_inline_style' );
+add_filter( 'tiny_mce_before_init', 'neumorphic_tiny_mce_before_init' );
 
 /**
  * Enqueue WordPress media player styles.
@@ -324,8 +344,6 @@ add_filter( 'tiny_mce_before_init', 'neumorphic_classic_editor_inline_style' );
 function neumorphic_footer_scripts() {
 	$theme_version = wp_get_theme()->get( 'Version' );
 
-	wp_enqueue_style( 'wp-mediaelement' );
-	wp_enqueue_style( 'neumorphic-style-mediaelement', get_theme_file_uri( '/assets/css/mediaelement.min.css' ), array( 'wp-mediaelement' ), $theme_version );
 	wp_enqueue_script( 'wp-mediaelement' );
 }
 
@@ -359,6 +377,18 @@ function neumorphic_widgets_init() {
 }
 
 add_action( 'widgets_init', 'neumorphic_widgets_init' );
+
+/**
+ * Filters the classname used in the block widget's container HTML.
+ *
+ * @param string $classname  The classname to be used in the block widget's container HTML,
+ *
+ * @return string The classname to use in the block widget's container HTML.
+ */
+function neumorphic_widget_block_dynamic_classname( $classname ) {
+	return $classname . ' entry-content';
+}
+add_filter( 'widget_block_dynamic_classname', 'neumorphic_widget_block_dynamic_classname' );
 
 /**
  * Filters the archive title and styles the word before the first colon.
@@ -429,76 +459,3 @@ function neumorphic_nav_class( $classes, $item, $args, $depth ) {
 }
 
 add_filter( 'nav_menu_css_class', 'neumorphic_nav_class', 10, 4 );
-
-/**
- * Add conditional contents classes (Sidebar display position).
- *
- * @return string $class Class name added to the div.contents tag.
- */
-function neumorphic_contents_class() {
-	// Get cutomizer settings.
-	$display_position = get_theme_mod( 'sidebar_position', NEUMORPHIC_SIDEBAR_POSITION );
-	$display_front    = get_theme_mod( 'sidebar_display_front', NEUMORPHIC_SIDEBAR_DISPLAY_FRONT );
-	$display_post     = get_theme_mod( 'sidebar_display_post', NEUMORPHIC_SIDEBAR_DISPLAY_POST );
-	$display_page     = get_theme_mod( 'sidebar_display_page', NEUMORPHIC_SIDEBAR_DISPLAY_PAGE );
-	$display_archive  = get_theme_mod( 'sidebar_display_archive', NEUMORPHIC_SIDEBAR_DISPLAY_ARCHIVE );
-
-	// Give priority to the template display settings If a specific page template is used.
-	if ( is_page_template( 'template/sidebar-left.php' ) ) {
-		$class = ' contents--sidebar-left';
-	} elseif ( is_page_template( 'template/sidebar-right.php' ) ) {
-		$class = ' contents--sidebar-right';
-	} elseif ( is_page_template( 'template/sidebar-none.php' ) || is_attachment() ) {
-		$class = ' contents--sidebar-none';
-	} else {
-		// Use customizer settings if the page template is not used.
-		if (
-			( is_front_page() && $display_front ) ||
-			( is_single() && $display_post ) ||
-			( ( is_archive() || is_home() ) && $display_archive ) ||
-			( is_page() && ! is_front_page() && $display_page )
-		) {
-			$class = 'contents--sidebar-' . $display_position;
-		} else {
-			$class = 'contents--sidebar-none';
-		}
-	}
-
-	return $class;
-}
-
-/**
- * Generate a new HEX color with changed intensity based on the param HEX color.
- *
- * @param string $hex HEX value.
- * @param double $luminance Percentage of luminance to change
- *
- * @return string $new_color HEX value.
- */
-function neumorphic_generate_new_color( $hex, $luminance ) {
-	// Value expression check.
-	if ( ! preg_match( '/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/', $hex ) ) {
-		return $hex;
-	}
-
-	// Trim "#".
-	$hex = substr( $hex, 1 );
-
-	// Convert 3 digits to 6 digits.
-	if ( strlen( $hex ) === 3 ) {
-		$hex = substr( $hex, 0, 1 ) . substr( $hex, 0, 1 ) . substr( $hex, 1, 1 ) . substr( $hex, 1, 1 ) . substr( $hex, 2, 1 ) . substr( $hex, 2, 1 );
-	}
-
-	$new_hex = '#';
-
-	// Cut out the value of hex by two digits and change luminance.
-	for ( $i = 0; $i < 3; $i++ ) {
-		$color_pair  = hexdec( substr( $hex, $i * 2, 2 ) );
-		$color_pair += $color_pair * $luminance;
-		$color_pair  = dechex( round( min( 245, max( 10, $color_pair ) ) ) );
-		$color_pair  = str_pad( $color_pair, 2, '0', STR_PAD_LEFT );
-		$new_hex    .= $color_pair;
-	}
-
-	return $new_hex;
-}

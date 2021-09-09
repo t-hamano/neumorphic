@@ -1,9 +1,8 @@
-/*----------------------
-# Image
-----------------------*/
+/**
+ * Image
+ */
 
 .wp-block-image {
-	margin-bottom: 2em;
 
 	> img {
 
@@ -13,8 +12,6 @@
 	> a {
 
 		@include nm-media-link;
-		display: inline-block;
-		vertical-align: top;
 	}
 
 	figure {
@@ -24,8 +21,6 @@
 		> a {
 
 			@include nm-media-link;
-			display: inline-block;
-			vertical-align: top;
 		}
 
 		> img {
@@ -54,28 +49,45 @@
 
 		a,
 		img {
-			padding: 0 !important;
+			padding: 0;
 			border-radius: 0;
 			box-shadow: none;
 		}
 
-		a::before {
-			content: none;
+		a {
+
+			&::before {
+				content: none;
+			}
+
+			@include mq(lg-min) {
+				transition: opacity $base_transition_duration ease-in-out;
+
+				&:hover {
+					opacity: $base_hover_opacity;
+				}
+			}
 		}
+	}
+
+	&.alignwide,
+	&.alignfull {
+
+		> a {
+			display: block;
+		}
+	}
+
+	.aligncenter {
+		display: block;
 	}
 
 	.aligncenter,
 	.alignleft,
-	.alignright,
-	.is-resized {
+	.alignright {
 
 		> figcaption {
 			display: block;
-			text-align: center;
-
-			@include mq(md-max) {
-				text-align: center;
-			}
 		}
 	}
 }

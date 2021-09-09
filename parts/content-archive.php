@@ -14,7 +14,6 @@ if ( is_sticky() ) {
 
 <article <?php post_class( $post_class ); ?>>
 	<a href="<?php the_permalink(); ?>" class="clearfix">
-
 		<?php
 		if ( has_post_thumbnail() ) {
 			// Show thumbnail image.
@@ -28,7 +27,6 @@ if ( is_sticky() ) {
 			echo '<div class="c-entries__thumbnail c-entries__thumbnail--noimage"><i class="fas fa-image" aria-hidden="true"></i></div>';
 		}
 		?>
-
 		<div class="c-entries__body">
 			<header class="c-entries__header">
 				<h2 class="c-entries__title"><?php the_title_attribute(); ?></h2>
@@ -40,7 +38,6 @@ if ( is_sticky() ) {
 								<?php the_time( get_option( 'date_format' ) ); ?>
 							</time>
 						</li>
-
 						<?php
 						// Store category name from the category objects.
 						$categories     = get_the_category();
@@ -57,13 +54,11 @@ if ( is_sticky() ) {
 								<?php echo esc_html( implode( ' / ', $category_names ) ); ?>
 							</li>
 						<?php endif; ?>
-
 					</ul>
 				</div>
 			</header>
-
 			<div class="c-entries__excerpt">
-				<?php echo esc_html( get_the_excerpt() ); ?>
+				<?php echo the_excerpt(); ?>
 			</div>
 		</div>
 	</a>

@@ -1,12 +1,12 @@
-/*----------------------
-# Calendar
-----------------------*/
+/**
+ * Calendar
+ */
 
-.wp-block-calendar .wp-block-calendar {
+[data-type="core/calendar"] .wp-block-calendar {
 
 	@include nm;
 	max-width: 350px;
-	padding: 1.5em 1em;
+	padding: 1em;
 	border-radius: $base_border_radius;
 
 	&.aligncenter {
@@ -14,9 +14,15 @@
 		margin-left: auto;
 	}
 
+	&.alignwide,
+	&.alignfull {
+		max-width: 100%;
+	}
+
 	.wp-calendar-table {
 		width: 100%;
 		table-layout: fixed;
+		box-shadow: none;
 
 		caption {
 			margin-bottom: 1em;
@@ -41,8 +47,9 @@
 
 				@include nm;
 				display: block;
-				color: var(--color-accent) !important;
+				color: var(--color-accent);
 				font-weight: bold;
+				text-decoration: none;
 				border-radius: $base_border_radius;
 			}
 		}

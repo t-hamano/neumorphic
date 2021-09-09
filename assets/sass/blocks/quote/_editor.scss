@@ -1,18 +1,15 @@
-/*----------------------
-# Quote
-----------------------*/
+/**
+ * Quote, Pullquote
+ */
 
-.wp-block-quote,
-.wp-block-quote.has-text-align-center,
-.wp-block-quote.has-text-align-right {
+blockquote {
 
 	@include nm-reverse;
 	position: relative;
-	padding: 2em 2em 2em 3.5em;
-	color: var(--color-text-main);
+	margin: 0;
+	padding: 1em 1em 1em 3.5em;
 	border: none;
 	border-radius: $base_border_radius;
-
 
 	&::before {
 
@@ -26,38 +23,123 @@
 		content: "\f10d";
 	}
 
-	p {
-		margin: 0 0 1em;
+	> *:first-child {
+		margin-top: 0 !important;
+	}
 
-		&:last-of-type {
-			margin-bottom: 0;
+	> *:last-child {
+		margin-bottom: 0 !important;
+	}
+
+	p {
+		margin-top: 0;
+		margin-bottom: 1em;
+	}
+
+	cite {
+		display: block;
+		font-size: 0.8em;
+		font-style: italic;
+		opacity: $text_color_thin;
+	}
+}
+
+// Quote
+.wp-block-quote {
+
+	&.has-text-align-center {
+		padding-left: 3.5em;
+	}
+
+	&.has-text-align-right {
+		padding-left: 3.5em;
+		border: none;
+	}
+
+	&.is-style-nm-none {
+		padding: 0 0 0 2.8em;
+		box-shadow: none;
+
+		&::before {
+			top: -0.2em;
+			left: 0;
 		}
 	}
 
-	&__citation {
-		display: block;
-		color: inherit;
+	&.is-style-large {
+		padding: 1em 1em 1em 3.5em;
+		font-size: 1.4em;
+
+		p {
+			font-size: 1em;
+			font-style: normal;
+			line-height: inherit;
+		}
+	}
+
+	.wp-block-quote__citation {
+		font-size: 0.8em;
+		font-style: italic;
+		text-align: inherit;
+		opacity: $base_placeholder_opacity;
+	}
+}
+
+// Pullquote
+.wp-block-pullquote {
+	padding: 0;
+	text-align: inherit;
+	border: none;
+
+	blockquote {
+		border-radius: 0;
+		box-shadow: none;
+
+		&::before {
+			content: none;
+		}
+
+		p {
+			font-size: inherit;
+		}
+	}
+
+	.wp-block-pullquote__citation {
 		font-size: 0.8em;
 		font-style: italic;
 		opacity: $text_color_thin;
 	}
 
-	&.is-style-large {
-		margin-bottom: 0;
-		padding: 2em 2em 2em 5em;
+	&:not(.is-style-solid-color) {
 
-		&::before {
-			font-size: 2.4em;
+		@include nm-reverse();
+		padding: 1.5em 1em;
+		border-color: var(--color-text-main);
+		border-radius: $base_border_radius;
+
+		blockquote {
+			padding: 1em 0;
+			border-color: inherit !important;
+			border-top: 3px solid;
+			border-bottom: 3px solid;
+		}
+	}
+
+	&.is-style-solid-color {
+		font-size: 1.4em;
+
+		blockquote {
+			max-width: 100%;
+			padding: 0;
+
+			p {
+				margin-bottom: 1em;
+			}
 		}
 
-		p {
-			font-size: 1.4em;
-			font-style: normal;
-			line-height: inherit;
-		}
-
-		.wp-block-quote__citation {
-			font-size: 1em;
+		&.has-background blockquote {
+			padding: 1em;
+			background-color: transparent;
 		}
 	}
 }
