@@ -10,10 +10,10 @@
 
 .mce-content-body {
 	margin: 2em;
-	color: var(--color-text-main);
-	font-size: $base_font_size_pc;
 	font-family: $base_font_falily;
+	font-size: $base_font_size_pc;
 	line-height: $base_line_height;
+	color: var(--color-text-main);
 	letter-spacing: $base_letter_spacing;
 	word-break: break-word;
 	background: var(--color-bg);
@@ -75,8 +75,8 @@
 	}
 
 	.gallery-item {
-		margin: 0 0 20px;
 		padding: 0 5px;
+		margin: 0 0 20px;
 	}
 
 	.gallery-icon {
@@ -97,8 +97,8 @@
 	.gallery-caption {
 		margin-top: 0.5em;
 		margin-bottom: 0;
-		color: inherit;
 		font-size: 0.8em;
+		color: inherit;
 		text-align: center;
 		opacity: $text_color_thin;
 	}
@@ -183,8 +183,8 @@
 	// List
 	ul,
 	ol {
-		margin: 0 0 2em;
 		padding-left: 1.5em;
+		margin: 0 0 2em;
 
 		ul {
 			list-style-type: disc;
@@ -202,11 +202,11 @@
 
 	// Code
 	code {
-		margin: 0 0.3em;
 		padding: 0.1em 0.3em;
-		color: inherit;
-		font-size: 0.9em;
+		margin: 0 0.3em;
 		font-family: $base_code_font_family;
+		font-size: 0.9em;
+		color: inherit;
 		background: var(--color-nm-dark);
 		border-radius: 4px;
 	}
@@ -238,9 +238,9 @@
 			position: absolute;
 			top: 0.5em;
 			left: 0.7em;
-			font-weight: 900;
-			font-size: 1.6em;
 			font-family: "Font Awesome 5 Free";
+			font-size: 1.6em;
+			font-weight: 900;
 			content: "\f10d";
 		}
 
@@ -266,9 +266,9 @@
 		cite {
 			display: block;
 			margin-top: 1em;
-			color: inherit;
 			font-size: 0.8em;
 			font-style: italic;
+			color: inherit;
 			opacity: $text_color_thin;
 		}
 	}
@@ -277,8 +277,8 @@
 	img[data-wp-more="nextpage"],
 	img[data-wp-more="more"] {
 		width: 100%;
-		margin: 2em 0;
 		padding: 15px 0;
+		margin: 2em 0;
 		background-color: #fff;
 		box-shadow: none;
 	}
@@ -307,9 +307,9 @@
 		@include nm;
 		width: auto;
 		margin-bottom: 0.5em;
+		border-collapse: collapse;
 		border: none;
 		border-radius: $base_border_radius;
-		border-collapse: collapse;
 
 		th,
 		td {
@@ -369,9 +369,9 @@
 		@include nm-border;
 		width: 50%;
 		height: 3px;
+		padding: 10px 0;
 		margin-right: auto;
 		margin-left: auto;
-		padding: 10px 0;
 		border: none;
 		transform: translateY(-6px);
 	}

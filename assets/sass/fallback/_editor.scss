@@ -6,11 +6,11 @@
 body.branch-5-7 .editor-styles-wrapper,
 body.branch-5-6 .editor-styles-wrapper,
 body.branch-5-5 .editor-styles-wrapper {
+	font-size: $base_font_size_pc;
+	line-height: $base_line_height;
 
 	// Override inline normalize CSS
 	color: var(--color-text-main);
-	font-size: $base_font_size_pc;
-	line-height: $base_line_height;
 
 	.block-editor-writing-flow {
 		font-family: $base_font_falily;

@@ -93,8 +93,8 @@
 		.wp-more-tag {
 			display: block;
 			width: 100%;
-			margin: 2em 0;
 			padding: 15px 0;
+			margin: 2em 0;
 			background-color: var(--color-nm-light);
 			border: 2px solid var(--color-accent);
 		}
@@ -153,8 +153,8 @@
 		}
 
 		.gallery-item {
-			margin-bottom: 20px;
 			padding: 0 5px;
+			margin-bottom: 20px;
 		}
 
 		.gallery-caption {
@@ -171,7 +171,7 @@
 	right: 0;
 	bottom: 0;
 	left: 0;
-	border-color: var(--color-text-main);
-	content: "";
 	pointer-events: none;
+	content: "";
+	border-color: var(--color-text-main);
 }

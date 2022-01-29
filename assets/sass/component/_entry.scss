@@ -7,16 +7,16 @@
 	&__header {
 
 		@include nm-border;
-		margin-bottom: 4em;
 		padding-bottom: 1em;
+		margin-bottom: 4em;
 	}
 
 	&__title {
 
 		@include nm-text-border;
 		margin: 0;
-		font-weight: bold;
 		font-size: 2em;
+		font-weight: bold;
 		line-height: 1.4;
 		word-wrap: break-word;
 
@@ -59,8 +59,8 @@
 		@include nm-button;
 		display: inline-block;
 		padding: 0.7em 1.4em;
-		color: var(--color-accent);
 		font-size: 0.8em;
+		color: var(--color-accent);
 		border-radius: 1000px;
 	}
 
@@ -76,8 +76,8 @@
 			padding: 0.2em;
 			overflow: hidden;
 			color: var(--color-text-link);
-			white-space: nowrap;
 			text-overflow: ellipsis;
+			white-space: nowrap;
 
 			@include mq(md-max) {
 				max-width: 100%;
@@ -87,15 +87,15 @@
 			&::before {
 				position: absolute;
 				top: 0.3em;
-				font-weight: 900;
 				font-family: "Font Awesome 5 Free";
+				font-weight: 900;
 			}
 		}
 
 		.nav-previous {
 			float: left;
-			margin-right: 1em;
 			padding-left: 1.5em;
+			margin-right: 1em;
 
 			&::before {
 				left: 0;
@@ -105,8 +105,8 @@
 
 		.nav-next {
 			float: right;
-			margin-left: 1em;
 			padding-right: 1.5em;
+			margin-left: 1em;
 
 			&::before {
 				right: 0;

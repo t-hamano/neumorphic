@@ -8,15 +8,15 @@
 
 		@include nm-button;
 		display: inline-block;
-		margin: 0 0.2em 1em;
 		padding: 0.3em 1em;
-		color: var(--color-accent);
+		margin: 0 0.2em 1em;
 		font-size: 1em !important;
+		color: var(--color-accent);
 		border-radius: 1000px;
 
 		.tag-link-count {
-			color: var(--color-text-main);
 			font-weight: normal;
+			color: var(--color-text-main);
 			opacity: $text_color_thin;
 		}
 	}

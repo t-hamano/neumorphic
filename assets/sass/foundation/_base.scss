@@ -25,15 +25,15 @@ html {
 }
 
 body {
-	margin: 0;
 	padding: 0;
-	color: var(--color-text-main);
-	font-size: $base_font_size_sp;
+	margin: 0;
 	font-family: $base_font_falily;
+	font-size: $base_font_size_sp;
 	line-height: $base_line_height;
+	color: var(--color-text-main);
 	letter-spacing: $base_letter_spacing;
-	word-wrap: break-word;
 	word-break: break-word;
+	word-wrap: break-word;
 	overflow-wrap: break-word;
 	background: var(--color-bg);
 
@@ -63,8 +63,8 @@ a {
 }
 
 table {
-	border-collapse: collapse;
 	border-spacing: 0;
+	border-collapse: collapse;
 }
 
 figure {
@@ -93,8 +93,8 @@ legend {
 	float: left;
 	width: 100%;
 	padding-bottom: 0.3em;
-	font-weight: bold;
 	font-size: 1.6em;
+	font-weight: bold;
 	line-height: 1.4;
 }
 
@@ -103,14 +103,14 @@ legend {
 	position: absolute !important;
 	width: 1px;
 	height: 1px;
-	margin: -1px;
 	padding: 0;
+	margin: -1px;
 	overflow: hidden;
-	word-wrap: normal !important;
-	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
 	-webkit-clip-path: inset(50%);
 	clip-path: inset(50%);
+	word-wrap: normal !important;
+	border: 0;
 
 	&:focus {
 		top: 5px;
@@ -120,17 +120,17 @@ legend {
 		width: auto;
 		height: auto;
 		padding: 15px 23px 14px;
-		color: #21759b;
-		font-weight: 700;
+		clip: auto !important;
+		-webkit-clip-path: none;
+		clip-path: none;
 		font-size: 0.875rem;
+		font-weight: 700;
 		line-height: normal;
+		color: #21759b;
 		text-decoration: none;
 		background-color: #f1f1f1;
 		border-radius: 3px;
 		box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-		clip: auto !important;
-		-webkit-clip-path: none;
-		clip-path: none;
 	}
 }
 
@@ -147,8 +147,8 @@ legend {
 		z-index: 100000;
 		display: block;
 		padding: 15px 23px 14px;
-		font-weight: 600;
 		font-size: 14px;
+		font-weight: 600;
 		line-height: normal;
 		text-decoration: none;
 	}
@@ -157,8 +157,8 @@ legend {
 .container {
 	position: relative;
 	max-width: $container_width;
-	margin: 0 auto;
 	padding: 0 $container_padding;
+	margin: 0 auto;
 }
 
 .clearfix::after {
@@ -203,8 +203,8 @@ legend {
 	max-width: 100%;
 	height: auto;
 	padding: 0.7em 1.4em;
-	border-radius: 1000px;
 	cursor: pointer;
+	border-radius: 1000px;
 }
 
 select {
@@ -215,9 +215,9 @@ select {
 	max-width: 100%;
 	height: auto;
 	padding: 0.7em 3em 0.7em 1.4em;
+	cursor: pointer;
 	background: url($icon_chevron_down_solid) no-repeat right 20px center/1em;
 	border-radius: 1000px;
-	cursor: pointer;
 
 	&::-ms-expand {
 		display: none;
@@ -254,14 +254,14 @@ textarea {
 }
 
 button {
-	color: inherit;
-	font-weight: normal;
-	font-size: inherit;
 	font-family: inherit;
+	font-size: inherit;
+	font-weight: normal;
+	color: inherit;
 	letter-spacing: inherit;
+	cursor: pointer;
 	background-color: transparent;
 	border: none;
-	cursor: pointer;
 }
 
 ::placeholder {

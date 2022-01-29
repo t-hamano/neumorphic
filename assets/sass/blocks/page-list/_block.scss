@@ -3,8 +3,8 @@
  */
 
 .wp-block-page-list {
-	margin-top: 0;
 	padding-left: 0;
+	margin-top: 0;
 	list-style: none;
 
 	&.is-style-nm,
@@ -42,8 +42,8 @@
 		&::before {
 			position: absolute;
 			left: 0;
-			font-weight: 900;
 			font-family: "Font Awesome 5 Free";
+			font-weight: 900;
 			content: "\f15b";
 		}
 	}
@@ -59,10 +59,10 @@
 			&::before {
 				position: absolute;
 				left: 0;
-				font-weight: 900;
 				font-family: "Font Awesome 5 Free";
-				transform: scale(0.6) translateY(2px);
+				font-weight: 900;
 				content: "\f054";
+				transform: scale(0.6) translateY(2px);
 			}
 		}
 	}

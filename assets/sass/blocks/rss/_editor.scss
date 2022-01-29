@@ -24,8 +24,8 @@
 			border-radius: $base_border_radius;
 
 			> li {
-				margin: 0;
 				padding: 1em 0 calc(1em + 4px);
+				margin: 0;
 
 				&:not(:last-child) {
 
@@ -40,8 +40,8 @@
 			li {
 
 				@include nm;
-				margin: 0 1.25em 1.25em 0;
 				padding: 1em;
+				margin: 0 1.25em 1.25em 0;
 				border-radius: $base_border_radius;
 
 				@media screen and (max-width: 599px) {
@@ -72,28 +72,28 @@
 			&::before {
 				display: inline-block;
 				margin-right: 0.5em;
-				font-weight: 900;
 				font-family: "Font Awesome 5 Free";
+				font-weight: 900;
 				content: "\f09e";
 			}
 		}
 	}
 
 	&__item-author {
-		color: inherit;
 		font-size: 0.8em;
 		font-style: italic;
+		color: inherit;
 	}
 
 	&__item-publish-date {
 		display: block;
-		color: inherit;
 		font-size: 0.8em;
+		color: inherit;
 
 		&::before {
 			margin-right: 0.2em;
-			font-weight: 400;
 			font-family: "Font Awesome 5 Free";
+			font-weight: 400;
 			content: "\f017";
 		}
 	}

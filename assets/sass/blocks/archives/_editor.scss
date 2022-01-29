@@ -32,8 +32,8 @@
 
 			@include nm-input-editor;
 			padding: 0.7em 3em 0.7em 1.4em;
-			font-size: inherit;
 			font-family: $base_font_falily;
+			font-size: inherit;
 			line-height: inherit;
 			text-shadow: none;
 			background: url($icon_chevron_down_solid) no-repeat right 20px center/1em;
@@ -43,8 +43,8 @@
 }
 
 .wp-block-archives-list {
-	margin: 0;
 	padding: 0;
+	margin: 0;
 	list-style: none;
 
 	> li {
@@ -54,8 +54,8 @@
 		&::before {
 			position: absolute;
 			left: 0;
-			font-weight: 900;
 			font-family: "Font Awesome 5 Free";
+			font-weight: 900;
 			content: "\f07b";
 		}
 	}

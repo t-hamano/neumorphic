@@ -1,7 +1,7 @@
 module.exports = {
 	extends: [
 		"@wordpress/stylelint-config",
-		"stylelint-config-rational-order",
+		'stylelint-config-recess-order',
 	],
   ignoreFiles: [
 		".git/**/*",

@@ -22,8 +22,8 @@
 		height: 2em;
 		padding: 0;
 		color: var(--color-accent);
-		transform: translateY(-50%);
 		transition: opacity $base_transition_duration ease-in-out;
+		transform: translateY(-50%);
 
 		@include mq(lg-min) {
 

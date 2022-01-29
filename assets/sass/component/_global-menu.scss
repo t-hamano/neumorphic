@@ -8,8 +8,8 @@
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
-		margin: 0;
 		padding: 0;
+		margin: 0;
 		list-style: none;
 	}
 
@@ -41,11 +41,11 @@
 			padding: 0;
 			text-align: left;
 			list-style: none;
-			background: var(--color-nm-dark);
-			transform: translateX(-50%);
 			visibility: hidden;
+			background: var(--color-nm-dark);
 			opacity: 0;
 			transition: opacity $base_transition_duration ease-in-out;
+			transform: translateX(-50%);
 
 			&[aria-hidden="false"] {
 				visibility: visible;
@@ -59,10 +59,10 @@
 				display: block;
 				width: 0;
 				height: 0;
+				content: "";
 				border-color: transparent transparent var(--color-nm-dark);
 				border-style: solid;
 				border-width: 0 8px 10px;
-				content: "";
 			}
 		}
 	}
@@ -73,9 +73,9 @@
 		> a {
 			display: block;
 			padding: 0.5em 1em;
-			color: inherit;
 			font-weight: normal;
 			line-height: 1.4;
+			color: inherit;
 			transition: background $base_transition_duration ease-in-out;
 
 			@include mq(lg-min) {

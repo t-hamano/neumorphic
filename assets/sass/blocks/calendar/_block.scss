@@ -45,9 +45,9 @@
 
 				@include nm-button;
 				display: block;
-				color: var(--color-accent);
 				font-weight: bold;
 				line-height: 2.4;
+				color: var(--color-accent);
 				border-radius: $base_border_radius;
 			}
 		}

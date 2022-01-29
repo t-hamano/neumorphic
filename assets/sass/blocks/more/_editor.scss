@@ -13,8 +13,8 @@
 
 	input[type="text"] {
 		max-width: calc(100% - 4em);
-		color: var(--color-accent);
 		font-family: inherit;
+		color: var(--color-accent);
 		background: var(--color-nm-light);
 
 		&::placeholder {

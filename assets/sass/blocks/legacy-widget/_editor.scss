@@ -18,9 +18,9 @@
 
 		.wp-block-legacy-widget__edit-form-title {
 			padding: 0;
-			color: inherit;
-			font-size: inherit;
 			font-family: inherit;
+			font-size: inherit;
+			color: inherit;
 
 			&::before {
 				content: none;
@@ -37,8 +37,8 @@
 			a,
 			input,
 			label {
-				color: inherit;
 				font-family: inherit;
+				color: inherit;
 			}
 
 			input,

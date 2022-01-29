@@ -5,8 +5,8 @@
 .c-comment {
 
 	@include nm;
-	margin-top: 5em;
 	padding: 1em;
+	margin-top: 5em;
 	border-radius: 10px;
 
 	&__title {
@@ -14,14 +14,14 @@
 		@include nm-border;
 		@include nm-text-border;
 		position: relative;
-		margin: 0;
 		padding-bottom: 0.5em;
+		margin: 0;
 		font-size: 1.4em;
 	}
 
 	&__list {
-		margin: 0 0 2em;
 		padding: 0;
+		margin: 0 0 2em;
 		list-style: none;
 
 		.comment-body {
@@ -32,14 +32,14 @@
 			+ .comment-respond {
 
 				@include nm-border;
-				margin-top: 2em;
 				padding-bottom: 2em;
+				margin-top: 2em;
 			}
 		}
 
 		.children {
-			margin: 0;
 			padding: 0 0 0 2em;
+			margin: 0;
 			list-style: none;
 		}
 
@@ -89,8 +89,8 @@
 
 				&::before {
 					margin-right: 0.2em;
-					font-weight: 400;
 					font-family: "Font Awesome 5 Free";
+					font-weight: 400;
 					content: "\f017";
 				}
 			}
@@ -182,9 +182,9 @@
 
 			code {
 				padding: 0.1em 0.3em;
-				color: inherit;
-				font-size: 0.9em;
 				font-family: $base_code_font_family;
+				font-size: 0.9em;
+				color: inherit;
 				background: var(--color-nm-dark);
 				border-radius: 4px;
 			}
@@ -213,9 +213,9 @@
 					position: absolute;
 					top: 0.5em;
 					left: 0.7em;
-					font-weight: 900;
-					font-size: 1.6em;
 					font-family: "Font Awesome 5 Free";
+					font-size: 1.6em;
+					font-weight: 900;
 					content: "\f10d";
 				}
 
@@ -240,8 +240,8 @@
 				@include nm;
 				width: auto;
 				margin-bottom: 0.5em;
-				border-radius: $base_border_radius;
 				border-collapse: separate;
+				border-radius: $base_border_radius;
 
 				th,
 				td {
@@ -337,8 +337,8 @@
 				max-width: 40%;
 				overflow: hidden;
 				color: var(--color-text-link);
-				white-space: nowrap;
 				text-overflow: ellipsis;
+				white-space: nowrap;
 
 				@include mq(md-max) {
 					max-width: 100%;
@@ -348,8 +348,8 @@
 				&::before {
 					position: absolute;
 					top: 0.05em;
-					font-weight: 900;
 					font-family: "Font Awesome 5 Free";
+					font-weight: 900;
 				}
 			}
 
@@ -383,8 +383,8 @@
 
 		#cancel-comment-reply-link {
 			margin-left: 1em;
-			font-weight: normal;
 			font-size: 0.8em;
+			font-weight: normal;
 		}
 
 		a {
@@ -419,8 +419,8 @@
 				font-weight: bold;
 
 				.required {
-					color: var(--color-text-link);
 					font-weight: bold;
+					color: var(--color-text-link);
 				}
 			}
 		}

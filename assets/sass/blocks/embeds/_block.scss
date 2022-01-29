@@ -171,17 +171,17 @@ iframe {
 	&-tiktok {
 
 		.tiktok-embed {
-			margin: 0;
 			padding: 0;
+			margin: 0;
 		}
 	}
 
 	&-tumblr {
 
 		iframe {
+			padding: 5px !important;
 			margin-top: 0 !important;
 			margin-bottom: 0 !important;
-			padding: 5px !important;
 		}
 
 		&.aligncenter,

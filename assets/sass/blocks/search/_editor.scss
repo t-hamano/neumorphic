@@ -22,8 +22,8 @@
 	}
 
 	.wp-block-search__button {
-		font-size: inherit;
 		font-family: inherit;
+		font-size: inherit;
 		border: none;
 
 		&:not(.has-icon) {
@@ -52,8 +52,8 @@
 				align-items: center;
 				justify-content: center;
 				height: 100%;
-				font-weight: 900;
 				font-family: "Font Awesome 5 Free";
+				font-weight: 900;
 				visibility: visible;
 				content: "\f002";
 			}
@@ -62,18 +62,18 @@
 
 	&.wp-block-search__button-inside .wp-block-search__inside-wrapper {
 		padding: 0;
-		font-size: inherit;
 		font-family: inherit;
+		font-size: inherit;
 		background-color: transparent;
 		border: none;
 
 		.wp-block-search__button {
-			margin-left: -2em;
 			padding: 0.5em 1.4em;
+			margin-left: -2em;
 
 			&.has-icon {
-				margin-left: -2.5em;
 				padding: 0;
+				margin-left: -2.5em;
 			}
 		}
 

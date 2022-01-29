@@ -4,14 +4,14 @@
 
 .c-tag {
 	position: relative;
-	margin-bottom: -1em;
 	padding-left: 1.5em;
+	margin-bottom: -1em;
 
 	&::before {
 		position: absolute;
 		left: 0;
-		font-weight: 900;
 		font-family: "Font Awesome 5 Free";
+		font-weight: 900;
 		content: "\f02c";
 	}
 
@@ -19,10 +19,10 @@
 
 		@include nm-button;
 		display: inline-block;
-		margin: 0 0.4em 1em;
 		padding: 0.3em 1em;
-		color: var(--color-accent);
+		margin: 0 0.4em 1em;
 		font-size: 0.8em;
+		color: var(--color-accent);
 		border-radius: 1000px;
 	}
 }

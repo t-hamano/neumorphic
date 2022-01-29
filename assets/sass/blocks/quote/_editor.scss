@@ -6,8 +6,8 @@ blockquote {
 
 	@include nm-reverse;
 	position: relative;
-	margin: 0;
 	padding: 1em 1em 1em 3.5em;
+	margin: 0;
 	border: none;
 	border-radius: $base_border_radius;
 
@@ -17,9 +17,9 @@ blockquote {
 		position: absolute;
 		top: 0.5em;
 		left: 0.7em;
-		font-weight: 900;
-		font-size: 1.6em;
 		font-family: "Font Awesome 5 Free";
+		font-size: 1.6em;
+		font-weight: 900;
 		content: "\f10d";
 	}
 

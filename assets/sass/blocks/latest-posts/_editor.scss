@@ -18,8 +18,8 @@
 
 		> a {
 			display: inline-block;
-			font-weight: bold;
 			font-size: 1.2em;
+			font-weight: bold;
 			line-height: 1.4;
 		}
 	}
@@ -41,18 +41,18 @@
 	}
 
 	&__post-author {
-		color: inherit;
 		font-size: 0.8em;
+		color: inherit;
 	}
 
 	&__post-date {
-		color: inherit;
 		font-size: 0.8em;
+		color: inherit;
 
 		&::before {
 			margin-right: 0.2em;
-			font-weight: 400;
 			font-family: "Font Awesome 5 Free";
+			font-weight: 400;
 			content: "\f017";
 		}
 	}

@@ -18,11 +18,11 @@
 	.editor-post-title__input {
 
 		@include nm-text-border;
-		color: var(--color-text-main);
-		font-weight: bold;
-		font-size: 2.2em;
 		font-family: $base_font_falily;
+		font-size: 2.2em;
+		font-weight: bold;
 		line-height: 1.4;
+		color: var(--color-text-main);
 		letter-spacing: $base_letter_spacing;
 
 		&:focus {
@@ -38,9 +38,9 @@
 
 // New Post Placeholder
 .block-editor-default-block-appender textarea.block-editor-default-block-appender__content {
-	color: inherit;
-	font-size: inherit;
 	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
 	opacity: $base_placeholder_opacity;
 }
 
@@ -96,8 +96,8 @@ pre {
 figcaption {
 	margin-top: 0.5em;
 	margin-bottom: 0;
-	color: var(--color-text-main);
 	font-size: 0.8em;
+	color: var(--color-text-main);
 	text-align: inherit;
 	opacity: $text_color_thin;
 }

@@ -47,8 +47,8 @@
 
 				@include nm;
 				display: block;
-				color: var(--color-accent);
 				font-weight: bold;
+				color: var(--color-accent);
 				text-decoration: none;
 				border-radius: $base_border_radius;
 			}

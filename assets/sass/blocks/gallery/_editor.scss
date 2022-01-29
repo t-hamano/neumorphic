@@ -18,8 +18,8 @@
 			max-height: calc(100% - 10px);
 			padding: 0.5em;
 			overflow-x: hidden;
-			color: #fff;
 			font-size: 0.8em;
+			color: #fff;
 			background: rgba(0, 0, 0, 0.6);
 			border-radius: 0 0 math.div($base_border_radius, 2) math.div($base_border_radius, 2);
 		}
@@ -32,8 +32,8 @@
 	}
 
 	&.wp-block-gallery > figcaption {
-		color: var(--color-text-main);
 		font-size: 0.8em;
+		color: var(--color-text-main);
 		opacity: $text_color_thin;
 	}
 

@@ -5,15 +5,15 @@
 .wp-block-latest-comments .wp-block-latest-comments {
 
 	@include nm;
-	margin: 0;
 	padding: 0.5em 1em;
+	margin: 0;
 	border-radius: $base_border_radius;
 
 	&__comment {
 		position: relative;
 		min-height: 4.2em;
-		margin: 0;
 		padding: 1em 0 calc(1em + 4px);
+		margin: 0;
 		line-height: inherit;
 		text-align: left;
 
@@ -37,8 +37,8 @@
 
 		&::before {
 			margin-right: 0.2em;
-			font-weight: 400;
 			font-family: "Font Awesome 5 Free";
+			font-weight: 400;
 			content: "\f017";
 		}
 	}

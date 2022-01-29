@@ -39,11 +39,11 @@
 // Block Styles
 .editor-styles-wrapper,
 .customize-control-sidebar_block_editor {
+	font-family: $base_font_falily;
+	font-size: $base_font_size_pc;
+	line-height: $base_line_height;
 
 	color: var(--color-text-main);
-	font-size: $base_font_size_pc;
-	font-family: $base_font_falily;
-	line-height: $base_line_height;
 	letter-spacing: $base_letter_spacing;
 	background: var(--color-bg);
 

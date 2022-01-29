@@ -11,15 +11,15 @@
 	@include mq(md-max) {
 		display: none;
 	}
+	padding: 0;
 
 	margin: 1em 0 0;
-	padding: 0;
 
 	.c-gnav__item > a {
 
 		@include nm-text-border;
-		color: inherit;
 		font-weight: bold;
+		color: inherit;
 	}
 }
 
@@ -29,11 +29,11 @@
 	right: 0;
 	left: 0;
 	z-index: 10;
-	background: rgba(0, 0, 0, 0.5);
-	transform: translateY(-100%);
 	visibility: hidden;
+	background: rgba(0, 0, 0, 0.5);
 	transition: transform $base_transition_duration ease-in-out, visibility $base_transition_duration ease-in-out;
 	transition-timing-function: ease-out;
+	transform: translateY(-100%);
 
 	@include mq(md-max) {
 		display: none;
@@ -41,10 +41,10 @@
 
 	&[aria-hidden="false"] {
 		top: 0;
-		transform: translateY(0);
 		visibility: visible;
 		transition: transform $base_transition_duration ease-in-out;
 		transition-timing-function: ease-out;
+		transform: translateY(0);
 	}
 
 	.c-gnav__item > a {
@@ -73,8 +73,8 @@
 		display: flex;
 		justify-content: space-around;
 		height: 100%;
-		margin: 0;
 		padding: 0;
+		margin: 0;
 		list-style: none;
 	}
 
@@ -93,8 +93,8 @@
 			width: 45px;
 			max-width: 100px;
 			height: 45px;
-			color: #fff;
 			font-size: 20px;
+			color: #fff;
 			border-radius: 50%;
 		}
 
@@ -138,10 +138,10 @@
 		justify-content: center;
 		width: 45px;
 		height: 45px;
-		margin: 0 0 0 auto;
 		padding: 0;
-		color: #fff;
+		margin: 0 0 0 auto;
 		font-size: 20px;
+		color: #fff;
 		border-radius: 50%;
 
 		&:active {
@@ -156,8 +156,8 @@
 	}
 
 	&__list {
-		margin: 0;
 		padding: 0;
+		margin: 0;
 		list-style: none;
 
 		> .menu-item-has-children {

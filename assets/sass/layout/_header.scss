@@ -65,9 +65,9 @@
 
 		a {
 			display: inline-block;
-			color: var(--color-accent);
 			font-weight: bold;
 			line-height: 1.4;
+			color: var(--color-accent);
 			text-shadow: -3px -3px 3px var(--color-nm-light), 3px 3px 3px var(--color-nm-dark);
 			transition: opacity $base_transition_duration ease-in-out;
 

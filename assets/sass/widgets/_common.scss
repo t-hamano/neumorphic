@@ -24,12 +24,12 @@
 
 		@include nm-border;
 		@include nm-text-border;
-		margin: 0 0 1em;
 		padding-bottom: 0.5em;
-		color: var(--color-accent);
-		font-weight: bold;
+		margin: 0 0 1em;
 		font-size: 1.2em;
+		font-weight: bold;
 		line-height: 1.4;
+		color: var(--color-accent);
 		text-align: center;
 	}
 

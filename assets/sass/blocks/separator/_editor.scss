@@ -6,8 +6,8 @@
 hr {
 	height: auto;
 	padding: 15px 0;
-	border: none;
 	cursor: pointer;
+	border: none;
 	opacity: 1;
 
 	&:not(.is-style-wide):not(.is-style-dots) {
@@ -39,8 +39,8 @@ hr {
 				width: 100%;
 				height: 3px;
 				margin-top: -1.5px;
-				background: currentColor;
 				content: "";
+				background: currentColor;
 			}
 		}
 

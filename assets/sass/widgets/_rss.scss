@@ -13,8 +13,8 @@
 	}
 
 	ul {
-		margin: 0;
 		padding: 0;
+		margin: 0;
 		list-style: none;
 
 		li {
@@ -25,21 +25,21 @@
 				position: absolute;
 				top: 0;
 				left: 0;
-				font-weight: 900;
 				font-family: "Font Awesome 5 Free";
+				font-weight: 900;
 				content: "\f09e";
 			}
 
 			&:not(:last-child) {
 
 				@include nm-border;
-				margin-bottom: 1em;
 				padding-bottom: 1em;
+				margin-bottom: 1em;
 			}
 
 			.rsswidget {
-				color: inherit;
 				font-weight: bold;
+				color: inherit;
 
 				+ * {
 					margin-top: 0.5em;
@@ -52,8 +52,8 @@
 
 				&::before {
 					margin-right: 0.2em;
-					font-weight: 400;
 					font-family: "Font Awesome 5 Free";
+					font-weight: 400;
 					content: "\f017";
 				}
 			}
@@ -70,9 +70,9 @@
 				&::before {
 					display: inline-block;
 					margin-right: 0.5em;
-					font-weight: 900;
 					font-family: "Font Awesome 5 Free";
 					font-style: normal;
+					font-weight: 900;
 					content: "\f4ff";
 				}
 			}
