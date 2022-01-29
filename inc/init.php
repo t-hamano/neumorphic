@@ -242,17 +242,6 @@ function neumorphic_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	// CSS custom properties and object-fit properties support for IE
-	global $is_IE;
-
-	if ( $is_IE ) {
-		wp_enqueue_script( 'neumorphic-ponyfill', get_theme_file_uri( '/assets/js/lib/css-vars-ponyfill.min.js' ), array(), $theme_version );
-		wp_add_inline_script( 'neumorphic-ponyfill', 'cssVars();' );
-
-		wp_enqueue_script( 'neumorphic-ofi', get_theme_file_uri( '/assets/js/lib/ofi.min.js' ), array(), $theme_version, true );
-		wp_add_inline_script( 'neumorphic-ofi', ' objectFitImages();' );
-	}
-
 	// Main Script
 	wp_enqueue_script( 'neumorphic', get_theme_file_uri( '/assets/js/main.js' ), array( 'jquery' ), $theme_version, false );
 }
@@ -278,18 +267,6 @@ function neumorphic_block_editor_assets() {
 }
 
 add_action( 'enqueue_block_editor_assets', 'neumorphic_block_editor_assets' );
-
-/**
- * Fix skip link focus in IE11.
- */
-function neumorphic_skip_link_focus_fix() {
-	?>
-	<script>
-	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
-	</script>
-	<?php
-}
-add_action( 'wp_print_footer_scripts', 'neumorphic_skip_link_focus_fix' );
 
 /**
  * Add a class to the body tag.
