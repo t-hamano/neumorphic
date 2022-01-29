@@ -5,7 +5,7 @@ Donate link: https://www.paypal.me/thamanoJP
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Stable tag: 2.0.0
-Requires at least: 5.5
+Requires at least: 5.7
 Tested up to: 5.8
 Requires PHP: 5.6
 

@@ -2,10 +2,8 @@
  * Fallback Styles ( WordPress )
  */
 
-// Version 5.7, 5.6, 5.5
-body.branch-5-7 .entry-content,
-body.branch-5-6 .entry-content,
-body.branch-5-5 .entry-content {
+// Version 5.7
+body.branch-5-7 .entry-content {
 
 	// File
 	.wp-block-file__textlink {
@@ -43,49 +41,5 @@ body.branch-5-5 .entry-content {
 	// Latest Posts
 	.wp-block-latest-posts {
 		padding-left: 0;
-	}
-}
-
-// Version 5.6, 5.5
-body.branch-5-6 .entry-content,
-body.branch-5-5 .entry-content {
-
-	// Gallery
-	.wp-block-gallery {
-
-		&.alignleft,
-		&.alignright {
-			max-width: 420px;
-		}
-	}
-
-	// Cover
-	.wp-block-cover__video-background {
-		transform: none;
-	}
-
-	// Video
-	.wp-block-video video {
-		width: 100%;
-	}
-
-	// Buttons
-	.wp-block-buttons {
-		display: flex;
-		flex-wrap: wrap;
-
-		&.aligncenter {
-			justify-content: center;
-		}
-
-		.wp-block-button {
-			margin-right: 0;
-			margin-left: 0;
-		}
-	}
-
-	// Social Link
-	.wp-block-social-links {
-		font-size: 24px;
 	}
 }

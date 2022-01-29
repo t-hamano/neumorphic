@@ -2,10 +2,8 @@
  * Fallback Styles ( WordPress )
  */
 
-// Version 5.7, 5.6, 5.5
-body.branch-5-7 .editor-styles-wrapper,
-body.branch-5-6 .editor-styles-wrapper,
-body.branch-5-5 .editor-styles-wrapper {
+// Version 5.7
+body.branch-5-7 .editor-styles-wrapper {
 	font-size: $base_font_size_pc;
 	line-height: $base_line_height;
 
@@ -100,113 +98,5 @@ body.branch-5-5 .editor-styles-wrapper {
 	// Search
 	.wp-block[data-align="center"] .wp-block-search__inside-wrapper {
 		margin: auto;
-	}
-}
-
-// Version 5.6, 5.5
-body.branch-5-6 .editor-styles-wrapper,
-body.branch-5-5 .editor-styles-wrapper {
-	padding: 8px;
-
-	.block-editor-block-list__layout.is-root-container > .wp-block[data-align="full"] {
-		margin-right: -8px;
-		margin-left: -8px;
-	}
-
-	// Code
-	.wp-block-code {
-		font-size: 1em;
-	}
-
-	// Gallery
-	[data-type="core/gallery"] {
-
-		> [data-align="left"],
-		> [data-align="right"] {
-			margin: 0 auto;
-		}
-
-		&[data-align="wide"] {
-			margin-right: auto;
-			margin-left: auto;
-		}
-
-		&[data-align="full"] {
-			margin-right: -8px;
-			margin-left: -8px;
-		}
-	}
-
-	.wp-block-gallery {
-
-		.alignleft,
-		.alignright {
-			max-width: 420px;
-		}
-	}
-
-	// Cover
-	.wp-block-cover {
-
-		.wp-block-cover__video-background,
-		.wp-block-cover__image-background {
-			transform: none;
-		}
-
-		&:not(.is-style-nm):not(.is-style-nm-reverse) {
-
-			.wp-block-cover__video-background,
-			.wp-block-cover__image-background {
-				top: 0;
-				right: 0;
-				bottom: 0;
-				left: 0;
-			}
-		}
-	}
-
-	// Video
-	.wp-block-video video {
-		width: 100%;
-	}
-
-	// Buttons
-	.wp-block-buttons {
-		display: flex;
-		flex-wrap: wrap;
-	}
-
-	// Shortcode
-	[data-type="core/shortcode"].components-placeholder {
-		min-height: 0;
-	}
-
-	// Archive
-	ul.wp-block-archives-list:not(.is-style-nm):not(.is-style-nm-reverse) {
-		padding-left: 0;
-	}
-
-	// Categories
-	.wp-block-categories ul {
-		padding-left: 0;
-	}
-
-	// Latest Posts
-	[data-align="left"] > .wp-block-latest-posts {
-		max-width: 500px;
-		margin-left: 0;
-	}
-
-	[data-align="center"] > .wp-block-latest-posts {
-		margin-left: 0;
-	}
-
-	[data-align="right"] > .wp-block-latest-posts {
-		max-width: 500px;
-	}
-
-	// Social Link
-	.wp-block-social-links .wp-block-social-link {
-		font-size: 24px;
 	}
 }
