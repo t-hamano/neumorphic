@@ -21,7 +21,7 @@
 		"release:archive": "cross-conf-env bestzip ./npm_package_name-npm_package_version.zip ./npm_package_name"
 	},
 	"devDependencies": {
-		"@wordpress/env": "^4.1.0",
+		"@wordpress/env": "^4.9.0",
 		"@wordpress/eslint-plugin": "^9.1.0",
 		"@wordpress/stylelint-config": "^19.1.0",
 		"bestzip": "^2.2.0",
